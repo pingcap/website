@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "husky": "^4.2.1",
+    "lint-staged": "^10.0.7",
     "prettier": "^1.19.1"
   },
   "keywords": [
@@ -28,8 +29,7 @@
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "yarn develop",
+    "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
@@ -41,9 +41,12 @@
   "bugs": {
     "url": "https://github.com/pingcap/website/issues"
   },
+  "lint-staged": {
+    "*.js?(x)": "prettier --write"
+  },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn format"
+      "pre-commit": "lint-staged"
     }
   }
 }
