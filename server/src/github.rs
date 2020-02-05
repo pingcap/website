@@ -10,5 +10,15 @@ pub mod github_api {
         repo = repo
       )
     }
+
+    pub fn get_content(owner: &str, repo: &str, path: &str) -> String {
+      format!(
+        "{URL}/repos/{owner}/{repo}/contents/{path}",
+        URL = crate::github::API_URL,
+        owner = owner,
+        repo = repo,
+        path = path
+      )
+    }
   }
 }

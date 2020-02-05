@@ -8,6 +8,12 @@ pub struct Blog {
   name: String,
 }
 
+#[derive(Serialize, Deserialize, Debug)]
+pub struct RawBlog {
+  content: String,
+  encoding: String,
+}
+
 #[tokio::main]
 async fn get_blogs() -> Vec<Blog> {
   let client = client();
@@ -29,9 +35,32 @@ async fn get_blogs() -> Vec<Blog> {
     .collect::<Vec<Blog>>()
 }
 
+#[tokio::main]
+async fn get_raw_blog(path: &str) -> RawBlog {
+  let client = client();
+  let url = github_api::contents::get_content("pingcap", "blog", path);
+  let resp = client
+    .get(&url)
+    .send()
+    .await
+    .unwrap()
+    .json::<RawBlog>()
+    .await
+    .unwrap();
+
+  resp
+}
+
 #[get("/blogs")]
 pub fn blogs() -> Json<Vec<Blog>> {
   let blogs = get_blogs();
 
   Json(blogs)
+}
+
+#[get("/blogs/<path>")]
+pub fn blog(path: String) -> Json<RawBlog> {
+  let raw_blog = get_raw_blog(&path);
+
+  Json(raw_blog)
 }

@@ -27,6 +27,9 @@ fn index() -> Json<IndexJson> {
 fn main() {
     rocket::ignite()
         .mount("/", routes![index])
-        .mount(rest::rest_config::PREFIX_V1, routes![blog::blogs])
+        .mount(
+            rest::rest_config::PREFIX_V1,
+            routes![blog::blogs, blog::blog],
+        )
         .launch();
 }
