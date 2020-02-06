@@ -34,3 +34,71 @@ Also, we recommand you use [yarn](https://classic.yarnpkg.com/en/) as package ma
 yarn -v
 # 1.21.1
 ```
+
+All done.~
+
+## How to development
+
+Into project, run:
+
+```sh
+yarn && yarn start
+```
+
+if your want to development the server side:
+
+```sh
+# Make sure nightly used
+rustup default nightly
+
+cd server && cargo build
+
+# Boot the rocket server
+cargo run
+```
+
+## Style guides
+
+***If you want make a PR, you should read this part carefully.***
+
+As you can see, we use `husky` and `lint-staged` to make sure all commits follow the [prettier](https://prettier.io/) setting.
+
+**Don't break the rule!**
+
+The next need to be noticed is, we use [Bulma](https://bulma.io/) as common components.
+
+So, for example, our common scss codes `_common.scss` follow the bulma modifiers style, like:
+
+```scss
+// Use in navbar and footer item
+@mixin has-item-active {
+  position: relative;
+  color: $B4;
+
+  &:hover {
+    background: none;
+    color: $B1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      width: 10px;
+      height: 3px;
+      background: $B1;
+      transform: translateX(-50%);
+    }
+  }
+}
+```
+
+You can view more details in [https://bulma.io/documentation/modifiers/](https://bulma.io/documentation/modifiers/)
+
+**Also, Don't break the rule!**
+
+# License
+
+Currently no License.
+
+Make with love 💙 by PingCAP FE.
