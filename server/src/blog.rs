@@ -61,8 +61,7 @@ pub fn blogs() -> Json<Vec<Blog>> {
 
 #[get("/blogs/<path>")]
 pub fn blog(path: String) -> Json<RawBlog> {
-  let mut raw_blog = get_raw_blog(&path);
-  raw_blog.name = path;
+  let raw_blog = get_raw_blog(&path);
 
   Json(raw_blog)
 }
