@@ -10,6 +10,7 @@ pub struct Blog {
 
 #[derive(Serialize, Deserialize, Debug)]
 pub struct RawBlog {
+  name: String,
   content: String,
   encoding: String,
 }
@@ -60,7 +61,8 @@ pub fn blogs() -> Json<Vec<Blog>> {
 
 #[get("/blogs/<path>")]
 pub fn blog(path: String) -> Json<RawBlog> {
-  let raw_blog = get_raw_blog(&path);
+  let mut raw_blog = get_raw_blog(&path);
+  raw_blog.name = path;
 
   Json(raw_blog)
 }

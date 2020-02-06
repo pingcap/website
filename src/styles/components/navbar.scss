@@ -1,21 +1,30 @@
 .PingCAP-Navbar {
   .navbar-item {
     &.with-brand {
-      padding-left: 0;
+      padding-left: 1.5rem;
     }
 
     &.with-main-section {
       @include has-item-active;
     }
-
-    &.with-free-download {
-      padding-right: 0;
-    }
   }
 
   .navbar-brand {
     width: 150px;
-    margin-right: 3rem;
+    margin-right: 5rem;
+
+    .navbar-burger {
+      position: absolute;
+      top: 0.5rem;
+      right: 0;
+      background: none;
+      color: $B1;
+      border: none;
+
+      span {
+        width: $size-6;
+      }
+    }
   }
 
   .free-download {

@@ -37,4 +37,8 @@ module.exports = {
       },
     },
   ],
+  proxy: {
+    prefix: '/api/v1',
+    url: 'http://localhost:8001/api/v1',
+  },
 }
