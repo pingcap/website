@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'PingCAP',
     description: '',
-    author: '@PingCAP'
+    author: '@PingCAP',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,25 +10,31 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'images',
-        path: `${__dirname}/images`
-      }
+        path: `${__dirname}/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'gatsby-starter-default',
-        short_name: 'starter',
+        name: 'PingCAP Website',
+        short_name: 'PingCAP',
         start_url: '/',
-        background_color: '#663399',
-        theme_color: '#663399',
+        background_color: '#fff',
+        theme_color: 'blue',
         display: 'minimal-ui',
-        icon: 'images/gatsby-icon.png' // This path is relative to the root of the site.
-      }
-    }
+        icon: 'images/pingcap-icon.png', // This path is relative to the root of the site.
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ]
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        useResolveUrlLoader: true,
+      },
+    },
+  ],
 }

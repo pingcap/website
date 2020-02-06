@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="Group_1658" data-name="Group 1658" transform="translate(261 -3111)">
+    <g id="Group_1650" data-name="Group 1650">
+      <g id="Group_1647" data-name="Group 1647" transform="translate(-2 3.087)">
+        <path id="Path_6236" data-name="Path 6236" d="M50.781,5.68a6.5,6.5,0,0,0-4.57-4.57C42.154,0,25.924,0,25.924,0S9.695,0,5.637,1.068A6.629,6.629,0,0,0,1.068,5.68C0,9.737,0,18.151,0,18.151s0,8.456,1.068,12.471a6.5,6.5,0,0,0,4.57,4.57c4.1,1.11,20.287,1.11,20.287,1.11s16.229,0,20.287-1.068a6.5,6.5,0,0,0,4.57-4.57c1.068-4.057,1.068-12.471,1.068-12.471S51.891,9.737,50.781,5.68Zm0,0" transform="translate(-250 3124.913)" fill="#6e77a3"/>
+        <path id="Path_6237" data-name="Path 6237" d="M204.969,118.03l13.5-7.773-13.5-7.773Zm0,0" transform="translate(-434.212 3032.379)" fill="#f7f8f9"/>
+      </g>
+      <g id="Rectangle_2330" data-name="Rectangle 2330" transform="translate(-261 3111)" fill="none" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="70" height="70" stroke="none"/>
+        <rect x="0.5" y="0.5" width="69" height="69" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

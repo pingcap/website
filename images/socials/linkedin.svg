@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="Group_1664" data-name="Group 1664" transform="translate(159 -3026)">
+    <g id="Group_1646" data-name="Group 1646">
+      <rect id="Rectangle_2320" data-name="Rectangle 2320" width="44" height="44" rx="3" transform="translate(-146 3039)" fill="#6e77a3"/>
+      <path id="Linked_IN_logo" data-name="Linked IN logo" d="M27.276,31.76V19.4c0-2.539-.734-5.075-3.718-5.075a5.4,5.4,0,0,0-5.368,5.135V31.76H11.361V9.008H18.19v3.156a10.214,10.214,0,0,1,8.352-3.869c3.305,0,7.54,1.65,7.54,10.59V31.76Zm-27.241,0V9.077h6.8V31.76ZM0,3.407A3.406,3.406,0,1,1,3.407,6.813,3.406,3.406,0,0,1,0,3.407Z" transform="translate(-141 3045)" fill="#f7f8f9"/>
+      <g id="Rectangle_2327" data-name="Rectangle 2327" transform="translate(-159 3026)" fill="none" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="70" height="70" stroke="none"/>
+        <rect x="0.5" y="0.5" width="69" height="69" fill="none"/>
+      </g>
+      <g id="Rectangle_2329" data-name="Rectangle 2329" transform="translate(-159 3026)" fill="none" stroke="#707070" stroke-width="1" opacity="0">
+        <rect width="70" height="70" stroke="none"/>
+        <rect x="0.5" y="0.5" width="69" height="69" fill="none"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+$socials: twitter linkedin facebook youtube reddit slack;
+
+.PingCAP-Footer {
+  background: $B5;
+  padding-bottom: 4rem;
+
+  .column {
+    .title {
+      margin-bottom: 2rem;
+      color: $B3;
+    }
+  }
+
+  .column.with-socials {
+    position: relative;
+  }
+
+  .items {
+    li {
+      margin: 1rem 0;
+
+      a {
+        @include has-item-active;
+
+        display: inline-block;
+
+        &:after {
+          bottom: -0.3rem !important;
+        }
+      }
+    }
+  }
+
+  .footer-logo {
+    float: right;
+    width: 150px;
+  }
+
+  .socials {
+    position: absolute;
+    top: calc(120px - 0.5rem);
+    right: 1.5rem;
+    width: 150px;
+
+    @each $social in $socials {
+      .#{$social} {
+        @include social($social);
+
+        width: 36px;
+        height: 36px;
+        margin: 0 1.3rem 1rem 0;
+        cursor: pointer;
+      }
+    }
+
+    .facebook,
+    .slack {
+      margin-right: 0;
+    }
+  }
+
+  .annotations {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    color: $B4;
+  }
+}

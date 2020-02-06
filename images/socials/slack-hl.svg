@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 70 70">
+  <g id="Group_1652" data-name="Group 1652" transform="translate(72 -3310)">
+    <g id="slack" transform="translate(-59.002 3323.001)">
+      <path id="Path_6227" data-name="Path 6227" d="M10.945,12.651a4.624,4.624,0,0,0-4.623,4.623V28.84a4.623,4.623,0,1,0,9.247,0V17.274a4.627,4.627,0,0,0-4.623-4.623Z" transform="translate(5.271 10.552)" fill="#e91e63"/>
+      <path id="Path_6228" data-name="Path 6228" d="M.019,17.276a4.627,4.627,0,0,0,9.254,0V12.649H4.646A4.628,4.628,0,0,0,.019,17.276Z" transform="translate(0.014 10.55)" fill="#e91e63"/>
+      <path id="Path_6229" data-name="Path 6229" d="M10.953,0h-.006a4.627,4.627,0,0,0,0,9.254h4.623V4.617A4.619,4.619,0,0,0,10.953,0Z" transform="translate(5.269 0)" fill="#00bcd4"/>
+      <path id="Path_6230" data-name="Path 6230" d="M4.629,15.578H16.216a4.627,4.627,0,1,0,0-9.254H4.629a4.627,4.627,0,1,0,0,9.254Z" transform="translate(0 5.275)" fill="#00bcd4"/>
+      <path id="Path_6231" data-name="Path 6231" d="M23.557,6.323a4.617,4.617,0,0,0-4.618,4.618v4.636h4.623a4.627,4.627,0,1,0,0-9.254Z" transform="translate(15.793 5.274)" fill="#4caf50"/>
+      <path id="Path_6232" data-name="Path 6232" d="M12.641,4.624v11.6a4.623,4.623,0,1,0,9.247,0V4.624a4.623,4.623,0,0,0-9.247,0Z" transform="translate(10.541 0.002)" fill="#4caf50"/>
+      <g id="Group_1625" data-name="Group 1625" transform="translate(23.176 23.199)">
+        <path id="Path_6233" data-name="Path 6233" d="M21.887,23.578a4.624,4.624,0,0,0-4.623-4.623H12.64v4.627a4.623,4.623,0,0,0,9.247,0Z" transform="translate(-12.636 -7.39)" fill="#ff9800"/>
+        <path id="Path_6234" data-name="Path 6234" d="M28.852,12.649H17.265a4.627,4.627,0,0,0,0,9.254H28.852a4.627,4.627,0,1,0,0-9.254Z" transform="translate(-12.638 -12.649)" fill="#ff9800"/>
+      </g>
+    </g>
+    <g id="Rectangle_2338" data-name="Rectangle 2338" transform="translate(-72 3310)" fill="none" stroke="#707070" stroke-width="1" opacity="0">
+      <rect width="70" height="70" stroke="none"/>
+      <rect x="0.5" y="0.5" width="69" height="69" fill="none"/>
+    </g>
+  </g>
+</svg>

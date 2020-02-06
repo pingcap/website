@@ -5,11 +5,13 @@
   "version": "0.1.0",
   "author": "Yue Yang <g1enyy0ung@gmail.com> (https://g1eny0ung.site)",
   "dependencies": {
+    "@seagreenio/react-bulma": "^0.1.0-beta.0",
     "gatsby": "^2.19.7",
     "gatsby-image": "^2.2.39",
     "gatsby-plugin-manifest": "^2.2.39",
     "gatsby-plugin-offline": "^3.0.32",
     "gatsby-plugin-react-helmet": "^3.1.21",
+    "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-source-filesystem": "^2.1.46",
     "gatsby-transformer-sharp": "^2.3.13",
@@ -19,9 +21,12 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "bulma": "^0.8.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
-    "prettier": "^1.19.1"
+    "node-sass": "^4.13.1",
+    "prettier": "^1.19.1",
+    "resolve-url-loader": "^3.1.1"
   },
   "keywords": [
     "gatsby"

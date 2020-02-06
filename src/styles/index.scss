@@ -1,0 +1,11 @@
+// Predefined
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web&display=swap');
+@import 'variables';
+@import '../../node_modules/bulma/bulma.sass';
+
+// Common Styles
+@import 'common';
+
+// Components Styles
+@import 'components/navbar';
+@import 'components/footer';

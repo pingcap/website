@@ -1,0 +1,36 @@
+body {
+  @extend .has-navbar-fixed-top;
+}
+
+// Use in navbar and footer item
+@mixin has-item-active {
+  position: relative;
+  color: $B4;
+
+  &:hover {
+    background: none;
+    color: $B1;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      width: 10px;
+      height: 3px;
+      background: $B1;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+// Social Background
+@mixin social($name) {
+  background: url(../../images/socials/#{$name}.svg);
+  background-size: cover;
+
+  &:hover {
+    background: url(../../images/socials/#{$name}-hl.svg);
+    background-size: cover;
+  }
+}
