@@ -57,9 +57,30 @@ cd server && cargo build
 cargo run
 ```
 
+### GitHub Outh2 token
+
+It's needed to apply a token to develop with GitHub API.
+
+For more details, view <https://developer.github.com/v3/#rate-limiting>
+
+You must set the token as an env when you start some commands, for example:
+
+```sh
+GITHUB_AUTHORIZATION_TOKEN=token
+```
+
+If you are developing the rocket server, the server use `dotenv` to load a `.env` file.
+So, create a `.env` file in the `server` folder and pass the `GITHUB_AUTHORIZATION_TOKEN=token` into it.
+
+For frontend developing, some scripts will also need this env variable, for example:
+
+```sh
+GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:dev
+```
+
 ## Style guides
 
-***If you want make a PR, you should read this part carefully.***
+**_If you want make a PR, you should read this part carefully._**
 
 As you can see, we use `husky` and `lint-staged` to make sure all commits follow the [prettier](https://prettier.io/) setting.
 
