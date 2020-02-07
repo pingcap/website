@@ -21,7 +21,10 @@ const createBlogs = async ({ graphql, createPage }) => {
 
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     createPage({
-      path: `blog/${node.frontmatter.title.split(' ').join('-')}`,
+      path: `blog/${node.frontmatter.title
+        .replace(/\?/g, '')
+        .split(' ')
+        .join('-')}`,
       component: blogTemplate,
       context: {
         title: node.frontmatter.title,

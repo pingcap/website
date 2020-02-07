@@ -1,7 +1,13 @@
+$navbar-height: 4.25rem; // 68px
+
 .PingCAP-Blog {
+  .section.section-blog {
+    padding-top: 1.5rem;
+  }
+
   .blog-progress {
     position: fixed;
-    top: 4.25rem; // 68px
+    top: $navbar-height;
     height: 1px;
     background: $C2;
     border-radius: 0;
@@ -35,8 +41,48 @@
     color: $M4;
     line-height: 1.75;
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-top: $navbar-height + 0.25;
+      margin-top: -$navbar-height - 0.25;
+
+      &:first-child {
+        margin-top: -$navbar-height - 0.25 !important;
+      }
+    }
+
+    a.anchor {
+      top: $navbar-height + 0.25;
+    }
+
     ul {
       list-style: inherit;
+    }
+  }
+
+  .right-column {
+    position: relative;
+    padding-left: 3rem;
+  }
+
+  .toc {
+    @include mobile {
+      display: none;
+    }
+
+    position: fixed;
+    top: 4.25rem + 4.75;
+
+    .toc-header {
+      color: $B3;
+      font-weight: bold;
+    }
+
+    .toc-content {
     }
   }
 }

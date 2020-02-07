@@ -32,6 +32,10 @@ $socials: twitter linkedin facebook youtube reddit slack;
   }
 
   .footer-logo {
+    @include mobile {
+      display: none;
+    }
+
     float: right;
     width: 150px;
   }

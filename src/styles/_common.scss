@@ -1,4 +1,8 @@
 body {
+  @include mobile {
+    padding-top: 5.25rem;
+  }
+
   @extend .has-spaced-navbar-fixed-top;
 }
 

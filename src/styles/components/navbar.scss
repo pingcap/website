@@ -6,6 +6,22 @@
 
     &.with-main-section {
       @include has-item-active;
+      @include mobile {
+        margin: 0 1.5rem;
+        padding: 1rem 0;
+        font-size: $size-6;
+        border-bottom: 1px solid $C2;
+
+        &:last-child {
+          border: none;
+        }
+
+        &:hover {
+          &:after {
+            content: none;
+          }
+        }
+      }
     }
   }
 
@@ -28,6 +44,12 @@
   }
 
   .free-download {
+    @include mobile {
+      width: 100%;
+      font-size: $size-6;
+      border-radius: 5px;
+    }
+
     font-size: $size-7;
     border-radius: 25px;
   }
