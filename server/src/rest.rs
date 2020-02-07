@@ -11,7 +11,7 @@ pub mod rest_config {
     headers.insert(ACCEPT, "application/vnd.github.v3+json".parse().unwrap());
     headers.insert(
       AUTHORIZATION,
-      "d676c7e1d66af3f6ccb91991b3cf577b8c50bde0".parse().unwrap(),
+      dotenv!("GITHUB_AUTHORIZATION_TOKEN").parse().unwrap(),
     );
 
     let client = Client::builder()
