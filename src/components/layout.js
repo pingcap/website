@@ -6,7 +6,7 @@ import React from 'react'
 const Layout = ({ children }) => (
   <>
     <Navbar />
-    <main className="container">{children}</main>
+    <main>{children}</main>
     <Footer />
   </>
 )

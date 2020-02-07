@@ -1,0 +1,42 @@
+.PingCAP-Blog {
+  .blog-progress {
+    position: fixed;
+    top: 4.25rem; // 68px
+    height: 1px;
+    background: $C2;
+    border-radius: 0;
+    z-index: 30; // Same with .navbar.is-fixed-top
+  }
+
+  .under-category {
+    color: $B3;
+  }
+
+  .blog-title {
+    margin-top: 2rem;
+    color: $B3;
+  }
+
+  .blog-subtitle {
+    color: $B4;
+
+    span {
+      margin: 0 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  // Custom markdown body
+  .blog-content {
+    margin-bottom: 3rem;
+    color: $M4;
+    line-height: 1.75;
+
+    ul {
+      list-style: inherit;
+    }
+  }
+}

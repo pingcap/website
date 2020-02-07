@@ -15,6 +15,7 @@
     "gatsby-plugin-sass": "^2.1.28",
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.3.13",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
@@ -23,10 +24,13 @@
   },
   "devDependencies": {
     "bulma": "^0.8.0",
+    "chalk": "^3.0.0",
+    "cross-env": "^7.0.0",
     "husky": "^4.2.1",
     "lint-staged": "^10.0.7",
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
+    "replacestream": "^4.0.3",
     "resolve-url-loader": "^3.1.1"
   },
   "keywords": [
@@ -38,7 +42,9 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "download:blogs:dev": "cross-env NODE_ENV=development node ./markdown-pages/download-blogs.js",
+    "download:blogs:prod": "cross-env NODE_ENV=production node ./markdown-pages/download-blogs.js"
   },
   "repository": {
     "type": "git",
