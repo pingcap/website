@@ -1,5 +1,6 @@
+import React, { useEffect, useState } from 'react'
+
 import Layout from '../components/layout'
-import React from 'react'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 
@@ -10,6 +11,19 @@ const Blog = ({ data }) => {
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
+
+  const [readingProgress, setReadingProgress] = useState(0)
+
+  useEffect(() => {
+    window.onscroll = () => {
+      const winScrollTop = document.documentElement.scrollTop
+      const height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight
+      const scrolled = ((winScrollTop / height) * 100).toFixed()
+      setReadingProgress(scrolled)
+    }
+  }, [])
 
   return (
     <Layout>
@@ -26,7 +40,7 @@ const Blog = ({ data }) => {
       <article className="PingCAP-Blog">
         <progress
           className="progress is-primary blog-progress"
-          value="50"
+          value={readingProgress}
           max="100"
         >
           50%
