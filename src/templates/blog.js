@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
+import { Button } from '@seagreenio/react-bulma'
 
 const Blog = ({ data }) => {
   const { markdownRemark } = data
@@ -62,6 +63,24 @@ const Blog = ({ data }) => {
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
+                <div className="blog-tags">
+                  {frontmatter.tags.map(tag => (
+                    <Button key={tag} as="a">
+                      {tag}
+                    </Button>
+                  ))}
+                </div>
+                <section className="section get-started-with-tidb">
+                  <div className="title">Ready to get started with TiDB?</div>
+                  <div className="destinations">
+                    <Button as="a" className="get-started" outlined>
+                      Get Started
+                    </Button>
+                    <Button as="a" outlined>
+                      Contact Us
+                    </Button>
+                  </div>
+                </section>
               </div>
               <div className="column is-4 right-column">
                 <div className="toc">

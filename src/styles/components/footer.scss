@@ -1,6 +1,10 @@
 $socials: twitter linkedin facebook youtube reddit slack;
 
 .PingCAP-Footer {
+  @include mobile {
+    padding-bottom: 2rem;
+  }
+
   background: $B5;
   padding-bottom: 4rem;
 
@@ -41,6 +45,10 @@ $socials: twitter linkedin facebook youtube reddit slack;
   }
 
   .socials {
+    @include mobile {
+      display: none;
+    }
+
     position: absolute;
     top: calc(120px - 0.5rem);
     right: 1.5rem;
@@ -64,6 +72,15 @@ $socials: twitter linkedin facebook youtube reddit slack;
   }
 
   .annotations {
+    @include mobile {
+      display: block;
+      margin-top: 0;
+
+      .lang {
+        margin-bottom: 0.5rem;
+      }
+    }
+
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
