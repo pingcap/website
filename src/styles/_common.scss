@@ -13,7 +13,7 @@ body {
 
   &:hover {
     background: none;
-    color: $B1;
+    color: $primary;
 
     &:after {
       content: '';
@@ -22,7 +22,7 @@ body {
       left: 50%;
       width: 10px;
       height: 3px;
-      background: $B1;
+      background: $primary;
       transform: translateX(-50%);
     }
   }

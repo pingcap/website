@@ -74,15 +74,30 @@ $navbar-height: 4.25rem; // 68px
       display: none;
     }
 
-    position: fixed;
-    top: 4.25rem + 4.75;
+    margin-top: 4rem;
 
-    .toc-header {
+    .toc-title {
       color: $B3;
       font-weight: bold;
     }
 
     .toc-content {
+      a {
+        color: $B4;
+        line-height: 1.75;
+
+        &:hover {
+          color: $primary;
+        }
+      }
+
+      ul {
+        li {
+          ul {
+            padding-left: 1.5rem;
+          }
+        }
+      }
     }
   }
 }
