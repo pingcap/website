@@ -12,7 +12,7 @@ $navbar-height: 4.25rem; // 68px
     height: 1px;
     background: $C2;
     border-radius: 0;
-    z-index: 30; // Same with .navbar.is-fixed-top
+    z-index: 30; // Same as .navbar.is-fixed-top
   }
 
   .under-category {
@@ -131,6 +131,10 @@ $navbar-height: 4.25rem; // 68px
   }
 
   .right-column {
+    @include mobile {
+      padding-left: unset;
+    }
+
     position: relative;
     padding-left: 3rem;
   }
@@ -163,6 +167,53 @@ $navbar-height: 4.25rem; // 68px
             padding-left: 1.5rem;
           }
         }
+      }
+    }
+  }
+
+  .follow-us {
+    @include mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      padding: 0.25rem 0.75rem;
+      background: $B5;
+      z-index: 30; // Same as .navbar.is-fixed-top
+    }
+
+    margin-top: 2rem;
+
+    .title {
+      @include mobile {
+        display: none;
+      }
+
+      color: $B3;
+      font-weight: bold;
+    }
+
+    .socials {
+      @include mobile {
+        justify-content: center;
+      }
+
+      display: flex;
+      margin-left: -0.2rem;
+
+      @each $social in $socials {
+        .#{$social} {
+          @include social($social);
+
+          width: 36px;
+          height: 36px;
+          margin-right: 1.3rem;
+          cursor: pointer;
+        }
+      }
+
+      .slack {
+        margin-right: 0;
       }
     }
   }

@@ -28,6 +28,8 @@ body {
   }
 }
 
+$socials: twitter linkedin facebook youtube reddit slack;
+
 // Social Background
 @mixin social($name) {
   background: url(../../images/socials/#{$name}.svg);

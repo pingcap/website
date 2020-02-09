@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
+import { Button } from '@seagreenio/react-bulma'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import { footerSocials } from '../data/footer'
 import { graphql } from 'gatsby'
-import { Button } from '@seagreenio/react-bulma'
 
 const Blog = ({ data }) => {
   const { markdownRemark } = data
@@ -14,13 +15,30 @@ const Blog = ({ data }) => {
     : 'No Category'
 
   const [readingProgress, setReadingProgress] = useState(0)
+  const [fixedSocials, setFixedSocials] = useState(true)
 
   useEffect(() => {
+    const footer = document.querySelector('.footer.PingCAP-Footer')
+    const footerHeight = footer.getBoundingClientRect().height
+
+    let isReachFooter = false
     window.onscroll = () => {
+      const winScrollHeight = document.documentElement.scrollHeight
+      const winClientHeight = document.documentElement.clientHeight
       const winScrollTop = document.documentElement.scrollTop
-      const height =
-        document.documentElement.scrollHeight -
-        document.documentElement.clientHeight
+      const toFooter = winScrollHeight - winClientHeight - footerHeight
+
+      if (winScrollTop > toFooter && !isReachFooter) {
+        setFixedSocials(false)
+        isReachFooter = true
+      }
+
+      if (winScrollTop < toFooter && isReachFooter) {
+        setFixedSocials(true)
+        isReachFooter = false
+      }
+
+      const height = winScrollHeight - winClientHeight
       const scrolled = ((winScrollTop / height) * 100).toFixed()
       setReadingProgress(scrolled)
     }
@@ -91,6 +109,17 @@ const Blog = ({ data }) => {
                     className="toc-content"
                     dangerouslySetInnerHTML={{ __html: tableOfContents }}
                   />
+                </div>
+                <div
+                  className="follow-us"
+                  style={{ display: fixedSocials ? 'block' : 'none' }}
+                >
+                  <div className="title is-7">Follow to Join Us!</div>
+                  <div className="socials">
+                    {footerSocials.map(social => (
+                      <div key={social.name} className={social.name} />
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
