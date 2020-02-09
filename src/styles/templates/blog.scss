@@ -88,7 +88,8 @@ $navbar-height: 4.25rem; // 68px
 
   .get-started-with-tidb {
     @include mobile {
-      padding-bottom: 0;
+      padding: 0;
+      padding-top: 3rem;
     }
 
     display: flex;
@@ -109,13 +110,13 @@ $navbar-height: 4.25rem; // 68px
       a {
         @include mobile {
           padding: 0 1rem;
+          border-radius: 5px;
         }
 
         padding: 0 2rem;
         color: $primary;
         font-size: $size-6;
         border-color: $primary;
-        border-radius: 25px;
 
         &:hover {
           color: #fff;
@@ -123,10 +124,6 @@ $navbar-height: 4.25rem; // 68px
         }
 
         &.get-started {
-          @include mobile {
-            margin-right: 2rem;
-          }
-
           margin-right: 4rem;
         }
       }

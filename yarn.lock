@@ -1170,10 +1170,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@seagreenio/react-bulma@^0.1.0-beta.0":
-  version "0.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@seagreenio/react-bulma/-/react-bulma-0.1.0-beta.0.tgz#359a42e14c27ce413eed9ae966d7c0a08b92e1e4"
-  integrity sha512-wn+TyYSWBYVbkk3B2hByAZn14g+AO+d6Mx+v3oTiO1oXatyVUsEFU6zmObnoh4jIADS/tJzRpt66aimI35G7jg==
+"@seagreenio/react-bulma@^0.1.0-beta.1":
+  version "0.1.0-beta.1"
+  resolved "https://registry.yarnpkg.com/@seagreenio/react-bulma/-/react-bulma-0.1.0-beta.1.tgz#822f0122b076795809ab13336b6969fdbb54dd0d"
+  integrity sha512-UWuiVF51t03sbYUzo6zcGMThkSUHIC8TzAAzBX/GtigPkjtkJJq60JW2cYczS1sWAKRbBIPpAcVkuRTf+3AOHA==
   dependencies:
     classnames "^2.2.6"
     lodash.difference "^4.5.0"

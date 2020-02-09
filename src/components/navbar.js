@@ -55,7 +55,7 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             <div className="navbar-item">
-              <Button as="a" className="free-download" color="primary">
+              <Button as="a" className="free-download" color="primary" rounded>
                 Free Download
               </Button>
             </div>

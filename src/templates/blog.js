@@ -73,10 +73,10 @@ const Blog = ({ data }) => {
                 <section className="section get-started-with-tidb">
                   <div className="title">Ready to get started with TiDB?</div>
                   <div className="destinations">
-                    <Button as="a" className="get-started" outlined>
+                    <Button as="a" className="get-started" outlined rounded>
                       Get Started
                     </Button>
-                    <Button as="a" outlined>
+                    <Button as="a" outlined rounded>
                       Contact Us
                     </Button>
                   </div>
