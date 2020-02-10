@@ -1,0 +1,22 @@
+.PingCAP-Blogs {
+  .section.section-blogs {
+    padding-top: 1.5rem;
+  }
+
+  .blog-preview {
+    a {
+      display: inline-block;
+    }
+
+    .tmp-green-box {
+      height: 200px;
+      background: #7ad3d6;
+    }
+
+    .summary {
+      margin: 1.5rem 0;
+      color: $M4;
+      line-height: 1.75;
+    }
+  }
+}

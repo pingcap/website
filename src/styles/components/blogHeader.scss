@@ -1,0 +1,23 @@
+.PingCAP-BlogHeader {
+  .blog-title {
+    margin-top: 2rem;
+    color: $B3;
+  }
+
+  .blog-subtitle {
+    margin-bottom: 1.5rem;
+    color: $B4;
+
+    span {
+      margin: 0 1rem;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      svg {
+        vertical-align: bottom;
+      }
+    }
+  }
+}

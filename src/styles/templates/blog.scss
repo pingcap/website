@@ -19,27 +19,6 @@ $navbar-height: 4.25rem; // 68px
     color: $B3;
   }
 
-  .blog-title {
-    margin-top: 2rem;
-    color: $B3;
-  }
-
-  .blog-subtitle {
-    color: $B4;
-
-    span {
-      margin: 0 1rem;
-
-      &:first-child {
-        margin-left: 0;
-      }
-
-      svg {
-        vertical-align: bottom;
-      }
-    }
-  }
-
   // Custom markdown body
   .blog-content {
     margin-bottom: 3rem;
@@ -66,27 +45,6 @@ $navbar-height: 4.25rem; // 68px
 
     ul {
       list-style: inherit;
-    }
-  }
-
-  .blog-tags {
-    display: flex;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid $C2;
-
-    > a {
-      margin-right: 1rem;
-      padding: 0.25rem 0.5rem;
-      height: auto;
-      color: $B4;
-      background: $B5;
-      font-size: $size-7;
-      border: none;
-
-      &:hover {
-        color: #fff;
-        background: $primary;
-      }
     }
   }
 

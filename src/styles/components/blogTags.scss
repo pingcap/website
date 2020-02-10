@@ -1,0 +1,20 @@
+.PingCAP-BlogTags {
+  display: flex;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $C2;
+
+  > a {
+    margin-right: 1rem;
+    padding: 0.25rem 0.5rem;
+    height: auto;
+    color: $B4;
+    background: $B5;
+    font-size: $size-7;
+    border: none;
+
+    &:hover {
+      color: #fff;
+      background: $primary;
+    }
+  }
+}

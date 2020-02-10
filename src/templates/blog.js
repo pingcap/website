@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
+import BlogHeader from '../components/blogHeader'
+import BlogTags from '../components/blogTags'
 import { Button } from '@seagreenio/react-bulma'
-import Create from '@material-ui/icons/CreateOutlined'
-import DateRange from '@material-ui/icons/DateRange'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
@@ -11,7 +11,6 @@ import { graphql } from 'gatsby'
 const Blog = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
@@ -71,31 +70,12 @@ const Blog = ({ data }) => {
             <div className="columns">
               <div className="column is-8">
                 <div className="under-category">{'Blog > ' + category}</div>
-                <h4 className="title is-4 is-spaced blog-title">
-                  {frontmatter.title}
-                </h4>
-                <div className="subtitle is-7 blog-subtitle">
-                  <span>
-                    <DateRange />
-                    {frontmatter.date}
-                  </span>
-                  <span>
-                    <Create />
-                    {frontmatter.author || 'PingCAP'}
-                  </span>
-                  <span>{category}</span>
-                </div>
+                <BlogHeader frontmatter={frontmatter} />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
-                <div className="blog-tags">
-                  {frontmatter.tags.map(tag => (
-                    <Button key={tag} as="a">
-                      {tag}
-                    </Button>
-                  ))}
-                </div>
+                <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
                   <div className="title">Ready to get started with TiDB?</div>
                   <div className="destinations">
