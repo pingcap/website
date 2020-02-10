@@ -1,8 +1,8 @@
 import Create from '@material-ui/icons/CreateOutlined'
 import DateRange from '@material-ui/icons/DateRange'
+import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { Link } from 'gatsby'
 
 const BlogHeader = ({ frontmatter, isTitleLink }) => {
   const { title, date, author } = frontmatter
@@ -16,7 +16,7 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
         <Link
           className="title is-4 is-spaced blog-title"
           to={`/blog/${title
-            .replace(/\?/g, '')
+            .replace(/[?.,:%]/g, '')
             .split(' ')
             .join('-')}`}
         >
@@ -32,7 +32,7 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
         </span>
         <span>
           <Create />
-          {author[0] || 'PingCAP'}
+          {(author && author[0]) || 'PingCAP'}
         </span>
         <span>{category}</span>
       </div>

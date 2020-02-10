@@ -1,12 +1,14 @@
+import BlogHeader from '../components/blogHeader'
+import BlogTags from '../components/blogTags'
 import Layout from '../components/layout'
+import Pagination from '../components/pagination'
 import React from 'react'
 import SEO from '../components/seo'
 import { graphql } from 'gatsby'
-import BlogHeader from '../components/blogHeader'
-import BlogTags from '../components/blogTags'
 
-const Blogs = ({ data }) => {
+const Blogs = ({ data, pageContext }) => {
   const blogs = data.allMarkdownRemark.edges
+  const { currentPage, numPages } = pageContext
 
   return (
     <Layout>
@@ -24,6 +26,11 @@ const Blogs = ({ data }) => {
                     <BlogTags tags={node.frontmatter.tags} />
                   </div>
                 ))}
+                <Pagination
+                  pathPrefix="/blog"
+                  currentPage={currentPage}
+                  numPages={numPages}
+                />
               </div>
               <div className="column is-4"></div>
             </div>

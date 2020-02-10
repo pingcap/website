@@ -1,0 +1,16 @@
+.PingCAP-Pagination {
+  margin-top: 1.5rem;
+
+  a.pagination-link {
+    padding: 0;
+    min-width: unset;
+    color: $M4;
+    font-weight: bold;
+    border: none;
+
+    &.is-current {
+      background: none;
+      color: $primary;
+    }
+  }
+}
