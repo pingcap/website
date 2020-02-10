@@ -80,19 +80,19 @@ const footerSocials = [
     name: 'twitter',
   },
   {
-    name: 'linkedin',
-  },
-  {
     name: 'facebook',
   },
   {
-    name: 'youtube',
+    name: 'linkedin',
   },
   {
     name: 'reddit',
   },
   {
     name: 'slack',
+  },
+  {
+    name: 'yc',
   },
 ]
 
