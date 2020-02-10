@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
+import Create from '@material-ui/icons/CreateOutlined'
+import DateRange from '@material-ui/icons/DateRange'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { footerSocials } from '../data/footer'
@@ -73,8 +75,14 @@ const Blog = ({ data }) => {
                   {frontmatter.title}
                 </h4>
                 <div className="subtitle is-7 blog-subtitle">
-                  <span>{frontmatter.date}</span>
-                  <span>{frontmatter.author || 'PingCAP'}</span>
+                  <span>
+                    <DateRange />
+                    {frontmatter.date}
+                  </span>
+                  <span>
+                    <Create />
+                    {frontmatter.author || 'PingCAP'}
+                  </span>
                   <span>{category}</span>
                 </div>
                 <div

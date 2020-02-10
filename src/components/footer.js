@@ -1,6 +1,8 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import { footerColumns, footerSocials } from '../data/footer'
 
+import Add from '@material-ui/icons/Add'
+import Language from '@material-ui/icons/Language'
 import React from 'react'
 
 const Footer = () => {
@@ -14,13 +16,37 @@ const Footer = () => {
     `
   )
 
+  const handleSpreadItems = e => {
+    const screenWidth = window.screen.width
+    if (screenWidth > 768) {
+      return
+    }
+
+    const title = e.currentTarget
+    const spread = title.children[0]
+    title.tabIndex = title.tabIndex === 0 ? 1 : 0
+    spread.classList.toggle('clicked')
+    title.nextSibling.classList.toggle('displayed')
+  }
+
   return (
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
           {footerColumns.map(column => (
             <div key={column.name} className="column">
-              <div className="title is-7">{column.name}</div>
+              <div
+                role="button"
+                tabIndex={0}
+                className="title is-7"
+                onClick={handleSpreadItems}
+                onKeyDown={handleSpreadItems}
+              >
+                {column.name}
+                <span className="spread">
+                  <Add />
+                </span>
+              </div>
               <ul className="items">
                 {column.items.map(item => (
                   <li key={item.name}>
@@ -36,7 +62,7 @@ const Footer = () => {
               src={FooterLogoSVG.publicURL}
               alt="footer-logo"
             />
-            <div className="columns is-multiline socials">
+            <div className="columns is-multiline socials-desktop">
               {footerSocials.map(social => (
                 <div
                   key={social.name}
@@ -47,10 +73,18 @@ const Footer = () => {
           </div>
         </div>
         <div className="annotations">
-          <div className="lang">English</div>
+          <div className="lang">
+            <Language />
+            English
+          </div>
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
+        </div>
+        <div className="socials-mobile">
+          {footerSocials.map(social => (
+            <div key={social.name} className={social.name} />
+          ))}
         </div>
       </div>
     </footer>

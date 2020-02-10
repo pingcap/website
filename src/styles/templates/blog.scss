@@ -33,6 +33,10 @@ $navbar-height: 4.25rem; // 68px
       &:first-child {
         margin-left: 0;
       }
+
+      svg {
+        vertical-align: bottom;
+      }
     }
   }
 
@@ -199,7 +203,6 @@ $navbar-height: 4.25rem; // 68px
       }
 
       display: flex;
-      margin-left: -0.2rem;
 
       @each $social in $socials {
         .#{$social} {
