@@ -5,7 +5,7 @@ import Create from '@material-ui/icons/CreateOutlined'
 import DateRange from '@material-ui/icons/DateRange'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { footerSocials } from '../data/footer'
+import Socials from '../components/socials'
 import { graphql } from 'gatsby'
 
 const Blog = ({ data }) => {
@@ -124,9 +124,7 @@ const Blog = ({ data }) => {
                 >
                   <div className="title is-7">Follow to Join Us!</div>
                   <div className="socials">
-                    {footerSocials.map(social => (
-                      <div key={social.name} className={social.name} />
-                    ))}
+                    <Socials />
                   </div>
                 </div>
               </div>

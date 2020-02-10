@@ -1,9 +1,10 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import { footerColumns, footerSocials } from '../data/footer'
 
 import Add from '@material-ui/icons/Add'
 import Language from '@material-ui/icons/Language'
 import React from 'react'
+import Socials from './socials'
+import { footerColumns } from '../data/footer'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -63,12 +64,7 @@ const Footer = () => {
               alt="footer-logo"
             />
             <div className="columns is-multiline socials-desktop">
-              {footerSocials.map(social => (
-                <div
-                  key={social.name}
-                  className={`column is-4 ${social.name}`}
-                />
-              ))}
+              <Socials className="column is-4" />
             </div>
           </div>
         </div>
@@ -82,9 +78,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="socials-mobile">
-          {footerSocials.map(social => (
-            <div key={social.name} className={social.name} />
-          ))}
+          <Socials />
         </div>
       </div>
     </footer>
