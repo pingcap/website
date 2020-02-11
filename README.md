@@ -8,7 +8,7 @@
 ## How to start
 
 If you want to start to develop the PingCAP Website or you just want to contribute in one place.
-The Gatsby.js [https://www.gatsbyjs.org/](https://www.gatsbyjs.org/) is something you have to know.
+The Gatsby.js [https://gatsbyjs.org](https://gatsbyjs.org) is something you have to know.
 Because of PingCAP Website's development is highly dependent on Gatsby.js.
 
 Also, in order to build a flexible site, a server is essential.
@@ -69,8 +69,9 @@ You must set the token as an env when you start some commands, for example:
 GITHUB_AUTHORIZATION_TOKEN=token
 ```
 
-If you are developing the rocket server, the server use `dotenv` to load a `.env` file.
-So, create a `.env` file in the `server` folder and pass the `GITHUB_AUTHORIZATION_TOKEN=token` into it.
+If you are developing the rocket server, it use [dotenv](https://github.com/dotenv-rs/dotenv) to load a `.env` file.
+First, create a `.env` file in the `server` folder and pass the `GITHUB_AUTHORIZATION_TOKEN=token` into it.
+Then you can read it by using `dotenv!("GITHUB_AUTHORIZATION_TOKEN")`.
 
 For frontend developing, some scripts will also need this env variable, for example:
 
@@ -82,7 +83,7 @@ GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:dev
 
 **_If you want make a PR, you should read this part carefully._**
 
-As you can see, we use `husky` and `lint-staged` to make sure all commits follow the [prettier](https://prettier.io/) setting.
+We use [husky](https://www.npmjs.com/package/husky) and [lint-staged](https://www.npmjs.com/package/lint-staged) to make sure all commits follow the [prettier](https://prettier.io/) setting.
 
 **Don't break the rule!**
 
@@ -116,7 +117,7 @@ So, for example, our common scss codes `_common.scss` follow the bulma modifiers
 
 You can view more details in [https://bulma.io/documentation/modifiers/](https://bulma.io/documentation/modifiers/)
 
-**Also, Don't break the rule!**
+**Also, don't break the rule!**
 
 # License
 
