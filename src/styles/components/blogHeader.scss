@@ -18,6 +18,15 @@
       svg {
         vertical-align: bottom;
       }
+
+      a {
+        color: $B4;
+        text-decoration: underline;
+
+        &:hover {
+          color: $primary;
+        }
+      }
     }
   }
 }

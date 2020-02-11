@@ -16,7 +16,7 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
         <Link
           className="title is-4 is-spaced blog-title"
           to={`/blog/${title
-            .replace(/[?.,:%]/g, '')
+            .replace(/[?%]/g, '')
             .split(' ')
             .join('-')}`}
         >
@@ -34,7 +34,9 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
           <Create />
           {(author && author[0]) || 'PingCAP'}
         </span>
-        <span>{category}</span>
+        <span>
+          <Link to={`/blog/category/${category}`}>{category}</Link>
+        </span>
       </div>
     </section>
   )

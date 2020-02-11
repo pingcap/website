@@ -2,21 +2,21 @@ import BlogsComponent from '../components/blogs'
 import React from 'react'
 import { graphql } from 'gatsby'
 
-const BlogTags = ({ data, pageContext }) => (
+const BlogCategories = ({ data, pageContext }) => (
   <BlogsComponent
     data={data}
     pageContext={pageContext}
-    PaginationPathPrefix={`/blog/tag/${pageContext.tag}`}
-    isTagPage
+    PaginationPathPrefix={`/blog/category/${pageContext.category}`}
+    isCategoryPage
   />
 )
 
 export const query = graphql`
-  query($tag: String, $limit: Int!, $skip: Int!) {
+  query($category: String, $limit: Int!, $skip: Int!) {
     allMarkdownRemark(
       filter: {
         fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { tags: { in: [$tag] } }
+        frontmatter: { categories: { in: [$category] } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -38,4 +38,4 @@ export const query = graphql`
   }
 `
 
-export default BlogTags
+export default BlogCategories

@@ -18,12 +18,12 @@ const createBlogTags = async ({ graphql, createPage }) => {
   const tags = result.data.tags.group
   const blogsPerPage = 6
   tags.forEach(tagObj => {
-    const tag = tagObj.tag.split(' ').join('-')
+    const tag = tagObj.tag
     const totalCount = tagObj.totalCount
     const numPages = Math.ceil(totalCount / blogsPerPage)
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/blog/${tag}` : `/blog/${tag}/${i + 1}`,
+        path: i === 0 ? `/blog/tag/${tag}` : `/blog/tag/${tag}/${i + 1}`,
         component: blogTagsTemplate,
         context: {
           tag,

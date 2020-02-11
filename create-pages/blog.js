@@ -22,7 +22,7 @@ const createBlogs = async ({ graphql, createPage }) => {
   result.data.blogs.edges.forEach(({ node }) => {
     createPage({
       path: `blog/${node.frontmatter.title
-        .replace(/[?.,:%]/g, '')
+        .replace(/[?%]/g, '')
         .split(' ')
         .join('-')}`,
       component: blogTemplate,

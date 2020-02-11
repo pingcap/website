@@ -5,13 +5,25 @@ import Pagination from '../components/pagination'
 import React from 'react'
 import SEO from '../components/seo'
 
-const Blogs = ({ data, pageContext, PaginationPathPrefix }) => {
+const Blogs = ({
+  data,
+  pageContext,
+  PaginationPathPrefix,
+  isTagPage,
+  isCategoryPage,
+}) => {
   const blogs = data.allMarkdownRemark.edges
   const { currentPage, numPages } = pageContext
 
+  const title = isTagPage
+    ? pageContext.tag
+    : isCategoryPage
+    ? pageContext.category
+    : 'Blogs'
+
   return (
     <Layout>
-      <SEO title="Blogs" />
+      <SEO title={title} />
       <article className="PingCAP-Blogs">
         <section className="section section-blogs">
           <div className="container">
