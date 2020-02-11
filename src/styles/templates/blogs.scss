@@ -19,4 +19,110 @@
       line-height: 1.75;
     }
   }
+
+  .right-column {
+    @include mobile {
+      padding-left: unset;
+    }
+
+    padding-left: 3rem;
+
+    .main {
+      margin-top: 2rem;
+    }
+  }
+
+  .follow-us {
+    @include mobile {
+      display: none;
+    }
+
+    margin-top: 2rem;
+
+    .title {
+      color: $B3;
+      font-weight: bold;
+    }
+
+    .socials {
+      display: flex;
+
+      @each $social in $socials {
+        .#{$social} {
+          @include social($social);
+
+          width: 36px;
+          height: 36px;
+          margin-right: 1.3rem;
+          cursor: pointer;
+        }
+      }
+
+      .yc {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .categories-and-tags {
+    margin-top: 2rem;
+
+    .titles {
+      display: flex;
+      cursor: pointer;
+
+      .title {
+        @include has-item-active;
+
+        color: $B3;
+        outline: none;
+
+        &:hover {
+          &:after {
+            bottom: -0.5rem;
+          }
+        }
+
+        &.active {
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 50%;
+            width: 10px;
+            height: 3px;
+            background: $primary;
+            transform: translateX(-50%);
+          }
+        }
+      }
+
+      .categories-title {
+        margin-bottom: 0;
+        margin-right: 1rem;
+      }
+    }
+
+    .labels {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      > a {
+        margin: 1rem 1rem 0 0;
+        padding: 0.25rem 0.5rem;
+        height: auto;
+        color: $B4;
+        background: $B5;
+        font-size: $size-7;
+        border: none;
+
+        &.active,
+        &:hover {
+          color: #fff;
+          background: $primary;
+        }
+      }
+    }
+  }
 }

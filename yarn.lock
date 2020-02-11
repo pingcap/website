@@ -1254,10 +1254,10 @@
   dependencies:
     any-observable "^0.3.0"
 
-"@seagreenio/react-bulma@^0.1.0-beta.1":
-  version "0.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@seagreenio/react-bulma/-/react-bulma-0.1.0-beta.1.tgz#822f0122b076795809ab13336b6969fdbb54dd0d"
-  integrity sha512-UWuiVF51t03sbYUzo6zcGMThkSUHIC8TzAAzBX/GtigPkjtkJJq60JW2cYczS1sWAKRbBIPpAcVkuRTf+3AOHA==
+"@seagreenio/react-bulma@^0.1.0-beta.2":
+  version "0.1.0-beta.2"
+  resolved "https://registry.yarnpkg.com/@seagreenio/react-bulma/-/react-bulma-0.1.0-beta.2.tgz#9ba01bcdffe2e4f97c96887dc5a1ba46bd4680ce"
+  integrity sha512-AxWj6WPZYc1rDvx9tNWAIASwVO0iTq3WFmdN2sk/Y/Gds3Bf++wTXD4MTkSy1/UR2we7deBjvctekC4cqNDCMA==
   dependencies:
     classnames "^2.2.6"
     lodash.difference "^4.5.0"

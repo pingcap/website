@@ -7,7 +7,7 @@
   "dependencies": {
     "@material-ui/core": "^4.9.2",
     "@material-ui/icons": "^4.9.1",
-    "@seagreenio/react-bulma": "^0.1.0-beta.1",
+    "@seagreenio/react-bulma": "^0.1.0-beta.2",
     "axios": "^0.19.2",
     "gatsby": "^2.19.12",
     "gatsby-image": "^2.2.39",
