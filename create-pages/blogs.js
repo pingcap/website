@@ -4,7 +4,7 @@ const createBlogPagination = async ({ graphql, createPage }) => {
   const blogsTemplate = path.resolve(`${__dirname}/../src/templates/blogs.js`)
   const result = await graphql(`
     query {
-      allMarkdownRemark(
+      blogs: allMarkdownRemark(
         filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
         limit: 1000
       ) {
@@ -19,7 +19,7 @@ const createBlogPagination = async ({ graphql, createPage }) => {
     }
   `)
 
-  const blogs = result.data.allMarkdownRemark.edges
+  const blogs = result.data.blogs.edges
   const blogsPerPage = 6
   const numPages = Math.ceil(blogs.length / blogsPerPage)
   Array.from({ length: numPages }).forEach((_, i) => {

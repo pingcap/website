@@ -4,7 +4,7 @@ const createBlogs = async ({ graphql, createPage }) => {
   const blogTemplate = path.resolve(`${__dirname}/../src/templates/blog.js`)
   const result = await graphql(`
     query {
-      allMarkdownRemark(
+      blogs: allMarkdownRemark(
         filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
         limit: 1000
       ) {
@@ -19,7 +19,7 @@ const createBlogs = async ({ graphql, createPage }) => {
     }
   `)
 
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  result.data.blogs.edges.forEach(({ node }) => {
     createPage({
       path: `blog/${node.frontmatter.title
         .replace(/[?.,:%]/g, '')
