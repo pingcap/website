@@ -119,8 +119,6 @@ You can view more details in [https://bulma.io/documentation/modifiers/](https:/
 
 **Also, don't break the rule!**
 
-# License
-
-Currently no License.
+# Author
 
 Make with love 💙 by PingCAP FE.
