@@ -19,7 +19,10 @@ const Navbar = () => {
   const handleSetBurgerActive = () => setBurgerActive(!burgerActive)
 
   return (
-    <nav className="navbar is-fixed-top PingCAP-Navbar" role="navigation">
+    <nav
+      className="navbar has-shadow is-fixed-top PingCAP-Navbar"
+      role="navigation"
+    >
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item with-brand" to="/">

@@ -1,4 +1,4 @@
-$navbar-height: 4.25rem; // 68px
+$navbar-height: 5.25rem; // 68px
 
 .PingCAP-Blog {
   .section.section-blog {
@@ -93,12 +93,7 @@ $navbar-height: 4.25rem; // 68px
   }
 
   .right-column {
-    @include mobile {
-      padding-left: 0.75rem;
-    }
-
     position: relative;
-    padding-left: 3rem;
   }
 
   .toc {

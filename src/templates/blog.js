@@ -68,7 +68,7 @@ const Blog = ({ data }) => {
         <section className="section section-blog">
           <div className="container">
             <div className="columns">
-              <div className="column is-8">
+              <div className="column is-7">
                 <div className="under-category">{'Blog > ' + category}</div>
                 <BlogHeader frontmatter={frontmatter} />
                 <div
@@ -88,7 +88,7 @@ const Blog = ({ data }) => {
                   </div>
                 </section>
               </div>
-              <div className="column is-4 right-column">
+              <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
                   <div className="title is-7 toc-title">
                     What's on this page

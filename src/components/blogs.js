@@ -113,7 +113,7 @@ const Blogs = ({
         <section className="section section-blogs">
           <div className="container">
             <div className="columns">
-              <div className="column is-8">
+              <div className="column is-7">
                 <CategoriesAndTags isDesktop={false} />
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
@@ -129,7 +129,7 @@ const Blogs = ({
                   numPages={numPages}
                 />
               </div>
-              <div className="column is-4 right-column">
+              <div className="column is-4 is-offset-1 right-column">
                 <div className="main">
                   <PostFromUs />
                   <div className="follow-us">

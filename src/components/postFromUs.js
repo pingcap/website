@@ -18,7 +18,7 @@ const PostFromUs = () => {
   return (
     <NormalBox className="PingCAP-PostFromUs" shadowless>
       <img src={PostFromUsSVG.publicURL} alt="Post from Us" />
-      <h4 className="title is-4">Never Miss a Post from Us!</h4>
+      <h4 className="title is-6">Never Miss a Post from Us!</h4>
       <div className="field has-addons">
         <div className="control">
           <input className="input" type="text" />

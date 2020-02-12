@@ -43,6 +43,17 @@ const Pagination = ({ pathPrefix, currentPage, numPages }) => (
           {numPages}
         </Link>
       </li>
+      {currentPage !== numPages && (
+        <li>
+          <Link
+            to={`${pathPrefix}/${currentPage + 1}`}
+            className="pagination-link"
+            aria-label="Go to next page"
+          >
+            >
+          </Link>
+        </li>
+      )}
     </ul>
   </nav>
 )
