@@ -11,6 +11,7 @@
   .field.has-addons {
     .control {
       input {
+        padding-bottom: calc(0.6rem - 1px);
         background: $B5;
         border-color: $C2;
         box-shadow: none;

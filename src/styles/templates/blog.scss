@@ -10,9 +10,13 @@ $navbar-height: 5.25rem; // 68px
     position: fixed;
     top: $navbar-height;
     height: 1px;
-    background: $C2;
+    background: transparent;
     border-radius: 0;
     z-index: 30; // Same as .navbar.is-fixed-top
+
+    &:-webkit-progress-bar {
+      background: transparent;
+    }
   }
 
   .under-category {
@@ -39,8 +43,12 @@ $navbar-height: 5.25rem; // 68px
       }
     }
 
-    a.anchor {
-      top: $navbar-height;
+    a {
+      color: $primary;
+
+      &.anchor {
+        top: $navbar-height;
+      }
     }
 
     ul {
