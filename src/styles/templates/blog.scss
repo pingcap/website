@@ -94,7 +94,7 @@ $navbar-height: 4.25rem; // 68px
 
   .right-column {
     @include mobile {
-      padding-left: unset;
+      padding-left: 0.75rem;
     }
 
     position: relative;

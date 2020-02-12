@@ -58,6 +58,54 @@ const Blogs = ({
 
   const handleShowCategories = bool => _ => setShowCategories(bool)
 
+  const CategoriesAndTags = ({ isDesktop = true }) => (
+    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
+      <div className="titles">
+        <div
+          role="button"
+          tabIndex={0}
+          className={`title is-7 categories-title${
+            showCategories ? ' active' : ''
+          }`}
+          onClick={handleShowCategories(true)}
+          onKeyDown={handleShowCategories(true)}
+        >
+          Categories
+        </div>
+        <div
+          role="button"
+          tabIndex={0}
+          className={`title is-7${!showCategories ? ' active' : ''}`}
+          onClick={handleShowCategories(false)}
+          onKeyDown={handleShowCategories(false)}
+        >
+          Tags
+        </div>
+      </div>
+      <div className="labels">
+        {showCategories
+          ? categories.map(c => (
+              <Link
+                key={c}
+                className={currentCategory === c ? 'active' : ''}
+                to={`/blog/category/${c}`}
+              >
+                {c}
+              </Link>
+            ))
+          : tags.map(t => (
+              <Link
+                key={t}
+                className={currentTag === t ? 'active' : ''}
+                to={`/blog/tag/${t}`}
+              >
+                {t}
+              </Link>
+            ))}
+      </div>
+    </div>
+  )
+
   return (
     <Layout>
       <SEO title={title} />
@@ -66,6 +114,7 @@ const Blogs = ({
           <div className="container">
             <div className="columns">
               <div className="column is-8">
+                <CategoriesAndTags isDesktop={false} />
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
                     <BlogHeader frontmatter={node.frontmatter} isTitleLink />
@@ -89,53 +138,7 @@ const Blogs = ({
                       <Socials />
                     </div>
                   </div>
-                  <div className="categories-and-tags">
-                    <div className="titles">
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        className={`title is-7 categories-title${
-                          showCategories ? ' active' : ''
-                        }`}
-                        onClick={handleShowCategories(true)}
-                        onKeyDown={handleShowCategories(true)}
-                      >
-                        Categories
-                      </div>
-                      <div
-                        role="button"
-                        tabIndex={0}
-                        className={`title is-7${
-                          !showCategories ? ' active' : ''
-                        }`}
-                        onClick={handleShowCategories(false)}
-                        onKeyDown={handleShowCategories(false)}
-                      >
-                        Tags
-                      </div>
-                    </div>
-                    <div className="labels">
-                      {showCategories
-                        ? categories.map(c => (
-                            <Link
-                              key={c}
-                              className={currentCategory === c ? 'active' : ''}
-                              to={`/blog/category/${c}`}
-                            >
-                              {c}
-                            </Link>
-                          ))
-                        : tags.map(t => (
-                            <Link
-                              key={t}
-                              className={currentTag === t ? 'active' : ''}
-                              to={`/blog/tag/${t}`}
-                            >
-                              {t}
-                            </Link>
-                          ))}
-                    </div>
-                  </div>
+                  <CategoriesAndTags />
                 </div>
               </div>
             </div>

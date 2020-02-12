@@ -10,11 +10,12 @@ const BlogTags = ({ tags }) => {
 
   return (
     <div className="PingCAP-BlogTags">
-      {tags.map(tag => (
-        <Button key={tag} as="a" onClick={onClick(tag)}>
-          {tag}
-        </Button>
-      ))}
+      {tags &&
+        tags.map(tag => (
+          <Button key={tag} as="a" onClick={onClick(tag)}>
+            {tag}
+          </Button>
+        ))}
     </div>
   )
 }
