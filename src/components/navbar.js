@@ -1,7 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
+import React, { useEffect, useState } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
-import React, { useState } from 'react'
 import { navbarItems } from '../data/navbar'
 
 const Navbar = () => {
@@ -15,12 +15,23 @@ const Navbar = () => {
     `
   )
 
+  const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
   const handleSetBurgerActive = () => setBurgerActive(!burgerActive)
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      const winScrollTop = document.documentElement.scrollTop
+
+      setShowBorder(winScrollTop > 0)
+    })
+  }, [])
+
   return (
     <nav
-      className="navbar has-shadow is-fixed-top PingCAP-Navbar"
+      className={`navbar is-fixed-top PingCAP-Navbar${
+        showBorder ? ' has-border' : ''
+      }`}
       role="navigation"
     >
       <div className="container">

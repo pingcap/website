@@ -56,8 +56,10 @@
 
           display: inline-block;
 
-          &:after {
-            bottom: -0.3rem !important;
+          &:hover {
+            &:after {
+              content: none;
+            }
           }
         }
       }

@@ -89,7 +89,7 @@
 
         &:hover {
           &:after {
-            bottom: -0.5rem;
+            content: none;
           }
         }
 
@@ -117,6 +117,7 @@
         background: $B5;
         font-size: $size-7;
         border: none;
+        border-radius: 3px;
 
         &.active,
         &:hover {

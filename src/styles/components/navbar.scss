@@ -1,6 +1,10 @@
 .PingCAP-Navbar {
   height: 5.25rem;
 
+  &.has-border {
+    border-bottom: 1px solid $C2;
+  }
+
   .navbar-item {
     &.with-brand {
       padding-left: 1.5rem;

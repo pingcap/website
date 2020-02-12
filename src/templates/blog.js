@@ -23,7 +23,7 @@ const Blog = ({ data }) => {
     const footerHeight = footer.getBoundingClientRect().height
 
     let isReachFooter = false
-    window.onscroll = () => {
+    window.addEventListener('scroll', () => {
       const winScrollHeight = document.documentElement.scrollHeight
       const winClientHeight = document.documentElement.clientHeight
       const winScrollTop = document.documentElement.scrollTop
@@ -42,7 +42,7 @@ const Blog = ({ data }) => {
       const height = winScrollHeight - winClientHeight
       const scrolled = ((winScrollTop / height) * 100).toFixed()
       setReadingProgress(scrolled)
-    }
+    })
   }, [])
 
   return (
