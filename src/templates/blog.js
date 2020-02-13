@@ -15,6 +15,7 @@ const Blog = ({ data }) => {
     ? frontmatter.categories[0]
     : 'No Category'
 
+  const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
 
@@ -28,6 +29,8 @@ const Blog = ({ data }) => {
       const winClientHeight = document.documentElement.clientHeight
       const winScrollTop = document.documentElement.scrollTop
       const toFooter = winScrollHeight - winClientHeight - footerHeight
+
+      setShowProgress(winScrollTop > 0)
 
       if (winScrollTop > toFooter && !isReachFooter) {
         setFixedSocials(false)
@@ -58,13 +61,15 @@ const Blog = ({ data }) => {
         ]}
       />
       <article className="PingCAP-Blog">
-        <progress
-          className="progress is-primary blog-progress"
-          value={readingProgress}
-          max="100"
-        >
-          50%
-        </progress>
+        {showProgress && (
+          <progress
+            className="progress is-primary blog-progress"
+            value={readingProgress}
+            max="100"
+          >
+            {readingProgress}
+          </progress>
+        )}
         <section className="section section-blog">
           <div className="container">
             <div className="columns">

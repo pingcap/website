@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <nav
       className={`navbar is-fixed-top PingCAP-Navbar${
-        showBorder ? ' has-border' : ''
+        showBorder ? ' has-border-and-shadow' : ''
       }`}
       role="navigation"
     >

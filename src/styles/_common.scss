@@ -14,9 +14,9 @@ body {
     &:after {
       content: '';
       position: absolute;
-      bottom: 1rem;
+      bottom: 1.5rem;
       left: 50%;
-      width: 10px;
+      width: 20px;
       height: 3px;
       background: $primary;
       transform: translateX(-50%);
