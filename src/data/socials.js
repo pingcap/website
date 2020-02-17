@@ -36,7 +36,7 @@ const shareSocials = (link, title) => [
   },
   {
     name: 'linkedin',
-    href: `https://linkedin.com/shareArticle?mini=true&url=${link}`,
+    href: `https://linkedin.com/shareArticle?mini=true&url=${link}&title=${title}`,
   },
   {
     name: 'reddit',
