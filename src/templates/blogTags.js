@@ -16,7 +16,7 @@ export const query = graphql`
     allMarkdownRemark(
       filter: {
         fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { tags: { in: [$tag] } }
+        frontmatter: { tags: { in: [$tag] }, customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit

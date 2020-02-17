@@ -6,7 +6,9 @@ const createBlogCategories = async ({ graphql, createPage }) => {
   )
   const result = await graphql(`
     query {
-      categories: allMarkdownRemark {
+      categories: allMarkdownRemark(
+        filter: { frontmatter: { customer: { eq: null } } }
+      ) {
         group(field: frontmatter___categories) {
           category: fieldValue
           totalCount

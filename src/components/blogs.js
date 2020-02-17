@@ -33,12 +33,16 @@ const Blogs = ({
 
   const query = useStaticQuery(graphql`
     query {
-      categories: allMarkdownRemark {
+      categories: allMarkdownRemark(
+        filter: { frontmatter: { customer: { eq: null } } }
+      ) {
         group(field: frontmatter___categories) {
           category: fieldValue
         }
       }
-      tags: allMarkdownRemark {
+      tags: allMarkdownRemark(
+        filter: { frontmatter: { customer: { eq: null } } }
+      ) {
         group(field: frontmatter___tags) {
           tag: fieldValue
         }

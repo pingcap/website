@@ -13,7 +13,10 @@ const Blogs = ({ data, pageContext }) => (
 export const query = graphql`
   query($limit: Int!, $skip: Int!) {
     allMarkdownRemark(
-      filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
+      filter: {
+        fields: { collection: { eq: "markdown-pages/blogs" } }
+        frontmatter: { customer: { eq: null } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip

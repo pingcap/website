@@ -6,7 +6,9 @@ const createBlogTags = async ({ graphql, createPage }) => {
   )
   const result = await graphql(`
     query {
-      tags: allMarkdownRemark {
+      tags: allMarkdownRemark(
+        filter: { frontmatter: { customer: { eq: null } } }
+      ) {
         group(field: frontmatter___tags) {
           tag: fieldValue
           totalCount

@@ -5,7 +5,10 @@ const createBlogPagination = async ({ graphql, createPage }) => {
   const result = await graphql(`
     query {
       blogs: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
+        filter: {
+          fields: { collection: { eq: "markdown-pages/blogs" } }
+          frontmatter: { customer: { eq: null } }
+        }
         limit: 1000
       ) {
         edges {

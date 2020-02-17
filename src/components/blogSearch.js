@@ -8,7 +8,10 @@ const BlogSearch = ({ className }) => {
   let { blogs } = useStaticQuery(graphql`
     query {
       blogs: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
+        filter: {
+          fields: { collection: { eq: "markdown-pages/blogs" } }
+          frontmatter: { customer: { eq: null } }
+        }
         limit: 1000
       ) {
         edges {
