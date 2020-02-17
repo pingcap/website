@@ -135,7 +135,7 @@ const Blogs = ({
                   <div className="follow-us">
                     <div className="title is-7">Follow to Join Us!</div>
                     <div className="socials">
-                      <Socials />
+                      <Socials type="follow" />
                     </div>
                   </div>
                   <CategoriesAndTags />

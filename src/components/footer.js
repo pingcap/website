@@ -64,7 +64,7 @@ const Footer = () => {
               alt="footer-logo"
             />
             <div className="columns is-multiline socials-desktop">
-              <Socials className="column is-4" />
+              <Socials className="column is-4" type="follow" />
             </div>
           </div>
         </div>
@@ -78,7 +78,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="socials-mobile">
-          <Socials />
+          <Socials type="follow" />
         </div>
       </div>
     </footer>

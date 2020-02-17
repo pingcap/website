@@ -75,25 +75,4 @@ const footerColumns = [
   },
 ]
 
-const footerSocials = [
-  {
-    name: 'twitter',
-  },
-  {
-    name: 'facebook',
-  },
-  {
-    name: 'linkedin',
-  },
-  {
-    name: 'reddit',
-  },
-  {
-    name: 'slack',
-  },
-  {
-    name: 'yc',
-  },
-]
-
-export { footerColumns, footerSocials }
+export { footerColumns }

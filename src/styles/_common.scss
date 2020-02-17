@@ -1,4 +1,7 @@
 body {
+  @include mobile {
+    padding-top: 5.25rem;
+  }
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;
 }
 
@@ -24,7 +27,7 @@ body {
   }
 }
 
-$socials: twitter linkedin facebook reddit slack yc;
+$socials: twitter linkedin facebook reddit slack youtube yc;
 
 // Social Background
 @mixin social($name) {

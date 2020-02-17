@@ -107,9 +107,9 @@ const Blog = ({ data }) => {
                   className="follow-us"
                   style={{ display: fixedSocials ? 'block' : 'none' }}
                 >
-                  <div className="title is-7">Follow to Join Us!</div>
+                  <div className="title is-7">Welcome to share this post!</div>
                   <div className="socials">
-                    <Socials />
+                    <Socials type="share" title={frontmatter.title} />
                   </div>
                 </div>
               </div>
