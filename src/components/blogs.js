@@ -1,13 +1,14 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
-import BlogHeader from '../components/blogHeader'
-import BlogTags from '../components/blogTags'
-import Layout from '../components/layout'
-import Pagination from '../components/pagination'
-import PostFromUs from '../components/postFromUs'
-import SEO from '../components/seo'
-import Socials from '../components/socials'
+import BlogHeader from './blogHeader'
+import BlogSearch from './blogSearch'
+import BlogTags from './blogTags'
+import Layout from './layout'
+import Pagination from './pagination'
+import PostFromUs from './postFromUs'
+import SEO from './seo'
+import Socials from './socials'
 
 const Blogs = ({
   data,
@@ -114,6 +115,7 @@ const Blogs = ({
           <div className="container">
             <div className="columns">
               <div className="column is-7">
+                <BlogSearch className="search-mobile" />
                 <CategoriesAndTags isDesktop={false} />
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
@@ -131,6 +133,7 @@ const Blogs = ({
               </div>
               <div className="column is-4 is-offset-1 right-column">
                 <div className="main">
+                  <BlogSearch className="search-desktop" />
                   <PostFromUs />
                   <div className="follow-us">
                     <div className="title is-7">Follow to Join Us!</div>

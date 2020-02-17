@@ -39,3 +39,37 @@ $socials: twitter linkedin facebook reddit slack youtube yc;
     background-size: cover;
   }
 }
+
+// Common input style
+@mixin has-pingcap-input-style {
+  input {
+    padding-bottom: calc(0.6rem - 1px);
+    background: $B5;
+    color: $B3;
+    border-color: $C2;
+    box-shadow: none;
+
+    &::placeholder {
+      color: $B4;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $primary;
+    }
+
+    &:focus ~ .icon {
+      color: $primary !important;
+    }
+  }
+}
+
+.field {
+  .control {
+    @include has-pingcap-input-style;
+
+    .icon {
+      color: $B4;
+    }
+  }
+}

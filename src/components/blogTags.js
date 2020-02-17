@@ -9,14 +9,14 @@ const BlogTags = ({ tags }) => {
   }
 
   return (
-    <div className="PingCAP-BlogTags">
+    <section className="PingCAP-BlogTags">
       {tags &&
         tags.map(tag => (
           <Button key={tag} as="a" onClick={onClick(tag)}>
             {tag}
           </Button>
         ))}
-    </div>
+    </section>
   )
 }
 

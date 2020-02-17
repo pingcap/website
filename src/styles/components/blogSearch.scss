@@ -1,0 +1,42 @@
+.PingCAP-BlogSearch {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  .field {
+    margin-bottom: 0;
+
+    .control {
+      input {
+        &:hover,
+        &:focus {
+          border-color: $C2;
+        }
+
+        &.with-panel:focus {
+          border-bottom: none;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+      }
+    }
+  }
+
+  .panel {
+    position: absolute;
+    background: #fff;
+    border: 1px solid $C2;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 30;
+
+    .panel-block {
+      color: $B4;
+      cursor: pointer;
+
+      &:hover {
+        color: $B3;
+        background: $B5;
+      }
+    }
+  }
+}
