@@ -102,6 +102,10 @@ $navbar-height: 5.25rem; // 68px
 
   .right-column {
     position: relative;
+
+    .title {
+      color: $B3;
+    }
   }
 
   .toc {
@@ -110,11 +114,6 @@ $navbar-height: 5.25rem; // 68px
     }
 
     margin-top: 4rem;
-
-    .toc-title {
-      color: $B3;
-      font-weight: bold;
-    }
 
     .toc-content {
       a {
@@ -136,6 +135,22 @@ $navbar-height: 5.25rem; // 68px
     }
   }
 
+  .related-blog {
+    margin-top: 2rem;
+
+    .blogs {
+      .blog-link-title {
+        margin-top: 0;
+        font-size: $size-6;
+      }
+
+      .blog-subtitle {
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid $C2;
+      }
+    }
+  }
+
   .follow-us {
     @include mobile {
       position: fixed;
@@ -153,9 +168,6 @@ $navbar-height: 5.25rem; // 68px
       @include mobile {
         display: none;
       }
-
-      color: $B3;
-      font-weight: bold;
     }
 
     .socials {

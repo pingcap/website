@@ -20,11 +20,15 @@ const Navbar = () => {
   const handleSetBurgerActive = () => setBurgerActive(!burgerActive)
 
   useEffect(() => {
-    window.addEventListener('scroll', () => {
+    const scrollListener = () => {
       const winScrollTop = document.documentElement.scrollTop
 
       setShowBorder(winScrollTop > 0)
-    })
+    }
+
+    window.addEventListener('scroll', scrollListener)
+
+    return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
   return (

@@ -14,7 +14,7 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
         <Link
-          className="title is-4 is-spaced blog-title"
+          className="title is-4 is-spaced blog-link-title"
           to={`/blog/${title
             .replace(/[?%]/g, '')
             .split(' ')

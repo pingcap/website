@@ -4,6 +4,12 @@
     color: $B3;
   }
 
+  .blog-link-title {
+    @extend .blog-title;
+
+    display: inline-block;
+  }
+
   .blog-subtitle {
     margin-bottom: 1.5rem;
     color: $B4;

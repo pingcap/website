@@ -7,6 +7,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 import { graphql } from 'gatsby'
+import intersection from 'lodash.intersection'
 
 const Blog = ({ data }) => {
   const { markdownRemark } = data
@@ -18,13 +19,15 @@ const Blog = ({ data }) => {
   const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
+  const [relatedBlogsRef, setRelatedBlogsRef] = useState(null)
 
   useEffect(() => {
     const footer = document.querySelector('.footer.PingCAP-Footer')
     const footerHeight = footer.getBoundingClientRect().height
 
     let isReachFooter = false
-    window.addEventListener('scroll', () => {
+
+    const scrollListener = () => {
       const winScrollHeight = document.documentElement.scrollHeight
       const winClientHeight = document.documentElement.clientHeight
       const winScrollTop = document.documentElement.scrollTop
@@ -45,7 +48,28 @@ const Blog = ({ data }) => {
       const height = winScrollHeight - winClientHeight
       const scrolled = ((winScrollTop / height) * 100).toFixed()
       setReadingProgress(scrolled)
-    })
+    }
+
+    window.addEventListener('scroll', scrollListener)
+
+    return () => window.removeEventListener('scroll', scrollListener)
+  }, [])
+
+  useEffect(() => {
+    setRelatedBlogsRef(
+      data.blogs.edges
+        .map(edge => edge.node)
+        .filter(
+          node =>
+            intersection(node.frontmatter.tags, frontmatter.tags).length > 0
+        )
+        .filter(node => node.frontmatter.title !== frontmatter.title)
+        .sort(
+          (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+        )
+        .slice(0, 3)
+    )
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -95,13 +119,24 @@ const Blog = ({ data }) => {
               </div>
               <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
-                  <div className="title is-7 toc-title">
-                    What's on this page
-                  </div>
+                  <div className="title is-7">What's on this page</div>
                   <div
                     className="toc-content"
                     dangerouslySetInnerHTML={{ __html: tableOfContents }}
                   />
+                </div>
+                <div className="related-blog">
+                  <div className="title is-7">Related blog</div>
+                  <div className="blogs">
+                    {relatedBlogsRef &&
+                      relatedBlogsRef.map(blog => (
+                        <BlogHeader
+                          key={blog.frontmatter.title}
+                          frontmatter={blog.frontmatter}
+                          isTitleLink
+                        />
+                      ))}
+                  </div>
                 </div>
                 <div
                   className="follow-us"
@@ -133,6 +168,22 @@ export const query = graphql`
         categories
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
+    }
+    blogs: allMarkdownRemark(
+      filter: { fields: { collection: { eq: "markdown-pages/blogs" } } }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            date(formatString: "YYYY-MM-DD")
+            author
+            tags
+            categories
+          }
+        }
+      }
     }
   }
 `
