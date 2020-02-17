@@ -26,8 +26,8 @@ module.exports = {
         plugins: [`gatsby-remark-autolink-headers`],
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -47,6 +47,13 @@ module.exports = {
       resolve: `gatsby-plugin-sass`,
       options: {
         useResolveUrlLoader: true,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        whitelist: ['box', 'is-shadowless'],
       },
     },
   ],
