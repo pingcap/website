@@ -35,14 +35,14 @@ module.exports = {
         short_name: 'PingCAP',
         start_url: '/',
         background_color: '#fff',
-        theme_color: 'blue',
+        theme_color: '#2e2fff',
         display: 'minimal-ui',
         icon: 'images/pingcap-icon.png', // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -53,7 +53,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
-        whitelist: ['box', 'is-shadowless'],
+        whitelist: ['is-rounded', 'box', 'is-shadowless'],
       },
     },
   ],
