@@ -1,6 +1,7 @@
-import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
+import { graphql, useStaticQuery } from 'gatsby'
+
+import React from 'react'
 
 const NormalBox = withNormalHelpers(Box)
 
