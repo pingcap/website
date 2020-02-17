@@ -51,8 +51,6 @@
 
       @each $social in $socials {
         .#{$social} {
-          @include social($social);
-
           width: 36px;
           height: 36px;
           margin-right: 1.3rem;

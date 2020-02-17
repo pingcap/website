@@ -91,8 +91,6 @@
 
     @each $social in $socials {
       .#{$social} {
-        @include social($social);
-
         width: 36px;
         height: 36px;
         margin: 0 1.3rem 1rem 0;
@@ -140,8 +138,6 @@
 
     @each $social in $socials {
       .#{$social} {
-        @include social($social);
-
         width: 36px;
         height: 36px;
         margin-right: 1.3rem;
