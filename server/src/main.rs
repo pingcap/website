@@ -5,7 +5,6 @@ extern crate rocket;
 #[macro_use]
 extern crate dotenv_codegen;
 
-mod blog;
 mod github;
 mod rest;
 
@@ -29,9 +28,6 @@ fn index() -> Json<IndexJson> {
 fn main() {
     rocket::ignite()
         .mount("/", routes![index])
-        .mount(
-            rest::rest_config::PREFIX_V1,
-            routes![blog::blogs, blog::blog],
-        )
+        .mount(rest::rest_config::PREFIX_V1, routes![])
         .launch();
 }

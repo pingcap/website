@@ -2,9 +2,9 @@ pub mod rest_config {
   use reqwest::{header, Client};
 
   pub const PREFIX_V1: &'static str = "/api/v1";
-  pub const USER_AGENT: &'static str = "PingCAPWebsite";
+  pub const USER_AGENT: &'static str = "PingCAPWebsite/0.1.0";
 
-  pub fn client() -> Client {
+  pub fn github_client() -> Client {
     use header::{HeaderMap, ACCEPT, AUTHORIZATION};
 
     let mut headers = HeaderMap::new();
