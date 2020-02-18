@@ -1,3 +1,4 @@
+import { Link, graphql } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -6,7 +7,6 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
-import { graphql } from 'gatsby'
 import intersection from 'lodash.intersection'
 
 const Blog = ({ data }) => {
@@ -98,7 +98,11 @@ const Blog = ({ data }) => {
           <div className="container">
             <div className="columns">
               <div className="column is-7">
-                <div className="under-category">{'Blog > ' + category}</div>
+                <div className="under-category">
+                  <Link to="/blog">Blog</Link>
+                  <span> > </span>
+                  <Link to={`/blog/category/${category}`}>{category}</Link>
+                </div>
                 <BlogHeader frontmatter={frontmatter} />
                 <div
                   className="markdown-body blog-content"
@@ -125,19 +129,20 @@ const Blog = ({ data }) => {
                     dangerouslySetInnerHTML={{ __html: tableOfContents }}
                   />
                 </div>
-                <div className="related-blog">
-                  <div className="title is-7">Related blog</div>
-                  <div className="blogs">
-                    {relatedBlogsRef &&
-                      relatedBlogsRef.map(blog => (
+                {relatedBlogsRef && (
+                  <div className="related-blog">
+                    <div className="title is-7">Related blog</div>
+                    <div className="blogs">
+                      {relatedBlogsRef.map(blog => (
                         <BlogHeader
                           key={blog.frontmatter.title}
                           frontmatter={blog.frontmatter}
                           isTitleLink
                         />
                       ))}
+                    </div>
                   </div>
-                </div>
+                )}
                 <div
                   className="follow-us"
                   style={{ display: fixedSocials ? 'block' : 'none' }}

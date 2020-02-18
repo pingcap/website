@@ -21,6 +21,14 @@ $navbar-height: 5.25rem; // 68px
 
   .under-category {
     color: $B3;
+
+    a {
+      color: $B3;
+
+      &:hover {
+        color: $primary;
+      }
+    }
   }
 
   // Custom markdown body

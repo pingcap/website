@@ -38,12 +38,12 @@ const BlogSearch = ({ className }) => {
     setSearch(value)
 
     if (value.length > 3) {
-      setWithPanel(true)
-      setSearchResults(
-        blogs.filter(blog =>
-          blog.frontmatter.title.toLowerCase().includes(value.toLowerCase())
-        )
+      const results = blogs.filter(blog =>
+        blog.frontmatter.title.toLowerCase().includes(value.toLowerCase())
       )
+
+      setWithPanel(results.length > 0)
+      setSearchResults(results.length ? results : null)
     } else {
       setWithPanel(false)
       setSearchResults(null)
