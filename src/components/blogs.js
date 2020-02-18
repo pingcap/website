@@ -124,7 +124,13 @@ const Blogs = ({
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
                     <BlogHeader frontmatter={node.frontmatter} isTitleLink />
-                    <div className="tmp-green-box" />
+                    {node.frontmatter.image && (
+                      <img
+                        className="banner"
+                        src={`https://download.pingcap.com${node.frontmatter.image}`}
+                        alt="banner"
+                      />
+                    )}
                     <div className="summary">{node.frontmatter.summary}</div>
                     <BlogTags tags={node.frontmatter.tags} />
                   </div>

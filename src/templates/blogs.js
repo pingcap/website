@@ -30,6 +30,7 @@ export const query = graphql`
             tags
             categories
             summary
+            image
           }
         }
       }
