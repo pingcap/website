@@ -1,8 +1,8 @@
 body {
-  @include mobile {
-    padding-top: 5.25rem;
-  }
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;
+  @include mobile {
+    padding-top: 4.25rem;
+  }
 }
 
 // Use in navbar and footer item

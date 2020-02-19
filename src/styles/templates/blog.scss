@@ -1,4 +1,5 @@
-$navbar-height: 5.25rem; // 68px
+$navbar-height: 5.25rem; // 84px
+$navbar-height-mobile: 4.25rem; // 68px
 
 .PingCAP-Blog {
   .section.section-blog {
@@ -7,6 +8,10 @@ $navbar-height: 5.25rem; // 68px
   }
 
   .blog-progress {
+    @include mobile {
+      top: calc(#{$navbar-height-mobile} - 1px);
+    }
+
     position: fixed;
     top: calc(#{$navbar-height} - 1px);
     height: 1px;
@@ -43,10 +48,19 @@ $navbar-height: 5.25rem; // 68px
     h4,
     h5,
     h6 {
+      @include mobile {
+        padding-top: $navbar-height-mobile;
+        margin-top: -$navbar-height-mobile;
+      }
+
       padding-top: $navbar-height;
       margin-top: -$navbar-height;
 
       &:first-child {
+        @include mobile {
+          margin-top: -$navbar-height-mobile !important;
+        }
+
         margin-top: -$navbar-height !important;
       }
     }
@@ -55,6 +69,10 @@ $navbar-height: 5.25rem; // 68px
       color: $primary;
 
       &.anchor {
+        @include mobile {
+          top: $navbar-height-mobile;
+        }
+
         top: $navbar-height;
       }
     }

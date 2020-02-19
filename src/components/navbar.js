@@ -72,7 +72,7 @@ const Navbar = () => {
             ))}
           </div>
           <div className="navbar-end">
-            <div className="navbar-item">
+            <div className="navbar-item with-free-download">
               <Button as="a" className="free-download" color="primary" rounded>
                 Free Download
               </Button>
