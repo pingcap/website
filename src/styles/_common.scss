@@ -29,7 +29,7 @@ body {
 
 $socials: twitter linkedin facebook reddit slack youtube yc;
 
-// Social Background
+// Socials' Background
 @each $social in $socials {
   .#{$social} {
     background: url(../../images/socials/#{$social}.svg);
@@ -69,6 +69,10 @@ $socials: twitter linkedin facebook reddit slack youtube yc;
       color: $primary !important;
     }
   }
+}
+
+.title {
+  line-height: 1.2;
 }
 
 .field {

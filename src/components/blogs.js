@@ -69,7 +69,7 @@ const Blogs = ({
         <div
           role="button"
           tabIndex={0}
-          className={`title is-7 categories-title${
+          className={`title is-6 categories-title${
             showCategories ? ' active' : ''
           }`}
           onClick={handleShowCategories(true)}
@@ -80,7 +80,7 @@ const Blogs = ({
         <div
           role="button"
           tabIndex={0}
-          className={`title is-7${!showCategories ? ' active' : ''}`}
+          className={`title is-6${!showCategories ? ' active' : ''}`}
           onClick={handleShowCategories(false)}
           onKeyDown={handleShowCategories(false)}
         >
@@ -146,7 +146,7 @@ const Blogs = ({
                   <BlogSearch className="search-desktop" />
                   <PostFromUs />
                   <div className="follow-us">
-                    <div className="title is-7">Follow to Join Us!</div>
+                    <div className="title is-6">Follow to Join Us!</div>
                     <div className="socials">
                       <Socials type="follow" />
                     </div>

@@ -123,7 +123,7 @@ const Blog = ({ data }) => {
               </div>
               <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
-                  <div className="title is-7">What's on this page</div>
+                  <div className="title is-6">What's on this page</div>
                   <div
                     className="toc-content"
                     dangerouslySetInnerHTML={{ __html: tableOfContents }}
@@ -131,13 +131,14 @@ const Blog = ({ data }) => {
                 </div>
                 {relatedBlogsRef && (
                   <div className="related-blog">
-                    <div className="title is-7">Related blog</div>
+                    <div className="title is-6">Related blog</div>
                     <div className="blogs">
                       {relatedBlogsRef.map(blog => (
                         <BlogHeader
                           key={blog.frontmatter.title}
                           frontmatter={blog.frontmatter}
                           isTitleLink
+                          withIcon={false}
                         />
                       ))}
                     </div>
@@ -147,7 +148,7 @@ const Blog = ({ data }) => {
                   className="follow-us"
                   style={{ display: fixedSocials ? 'block' : 'none' }}
                 >
-                  <div className="title is-7">Welcome to share this post!</div>
+                  <div className="title is-6">Welcome to share this post!</div>
                   <div className="socials">
                     <Socials type="share" title={frontmatter.title} />
                   </div>

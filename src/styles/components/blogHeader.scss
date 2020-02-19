@@ -11,14 +11,17 @@
   }
 
   .blog-subtitle {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 1.5rem;
     color: $B4;
 
     span {
-      margin: 0 1rem;
+      margin-right: 2rem;
 
-      &:first-child {
-        margin-left: 0;
+      &:last-child {
+        margin-top: 0.25rem;
+        margin-right: 0;
       }
 
       svg {

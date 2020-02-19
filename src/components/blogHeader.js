@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const BlogHeader = ({ frontmatter, isTitleLink }) => {
+const BlogHeader = ({ frontmatter, isTitleLink, withIcon = true }) => {
   const { title, date, author } = frontmatter
   const category = frontmatter.categories
     ? frontmatter.categories[0]
@@ -27,11 +27,11 @@ const BlogHeader = ({ frontmatter, isTitleLink }) => {
       )}
       <div className="subtitle is-7 is-spaced blog-subtitle">
         <span>
-          <DateRange />
+          {withIcon && <DateRange />}
           {date}
         </span>
         <span>
-          <Create />
+          {withIcon && <Create />}
           {(author && author[0]) || 'PingCAP'}
         </span>
         <span>
