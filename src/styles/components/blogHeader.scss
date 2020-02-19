@@ -1,5 +1,9 @@
 .PingCAP-BlogHeader {
   .blog-title {
+    @include mobile {
+      font-size: $size-5;
+    }
+
     margin-top: 2rem;
     color: $B3;
   }
@@ -18,10 +22,15 @@
 
     span {
       margin-right: 2rem;
+      margin-bottom: 0.25rem;
 
       &:last-child {
         margin-top: 0.25rem;
         margin-right: 0;
+      }
+
+      &.without-icon {
+        margin-top: 0;
       }
 
       svg {

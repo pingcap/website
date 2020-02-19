@@ -60,7 +60,7 @@
     .navbar-burger {
       position: absolute;
       top: 0.5rem;
-      right: 0;
+      right: 0.5rem;
       background: none;
       color: $B1;
       border: none;
@@ -68,7 +68,7 @@
       -webkit-tap-highlight-color: transparent;
 
       span {
-        width: $size-6;
+        width: $size-5;
       }
     }
   }

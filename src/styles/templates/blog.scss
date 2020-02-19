@@ -167,11 +167,12 @@ $navbar-height-mobile: 4.25rem; // 68px
     .blogs {
       .blog-link-title {
         margin-top: 0;
+        margin-bottom: 1rem;
         font-size: $size-7;
       }
 
       .blog-subtitle {
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
         border-bottom: 1px solid $C2;
       }
     }

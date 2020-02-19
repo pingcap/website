@@ -98,6 +98,7 @@
 
     @each $social in $socials {
       .#{$social} {
+        width: 36px;
         margin: 0 1.3rem 1rem 0;
       }
     }

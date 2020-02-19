@@ -34,7 +34,7 @@ const BlogHeader = ({ frontmatter, isTitleLink, withIcon = true }) => {
           {withIcon && <Create />}
           {(author && author[0]) || 'PingCAP'}
         </span>
-        <span>
+        <span className={!withIcon ? 'without-icon' : ''}>
           <Link to={`/blog/category/${category}`}>{category}</Link>
         </span>
       </div>

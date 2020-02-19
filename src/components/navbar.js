@@ -66,7 +66,7 @@ const Navbar = () => {
                 key={item.name}
                 to={item.href}
                 className="navbar-item with-main-section"
-                onTouchStart=""
+                onTouchStart={() => {}}
               >
                 {item.name}
               </Link>

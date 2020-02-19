@@ -51,7 +51,7 @@ const Footer = () => {
               <ul className="items">
                 {column.items.map(item => (
                   <li key={item.name}>
-                    <Link to="/" onTouchStart="">
+                    <Link to="/" onTouchStart={() => {}}>
                       {item.name}
                     </Link>
                   </li>
