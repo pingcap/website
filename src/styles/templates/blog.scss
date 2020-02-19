@@ -205,10 +205,7 @@ $navbar-height-mobile: 4.25rem; // 68px
 
       @each $social in $socials {
         .#{$social} {
-          width: 36px;
-          height: 36px;
           margin-right: 1.3rem;
-          cursor: pointer;
         }
       }
 
