@@ -4,8 +4,11 @@
 extern crate rocket;
 #[macro_use]
 extern crate dotenv_codegen;
+#[macro_use]
+extern crate lazy_static;
 
-mod github;
+mod github_api;
+mod google_api;
 mod rest;
 
 use rocket_contrib::json::Json;

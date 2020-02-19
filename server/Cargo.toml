@@ -13,6 +13,7 @@ reqwest = { version = "0.10", features = ["json"] }
 tokio = { version = "0.2", features = ["full"] }
 # diesel = { version = "1.4", features = ["sqlite", "r2d2"] }
 dotenv_codegen = "0.15.0"
+lazy_static = "1.4.0"
 
 [dependencies.rocket_contrib]
 version = "0.4.2"
