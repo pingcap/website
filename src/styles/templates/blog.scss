@@ -1,3 +1,9 @@
+@import '../global';
+
+// Components Styles
+@import '../components/blogHeader';
+@import '../components/blogTags';
+
 $navbar-height: 5.25rem; // 84px
 $navbar-height-mobile: 4.25rem; // 68px
 

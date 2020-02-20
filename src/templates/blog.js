@@ -1,3 +1,5 @@
+import '../styles/templates/blog.scss'
+
 import { Link, graphql } from 'gatsby'
 import React, { useEffect, useState } from 'react'
 
