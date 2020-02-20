@@ -37,7 +37,8 @@
     "node-sass": "^4.13.1",
     "prettier": "^1.19.1",
     "replacestream": "^4.0.3",
-    "resolve-url-loader": "^3.1.1"
+    "resolve-url-loader": "^3.1.1",
+    "rimraf": "^3.0.2"
   },
   "keywords": [
     "gatsby"
@@ -50,7 +51,8 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "download:blogs:dev": "cross-env NODE_ENV=development node ./markdown-pages/download-blogs.js",
-    "download:blogs:prod": "cross-env NODE_ENV=production node ./markdown-pages/download-blogs.js"
+    "download:blogs:prod": "cross-env NODE_ENV=production node ./markdown-pages/download-blogs.js",
+    "delete:blogs": "rimraf ./markdown-pages/blogs/*.md"
   },
   "repository": {
     "type": "git",
