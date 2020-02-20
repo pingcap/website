@@ -1,3 +1,4 @@
+import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
 import { graphql, useStaticQuery } from 'gatsby'
