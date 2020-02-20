@@ -4,9 +4,16 @@ import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-const BlogHeader = ({ frontmatter, isTitleLink, withIcon = true }) => {
-  const { title, date, author } = frontmatter
-  const category = frontmatter.categories
+const BlogHeader = ({
+  frontmatter,
+  isTitleLink,
+  withIcon = true,
+  isCaseStudy = false,
+}) => {
+  const { title, date, author, customer } = frontmatter
+  const category = isCaseStudy
+    ? frontmatter.customerCategory
+    : frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
 
@@ -32,7 +39,7 @@ const BlogHeader = ({ frontmatter, isTitleLink, withIcon = true }) => {
         </span>
         <span>
           {withIcon && <Create />}
-          {(author && author[0]) || 'PingCAP'}
+          {isCaseStudy ? customer : (author && author[0]) || 'PingCAP'}
         </span>
         <span className={!withIcon ? 'without-icon' : ''}>
           <Link to={`/blog/category/${category}`}>{category}</Link>

@@ -9,6 +9,7 @@ const createBlogs = require('./create-pages/blog')
 const createBlogPagination = require('./create-pages/blogs')
 const createBlogTags = require('./create-pages/blogTags')
 const createBlogCategories = require('./create-pages/blogCategories')
+const caseStudies = require('./create-pages/caseStudies')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
@@ -17,6 +18,7 @@ exports.createPages = async ({ actions, graphql }) => {
   createBlogPagination({ graphql, createPage })
   createBlogTags({ graphql, createPage })
   createBlogCategories({ graphql, createPage })
+  caseStudies({ graphql, createPage })
 }
 
 exports.onCreateNode = ({ actions, node, getNode }) => {
