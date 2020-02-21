@@ -1,4 +1,11 @@
-@import './predefined';
+@import './variables';
+@import '../../node_modules/bulma/sass/utilities/all';
+
+@mixin VHCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 // Use in navbar and footer item
 @mixin has-item-active {
@@ -62,5 +69,28 @@ $socials: twitter linkedin facebook reddit slack youtube yc;
     &:focus ~ .icon {
       color: $primary !important;
     }
+  }
+}
+
+@mixin has-hover-arrow {
+  position: relative;
+  transition: 0.5s;
+
+  &:after {
+    content: '➔';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    padding-left: 50px;
+  }
+
+  &:hover:after {
+    opacity: 1;
+    left: 25px;
   }
 }

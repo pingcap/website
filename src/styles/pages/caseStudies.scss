@@ -1,1 +1,253 @@
-@import '../global';
+@import '../common';
+@import '../../../node_modules/swiper/css/swiper.min.css';
+
+@mixin pagination($connect-width) {
+  display: flex;
+
+  .bullet {
+    $bullet-width: 24px;
+
+    @include VHCenter;
+
+    position: relative;
+    width: $bullet-width;
+    height: $bullet-width;
+    margin-right: $connect-width;
+    border: 1px solid $B3;
+    border-radius: 50%;
+    outline: none;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: $B3;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: $bullet-width;
+      width: $connect-width;
+      height: 1px;
+      border: 1px dashed $C2;
+    }
+
+    &.active {
+      background: $C1;
+      border: none;
+
+      &:before {
+        background: $primary;
+      }
+    }
+  }
+}
+
+.PingCAP-CaseStudies {
+  .top-banner-wrapper {
+    position: relative;
+
+    .banner {
+      @include mobile {
+        height: 200px;
+      }
+    }
+
+    .titles {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      transform: translate3d(-50%, -50%, 0);
+      text-align: center;
+
+      .title {
+        @include mobile {
+          font-size: $size-4;
+        }
+
+        color: #fff;
+      }
+    }
+  }
+
+  .title-under-banner,
+  .title-under-swiper {
+    margin: 3rem 0 !important;
+    color: $B3;
+    text-align: center;
+  }
+
+  .title-under-banner {
+    margin-top: 0 !important;
+  }
+
+  .title-under-swiper {
+    @include mobile {
+      margin-top: 7.5rem !important;
+    }
+  }
+
+  .container {
+    overflow: hidden;
+  }
+
+  .swiper-container {
+    @include mobile {
+      width: 100%;
+      height: 600px;
+      overflow: visible;
+    }
+
+    width: 80%;
+    height: 450px;
+    margin: 0 auto;
+
+    .top {
+      @include mobile {
+        height: 100%;
+      }
+
+      height: 85%;
+    }
+
+    .swiper-slide {
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+
+      display: flex;
+
+      .intro {
+        @include VHCenter;
+
+        flex-direction: column;
+        flex: 1.5;
+
+        .quote-mark {
+          width: 18px;
+        }
+
+        .title {
+          margin: 1rem 0;
+          color: $B3;
+
+          .underline {
+            display: inline-block;
+            width: 12px;
+            height: 3px;
+            margin-right: 0.5rem;
+            background: $primary;
+          }
+        }
+
+        .subtitle {
+          color: $B4;
+          font-weight: bold;
+        }
+
+        .summary {
+          @include mobile {
+            max-height: 200px;
+            overflow-y: scroll;
+          }
+
+          padding: 0 3rem;
+          color: $B4;
+        }
+
+        .see-case-study {
+          @include mobile {
+            margin-bottom: 2rem;
+          }
+          @include has-hover-arrow;
+
+          margin-top: 1rem;
+          color: $primary;
+        }
+      }
+
+      .placeholder {
+        position: relative;
+        flex: 1;
+
+        img {
+          @include mobile {
+            right: 50%;
+            height: 75%;
+            transform: translate3d(50%, -50%, 0);
+          }
+
+          position: absolute;
+          right: 3rem;
+          width: 90%;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    .bottom {
+      @include mobile {
+        justify-content: center;
+      }
+
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 15%;
+      padding: 0 3rem;
+      padding-bottom: 2rem;
+    }
+
+    .swiper-prev,
+    .swiper-next {
+      @include mobile {
+        display: none;
+      }
+
+      width: 36px;
+      height: 36px;
+      color: $B3;
+      border: 1px solid $B3;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &:hover {
+        color: #fff;
+        background: $B3;
+      }
+    }
+
+    .swiper-custom-pagination {
+      @include pagination(140px);
+      @include mobile {
+        $connect-width: 70px;
+
+        position: relative;
+        top: 15px;
+
+        .bullet {
+          margin-right: $connect-width;
+
+          &:after {
+            width: $connect-width;
+          }
+        }
+      }
+    }
+  }
+}
