@@ -1,0 +1,28 @@
+const logos = [
+  'JD-Cloud',
+  'Zhihu',
+  'Xiaomi',
+  'BookMyShow',
+  'Shopee',
+  'Meituan-Dianping',
+  'iQiyi',
+  'Zhuan-Zhuan',
+  'Mobike',
+  'Yuanfudao-com',
+  'NetEase-Games',
+  'GAEA',
+  'JD-Cloud',
+  'Zhihu',
+  'Xiaomi',
+  'BookMyShow',
+  'Shopee',
+  'Meituan-Dianping',
+  'iQiyi',
+  'Zhuan-Zhuan',
+  'Mobike',
+  'Yuanfudao-com',
+  'NetEase-Games',
+  'GAEA',
+].map(logo => logo + '-logo')
+
+module.exports = [...logos]

@@ -1,3 +1,5 @@
+const purgecssWhitelist = require('./purgecss-whitelist')
+
 module.exports = {
   siteMetadata: {
     title: 'PingCAP',
@@ -53,7 +55,11 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: true,
-        whitelist: ['is-rounded', 'box', 'is-shadowless'],
+        content: [
+          `${__dirname}/src/**/*.js`,
+          `${__dirname}/node_modules/@seagreenio/react-bulma/dist/index.es.js`,
+        ],
+        whitelist: purgecssWhitelist,
       },
     },
   ],
