@@ -3,6 +3,32 @@
 @import './common';
 @import '../../node_modules/bulma/bulma.sass';
 
+// Socials' Background
+@each $social in $socials {
+  .#{$social} {
+    background: url(../../images/socials/#{$social}.svg);
+    background-size: cover;
+
+    &:hover {
+      background: url(../../images/socials/#{$social}-hl.svg);
+      background-size: cover;
+    }
+
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+}
+
+@each $logo in $logos {
+  .#{$logo}-logo {
+    background: url(../../images/logos/#{$logo}.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 body {
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;
   @include mobile {

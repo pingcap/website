@@ -4,7 +4,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
   const caseStudyTemplate = path.resolve(
     `${__dirname}/../src/templates/caseStudy.js`
   )
-  const result = await graphql(`
+  const { data } = await graphql(`
     query {
       caseStudies: allMarkdownRemark(
         filter: {
@@ -17,6 +17,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
           node {
             frontmatter {
               title
+              customerCategory
             }
           }
         }
@@ -24,7 +25,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
     }
   `)
 
-  result.data.caseStudies.edges.forEach(({ node }) => {
+  data.caseStudies.edges.forEach(({ node }) => {
     createPage({
       path: `case-studies/${node.frontmatter.title
         .replace(/[?%]/g, '')
@@ -34,6 +35,23 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       context: {
         title: node.frontmatter.title,
       },
+    })
+  })
+
+  const categoriesOfStudies = [
+    ...new Set(
+      data.caseStudies.edges.map(
+        ({ node }) => node.frontmatter.customerCategory
+      )
+    ),
+  ]
+  categoriesOfStudies.forEach(c => {
+    const pagePath = `case-studies/${c.split(' ').join('-')}`
+
+    createPage({
+      path: pagePath,
+      matchPath: pagePath,
+      component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
     })
   })
 }

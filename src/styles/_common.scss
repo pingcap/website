@@ -1,7 +1,11 @@
 @import './variables';
 @import '../../node_modules/bulma/sass/utilities/all';
 
-@mixin VHCenter() {
+$socials: twitter linkedin facebook reddit slack youtube yc;
+$logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
+  Zhuan-Zhuan Mobike Yuanfudao-com NetEase-Games GAEA;
+
+@mixin VHCenter {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,25 +30,6 @@
       background: $primary;
       transform: translateX(-50%);
     }
-  }
-}
-
-$socials: twitter linkedin facebook reddit slack youtube yc;
-
-// Socials' Background
-@each $social in $socials {
-  .#{$social} {
-    background: url(../../images/socials/#{$social}.svg);
-    background-size: cover;
-
-    &:hover {
-      background: url(../../images/socials/#{$social}-hl.svg);
-      background-size: cover;
-    }
-
-    width: 36px;
-    height: 36px;
-    cursor: pointer;
   }
 }
 

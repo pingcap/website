@@ -1,65 +1,36 @@
 import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 import React, { useEffect } from 'react'
 
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import NavigateBefore from '@material-ui/icons/NavigateBefore'
 import NavigateNext from '@material-ui/icons/NavigateNext'
+import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
 
-const CaseStudies = () => {
-  const {
-    BannerSVG,
-    quoteMarkSVG,
-    placeholderSVG,
-    caseStudies,
-  } = useStaticQuery(
-    graphql`
-      query {
-        BannerSVG: file(relativePath: { eq: "case-studies/banner.png" }) {
-          ...FluidUncompressed
-        }
-        quoteMarkSVG: file(
-          relativePath: { eq: "case-studies/quote-mark.svg" }
-        ) {
-          publicURL
-        }
-        placeholderSVG: file(
-          relativePath: { eq: "case-studies/placeholder.svg" }
-        ) {
-          publicURL
-        }
-        caseStudies: allMarkdownRemark(
-          filter: {
-            fields: { collection: { eq: "markdown-pages/blogs" } }
-            frontmatter: { customer: { ne: null } }
-          }
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-                customer
-                summary
-              }
-            }
-          }
-        }
-      }
-    `
-  )
+const CaseStudies = ({ data }) => {
+  const { BannerSVG, quoteMarkSVG, placeholderSVG, caseStudies } = data
+  const categoriesOfStudies = [
+    ...new Set(
+      caseStudies.edges.map(({ node }) => node.frontmatter.customerCategory)
+    ),
+  ]
+  const studiesByCategory = categoriesOfStudies.map(c => ({
+    category: c.split(' ').join('-'),
+    studies: caseStudies.edges.filter(
+      ({ node }) => node.frontmatter.customerCategory === c
+    ),
+  }))
 
   useEffect(() => {
     new Swiper('.swiper-container', {
-      // autoplay: {
-      //   delay: 6000,
-      // },
+      autoplay: {
+        delay: 6000,
+      },
       loop: true,
       pagination: {
         el: '.swiper-custom-pagination',
@@ -138,10 +109,99 @@ const CaseStudies = () => {
           <div className="title is-5 title-under-swiper">
             15+ Pegabytes in 300+ Companies
           </div>
+          <div className="customer-categories">
+            {categoriesOfStudies.map(c => (
+              <Link
+                key={c}
+                to={`/case-studies/${c.split(' ').join('-')}`}
+                className="button is-small"
+              >
+                {c}
+              </Link>
+            ))}
+          </div>
+          <Router basepath="/case-studies">
+            <Logos key="/" path="/" logos={studiesByCategory[0].studies} />
+            {studiesByCategory.map(r => (
+              <Logos
+                key={r.category}
+                path={`/${r.category}`}
+                logos={r.studies}
+              />
+            ))}
+          </Router>
         </div>
       </article>
     </Layout>
   )
 }
+
+function Logos({ logos }) {
+  return (
+    <div className="columns is-multiline logos">
+      {logos
+        .map(({ node }) => node.frontmatter)
+        .map(logo => (
+          <div key={logo.customer} className="column is-3">
+            <div className="detail-card">
+              <div className="title is-6">{logo.customer}</div>
+              <div
+                className={`${logo.customer.replace(/[/.\s]/g, '-')}-logo`}
+              />
+              <div className="summary">{logo.summary}</div>
+              <Link
+                to={`/case-studies/${logo.title
+                  .replace(/[?%]/g, '')
+                  .split(' ')
+                  .join('-')}`}
+                className="read-more"
+              >
+                Read more >
+              </Link>
+            </div>
+            <div className="simple-card">
+              <div
+                className={`${logo.customer.replace(/[/.\s]/g, '-')}-logo`}
+              />
+              <div className="title is-6">{logo.customer}</div>
+            </div>
+          </div>
+        ))}
+    </div>
+  )
+}
+
+export const query = graphql`
+  query {
+    BannerSVG: file(relativePath: { eq: "case-studies/banner.png" }) {
+      ...FluidUncompressed
+    }
+    quoteMarkSVG: file(relativePath: { eq: "case-studies/quote-mark.svg" }) {
+      publicURL
+    }
+    placeholderSVG: file(relativePath: { eq: "case-studies/placeholder.svg" }) {
+      publicURL
+    }
+    caseStudies: allMarkdownRemark(
+      filter: {
+        fields: { collection: { eq: "markdown-pages/blogs" } }
+        frontmatter: { customer: { ne: null } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 1000
+    ) {
+      edges {
+        node {
+          frontmatter {
+            title
+            customer
+            customerCategory
+            summary
+          }
+        }
+      }
+    }
+  }
+`
 
 export default CaseStudies
