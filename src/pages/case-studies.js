@@ -94,12 +94,15 @@ const CaseStudies = ({ data }) => {
                         See case study
                       </Link>
                     </div>
-                    <div className="placeholder">
-                      <img src={placeholderSVG.publicURL} alt="placeholder" />
-                    </div>
+                    <div className="placeholder" />
                   </div>
                 ))}
             </div>
+            <img
+              className="fixed-placeholder"
+              src={placeholderSVG.publicURL}
+              alt="placeholder"
+            />
             <div className="bottom">
               <NavigateBefore className="swiper-prev" />
               <div className="swiper-custom-pagination" />

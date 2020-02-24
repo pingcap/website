@@ -113,6 +113,7 @@
       overflow: visible;
     }
 
+    position: relative;
     width: 80%;
     height: 450px;
     margin: 0 auto;
@@ -162,7 +163,7 @@
 
         .summary {
           @include mobile {
-            max-height: 200px;
+            height: 200px;
             overflow-y: scroll;
           }
 
@@ -182,23 +183,25 @@
       }
 
       .placeholder {
-        position: relative;
         flex: 1;
-
-        img {
-          @include mobile {
-            right: 50%;
-            height: 75%;
-            transform: translate3d(50%, -50%, 0);
-          }
-
-          position: absolute;
-          right: 3rem;
-          width: 90%;
-          top: 50%;
-          transform: translateY(-50%);
-        }
       }
+    }
+
+    .fixed-placeholder {
+      @include mobile {
+        top: 5%;
+        left: 50%;
+        right: unset;
+        width: 80%;
+        transform: translateX(-50%);
+      }
+
+      position: absolute;
+      top: 50%;
+      right: 3rem;
+      width: 35%;
+      transform: translateY(-60%);
+      z-index: 29;
     }
 
     .bottom {
@@ -310,6 +313,7 @@
     .simple-card,
     .detail-card {
       height: 100%;
+      transition: 0.5s;
     }
 
     .simple-card {
