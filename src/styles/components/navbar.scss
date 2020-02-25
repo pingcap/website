@@ -16,7 +16,7 @@
     }
 
     &.with-main-section {
-      @include has-item-active;
+      @include has-item-active(1.5rem);
       @include mobile {
         margin: 0 1.5rem;
         padding: 1rem 0;

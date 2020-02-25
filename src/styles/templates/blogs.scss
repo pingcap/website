@@ -98,12 +98,6 @@
         color: $B3;
         outline: none;
 
-        &:hover {
-          &:after {
-            content: none;
-          }
-        }
-
         &.active {
           color: $primary;
         }

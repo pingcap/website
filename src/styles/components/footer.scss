@@ -59,12 +59,6 @@
 
           display: inline-block;
 
-          &:hover {
-            &:after {
-              content: none;
-            }
-          }
-
           &:active {
             background: #e9ecef;
           }

@@ -12,7 +12,7 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
 }
 
 // Use in navbar and footer item
-@mixin has-item-active {
+@mixin has-item-active($bottom: false) {
   position: relative;
   color: $B4;
 
@@ -20,15 +20,17 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
     background: none;
     color: $primary;
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 1.5rem;
-      left: 50%;
-      width: 20px;
-      height: 3px;
-      background: $primary;
-      transform: translateX(-50%);
+    @if type-of($bottom) == number {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: $bottom;
+        left: 50%;
+        width: 20px;
+        height: 3px;
+        background: $primary;
+        transform: translateX(-50%);
+      }
     }
   }
 }
@@ -54,28 +56,5 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
     &:focus ~ .icon {
       color: $primary !important;
     }
-  }
-}
-
-@mixin has-hover-arrow {
-  position: relative;
-  transition: 0.5s;
-
-  &:after {
-    content: '➔';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    left: 0;
-    transition: 0.5s;
-  }
-
-  &:hover {
-    padding-left: 50px;
-  }
-
-  &:hover:after {
-    opacity: 1;
-    left: 25px;
   }
 }

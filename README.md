@@ -93,23 +93,25 @@ So, for example, our common scss codes `_common.scss` follow the bulma modifiers
 
 ```scss
 // Use in navbar and footer item
-@mixin has-item-active {
+@mixin has-item-active($bottom: false) {
   position: relative;
   color: $B4;
 
   &:hover {
     background: none;
-    color: $B1;
+    color: $primary;
 
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      width: 10px;
-      height: 3px;
-      background: $B1;
-      transform: translateX(-50%);
+    @if type-of($bottom) == number {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: $bottom;
+        left: 50%;
+        width: 20px;
+        height: 3px;
+        background: $primary;
+        transform: translateX(-50%);
+      }
     }
   }
 }
