@@ -112,7 +112,7 @@ const Blog = ({ data }) => {
                 />
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <div className="title">Ready to get started with TiDB?</div>
+                  <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
                     <Button as="a" className="get-started" outlined rounded>
                       Get Started
@@ -125,7 +125,7 @@ const Blog = ({ data }) => {
               </div>
               <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
-                  <div className="title is-6">What's on this page</div>
+                  <h3 className="title is-6">What's on this page</h3>
                   <div
                     className="toc-content"
                     dangerouslySetInnerHTML={{ __html: tableOfContents }}
@@ -133,7 +133,7 @@ const Blog = ({ data }) => {
                 </div>
                 {relatedBlogsRef && (
                   <div className="related-blog">
-                    <div className="title is-6">Related blog</div>
+                    <h3 className="title is-6">Related blog</h3>
                     <div className="blogs">
                       {relatedBlogsRef.map(blog => (
                         <BlogHeader
@@ -150,7 +150,7 @@ const Blog = ({ data }) => {
                   className="follow-us"
                   style={{ display: fixedSocials ? 'block' : 'none' }}
                 >
-                  <div className="title is-6">Welcome to share this post!</div>
+                  <h3 className="title is-6">Welcome to share this post!</h3>
                   <div className="socials">
                     <Socials type="share" title={frontmatter.title} />
                   </div>

@@ -20,17 +20,18 @@ const BlogHeader = ({
   return (
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
-        <Link
-          className="title is-4 is-spaced blog-link-title"
-          to={`/blog/${title
-            .replace(/[?%]/g, '')
-            .split(' ')
-            .join('-')}`}
-        >
-          {title}
-        </Link>
+        <h2 className="title is-4 is-spaced blog-link-title">
+          <Link
+            to={`/blog/${title
+              .replace(/[?%]/g, '')
+              .split(' ')
+              .join('-')}`}
+          >
+            {title}
+          </Link>
+        </h2>
       ) : (
-        <h4 className="title is-4 is-spaced blog-title">{title}</h4>
+        <h2 className="title is-4 is-spaced blog-title">{title}</h2>
       )}
       <div className="subtitle is-7 is-spaced blog-subtitle">
         <span>

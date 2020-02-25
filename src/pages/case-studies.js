@@ -77,14 +77,14 @@ const CaseStudies = ({ data }) => {
             alt="banner"
           />
           <div className="titles">
-            <h2 className="title is-2">Trusted and verified by</h2>
-            <h2 className="title is-2">web-scale application leaders</h2>
+            <h1 className="title is-2">Trusted and verified by</h1>
+            <h1 className="title is-2">web-scale application leaders</h1>
           </div>
         </div>
         <div className="container section">
-          <div className="title is-5 title-under-banner">
+          <h2 className="title is-5 title-under-banner">
             TiDB delivers the value to the innovators in data industry
-          </div>
+          </h2>
           <div className="card swiper-container">
             <div className="swiper-wrapper top">
               {caseStudies.edges
@@ -133,9 +133,9 @@ const CaseStudies = ({ data }) => {
               <NavigateNext className="swiper-next" />
             </div>
           </div>
-          <div className="title is-5 title-under-swiper">
+          <h2 className="title is-5 title-under-swiper">
             15+ Pegabytes in 300+ Companies
-          </div>
+          </h2>
           <div className="customer-categories">
             {categoriesOfStudies.map(c => (
               <Link

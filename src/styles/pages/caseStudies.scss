@@ -314,7 +314,7 @@
 
     .column {
       @include mobile {
-        margin-bottom: 4.5rem;
+        margin-bottom: 3rem;
 
         &:last-child {
           margin-bottom: 0;
@@ -323,11 +323,11 @@
       @include tablet {
         &:hover {
           .simple-card {
-            display: none;
+            opacity: 0;
           }
 
           .detail-card {
-            display: flex;
+            opacity: 1;
           }
         }
       }
@@ -339,18 +339,20 @@
 
     .simple-card,
     .detail-card {
-      height: 100%;
+      transition: 0.5s;
     }
 
     .simple-card {
       @include VHCenter;
       @include mobile {
-        display: none;
+        opacity: 0;
       }
 
       position: relative;
       flex-direction: column;
+      height: 100%;
       background: #fff;
+      opacity: 1;
 
       @each $logo in $logos {
         .#{$logo}-logo {
@@ -367,14 +369,16 @@
 
     .detail-card {
       @include mobile {
-        display: flex;
+        opacity: 1;
       }
 
       position: absolute;
-      top: 0;
+      top: 50%;
       left: 0;
-      display: none;
+      display: flex;
       flex-direction: column;
+      transform: translateY(-50%);
+      opacity: 0;
       z-index: 29;
 
       @each $logo in $logos {
@@ -397,12 +401,11 @@
       }
 
       .summary {
-        flex: 2;
         color: $B4;
       }
 
       .read-more {
-        margin-top: 1rem;
+        margin-top: 2rem;
         color: $B3;
 
         &:hover {

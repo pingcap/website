@@ -148,7 +148,7 @@ const Blogs = ({
                   <BlogSearch className="search-desktop" />
                   <PostFromUs />
                   <div className="follow-us">
-                    <div className="title is-6">Follow to Join Us!</div>
+                    <h3 className="title is-6">Follow to Join Us!</h3>
                     <div className="socials">
                       <Socials type="follow" />
                     </div>

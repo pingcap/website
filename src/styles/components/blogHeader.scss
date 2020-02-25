@@ -11,7 +11,9 @@
   .blog-link-title {
     @extend .blog-title;
 
-    display: inline-block;
+    a {
+      color: $B3;
+    }
   }
 
   .blog-subtitle {
