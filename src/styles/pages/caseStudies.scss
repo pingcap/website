@@ -315,6 +315,10 @@
     .column {
       @include mobile {
         margin-bottom: 4.5rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
       @include tablet {
         &:hover {
@@ -371,6 +375,7 @@
       left: 0;
       display: none;
       flex-direction: column;
+      z-index: 29;
 
       @each $logo in $logos {
         .#{$logo}-logo {
@@ -397,6 +402,7 @@
       }
 
       .read-more {
+        margin-top: 1rem;
         color: $B3;
 
         &:hover {
