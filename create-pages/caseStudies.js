@@ -22,6 +22,13 @@ const createCaseStudies = async ({ graphql, createPage }) => {
           }
         }
       }
+      caseStudiesWithoutReadMore: allCaseStudiesJson {
+        edges {
+          node {
+            name
+          }
+        }
+      }
     }
   `)
 
@@ -40,9 +47,11 @@ const createCaseStudies = async ({ graphql, createPage }) => {
 
   const categoriesOfStudies = [
     ...new Set(
-      data.caseStudies.edges.map(
-        ({ node }) => node.frontmatter.customerCategory
-      )
+      data.caseStudies.edges
+        .map(({ node }) => node.frontmatter.customerCategory)
+        .concat(
+          data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name)
+        )
     ),
   ]
   categoriesOfStudies.forEach(c => {

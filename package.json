@@ -20,6 +20,7 @@
     "gatsby-plugin-sharp": "^2.4.3",
     "gatsby-remark-autolink-headers": "^2.1.24",
     "gatsby-source-filesystem": "^2.1.46",
+    "gatsby-transformer-json": "^2.2.26",
     "gatsby-transformer-remark": "^2.6.50",
     "gatsby-transformer-sharp": "^2.3.13",
     "lodash.intersection": "^4.4.0",

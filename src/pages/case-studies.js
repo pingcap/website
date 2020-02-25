@@ -11,19 +11,39 @@ import NavigateNext from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
+import { truncate } from '../lib/string'
 
 const CaseStudies = ({ data }) => {
-  const { BannerSVG, quoteMarkSVG, placeholderSVG, caseStudies } = data
+  const {
+    BannerSVG,
+    quoteMarkSVG,
+    placeholderSVG,
+    caseStudies,
+    caseStudiesWithoutReadMore,
+  } = data
   const categoriesOfStudies = [
     ...new Set(
-      caseStudies.edges.map(({ node }) => node.frontmatter.customerCategory)
+      caseStudies.edges
+        .map(({ node }) => node.frontmatter.customerCategory)
+        .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
     ),
   ]
   const studiesByCategory = categoriesOfStudies.map(c => ({
     category: c.split(' ').join('-'),
-    studies: caseStudies.edges.filter(
-      ({ node }) => node.frontmatter.customerCategory === c
-    ),
+    studies: caseStudies.edges
+      .filter(({ node }) => node.frontmatter.customerCategory === c)
+      .concat(
+        caseStudiesWithoutReadMore.edges
+          .filter(({ node }) => node.name === c)[0]
+          .node.customers.map(customer => ({
+            node: {
+              frontmatter: {
+                customer: customer.name,
+                summary: customer.summary,
+              },
+            },
+          }))
+      ),
   }))
 
   useEffect(() => {
@@ -73,17 +93,10 @@ const CaseStudies = ({ data }) => {
                 .map(study => (
                   <div key={study.customer} className="swiper-slide">
                     <div className="intro">
-                      <img
-                        className="quote-mark"
-                        src={quoteMarkSVG.publicURL}
-                        alt="quote-mark"
-                      />
-                      <div className="title is-6 is-spaced">
-                        <span className="underline"></span>
-                        Featured Testimonials
-                      </div>
                       <div className="subtitle is-7">{study.customer}</div>
-                      <div className="summary">{study.summary}</div>
+                      <div className="summary">
+                        {truncate.apply(study.summary, [300, true])}
+                      </div>
                       <Link
                         to={`/case-studies/${study.title
                           .replace(/[?%]/g, '')
@@ -97,6 +110,17 @@ const CaseStudies = ({ data }) => {
                     <div className="placeholder" />
                   </div>
                 ))}
+            </div>
+            <div className="fixed-intro">
+              <img
+                className="quote-mark"
+                src={quoteMarkSVG.publicURL}
+                alt="quote-mark"
+              />
+              <div className="title is-6 is-spaced">
+                <span className="underline"></span>
+                Featured Testimonials
+              </div>
             </div>
             <img
               className="fixed-placeholder"
@@ -149,22 +173,26 @@ function Logos({ logos }) {
             <div className="detail-card">
               <div className="title is-6">{logo.customer}</div>
               <div
-                className={`${logo.customer.replace(/[/.\s]/g, '-')}-logo`}
+                className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
               />
-              <div className="summary">{logo.summary}</div>
-              <Link
-                to={`/case-studies/${logo.title
-                  .replace(/[?%]/g, '')
-                  .split(' ')
-                  .join('-')}`}
-                className="read-more"
-              >
-                Read more >
-              </Link>
+              <div className="summary">
+                {truncate.apply(logo.summary, [300, true])}
+              </div>
+              {logo.title && (
+                <Link
+                  to={`/case-studies/${logo.title
+                    .replace(/[?%]/g, '')
+                    .split(' ')
+                    .join('-')}`}
+                  className="read-more"
+                >
+                  Read more >
+                </Link>
+              )}
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer.replace(/[/.\s]/g, '-')}-logo`}
+                className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
               />
               <div className="title is-6">{logo.customer}</div>
             </div>
@@ -199,6 +227,17 @@ export const query = graphql`
             title
             customer
             customerCategory
+            summary
+          }
+        }
+      }
+    }
+    caseStudiesWithoutReadMore: allCaseStudiesJson {
+      edges {
+        node {
+          name
+          customers {
+            name
             summary
           }
         }

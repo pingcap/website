@@ -100,6 +100,8 @@
     @include mobile {
       margin-top: 7.5rem !important;
     }
+
+    margin-top: 6rem !important;
   }
 
   .container {
@@ -114,7 +116,7 @@
     }
 
     position: relative;
-    width: 80%;
+    width: 85%;
     height: 450px;
     margin: 0 auto;
 
@@ -138,23 +140,7 @@
 
         flex-direction: column;
         flex: 1.5;
-
-        .quote-mark {
-          width: 18px;
-        }
-
-        .title {
-          margin: 1rem 0;
-          color: $B3;
-
-          .underline {
-            display: inline-block;
-            width: 12px;
-            height: 3px;
-            margin-right: 0.5rem;
-            background: $primary;
-          }
-        }
+        margin-top: 6rem;
 
         .subtitle {
           color: $B4;
@@ -187,9 +173,42 @@
       }
     }
 
+    .fixed-intro {
+      @include VHCenter;
+      @include mobile {
+        top: 38%;
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
+      }
+
+      position: absolute;
+      top: 15%;
+      left: 25%;
+      flex-direction: column;
+      transform: translateX(-25%);
+
+      .quote-mark {
+        width: 18px;
+      }
+
+      .title {
+        margin-top: 1rem;
+        color: $B3;
+
+        .underline {
+          display: inline-block;
+          width: 12px;
+          height: 3px;
+          margin-right: 0.5rem;
+          background: $primary;
+        }
+      }
+    }
+
     .fixed-placeholder {
       @include mobile {
-        top: 5%;
+        top: 3%; // Don't change this property when debugging in Responsive Design Mode
         left: 50%;
         right: unset;
         width: 80%;
@@ -257,12 +276,20 @@
   }
 
   .customer-categories {
+    @include mobile {
+      margin-left: 4rem;
+      text-align: left;
+    }
+
     text-align: center;
 
     a {
+      margin-bottom: 1.5rem;
       margin-right: 2rem;
+      background: $B5;
       color: $B4;
       border-color: $C2;
+      border-radius: 3px;
       outline: none;
 
       &:last-child {
@@ -270,8 +297,8 @@
       }
 
       &:hover {
-        color: #fff;
         background: $primary;
+        color: #fff;
         border: 1px solid $primary;
       }
     }
@@ -287,25 +314,28 @@
 
     .column {
       @include mobile {
-        height: 300px;
-        margin-bottom: 1.5rem;
+        margin-bottom: 4.5rem;
+      }
+      @include tablet {
+        &:hover {
+          .simple-card {
+            display: none;
+          }
+
+          .detail-card {
+            display: flex;
+          }
+        }
       }
 
       position: relative;
       height: 250px;
       cursor: pointer;
-
-      &:hover {
-        .simple-card {
-          display: none;
-        }
-      }
     }
 
     .simple-card,
     .detail-card {
       height: 100%;
-      transition: 0.5s;
     }
 
     .simple-card {
@@ -317,7 +347,6 @@
       position: relative;
       flex-direction: column;
       background: #fff;
-      z-index: 29;
 
       @each $logo in $logos {
         .#{$logo}-logo {
@@ -333,12 +362,15 @@
     }
 
     .detail-card {
+      @include mobile {
+        display: flex;
+      }
+
       position: absolute;
       top: 0;
       left: 0;
-      display: flex;
+      display: none;
       flex-direction: column;
-      padding: 0.75rem;
 
       @each $logo in $logos {
         .#{$logo}-logo {
@@ -347,7 +379,7 @@
           }
 
           position: absolute;
-          top: 1.25rem;
+          top: -0.5rem;
           right: 0.75rem;
           width: 36px;
           height: 36px;
@@ -355,22 +387,21 @@
       }
 
       .title {
-        @include mobile {
-          margin-top: 1rem;
-        }
-
+        margin-bottom: 1rem;
         color: $B3;
       }
 
       .summary {
         flex: 2;
-        overflow-y: scroll;
+        color: $B4;
       }
 
       .read-more {
-        margin-top: 1.5rem;
-        color: $primary;
-        text-align: right;
+        color: $B3;
+
+        &:hover {
+          color: $primary;
+        }
       }
     }
   }
