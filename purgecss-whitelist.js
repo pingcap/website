@@ -23,6 +23,25 @@ const logos = [
   'Yuanfudao-com',
   'NetEase-Games',
   'GAEA',
+  // No Read More
+  'Yiguo-com',
+  'Qingdao-Telaidian',
+  'LY-com ',
+  'Qunar-com',
+  'Jinri-Toutiao',
+  'G--Networks',
+  '-Dfire-com ',
+  'Keruyun',
+  'Phoenix-New-Media',
+  'LinkDoc-Technology',
+  'Yimian-Data',
+  'Mobikok',
+  'Seasun-Games',
+  'Yoozoo-Games',
+  'FUNYOURS-JAPAN ',
+  'Bank-of-Beijing',
+  'Ping--',
+  '----Finance',
 ].map(logo => logo + '-logo')
 
 module.exports = [...logos]
