@@ -111,7 +111,7 @@
   .swiper-container {
     @include mobile {
       width: 100%;
-      height: 600px;
+      height: 650px;
       overflow: visible;
     }
 
@@ -208,7 +208,7 @@
 
     .fixed-placeholder {
       @include mobile {
-        top: 3%; // Don't change this property when debugging in Responsive Design Mode
+        top: 5%;
         left: 50%;
         right: unset;
         width: 80%;
