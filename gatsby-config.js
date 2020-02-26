@@ -45,7 +45,7 @@ module.exports = {
         short_name: 'PingCAP',
         start_url: '/',
         background_color: '#fff',
-        theme_color: '#2e2fff',
+        theme_color: '#fff',
         display: 'minimal-ui',
         icon: 'images/pingcap-icon.png', // This path is relative to the root of the site.
       },
