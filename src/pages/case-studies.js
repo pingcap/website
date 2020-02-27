@@ -95,7 +95,7 @@ const CaseStudies = ({ data }) => {
                     <div className="intro">
                       <div className="subtitle is-7">{study.customer}</div>
                       <div className="summary">
-                        {truncate.apply(study.summary, [300, true])}
+                        {truncate.apply(study.summary, [280, true])}
                       </div>
                       <Link
                         to={`/case-studies/${study.title

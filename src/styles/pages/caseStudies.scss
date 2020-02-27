@@ -150,7 +150,8 @@
         .summary {
           @include mobile {
             height: 200px;
-            overflow-y: scroll;
+            padding: 0 2rem;
+            overflow: hidden;
           }
 
           padding: 0 3rem;
@@ -276,15 +277,15 @@
   }
 
   .customer-categories {
-    @include mobile {
-      margin-left: 4rem;
-      text-align: left;
-    }
-
     text-align: center;
 
     a {
-      margin-bottom: 1.5rem;
+      @include mobile {
+        margin-right: 1rem;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      }
+
       margin-right: 2rem;
       background: $B5;
       color: $B4;
@@ -310,7 +311,7 @@
       margin-right: 0;
     }
 
-    margin-top: 3rem;
+    margin-top: 4.5rem;
 
     .column {
       @include mobile {
@@ -392,6 +393,19 @@
           right: -0.25rem;
           width: 36px;
           height: 36px;
+        }
+      }
+
+      $big-logos: Shopee Meituan-Dianping Mobike LinkDoc-Technology Seasun-Games
+        Yoozoo-Games FUNYOURS-JAPAN Bank-of-Beijing Ping--;
+
+      @each $logo in $big-logos {
+        .#{$logo}-logo {
+          @include mobile {
+            top: -1.5rem;
+            width: 72px;
+            height: 72px;
+          }
         }
       }
 
