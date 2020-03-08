@@ -7,12 +7,12 @@ extern crate dotenv_codegen;
 #[macro_use]
 extern crate lazy_static;
 
-mod github_api;
-mod google_api;
-mod rest;
-
 use rocket_contrib::json::Json;
 use serde::Serialize;
+
+mod github;
+mod google;
+mod rest;
 
 #[derive(Serialize)]
 struct IndexJson {
@@ -31,6 +31,6 @@ fn index() -> Json<IndexJson> {
 fn main() {
     rocket::ignite()
         .mount("/", routes![index])
-        .mount(rest::rest_config::PREFIX_V1, routes![])
+        .mount(rest::PREFIX_V1, routes![github::routes::tidb_contributors])
         .launch();
 }

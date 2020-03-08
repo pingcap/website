@@ -9,11 +9,12 @@ edition = "2018"
 [dependencies]
 rocket = "0.4.2"
 serde = { version = "1.0", features = ["derive"] }
-reqwest = { version = "0.10", features = ["json"] }
-tokio = { version = "0.2", features = ["full"] }
+reqwest = { version = "0.10", features = ["blocking", "json"] }
+# tokio = { version = "0.2", features = ["full"] }
 # diesel = { version = "1.4", features = ["sqlite", "r2d2"] }
 dotenv_codegen = "0.15.0"
 lazy_static = "1.4.0"
+parse_link_header = "0.1"
 
 [dependencies.rocket_contrib]
 version = "0.4.2"
