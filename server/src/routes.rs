@@ -50,7 +50,7 @@ pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
                 .execute(&connection)
                 .expect("Error in (insert new tidb repo): Fail to save new tidb repo");
         } else {
-            diesel::update(repos.filter(of.eq("tidb")))
+            diesel::update(repos.find(tidb_repo[0].id))
                 .set(contributors.eq(contributors_json_string))
                 .execute(&connection)
                 .expect("Error in (update tidb repo): Fail to update tidb repo");
