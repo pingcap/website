@@ -55,11 +55,14 @@ cd server && cargo build
 
 # Boot the rocket server
 cargo run
+
+# Check your code
+cargo check
 ```
 
 ### GitHub Outh2 token
 
-It's needed to apply a token to develop with GitHub API.
+Because of most of our text data stored in GitHub. So, It's needed to apply a GitHub API token in development.
 
 For more details, view <https://developer.github.com/v3/#rate-limiting>
 
@@ -72,6 +75,8 @@ GITHUB_AUTHORIZATION_TOKEN=token
 If you are developing the rocket server, it use [dotenv](https://github.com/dotenv-rs/dotenv) to load a `.env` file.
 First, create a `.env` file in the `server` folder and pass the `GITHUB_AUTHORIZATION_TOKEN=token` into it.
 Then you can read it by using `dotenv!("GITHUB_AUTHORIZATION_TOKEN")`.
+
+**For detailed configuration of rocket server, view: [server README](./server/README.md)**
 
 For frontend developing, some scripts will also need this env variable, for example:
 
@@ -121,6 +126,6 @@ You can view more details in [https://bulma.io/documentation/modifiers/](https:/
 
 **Also, don't break the rule!**
 
-# Author
+## Authors
 
-Make with love 💙 by PingCAP FE.
+Made with love 💙 by PingCAP FE.
