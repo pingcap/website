@@ -4,7 +4,7 @@ The rocket server of PingCAP website.
 
 ## Env configurations
 
-For now, you must create a `.env` file to develop. The `.env` file needs these variables:
+You must create a `.env` file to develop. The `.env` file needs these variables:
 
 ```sh
 # Optional
