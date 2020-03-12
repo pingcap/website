@@ -62,15 +62,3 @@ pub mod api {
         }
     }
 }
-
-pub mod routes {
-    use rocket_contrib::json::Json;
-
-    use super::api::repos;
-    use super::ContributorJson;
-
-    #[get("/tidb_contributors")]
-    pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
-        Json(repos::contributors("pingcap", "tidb", Some(100), true))
-    }
-}
