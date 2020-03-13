@@ -17,7 +17,7 @@ mod github;
 mod google;
 mod models;
 mod rest;
-mod routes;
+mod routes_v1;
 mod schema;
 
 #[derive(Serialize)]
@@ -37,6 +37,12 @@ fn index() -> Json<IndexJson> {
 fn main() {
     rocket::ignite()
         .mount("/", routes![index])
-        .mount(rest::PREFIX_V1, routes![routes::tidb_contributors])
+        .mount(
+            rest::PREFIX_V1,
+            routes![
+                routes_v1::tidb_contributors,
+                routes_v1::tidb_community_contributors
+            ],
+        )
         .launch();
 }

@@ -5,7 +5,7 @@ pub fn establish_connection() -> SqliteConnection {
     let database_url = dotenv!("DATABASE_URL");
 
     SqliteConnection::establish(&database_url).expect(&format!(
-        "Error in (database_url): Connecting to {}",
+        "Error in (SqliteConnection::establish): Connecting to {}",
         database_url
     ))
 }

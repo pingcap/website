@@ -2,7 +2,9 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Serialize, Deserialize)]
 pub struct ContributorJson {
-    login: String,
+    pub login: String,
+    avatar_url: String,
+    contributions: u32,
 }
 
 pub mod api {
