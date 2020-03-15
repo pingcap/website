@@ -4,7 +4,7 @@ use std::time::SystemTime;
 use diesel::prelude::*;
 use rocket_contrib::json::Json;
 
-use crate::db::establish_connection;
+use crate::db;
 use crate::github::{api, ContributorJson};
 use crate::models::{NewRepo, Repo};
 use crate::schema::repos;
@@ -32,7 +32,7 @@ pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
         }
     };
 
-    let connection = establish_connection();
+    let connection = db::establish_connection();
 
     let tidb_repo = repos
         .filter(of.eq("pingcap/tidb"))
@@ -97,7 +97,7 @@ pub fn tidb_community_contributors() -> Json<Vec<ContributorJson>> {
         }
     };
 
-    let connection = establish_connection();
+    let connection = db::establish_connection();
 
     // Determine if the tikv repo is empty. This step is to prepare for the next if condition
     let tikv_repo = repos
