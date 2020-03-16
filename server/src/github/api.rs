@@ -1,4 +1,4 @@
-use crate::rest::github_blocking_client;
+use crate::rest::http_client::github_blocking_client;
 
 const API_URL: &str = "https://api.github.com";
 

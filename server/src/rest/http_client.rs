@@ -3,12 +3,11 @@ use std::sync::Mutex;
 use header::{HeaderMap, ACCEPT, AUTHORIZATION};
 use reqwest::{blocking, header, Client};
 
-pub const PREFIX_V1: &str = "/api/v1";
-const USER_AGENT: &str = "PingCAPWebsite/0.1.0";
-
 lazy_static! {
     static ref GOOGLE_AUTHORIZATION_TOKEN: Mutex<String> = Mutex::new(String::new());
 }
+
+const USER_AGENT: &str = "PingCAPWebsite/0.1.0";
 
 fn generate_github_client_headers() -> header::HeaderMap {
     let mut headers = HeaderMap::new();

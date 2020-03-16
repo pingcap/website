@@ -12,6 +12,7 @@ extern crate diesel;
 use rocket_contrib::json::Json;
 use serde::Serialize;
 
+mod cors;
 mod db;
 mod github;
 mod google;
@@ -44,5 +45,6 @@ fn main() {
                 routes_v1::tidb_community_contributors
             ],
         )
+        .attach(cors::CorsFairing)
         .launch();
 }
