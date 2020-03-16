@@ -5,7 +5,7 @@ use diesel::prelude::*;
 use rocket_contrib::json::Json;
 
 use crate::db;
-use crate::github::{api, ContributorJson};
+use crate::github::{api, Contributor};
 use crate::models::{NewRepo, Repo};
 use crate::schema::repos;
 use repos::dsl::*;
@@ -18,7 +18,7 @@ lazy_static! {
 }
 
 #[get("/tidb_contributors")]
-pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
+pub fn tidb_contributors() -> Json<Vec<Contributor>> {
     let mut tidb_contributors_last_request_time =
         TI_DB_CONTRIBUTORS_LAST_REQUEST_TIME.lock().unwrap();
 
@@ -40,7 +40,7 @@ pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
         .expect("Error in (tidb_repo): Fail to load repo");
 
     if elapsed >= 60 * 60 * 24 || tidb_repo.len() == 0 {
-        let contributors_from_http: Vec<ContributorJson> =
+        let contributors_from_http: Vec<Contributor> =
             api::repos::contributors("pingcap", "tidb", Some(100), true);
         let contributors_json_string = serde_json::to_string(&contributors_from_http).unwrap();
 
@@ -63,7 +63,7 @@ pub fn tidb_contributors() -> Json<Vec<ContributorJson>> {
 }
 
 #[get("/tidb_community_contributors")]
-pub fn tidb_community_contributors() -> Json<Vec<ContributorJson>> {
+pub fn tidb_community_contributors() -> Json<Vec<Contributor>> {
     let community_repos = [
         ("pingcap", "docs"),
         ("pingcap", "docs-cn"),
@@ -105,11 +105,11 @@ pub fn tidb_community_contributors() -> Json<Vec<ContributorJson>> {
         .load::<Repo>(&connection)
         .expect("Error in (tikv_repo): Fail to load repo");
 
-    let mut all_contributors: Vec<ContributorJson> = vec![];
+    let mut all_contributors: Vec<Contributor> = vec![];
 
     if elapsed >= 60 * 60 * 24 || tikv_repo.len() == 0 {
         for repo in community_repos.iter() {
-            let contributors_from_http: Vec<ContributorJson> =
+            let contributors_from_http: Vec<Contributor> =
                 api::repos::contributors(repo.0, repo.1, Some(100), true);
             let contributors_json_string = serde_json::to_string(&contributors_from_http).unwrap();
 
@@ -140,9 +140,8 @@ pub fn tidb_community_contributors() -> Json<Vec<ContributorJson>> {
                     repo.0, repo.1
                 ));
 
-            all_contributors.extend::<Vec<ContributorJson>>(
-                serde_json::from_str(&repo[0].contributors).unwrap(),
-            );
+            all_contributors
+                .extend::<Vec<Contributor>>(serde_json::from_str(&repo[0].contributors).unwrap());
         }
     }
 

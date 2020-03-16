@@ -3,14 +3,14 @@ use crate::rest::http_client::github_blocking_client;
 const API_URL: &str = "https://api.github.com";
 
 pub mod repos {
-    use crate::github::ContributorJson;
+    use crate::github::Contributor;
 
     pub fn contributors(
         owner: &str,
         repo: &str,
         per_page: Option<u8>,
         get_all: bool,
-    ) -> Vec<ContributorJson> {
+    ) -> Vec<Contributor> {
         let client = super::github_blocking_client();
         let per_page = per_page.unwrap_or(30);
         let url = format!(
@@ -20,12 +20,12 @@ pub mod repos {
             repo = repo,
             per_page = per_page
         );
-        let mut contributors: Vec<ContributorJson> = vec![];
+        let mut contributors: Vec<Contributor> = vec![];
 
         fn get_contributors(
             client: reqwest::blocking::Client,
             url: &str,
-            result: &mut Vec<ContributorJson>,
+            result: &mut Vec<Contributor>,
             get_all: bool,
         ) {
             let resp = client.get(url).send().unwrap();
@@ -43,7 +43,7 @@ pub mod repos {
                 }
             }
 
-            let data = resp.json::<Vec<ContributorJson>>().unwrap();
+            let data = resp.json::<Vec<Contributor>>().unwrap();
 
             result.extend(data);
         }
