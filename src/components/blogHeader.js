@@ -1,5 +1,5 @@
-import Create from '@material-ui/icons/CreateOutlined'
-import DateRange from '@material-ui/icons/DateRange'
+import CreateIcon from '@material-ui/icons/CreateOutlined'
+import DateRangeIcon from '@material-ui/icons/DateRange'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -35,11 +35,11 @@ const BlogHeader = ({
       )}
       <div className="subtitle is-7 is-spaced blog-subtitle">
         <span>
-          {withIcon && <DateRange />}
+          {withIcon && <DateRangeIcon />}
           {date}
         </span>
         <span>
-          {withIcon && <Create />}
+          {withIcon && <CreateIcon />}
           {isCaseStudy ? customer : (author && author[0]) || 'PingCAP'}
         </span>
         <span className={!withIcon ? 'without-icon' : ''}>

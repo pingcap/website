@@ -1,7 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 
-import Add from '@material-ui/icons/Add'
-import Language from '@material-ui/icons/Language'
+import AddIcon from '@material-ui/icons/Add'
+import LanguageIcon from '@material-ui/icons/Language'
 import React from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
@@ -45,7 +45,7 @@ const Footer = () => {
               >
                 {column.name}
                 <span className="spread">
-                  <Add />
+                  <AddIcon />
                 </span>
               </div>
               <ul className="items">
@@ -63,14 +63,14 @@ const Footer = () => {
             <img
               className="footer-logo"
               src={FooterLogoSVG.publicURL}
-              alt="footer-logo"
+              alt="footer logo"
             />
             <div className="columns is-multiline socials-desktop">
               <Socials className="column is-4" type="follow" />
             </div>
             <div className="annotations annotations-desktop">
               <div className="lang">
-                <Language /> Language
+                <LanguageIcon /> Language
               </div>
               <div className="copyright">
                 ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
@@ -80,7 +80,7 @@ const Footer = () => {
         </div>
         <div className="annotations annotations-mobile">
           <div className="lang">
-            <Language /> Language
+            <LanguageIcon /> Language
           </div>
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
