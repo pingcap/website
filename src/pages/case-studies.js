@@ -6,8 +6,8 @@ import React, { useEffect } from 'react'
 
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import NavigateBefore from '@material-ui/icons/NavigateBefore'
-import NavigateNext from '@material-ui/icons/NavigateNext'
+import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
+import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
@@ -77,8 +77,10 @@ const CaseStudies = ({ data }) => {
             alt="banner"
           />
           <div className="titles">
-            <h1 className="title is-2">Trusted and verified by</h1>
-            <h1 className="title is-2">web-scale application leaders</h1>
+            <h1>
+              <div className="title is-2">Trusted and verified by</div>
+              <div className="title is-2">web-scale application leaders</div>
+            </h1>
           </div>
         </div>
         <div className="container section">
@@ -95,7 +97,7 @@ const CaseStudies = ({ data }) => {
                     <div className="intro">
                       <div className="subtitle is-7">{study.customer}</div>
                       <div className="summary">
-                        {truncate.apply(study.summary, [280, true])}
+                        {truncate.apply(study.summary, [250, true])}
                       </div>
                       <Link
                         to={`/case-studies/${study.title
@@ -128,9 +130,9 @@ const CaseStudies = ({ data }) => {
               alt="placeholder"
             />
             <div className="bottom">
-              <NavigateBefore className="swiper-prev" />
+              <NavigateBeforeIcon className="swiper-prev" />
               <div className="swiper-custom-pagination" />
-              <NavigateNext className="swiper-next" />
+              <NavigateNextIcon className="swiper-next" />
             </div>
           </div>
           <h2 className="title is-5 title-under-swiper">
@@ -176,7 +178,7 @@ function Logos({ logos }) {
                 className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
               />
               <div className="summary">
-                {truncate.apply(logo.summary, [300, true])}
+                {truncate.apply(logo.summary, [200, true])}
               </div>
               {logo.title && (
                 <Link
