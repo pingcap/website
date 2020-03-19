@@ -1,10 +1,6 @@
 .PingCAP-Footer {
-  @include mobile {
-    padding-bottom: 2rem;
-  }
-
   background: $B5;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
 
   .column {
     .title {
@@ -104,9 +100,35 @@
   }
 
   .annotations {
+    color: $B4;
+
+    .lang {
+      cursor: pointer;
+
+      svg {
+        vertical-align: bottom;
+      }
+    }
+  }
+
+  .annotations-desktop {
+    @include mobile {
+      display: none;
+    }
+
+    position: absolute;
+    bottom: 1.75rem;
+    right: 0.75rem;
+    text-align: right;
+
+    .lang {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .annotations-mobile {
     @include mobile {
       display: block;
-      margin-top: 0;
       margin-bottom: 2rem;
 
       .lang {
@@ -114,10 +136,7 @@
       }
     }
 
-    display: flex;
-    justify-content: space-between;
-    margin-top: 3rem;
-    color: $B4;
+    display: none;
 
     .lang {
       cursor: pointer;

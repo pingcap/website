@@ -1,20 +1,35 @@
 const footerColumns = [
   {
-    name: 'Product',
+    name: 'Open Source',
     items: [
       {
         name: 'TiDB',
       },
       {
+        name: 'TiKV',
+      },
+      {
         name: 'TiSpark',
       },
       {
-        name: 'Roadmap',
+        name: 'TiDB Ansible',
+      },
+      {
+        name: 'TiDB Operator',
+      },
+      {
+        name: 'Talent Plan',
+      },
+      {
+        name: 'Community events',
+      },
+      {
+        name: 'Share your TiDB story',
       },
     ],
   },
   {
-    name: 'Docs',
+    name: 'Resources',
     items: [
       {
         name: 'Quick Start',
@@ -26,16 +41,11 @@ const footerColumns = [
         name: 'FAQ',
       },
       {
-        name: 'TiDB Tools',
+        name: 'Tools',
       },
       {
         name: 'Release Notes',
       },
-    ],
-  },
-  {
-    name: 'Resources',
-    items: [
       {
         name: 'Blog',
       },
@@ -44,9 +54,6 @@ const footerColumns = [
       },
       {
         name: 'GitHub',
-      },
-      {
-        name: 'TiDB Community',
       },
     ],
   },
@@ -61,9 +68,6 @@ const footerColumns = [
       },
       {
         name: 'News',
-      },
-      {
-        name: 'Contact Us',
       },
       {
         name: 'Privacy Policy',

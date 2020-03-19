@@ -68,12 +68,19 @@ const Footer = () => {
             <div className="columns is-multiline socials-desktop">
               <Socials className="column is-4" type="follow" />
             </div>
+            <div className="annotations annotations-desktop">
+              <div className="lang">
+                <Language /> Language
+              </div>
+              <div className="copyright">
+                ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
+              </div>
+            </div>
           </div>
         </div>
-        <div className="annotations">
+        <div className="annotations annotations-mobile">
           <div className="lang">
-            <Language />
-            English
+            <Language /> Language
           </div>
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
