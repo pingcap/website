@@ -1,1 +1,124 @@
 @import '../common';
+
+.has-light-background {
+  @include has-light-background;
+}
+
+$logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
+  mi webank;
+
+.PingCAP-Home {
+  .hero {
+    .container {
+      @include mobile {
+        flex-direction: column-reverse;
+        justify-content: center;
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .titles-and-entry {
+        h1,
+        h2 {
+          @include mobile {
+            text-align: center;
+          }
+
+          margin-bottom: 3rem;
+        }
+
+        h1 {
+          img {
+            width: 400px;
+          }
+        }
+
+        h2 {
+          @include mobile {
+            width: 100%;
+            font-size: $size-6;
+          }
+
+          width: 400px;
+          color: $B3;
+          line-height: $LH4;
+        }
+
+        .buttons {
+          @include mobile {
+            display: flex;
+            justify-content: center;
+          }
+
+          a {
+            font-size: $size-6;
+
+            &:first-child {
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .img-wrapper {
+        @include mobile {
+          width: 80%;
+          margin-bottom: 2rem;
+        }
+
+        width: 40%;
+      }
+    }
+  }
+
+  .home-title {
+    margin-bottom: 3rem;
+    color: $B3;
+    font-size: $size-5;
+    text-align: center;
+  }
+
+  .link-with-arrow {
+    color: $primary;
+
+    svg {
+      position: relative;
+      top: 0.125rem;
+      font-size: $size-7;
+    }
+  }
+
+  @each $logo in $logos {
+    .#{$logo}-logo {
+      background: url(../../../images/home/logos/#{$logo}.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  .section-case-studies {
+    .logos {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+
+      > * {
+        @include mobile {
+          flex-basis: 33.33333%;
+          margin-bottom: 1.5rem;
+
+          &:last-child {
+            margin-bottom: 3rem;
+          }
+        }
+
+        flex-basis: 20%;
+        height: 72px;
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}

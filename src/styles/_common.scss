@@ -61,3 +61,7 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
     }
   }
 }
+
+@mixin has-light-background {
+  background: $B5;
+}
