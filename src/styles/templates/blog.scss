@@ -103,7 +103,6 @@ $navbar-height-mobile: 4.25rem; // 68px
         font-size: $size-5;
       }
 
-      color: $B3;
       font-size: $size-4;
       font-weight: bold;
     }
@@ -134,10 +133,6 @@ $navbar-height-mobile: 4.25rem; // 68px
 
   .right-column {
     position: relative;
-
-    .title {
-      color: $B3;
-    }
   }
 
   .toc {

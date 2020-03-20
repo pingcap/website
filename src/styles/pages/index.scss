@@ -1,4 +1,5 @@
 @import '../common';
+@import '../../../node_modules/swiper/css/swiper.min.css';
 
 .has-light-background {
   @include has-light-background;
@@ -75,7 +76,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
   .home-title {
     margin-bottom: 3rem;
-    color: $B3;
     font-size: $size-5;
     text-align: center;
   }
@@ -118,6 +118,88 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         flex-basis: 20%;
         height: 72px;
         margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .section-celebrate-your-growth {
+    .swiper-container {
+      @include mobile {
+        flex-direction: column-reverse;
+      }
+
+      display: flex;
+      flex-direction: column;
+
+      .top {
+        @include mobile {
+          justify-content: center;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .swiper-prev,
+      .swiper-next {
+        @include mobile {
+          display: none;
+        }
+        @include has-pingcap-style-navigate;
+      }
+
+      .swiper-custom-pagination {
+        @include has-pingcap-style-pagination(140px);
+        @include mobile {
+          $connect-width: 70px;
+
+          margin-top: 1.5rem;
+
+          .bullet {
+            margin-right: $connect-width;
+
+            &:after {
+              width: $connect-width;
+            }
+          }
+        }
+      }
+
+      .swiper-slide {
+        @include mobile {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        display: flex;
+        align-items: center;
+
+        > * {
+          flex: 1;
+        }
+
+        .placeholder-wrapper {
+          @include VHCenter;
+
+          height: 100%;
+
+          .placeholder {
+            width: 80%;
+          }
+        }
+
+        .intro {
+          padding: 1.5rem 0;
+
+          .title.has-pingcap-style-underline {
+            @include mobile {
+              display: none;
+            }
+
+            margin-bottom: 0.5rem;
+          }
+        }
       }
     }
   }

@@ -1,60 +1,6 @@
 @import '../common';
 @import '../../../node_modules/swiper/css/swiper.min.css';
 
-@mixin pagination($connect-width) {
-  display: flex;
-
-  .bullet {
-    $bullet-width: 24px;
-
-    @include VHCenter;
-
-    position: relative;
-    width: $bullet-width;
-    height: $bullet-width;
-    margin-right: $connect-width;
-    border: 1px solid $B3;
-    border-radius: 50%;
-    outline: none;
-    transition: 0.25s;
-    cursor: pointer;
-
-    &:last-child {
-      margin-right: 0;
-
-      &:after {
-        content: none;
-      }
-    }
-
-    &:before {
-      content: '';
-      width: 12px;
-      height: 12px;
-      background: $B3;
-      border-radius: 50%;
-    }
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: $bullet-width;
-      width: $connect-width;
-      height: 1px;
-      border: 1px dashed $C2;
-    }
-
-    &.active {
-      background: $C1;
-      border: none;
-
-      &:before {
-        background: $primary;
-      }
-    }
-  }
-}
-
 .PingCAP-CaseStudies {
   .top-banner-wrapper {
     position: relative;
@@ -88,7 +34,6 @@
   .title-under-banner,
   .title-under-swiper {
     margin: 3rem 0 !important;
-    color: $B3;
     text-align: center;
   }
 
@@ -143,7 +88,6 @@
         margin-top: 6rem;
 
         .subtitle {
-          color: $B4;
           font-weight: bold;
         }
 
@@ -195,15 +139,6 @@
 
       .title {
         margin-top: 1rem;
-        color: $B3;
-
-        .underline {
-          display: inline-block;
-          width: 12px;
-          height: 3px;
-          margin-right: 0.5rem;
-          background: $primary;
-        }
       }
     }
 
@@ -243,22 +178,11 @@
       @include mobile {
         display: none;
       }
-
-      width: 36px;
-      height: 36px;
-      color: $B3;
-      border: 1px solid $B3;
-      border-radius: 50%;
-      cursor: pointer;
-
-      &:hover {
-        color: #fff;
-        background: $B3;
-      }
+      @include has-pingcap-style-navigate;
     }
 
     .swiper-custom-pagination {
-      @include pagination(140px);
+      @include has-pingcap-style-pagination(140px);
       @include mobile {
         $connect-width: 70px;
 
@@ -411,7 +335,6 @@
 
       .title {
         margin-bottom: 1rem;
-        color: $B3;
       }
 
       .summary {

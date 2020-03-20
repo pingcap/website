@@ -39,7 +39,7 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
 }
 
 // Common input style
-@mixin has-pingcap-input-style {
+@mixin has-pingcap-style-input {
   input {
     padding-bottom: calc(0.6rem - 1px);
     background: $B5;
@@ -64,4 +64,72 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
 
 @mixin has-light-background {
   background: $B5;
+}
+
+@mixin has-pingcap-style-pagination($connect-width) {
+  display: flex;
+
+  .bullet {
+    $bullet-width: 24px;
+
+    @include VHCenter;
+
+    position: relative;
+    width: $bullet-width;
+    height: $bullet-width;
+    margin-right: $connect-width;
+    border: 1px solid $B3;
+    border-radius: 50%;
+    outline: none;
+    transition: 0.25s;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background: $B3;
+      border-radius: 50%;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: $bullet-width;
+      width: $connect-width;
+      height: 1px;
+      border: 1px dashed $C2;
+    }
+
+    &.active {
+      background: $C1;
+      border: none;
+
+      &:before {
+        background: $primary;
+      }
+    }
+  }
+}
+
+@mixin has-pingcap-style-navigate {
+  width: 36px;
+  height: 36px;
+  color: $B3;
+  border: 1px solid $B3;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background: $B3;
+  }
 }
