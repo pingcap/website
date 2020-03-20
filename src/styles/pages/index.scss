@@ -8,6 +8,41 @@
 $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   mi webank;
 
+@mixin has-intro-and-placeholder {
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  display: flex;
+  align-items: center;
+
+  > * {
+    flex: 1;
+  }
+
+  $img-width: 90%;
+
+  .placeholder-wrapper {
+    @include VHCenter;
+
+    height: 100%;
+
+    .placeholder {
+      width: $img-width;
+    }
+  }
+
+  .divider {
+    flex: none;
+    width: (100% - $img-width) / 2;
+  }
+
+  .intro {
+    padding: 1.5rem 0;
+  }
+}
+
 .PingCAP-Home {
   .hero {
     .container {
@@ -143,10 +178,10 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
       .swiper-prev,
       .swiper-next {
+        @include has-pingcap-style-navigate;
         @include mobile {
           display: none;
         }
-        @include has-pingcap-style-navigate;
       }
 
       .swiper-custom-pagination {
@@ -167,37 +202,34 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       }
 
       .swiper-slide {
+        @include has-intro-and-placeholder;
+
+        .title.has-pingcap-style-underline {
+          @include mobile {
+            display: none;
+          }
+
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+  }
+
+  .section-benefits {
+    .benefits {
+      .benefit {
+        @include has-intro-and-placeholder;
         @include mobile {
-          flex-direction: column;
-          text-align: center;
-        }
+          margin-top: 3rem;
 
-        display: flex;
-        align-items: center;
-
-        > * {
-          flex: 1;
-        }
-
-        .placeholder-wrapper {
-          @include VHCenter;
-
-          height: 100%;
-
-          .placeholder {
-            width: 80%;
+          &:first-child {
+            margin-top: 0;
           }
         }
 
-        .intro {
-          padding: 1.5rem 0;
-
-          .title.has-pingcap-style-underline {
-            @include mobile {
-              display: none;
-            }
-
-            margin-bottom: 0.5rem;
+        &.reverse {
+          @include tablet {
+            flex-direction: row-reverse;
           }
         }
       }

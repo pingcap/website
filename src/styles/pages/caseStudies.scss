@@ -175,10 +175,10 @@
 
     .swiper-prev,
     .swiper-next {
+      @include has-pingcap-style-navigate;
       @include mobile {
         display: none;
       }
-      @include has-pingcap-style-navigate;
     }
 
     .swiper-custom-pagination {

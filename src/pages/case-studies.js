@@ -119,8 +119,8 @@ const CaseStudies = ({ data }) => {
                 src={quoteMarkSVG.publicURL}
                 alt="quote-mark"
               />
-              <div className="title is-6 is-spaced">
-                <span className="underline"></span>
+              <div className="title is-6 is-spaced has-pingcap-style-underline">
+                <span className="underline" />
                 Featured Testimonials
               </div>
             </div>
