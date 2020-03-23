@@ -3,4 +3,13 @@
   flex-direction: column;
   align-items: center;
   border: 1px solid $C2;
+
+  &.is-borderless {
+    border: none;
+  }
+
+  &.is-horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }

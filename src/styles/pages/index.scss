@@ -5,6 +5,20 @@
   @include has-light-background;
 }
 
+@mixin strikethrough($color) {
+  width: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid $color;
+}
+
+.strikethrough-white {
+  @include strikethrough(#fff);
+}
+
+.strikethrough-primary {
+  @include strikethrough($primary);
+}
+
 $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   mi webank;
 
@@ -55,7 +69,15 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       justify-content: space-between;
       align-items: center;
 
+      > * {
+        width: 40%;
+      }
+
       .titles-and-entry {
+        @include mobile {
+          width: 100%;
+        }
+
         h1,
         h2 {
           @include mobile {
@@ -67,17 +89,12 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
         h1 {
           img {
-            width: 400px;
+            width: 100%;
           }
         }
 
         h2 {
-          @include mobile {
-            width: 100%;
-            font-size: $size-6;
-          }
-
-          width: 400px;
+          width: 100%;
           color: $B3;
           line-height: $LH4;
         }
@@ -103,8 +120,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           width: 80%;
           margin-bottom: 2rem;
         }
-
-        width: 40%;
       }
     }
   }
@@ -232,6 +247,232 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
             flex-direction: row-reverse;
           }
         }
+      }
+    }
+  }
+
+  .section-get-started {
+    background: #3a3ac1;
+
+    .container {
+      @include mobile {
+        flex-direction: column;
+
+        .title {
+          margin-bottom: 1.5rem !important;
+        }
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        margin: 0;
+      }
+
+      a {
+        color: $primary;
+        font-size: $size-6;
+      }
+    }
+  }
+
+  .section-use-cases {
+    .oltp-and-htap {
+      .oltp,
+      .htap {
+        @include VHCenter;
+        @include mobile {
+          height: 450px;
+        }
+
+        height: 400px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .oltp {
+        @include mobile {
+          background-image: url(../../../images/home/use-cases/oltp-mobile.svg);
+        }
+
+        background-image: url(../../../images/home/use-cases/oltp-desktop.svg);
+      }
+
+      .htap {
+        @include mobile {
+          background-image: url(../../../images/home/use-cases/htap-mobile.svg);
+        }
+
+        background-image: url(../../../images/home/use-cases/htap-desktop.svg);
+      }
+
+      .inner {
+        &,
+        .title,
+        .subtitle,
+        a {
+          color: #fff;
+        }
+
+        .title.is-4 {
+          margin-bottom: 1rem;
+        }
+
+        ul {
+          list-style: inside;
+          margin-bottom: 1.5rem;
+          font-size: $size-6;
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .section-architecture {
+    .images {
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      display: flex;
+      justify-content: space-between;
+
+      > * {
+        @include mobile {
+          width: 325px;
+          height: 190px;
+        }
+
+        $width: 320px;
+
+        width: $width;
+        height: $width / 0.8;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .left {
+        @include mobile {
+          background-image: url(../../../images/home/architecture/left-mobile.svg);
+        }
+
+        background-image: url(../../../images/home/architecture/left-desktop.svg);
+      }
+
+      .center {
+        @include mobile {
+          width: 250px;
+          height: 350px;
+        }
+
+        background-image: url(../../../images/home/architecture/center.svg);
+      }
+
+      .right {
+        @include mobile {
+          background-image: url(../../../images/home/architecture/right-mobile.svg);
+        }
+
+        background-image: url(../../../images/home/architecture/right-desktop.svg);
+      }
+    }
+  }
+
+  .section-learn-more {
+    .card {
+      height: 100%;
+
+      figure.image {
+        overflow: hidden;
+
+        img {
+          position: relative;
+          right: 40%;
+          width: 180%;
+          max-width: 180%;
+        }
+      }
+
+      .summary {
+        color: $M4;
+      }
+    }
+
+    .view-more-wrapper {
+      margin-top: 2.25rem;
+    }
+  }
+
+  .section-get-started-with-tidb {
+    border-bottom: 1px solid $C2;
+
+    .box {
+      &.outer {
+        @extend .has-light-background;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid rgba($color: $C2, $alpha: 0.5);
+
+        .title.is-7 {
+          color: $C4;
+        }
+      }
+
+      &.logo,
+      .logos,
+      a.button {
+        width: 80%;
+      }
+
+      &.logo {
+        @include VHCenter;
+
+        img {
+          width: 80%;
+          height: 72px;
+        }
+
+        &.aws {
+          height: 112px;
+        }
+
+        &.tidb {
+          height: 248px;
+        }
+      }
+
+      .logos {
+        display: flex;
+        justify-content: space-between;
+
+        .logo {
+          width: 45%;
+
+          &.kubernetes {
+            img {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .section-join-us-newsletter {
+    .PingCAP-PostFromUs {
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
       }
     }
   }

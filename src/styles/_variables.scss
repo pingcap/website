@@ -41,9 +41,13 @@ $T6: #f15a24;
 
 $family-sans-serif: 'Titillium Web', sans-serif;
 $primary: $B1;
+$shadow: 0 0.1875em 0.5em #f0f0f0;
+
+// box
+$box-shadow: $shadow;
 
 // card
-$card-shadow: 0 0.1875em 0.5em #f0f0f0;
+$card-shadow: $shadow;
 
 // navbar
 $navbar-item-hover-background-color: #e9ecef;

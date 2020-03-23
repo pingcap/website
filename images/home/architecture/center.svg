@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="557" height="460.311" viewBox="0 0 557 460.311">
+  <g id="Group_2356" data-name="Group 2356" transform="translate(-1162 -7879.689)">
+    <g id="Group_2355" data-name="Group 2355">
+      <g id="Group_2092" data-name="Group 2092" transform="translate(1162.11 7880.691)">
+        <g id="Group_2059" data-name="Group 2059" transform="translate(55.558 0)">
+          <path id="Path_10107" data-name="Path 10107" d="M2426.681,626.1c-119.961,0-217.554-97.6-217.554-217.558S2306.72,190.99,2426.681,190.99s217.556,97.6,217.556,217.556S2546.643,626.1,2426.681,626.1Zm0-422.211c-112.844,0-204.651,91.807-204.651,204.653S2313.837,613.2,2426.681,613.2s204.653-91.807,204.653-204.654S2539.526,203.894,2426.681,203.894Z" transform="translate(-2207.213 -180.032)" fill="#3f3d56" stroke="#3f3d56" stroke-width="4"/>
+          <path id="Path_10245" data-name="Path 10245" d="M2340.915,218.89a1.88,1.88,0,0,1-1.431-3.1l12.23-14.308-12.25-14.3a1.883,1.883,0,0,1,2.862-2.448l14.341,16.744-14.322,16.755A1.881,1.881,0,0,1,2340.915,218.89Z" transform="translate(-2131.301 -184.074)" fill="#fff" stroke="#fff" stroke-width="2"/>
+          <path id="Path_10246" data-name="Path 10246" d="M2439.2,455.11a1.908,1.908,0,0,1-.437-.052l-21.449-5.115,1.743-21.976a1.88,1.88,0,1,1,3.749.3l-1.485,18.766,18.318,4.368a1.882,1.882,0,0,1-.439,3.712Z" transform="translate(-2085.54 -42.544)" fill="#fff" stroke="#fff" stroke-width="2"/>
+          <path id="Path_10247" data-name="Path 10247" d="M2264.1,456.507a1.882,1.882,0,0,1-1.873-1.73l-1.764-21.979,21.439-5.135a1.881,1.881,0,0,1,.876,3.658l-18.308,4.386,1.507,18.768a1.881,1.881,0,0,1-1.724,2.026C2264.2,456.505,2264.148,456.507,2264.1,456.507Z" transform="translate(-2177.209 -41.743)" fill="#fff" stroke="#fff" stroke-width="2"/>
+          <g id="Group_2042" data-name="Group 2042" transform="translate(0 153.28)">
+            <path id="Path_10344" data-name="Path 10344" d="M2239.342,302.479a1.875,1.875,0,0,1-1.606-.9l-9.83-16.055-17.385,7.231a1.881,1.881,0,1,1-1.442-3.475l20.357-8.467,11.507,18.8a1.879,1.879,0,0,1-1.6,2.862Z" transform="translate(-2207.918 -280.815)" fill="#fff" stroke="#fff" stroke-width="2"/>
+          </g>
+          <path id="Path_10345" data-name="Path 10345" d="M2482.726,301.138l-20.36-8.445a1.882,1.882,0,1,1,1.442-3.476l17.387,7.212,9.814-16.069a1.883,1.883,0,0,1,3.214,1.963Z" transform="translate(-2059.888 -128.328)" fill="#fff" stroke="#fff" stroke-width="2"/>
+        </g>
+        <g id="Group_2060" data-name="Group 2060" transform="translate(92.11 52.283)">
+          <g id="Rectangle_2567" data-name="Rectangle 2567" transform="translate(-0.22 0.026)" fill="#fff" stroke="#3f3d56" stroke-width="2">
+            <rect width="87" height="48" stroke="none"/>
+            <rect x="1" y="1" width="85" height="46" fill="none"/>
+          </g>
+          <text id="Data" transform="translate(15.78 33.026)" fill="#3f3d56" font-size="27" font-family="TitilliumWeb-Regular, Titillium Web"><tspan x="0" y="0">Data</tspan></text>
+        </g>
+        <g id="Group_2067" data-name="Group 2067" transform="translate(335.321 46.074)">
+          <g id="Rectangle_2567-2" data-name="Rectangle 2567" transform="translate(-0.431 0.235)" fill="#fff" stroke="#3f3d56" stroke-width="2">
+            <rect width="170" height="47" stroke="none"/>
+            <rect x="1" y="1" width="168" height="45" fill="none"/>
+          </g>
+          <text id="Information" transform="translate(17.569 33.235)" fill="#3f3d56" font-size="27" font-family="TitilliumWeb-Regular, Titillium Web"><tspan x="0" y="0">Information</tspan></text>
+        </g>
+        <g id="Group_2069" data-name="Group 2069" transform="translate(209.058 411.408)">
+          <g id="Rectangle_2568" data-name="Rectangle 2568" transform="translate(-0.168 -0.099)" fill="#fff" stroke="#3f3d56" stroke-width="2">
+            <rect width="132" height="48" stroke="none"/>
+            <rect x="1" y="1" width="130" height="46" fill="none"/>
+          </g>
+          <text id="Decision" transform="translate(16.832 31.901)" fill="#3f3d56" font-size="27" font-family="TitilliumWeb-Regular, Titillium Web"><tspan x="0" y="0">Decision</tspan></text>
+        </g>
+        <g id="Group_2091" data-name="Group 2091" transform="translate(0 279.971)">
+          <g id="Rectangle_2569" data-name="Rectangle 2569" transform="translate(-0.11 0.338)" fill="#fff" stroke="#3f3d56" stroke-width="2">
+            <rect width="111" height="46" stroke="none"/>
+            <rect x="1" y="1" width="109" height="44" fill="none"/>
+          </g>
+          <text id="Result" transform="translate(17.89 32.338)" fill="#3f3d56" font-size="27" font-family="TitilliumWeb-Regular, Titillium Web"><tspan x="0" y="0">Result</tspan></text>
+        </g>
+        <g id="Group_2088" data-name="Group 2088" transform="translate(179.046 109.205)">
+          <g id="Group_2072" data-name="Group 2072" transform="translate(0 0)">
+            <g id="Group_2070" data-name="Group 2070" transform="translate(0)">
+              <g id="Group_1275" data-name="Group 1275">
+                <rect id="Rectangle_2036" data-name="Rectangle 2036" width="191" height="57" transform="translate(-0.155 170.104)" fill="#3f3d56"/>
+                <ellipse id="Ellipse_223" data-name="Ellipse 223" cx="95.5" cy="20" rx="95.5" ry="20" transform="translate(-0.155 148.104)" fill="#6c63ff"/>
+                <ellipse id="Ellipse_224" data-name="Ellipse 224" cx="95.5" cy="21" rx="95.5" ry="21" transform="translate(-0.155 206.104)" fill="#3f3d56"/>
+                <rect id="Rectangle_2036-2" data-name="Rectangle 2036" width="191" height="60" transform="translate(-0.155 92.104)" fill="#3f3d56"/>
+                <ellipse id="Ellipse_223-2" data-name="Ellipse 223" cx="95.5" cy="21" rx="95.5" ry="21" transform="translate(-0.155 73.104)" fill="#6c63ff"/>
+                <ellipse id="Ellipse_224-2" data-name="Ellipse 224" cx="95.5" cy="21.5" rx="95.5" ry="21.5" transform="translate(-0.155 132.104)" fill="#3f3d56"/>
+                <rect id="Rectangle_2036-3" data-name="Rectangle 2036" width="191" height="57" transform="translate(-0.155 23.104)" fill="#3f3d56"/>
+                <ellipse id="Ellipse_223-3" data-name="Ellipse 223" cx="95.5" cy="20.5" rx="95.5" ry="20.5" transform="translate(-0.155 0.104)" fill="#6c63ff"/>
+                <ellipse id="Ellipse_224-3" data-name="Ellipse 224" cx="95.5" cy="21" rx="95.5" ry="21" transform="translate(-0.155 59.104)" fill="#3f3d56"/>
+              </g>
+              <g id="Group_1276" data-name="Group 1276" transform="translate(75.661 77.827)">
+                <rect id="Rectangle_2037" data-name="Rectangle 2037" width="10.205" height="10.205" transform="translate(14.67)" fill="#ff6584" opacity="0.8"/>
+                <rect id="Rectangle_2038" data-name="Rectangle 2038" width="10.205" height="10.205" transform="translate(29.339)" fill="#ff6584"/>
+                <rect id="Rectangle_2039" data-name="Rectangle 2039" width="10.205" height="10.205" fill="#ff6584" opacity="0.4"/>
+              </g>
+              <g id="Group_1278" data-name="Group 1278" transform="translate(75.661 224.851)">
+                <rect id="Rectangle_2037-2" data-name="Rectangle 2037" width="10.205" height="10.205" transform="translate(14.67 0)" fill="#ff6584" opacity="0.8"/>
+                <rect id="Rectangle_2038-2" data-name="Rectangle 2038" width="10.205" height="10.205" transform="translate(29.339 0)" fill="#ff6584"/>
+                <rect id="Rectangle_2039-2" data-name="Rectangle 2039" width="10.205" height="10.205" transform="translate(0 0)" fill="#ff6584" opacity="0.4"/>
+              </g>
+            </g>
+          </g>
+          <g id="Group_2074" data-name="Group 2074" transform="translate(82.046 93.349)">
+            <g id="Group_2073" data-name="Group 2073">
+              <path id="Path_10350" data-name="Path 10350" d="M4668.684,1746.625l-8.9,5.136v5.134l4.449-2.569v10.338l4.447,2.565h0v-15.47l4.446-2.567Z" transform="translate(-4655.342 -1741.49)" fill="#fff"/>
+              <path id="Path_10351" data-name="Path 10351" d="M4767.789,1790.725v10.348l4.447-2.568v-10.34l-.006,0Z" transform="translate(-4750.002 -1777.896)" fill="#fff"/>
+              <path id="Path_10352" data-name="Path 10352" d="M4637.166,1735.942l-13.377-7.723v-15.445l13.377-7.722,13.375,7.722v15.445Zm-12.653-8.14,12.653,7.305,12.652-7.305v-14.609l-12.652-7.305-12.653,7.305Z" transform="translate(-4623.789 -1705.052)" fill="#fff"/>
+              <path id="Path_10353" data-name="Path 10353" d="M4637.166,1735.942l-13.377-7.723v-15.445l13.377-7.722,13.375,7.722v15.445Zm-12.653-8.14,12.653,7.305,12.652-7.305v-14.609l-12.652-7.305-12.653,7.305Z" transform="translate(-4623.789 -1705.052)" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+            </g>
+          </g>
+        </g>
+        <g id="Group_2112" data-name="Group 2112" transform="translate(387.012 280.425)">
+          <g id="Rectangle_2567-3" data-name="Rectangle 2567" transform="translate(-0.122 -0.116)" fill="#fff" stroke="#3f3d56" stroke-width="2">
+            <rect width="170" height="47" stroke="none"/>
+            <rect x="1" y="1" width="168" height="45" fill="none"/>
+          </g>
+          <text id="Knowledge" transform="translate(21.878 32.884)" fill="#3f3d56" font-size="27" font-family="TitilliumWeb-Regular, Titillium Web"><tspan x="0" y="0">Knowledge</tspan></text>
+        </g>
+        <g id="Group_2113" data-name="Group 2113" transform="translate(-3290.893 -1704.755)">
+          <path id="Path_10363" data-name="Path 10363" d="M3522.783,1898.158v49.3l42.692,24.648,42.692-24.648v-49.3l-42.692-24.648Z" transform="translate(0 0)" fill="#e30c34" stroke="#fff" stroke-width="4"/>
+          <path id="Path_10364" data-name="Path 10364" d="M3587.344,1915.141l-28.354,16.37v16.367l14.182-8.188v32.958l14.174,8.172h0v-49.314l14.173-8.183Z" transform="translate(-21.894 -25.174)" fill="#fff"/>
+          <path id="Path_10365" data-name="Path 10365" d="M3666.78,1964.875v32.855l14.233-8.217v-32.863Z" transform="translate(-87.076 -50.276)" fill="#fff"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

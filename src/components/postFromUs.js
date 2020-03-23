@@ -5,7 +5,7 @@ import React from 'react'
 
 const NormalBox = withNormalHelpers(Box)
 
-const PostFromUs = () => {
+const Img = () => {
   const { PostFromUsSVG } = useStaticQuery(
     graphql`
       query {
@@ -16,20 +16,43 @@ const PostFromUs = () => {
     `
   )
 
-  return (
-    <NormalBox as="section" className="PingCAP-PostFromUs" shadowless>
-      <img src={PostFromUsSVG.publicURL} alt="Post from Us" />
-      <h4 className="title is-6">Never Miss a Post from Us!</h4>
-      <div className="field has-addons">
-        <div className="control">
-          <input className="input" type="text" />
-        </div>
-        <div className="control">
-          <Button color="primary">Subscribe</Button>
-        </div>
-      </div>
-    </NormalBox>
-  )
+  return <img src={PostFromUsSVG.publicURL} alt="Post from Us" />
 }
+
+const Field = () => (
+  <div className="field has-addons">
+    <div className="control">
+      <input className="input" type="text" />
+    </div>
+    <div className="control">
+      <Button color="primary">Subscribe</Button>
+    </div>
+  </div>
+)
+
+const PostFromUs = () => (
+  <NormalBox as="section" className="PingCAP-PostFromUs" shadowless>
+    <Img />
+    <h4 className="title is-6">Never Miss a Post from Us!</h4>
+    <Field />
+  </NormalBox>
+)
+
+export const PostFromUsInHome = () => (
+  <NormalBox
+    as="section"
+    className="PingCAP-PostFromUs is-borderless is-horizontal"
+    shadowless
+  >
+    <div className="titles">
+      <h2 className="title is-5">Join Our Newsletter</h2>
+      <div className="subtitle is-7">
+        Features, releases, showcases, meetups, talks...
+      </div>
+    </div>
+    <Img />
+    <Field />
+  </NormalBox>
+)
 
 export default PostFromUs
