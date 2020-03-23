@@ -98,7 +98,6 @@ const IndexPage = ({ data }) => {
         const top = b.getBoundingClientRect().top
 
         if (top > document.documentElement.clientHeight) {
-          console.log(index)
           bind(b, index++, a.displayStyle)
 
           Array.from(b.children).forEach(c => (c.style = style))

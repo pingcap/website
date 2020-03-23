@@ -11,19 +11,6 @@ const logos = [
   'Yuanfudao-com',
   'NetEase-Games',
   'GAEA',
-  'JD-Cloud',
-  'Zhihu',
-  'Xiaomi',
-  'BookMyShow',
-  'Shopee',
-  'Meituan-Dianping',
-  'iQiyi',
-  'Zhuan-Zhuan',
-  'Mobike',
-  'Yuanfudao-com',
-  'NetEase-Games',
-  'GAEA',
-  // No Read More
   'Yiguo-com',
   'Qingdao-Telaidian',
   'LY-com',
@@ -44,4 +31,17 @@ const logos = [
   '----Finance',
 ].map(logo => logo + '-logo')
 
-module.exports = [...logos]
+const homeLogos = [
+  'paypay',
+  'shopee',
+  'bookmyshow',
+  'bank-of-beijing',
+  'hulu',
+  'qiy',
+  'netease-games',
+  'jd-cloud',
+  'mi',
+  'webank',
+].map(logo => logo + '-logo')
+
+module.exports = [...logos, ...homeLogos]
