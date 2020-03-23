@@ -28,11 +28,11 @@ const followSocials = [
 const shareSocials = (link, title) => [
   {
     name: 'twitter',
-    href: `https://twitter.com/share?url=${link}`,
+    href: `https://twitter.com/intent/tweet?text=${title}&url=${link}`,
   },
   {
     name: 'facebook',
-    href: `https://facebook.com/sharer.php?u=${link}`,
+    href: `https://facebook.com/sharer/sharer.php?u=${link}`,
   },
   {
     name: 'linkedin',
@@ -44,7 +44,7 @@ const shareSocials = (link, title) => [
   },
   {
     name: 'yc',
-    href: `https://news.ycombinator.com/submit?u=${link}&t=${title}`,
+    href: `https://news.ycombinator.com/submitlink?u=${link}&t=${title}`,
   },
 ]
 
