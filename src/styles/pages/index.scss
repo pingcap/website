@@ -242,6 +242,10 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           }
         }
 
+        > * {
+          transition: 0.5s;
+        }
+
         &.reverse {
           @include tablet {
             flex-direction: row-reverse;
@@ -343,6 +347,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
       display: flex;
       justify-content: space-between;
+      overflow: hidden;
 
       > * {
         @include mobile {
@@ -351,6 +356,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         }
 
         $width: 320px;
+        transition: 0.8s;
 
         width: $width;
         height: $width / 0.8;
@@ -370,7 +376,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       .center {
         @include mobile {
           width: 250px;
-          height: 350px;
+          height: 300px;
         }
 
         background-image: url(../../../images/home/architecture/center.svg);
@@ -438,12 +444,15 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         @include VHCenter;
 
         img {
-          width: 80%;
           height: 72px;
         }
 
         &.aws {
           height: 112px;
+
+          img {
+            height: 36px;
+          }
         }
 
         &.tidb {
@@ -457,12 +466,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
         .logo {
           width: 45%;
-
-          &.kubernetes {
-            img {
-              width: 100px;
-            }
-          }
         }
       }
     }

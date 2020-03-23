@@ -16,7 +16,7 @@ async function downloadBlogs() {
   try {
     blogs = (await http.get(blogsURL)).data
   } catch (error) {
-    log(chalk.red('Failed to get all blog names. Please check your network'))
+    log(chalk.red('Failed to get all blog names. Please check your network.'))
     return
   }
 

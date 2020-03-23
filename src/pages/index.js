@@ -32,12 +32,13 @@ const IndexPage = ({ data }) => {
   const { tidbSQLAtScaleSVG, tidbFeatures, last3Blogs } = data
 
   const benefitsRef = useRef()
+  const architectureRef = useRef()
 
   useEffect(() => {
     new Swiper('.swiper-container', {
-      // autoplay: {
-      //   delay: 6000,
-      // },
+      autoplay: {
+        delay: 6000,
+      },
       loop: true,
       pagination: {
         el: '.swiper-custom-pagination',
@@ -52,14 +53,25 @@ const IndexPage = ({ data }) => {
       },
     })
 
-    // scrollToDisplayBenefits()
+    scrollToDisplay()
   }, [])
 
-  const scrollToDisplayBenefits = () => {
-    const benefitsArray = Array.from(benefitsRef.current.children)
+  const scrollToDisplay = () => {
+    const array = [
+      {
+        style: 'opacity: 0; transform: translateY(100%)',
+        displayStyle: 'opacity: 1; transform: translateY(0)',
+        children: Array.from(benefitsRef.current.children),
+      },
+      {
+        style: 'opacity: 0; transform: translateX(100%)',
+        displayStyle: 'opacity: 1; transform: translateX(0)',
+        children: [architectureRef.current],
+      },
+    ]
     let begin = 0
 
-    function bind(el, index) {
+    function bind(el, index, displayStyle) {
       const listener = () => {
         if (index !== begin) {
           return
@@ -67,8 +79,9 @@ const IndexPage = ({ data }) => {
 
         const { top, height } = el.getBoundingClientRect()
 
-        if (top - document.documentElement.clientHeight < -height / 4) {
-          console.log(1)
+        if (top - document.documentElement.clientHeight < -height / 3) {
+          Array.from(el.children).forEach(c => (c.style = displayStyle))
+
           begin++
           window.removeEventListener('scroll', listener)
         }
@@ -77,12 +90,23 @@ const IndexPage = ({ data }) => {
       window.addEventListener('scroll', listener)
     }
 
-    benefitsArray.forEach((b, i) => {
-      const top = b.getBoundingClientRect().top
+    let index = 0
+    array.forEach(a => {
+      const style = a.style
 
-      if (top > 0) {
-        bind(b, i)
-      }
+      a.children.forEach(b => {
+        const top = b.getBoundingClientRect().top
+
+        if (top > document.documentElement.clientHeight) {
+          console.log(index)
+          bind(b, index++, a.displayStyle)
+
+          Array.from(b.children).forEach(c => (c.style = style))
+        } else {
+          index++
+          begin++
+        }
+      })
     })
   }
 
@@ -274,7 +298,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-architecture">
           <div className="container">
             <h2 className="title home-title">Architecture</h2>
-            <div className="images has-light-background">
+            <div ref={architectureRef} className="images has-light-background">
               <div className="left" />
               <div className="center" />
               <div className="right" />
@@ -361,7 +385,7 @@ const IndexPage = ({ data }) => {
                     />
                   </Box>
                   <div className="logos">
-                    <Box className="logo kubernetes">
+                    <Box className="logo">
                       <img src={logos.kubernetes} alt="kubernetes logo" />
                     </Box>
                     <Box className="logo aws">
