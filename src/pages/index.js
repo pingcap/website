@@ -59,7 +59,7 @@ const IndexPage = ({ data }) => {
   const scrollToDisplay = () => {
     const array = [
       {
-        style: 'opacity: 0; transform: translateY(100%)',
+        style: 'opacity: 0; transform: translateY(25%)',
         displayStyle: 'opacity: 1; transform: translateY(0)',
         children: Array.from(benefitsRef.current.children),
         timeout: false,
@@ -81,7 +81,7 @@ const IndexPage = ({ data }) => {
 
         const { top, height } = el.getBoundingClientRect()
 
-        if (top - document.documentElement.clientHeight < -height / 3) {
+        if (top - document.documentElement.clientHeight < (-height / 4) * 3) {
           Array.from(el.children).forEach((c, i) => {
             if (timeout) {
               setTimeout(() => {
@@ -110,7 +110,11 @@ const IndexPage = ({ data }) => {
         if (top > document.documentElement.clientHeight) {
           bind(b, index++, a.displayStyle, a.timeout)
 
-          Array.from(b.children).forEach(c => (c.style = style))
+          Array.from(b.children).forEach(c => {
+            if (c.className !== 'intro') {
+              c.style = style
+            }
+          })
         } else {
           index++
           begin++
@@ -192,11 +196,11 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div className="divider" />
                     <div className="intro">
-                      <div className="title is-7 has-pingcap-style-underline">
+                      <div className="title is-5 has-pingcap-style-underline">
                         <span className="underline" /> 0 {i + 1}
                       </div>
-                      <div className="title is-6 is-spaced">{d.name}</div>
-                      <div className="subtitle is-7">{d.desc}</div>
+                      <div className="title is-4 is-spaced">{d.name}</div>
+                      <div className="subtitle is-5 desc">{d.desc}</div>
                     </div>
                   </div>
                 ))}
@@ -225,10 +229,10 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <div className="title is-6 is-spaced has-pingcap-style-underline">
+                    <div className="title is-4 is-spaced has-pingcap-style-underline">
                       <span className="underline" /> {d.name}
                     </div>
-                    <div className="subtitle is-7">{d.desc}</div>
+                    <div className="subtitle is-5 desc">{d.desc}</div>
                     <Link className="link-with-arrow" to={d.href}>
                       <ArrowForwardIcon /> <span>{d.link}</span>
                     </Link>

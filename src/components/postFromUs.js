@@ -41,12 +41,12 @@ const PostFromUs = () => (
 export const PostFromUsInHome = () => (
   <NormalBox
     as="section"
-    className="PingCAP-PostFromUs is-borderless is-horizontal"
+    className="PingCAP-PostFromUs in-home is-borderless is-horizontal"
     shadowless
   >
     <div className="titles">
-      <h2 className="title is-5">Join Our Newsletter</h2>
-      <div className="subtitle is-7">
+      <h2 className="title is-4 is-spaced">Join Our Newsletter</h2>
+      <div className="subtitle is-5">
         Features, releases, showcases, meetups, talks...
       </div>
     </div>

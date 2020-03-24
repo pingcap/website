@@ -4,6 +4,15 @@
   align-items: center;
   border: 1px solid $C2;
 
+  &.in-home {
+    padding-left: 0;
+    padding-right: 0;
+
+    img {
+      width: 250px;
+    }
+  }
+
   &.is-borderless {
     border: none;
   }

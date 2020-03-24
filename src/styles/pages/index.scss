@@ -54,6 +54,10 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
   .intro {
     padding: 1.5rem 0;
+
+    .desc {
+      line-height: 1.75;
+    }
   }
 }
 
@@ -126,7 +130,8 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
   .home-title {
     margin-bottom: 3rem;
-    font-size: $size-5;
+    font-size: $size-4;
+    font-weight: bold;
     text-align: center;
   }
 
@@ -275,7 +280,8 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         }
 
         > * {
-          transition: 0.5s;
+          // https://easings.net/#easeOutQuad
+          transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         &.reverse {
@@ -310,6 +316,12 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       a {
         color: $primary;
         font-size: $size-6;
+        border: none;
+
+        &:hover {
+          background: $B3;
+          color: #fff;
+        }
       }
     }
   }
@@ -412,7 +424,8 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         }
 
         $width: 320px;
-        transition: 0.8s;
+        // https://easings.net/#easeOutQuad
+        transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         width: $width;
         height: $width / 0.8;
