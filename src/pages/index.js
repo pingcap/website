@@ -296,8 +296,7 @@ const IndexPage = ({ data }) => {
                     </ul>
                     <Link className="link-with-arrow" to="/">
                       <ArrowForwardIcon />{' '}
-                      <span>See how modern business makes</span>
-                      decisions
+                      <span>See how modern business makes decisions</span>
                     </Link>
                   </div>
                 </Box>
