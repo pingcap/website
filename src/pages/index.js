@@ -62,16 +62,18 @@ const IndexPage = ({ data }) => {
         style: 'opacity: 0; transform: translateY(100%)',
         displayStyle: 'opacity: 1; transform: translateY(0)',
         children: Array.from(benefitsRef.current.children),
+        timeout: false,
       },
       {
         style: 'opacity: 0; transform: translateX(100%)',
         displayStyle: 'opacity: 1; transform: translateX(0)',
         children: [architectureRef.current],
+        timeout: true,
       },
     ]
     let begin = 0
 
-    function bind(el, index, displayStyle) {
+    function bind(el, index, displayStyle, timeout) {
       const listener = () => {
         if (index !== begin) {
           return
@@ -80,7 +82,15 @@ const IndexPage = ({ data }) => {
         const { top, height } = el.getBoundingClientRect()
 
         if (top - document.documentElement.clientHeight < -height / 3) {
-          Array.from(el.children).forEach(c => (c.style = displayStyle))
+          Array.from(el.children).forEach((c, i) => {
+            if (timeout) {
+              setTimeout(() => {
+                c.style = displayStyle
+              }, i * 100)
+            } else {
+              c.style = displayStyle
+            }
+          })
 
           begin++
           window.removeEventListener('scroll', listener)
@@ -98,7 +108,7 @@ const IndexPage = ({ data }) => {
         const top = b.getBoundingClientRect().top
 
         if (top > document.documentElement.clientHeight) {
-          bind(b, index++, a.displayStyle)
+          bind(b, index++, a.displayStyle, a.timeout)
 
           Array.from(b.children).forEach(c => (c.style = style))
         } else {
@@ -155,7 +165,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className="has-text-centered">
               <Link className="link-with-arrow" to="/case-studies">
-                <ArrowForwardIcon /> More Case Studies
+                <ArrowForwardIcon /> <span>More Case Studies</span>
               </Link>
             </div>
           </div>
@@ -220,7 +230,7 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div className="subtitle is-7">{d.desc}</div>
                     <Link className="link-with-arrow" to={d.href}>
-                      <ArrowForwardIcon /> {d.link}
+                      <ArrowForwardIcon /> <span>{d.link}</span>
                     </Link>
                   </div>
                 </div>
@@ -262,7 +272,8 @@ const IndexPage = ({ data }) => {
                       <li>Trillions of Rows in a single distributed table</li>
                     </ul>
                     <Link className="link-with-arrow" to="/">
-                      <ArrowForwardIcon /> See how modern applications scale
+                      <ArrowForwardIcon />{' '}
+                      <span>See how modern applications scale</span>
                     </Link>
                   </div>
                 </Box>
@@ -284,7 +295,8 @@ const IndexPage = ({ data }) => {
                       </li>
                     </ul>
                     <Link className="link-with-arrow" to="/">
-                      <ArrowForwardIcon /> See how modern business makes
+                      <ArrowForwardIcon />{' '}
+                      <span>See how modern business makes</span>
                       decisions
                     </Link>
                   </div>
@@ -308,7 +320,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-learn-more">
           <div className="container">
             <h2 className="title home-title">Learn more</h2>
-            <div className="columns">
+            <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter } }) => (
                 <div key={frontmatter.title} className="column">
                   <div className="card">
@@ -344,7 +356,7 @@ const IndexPage = ({ data }) => {
             </div>
             <div className="has-text-centered view-more-wrapper">
               <Link className="link-with-arrow" to="/blog">
-                <ArrowForwardIcon /> View More
+                <ArrowForwardIcon /> <span>View More</span>
               </Link>
             </div>
           </div>
@@ -353,7 +365,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-get-started-with-tidb">
           <div className="container">
             <h2 className="title home-title">Get started with TiDB</h2>
-            <div className="columns">
+            <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
                   <h3 className="title is-6">On Private Data Center</h3>
