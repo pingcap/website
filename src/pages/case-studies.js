@@ -170,8 +170,8 @@ function Logos({ logos }) {
     <div className="columns is-multiline logos">
       {logos
         .map(({ node }) => node.frontmatter)
-        .map(logo => (
-          <div key={logo.customer} className="column is-3">
+        .map((logo, i) => (
+          <div key={logo.customer + '-' + i} className="column is-3">
             <div className="detail-card">
               <div className="title is-6">{logo.customer}</div>
               <div
