@@ -80,8 +80,11 @@ const IndexPage = ({ data }) => {
         }
 
         const { top, height } = el.getBoundingClientRect()
+        const triggerHeight = window.matchMedia('(max-width: 768px)').matches
+          ? -height / 4
+          : (-height / 4) * 3
 
-        if (top - document.documentElement.clientHeight < (-height / 4) * 3) {
+        if (top - document.documentElement.clientHeight < triggerHeight) {
           Array.from(el.children).forEach((c, i) => {
             if (timeout) {
               setTimeout(() => {
