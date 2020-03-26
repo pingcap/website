@@ -1,7 +1,7 @@
 import '../styles/pages/index.scss'
 
 import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
-import { Link, graphql } from 'gatsby'
+import { Link, graphql, navigate } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
@@ -63,17 +63,19 @@ const IndexPage = ({ data }) => {
         displayStyle: 'opacity: 1; transform: translateY(0)',
         children: Array.from(benefitsRef.current.children),
         timeout: false,
+        triggerHeightRatio: [4 / 5, 0.25],
       },
       {
-        style: 'opacity: 0; transform: translateX(100%)',
+        style: 'opacity: 0; transform: translateX(-12.5%)',
         displayStyle: 'opacity: 1; transform: translateX(0)',
         children: [architectureRef.current],
         timeout: true,
+        triggerHeightRatio: [4 / 5, 0.25],
       },
     ]
     let begin = 0
 
-    function bind(el, index, displayStyle, timeout) {
+    function bind(el, index, displayStyle, timeout, triggerHeightRatio) {
       const listener = () => {
         if (index !== begin) {
           return
@@ -81,15 +83,15 @@ const IndexPage = ({ data }) => {
 
         const { top, height } = el.getBoundingClientRect()
         const triggerHeight = window.matchMedia('(max-width: 768px)').matches
-          ? -height / 4
-          : (-height / 4) * 3
+          ? -height * (triggerHeightRatio ? triggerHeightRatio[1] : 0.25)
+          : -height * (triggerHeightRatio ? triggerHeightRatio[0] : 0.75)
 
         if (top - document.documentElement.clientHeight < triggerHeight) {
           Array.from(el.children).forEach((c, i) => {
             if (timeout) {
               setTimeout(() => {
                 c.style = displayStyle
-              }, i * 100)
+              }, i * 200)
             } else {
               c.style = displayStyle
             }
@@ -111,7 +113,7 @@ const IndexPage = ({ data }) => {
         const top = b.getBoundingClientRect().top
 
         if (top > document.documentElement.clientHeight) {
-          bind(b, index++, a.displayStyle, a.timeout)
+          bind(b, index++, a.displayStyle, a.timeout, a.triggerHeightRatio)
 
           Array.from(b.children).forEach(c => {
             if (c.className !== 'intro') {
@@ -125,6 +127,8 @@ const IndexPage = ({ data }) => {
       })
     })
   }
+
+  const onCardClick = href => () => navigate(href)
 
   return (
     <Layout>
@@ -248,10 +252,10 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-get-started">
           <div className="container">
-            <h2 className="title is-5 has-text-white">
+            <h2 className="title is-3 has-text-white">
               Get started with TiDB!
             </h2>
-            <Button as="a" rounded>
+            <Button as="a" color="primary" rounded outlined>
               Free Download
             </Button>
           </div>
@@ -262,7 +266,7 @@ const IndexPage = ({ data }) => {
             <h2 className="title home-title">Use cases</h2>
             <div className="columns is-multiline oltp-and-htap">
               <div className="column is-full-mobile">
-                <Box className="oltp">
+                <Box className="oltp" onClick={onCardClick('/')}>
                   <div className="inner">
                     <h3 className="title is-3 is-spaced">O L T P</h3>
                     <h4 className="title is-4">
@@ -286,7 +290,7 @@ const IndexPage = ({ data }) => {
                 </Box>
               </div>
               <div className="column is-full-mobile">
-                <Box className="htap">
+                <Box className="htap" onClick={onCardClick('/')}>
                   <div className="inner">
                     <h3 className="title is-3 is-spaced">H T A P</h3>
                     <h4 className="title is-4">Real-Time Analytics</h4>
@@ -329,7 +333,23 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter } }) => (
                 <div key={frontmatter.title} className="column">
-                  <div className="card">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="card"
+                    onClick={onCardClick(
+                      `/blog/${frontmatter.title
+                        .replace(/[?%]/g, '')
+                        .split(' ')
+                        .join('-')}`
+                    )}
+                    onKeyDown={onCardClick(
+                      `/blog/${frontmatter.title
+                        .replace(/[?%]/g, '')
+                        .split(' ')
+                        .join('-')}`
+                    )}
+                  >
                     <div className="card-image">
                       <figure className="image">
                         <img
@@ -340,14 +360,7 @@ const IndexPage = ({ data }) => {
                     </div>
                     <div className="card-content">
                       <div className="title is-6 is-spaced">
-                        <Link
-                          to={`/blog/${frontmatter.title
-                            .replace(/[?%]/g, '')
-                            .split(' ')
-                            .join('-')}`}
-                        >
-                          {frontmatter.title}
-                        </Link>
+                        {frontmatter.title}
                       </div>
                       <div className="subtitle is-7">
                         By{' '}
@@ -403,7 +416,7 @@ const IndexPage = ({ data }) => {
                   </Box>
                   <div className="logos">
                     <Box className="logo">
-                      <img src={logos.kubernetes} alt="kubernetes logo" />
+                      <img src={logos.kubernetes1} alt="kubernetes logo" />
                     </Box>
                     <Box className="logo aws">
                       <img src={logos.aws} alt="aws logo" />

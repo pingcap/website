@@ -22,10 +22,8 @@
 
 @each $logo in $logos {
   .#{$logo}-logo {
-    background: url(../../images/logos/#{$logo}.png);
+    background: url(../../images/logos/#{$logo}.png) center no-repeat;
     background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 }
 
