@@ -2,13 +2,14 @@ const fs = require('fs')
 const chalk = require('chalk')
 const log = console.log
 const http = require('./http')
+const axios = require('axios')
+const toReadableStream = require('to-readable-stream')
 const { createReplaceBlogImagePathStream } = require('./utils')
 
 const isDev = process.env.NODE_ENV === 'development'
 const blogName = process.argv[2]
 
 const blogsURL = '/repos/pingcap/blog/contents'
-const blogURL = path => `/repos/pingcap/blog/contents/${path}`
 
 async function downloadBlogs() {
   let blogs
@@ -16,12 +17,17 @@ async function downloadBlogs() {
   try {
     blogs = (await http.get(blogsURL)).data
   } catch (error) {
-    log(chalk.red('Failed to get all blog names. Please check your network.'))
+    log(chalk.red(error.toString()))
+    log(
+      chalk.red(
+        'Failed to get all blog names. Please check your network or refer to the error message.'
+      )
+    )
     return
   }
 
   blogs = blogs
-    .map(b => ({ name: b.name }))
+    .map(b => ({ name: b.name, downloadURL: b.download_url }))
     .filter(b => b.name.endsWith('.md'))
     .filter(b => b.name !== 'README.md')
   log(chalk.blue('Start downloading...'))
@@ -50,15 +56,9 @@ async function downloadBlogs() {
       log(chalk.blue(`(${blogIndex++}) Downloaded: `) + blog.name)
     })
 
-    const data = (
-      await http({
-        method: 'GET',
-        url: blogURL(blog.name),
-        responseType: 'stream',
-      })
-    ).data
-
-    data.pipe(createReplaceBlogImagePathStream()).pipe(writeStream)
+    toReadableStream((await axios.get(blog.downloadURL)).data)
+      .pipe(createReplaceBlogImagePathStream())
+      .pipe(writeStream)
   })
 }
 
