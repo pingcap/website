@@ -5,6 +5,8 @@
 
 <p align="center">The website of PingCAP. Powered by Gatsby ⚛️ and Rocket 🚀.</p>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d2f80606-1fd8-4f26-938d-65f8cad079b2/deploy-status)](https://app.netlify.com/sites/pingcap-en-preview/deploys)
+
 ## How to start
 
 If you want to start to develop the PingCAP Website or you just want to contribute in one place.
