@@ -3,7 +3,7 @@ const purgecssWhitelist = require('./purgecss-whitelist')
 module.exports = {
   siteMetadata: {
     title: 'PingCAP',
-    description: '',
+    description: 'PingCAP Website',
     author: '@PingCAP',
   },
   plugins: [

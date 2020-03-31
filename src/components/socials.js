@@ -28,7 +28,9 @@ const Socials = ({ className, type, title }) => {
             target="_blank"
             rel="noopener noreferrer"
             href={social.href}
-          />
+          >
+            {social.name}
+          </a>
         ))}
     </>
   )

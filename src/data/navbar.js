@@ -1,7 +1,8 @@
 const navbarItems = [
   {
     name: 'Product',
-    href: '/product',
+    // href: '/product',
+    href: '/',
   },
   {
     name: 'Case Studies',
@@ -9,7 +10,8 @@ const navbarItems = [
   },
   {
     name: 'Docs',
-    href: '/docs',
+    // href: '/docs',
+    href: '/',
   },
   {
     name: 'Blog',
@@ -17,15 +19,18 @@ const navbarItems = [
   },
   {
     name: 'Community',
-    href: '/community',
+    // href: '/community',
+    href: '/',
   },
   {
     name: 'Resources',
-    href: '/resources',
+    // href: '/resources',
+    href: '/',
   },
   {
     name: 'Contact Us',
-    href: '/contact-us',
+    href: '/',
+    // href: '/contact-us',
   },
 ]
 
