@@ -421,7 +421,7 @@ const IndexPage = ({ data }) => {
                   </Box>
                   <div className="logos">
                     <Box className="logo">
-                      <img src={logos.kubernetes1} alt="kubernetes logo" />
+                      <img src={logos.kubernetes} alt="kubernetes logo" />
                     </Box>
                     <Box className="logo aws">
                       <img src={logos.aws} alt="aws logo" />
