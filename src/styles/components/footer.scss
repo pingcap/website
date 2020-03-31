@@ -75,6 +75,13 @@
     width: 150px;
   }
 
+  .socials-desktop,
+  .socials-mobile {
+    a {
+      font-size: 0;
+    }
+  }
+
   .socials-desktop {
     @include mobile {
       display: none;

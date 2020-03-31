@@ -55,6 +55,7 @@
       @each $social in $socials {
         .#{$social} {
           margin-right: 1.3rem;
+          font-size: 0;
         }
       }
 
