@@ -31,10 +31,15 @@ const caseLogos = [
 const IndexPage = ({ data }) => {
   const { tidbSQLAtScaleSVG, tidbFeatures, last3Blogs } = data
 
+  const titlesRef = useRef()
   const benefitsRef = useRef()
   const architectureRef = useRef()
 
   useEffect(() => {
+    Array.from(titlesRef.current.children).forEach(c =>
+      c.classList.add('animate-in')
+    )
+
     new Swiper('.swiper-container', {
       autoplay: {
         delay: 6000,
@@ -137,7 +142,7 @@ const IndexPage = ({ data }) => {
         <section className="hero is-medium">
           <div className="hero-body">
             <div className="container">
-              <div className="titles-and-entry">
+              <div ref={titlesRef} className="titles-and-entry">
                 <h1>
                   <img
                     src={tidbSQLAtScaleSVG.publicURL}
@@ -461,7 +466,7 @@ export const query = graphql`
     ) {
       publicURL
     }
-    tidbFeatures: file(relativePath: { eq: "home/tidb-features.svg" }) {
+    tidbFeatures: file(relativePath: { eq: "home/tidb-features.gif" }) {
       publicURL
     }
     last3Blogs: allMarkdownRemark(
