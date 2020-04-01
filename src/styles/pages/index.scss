@@ -129,7 +129,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         }
       }
 
-      .img-wrapper {
+      .video-wrapper {
         @include mobile {
           width: 80%;
           margin-bottom: 2rem;
@@ -147,7 +147,17 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           }
         }
 
+        position: relative;
         animation: show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+        video {
+          position: absolute;
+          top: 0;
+          left: 0;
+
+          // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+          mask-image: radial-gradient(white, black);
+        }
       }
     }
   }

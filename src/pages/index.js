@@ -29,7 +29,12 @@ const caseLogos = [
 ]
 
 const IndexPage = ({ data }) => {
-  const { tidbSQLAtScaleSVG, tidbFeatures, last3Blogs } = data
+  const {
+    tidbSQLAtScaleSVG,
+    tidbFeaturesPNG,
+    tidbFeaturesMP4,
+    last3Blogs,
+  } = data
 
   const titlesRef = useRef()
   const benefitsRef = useRef()
@@ -162,8 +167,16 @@ const IndexPage = ({ data }) => {
                   </Button>
                 </div>
               </div>
-              <div className="img-wrapper">
-                <img src={tidbFeatures.publicURL} alt="TiDB features" />
+              <div className="video-wrapper">
+                <img src={tidbFeaturesPNG.publicURL} alt="TiDB features" />
+                <video
+                  src={tidbFeaturesMP4.publicURL}
+                  type="video/mp4"
+                  playsInline
+                  autoPlay
+                  loop
+                  muted
+                />
               </div>
             </div>
           </div>
@@ -466,7 +479,10 @@ export const query = graphql`
     ) {
       publicURL
     }
-    tidbFeatures: file(relativePath: { eq: "home/tidb-features.gif" }) {
+    tidbFeaturesPNG: file(relativePath: { eq: "home/tidb-features.png" }) {
+      publicURL
+    }
+    tidbFeaturesMP4: file(relativePath: { eq: "home/tidb-features.mp4" }) {
       publicURL
     }
     last3Blogs: allMarkdownRemark(
