@@ -1,4 +1,5 @@
 const path = require('path')
+const replaceTitle = require('./utils').replaceTitle
 
 const createCaseStudies = async ({ graphql, createPage }) => {
   const caseStudyTemplate = path.resolve(
@@ -34,10 +35,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
 
   data.caseStudies.edges.forEach(({ node }) => {
     createPage({
-      path: `case-studies/${node.frontmatter.title
-        .replace(/[?%]/g, '')
-        .split(' ')
-        .join('-')}`,
+      path: `case-studies/${replaceTitle(node.frontmatter.title)}`,
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,

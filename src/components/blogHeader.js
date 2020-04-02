@@ -3,6 +3,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange'
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import { replaceTitle } from '../lib/string'
 
 const BlogHeader = ({
   frontmatter,
@@ -21,14 +22,7 @@ const BlogHeader = ({
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
         <h2 className="title is-4 is-spaced blog-link-title">
-          <Link
-            to={`/blog/${title
-              .replace(/[?%]/g, '')
-              .split(' ')
-              .join('-')}`}
-          >
-            {title}
-          </Link>
+          <Link to={`/blog/${replaceTitle(title)}`}>{title}</Link>
         </h2>
       ) : (
         <h2 className="title is-4 is-spaced blog-title">{title}</h2>

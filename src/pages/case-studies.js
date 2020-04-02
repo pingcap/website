@@ -3,6 +3,7 @@ import '../lib/graphql/image'
 
 import { Link, graphql } from 'gatsby'
 import React, { useEffect } from 'react'
+import { replaceTitle, truncate } from '../lib/string'
 
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
@@ -11,7 +12,6 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
-import { truncate } from '../lib/string'
 
 const CaseStudies = ({ data }) => {
   const {
@@ -100,10 +100,7 @@ const CaseStudies = ({ data }) => {
                         {truncate.apply(study.summary, [250, true])}
                       </div>
                       <Link
-                        to={`/case-studies/${study.title
-                          .replace(/[?%]/g, '')
-                          .split(' ')
-                          .join('-')}`}
+                        to={`/case-studies/${replaceTitle(study.title)}`}
                         className="see-case-study"
                       >
                         See case study
@@ -182,10 +179,7 @@ function Logos({ logos }) {
               </div>
               {logo.title && (
                 <Link
-                  to={`/case-studies/${logo.title
-                    .replace(/[?%]/g, '')
-                    .split(' ')
-                    .join('-')}`}
+                  to={`/case-studies/${replaceTitle(logo.title)}`}
                   className="read-more"
                 >
                   Read more >

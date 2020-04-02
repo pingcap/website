@@ -1,4 +1,5 @@
 const path = require('path')
+const replaceTitle = require('./utils').replaceTitle
 
 const createBlogs = async ({ graphql, createPage }) => {
   const blogTemplate = path.resolve(`${__dirname}/../src/templates/blog.js`)
@@ -24,10 +25,7 @@ const createBlogs = async ({ graphql, createPage }) => {
 
   result.data.blogs.edges.forEach(({ node }) => {
     createPage({
-      path: `blog/${node.frontmatter.title
-        .replace(/[?%]/g, '')
-        .split(' ')
-        .join('-')}`,
+      path: `blog/${replaceTitle(node.frontmatter.title)}`,
       component: blogTemplate,
       context: {
         title: node.frontmatter.title,

@@ -11,3 +11,7 @@ export function truncate(n, useWordBoundary = false) {
       : subString) + ' ...'
   )
 }
+
+export function replaceTitle(title) {
+  return title.replace(/[^\w-]/g, '-')
+}

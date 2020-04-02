@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 
 import SearchIcon from '@material-ui/icons/Search'
 import cx from 'classnames'
+import { replaceTitle } from '../lib/string'
 
 const BlogSearch = ({ className }) => {
   let { blogs } = useStaticQuery(graphql`
@@ -74,10 +75,7 @@ const BlogSearch = ({ className }) => {
               <Link
                 key={title}
                 className="panel-block"
-                to={`/blog/${title
-                  .replace(/[?%]/g, '')
-                  .split(' ')
-                  .join('-')}`}
+                to={`/blog/${replaceTitle(title)}`}
               >
                 {title}
               </Link>

@@ -12,6 +12,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { PostFromUsInHome } from '../components/postFromUs'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
+import { replaceTitle } from '../lib/string'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -356,16 +357,10 @@ const IndexPage = ({ data }) => {
                     tabIndex={0}
                     className="card"
                     onClick={onCardClick(
-                      `/blog/${frontmatter.title
-                        .replace(/[?%]/g, '')
-                        .split(' ')
-                        .join('-')}`
+                      `/blog/${replaceTitle(frontmatter.title)}`
                     )}
                     onKeyDown={onCardClick(
-                      `/blog/${frontmatter.title
-                        .replace(/[?%]/g, '')
-                        .split(' ')
-                        .join('-')}`
+                      `/blog/${replaceTitle(frontmatter.title)}`
                     )}
                   >
                     <div className="card-image">
