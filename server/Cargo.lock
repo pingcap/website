@@ -393,9 +393,9 @@ dependencies = [
 
 [[package]]
 name = "http"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b708cc7f06493459026f53b9a61a7a121a5d1ec6238dee58ea4941132b30156b"
+checksum = "28d569972648b2c512421b5f2a405ad6ac9666547189d0c5477a3f200f3e02f9"
 dependencies = [
  "bytes",
  "fnv",
@@ -799,12 +799,12 @@ dependencies = [
 
 [[package]]
 name = "parse_link_header"
-version = "0.1.0"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "80f19b2fc7387aa559d28bb2e3c9c3884b74b3542ee6c6312caf0337cdddc4f0"
+checksum = "4b09f37bc2b55b5237baf3139b9e6304aea937baf38e8f43207b41cc3934b3a1"
 dependencies = [
+ "http",
  "regex",
- "url 2.1.1",
 ]
 
 [[package]]

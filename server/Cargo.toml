@@ -15,7 +15,7 @@ reqwest = { version = "0.10", features = ["blocking", "json"] }
 diesel = { version = "1.4", features = ["sqlite"] }
 dotenv_codegen = "0.15.0"
 lazy_static = "1.4.0"
-parse_link_header = "0.1"
+parse_link_header = "0.2"
 
 [dependencies.rocket_contrib]
 version = "0.4.2"

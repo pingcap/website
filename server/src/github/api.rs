@@ -35,10 +35,15 @@ pub mod repos {
 
                 if headers.contains_key("link") {
                     let link_header = headers.get("link").unwrap().to_str().unwrap();
-                    let link_parsed = parse_link_header::parse(link_header);
+                    let link_parsed = parse_link_header::parse(link_header).unwrap();
 
-                    if link_parsed.contains_key("next") {
-                        get_contributors(client, &link_parsed["next"]["link"], result, get_all);
+                    if link_parsed.contains_key(&Some("next".to_string())) {
+                        get_contributors(
+                            client,
+                            &link_parsed[&Some("next".to_string())].raw_uri,
+                            result,
+                            get_all,
+                        );
                     }
                 }
             }
