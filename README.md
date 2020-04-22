@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/pingcap-icon.png" width="128 height="128" alt="PingCAP Logo" />
+  <img src="images/pingcap-icon.png" width="128" alt="PingCAP Logo" />
 </p>
 <h1 align="center">Website</h1>
 
