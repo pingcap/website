@@ -39,7 +39,7 @@ const benefitsData = [
       'TiDB is ACID compliant and strongly consistent. You can use TiDB as a scale-out MySQL database with your familiar SQL syntax and ecosystem tools.',
     link: 'See how others succeed',
     href:
-      '/case-studies/TiDB,-the-Key-to-a-Better-Life-for-Meituan-Dianping’s-290-Million-Monthly-Users',
+      '/case-studies/TiDB--the-Key-to-a-Better-Life-for-Meituan-Dianping-s-290-Million-Monthly-Users',
     placeholder: b1SVG,
     reverse: true,
   },
@@ -58,7 +58,7 @@ const benefitsData = [
       'TiDB minimizes the ETL process and automatically recover from malfunctions so you can scale and grow your business and stop worrying about database infrastructure.',
     link: 'See how others succeed',
     href:
-      '/case-studies/BookMyShow.com:-More-Uptime,-30-Less-Operational-Cost-with-TiDB',
+      '/case-studies/BookMyShow-com--More-Uptime--30--Less-Operational-Cost-with-TiDB',
     placeholder: b3SVG,
     reverse: true,
   },
@@ -68,7 +68,7 @@ const benefitsData = [
       'No more after-the-fact analysis on stale data. Accelerated data to insights, reduced time to market. TiDB breaks the wall between OLTP and OLAP, making your applications adaptive to transient business opportunities.',
     link: 'See how others succeed',
     href:
-      '/case-studies/Lesson-Learned-from-Queries-over-1.3-Trillion-Rows-of-Data-Within-Milliseconds-of-Response-Time-at-Zhihu.com',
+      '/case-studies/Lesson-Learned-from-Queries-over-1-3-Trillion-Rows-of-Data-Within-Milliseconds-of-Response-Time-at-Zhihu-com',
     placeholder: b4SVG,
   },
 ]
