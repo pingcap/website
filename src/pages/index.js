@@ -246,16 +246,17 @@ const IndexPage = ({ data }) => {
               Ready to get started with TiDB?
             </h2>
             <Buttons>
-              <Button as="a" color="primary" rounded outlined>
-                Contact Us
-              </Button>
               <Button
-                className="get-tidb"
+                className="contact-us"
                 as="a"
                 color="primary"
                 rounded
+                inverted
                 outlined
               >
+                Contact Us
+              </Button>
+              <Button className="get-tidb" as="a" rounded>
                 Get TiDB
               </Button>
             </Buttons>
