@@ -117,7 +117,6 @@ const CaseStudies = ({ data }) => {
                 alt="quote-mark"
               />
               <div className="title is-6 is-spaced has-pingcap-style-underline">
-                <span className="underline" />
                 Featured Testimonials
               </div>
             </div>

@@ -6,6 +6,11 @@
 // Socials' Background
 @each $social in $socials {
   .#{$social} {
+    @include until($fullhd) {
+      width: 30px;
+      height: 30px;
+    }
+
     background: url(../../images/socials/#{$social}.svg);
     background-size: cover;
 

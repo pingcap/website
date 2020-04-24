@@ -487,12 +487,9 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         @include mobile {
           width: 250px;
           height: 300px;
-          margin-left: 0.5rem;
         }
 
-        width: 380px;
-        margin-left: 2rem;
-
+        margin: 0 2rem;
         background-image: url(../../../images/home/architecture/center.svg);
       }
 

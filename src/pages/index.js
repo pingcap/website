@@ -261,7 +261,7 @@ const IndexPage = ({ data }) => {
                   <div className="divider" />
                   <div className="intro">
                     <div className="title is-4 is-spaced has-pingcap-style-underline">
-                      <span className="underline" /> {d.name}
+                      {d.name}
                     </div>
                     <div className="subtitle is-5 desc">{d.desc}</div>
                     <Link className="link-with-arrow" to={d.href}>
