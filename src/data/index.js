@@ -6,10 +6,10 @@ import b3SVG from '../../images/home/benefits/simplification-and-safety.svg'
 import b4SVG from '../../images/home/benefits/timely-data-means-better-insights.svg'
 import b2SVG from '../../images/home/benefits/elastic-scalability.svg'
 import kubernetes from '../../images/home/logos/kubernetes.svg'
-import ansible from '../../images/home/logos/ansible.svg'
+import tiup from '../../images/home/logos/tiup.svg'
 import aws from '../../images/home/logos/aws.svg'
 import googleCloudPlatform from '../../images/home/logos/google-cloud-platform.png'
-import tidb from '../../images/home/logos/tidb.svg'
+import tidbCloud from '../../images/home/logos/tidb-cloud.svg'
 
 const celebrateYourGrowthData = [
   {
@@ -75,10 +75,10 @@ const benefitsData = [
 
 const logos = {
   kubernetes,
-  ansible,
+  tiup,
   googleCloudPlatform,
   aws,
-  tidb,
+  tidbCloud,
 }
 
 export { celebrateYourGrowthData, benefitsData, logos }

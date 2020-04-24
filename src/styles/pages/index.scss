@@ -552,7 +552,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       }
 
       &.logo,
-      .logos,
       a.button {
         width: 80%;
       }
@@ -560,25 +559,30 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
       &.logo {
         @include VHCenter;
 
+        $image-height: 4rem;
+
         img {
-          height: 72px;
+          height: $image-height;
+        }
+
+        &.tiup {
+          padding: calc(1.25rem + 0.5rem);
+
+          img {
+            height: calc(#{$image-height} - 1rem);
+          }
         }
 
         &.aws {
-          height: 112px;
+          padding: calc(1.25rem - 0.5rem);
+
+          img {
+            height: calc(#{$image-height} + 1rem);
+          }
         }
 
-        &.tidb {
-          height: 248px;
-        }
-      }
-
-      .logos {
-        display: flex;
-        justify-content: space-between;
-
-        .logo {
-          width: 45%;
+        &.tidb-cloud {
+          height: 14.5rem;
         }
       }
     }

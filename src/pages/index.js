@@ -405,10 +405,10 @@ const IndexPage = ({ data }) => {
                   <div className="title is-7">OPEN SOURCE</div>
 
                   <Box className="logo">
-                    <img src={logos.kubernetes} alt="kubernetes logo" />
+                    <img src={logos.kubernetes} alt="Kubernetes logo" />
                   </Box>
-                  <Box className="logo">
-                    <img src={logos.ansible} alt="ansible logo" />
+                  <Box className="logo tiup">
+                    <img src={logos.tiup} alt="TiUP logo" />
                   </Box>
 
                   <Button as="a" color="primary">
@@ -421,20 +421,15 @@ const IndexPage = ({ data }) => {
                   <h3 className="title is-6">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
                   <div className="title is-7">OPEN SOURCE</div>
+                  <Box className="logo aws">
+                    <img src={logos.aws} alt="AWS logo" />
+                  </Box>
                   <Box className="logo">
                     <img
                       src={logos.googleCloudPlatform}
-                      alt="google-cloud-platform logo"
+                      alt="Google Cloud Platform logo"
                     />
                   </Box>
-                  <div className="logos">
-                    <Box className="logo">
-                      <img src={logos.kubernetes} alt="kubernetes logo" />
-                    </Box>
-                    <Box className="logo aws">
-                      <img src={logos.aws} alt="aws logo" />
-                    </Box>
-                  </div>
                   <Button as="a" color="primary">
                     See Guides
                   </Button>
@@ -445,8 +440,8 @@ const IndexPage = ({ data }) => {
                   <h3 className="title is-6">Database as a Service</h3>
                   <div className="strikethrough-primary" />
                   <div className="title is-7">ENTERPRISE</div>
-                  <Box className="logo tidb">
-                    <img src={logos.tidb} alt="tidb logo" />
+                  <Box className="logo tidb-cloud">
+                    <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                   </Box>
                   <Button as="a" color="primary">
                     Sign Up for a Trial

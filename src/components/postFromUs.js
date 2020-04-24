@@ -22,7 +22,7 @@ const Img = () => {
 const Field = () => (
   <div className="field has-addons">
     <div className="control">
-      <input className="input" type="text" />
+      <input className="input" type="text" placeholder="Email" />
     </div>
     <div className="control">
       <Button color="primary">Subscribe</Button>
@@ -46,7 +46,7 @@ export const PostFromUsInHome = () => (
   >
     <div className="titles">
       <h2 className="title is-4 is-spaced">Join Our Newsletter</h2>
-      <div className="subtitle is-5">
+      <div className="subtitle is-6">
         Features, releases, showcases, meetups, talks...
       </div>
     </div>
