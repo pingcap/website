@@ -73,9 +73,9 @@ const Navbar = () => {
             ))}
           </div>
           <div className="navbar-end">
-            <div className="navbar-item with-free-download">
-              <Button as="a" className="free-download" color="primary" rounded>
-                Free Download
+            <div className="navbar-item with-get-tidb">
+              <Button as="a" className="get-tidb" color="primary" rounded>
+                Get TiDB
               </Button>
             </div>
           </div>

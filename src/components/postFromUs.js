@@ -45,7 +45,7 @@ export const PostFromUsInHome = () => (
     shadowless
   >
     <div className="titles">
-      <h2 className="title is-4 is-spaced">Join Our Newsletter</h2>
+      <h2 className="title is-4 is-spaced">Subscribe To Our Newsletter</h2>
       <div className="subtitle is-6">
         Features, releases, showcases, meetups, talks...
       </div>

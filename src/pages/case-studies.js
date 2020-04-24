@@ -133,7 +133,7 @@ const CaseStudies = ({ data }) => {
             </div>
           </div>
           <h2 className="title is-5 title-under-swiper">
-            15+ Pegabytes in 300+ Companies
+            Pegabytes of data across industries
           </h2>
           <div className="customer-categories">
             {categoriesOfStudies.map(c => (

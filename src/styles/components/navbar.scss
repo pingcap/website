@@ -41,7 +41,7 @@
       }
     }
 
-    &.with-free-download {
+    &.with-get-tidb {
       @include mobile {
         margin: 0 0.75rem;
       }
@@ -73,13 +73,14 @@
     }
   }
 
-  .free-download {
+  .get-tidb {
     @include mobile {
       width: 100%;
       font-size: $size-6;
       border-radius: 5px;
     }
 
+    width: 120px;
     font-size: $size-7;
   }
 }

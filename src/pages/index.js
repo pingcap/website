@@ -1,6 +1,11 @@
 import '../styles/pages/index.scss'
 
-import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
+import {
+  Box,
+  Button,
+  Buttons,
+  withNormalHelpers,
+} from '@seagreenio/react-bulma'
 import { Link, graphql, navigate } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
@@ -272,11 +277,22 @@ const IndexPage = ({ data }) => {
         <section className="section section-get-started">
           <div className="container">
             <h2 className="title is-3 has-text-white">
-              Get started with TiDB!
+              Ready to get started with TiDB?
             </h2>
-            <Button as="a" color="primary" rounded outlined>
-              Free Download
-            </Button>
+            <Buttons>
+              <Button as="a" color="primary" rounded outlined>
+                Contact Us
+              </Button>
+              <Button
+                className="get-tidb"
+                as="a"
+                color="primary"
+                rounded
+                outlined
+              >
+                Get TiDB
+              </Button>
+            </Buttons>
           </div>
         </section>
 

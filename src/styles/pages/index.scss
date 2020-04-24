@@ -61,6 +61,10 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   }
 }
 
+.get-tidb {
+  width: 120px;
+}
+
 .PingCAP-Home {
   .hero {
     .container {
@@ -351,6 +355,12 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
         background: #fff;
         font-size: $size-6;
         border: none;
+      }
+    }
+
+    .buttons {
+      .button:first-child {
+        margin-right: 2.5rem;
       }
     }
   }

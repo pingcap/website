@@ -19,7 +19,7 @@ const celebrateYourGrowthData = [
     placeholder: c1SVG,
   },
   {
-    name: 'Scale-out MySQL, no more sharding',
+    name: 'Scale-out Relational Database',
     desc:
       'Purpose-built to solve MySQL scaling challenges without intrusion to your application brought by manual sharding.',
     placeholder: c2SVG,
@@ -47,7 +47,7 @@ const benefitsData = [
     name: 'Elastic scalability',
     desc:
       'TiDB automatically shards your data so you don’t have do it manually. You can simply add new nodes to scale horizontally and elastically to meet your business growth.',
-    link: 'See how your data is sharded',
+    link: 'See how your data is distributed',
     href:
       '/blog/Building-a-Large-scale-Distributed-Storage-System-Based-on-Raft',
     placeholder: b2SVG,
