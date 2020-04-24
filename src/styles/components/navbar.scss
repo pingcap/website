@@ -52,6 +52,9 @@
     @include mobile {
       width: 120px;
     }
+    @include until($fullhd) {
+      margin-right: 1.5rem;
+    }
 
     width: 150px;
     margin-right: 5rem;
@@ -80,7 +83,7 @@
       border-radius: 5px;
     }
 
-    width: 120px;
+    width: 140px;
     font-size: $size-7;
   }
 }
