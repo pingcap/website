@@ -12,11 +12,8 @@ import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Layout from '../components/layout'
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
-import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { PostFromUsInHome } from '../components/postFromUs'
 import SEO from '../components/seo'
-import Swiper from 'swiper'
 import { replaceTitle } from '../lib/string'
 
 const NormalBox = withNormalHelpers(Box)
@@ -50,24 +47,6 @@ const IndexPage = ({ data }) => {
     Array.from(titlesRef.current.children).forEach(c =>
       c.classList.add('animate-in')
     )
-
-    new Swiper('.swiper-container', {
-      autoplay: {
-        delay: 6000,
-      },
-      loop: true,
-      pagination: {
-        el: '.swiper-custom-pagination',
-        clickable: true,
-        bulletClass: 'bullet',
-        bulletActiveClass: 'active',
-        renderBullet: () => `<span class="bullet"></span>`,
-      },
-      navigation: {
-        nextEl: '.swiper-next',
-        prevEl: '.swiper-prev',
-      },
-    })
 
     scrollToDisplay()
   }, [])
@@ -209,33 +188,20 @@ const IndexPage = ({ data }) => {
         <section className="section section-celebrate-your-growth">
           <div className="container">
             <h2 className="title home-title">Celebrate your growth</h2>
-            <div className="swiper-container">
-              <div className="top">
-                <NavigateBeforeIcon className="swiper-prev" />
-                <div className="swiper-custom-pagination" />
-                <NavigateNextIcon className="swiper-next" />
-              </div>
-              <div className="swiper-wrapper">
-                {celebrateYourGrowthData.map((d, i) => (
-                  <div key={d.name} className="swiper-slide">
-                    <div className="placeholder-wrapper">
-                      <img
-                        className="placeholder"
-                        src={d.placeholder}
-                        alt={d.name}
-                      />
-                    </div>
-                    <div className="divider" />
-                    <div className="intro">
-                      <div className="title is-5 has-pingcap-style-underline">
-                        <span className="underline" /> 0 {i + 1}
-                      </div>
-                      <div className="title is-4 is-spaced">{d.name}</div>
-                      <div className="subtitle is-5 desc">{d.desc}</div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="columns is-variable is-6">
+              {celebrateYourGrowthData.map(d => (
+                <div key={d.name} className="column">
+                  <NormalBox className="outer" shadowless>
+                    <img
+                      src={d.placeholder}
+                      alt={d.name}
+                      className="placeholder"
+                    />
+                    <h3 className="title is-6 is-spaced">{d.name}</h3>
+                    <div className="subtitle is-7 desc">{d.desc}</div>
+                  </NormalBox>
+                </div>
+              ))}
             </div>
           </div>
         </section>

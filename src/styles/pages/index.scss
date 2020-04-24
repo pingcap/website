@@ -65,6 +65,15 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   width: 140px;
 }
 
+.box.outer {
+  @extend .has-light-background;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid rgba($color: $C2, $alpha: 0.5);
+}
+
 .PingCAP-Home {
   .hero {
     .container {
@@ -246,59 +255,16 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   }
 
   .section-celebrate-your-growth {
-    .swiper-container {
-      @include mobile {
-        flex-direction: column-reverse;
-      }
-
+    .column {
       display: flex;
-      flex-direction: column;
+    }
 
-      .top {
-        @include mobile {
-          justify-content: center;
-        }
+    .box {
+      padding-top: 0;
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .swiper-prev,
-      .swiper-next {
-        @include has-pingcap-style-navigate;
-        @include mobile {
-          display: none;
-        }
-      }
-
-      .swiper-custom-pagination {
-        @include has-pingcap-style-pagination(140px);
-        @include mobile {
-          $connect-width: 70px;
-
-          margin-top: 1.5rem;
-
-          .bullet {
-            margin-right: $connect-width;
-
-            &:after {
-              width: $connect-width;
-            }
-          }
-        }
-      }
-
-      .swiper-slide {
-        @include has-intro-and-placeholder;
-
-        .title.has-pingcap-style-underline {
-          @include mobile {
-            display: none;
-          }
-
-          margin-bottom: 0.5rem;
-        }
+      .desc {
+        line-height: 1.5;
+        text-align: center;
       }
     }
   }
@@ -340,6 +306,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
         .title {
           margin-bottom: 1.5rem !important;
+          text-align: center;
         }
       }
 
@@ -545,17 +512,8 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
     }
 
     .box {
-      &.outer {
-        @extend .has-light-background;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        border: 1px solid rgba($color: $C2, $alpha: 0.5);
-
-        .title.is-7 {
-          color: $C4;
-        }
+      .title.is-7 {
+        color: $C4;
       }
 
       &.logo,

@@ -13,7 +13,7 @@ import tidbCloud from '../../images/home/logos/tidb-cloud.svg'
 
 const celebrateYourGrowthData = [
   {
-    name: 'True open source, no lock-in',
+    name: 'True open source, No Lock-in',
     desc:
       'Powered by a wealth of open source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
     placeholder: c1SVG,
@@ -21,13 +21,13 @@ const celebrateYourGrowthData = [
   {
     name: 'Scale-out Relational Database',
     desc:
-      'Purpose-built to solve MySQL scaling challenges without intrusion to your application brought by manual sharding.',
+      'Purpose-built to deliver SQL at scale and solve the scaling challenges with traditional relational databases without intrusion to your application brought by manual sharding.',
     placeholder: c2SVG,
   },
   {
-    name: 'Real-time analysis',
+    name: 'Real-time Data Analysis',
     desc:
-      'Real-Time situation awareness and decision making on live transactional data.',
+      'The true open source HTAP database platform that enables real-time situation awareness and decision making on live transactional data and eliminates friction between IT and business goals.',
     placeholder: c3SVG,
   },
 ]
