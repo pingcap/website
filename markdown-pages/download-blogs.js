@@ -2,7 +2,7 @@ const fs = require('fs')
 const chalk = require('chalk')
 const log = console.log
 const http = require('./http')
-const axios = require('axios')
+const axios = require('axios').default
 const toReadableStream = require('to-readable-stream')
 const { createReplaceBlogImagePathStream } = require('./utils')
 
