@@ -1,7 +1,7 @@
 {
   "name": "website",
   "private": true,
-  "description": "The website of pingcap. Powered by Gatsby.",
+  "description": "The website of PingCAP. Powered by Gatsby.",
   "version": "0.1.0-beta.4",
   "author": "Yue Yang <g1enyy0ung@gmail.com> (https://g1eny0ung.site)",
   "dependencies": {
