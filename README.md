@@ -68,7 +68,7 @@ Because of most of our text data stored in GitHub. So, It's needed to apply a Gi
 
 For more details, view <https://developer.github.com/v3/#rate-limiting>
 
-You must set the token as an env when you start some commands, for example:
+You must set the token as an env when you start some commands, defined as:
 
 ```sh
 GITHUB_AUTHORIZATION_TOKEN=token
