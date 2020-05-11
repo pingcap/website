@@ -5,6 +5,7 @@
  */
 
 // You can delete this file if you're not using it
+
 const createBlogs = require('./create-pages/blog')
 const createBlogPagination = require('./create-pages/blogs')
 const createBlogTags = require('./create-pages/blogTags')
@@ -30,7 +31,7 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
     createNodeField({
       node,
       name: 'collection',
-      value: parent.sourceInstanceName,
+      value: parent.sourceInstanceName
     })
   }
 }
