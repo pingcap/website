@@ -130,4 +130,4 @@ You can view more details in [https://bulma.io/documentation/modifiers/](https:/
 
 ## Authors
 
-Made with love 💙 by PingCAP FE.
+PingCAP FE
