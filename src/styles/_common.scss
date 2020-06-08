@@ -133,3 +133,23 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
     background: $B3;
   }
 }
+
+// style of each section title on pages
+@mixin section-title {
+  margin-bottom: 3rem;
+  font-size: $size-4;
+  font-weight: bold;
+  text-align: center;
+}
+
+@mixin items-on-hero-animate-in {
+  top: 1rem;
+  opacity: 0;
+  transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1),
+    top 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &.animate-in {
+    top: 0 !important;
+    opacity: 1 !important;
+  }
+}

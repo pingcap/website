@@ -98,16 +98,9 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           }
 
           position: relative;
-          top: 1rem;
           margin-bottom: 3rem;
-          opacity: 0;
-          transition: opacity 235ms cubic-bezier(0.4, 0, 0.2, 1),
-            top 500ms cubic-bezier(0.4, 0, 0.2, 1);
 
-          &.animate-in {
-            top: 0 !important;
-            opacity: 1 !important;
-          }
+          @include items-on-hero-animate-in;
         }
 
         h1 {
@@ -172,10 +165,7 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
   }
 
   .home-title {
-    margin-bottom: 3rem;
-    font-size: $size-4;
-    font-weight: bold;
-    text-align: center;
+    @include section-title;
   }
 
   .link-with-arrow {
@@ -335,89 +325,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           background: #fff;
           color: $B3;
           border-color: #fff;
-        }
-      }
-    }
-  }
-
-  .section-use-cases {
-    .oltp-and-htap {
-      .oltp,
-      .htap {
-        @include VHCenter;
-        @include mobile {
-          height: 450px;
-        }
-
-        height: 400px;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        box-shadow: 0 0.2em 1em #bababa;
-        transition: 0.5s;
-        cursor: pointer;
-
-        &:hover {
-          box-shadow: 0 0.2em 1.5em #b5b5b5;
-        }
-      }
-
-      .oltp {
-        @include mobile {
-          background-image: url(../../../images/home/use-cases/oltp-mobile.svg);
-        }
-
-        background-image: url(../../../images/home/use-cases/oltp-desktop.svg);
-      }
-
-      .htap {
-        @include mobile {
-          background-image: url(../../../images/home/use-cases/htap-mobile.svg);
-        }
-
-        background-image: url(../../../images/home/use-cases/htap-desktop.svg);
-      }
-
-      .inner {
-        &,
-        .title,
-        .subtitle,
-        a {
-          color: #fff;
-        }
-
-        .title.is-3 {
-          font-weight: bold;
-        }
-
-        .title.is-4 {
-          margin-bottom: 1rem;
-        }
-
-        .strikethrough-white {
-          margin-bottom: 1.5rem;
-        }
-
-        .subtitle {
-          margin-bottom: 1rem;
-        }
-
-        ul {
-          list-style: inside;
-          margin-bottom: 1.5rem;
-          font-size: $size-6;
-
-          li {
-            margin-bottom: 1rem;
-
-            &:last-child {
-              margin-bottom: 0;
-            }
-          }
-        }
-
-        a {
-          text-decoration: underline;
         }
       }
     }
