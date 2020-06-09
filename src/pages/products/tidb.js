@@ -21,7 +21,7 @@ const TiDB = ({ data }) => {
               <h1 className="title section-title">
                 TiDB, the database for your hyper-growth in the cloud era
               </h1>
-              <h2 className="subtitle">
+              <h2 className="section-subtitle">
                 With TiDB, you won’t have to worry that your business outgrows
                 your database.
               </h2>
@@ -48,7 +48,7 @@ const TiDB = ({ data }) => {
 
         <section className="section industry-section">
           <div className="container">
-            <h3 className="subtitle">
+            <h3 className="section-subtitle">
               <p>As an industry-agnostic database solution,</p>
               <p>TiDB has been widely adopted by the following segments:</p>
             </h3>
@@ -63,10 +63,10 @@ const TiDB = ({ data }) => {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section comparison-table-section">
           <div className="container">
             <h2 className="section-title">Comparison</h2>
-            <h3 className="subtitle">
+            <h3 className="section-subtitle">
               Comparisons between TiDB and other SQL distributed databases
             </h3>
             <div className="table-container">
@@ -136,7 +136,7 @@ const TiDB = ({ data }) => {
           </div>
         </section>
 
-        <section className="section">
+        <section className="section benefit-table-section">
           <div className="container">
             <h2 className="section-title">Benefits</h2>
             <div className="table-container">

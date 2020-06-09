@@ -3,12 +3,14 @@
 .PingCAP-Product-TiDB {
   .section-title {
     @include section-title;
+    margin-bottom: 2rem;
   }
 
-  .subtitle {
+  .section-subtitle {
+    margin-bottom: 2rem;
+    text-align: center;
     color: $B4;
     font-size: $size-5;
-    text-align: center;
     line-height: $LH5;
   }
 
@@ -38,6 +40,16 @@
 
       .column {
         text-align: center;
+
+        img {
+          height: 70px;
+        }
+
+        p {
+          font-size: $size-7;
+          color: $B4;
+          padding-top: 2rem;
+        }
       }
     }
   }
@@ -49,7 +61,7 @@
       font-size: $size-7;
 
       thead > tr > th {
-        color: $B4;
+        color: $B3;
       }
 
       tbody {
@@ -63,7 +75,7 @@
 
       th {
         text-align: center;
-        border-color: $C3;
+        border-color: $C2;
       }
 
       td {
@@ -84,18 +96,25 @@
 
       thead > tr > th:first-child,
       tr > td:first-child {
-        background-color: $C2;
+        background-color: rgba(110, 119, 163, 0.1);
+
+      }
+
+      thead > tr > th:last-child {
+        background-color: rgba(255, 79, 94, 0.35);
       }
 
       td {
         text-align: center;
-        border-color: $C3;
+        border-color: $C2;
       }
     }
 
     .benefit-table {
+      margin-bottom: 3rem;
+
       thead {
-        background-color: $C2;
+        background-color: rgba(110, 119, 163, 0.1);
       }
     }
   }
