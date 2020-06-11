@@ -2,7 +2,7 @@ const navbarItems = [
   {
     name: 'Product',
     // href: '/product',
-    href: '/',
+    href: '/products/tidb',
   },
   {
     name: 'Case Studies',

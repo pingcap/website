@@ -1,0 +1,121 @@
+@import '../../common';
+
+.PingCAP-Product-TiDB {
+  .section-title {
+    @include section-title;
+    margin-bottom: 2rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 2rem;
+    text-align: center;
+    color: $B4;
+    font-size: $size-5;
+    line-height: $LH5;
+  }
+
+  .hero {
+    p {
+      color: $B4;
+      font-size: $size-7;
+    }
+
+    img {
+      margin: 3rem auto;
+      width: 25%;
+    }
+  }
+
+  .HTAP-section {
+    .container img {
+      border: 1px dashed $M4;
+    }
+  }
+
+  .industry-section {
+    margin-top: 2rem;
+
+    .columns {
+      margin: 3rem auto;
+
+      .column {
+        text-align: center;
+
+        img {
+          height: 70px;
+        }
+
+        p {
+          font-size: $size-7;
+          color: $B4;
+          padding-top: 2rem;
+        }
+      }
+    }
+  }
+
+  .table-container {
+    .table {
+      margin: 0 auto;
+      width: 100%;
+      font-size: $size-7;
+
+      thead > tr > th {
+        color: $B3;
+      }
+
+      tbody {
+        color: $M4;
+
+        ul {
+          list-style: disc;
+          margin-left: 2rem;
+        }
+      }
+
+      th {
+        text-align: center;
+        border-color: $C2;
+      }
+
+      td {
+        .close-icon {
+          color: $T3;
+        }
+        
+        .check-icon {
+          color: $T1;
+        }
+      }
+    }
+
+    .comparison-table {
+      thead {
+        background-color: $M2;
+      }
+
+      thead > tr > th:first-child,
+      tr > td:first-child {
+        background-color: rgba(110, 119, 163, 0.1);
+
+      }
+
+      thead > tr > th:last-child {
+        background-color: rgba(255, 79, 94, 0.35);
+      }
+
+      td {
+        text-align: center;
+        border-color: $C2;
+      }
+    }
+
+    .benefit-table {
+      margin-bottom: 3rem;
+
+      thead {
+        background-color: rgba(110, 119, 163, 0.1);
+      }
+    }
+  }
+}
