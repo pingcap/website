@@ -1,108 +1,104 @@
 @import '../common';
 
 .PingCAP-Careers {
-    .section-title {
-        @include section-title;
+  .section-title {
+    @include section-title;
+  }
+
+  .section-subtitle {
+    @include section-subtitle;
+  }
+
+  .hero {
+    .hero-body {
+      @include has-light-background;
     }
 
-    .hero {
-        .hero-body {
-            @include has-light-background;
-            color: $B4;
-        }
+    img {
+      height: 200px;
+      margin-bottom: 3rem;
+    }
 
-        .section-title {
-            margin-top: 2rem;
-        }
+    .button {
+      margin-top: 3rem;
+      font-size: $size-7;
+    }
+  }
+
+  .working-env-section {
+    text-align: center;
+
+    .columns {
+      margin: 2rem auto;
+
+      .column {
+        padding-top: 3rem;
 
         img {
-            height: 200px;
+          height: 60px;
         }
-
-        .button {
-            margin-top: 3rem;
-            font-size: $size-7;
-        }
-    }
-
-    .working-env-section {
-        text-align: center;
 
         p {
-            color: $B4;
+          padding: 1.5rem 1rem;
+          font-size: $size-7;
+          color: $B3;
+          font-weight: bold;
         }
-
-        .columns {
-            margin: 2rem auto;
-
-            .column {
-                padding-top: 3rem;
-
-                img {
-                    height: 60px;
-                }
-                
-                p {
-                    padding: 1.5rem 1rem;
-                    font-size: $size-7;
-                    color: $B3;
-                    font-weight: bold;
-                }
-            }
-        }
+      }
     }
+  }
 
-    .open-positions-section {
-        @include has-light-background;
+  .open-positions-section {
+    @include has-light-background;
 
-        .card {
-            border-radius: 0;
-            box-shadow: none;
-            position: relative;
+    .card {
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
 
-            .card-image {
-                padding: 3rem 3rem 0;
-            }
+      .card-image {
+        padding: 3rem 3rem 0;
+      }
 
-            .card-content {
-                text-align: center;
+      .card-content {
+        text-align: center;
 
-                .position-title {
-                    font-size: $size-7;
-                    color: $B3;
-                }
-
-                .based {
-                    padding: 1rem 0;
-                    font-size: $size-8;
-                    color: $B4;
-                }
-
-                .read-more {
-                    font-size: $size-8;
-                    color: $B3;
-
-                    &:hover {
-                        color: $B1;
-                    }
-                }
-            }
-
-            &:before {
-                content: '';
-                position: absolute;
-                width: 100%;
-                border-top: 4px solid $B1;
-                opacity: 0;
-            }
-
-            &:hover {
-                cursor: pointer;
-
-                &:before {
-                    opacity: 1;
-                }
-            }
+        .position-title {
+          font-size: $size-7;
+          color: $B3;
         }
+
+        .based {
+          padding: 1rem 0;
+          font-size: $size-8;
+          color: $B4;
+        }
+
+        .read-more {
+          font-size: $size-8;
+          color: $B3;
+
+          &:hover {
+            color: $B1;
+          }
+        }
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        border-top: 4px solid $B1;
+        opacity: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        &:before {
+          opacity: 1;
+        }
+      }
     }
+  }
 }

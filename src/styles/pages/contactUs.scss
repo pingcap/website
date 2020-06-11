@@ -1,0 +1,52 @@
+@import '../common';
+
+.PingCAP-Contact-Us {
+  .section-title {
+    @include section-title;
+    font-size: $size-1;
+    color: $M1;
+  }
+
+  .section-subtitle {
+    @include section-subtitle;
+    color: $M1;
+  }
+
+  .hero {
+    background-image: url(../../../images/contact-us/contact-us-hero.svg);
+    background-color: $B3;
+    background-size: contain;
+  }
+
+  .map-section {
+    @include has-light-background;
+
+    .mapouter {
+      position: relative;
+      text-align: right;
+      height: 100%;
+      width: 100%;
+    }
+    .gmap_canvas {
+      overflow: hidden;
+      background: none !important;
+      height: 100%;
+      width: 100%;
+    }
+
+    .address {
+      margin-bottom: 2rem;
+      
+      .addr-title {
+        font-size: $size-5;
+        font-weight: bold;
+        color:$B3;
+      }
+
+      .addr-detail {
+        font-size: $size-7;
+        color: $B4;
+      }
+    }
+  }
+}

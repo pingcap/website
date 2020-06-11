@@ -7,19 +7,10 @@
   }
 
   .section-subtitle {
-    margin-bottom: 2rem;
-    text-align: center;
-    color: $B4;
-    font-size: $size-5;
-    line-height: $LH5;
+    @include section-subtitle;
   }
 
   .hero {
-    p {
-      color: $B4;
-      font-size: $size-7;
-    }
-
     img {
       margin: 3rem auto;
       width: 25%;
@@ -34,6 +25,10 @@
 
   .industry-section {
     margin-top: 2rem;
+
+    .industry-title {
+      font-size: $size-5;
+    }
 
     .columns {
       margin: 3rem auto;

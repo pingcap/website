@@ -137,9 +137,18 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
 // style of each section title on pages
 @mixin section-title {
   margin-bottom: 3rem;
+  text-align: center;
   font-size: $size-4;
   font-weight: bold;
+  color: $B3;
+}
+
+@mixin section-subtitle {
+  margin-bottom: 2rem;
   text-align: center;
+  line-height: $LH5;
+  font-size: $size-5;
+  color: $B4;
 }
 
 @mixin items-on-hero-animate-in {
@@ -151,5 +160,47 @@ $logos: JD-Cloud Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
   &.animate-in {
     top: 0 !important;
     opacity: 1 !important;
+  }
+}
+
+@mixin link-with-arrow {
+  position: relative;
+  color: $primary;
+
+  &:hover {
+    @include tablet {
+      svg {
+        left: 0;
+        opacity: 1;
+      }
+
+      span {
+        left: 0;
+      }
+    }
+  }
+
+  svg,
+  span {
+    transition: 0.5s;
+  }
+
+  svg {
+    @include tablet {
+      left: -1rem;
+      opacity: 0;
+    }
+
+    position: relative;
+    top: 0.125rem;
+    font-size: $size-7;
+  }
+
+  span {
+    @include tablet {
+      left: -1rem;
+    }
+
+    position: relative;
   }
 }

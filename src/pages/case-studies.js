@@ -57,7 +57,7 @@ const CaseStudies = ({ data }) => {
         clickable: true,
         bulletClass: 'bullet',
         bulletActiveClass: 'active',
-        renderBullet: () => `<span class="bullet"></span>`,
+        renderBullet: () => `<span className="bullet"></span>`,
       },
       navigation: {
         nextEl: '.swiper-next',

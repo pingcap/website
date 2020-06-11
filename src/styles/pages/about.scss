@@ -1,0 +1,60 @@
+@import '../common';
+
+.PingCAP-About {
+  .section-title {
+    @include section-title;
+  }
+
+  .hero {
+    background-color: $B3;
+
+    .hero-body {
+      padding: 4rem 1rem;
+    }
+
+    img {
+      width: 35vw;
+    }
+  }
+
+  .intro-section {
+    text-align: center;
+    p {
+      margin-bottom: 2rem;
+      text-align: left;
+      font-size: $size-7;
+      color: $B4;
+      line-height: $LH5;
+    }
+
+    .button {
+      margin: 0 auto;
+    }
+  }
+
+  .timeline-section {
+    @include has-light-background;
+  }
+
+  .company-culture-section {
+    .container {
+      text-align: center;
+      max-width: 800px;
+      background-image: url(../../../images/about/map.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+
+      p {
+        margin-bottom: 2rem;
+        text-align: center;
+        font-size: $size-7;
+        color: $B3;
+      }
+
+      button {
+        padding: 0.5rem;
+        width: 120px;
+      }
+    }
+  }
+}
