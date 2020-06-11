@@ -6,8 +6,8 @@ import SEO from '../../components/seo'
 import SectionUseCases from '../../components/sectionUseCases'
 import { graphql } from 'gatsby'
 import { industryIcons } from '../../data/product-tidb'
-import CloseIcon from '@material-ui/icons/Close';
-import CheckIcon from '@material-ui/icons/Check';
+import CloseIcon from '@material-ui/icons/Close'
+import CheckIcon from '@material-ui/icons/Check'
 
 const TiDB = ({ data }) => {
   const { hyperGrowthHeroSVG, htapArchPNG } = data
@@ -26,13 +26,13 @@ const TiDB = ({ data }) => {
                 your database.
               </h2>
               <img src={hyperGrowthHeroSVG.publicURL} alt="Hyper Growth Hero" />
-              <p>
+              <h2 className="section-subtitle">
                 The TiDB platform is a distributed SQL database platform that
                 features horizontal scalability, strong consistency, and high
                 availability. The goal of TiDB is to serve as a one-stop
                 solution for all online transactions and analysis so you can
                 build your applications just as simply as in the good old days.
-              </p>
+              </h2>
             </div>
           </div>
         </section>
@@ -48,10 +48,10 @@ const TiDB = ({ data }) => {
 
         <section className="section industry-section">
           <div className="container">
-            <h3 className="section-subtitle">
-              <p>As an industry-agnostic database solution,</p>
-              <p>TiDB has been widely adopted by the following segments:</p>
-            </h3>
+            <h2 className="section-title industry-title">
+              <div>As an industry-agnostic database solution,</div>
+              <div>TiDB has been widely adopted by the following segments:</div>
+            </h2>
             <div className="columns">
               {industryIcons.map(i => (
                 <div className="column" key={i.desc}>
@@ -66,9 +66,9 @@ const TiDB = ({ data }) => {
         <section className="section comparison-table-section">
           <div className="container">
             <h2 className="section-title">Comparison</h2>
-            <h3 className="section-subtitle">
+            <h2 className="section-subtitle">
               Comparisons between TiDB and other SQL distributed databases
-            </h3>
+            </h2>
             <div className="table-container">
               <table className="table is-bordered comparison-table">
                 <thead>
@@ -84,27 +84,57 @@ const TiDB = ({ data }) => {
                 <tbody>
                   <tr>
                     <td>Elastic scalability (Both read and write)</td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
                   </tr>
                   <tr>
                     <td>Automated failover and high availability</td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
                   </tr>
                   <tr>
                     <td>Distributed ACID transactions</td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
                   </tr>
                   <tr>
                     <td>SQL compatibility and protocol</td>
@@ -116,19 +146,33 @@ const TiDB = ({ data }) => {
                   </tr>
                   <tr>
                     <td>Open Source License</td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CloseIcon className="close-icon" /></td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
                     <td>Apache 2.0</td>
                     <td>BSL and CCL</td>
                     <td>Apache 2.0</td>
                   </tr>
                   <tr>
                     <td>HTAP</td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CloseIcon className="close-icon" /></td>
-                    <td><CheckIcon className="check-icon" /></td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CheckIcon className="check-icon" />
+                    </td>
                   </tr>
                 </tbody>
               </table>

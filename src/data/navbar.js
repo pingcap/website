@@ -20,16 +20,16 @@ const navbarItems = [
   {
     name: 'Community',
     // href: '/community',
-    href: '/',
+    href: '/community',
   },
   {
-    name: 'Resources',
+    name: 'Events',
     // href: '/resources',
-    href: '/',
+    href: '/events',
   },
   {
     name: 'Contact Us',
-    href: '/',
+    href: '/contact-us',
     // href: '/contact-us',
   },
 ]

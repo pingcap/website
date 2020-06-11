@@ -19,12 +19,12 @@ const Careers = ({ data }) => {
               <h1 className="title section-title">
                 Join the team that is building the database of the future
               </h1>
-              <p>
+              <h2 className="section-subtitle">
                 Our mission is to build a database of the future, made by
                 developers, for developers. It’s an ambitious mission, and we
                 can’t do it without curious, self-driven, and capable
                 people...like you!
-              </p>
+              </h2>
               <button className="button is-primary is-rounded">
                 See Open Positions
               </button>
@@ -35,12 +35,12 @@ const Careers = ({ data }) => {
         <section className="section working-env-section">
           <div className="container">
             <h2 className="title section-title">Working at PingCAP</h2>
-            <p>
+            <h2 className="section-subtitle">
               At PingCAP, you find yourself working with the most talented, and
               motivated people in the industry. Apart from inspirations and
               productivity, we do our best to provide you with a comfortable and
               free working environment.
-            </p>
+            </h2>
           </div>
           <div className="columns is-multiline">
             {workEnv.map(w => (
@@ -62,7 +62,7 @@ const Careers = ({ data }) => {
                     <figure className="image">
                       <img
                         src={careerHeroSVG.publicURL}
-                        alt="Placeholder image"
+                        alt="Placeholder"
                       />
                     </figure>
                   </div>

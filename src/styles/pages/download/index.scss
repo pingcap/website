@@ -1,0 +1,78 @@
+@import '../../common';
+
+.PingCAP-Download-TiDB {
+  .hero {
+    img {
+      margin: 4rem 0 0;
+      height: 200px;
+    }
+
+    .section-subtitle {
+      font-size: $size-5;
+      color: $B4;
+    }
+  }
+
+  .section-title {
+    @include section-title;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .download-section {
+    @include has-light-background;
+    text-align: center;
+
+    .cloud-icon {
+      margin-bottom: 2rem;
+    }
+
+    .columns {
+        justify-content: space-evenly;
+    }
+
+    .card {
+      padding: 2rem 1rem;
+      height: 100%;
+
+      img {
+        height: 60px;
+      }
+  
+      p {
+          font-size: $size-7;
+          color: $B4;
+          margin: 0 auto 2rem;
+          width: 60%;
+      }
+
+      ul {
+          list-style: disc;
+          text-align: left;
+          min-height: 170px;
+          width: 70%;
+          margin: 0 auto;
+
+          @include mobile {
+              margin: 0;
+              padding: 0 2rem;
+          }
+      }
+  
+      button {
+          padding: 0.5rem 1.5rem;
+          background-color: $B1;
+          color: $M1;
+          font-size: $size-7;
+          border-radius: 5px;
+          border: none;
+          cursor: pointer;
+      }
+    }
+
+
+    .deploy-on-premise > .title {
+        margin-top: 5rem;
+    }
+  }
+}

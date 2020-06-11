@@ -1,0 +1,199 @@
+@import '../common';
+
+.PingCAP-TiDB-Community {
+  .section-title {
+    @include section-title;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      text-align: center !important;
+    }
+  }
+
+  .section-subtitle {
+    @include section-subtitle;
+  }
+
+  .button-in-section {
+    margin: 1rem 1rem 1rem 0;
+    padding: 0.5rem 1rem;
+    font-size: $size-7;
+    background-color: $M1;
+    color: $B4;
+    border: 1px solid $C2;
+    border-radius: 4px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $B1;
+      color: $M1;
+    }
+  }
+
+  .p-in-section {
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    text-align: left;
+    line-height: $LH4;
+    font-size: $size-7;
+    color: $B4;
+
+    @include mobile {
+      padding-right: 0;
+    }
+  }
+
+  .side-icon {
+    height: 200px;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .columns {
+    .column:nth-child(2) {
+      text-align: left;
+
+      .section-title {
+          text-align: left;
+      }
+
+      @include mobile {
+        text-align: center;
+      }
+    }
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .hero {
+    img {
+      height: 200px;
+      margin: 3rem 1rem 6rem;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      font-size: $size-7;
+
+      .button {
+        margin: 1rem 2rem;
+
+        &.become-a-contributor {
+          background-color: transparent;
+          color: $B1;
+          border: 1px solid $B1;
+        }
+      }
+    }
+  }
+
+  .onboard-section {
+    @include has-light-background;
+
+    .buttons {
+      display: flex;
+      flex-wrap: row wrap;
+    }
+  }
+
+  .contribution-grow-section {
+    .container {
+      max-width: 800px;
+
+      .collapsable {
+        position: relative;
+        display: flex;
+        align-items: center;
+        font-size: $size-7;
+        color: $B4;
+        cursor: pointer;
+
+        img {
+          width: 20px;
+          margin-right: 1.5rem;
+        }
+
+        .header {
+          font-weight: bold;
+        }
+
+        &:before {
+          content: '+';
+          position: absolute;
+          right: 0;
+          font-weight: bold;
+        }
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          border-bottom: 1px solid $C2;
+          bottom: -1rem;
+        }
+      }
+
+      ul {
+        display: none;
+        margin-left: 4.5rem;
+        margin-top: 2rem;
+      }
+
+      .show-content {
+        .collapsable::before {
+          content: '-';
+        }
+
+        ul {
+          display: block;
+        }
+      }
+    }
+  }
+
+  .share-stories-section {
+    @include has-light-background;
+  }
+
+  .community-activity-section {
+    .card {
+      height: 100%;
+
+      .card-content {
+        .media {
+          .name {
+            font-size: $size-6;
+            font-weight: bold;
+            color: $B3;
+          }
+
+          .time {
+            font-size: $size-8;
+            color: $B4;
+          }
+        }
+
+        .content {
+          font-size: $size-7;
+          color: $M4;
+        }
+      }
+    }
+  }
+
+  .code-conduct-section {
+    .container {
+      @include has-light-background;
+      padding: 2rem;
+    }
+
+    img {
+      height: 180px;
+    }
+  }
+}

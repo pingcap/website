@@ -1,0 +1,53 @@
+@import '../../common';
+
+.PingCAP-Download-TiDB-Community,
+.PingCAP-Download-TiDB-Enterprise {
+  .enterprise-wrapper {
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .tidb-logo {
+    text-align: left;
+    width: 20%;
+    margin: 0.5rem 0;
+  }
+
+  .card {
+    padding: 2rem 3rem;
+    width: 100%;
+
+    @include mobile {
+      box-shadow: none;
+      border: none;
+      background: transparent;
+      padding: 2rem 1rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+      .rocket-icon {
+        margin: 0 auto;
+        width: 40px;
+        height: auto;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      h1 {
+        font-size: $size-5;
+        color: $B3;
+        font-weight: bold;
+      }
+    }
+
+    .form-wrapper {
+        min-height: 300px;
+    }
+  }
+}
