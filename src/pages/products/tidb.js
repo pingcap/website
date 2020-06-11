@@ -9,6 +9,7 @@ import { industryIcons } from '../../data/product-tidb'
 import CloseIcon from '@material-ui/icons/Close'
 import CheckIcon from '@material-ui/icons/Check'
 
+
 const TiDB = ({ data }) => {
   const { hyperGrowthHeroSVG, htapArchPNG } = data
   return (
