@@ -47,8 +47,16 @@ const HourlyNodeUsageInfo = () => {
   useEffect(() => {
     async function fetchProfiles() {
       try {
-        const aws = (await http.get('/aws_profiles.json')).data
-        const googleCloud = (await http.get('/gcp_profiles.json')).data
+        const aws = (
+          await http.get(
+            'http://download.pingcap.org/data/tidb-cloud/aws_profiles.json'
+          )
+        ).data
+        const googleCloud = (
+          await http.get(
+            'http://download.pingcap.org/data/tidb-cloud/gcp_profiles.json'
+          )
+        ).data
         setProfiles({ aws, googleCloud })
         setRegion(aws.regions && aws.regions[0] ? aws.regions[0].name : '')
       } catch (error) {
