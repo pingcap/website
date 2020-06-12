@@ -88,7 +88,7 @@ const HourlyNodeUsageInfo = () => {
 
     const value = v => (v !== null && v !== undefined ? v : '-')
 
-    const TierTableRow = ({ tier }) => {
+    const TierTableRow = ({ tier, isStriped }) => {
       if (!tier) return null
 
       const { profile_name, available_regions, tidb, tikv } = tier
@@ -96,11 +96,9 @@ const HourlyNodeUsageInfo = () => {
         p => p.region_name === region
       )[0].price
 
-      const isStandard = profile_name.toLowerCase() === 'standard'
-
       return (
         <>
-          <tr className={`${isStandard ? 'has-light-background' : ''}`}>
+          <tr className={`${isStriped ? 'has-light-background' : ''}`}>
             <td rowSpan="2" className="tier-td">
               {profile_name}
             </td>
@@ -113,7 +111,7 @@ const HourlyNodeUsageInfo = () => {
             <td>$ {value(availablePrice.tikv)} /hr</td>
             <td>$ {precision(availablePrice.tikv * 24 * 30)} /month</td>
           </tr>
-          <tr className={`${isStandard ? 'has-light-background' : ''}`}>
+          <tr className={`${isStriped ? 'has-light-background' : ''}`}>
             <td>TiDB</td>
             <td>{tidb.cpu} vCPU</td>
             <td>{tidb.memory_gi} Gi</td>
@@ -142,8 +140,12 @@ const HourlyNodeUsageInfo = () => {
             </tr>
           </thead>
           <tbody>
-            {availableProfiles.map(p => (
-              <TierTableRow key={p.profile_name} tier={p} />
+            {availableProfiles.map((p, index) => (
+              <TierTableRow
+                key={p.profile_name}
+                tier={p}
+                isStriped={index % 2}
+              />
             ))}
           </tbody>
         </table>
