@@ -3,7 +3,8 @@ import '../styles/pages/careers.scss'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { graphql } from 'gatsby'
+import Positions from '../components/positions'
+import { graphql, Link } from 'gatsby'
 import { workEnv } from '../data/career-work-env'
 
 const Careers = ({ data }) => {
@@ -25,9 +26,11 @@ const Careers = ({ data }) => {
                 can’t do it without curious, self-driven, and capable
                 people...like you!
               </h2>
-              <button className="button is-primary is-rounded">
-                See Open Positions
-              </button>
+              <Link to="/careers#see-more-positions">
+                <button className="button is-primary is-rounded">
+                  See Open Positions
+                </button>
+              </Link>
             </div>
           </div>
         </section>
@@ -52,31 +55,13 @@ const Careers = ({ data }) => {
           </div>
         </section>
 
-        <section className="section open-positions-section">
+        <section
+          className="section open-positions-section"
+          id="see-more-positions"
+        >
           <div className="container">
             <h2 className="title section-title">Open Positions</h2>
-            <div className="columns">
-              <div className="column is-3">
-                <div className="card">
-                  <div className="card-image">
-                    <figure className="image">
-                      <img
-                        src={careerHeroSVG.publicURL}
-                        alt="Placeholder"
-                      />
-                    </figure>
-                  </div>
-
-                  <div className="card-content">
-                    <div className="content">
-                      <div className="position-title">Engineering</div>
-                      <div className="based">Beijing, Shanghai, Hangzhou</div>
-                      <div className="read-more">Read More</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <Positions />
           </div>
         </section>
       </article>

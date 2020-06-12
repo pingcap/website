@@ -1,6 +1,6 @@
 import '../../styles/pages/download/community.scss'
 
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import HubspotForm from 'react-hubspot-form'
@@ -10,11 +10,6 @@ import Loading from '../../components/loading'
 
 const Enterprise = ({ data }) => {
   const { tidbLogoPNG, rocketIconSVG } = data
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    setLoading(false)
-  }, [])
 
   return (
     <Layout>
@@ -31,11 +26,11 @@ const Enterprise = ({ data }) => {
               </div>
               <h1>Get Started with TiDB </h1>
             </div>
-            {loading && <Loading />}
             <div className="form-wrapper">
               <HubspotForm
                 portalId="4466002"
                 formId="07447f75-ca95-4390-bbde-06c329164747"
+                loading={<Loading />}
               />
             </div>
           </div>

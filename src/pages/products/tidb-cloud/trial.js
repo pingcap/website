@@ -6,6 +6,7 @@ import Layout from '../../../components/layout'
 import React from 'react'
 import SEO from '../../../components/seo'
 import { servicesData } from '../../../data/products/tidb-cloud'
+import { graphql } from 'gatsby'
 
 const TiDBCloudTrialPage = ({ data }) => {
   const { TiDBCloudLogoPNG, shuttleSVG } = data

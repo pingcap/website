@@ -3,7 +3,7 @@ import '../styles/pages/about.scss'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG } = data
@@ -41,7 +41,11 @@ const About = ({ data }) => {
               a cloud-native distributed Key-Value store. It is now a CNCF
               incubating project .
             </p>
-            <button className="button is-primary is-rounded">Contact Us</button>
+            <Link to="/contact-us">
+              <button className="button is-primary is-rounded">
+                Contact Us
+              </button>
+            </Link>
           </div>
         </section>
 
@@ -66,7 +70,9 @@ const About = ({ data }) => {
               global team of self-starters, curious learners, builders, doers;
             </p>
             <p className="last">We want to hear from you!</p>
-            <button className="button is-primary is-rounded">Join Us</button>
+            <Link to="/careers">
+              <button className="button is-primary is-rounded">Join Us</button>
+            </Link>
           </div>
         </section>
       </article>

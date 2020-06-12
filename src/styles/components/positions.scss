@@ -1,0 +1,46 @@
+@import '../common';
+
+.PingCAP-Positions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  .position {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+
+    .position-wrapper {
+      padding-top: 1rem;
+
+      .position-title {
+        font-size: $size-5;
+        font-weight: bold;
+        color: $B3;
+      }
+
+      .location {
+        padding: 1rem 0;
+        font-size: $size-7;
+        color: $B3;
+      }
+    }
+
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      border-left: 1px solid $C2;
+      height: 100%;
+    }
+
+    &:hover {
+      .position-wrapper > .position-title {
+        color: $B1;
+      }
+      &:before {
+        border-left: 3px solid $B1;
+      }
+    }
+  }
+}

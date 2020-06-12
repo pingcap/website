@@ -4,6 +4,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
+import Loading from '../components/loading'
 
 const ContactUs = () => {
   return (
@@ -29,14 +30,15 @@ const ContactUs = () => {
             <HubspotForm
               portalId="4466002"
               formId="125bf70d-1eba-4cf8-bb1d-2e4a422a875d"
+              loading={<Loading />}
             />
           </div>
         </section>
 
         <section className="section map-section">
           <div className="container">
-            <div className="columns is-variable is-8">
-              <div className="column is-4">
+            <div className="columns">
+              <div className="column is-3 address-col">
                 <div className="address">
                   <div className="addr-title">Office Address</div>
                   <p className="addr-detail">2955 Campus Drive #110,</p>
@@ -51,16 +53,13 @@ const ContactUs = () => {
                 <div className="mapouter">
                   <div className="gmap_canvas">
                     <iframe
+                      title="NA office map"
                       width="100%"
                       height="400px"
                       id="gmap_canvas"
                       src="https://maps.google.com/maps?q=2955%20Campus%20Drive%20%23110%2C%20San%20Mateo%2C%20CA%2094403&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      frameborder="0"
                       scrolling="no"
-                      marginheight="0"
-                      marginwidth="0"
                     ></iframe>
-                    <a href="https://www.embedgooglemap.net/en/"></a>
                   </div>
                 </div>
               </div>

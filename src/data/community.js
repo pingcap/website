@@ -2,6 +2,8 @@ import Code from '../../images/community/code.svg'
 import Help from '../../images/community/help-buoy.svg'
 import Writer from '../../images/community/writer.svg'
 import Bullhorn from '../../images/community/bullhorn.svg'
+import DevCon2020ThumbNail from '../../images/events/devcon2020.jpg'
+import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
 
 const contributionGrow = [
   {
@@ -39,20 +41,22 @@ const contributionGrow = [
 
 const communityActivities = [
   {
-    thumbnail: '',
+    thumbnail: DevCon2020ThumbNail,
     name: 'TiDB DevCon 2020',
-    eventType: 'Conference',
+    eventType: 'Virtual Conference',
     time: 'July 6 - July 7, 2020 (Ended)',
     desc:
-      'TiDB DevCon is the annual developer conference for the TiDB community.'
+      'TiDB DevCon is the annual developer conference for the TiDB community. This 2-day event aims to provide a venue where we showcase the evolution of product and technology in the past year and the latest progress in the TiDB ecosystem.',
   },
   {
-    thumbnail: '',
+    thumbnail: UsabilityThumbNail,
     name: 'TiDB Usability Challenge',
     eventType: 'Communtiy Activity',
     time: 'March 02 - May 30, 2020 (Ended)',
     desc:
-      'TiDB Challenge Program is a series program where issues of the specified theme will be opened for the participants to discuss and solve together. Season 2 focuses on TiDB usability.'
+      'Season 2 of the TiDB Challenge Program focuses on improving the usability of TiDB and its related projects.',
+    readMoreLink: 'https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md',
+    outboundLink: true
   }
 ]
 

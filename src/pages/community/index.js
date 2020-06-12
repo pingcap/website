@@ -1,10 +1,12 @@
-import '../styles/pages/community.scss'
+import '../../styles/pages/community/index.scss'
 
 import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { contributionGrow, communityActivities } from '../data/community'
-import { graphql } from 'gatsby'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { contributionGrow, communityActivities } from '../../data/community'
+import { graphql, Link } from 'gatsby'
+import EventsCard from '../../components/eventsCard'
+import LinkWithArrow from '../../components/linkWithArrow'
 
 const Community = ({ data }) => {
   const {
@@ -35,12 +37,18 @@ const Community = ({ data }) => {
               </h2>
               <img src={communityHeroSVG.publicURL} alt="Community Hero" />
               <div className="buttons">
-                <a href="/" target="_blank">
+                <a
+                  href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+                  target="_blank" rel="noopener noreferrer"
+                >
                   <button className="button join-slack is-primary is-rounded">
                     Join Our Slack
                   </button>
                 </a>
-                <a href="/" target="_blank">
+                <a
+                  href="https://github.com/pingcap/community/tree/master/contributors"
+                  target="_blank" rel="noopener noreferrer"
+                >
                   <button className="button become-a-contributor is-primary is-rounded">
                     Become a Contributor
                   </button>
@@ -72,12 +80,26 @@ const Community = ({ data }) => {
                   map, and tons of other materials to help you get around!
                 </p>
                 <div className="buttons">
-                  <button className="button-in-section">Quick Start</button>
                   <button className="button-in-section">
-                    Engineering Blogs
+                    <a
+                      href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Quick Start
+                    </a>
                   </button>
                   <button className="button-in-section">
-                    Contribution Map
+                    <Link to="/blog">Engineering Blogs</Link>
+                  </button>
+                  <button className="button-in-section">
+                    <a
+                      href="https://github.com/pingcap/tidb-map/blob/master/maps/contribution-map.md"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Contribution Map
+                    </a>
                   </button>
                 </div>
               </div>
@@ -96,7 +118,12 @@ const Community = ({ data }) => {
             <div className="collapse-items">
               {contributionGrow.map(c => (
                 <div className="content" key={c.title}>
-                  <div className="collapsable" onClick={collapse}>
+                  <div
+                    aria-hidden="true"
+                    className="collapsable"
+                    onClick={collapse}
+                    onKeyDown={collapse}
+                  >
                     <img src={c.icon} alt={c.title} />
                     <div className="header">{c.title}</div>
                   </div>
@@ -114,7 +141,7 @@ const Community = ({ data }) => {
           </div>
         </section>
 
-        <section className="section share-stories-section">
+        <section className="section share-stories-section" id="share-your-stories">
           <div className="container">
             <div className="columns is-variable is-8">
               <div className="column">
@@ -128,7 +155,9 @@ const Community = ({ data }) => {
                   community how TiDB powers your business and your success. And
                   also let us know how we can help you more.
                 </p>
-                <button className="button-in-section">Share Now</button>
+                <button className="button-in-section">
+                  <Link to="/community/share-and-connect">Share Now</Link>
+                </button>
               </div>
             </div>
           </div>
@@ -140,33 +169,13 @@ const Community = ({ data }) => {
             <h3 className="section-subtitle">
               Join us at our TiDB community events
             </h3>
-            <div className="columns is-variable is-8">
-              {communityActivities.map(activity => (
-                <div className="column is-4" key={activity.name}>
-                  <div className="card">
-                    <div className="card-image">
-                      <figure className="image">
-                        <img
-                          src="https://bulma.io/images/placeholders/1280x960.png"
-                          alt="Placeholder"
-                        />
-                      </figure>
-                    </div>
-                    <div className="card-content">
-                      <div className="media">
-                        <div className="media-content">
-                          <p className="name">{activity.name}
-                          </p>
-                          <p className="time">
-                            {activity.eventType}/{activity.time}</p>
-                        </div>
-                      </div>
-
-                      <div className="content">{activity.desc}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+            <EventsCard cardsList={communityActivities} />
+            <div className="read-more-link">
+              <LinkWithArrow
+                to="/events"
+                linkText="All Events"
+                outboundLink={false}
+              />
             </div>
           </div>
         </section>

@@ -5,6 +5,10 @@
     @include section-title;
     font-size: $size-1;
     color: $M1;
+
+    @include mobile {
+      font-size: $size-3;
+    }
   }
 
   .section-subtitle {
@@ -18,8 +22,15 @@
     background-size: contain;
   }
 
+  .form-section {
+    max-width: 800px;
+    text-align: center;
+    margin: 2rem auto;
+  }
+
   .map-section {
     @include has-light-background;
+    padding: 4rem 1.5rem;
 
     .mapouter {
       position: relative;
@@ -34,19 +45,26 @@
       width: 100%;
     }
 
-    .address {
-      margin-bottom: 2rem;
-      
-      .addr-title {
-        font-size: $size-5;
-        font-weight: bold;
-        color:$B3;
-      }
+    .address-col {
+      transform: translateX(20%);
 
-      .addr-detail {
-        font-size: $size-7;
-        color: $B4;
+      .address {
+        text-align: left;
+        margin-bottom: 2rem;
+  
+        .addr-title {
+          font-size: $size-5;
+          font-weight: bold;
+          color: $B3;
+        }
+  
+        .addr-detail {
+          font-size: $size-7;
+          color: $B4;
+        }
       }
     }
+
+    
   }
 }

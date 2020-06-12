@@ -4,18 +4,18 @@ import {
   Box,
   Button,
   Buttons,
-  withNormalHelpers,
+  withNormalHelpers
 } from '@seagreenio/react-bulma'
-import { Link, graphql, navigate } from 'gatsby'
+import { graphql, navigate, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import Layout from '../components/layout'
 import { PostFromUsInHome } from '../components/postFromUs'
 import SEO from '../components/seo'
 import { replaceTitle } from '../lib/string'
 import SectionUseCases from '../components/sectionUseCases'
+import LinkWithArrow from '../components/linkWithArrow'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -29,7 +29,7 @@ const caseLogos = [
   'netease-games',
   'jd-cloud',
   'mi',
-  'webank',
+  'webank'
 ]
 
 const IndexPage = ({ data }) => {
@@ -37,7 +37,7 @@ const IndexPage = ({ data }) => {
     tidbSQLAtScaleSVG,
     tidbFeaturesPNG,
     tidbFeaturesMP4,
-    last3Blogs,
+    last3Blogs
   } = data
 
   const titlesRef = useRef()
@@ -59,15 +59,15 @@ const IndexPage = ({ data }) => {
         displayStyle: 'opacity: 1; transform: translateY(0)',
         children: Array.from(benefitsRef.current.children),
         timeout: false,
-        triggerHeightRatio: [4 / 5, 0.25],
+        triggerHeightRatio: [4 / 5, 0.25]
       },
       {
         style: 'opacity: 0; transform: translateX(-12.5%)',
         displayStyle: 'opacity: 1; transform: translateX(0)',
         children: [architectureRef.current],
         timeout: true,
-        triggerHeightRatio: [4 / 5, 0.25],
-      },
+        triggerHeightRatio: [4 / 5, 0.25]
+      }
     ]
     let begin = 0
 
@@ -179,9 +179,11 @@ const IndexPage = ({ data }) => {
               ))}
             </div>
             <div className="has-text-centered">
-              <Link className="link-with-arrow" to="/case-studies">
-                <ArrowForwardIcon /> <span>More Case Studies</span>
-              </Link>
+              <LinkWithArrow
+                to="/case-studies"
+                linkText="More Case Studies"
+                outboundLink={false}
+              />
             </div>
           </div>
         </section>
@@ -231,9 +233,11 @@ const IndexPage = ({ data }) => {
                       {d.name}
                     </div>
                     <div className="subtitle is-5 desc">{d.desc}</div>
-                    <Link className="link-with-arrow" to={d.href}>
-                      <ArrowForwardIcon /> <span>{d.link}</span>
-                    </Link>
+                    <LinkWithArrow
+                      to={d.href}
+                      linkText={d.link}
+                      outboundLink={false}
+                    />
                   </div>
                 </div>
               ))}
@@ -242,26 +246,30 @@ const IndexPage = ({ data }) => {
         </section>
 
         <SectionUseCases hasLightBg={false} />
-        
+
         <section className="section section-get-started">
           <div className="container">
             <h2 className="title is-3 has-text-white">
               Ready to get started with TiDB?
             </h2>
             <Buttons>
-              <Button
-                className="contact-us"
-                as="a"
-                color="primary"
-                rounded
-                inverted
-                outlined
-              >
-                Contact Us
-              </Button>
-              <Button className="get-tidb" as="a" rounded>
-                Get TiDB
-              </Button>
+              <Link to="/contact-us">
+                <Button
+                  className="contact-us"
+                  as="a"
+                  color="primary"
+                  rounded
+                  inverted
+                  outlined
+                >
+                  Contact Us
+                </Button>
+              </Link>
+              <Link to="/download">
+                <Button className="get-tidb" as="a" rounded>
+                  Get TiDB
+                </Button>
+              </Link>
             </Buttons>
           </div>
         </section>
@@ -318,9 +326,11 @@ const IndexPage = ({ data }) => {
               ))}
             </div>
             <div className="has-text-centered view-more-wrapper">
-              <Link className="link-with-arrow" to="/blog">
-                <ArrowForwardIcon /> <span>View More</span>
-              </Link>
+              <LinkWithArrow
+                to="/blog"
+                linkText="View More"
+                outboundLink={false}
+              />
             </div>
           </div>
         </section>
