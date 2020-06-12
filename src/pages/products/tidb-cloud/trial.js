@@ -30,8 +30,10 @@ const TiDBCloudTrialPage = ({ data }) => {
                     <div className="image-wrapper">
                       <img src={shuttleSVG.publicURL} alt="Shuttle" />
                     </div>
-
                     <h2 className="title is-4">Start your free trial now</h2>
+                    <p className="hint">
+                      with $4500 worth of credits and full power of TiDB Cloud
+                    </p>
                   </div>
                   {/* TODO: abstract the loading component */}
                   <HubspotForm

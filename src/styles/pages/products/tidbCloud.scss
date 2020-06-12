@@ -304,7 +304,16 @@
       }
 
       height: 100%;
-      padding: 3rem;
+      padding: 2.5rem;
+
+      .title.is-4,
+      .title.is-5 {
+        margin-bottom: 0.5rem;
+      }
+
+      .hint {
+        color: $T3;
+      }
 
       .header {
         margin-bottom: 2rem;
@@ -321,10 +330,6 @@
     .services {
       .intro {
         margin-bottom: 2rem;
-
-        .title.is-5 {
-          margin-bottom: 0.5rem;
-        }
       }
     }
 
