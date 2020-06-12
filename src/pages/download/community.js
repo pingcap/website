@@ -1,6 +1,6 @@
 import '../../styles/pages/download/community.scss'
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { graphql } from 'gatsby'
@@ -22,9 +22,8 @@ const Community = ({ data }) => {
   const versions = ['v4.0.0']
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
-  function validateForm() {
+  const validateForm = () => {
     setWrongMsg([])
-
     let errMsg = []
 
     if (!selVersion) {
@@ -39,20 +38,22 @@ const Community = ({ data }) => {
       errMsg.push('agreement check')
     }
 
+    if(errMsg.length === 0) {
+      setDownloadURL(`https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`)
+    } else {
+      setDownloadURL('')
+    }
+
     return errMsg
   }
 
-  function downloadPackage() {
+  const downloadPackage = () => {
     let errMsg = validateForm()
     setWrongMsg(errMsg)
-    if (errMsg.length === 0) {
-      setDownloadURL(`https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`)
-    }
   }
 
   const handleVersionChange = e => {
     setSelVersion(e.target.value)
-    validateForm()
   }
 
   const handlePackageChange = e => {
@@ -70,13 +71,15 @@ const Community = ({ data }) => {
         break
     }
     setSelPkg(e.target.value)
-    validateForm()
   }
 
   const handleTermsChange = () => {
     setTermsChecked(!termsChecked)
-    validateForm()
   }
+
+  useEffect(() => {
+    validateForm()
+  },[selVersion, selPkg, termsChecked])
 
   return (
     <Layout>
