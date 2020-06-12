@@ -1,0 +1,336 @@
+@import '../../common';
+
+@mixin fadeIn {
+  animation: show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  @keyframes show {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin has-pingcap-style-border {
+  border-color: $C2;
+  box-shadow: none;
+
+  &:hover {
+    border-color: $primary;
+  }
+}
+
+@mixin has-intro-and-placeholder {
+  @include mobile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  display: flex;
+  align-items: center;
+
+  > * {
+    flex: 1;
+  }
+
+  $img-width: 74%;
+
+  .placeholder-wrapper {
+    @include VHCenter;
+
+    height: 100%;
+
+    .placeholder {
+      width: $img-width;
+      margin: 2.5rem 0;
+    }
+  }
+
+  .divider {
+    flex: none;
+    width: (100% - $img-width) / 2;
+  }
+
+  .intro {
+    @include mobile {
+      padding: 0;
+    }
+
+    padding: 0 3rem;
+
+    .title.is-5 {
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+
+@mixin tidb-cloud-logo {
+  @include fadeIn;
+
+  @include mobile {
+    width: 12rem;
+    margin-bottom: 2rem;
+  }
+
+  width: 18rem;
+  margin-bottom: 3rem;
+}
+
+.desc {
+  margin-top: 0.5rem;
+  line-height: $LH4;
+  color: $B4;
+}
+
+.PingCAP-TiDBCloud {
+  .title.is-4 {
+    margin-bottom: 1rem;
+  }
+
+  .link-with-underline {
+    text-decoration: underline;
+    color: $primary;
+  }
+
+  .start-trial-button {
+    margin-top: 2.5rem;
+  }
+
+  .hero {
+    .hero-body {
+      .container {
+        @include mobile {
+          flex-direction: column-reverse;
+          justify-content: center;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .titles-and-entry {
+        @include mobile {
+          width: 100%;
+          text-align: center;
+        }
+
+        width: 42%;
+
+        .logo {
+          @include tidb-cloud-logo;
+        }
+      }
+
+      .image-wrapper {
+        @include fadeIn;
+
+        @include mobile {
+          width: 84%;
+          margin-bottom: 2rem;
+        }
+
+        width: 48%;
+      }
+    }
+  }
+
+  .section {
+    .title.is-4 {
+      text-align: center;
+    }
+  }
+
+  .section-why-tidb-cloud {
+    .reasons {
+      @include mobile {
+        flex-direction: column;
+      }
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .reason {
+        @include mobile {
+          width: 100%;
+        }
+
+        width: 32%;
+        padding: 0 1rem;
+        text-align: center;
+
+        .placeholder-wrapper {
+          width: 6rem;
+          margin: 3rem auto;
+        }
+
+        .intro {
+          @include mobile {
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .section-features {
+    .features {
+      .feature {
+        @include has-intro-and-placeholder;
+
+        @include mobile {
+          margin-top: 3rem;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+
+        > * {
+          // https://easings.net/#easeOutQuad
+          transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        &.reverse {
+          @include tablet {
+            flex-direction: row-reverse;
+          }
+        }
+      }
+    }
+  }
+
+  .section-pricing {
+    .field {
+      margin-top: 3rem;
+    }
+
+    .tidb-cloud-hourly-usage {
+      margin: 2rem 0;
+      color: $B4;
+
+      & > div {
+        margin-bottom: 2rem;
+      }
+
+      .cloud-providers {
+        display: flex;
+
+        .cloud-provider-button {
+          @include has-pingcap-style-border;
+          width: 9rem;
+          height: 4.8rem;
+          margin-right: 3rem;
+
+          &.button:active,
+          &.button.is-active {
+            border-color: $primary;
+          }
+
+          .logo {
+            display: block;
+            height: 100%;
+            margin: auto;
+          }
+        }
+      }
+
+      .regions {
+        display: flex;
+        align-items: center;
+
+        .desc {
+          margin-right: 3.2rem;
+        }
+
+        .select {
+          width: 12rem;
+
+          select {
+            @include has-pingcap-style-border;
+            width: 100%;
+            color: $B4;
+          }
+        }
+      }
+
+      .table-container {
+        .table {
+          font-size: $size-7;
+          color: $B4;
+
+          td,
+          th {
+            border-color: $C2;
+            vertical-align: middle;
+          }
+
+          thead {
+            th {
+              background-color: $C4;
+              color: $M1;
+            }
+          }
+
+          .tier-td {
+            font-weight: 600;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+
+  .section-get-started {
+    text-align: center;
+  }
+}
+
+.PingCAP-TiDBCloudTrial {
+  .logo {
+    @include tidb-cloud-logo;
+  }
+
+  .column {
+    .box {
+      @include mobile {
+        padding: 1.5rem;
+      }
+
+      height: 100%;
+      padding: 3rem;
+
+      .header {
+        margin-bottom: 2rem;
+        text-align: center;
+
+        .image-wrapper {
+          width: 3rem;
+          margin: auto;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+
+    .services {
+      .intro {
+        margin-bottom: 2rem;
+
+        .title.is-5 {
+          margin-bottom: 0.5rem;
+        }
+      }
+    }
+
+    // TODO: common loading placeholder
+    .loading {
+      text-align: center;
+      color: $B4;
+    }
+  }
+}
