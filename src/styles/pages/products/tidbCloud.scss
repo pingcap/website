@@ -246,7 +246,12 @@
         align-items: center;
 
         .desc {
-          margin-right: 3.2rem;
+          @include mobile {
+            margin-right: 1.5rem;
+          }
+
+          display: inline-block;
+          margin: 0 3.2rem 0 0;
         }
 
         .select {
