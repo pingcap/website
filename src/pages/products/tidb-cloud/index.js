@@ -182,7 +182,7 @@ const HourlyNodeUsageInfo = () => {
         </div>
       </div>
 
-      {profile && <ProfileTable />}
+      {profile && region && <ProfileTable />}
     </div>
   )
 }
