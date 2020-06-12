@@ -3,10 +3,11 @@ import '../../../styles/pages/products/tidbCloud.scss'
 import { Box } from '@seagreenio/react-bulma'
 import HubspotForm from 'react-hubspot-form'
 import Layout from '../../../components/layout'
+import Loading from '../../../components/loading'
 import React from 'react'
 import SEO from '../../../components/seo'
-import { servicesData } from '../../../data/products/tidb-cloud'
 import { graphql } from 'gatsby'
+import { servicesData } from '../../../data/products/tidb-cloud'
 
 const TiDBCloudTrialPage = ({ data }) => {
   const { TiDBCloudLogoPNG, shuttleSVG } = data
@@ -36,11 +37,14 @@ const TiDBCloudTrialPage = ({ data }) => {
                       with $4500 worth of credits and full power of TiDB Cloud
                     </p>
                   </div>
-                  {/* TODO: abstract the loading component */}
                   <HubspotForm
                     portalId="4466002"
                     formId="bf9451b5-8816-4a95-947c-1aae656830f5"
-                    loading={<div className="loading">Loading...</div>}
+                    loading={
+                      <div style={{ textAlign: 'center' }}>
+                        <Loading />
+                      </div>
+                    }
                   />
                 </Box>
               </div>

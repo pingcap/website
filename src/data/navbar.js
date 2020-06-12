@@ -8,7 +8,7 @@ const navbarItems = [
       },
       {
         name: 'TiDB Cloud',
-        href: '/product/tidb-cloud'
+        href: '/products/tidb-cloud'
       }
     ]
   },
