@@ -1,7 +1,7 @@
 import '../../../styles/pages/products/tidbCloud.scss'
 
 import { Link, graphql } from 'gatsby'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useMemo, useState } from 'react'
 import {
   featuresData,
   logos,
@@ -60,25 +60,20 @@ const HourlyNodeUsageInfo = () => {
     fetchProfiles()
   }, [])
 
-  useEffect(() => {
-    if (profiles[cloud]) {
-      setRegion(
-        profiles[cloud].regions && profiles[cloud].regions[0]
-          ? profiles[cloud].regions[0].name
-          : ''
-      )
-    }
-  }, [cloud, profiles])
-
   const handleCloudClick = cloud => () => {
     setCould(cloud)
+    setRegion(
+      profiles[cloud].regions && profiles[cloud].regions[0]
+        ? profiles[cloud].regions[0].name
+        : ''
+    )
   }
 
   const handleRegionChange = event => {
     setRegion(event.target.value)
   }
 
-  const profile = profiles[cloud]
+  const profile = useMemo(() => profiles[cloud], [profiles, cloud])
 
   const ProfileTable = () => {
     const instances = profile.instances || []
