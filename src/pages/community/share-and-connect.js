@@ -1,10 +1,11 @@
-import '../styles/pages/shareYourStory.scss'
+import '../../styles/pages/community/shareAndConnect.scss'
 
 import React from 'react'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
 import HubspotForm from 'react-hubspot-form'
 import { graphql } from 'gatsby'
+import Loading from '../../components/loading'
 
 const ShareYourStory = ({ data }) => {
   const { shareStories } = data
@@ -33,6 +34,7 @@ const ShareYourStory = ({ data }) => {
             <HubspotForm
               portalId="4466002"
               formId="cb5c56c5-a562-4f07-b1ce-1acc0b06ae62"
+              loading={<Loading />}
             />
           </div>
         </section>

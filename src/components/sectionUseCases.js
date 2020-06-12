@@ -2,16 +2,19 @@ import '../styles/components/sectionUseCases.scss'
 
 import React from 'react'
 import { Box } from '@seagreenio/react-bulma'
-import { Link } from 'gatsby'
 
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 import { navigate } from 'gatsby'
+// import LinkWithArrow from '../components/linkWithArrow'
 
-const SectionUseCase = (prop) => {
+const SectionUseCase = prop => {
   const onCardClick = href => () => navigate(href)
   const hasLightBg = prop.hasLightBg
   return (
-    <section className={`PingCAP-Use-Cases section section-use-cases${hasLightBg ? ' has-light-background' : ''}`}>
+    <section
+      className={`PingCAP-Use-Cases section section-use-cases${
+        hasLightBg ? ' has-light-background' : ''
+      }`}
+    >
       <div className="container">
         <h2 className="title section-title">Use cases</h2>
         <div className="columns is-multiline oltp-and-htap">
@@ -30,10 +33,11 @@ const SectionUseCase = (prop) => {
                   <li>200+ TB production data within a single TiDB cluster</li>
                   <li>Trillions of Rows in a single distributed table</li>
                 </ul>
-                <Link className="link-with-arrow" to="/">
-                  <ArrowForwardIcon />{' '}
-                  <span>See how modern applications scale</span>
-                </Link>
+                {/* <LinkWithArrow
+                  to="/"
+                  linkText="See how modern applications scale"
+                  outboundLink={false}
+                /> */}
               </div>
             </Box>
           </div>
@@ -52,10 +56,11 @@ const SectionUseCase = (prop) => {
                     No wall between transactional data and analytical reporting
                   </li>
                 </ul>
-                <Link className="link-with-arrow" to="/">
-                  <ArrowForwardIcon />{' '}
-                  <span>See how modern business makes decisions</span>
-                </Link>
+                {/* <LinkWithArrow
+                  to="/"
+                  linkText="See how modern business makes decisions"
+                  outboundLink={false}
+                /> */}
               </div>
             </Box>
           </div>

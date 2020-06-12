@@ -168,10 +168,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
     @include section-title;
   }
 
-  .link-with-arrow {
-    @include link-with-arrow;
-  }
-
   @each $logo in $logos {
     .#{$logo}-logo {
       background: url(../../../images/home/logos/#{$logo}.png) center no-repeat;

@@ -1,4 +1,4 @@
-@import '../common';
+@import '../../common';
 
 .PingCAP-TiDB-Community {
   .section-title {
@@ -17,16 +17,22 @@
   .button-in-section {
     margin: 1rem 1rem 1rem 0;
     padding: 0.5rem 1rem;
-    font-size: $size-7;
     background-color: $M1;
-    color: $B4;
     border: 1px solid $C2;
     border-radius: 4px;
     cursor: pointer;
 
+    a {
+      font-size: $size-7;
+      color: $B4;
+    }
+
     &:hover {
       background-color: $B1;
-      color: $M1;
+
+      a {
+        color: $M1;
+      }
     }
   }
 
@@ -57,7 +63,7 @@
       text-align: left;
 
       .section-title {
-          text-align: left;
+        text-align: left;
       }
 
       @include mobile {
@@ -151,6 +157,7 @@
 
         ul {
           display: block;
+          color: $B4;
         }
       }
     }
@@ -183,6 +190,10 @@
           color: $M4;
         }
       }
+    }
+
+    .read-more-link {
+      text-align: center;
     }
   }
 

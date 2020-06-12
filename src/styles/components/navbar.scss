@@ -10,6 +10,37 @@
     box-shadow: 0 2px 8px rgba(#000, 0.05);
   }
 
+  .has-dropdown {
+    align-items: center;
+
+    > .navbar-dropdown {
+      background-color: $B5;
+      border-radius: 4px;
+      border-top: none;
+      box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+      font-size: $size-7;
+      top: 80%;
+
+      > .navbar-item {
+        color: $B4;
+
+        &:hover {
+          color: $B1;
+        }
+      }
+
+      @include mobile {
+        display: none;
+        
+        &.toggle-drop {
+          display: block;
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+
   .navbar-item {
     &.with-brand {
       padding-left: 1.5rem;

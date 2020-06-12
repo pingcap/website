@@ -1,5 +1,5 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
@@ -18,6 +18,13 @@ const Navbar = () => {
   const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
   const handleSetBurgerActive = () => setBurgerActive(!burgerActive)
+
+  function toggleDropdown() {
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      const dropdown = document.querySelector('.navbar-dropdown')
+      dropdown.classList.toggle('toggle-drop')
+    }
+  }
 
   useEffect(() => {
     const scrollListener = () => {
@@ -62,14 +69,39 @@ const Navbar = () => {
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
             {navbarItems.map(item => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="navbar-item with-main-section"
-                onTouchStart={() => {}}
-              >
-                {item.name}
-              </Link>
+              <Fragment key={item.name}>
+                {item.dropdown ? (
+                  <div
+                    role="navigation"
+                    className="navbar-item has-dropdown is-hoverable with-main-section"
+                    onClick={toggleDropdown}
+                    onKeyDown={toggleDropdown}
+                  >
+                    {item.name}
+                    <div className="navbar-dropdown">
+                      {item.dropdown.map(navItem => (
+                        <Link
+                          key={navItem.name}
+                          to={navItem.href}
+                          className="navbar-item "
+                          onTouchStart={() => {}}
+                        >
+                          {navItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className="navbar-item with-main-section"
+                    onTouchStart={() => {}}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </Fragment>
             ))}
           </div>
           <div className="navbar-end">

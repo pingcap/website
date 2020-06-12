@@ -16,6 +16,7 @@
 
   .card {
     padding: 2rem 3rem;
+    text-align: center;
     width: 100%;
 
     @include mobile {
@@ -46,8 +47,65 @@
       }
     }
 
+    .title-field {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2rem;
+      font-size: $size-7;
+      font-weight: bold;
+      color: $B3;
+
+      .linux-icon {
+        height: 30px;
+        margin-left: 1rem;
+      }
+
+      .check-icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 1rem;
+      }
+    }
+
     .form-wrapper {
-        min-height: 300px;
+      min-height: 300px;
+    }
+
+    .form-control {
+      position: relative;
+      width: 100%;
+      margin-bottom: 2rem;
+      text-align: left;
+
+      &:after {
+        content: '*';
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: red;
+      }
+    }
+
+    .pkg-desc {
+      margin-bottom: 3rem;
+      margin-top: -1rem;
+      text-align: left;
+      font-size: $size-8;
+      color: $B4;
+    }
+
+    button {
+      margin: 2rem 0;
+
+      a {
+        color: $M1;
+      }
+    }
+
+    .err-msg {
+      font-size: $size-8;
+      color: $T3;
     }
   }
 }

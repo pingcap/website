@@ -33,7 +33,8 @@ const Download = ({ data }) => {
           <div className="container">
             <div className="card deploy-in-cloud">
               <h2 className="title section-title">Deploy TiDB in Cloud</h2>
-              <img className="cloud-icon"
+              <img
+                className="cloud-icon"
                 src={deployTiDBinCloudSVG.publicURL}
                 alt="Deploy TiDB in Cloud"
               />
@@ -41,7 +42,9 @@ const Download = ({ data }) => {
                 Fully managed TiDB service that lets you deploy and operate TiDB
                 in a few clicks. Available on AWS and GCP.
               </p>
-              <button>APPLY FOR FREE TRIAL</button>
+              <Link to="/products/tidb-cloud/trial">
+                <button>APPLY FOR FREE TRIAL</button>
+              </Link>
             </div>
             <div className="deploy-on-premise">
               <h2 className="title section-title">Deploy TiDB on Premise</h2>

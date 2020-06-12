@@ -1,0 +1,14 @@
+@import '../common';
+
+.PingCAP-Event-Card {
+  &.columns {
+    justify-content: center;
+
+    .column {
+      margin: 2rem 0;
+      .card {
+        height: 100%;
+      }
+    }
+  }
+}
