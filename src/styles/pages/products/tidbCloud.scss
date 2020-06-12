@@ -224,7 +224,7 @@
         .cloud-provider-button {
           @include has-pingcap-style-border;
           width: 9rem;
-          height: 4.8rem;
+          height: 5rem;
           margin-right: 3rem;
 
           &.button:active,
@@ -234,7 +234,8 @@
 
           .logo {
             display: block;
-            height: 100%;
+            width: auto;
+            height: 4rem;
             margin: auto;
           }
         }
