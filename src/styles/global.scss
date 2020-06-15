@@ -86,6 +86,48 @@ body {
   color: $B4;
 }
 
+.section-title {
+  margin-bottom: 3rem !important;
+  text-align: center;
+  font-size: $size-3;
+
+  @include mobile {
+    font-size: $size-5;
+  }
+}
+
+.subtitle-under-main-title {
+  padding-bottom: 1.5rem;
+  text-align: center;
+  font-size: $size-6;
+  font-weight: 400;
+  color: $M4
+}
+
+.column-or-card-title {
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: $size-5;
+  font-weight: 700;
+  color: $M3;
+}
+
+.card-media-title {
+  font-size: $size-8;
+}
+
+.paragraph {
+  padding-bottom: 1.5rem;
+  line-height: $LH4;
+  font-weight: 400;
+  font-size: $size-7;
+  color: $M4;
+
+  a {
+    color: $B1;
+  }
+}
+
 .loader-spinner {
   margin: 0 auto;
 }

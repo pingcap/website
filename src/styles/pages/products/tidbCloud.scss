@@ -257,7 +257,8 @@
         display: flex;
         align-items: center;
 
-        .desc {
+        .paragraph {
+          padding-bottom: 0;
           @include mobile {
             margin-right: 1.5rem;
           }

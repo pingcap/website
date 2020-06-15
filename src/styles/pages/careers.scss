@@ -1,16 +1,6 @@
 @import '../common';
 
 .PingCAP-Careers {
-  .section-title {
-    @include section-title
-  }
-
-  .section-subtitle {
-    @include section-subtitle;
-    font-size: $size-6;
-    font-weight: 400;
-  }
-
   .hero {
     .hero-body {
       @include has-light-background;

@@ -46,7 +46,7 @@ const footerColumns = [
         link: '/community'
       },
       {
-        name: 'GItHub',
+        name: 'GitHub',
         link: 'https://github.com/pingcap',
         outbound: true
       }
@@ -80,12 +80,16 @@ const footerColumns = [
         link: '/about'
       },
       {
+        name: 'Contact',
+        link: '/contact-us'
+      },
+      {
         name: 'Careers',
         link: '/careers'
       },
       {
         name: 'Privacy Policy',
-        link: 'https://pingcap.com/privacy-policy/',
+        link: 'https://pingcap.com/en/privacy-policy/',
         outbound: true
       }
     ]

@@ -1,14 +1,6 @@
 @import '../../common';
 
 .PingCAP-Product-TiDB {
-  .section-title {
-    @include section-title
-    margin-bottom: 2rem;
-  }
-
-  .section-subtitle {
-    @include section-subtitle;
-  }
 
   .hero {
     img {
@@ -27,7 +19,7 @@
     margin-top: 2rem;
 
     .industry-title {
-      font-size: $size-5;
+      font-weight: 700;
     }
 
     .columns {

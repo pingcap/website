@@ -57,7 +57,7 @@ const CaseStudies = ({ data }) => {
         clickable: true,
         bulletClass: 'bullet',
         bulletActiveClass: 'active',
-        renderBullet: () => `<span className="bullet"></span>`
+        renderBullet: () => `<span class="bullet"></span>`
       },
       navigation: {
         nextEl: '.swiper-next',
@@ -116,7 +116,7 @@ const CaseStudies = ({ data }) => {
                 src={quoteMarkSVG.publicURL}
                 alt="quote-mark"
               />
-              <div className="title is-6 is-spaced has-pingcap-style-underline">
+              <div className="title column-or-card-title is-spaced">
                 Featured Testimonials
               </div>
             </div>
@@ -169,11 +169,13 @@ function Logos({ logos }) {
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
             <div className="detail-card">
-              <div className="title is-6">{logo.customer}</div>
+              <div className="title column-or-card-title has-text-left">
+                {logo.customer}
+              </div>
               <div
                 className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
               />
-              <div className="summary">
+              <div className="paragraph">
                 {truncate.apply(logo.summary, [200, true])}
               </div>
               {logo.title && (

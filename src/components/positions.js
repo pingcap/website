@@ -26,19 +26,12 @@ const Positions = () => {
   positions = positions.edges.map(edge => edge.node.frontmatter)
 
   return (
-    <div className="PingCAP-Positions">
-      <div className="columns">
-        {positions.map(p => (
-          <div className="column position">
-            <Link
-              to={`/careers/${replaceTitle(p.title)}`}
-              key={p.title}
-            >
-              <div className="position-wrapper">
-                <div className="position-title">{p.title}</div>
-                <div className="location">{p.location}</div>
-              </div>
-            </Link>
+    <div className="PingCAP-Positions columns">
+      {positions.map(p => (
+        <Link to={`/careers/${replaceTitle(p.title)}`} key={p.title} className="position column">
+          <div className="position-wrapper">
+            <div className="position-title">{p.title}</div>
+            <div className="location">{p.location}</div>
           </div>
         ))}
       </div>

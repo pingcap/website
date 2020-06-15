@@ -19,8 +19,8 @@ const EventsCard = prop => {
             <div className="card-content">
               <div className="media">
                 <div className="media-content">
-                  <div className="title is-5 is-spaced">{card.name}</div>
-                  <p className="subtitle author">
+                  <p className="title is-spaced column-or-card-title has-text-left">{card.name}</p>
+                  <p className="card-media-title">
                     {card.eventType}/{card.time}
                   </p>
                 </div>

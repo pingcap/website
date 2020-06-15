@@ -20,12 +20,12 @@ const Careers = ({ data }) => {
               <h1 className="title section-title">
                 Join the team that is building the database of the future
               </h1>
-              <h2 className="section-subtitle">
+              <div className="subtitle-under-main-title">
                 Our mission is to build a database of the future, made by
                 developers, for developers. It’s an ambitious mission, and we
                 can’t do it without curious, self-driven, and capable
                 people...like you!
-              </h2>
+              </div>
               <Link to="/careers#see-more-positions">
                 <button className="button is-primary is-rounded">
                   See Open Positions
@@ -38,12 +38,12 @@ const Careers = ({ data }) => {
         <section className="section working-env-section">
           <div className="container">
             <h2 className="title section-title">Working at PingCAP</h2>
-            <h2 className="section-subtitle">
+            <div className="subtitle-under-main-title">
               At PingCAP, you find yourself working with the most talented, and
               motivated people in the industry. Apart from inspirations and
               productivity, we do our best to provide you with a comfortable and
               free working environment.
-            </h2>
+            </div>
           </div>
           <div className="columns is-multiline">
             {workEnv.map(w => (

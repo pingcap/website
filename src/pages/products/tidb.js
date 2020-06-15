@@ -10,7 +10,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import CheckIcon from '@material-ui/icons/Check'
 
 const TiDB = ({ data }) => {
-  const { hyperGrowthHeroSVG, htapArchPNG } = data
+  const { hyperGrowthHeroSVG, htapArchSVG } = data
   return (
     <Layout>
       <SEO title="Product TiDB" />
@@ -21,18 +21,18 @@ const TiDB = ({ data }) => {
               <h1 className="title section-title">
                 The Database for Your Hyper-growth in the Cloud Era
               </h1>
-              <h2 className="section-subtitle">
+              <div className="subtitle-under-main-title">
                 With TiDB, you won’t have to worry that your business outgrows
                 your database.
-              </h2>
+              </div>
               <img src={hyperGrowthHeroSVG.publicURL} alt="Hyper Growth Hero" />
-              <h2 className="section-subtitle">
+              <p className="paragraph">
                 The TiDB platform is a distributed SQL database platform that
                 features horizontal scalability, strong consistency, and high
                 availability. The goal of TiDB is to serve as a one-stop
                 solution for all online transactions and analysis so you can
                 build your applications just as simply as in the good old days.
-              </h2>
+              </p>
             </div>
           </div>
         </section>
@@ -40,7 +40,7 @@ const TiDB = ({ data }) => {
         <section className="section HTAP-section">
           <div className="container">
             <h2 className="title section-title">HTAP</h2>
-            <img src={htapArchPNG.publicURL} alt="HATP Architecture" />
+            <img src={htapArchSVG.publicURL} alt="HATP Architecture" />
           </div>
         </section>
 
@@ -48,10 +48,10 @@ const TiDB = ({ data }) => {
 
         <section className="section industry-section">
           <div className="container">
-            <h2 className="title section-title industry-title">
+            <div className="subtitle-under-main-title industry-title">
               <div>As an industry-agnostic database solution,</div>
               <div>TiDB has been widely adopted by the following segments:</div>
-            </h2>
+            </div>
             <div className="columns">
               {industryIcons.map(i => (
                 <div className="column" key={i.desc}>
@@ -66,9 +66,9 @@ const TiDB = ({ data }) => {
         <section className="section comparison-table-section">
           <div className="container">
             <h2 className="title section-title">Comparison</h2>
-            <h2 className="section-subtitle">
+            <div className="subtitle-under-main-title">
               Comparisons between TiDB and other SQL distributed databases
-            </h2>
+            </div>
             <div className="table-container">
               <table className="table is-bordered comparison-table">
                 <thead>
@@ -187,11 +187,11 @@ const TiDB = ({ data }) => {
               <table className="table is-bordered benefit-table">
                 <thead>
                   <tr>
-                    <th>O1.Open Source</th>
-                    <th>O2.SQL</th>
-                    <th>O3.Scale</th>
-                    <th>O4.Speed</th>
-                    <th>O5.Simple</th>
+                    <th>Open Source</th>
+                    <th>SQL</th>
+                    <th>Scale</th>
+                    <th>Speed</th>
+                    <th>Simple</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -247,8 +247,8 @@ export const query = graphql`
     ) {
       publicURL
     }
-    htapArchPNG: file(
-      relativePath: { eq: "products/tidb/htap-architecture.png" }
+    htapArchSVG: file(
+      relativePath: { eq: "products/tidb/htap-architecture.svg" }
     ) {
       publicURL
     }

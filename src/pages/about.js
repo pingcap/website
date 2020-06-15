@@ -4,6 +4,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql, Link } from 'gatsby'
+import { Button } from '@seagreenio/react-bulma'
 
 const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG } = data
@@ -22,14 +23,14 @@ const About = ({ data }) => {
         <section className="section intro-section">
           <div className="container">
             <h1 className="title section-title">About PingCAP</h1>
-            <p>
+            <p className="paragraph">
               PingCAP started in 2015 when three seasoned infrastructure
               engineers were sick and tired of the way databases were managed,
               scaled, and maintained while working at leading Internet
               companies. Seeing no good solution on the market, they decided to
               build one themselves--the open-source way.
             </p>
-            <p>
+            <p className="paragraph">
               With the help of a first-class team and hundreds of contributors
               from around the globe, PingCAP is building an open source
               distributed NewSQL hybrid transactional and analytical processing
@@ -41,11 +42,13 @@ const About = ({ data }) => {
               a cloud-native distributed Key-Value store. It is now a CNCF
               incubating project .
             </p>
-            <Link to="/contact-us">
-              <button className="button is-primary is-rounded">
-                Contact Us
-              </button>
-            </Link>
+            <Button
+              as={Link}
+              to="/contact-us"
+              className="button is-primary is-rounded"
+            >
+              Contact Us
+            </Button>
           </div>
         </section>
 
@@ -58,21 +61,25 @@ const About = ({ data }) => {
         <section className="section company-culture-section">
           <div className="container">
             <h2 className="title section-title">Company Culture</h2>
-            <p>
+            <p className="paragraph">
               Our mission is to build a hybrid transactional and analytical
               processing database with global scalability, so companies can
               count on TiDB as its single unified database solution.
             </p>
-            <p>
+            <p className="paragraph">
               So, if you love the following: Open source, open collaboration,
               open communication; Waking up every morning motivated to solve
               big, hairy problems (and have fun doing it!); Working alongside a
               global team of self-starters, curious learners, builders, doers;
             </p>
-            <p className="last">We want to hear from you!</p>
-            <Link to="/careers">
-              <button className="button is-primary is-rounded">Join Us</button>
-            </Link>
+            <p className="paragraph last">We want to hear from you!</p>
+            <Button
+              as={Link}
+              to="/careers"
+              className="button is-primary is-rounded"
+            >
+              Join Us
+            </Button>
           </div>
         </section>
       </article>

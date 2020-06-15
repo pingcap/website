@@ -7,8 +7,8 @@ import { navigate } from 'gatsby'
 // import LinkWithArrow from '../components/linkWithArrow'
 
 const SectionUseCase = prop => {
-  const onCardClick = href => () => navigate(href)
   const hasLightBg = prop.hasLightBg
+  
   return (
     <section
       className={`PingCAP-Use-Cases section section-use-cases${
@@ -16,10 +16,10 @@ const SectionUseCase = prop => {
       }`}
     >
       <div className="container">
-        <h2 className="title section-title">Use Cases</h2>
+        <h2 className="title section-title mb-4">Use Cases</h2>
         <div className="columns is-multiline oltp-and-htap">
           <div className="column is-full-mobile">
-            <Box className="oltp" onClick={onCardClick('/')}>
+            <Box className="oltp">
               <div className="inner">
                 <h3 className="title is-3 is-spaced">O L T P</h3>
                 <h4 className="title is-4">Horizontally-scalable MySQL</h4>
@@ -40,7 +40,7 @@ const SectionUseCase = prop => {
             </Box>
           </div>
           <div className="column is-full-mobile">
-            <Box className="htap" onClick={onCardClick('/')}>
+            <Box className="htap">
               <div className="inner">
                 <h3 className="title is-3 is-spaced">H T A P</h3>
                 <h4 className="title is-4">Real-time Analytics</h4>
