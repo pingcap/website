@@ -58,8 +58,8 @@ const CaseStudy = ({ data }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
-          },
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
+          }
         ]}
       />
       <article className="PingCAP-Blog">

@@ -89,6 +89,7 @@
   }
 
   .contribution-grow-section {
+    padding-bottom: 6rem;
     .container {
       max-width: 800px;
 
@@ -104,7 +105,7 @@
         position: relative;
         display: flex;
         align-items: center;
-        font-size: $size-7;
+        font-size: $size-6;
         color: $B4;
         cursor: pointer;
 
@@ -199,6 +200,10 @@
 
     img {
       height: 180px;
+    }
+
+    a {
+      color: $B1;
     }
   }
 }

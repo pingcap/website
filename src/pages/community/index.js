@@ -172,13 +172,6 @@ const Community = ({ data }) => {
               Join us at our TiDB community events
             </div>
             <EventsCard cardsList={communityActivities} />
-            <div className="read-more-link">
-              <LinkWithArrow
-                to="/events"
-                linkText="All Events"
-                outboundLink={false}
-              />
-            </div>
           </div>
         </section>
 

@@ -194,7 +194,7 @@ const IndexPage = ({ data }) => {
             <div className="has-text-centered">
               <LinkWithArrow
                 to="/case-studies"
-                linkText="More Case Studies"
+                linkText="More case studies"
                 outboundLink={false}
               />
             </div>
