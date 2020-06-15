@@ -9,7 +9,6 @@ import { industryIcons } from '../../data/product-tidb'
 import CloseIcon from '@material-ui/icons/Close'
 import CheckIcon from '@material-ui/icons/Check'
 
-
 const TiDB = ({ data }) => {
   const { hyperGrowthHeroSVG, htapArchPNG } = data
   return (
@@ -20,7 +19,7 @@ const TiDB = ({ data }) => {
           <div className="hero-body">
             <div className="container has-text-centered">
               <h1 className="title section-title">
-                TiDB, the database for your hyper-growth in the cloud era
+                The Database for Your Hyper-growth in the Cloud Era
               </h1>
               <h2 className="section-subtitle">
                 With TiDB, you won’t have to worry that your business outgrows
@@ -40,7 +39,7 @@ const TiDB = ({ data }) => {
 
         <section className="section HTAP-section">
           <div className="container">
-            <h2 className="section-title">HTAP</h2>
+            <h2 className="title section-title">HTAP</h2>
             <img src={htapArchPNG.publicURL} alt="HATP Architecture" />
           </div>
         </section>
@@ -49,7 +48,7 @@ const TiDB = ({ data }) => {
 
         <section className="section industry-section">
           <div className="container">
-            <h2 className="section-title industry-title">
+            <h2 className="title section-title industry-title">
               <div>As an industry-agnostic database solution,</div>
               <div>TiDB has been widely adopted by the following segments:</div>
             </h2>
@@ -66,7 +65,7 @@ const TiDB = ({ data }) => {
 
         <section className="section comparison-table-section">
           <div className="container">
-            <h2 className="section-title">Comparison</h2>
+            <h2 className="title section-title">Comparison</h2>
             <h2 className="section-subtitle">
               Comparisons between TiDB and other SQL distributed databases
             </h2>
@@ -183,7 +182,7 @@ const TiDB = ({ data }) => {
 
         <section className="section benefit-table-section">
           <div className="container">
-            <h2 className="section-title">Benefits</h2>
+            <h2 className="title section-title">Benefits</h2>
             <div className="table-container">
               <table className="table is-bordered benefit-table">
                 <thead>

@@ -9,6 +9,12 @@
         }
     }
 
+    .section-subtitle {
+        @include section-subtitle;
+        font-weight: 400;
+        
+    }
+
     .form-section {
         max-width: 800px;
         text-align: center;

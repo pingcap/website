@@ -21,7 +21,7 @@ const StartTrialButton = () => (
     rounded
     to="/products/tidb-cloud/trial"
   >
-    Start Free Trial
+    Start Your Free Trial Now
   </Button>
 )
 
@@ -245,7 +245,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-why-tidb-cloud has-light-background">
           <div className="container">
-            <h2 className="title is-4">Why TiDB Cloud</h2>
+            <h2 className="title section-title">Why TiDB Cloud</h2>
             <div className="reasons">
               {reasonsData.map(d => (
                 <div key={d.name} className="reason">
@@ -257,7 +257,9 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title is-5 is-spaced">{d.name}</h3>
+                    <h3 className="title section-subtitle is-spaced">
+                      {d.name}
+                    </h3>
                     <p className="is-7 desc">{d.desc}</p>
                   </div>
                 </div>
@@ -268,7 +270,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-features">
           <div className="container">
-            <h2 className="title is-4">Key Features</h2>
+            <h2 className="title section-title">Key Features</h2>
             <div className="features">
               {featuresData.map(d => (
                 <div
@@ -284,7 +286,9 @@ const TiDBCloudPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <h3 className="title is-5 is-spaced">{d.name}</h3>
+                    <h3 className="title section-subtitle is-spaced">
+                      {d.name}
+                    </h3>
                     <p className="is-7 desc">{d.desc}</p>
                   </div>
                 </div>
@@ -295,7 +299,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-pricing has-light-background">
           <div className="container">
-            <h2 className="title is-4">Pricing</h2>
+            <h2 className="title section-title">Pricing</h2>
             <div className="field">
               <h3 className="title is-5">Hourly Node Usage</h3>
               <p className="is-7 desc">
@@ -316,7 +320,9 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-get-started">
           <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
+            <h2 className="title section-title">
+              Get Started with TiDB Cloud Now
+            </h2>
             <StartTrialButton />
           </div>
         </section>

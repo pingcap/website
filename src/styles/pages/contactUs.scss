@@ -13,6 +13,8 @@
 
   .section-subtitle {
     @include section-subtitle;
+    margin: 0 auto;
+    max-width: 1000px;
     color: $M1;
   }
 
@@ -55,12 +57,12 @@
         .addr-title {
           font-size: $size-5;
           font-weight: bold;
-          color: $B3;
+          color: $M3;
         }
   
         .addr-detail {
           font-size: $size-7;
-          color: $B4;
+          color: $M4;
         }
       }
     }

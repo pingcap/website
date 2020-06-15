@@ -3,7 +3,7 @@
 .PingCAP-Use-Cases {
   &.section-use-cases {
     .section-title {
-      @include section-title;
+      @include section-title
     }
     .oltp-and-htap {
       .oltp,

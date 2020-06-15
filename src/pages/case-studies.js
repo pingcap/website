@@ -19,14 +19,14 @@ const CaseStudies = ({ data }) => {
     quoteMarkSVG,
     placeholderSVG,
     caseStudies,
-    caseStudiesWithoutReadMore,
+    caseStudiesWithoutReadMore
   } = data
   const categoriesOfStudies = [
     ...new Set(
       caseStudies.edges
         .map(({ node }) => node.frontmatter.customerCategory)
         .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
-    ),
+    )
   ]
   const studiesByCategory = categoriesOfStudies.map(c => ({
     category: c.split(' ').join('-'),
@@ -39,17 +39,17 @@ const CaseStudies = ({ data }) => {
             node: {
               frontmatter: {
                 customer: customer.name,
-                summary: customer.summary,
-              },
-            },
+                summary: customer.summary
+              }
+            }
           }))
-      ),
+      )
   }))
 
   useEffect(() => {
     new Swiper('.swiper-container', {
       autoplay: {
-        delay: 6000,
+        delay: 6000
       },
       loop: true,
       pagination: {
@@ -57,12 +57,12 @@ const CaseStudies = ({ data }) => {
         clickable: true,
         bulletClass: 'bullet',
         bulletActiveClass: 'active',
-        renderBullet: () => `<span className="bullet"></span>`,
+        renderBullet: () => `<span className="bullet"></span>`
       },
       navigation: {
         nextEl: '.swiper-next',
-        prevEl: '.swiper-prev',
-      },
+        prevEl: '.swiper-prev'
+      }
     })
   }, [])
 
@@ -78,14 +78,14 @@ const CaseStudies = ({ data }) => {
           />
           <div className="titles">
             <h1>
-              <div className="title is-2">Trusted and verified by</div>
-              <div className="title is-2">web-scale application leaders</div>
+              <div className="title is-2">Trusted and Verified by</div>
+              <div className="title is-2">Web-scale Innovation Leaders</div>
             </h1>
           </div>
         </div>
         <div className="container section">
-          <h2 className="title is-5 title-under-banner">
-            TiDB delivers the value to the innovators in data industry
+          <h2 className="title section-title title-under-banner">
+            TiDB delivers values to innovation leaders
           </h2>
           <div className="card swiper-container">
             <div className="swiper-wrapper top">
@@ -131,8 +131,8 @@ const CaseStudies = ({ data }) => {
               <NavigateNextIcon className="swiper-next" />
             </div>
           </div>
-          <h2 className="title is-5 title-under-swiper">
-            Pegabytes of data across industries
+          <h2 className="title section-title title-under-swiper">
+            Petabytes of Data Across Industries
           </h2>
           <div className="customer-categories">
             {categoriesOfStudies.map(c => (

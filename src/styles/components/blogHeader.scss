@@ -5,14 +5,18 @@
     }
 
     margin-top: 2rem;
-    color: $B3;
+    color: $M3;
   }
 
   .blog-link-title {
     @extend .blog-title;
 
     a {
-      color: $B3;
+      color: $M3;
+
+      &:hover {
+        color: $B3;
+      }
     }
   }
 
