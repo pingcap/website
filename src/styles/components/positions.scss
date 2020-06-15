@@ -8,22 +8,21 @@
   .position {
     position: relative;
     padding-left: 2rem;
-    padding-bottom: 2rem;
 
     .position-wrapper {
-      padding-top: 1rem;
+      transform: translateY(20%);
+    }
 
-      .position-title {
-        font-size: $size-5;
-        font-weight: bold;
-        color: $B3;
-      }
+    .position-title {
+      font-size: $size-5;
+      font-weight: bold;
+      color: $B3;
+    }
 
-      .location {
-        padding: 1rem 0;
-        font-size: $size-7;
-        color: $B3;
-      }
+    .location {
+      padding: 1rem 0;
+      font-size: $size-7;
+      color: $B3;
     }
 
     &:before {
@@ -35,7 +34,7 @@
     }
 
     &:hover {
-      .position-wrapper > .position-title {
+      .position-title {
         color: $B1;
       }
       &:before {

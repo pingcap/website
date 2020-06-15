@@ -17,11 +17,9 @@ const ShareYourStory = ({ data }) => {
         <section className="hero is-medium">
           <div className="hero-body">
             <div className="container has-text-centered">
-              <h1 className="title section-title">Share and connect</h1>
+              <h1 className="title section-title">Share and Connect</h1>
               <h2 className="section-subtitle">
                 Share your TiDB story to connect more with our community.
-              </h2>
-              <h2 className="section-subtitle">
                 As a thank you, we’ll ship you an awesome TIDB SWAG.
               </h2>
               <img src={shareStories.publicURL} alt="Share Story Hero" />

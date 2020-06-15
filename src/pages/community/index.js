@@ -39,7 +39,8 @@ const Community = ({ data }) => {
               <div className="buttons">
                 <a
                   href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <button className="button join-slack is-primary is-rounded">
                     Join Our Slack
@@ -47,7 +48,8 @@ const Community = ({ data }) => {
                 </a>
                 <a
                   href="https://github.com/pingcap/community/tree/master/contributors"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <button className="button become-a-contributor is-primary is-rounded">
                     Become a Contributor
@@ -70,8 +72,8 @@ const Community = ({ data }) => {
                 </div>
               </div>
               <div className="column is-8">
-                <h2 className="section-title onboard-title">
-                  Get onboard with TiDB
+                <h2 className="title section-title onboard-title">
+                  Get Onboard with TiDB
                 </h2>
                 <p className="p-in-section">
                   As a distributed system, TiDB can be a challenging project to
@@ -109,7 +111,7 @@ const Community = ({ data }) => {
 
         <section className="section contribution-grow-section">
           <div className="container">
-            <h2 className="title section-title">Contribute and grow</h2>
+            <h2 className="title section-title">Contribute and Grow</h2>
             <h2 className="section-subtitle">
               Since day one, TiDB has been a community-driven project. TiDB
               would not be what it is today without the talent, enthusiasm, and
@@ -141,14 +143,17 @@ const Community = ({ data }) => {
           </div>
         </section>
 
-        <section className="section share-stories-section" id="share-your-stories">
+        <section
+          className="section share-stories-section"
+          id="share-your-stories"
+        >
           <div className="container">
             <div className="columns is-variable is-8">
               <div className="column">
                 <img src={shareStoriesSVG.publicURL} alt="Share stories" />
               </div>
               <div className="column is-8">
-                <h2 className="title section-title">Share your stories</h2>
+                <h2 className="title section-title">Share Your Stories</h2>
                 <p className="p-in-section">
                   We want companies around the world to enjoy TiDB's great
                   benefits. Have you deployed it yet? If so, tell us and the
@@ -170,13 +175,6 @@ const Community = ({ data }) => {
               Join us at our TiDB community events
             </h3>
             <EventsCard cardsList={communityActivities} />
-            <div className="read-more-link">
-              <LinkWithArrow
-                to="/events"
-                linkText="All Events"
-                outboundLink={false}
-              />
-            </div>
           </div>
         </section>
 
@@ -189,7 +187,7 @@ const Community = ({ data }) => {
                 </div>
               </div>
               <div className="column is-8">
-                <h2 className="title section-title">Code of conduct</h2>
+                <h2 className="title section-title">Contribute to Code</h2>
                 <p className="p-in-section">
                   The TiDB Community values respect, inclusiveness, open
                   collaboration, and communication. The TiDB Code of Conduct is
@@ -197,7 +195,7 @@ const Community = ({ data }) => {
                   you notice any form of violation at an event, in Slack, on
                   GitHub, or in another communication mechanism, contact the
                   Project Management Committee (PMC) at
-                  <a href="mailto:pmc@tidb.io">pmc@tidb.io</a>
+                  <a href="mailto:pmc@tidb.io"> pmc@tidb.io</a>
                 </p>
               </div>
             </div>

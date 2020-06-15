@@ -2,7 +2,7 @@
 
 .PingCAP-About {
   .section-title {
-    @include section-title;
+    @include section-title
   }
 
   .hero {
@@ -23,7 +23,7 @@
       margin-bottom: 2rem;
       text-align: left;
       font-size: $size-7;
-      color: $B4;
+      color: $M4;
       line-height: $LH5;
     }
 
@@ -48,7 +48,7 @@
         margin-bottom: 2rem;
         text-align: center;
         font-size: $size-7;
-        color: $B3;
+        color: $M4;
       }
 
       button {

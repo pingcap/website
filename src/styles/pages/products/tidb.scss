@@ -2,7 +2,7 @@
 
 .PingCAP-Product-TiDB {
   .section-title {
-    @include section-title;
+    @include section-title
     margin-bottom: 2rem;
   }
 
@@ -74,6 +74,8 @@
       }
 
       td {
+        padding: 1rem;
+
         .close-icon {
           color: $T3;
         }
@@ -91,8 +93,7 @@
 
       thead > tr > th:first-child,
       tr > td:first-child {
-        background-color: rgba(110, 119, 163, 0.1);
-
+        font-weight: 600;
       }
 
       thead > tr > th:last-child {

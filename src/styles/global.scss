@@ -40,6 +40,8 @@ body {
 }
 
 .button {
+  font-size: $size-6;
+  
   &.is-primary {
     &:hover {
       background-color: darken($color: $primary, $amount: 5%);
@@ -63,7 +65,7 @@ body {
 }
 
 .title {
-  color: $B3;
+  color: $M3;
 
   &.has-pingcap-style-underline {
     .underline {
@@ -94,7 +96,7 @@ body {
 
   &:hover {
     color: $primary;
-    
+
     @include tablet {
       svg {
         left: 0;
@@ -130,6 +132,16 @@ body {
 
     position: relative;
   }
+}
+
+.section-subtitle {
+  @include section-subtitle;
+}
+
+.p-in-section {
+  font-size: $size-7;
+  font-weight: 400;
+  color: $M4 !important;
 }
 
 @import 'components/navbar';

@@ -79,14 +79,23 @@
   margin-bottom: 3rem;
 }
 
+.section-title {
+  @include section-title;
+}
+
+.section-subtitle {
+  font-weight: bold;
+  font-size: $size-5;
+}
+
 .desc {
   margin-top: 0.5rem;
   line-height: $LH4;
-  color: $B4;
+  color: $M4;
 }
 
 .PingCAP-TiDBCloud {
-  .title.is-4 {
+  .title {
     margin-bottom: 1rem;
   }
 
@@ -179,6 +188,9 @@
   }
 
   .section-features {
+    .section-subtitle {
+      text-align: left;
+    }
     .features {
       .feature {
         @include has-intro-and-placeholder;

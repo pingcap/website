@@ -27,14 +27,21 @@ const Positions = () => {
 
   return (
     <div className="PingCAP-Positions">
-      {positions.map(p => (
-        <Link to={`/careers/${replaceTitle(p.title)}`} key={p.title} className="position">
-          <div className="position-wrapper">
-            <div className="position-title">{p.title}</div>
-            <div className="location">{p.location}</div>
+      <div className="columns">
+        {positions.map(p => (
+          <div className="column position">
+            <Link
+              to={`/careers/${replaceTitle(p.title)}`}
+              key={p.title}
+            >
+              <div className="position-wrapper">
+                <div className="position-title">{p.title}</div>
+                <div className="location">{p.location}</div>
+              </div>
+            </Link>
           </div>
-        </Link>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }

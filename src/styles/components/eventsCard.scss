@@ -8,6 +8,15 @@
       margin: 2rem 0;
       .card {
         height: 100%;
+
+        .author {
+          font-size: $size-8;
+        }
+        
+        figure.image {
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
       }
     }
   }

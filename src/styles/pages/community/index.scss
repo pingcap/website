@@ -2,8 +2,7 @@
 
 .PingCAP-TiDB-Community {
   .section-title {
-    @include section-title;
-    margin-bottom: 2rem;
+    @include section-title margin-bottom: 1.75rem;
 
     @include mobile {
       text-align: center !important;
@@ -42,7 +41,7 @@
     text-align: left;
     line-height: $LH4;
     font-size: $size-7;
-    color: $B4;
+    color: $M4;
 
     @include mobile {
       padding-right: 0;
@@ -93,6 +92,11 @@
           background-color: transparent;
           color: $B1;
           border: 1px solid $B1;
+
+          &:hover {
+            background-color: $primary;
+            color: $M1;
+          }
         }
       }
     }
@@ -108,14 +112,19 @@
   }
 
   .contribution-grow-section {
+    padding-bottom: 6rem;
     .container {
       max-width: 800px;
+
+      // .collapse-items {
+      //   font-size: $size-5;
+      // }
 
       .collapsable {
         position: relative;
         display: flex;
         align-items: center;
-        font-size: $size-7;
+        font-size: $size-6;
         color: $B4;
         cursor: pointer;
 
@@ -148,6 +157,10 @@
         display: none;
         margin-left: 4.5rem;
         margin-top: 2rem;
+
+        a {
+          color: $B1;
+        }
       }
 
       .show-content {
@@ -205,6 +218,10 @@
 
     img {
       height: 180px;
+    }
+
+    a {
+      color: $B1;
     }
   }
 }

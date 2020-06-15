@@ -13,64 +13,60 @@ import tidbCloud from '../../images/home/logos/tidb-cloud.svg'
 
 const celebrateYourGrowthData = [
   {
-    name: 'True open source, No Lock-in',
+    name: 'True Open-source, No Lock-in',
     desc:
-      'Powered by a wealth of open source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
-    placeholder: c1SVG,
+      'Powered by a wealth of open-source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
+    placeholder: c1SVG
   },
   {
     name: 'Scale-out Relational Database',
     desc:
-      'Purpose-built to deliver SQL at scale and solve the scaling challenges with traditional relational databases without intrusion to your application brought by manual sharding.',
-    placeholder: c2SVG,
+      'Purposely built to deliver SQL at scale, TiDB eliminates the scaling problems of traditional relational databases without intrusion to your application.',
+    placeholder: c2SVG
   },
   {
-    name: 'Real-time Data Analysis',
+    name: 'Real-time Analytics',
     desc:
       'The true open source HTAP database platform that enables real-time situation awareness and decision making on live transactional data and eliminates friction between IT and business goals.',
-    placeholder: c3SVG,
-  },
+    placeholder: c3SVG
+  }
 ]
 
 const benefitsData = [
   {
-    name: 'SQL at scale',
+    name: 'SQL at Scale ',
     desc:
-      'TiDB is ACID compliant and strongly consistent. You can use TiDB as a scale-out MySQL database with your familiar SQL syntax and ecosystem tools.',
+      'TiDB is ACID-compliant and strongly consistent. You can use TiDB as a scale-out MySQL database with your familiar SQL syntax and ecosystem tools.',
     link: 'See how others succeed',
-    href:
-      '/case-studies/TiDB--the-Key-to-a-Better-Life-for-Meituan-Dianping-s-290-Million-Monthly-Users',
+    href: '/case-studies',
     placeholder: b1SVG,
-    reverse: true,
+    reverse: true
   },
   {
-    name: 'Elastic scalability',
+    name: 'Elastic Scalability',
     desc:
-      'TiDB automatically shards your data so you don’t have do it manually. You can simply add new nodes to scale horizontally and elastically to meet your business growth.',
+      'TiDB automatically shards your data so you don’t have to do it manually. You can simply add new nodes to scale horizontally and elastically to meet your business growth.',
     link: 'See how your data is distributed',
-    href:
-      '/blog/Building-a-Large-scale-Distributed-Storage-System-Based-on-Raft',
-    placeholder: b2SVG,
+    href: '/blog/TiDB-Internal--I----Data-Storage',
+    placeholder: b2SVG
   },
   {
-    name: 'Simplification and safety',
+    name: 'Simplicity and Safety',
     desc:
-      'TiDB minimizes the ETL process and automatically recover from malfunctions so you can scale and grow your business and stop worrying about database infrastructure.',
+      'TiDB simplifies the ETL process and automatically recovers from errors. You can focus on your business and stop worrying about your database infrastructure.',
     link: 'See how others succeed',
-    href:
-      '/case-studies/BookMyShow-com--More-Uptime--30--Less-Operational-Cost-with-TiDB',
+    href: '/case-studies',
     placeholder: b3SVG,
-    reverse: true,
+    reverse: true
   },
   {
-    name: 'Timely data means better insights',
+    name: 'Better Insights with Timely Data',
     desc:
-      'No more after-the-fact analysis on stale data. Accelerated data to insights, reduced time to market. TiDB breaks the wall between OLTP and OLAP, making your applications adaptive to transient business opportunities.',
+      'No more after-the-fact analysis on stale data. TiDB breaks the wall between OLTP and OLAP, making your applications adaptive to transient business opportunities.',
     link: 'See how others succeed',
-    href:
-      '/case-studies/Lesson-Learned-from-Queries-over-1-3-Trillion-Rows-of-Data-Within-Milliseconds-of-Response-Time-at-Zhihu-com',
-    placeholder: b4SVG,
-  },
+    href: '/case-studies',
+    placeholder: b4SVG
+  }
 ]
 
 const logos = {
@@ -78,7 +74,7 @@ const logos = {
   tiup,
   googleCloudPlatform,
   aws,
-  tidbCloud,
+  tidbCloud
 }
 
 export { celebrateYourGrowthData, benefitsData, logos }

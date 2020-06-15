@@ -141,16 +141,23 @@ const IndexPage = ({ data }) => {
                   />
                 </h1>
                 <h2 className="subtitle is-5">
-                  Open-source distributed SQL database for elastic scale and
-                  real-time data analytics
+                  An open-source, cloud-native, distributed SQL database for
+                  elastic scale and real-time analytics
                 </h2>
                 <div className="buttons">
-                  <Button as="a" color="primary" rounded>
-                    Get Started
-                  </Button>
-                  <Button as="a" color="primary" rounded outlined>
-                    Ask an Expert
-                  </Button>
+                  <a
+                    href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
+                    target="_blank"
+                  >
+                    <Button as="a" color="primary" rounded>
+                      Get Started
+                    </Button>
+                  </a>
+                  <Link to="/contact-us/">
+                    <Button as="a" color="primary" rounded outlined>
+                      Ask an Expert
+                    </Button>
+                  </Link>
                 </div>
               </div>
               <div className="video-wrapper">
@@ -171,7 +178,8 @@ const IndexPage = ({ data }) => {
         <section className="section section-case-studies has-light-background">
           <div className="container">
             <h2 className="title home-title">
-              Trusted and verified by web-scale application leaders
+              Distributed SQL database, trusted and verified by innovation
+              leaders
             </h2>
             <div className="logos">
               {caseLogos.map(logo => (
@@ -181,7 +189,7 @@ const IndexPage = ({ data }) => {
             <div className="has-text-centered">
               <LinkWithArrow
                 to="/case-studies"
-                linkText="More Case Studies"
+                linkText="More case studies"
                 outboundLink={false}
               />
             </div>
@@ -190,7 +198,9 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-celebrate-your-growth">
           <div className="container">
-            <h2 className="title home-title">Celebrate your growth</h2>
+            <h2 className="title home-title">
+              Accelerate your growth with operational analytics
+            </h2>
             <div className="columns is-variable is-6">
               {celebrateYourGrowthData.map(d => (
                 <div key={d.name} className="column">
@@ -212,7 +222,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-benefits">
           <div className="container">
             <h2 className="title home-title">
-              The benefits of Distributed SQL
+              The Benefits of Distributed SQL
             </h2>
             <div ref={benefitsRef} className="benefits">
               {benefitsData.map(d => (
@@ -229,10 +239,10 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <div className="title is-4 is-spaced has-pingcap-style-underline">
+                    <div className="title section-subtitle is-4 is-spaced has-pingcap-style-underline">
                       {d.name}
                     </div>
-                    <div className="subtitle is-5 desc">{d.desc}</div>
+                    <div className="subtitle p-in-section desc">{d.desc}</div>
                     <LinkWithArrow
                       to={d.href}
                       linkText={d.link}
@@ -287,8 +297,8 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-learn-more">
           <div className="container">
-            <h2 className="title home-title">Learn more</h2>
-            <div className="columns is-variable is-6">
+            <h2 className="title home-title">Learn More</h2>
+            <div className="columns is-variable is-5">
               {last3Blogs.edges.map(({ node: { frontmatter } }) => (
                 <div key={frontmatter.title} className="column">
                   <div
@@ -311,10 +321,10 @@ const IndexPage = ({ data }) => {
                       </figure>
                     </div>
                     <div className="card-content">
-                      <div className="title is-6 is-spaced">
+                      <div className="title is-5 is-spaced">
                         {frontmatter.title}
                       </div>
-                      <div className="subtitle is-7">
+                      <div className="subtitle author">
                         By{' '}
                         {(frontmatter.author && frontmatter.author[0]) ||
                           'PingCAP'}
@@ -328,7 +338,7 @@ const IndexPage = ({ data }) => {
             <div className="has-text-centered view-more-wrapper">
               <LinkWithArrow
                 to="/blog"
-                linkText="View More"
+                linkText="View more..."
                 outboundLink={false}
               />
             </div>
@@ -337,13 +347,13 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-get-started-with-tidb">
           <div className="container">
-            <h2 className="title home-title">Get started with TiDB</h2>
+            <h2 className="title home-title">Get Started with TiDB</h2>
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
                   <h3 className="title is-6">On Private Data Center</h3>
                   <div className="strikethrough-primary" />
-                  <div className="title is-7">OPEN SOURCE</div>
+                  <div className="title is-7">COMMUNITY</div>
 
                   <Box className="logo">
                     <img src={logos.kubernetes} alt="Kubernetes logo" />
@@ -361,7 +371,7 @@ const IndexPage = ({ data }) => {
                 <NormalBox className="outer" shadowless>
                   <h3 className="title is-6">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
-                  <div className="title is-7">OPEN SOURCE</div>
+                  <div className="title is-7">COMMUNITY</div>
                   <Box className="logo aws">
                     <img src={logos.aws} alt="AWS logo" />
                   </Box>
@@ -384,7 +394,12 @@ const IndexPage = ({ data }) => {
                   <Box className="logo tidb-cloud">
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                   </Box>
-                  <Button as="a" color="primary">
+                  <Button
+                    as={Link}
+                    color="primary"
+                    className="start-trial-button"
+                    to="/products/tidb-cloud/trial"
+                  >
                     Sign Up for a Trial
                   </Button>
                 </NormalBox>

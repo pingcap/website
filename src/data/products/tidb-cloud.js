@@ -65,13 +65,13 @@ const featuresData = [
     reverse: true
   },
   {
-    name: 'Always up-to-date',
+    name: 'Always Up-to-date',
     desc:
       'Updates are provided as hot fixes and are applied as needed. Rest assured that you’ll always have the latest features and security updates.',
     placeholder: f3SVG
   },
   {
-    name: 'Visual diagnostics and monitoring',
+    name: 'Visual Diagnostics and Monitoring',
     desc:
       'Online visual diagnostics tools display hot data status, analyze your storage and performance, and locate SQL problems.',
     placeholder: f4SVG,
