@@ -8,7 +8,7 @@ import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
 const contributionGrow = [
   {
     icon: Code,
-    title: 'Contribute to the code ',
+    title: 'Contribute to Code',
     collapseList: [
       'Report an <a href="https://github.com/pingcap/tidb/issues" target="_blank">issue</a>',
       'Fix a <a href="https://github.com/pingcap/tidb/issues?q=is%3Aissue+is%3Aopen+label%3Atype%2Fbug" target="_blank">bug</a>',
@@ -17,7 +17,7 @@ const contributionGrow = [
   },
   {
     icon: Help,
-    title: 'Help others',
+    title: 'Help Others',
     collapseList: [
       'Join the community <a href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap" target="_blank">Slack</a>',
       'Answer questions on <a href="https://stackoverflow.com/questions/tagged/tidb" target="_blank">Stack overflow</a>'
@@ -46,7 +46,7 @@ const communityActivities = [
     eventType: 'Virtual Conference',
     time: 'July 6 - July 7, 2020 (Ended)',
     desc:
-      'TiDB DevCon is the annual developer conference for the TiDB community. This 2-day event aims to provide a venue where we showcase the evolution of product and technology in the past year and the latest progress in the TiDB ecosystem.',
+      'TiDB DevCon is the annual developer conference for the TiDB community. This 2-day event aims to provide a venue where we showcase the evolution of product and technology in the past year and the latest progress in the TiDB ecosystem.'
   },
   {
     thumbnail: UsabilityThumbNail,
@@ -55,7 +55,19 @@ const communityActivities = [
     time: 'March 02 - May 30, 2020 (Ended)',
     desc:
       'Season 2 of the TiDB Challenge Program focuses on improving the usability of TiDB and its related projects.',
-    readMoreLink: 'https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md',
+    readMoreLink:
+      'https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md',
+    outboundLink: true
+  },
+  {
+    thumbnail: UsabilityThumbNail,
+    name: 'TiKV Monthly Updates',
+    eventType: 'Virtual',
+    time: 'Monthly on the fourth Thursday',
+    desc:
+      'Monthly community meeting by video conference to discuss the status of TiKV and demo the new features. Anyone is welcome to join.',
+    readMoreLink:
+      'https://docs.google.com/document/d/1CWUAkBrcm9KPclAu8fWHZzByZ0yhsQdRggnEdqtRMQ8/edit#',
     outboundLink: true
   }
 ]

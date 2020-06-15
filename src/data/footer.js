@@ -38,30 +38,15 @@ const footerColumns = [
         outbound: true
       },
       {
-        name: 'TiDB Architecture',
-        link: 'https://pingcap.com/docs/stable/architecture/',
-        outbound: true
-      },
-      {
-        name: 'FAQ',
-        link: 'https://pingcap.com/docs/stable/faq/tidb-faq/',
-        outbound: true
-      },
-      {
         name: 'Blog',
         link: '/blog'
       },
       {
-        name: 'Events',
-        link: '/events'
+        name: 'Community',
+        link: '/community'
       },
       {
-        name: 'Talent Plan',
-        link: 'https://university.pingcap.com/talent-plan',
-        outbound: true
-      },
-      {
-        name: 'GItHub',
+        name: 'GitHub',
         link: 'https://github.com/pingcap',
         outbound: true
       }
@@ -95,17 +80,16 @@ const footerColumns = [
         link: '/about'
       },
       {
+        name: 'Contact',
+        link: '/contact-us'
+      },
+      {
         name: 'Careers',
         link: '/careers'
       },
       {
         name: 'Privacy Policy',
         link: 'https://pingcap.com/en/privacy-policy/',
-        outbound: true
-      },
-      {
-        name: 'Terms of Service',
-        link: 'https://pingcap.com/terms-of-service/',
         outbound: true
       }
     ]

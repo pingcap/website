@@ -1,51 +1,27 @@
 @import '../../common';
 
 .PingCAP-TiDB-Community {
-  .section-title {
-    @include section-title;
-    margin-bottom: 2rem;
-
-    @include mobile {
-      text-align: center !important;
-    }
-  }
-
-  .section-subtitle {
-    @include section-subtitle;
-  }
-
-  .button-in-section {
+  .button-white-bg {
     margin: 1rem 1rem 1rem 0;
     padding: 0.5rem 1rem;
     background-color: $M1;
+    font-size: $size-7;
+    color: $B4;
     border: 1px solid $C2;
     border-radius: 4px;
     cursor: pointer;
 
     a {
-      font-size: $size-7;
       color: $B4;
     }
 
     &:hover {
       background-color: $B1;
+      color: $M1;
 
       a {
         color: $M1;
       }
-    }
-  }
-
-  .p-in-section {
-    margin-bottom: 1rem;
-    padding-right: 2rem;
-    text-align: left;
-    line-height: $LH4;
-    font-size: $size-7;
-    color: $B4;
-
-    @include mobile {
-      padding-right: 0;
     }
   }
 
@@ -93,6 +69,11 @@
           background-color: transparent;
           color: $B1;
           border: 1px solid $B1;
+
+          &:hover {
+            background-color: $B1;
+            color: $M1;
+          }
         }
       }
     }
@@ -111,6 +92,14 @@
     .container {
       max-width: 800px;
 
+      .collapse-items {
+        padding: 3rem;
+
+        @include mobile {
+          padding: 3rem 1rem;
+        }
+      }
+
       .collapsable {
         position: relative;
         display: flex;
@@ -126,6 +115,7 @@
 
         .header {
           font-weight: bold;
+          font-size: $size-6;
         }
 
         &:before {
@@ -148,6 +138,10 @@
         display: none;
         margin-left: 4.5rem;
         margin-top: 2rem;
+
+        a {
+          color: $B1;
+        }
       }
 
       .show-content {

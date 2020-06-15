@@ -164,10 +164,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
     }
   }
 
-  .home-title {
-    @include section-title;
-  }
-
   @each $logo in $logos {
     .#{$logo}-logo {
       background: url(../../../images/home/logos/#{$logo}.png) center no-repeat;
@@ -364,10 +360,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           width: 180%;
           max-width: 180%;
         }
-      }
-
-      .summary {
-        color: $M4;
       }
     }
 

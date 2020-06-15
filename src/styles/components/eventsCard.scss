@@ -8,6 +8,11 @@
       margin: 2rem 0;
       .card {
         height: 100%;
+
+        figure > img{
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+        }
       }
     }
   }

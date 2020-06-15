@@ -7,6 +7,7 @@ import { contributionGrow, communityActivities } from '../../data/community'
 import { graphql, Link } from 'gatsby'
 import EventsCard from '../../components/eventsCard'
 import LinkWithArrow from '../../components/linkWithArrow'
+import { Button } from '@seagreenio/react-bulma'
 
 const Community = ({ data }) => {
   const {
@@ -31,28 +32,28 @@ const Community = ({ data }) => {
               <h1 className="title section-title">
                 Let’s build the database of the future together!
               </h1>
-              <h2 className="section-subtitle">
+              <div className="subtitle-under-main-title">
                 Join our community to learn, contribute, grow, and connect with
                 TiDB contributors and users all around the world!
-              </h2>
+              </div>
               <img src={communityHeroSVG.publicURL} alt="Community Hero" />
               <div className="buttons">
-                <a
+                <Button
+                  as="a"
                   href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  className="button join-slack is-primary is-rounded"
                 >
-                  <button className="button join-slack is-primary is-rounded">
-                    Join Our Slack
-                  </button>
-                </a>
-                <a
+                  Join Our Slack
+                </Button>
+                <Button
+                  as="a"
                   href="https://github.com/pingcap/community/tree/master/contributors"
-                  target="_blank" rel="noopener noreferrer"
+                  target="_blank"
+                  className="button become-a-contributor is-primary is-rounded"
                 >
-                  <button className="button become-a-contributor is-primary is-rounded">
-                    Become a Contributor
-                  </button>
-                </a>
+                  Become a Contributor
+                </Button>
               </div>
             </div>
           </div>
@@ -70,37 +71,31 @@ const Community = ({ data }) => {
                 </div>
               </div>
               <div className="column is-8">
-                <h2 className="section-title onboard-title">
-                  Get onboard with TiDB
-                </h2>
-                <p className="p-in-section">
+                <h2 className="title section-title">Get Onboard with TiDB</h2>
+                <p className="paragraph">
                   As a distributed system, TiDB can be a challenging project to
                   work on. Don’t panic. We‘ve got everything ready for you!
                   Check out our documentation, engineering blogs, contribution
                   map, and tons of other materials to help you get around!
                 </p>
                 <div className="buttons">
-                  <button className="button-in-section">
-                    <a
-                      href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Quick Start
-                    </a>
-                  </button>
-                  <button className="button-in-section">
+                  <Button
+                    className="button-white-bg"
+                    href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
+                    target="_blank"
+                  >
+                    Quick Start
+                  </Button>
+                  <Button as={Link} to="/blog" className="button-white-bg">
                     <Link to="/blog">Engineering Blogs</Link>
-                  </button>
-                  <button className="button-in-section">
-                    <a
-                      href="https://github.com/pingcap/tidb-map/blob/master/maps/contribution-map.md"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Contribution Map
-                    </a>
-                  </button>
+                  </Button>
+                  <Button
+                    className="button-white-bg"
+                    href="https://github.com/pingcap/tidb-map/blob/master/maps/contribution-map.md"
+                    target="_blank"
+                  >
+                    Contribution Map
+                  </Button>
                 </div>
               </div>
             </div>
@@ -109,12 +104,12 @@ const Community = ({ data }) => {
 
         <section className="section contribution-grow-section">
           <div className="container">
-            <h2 className="title section-title">Contribute and grow</h2>
-            <h2 className="section-subtitle">
+            <h2 className="title section-title">Contribute and Grow</h2>
+            <div className="subtitle-under-main-title">
               Since day one, TiDB has been a community-driven project. TiDB
               would not be what it is today without the talent, enthusiasm, and
               drive of its contributors around the world.
-            </h2>
+            </div>
             <div className="collapse-items">
               {contributionGrow.map(c => (
                 <div className="content" key={c.title}>
@@ -141,23 +136,30 @@ const Community = ({ data }) => {
           </div>
         </section>
 
-        <section className="section share-stories-section" id="share-your-stories">
+        <section
+          className="section share-stories-section"
+          id="share-your-stories"
+        >
           <div className="container">
             <div className="columns is-variable is-8">
               <div className="column">
                 <img src={shareStoriesSVG.publicURL} alt="Share stories" />
               </div>
               <div className="column is-8">
-                <h2 className="title section-title">Share your stories</h2>
-                <p className="p-in-section">
+                <h2 className="title section-title">Share Your Story</h2>
+                <p className="paragraph">
                   We want companies around the world to enjoy TiDB's great
                   benefits. Have you deployed it yet? If so, tell us and the
                   community how TiDB powers your business and your success. And
                   also let us know how we can help you more.
                 </p>
-                <button className="button-in-section">
-                  <Link to="/community/share-and-connect">Share Now</Link>
-                </button>
+                <Button
+                  as={Link}
+                  to="/community/share-and-connect"
+                  className="button-white-bg"
+                >
+                  Share Now
+                </Button>
               </div>
             </div>
           </div>
@@ -165,10 +167,10 @@ const Community = ({ data }) => {
 
         <section className="section community-activity-section">
           <div className="container">
-            <h2 className="title section-title">Community Activity</h2>
-            <h3 className="section-subtitle">
+            <h2 className="title section-title">Community Activities</h2>
+            <div className="subtitle-under-main-title">
               Join us at our TiDB community events
-            </h3>
+            </div>
             <EventsCard cardsList={communityActivities} />
             <div className="read-more-link">
               <LinkWithArrow
@@ -189,15 +191,15 @@ const Community = ({ data }) => {
                 </div>
               </div>
               <div className="column is-8">
-                <h2 className="title section-title">Code of conduct</h2>
-                <p className="p-in-section">
+                <h2 className="title section-title">Code of Conduct</h2>
+                <p className="paragraph">
                   The TiDB Community values respect, inclusiveness, open
                   collaboration, and communication. The TiDB Code of Conduct is
                   enforced to guide all interactions within the community. If
                   you notice any form of violation at an event, in Slack, on
                   GitHub, or in another communication mechanism, contact the
                   Project Management Committee (PMC) at
-                  <a href="mailto:pmc@tidb.io">pmc@tidb.io</a>
+                  <a href="mailto:pmc@tidb.io"> pmc@tidb.io</a>
                 </p>
               </div>
             </div>

@@ -21,7 +21,7 @@ const StartTrialButton = () => (
     rounded
     to="/products/tidb-cloud/trial"
   >
-    Start Free Trial
+    Start Your Free Trial Now
   </Button>
 )
 
@@ -176,7 +176,7 @@ const HourlyNodeUsageInfo = () => {
       </div>
 
       <div className="regions">
-        <span className="desc">Select Region</span>
+        <span className="paragraph">Select Region</span>
         <div className="select">
           {profile && profile.regions && (
             <select value={region} onChange={handleRegionChange}>
@@ -214,13 +214,13 @@ const TiDBCloudPage = ({ data }) => {
                   />
                 </h1>
                 <h2 className="title is-4">Fully-managed TiDB Service</h2>
-                <p className="is-7 desc">
+                <p className="paragraph">
                   Bring everything great about TiDB to your cloud. TiDB Cloud
                   lets you focus on your applications, not the complexities of
                   your database.
                 </p>
                 <StartTrialButton />
-                <p className="is-7 desc">
+                <p className="paragraph">
                   Already have an account?{' '}
                   <a
                     className="link-with-underline"
@@ -245,7 +245,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-why-tidb-cloud has-light-background">
           <div className="container">
-            <h2 className="title is-4">Why TiDB Cloud</h2>
+            <h2 className="title section-title">Why TiDB Cloud</h2>
             <div className="reasons">
               {reasonsData.map(d => (
                 <div key={d.name} className="reason">
@@ -257,8 +257,10 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title is-5 is-spaced">{d.name}</h3>
-                    <p className="is-7 desc">{d.desc}</p>
+                    <h3 className="title column-or-card-title is-spaced">
+                      {d.name}
+                    </h3>
+                    <p className="paragraph">{d.desc}</p>
                   </div>
                 </div>
               ))}
@@ -268,7 +270,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-features">
           <div className="container">
-            <h2 className="title is-4">Key Features</h2>
+            <h2 className="title section-title">Key Features</h2>
             <div className="features">
               {featuresData.map(d => (
                 <div
@@ -284,8 +286,10 @@ const TiDBCloudPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <h3 className="title is-5 is-spaced">{d.name}</h3>
-                    <p className="is-7 desc">{d.desc}</p>
+                    <h3 className="title column-or-card-title has-text-left is-spaced">
+                      {d.name}
+                    </h3>
+                    <p className="paragraph">{d.desc}</p>
                   </div>
                 </div>
               ))}
@@ -295,15 +299,17 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-pricing has-light-background">
           <div className="container">
-            <h2 className="title is-4">Pricing</h2>
+            <h2 className="title section-title">Pricing</h2>
             <div className="field">
-              <h3 className="title is-5">Hourly Node Usage</h3>
-              <p className="is-7 desc">
+              <h3 className="title column-or-card-title has-text-left">
+                Hourly Node Usage
+              </h3>
+              <p className="paragraph">
                 TiDB Cloud provides different cluster tiers. Detailed pricing
                 for TiDB/TiKV instances in different tiers are as follows:
               </p>
               <HourlyNodeUsageInfo />
-              <p className="is-7 desc">
+              <p className="paragraph">
                 Data backup and data transfer need to be charged separately. See{' '}
                 <Link className="link-with-underline" to="/">
                   Billing
@@ -316,7 +322,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-get-started">
           <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
+            <h2 className="title is-4">Get Started with TiDB Cloud Now</h2>
             <StartTrialButton />
           </div>
         </section>
