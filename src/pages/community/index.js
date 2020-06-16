@@ -6,7 +6,6 @@ import SEO from '../../components/seo'
 import { contributionGrow, communityActivities } from '../../data/community'
 import { graphql, Link } from 'gatsby'
 import EventsCard from '../../components/eventsCard'
-import LinkWithArrow from '../../components/linkWithArrow'
 import { Button } from '@seagreenio/react-bulma'
 
 const Community = ({ data }) => {
@@ -87,7 +86,7 @@ const Community = ({ data }) => {
                     Quick Start
                   </Button>
                   <Button as={Link} to="/blog" className="button-white-bg">
-                    <Link to="/blog">Engineering Blogs</Link>
+                    Engineering Blogs
                   </Button>
                   <Button
                     className="button-white-bg"

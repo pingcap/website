@@ -2,8 +2,6 @@ import '../styles/components/sectionUseCases.scss'
 
 import React from 'react'
 import { Box } from '@seagreenio/react-bulma'
-
-import { navigate } from 'gatsby'
 // import LinkWithArrow from '../components/linkWithArrow'
 
 const SectionUseCase = prop => {

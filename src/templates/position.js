@@ -18,21 +18,17 @@ const Position = ({ data }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
-          },
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
+          }
         ]}
       />
       <article className="PingCAP-Blog">
         <section className="section section-position">
           <div className="container">
-            <div className="columns">
-              <div className="column is-7">
-                <div
-                  className="markdown-body blog-content"
-                  dangerouslySetInnerHTML={{ __html: html }}
-                />
-              </div>
-            </div>
+            <div
+              className="markdown-body blog-content position-content"
+              dangerouslySetInnerHTML={{ __html: html }}
+            />
           </div>
         </section>
       </article>

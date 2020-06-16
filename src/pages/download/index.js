@@ -5,6 +5,7 @@ import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { graphql, Link } from 'gatsby'
 import { downloadTiDB } from '../../data/download-tidb'
+import { Button } from '@seagreenio/react-bulma'
 
 const Download = ({ data }) => {
   const { downloadTiDBHeroSVG, deployTiDBinCloudSVG } = data
@@ -18,9 +19,9 @@ const Download = ({ data }) => {
               <h1 className="title section-title">
                 Get started with TiDB now!
               </h1>
-              <h2 className="section-subtitle">
+              <div className="subtitle-under-main-title">
                 Everything you need from TiDB, in your way.
-              </h2>
+              </div>
               <img
                 src={downloadTiDBHeroSVG.publicURL}
                 alt="Download TiDB Hero"
@@ -42,9 +43,13 @@ const Download = ({ data }) => {
                 Fully managed TiDB service that lets you deploy and operate TiDB
                 in a few clicks. Available on AWS and GCP.
               </p>
-              <Link to="/products/tidb-cloud/trial">
-                <button>APPLY FOR FREE TRIAL</button>
-              </Link>
+              <Button
+                as={Link}
+                to="/products/tidb-cloud/trial"
+                className="is-primary"
+              >
+                APPLY FOR FREE TRIAL
+              </Button>
             </div>
             <div className="deploy-on-premise">
               <h2 className="title section-title">Deploy TiDB on Premise</h2>
@@ -53,16 +58,20 @@ const Download = ({ data }) => {
                   <div className="column" key={item.title}>
                     <div className="card">
                       <img src={item.icon} alt={item.title} />
-                      <h2 className="title section-title">{item.title}</h2>
+                      <h2 className="column-or-card-title">{item.title}</h2>
                       <p>{item.desc}</p>
                       <ul>
                         {item.detailList.map((list, idx) => (
                           <li key={idx}>{list}</li>
                         ))}
                       </ul>
-                      <Link to={item.buttonLink}>
-                        <button>{item.buttonText}</button>
-                      </Link>
+                      <Button
+                        as={Link}
+                        to={item.buttonLink}
+                        className="is-primary"
+                      >
+                        {item.buttonText}
+                      </Button>
                     </div>
                   </div>
                 ))}

@@ -33,8 +33,8 @@ const Positions = () => {
             <div className="position-title">{p.title}</div>
             <div className="location">{p.location}</div>
           </div>
+        </Link>
         ))}
-      </div>
     </div>
   )
 }

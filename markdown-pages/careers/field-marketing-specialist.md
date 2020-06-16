@@ -3,7 +3,9 @@ title: Field Marketing Specialist
 location: San Mateo • Full Time  
 ---
 
-# What will you be doing?
+# Field Marketing Specialist
+
+## What will you be doing?
 
 - Organize and coordinate community events (online and offline) in the open-source technology ecosystem;
 - Leads generation through content marketing,
@@ -11,7 +13,7 @@ location: San Mateo • Full Time
 - Support the local office operations in North America;
 - Conduct ROI reports for both event and content marketing
 
-# What are we looking for?
+## What are we looking for?
 
 - An organized, detail-oriented, process-oriented go-getter;
 - Hands-on experience with social media operation and MarTech tools like HubSpot is a big plus
@@ -21,7 +23,7 @@ location: San Mateo • Full Time
 - Interested in growing professionally in multiple areas with a fast-growing startup;
 - Willingness to travel to conference and event sites from time to time;
 
-# Benefits:
+## Benefits:
 
 - Medical, dental, vision
 - 401k Retirement Plan

@@ -3,7 +3,9 @@ title: Customer Success Engineer
 location: San Mateo • Full Time
 ---
 
-# What we are looking for:
+# Customer Success Engineer
+
+## What we are looking for:
 
 - Strong background in Linux/Unix administration;
 - Minimum 3 years of experience in designing, building, testing, and maintaining enterprise software applications;
@@ -16,7 +18,7 @@ location: San Mateo • Full Time
 - Bachelor’s degree in computer science strongly preferred;
 - Willingness to travel to customer sites.
 
-# What you will get to do:
+## What you will get to do:
 
 - Orchestrate the deployment and upgrades of the TiDB cluster both in the client’s private environments and in the cloud;
 - Be responsible for product deployment, configuration management, system monitoring, and online diagnosis;
@@ -28,7 +30,7 @@ location: San Mateo • Full Time
 - Deliver application level root-cause analysis, suggesting code optimization,s and assist with integrations;
 - Coordinate enhancement and feature requests with product and engineering teams;
 
-# What you will gain:
+## What you will gain:
 
 - Opportunity to build and shape a powerful, industry-changing database product from the get-go;
 - Working with a globally team of passionate (and compassionate) developers, hackers, and open-source fanatics;
