@@ -73,9 +73,9 @@ const Footer = () => {
               <Socials className="column is-4" type="follow" />
             </div>
             <div className="annotations annotations-desktop">
-              <div className="lang">
+              {/* <div className="lang">
                 <LanguageIcon /> Language
-              </div>
+              </div> */}
               <div className="copyright">
                 ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
               </div>
@@ -83,9 +83,9 @@ const Footer = () => {
           </div>
         </div>
         <div className="annotations annotations-mobile">
-          <div className="lang">
+          {/* <div className="lang">
             <LanguageIcon /> Language
-          </div>
+          </div> */}
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
