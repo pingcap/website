@@ -89,8 +89,7 @@ const footerColumns = [
       },
       {
         name: 'Privacy Policy',
-        link: 'https://pingcap.com/en/privacy-policy/',
-        outbound: true
+        link: '/privacy-policy'
       }
     ]
   }
