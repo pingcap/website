@@ -29,68 +29,11 @@
         img {
           height: 60px;
         }
-
-        p {
-          padding: 1.5rem 1rem;
-          font-size: $size-7;
-          color: $B3;
-          font-weight: bold;
-        }
       }
     }
   }
 
   .open-positions-section {
     @include has-light-background;
-
-    .card {
-      border-radius: 0;
-      box-shadow: none;
-      position: relative;
-
-      .card-image {
-        padding: 3rem 3rem 0;
-      }
-
-      .card-content {
-        text-align: center;
-
-        .position-title {
-          font-size: $size-7;
-          color: $B3;
-        }
-
-        .based {
-          padding: 1rem 0;
-          font-size: $size-8;
-          color: $B4;
-        }
-
-        .read-more {
-          font-size: $size-8;
-          color: $B3;
-
-          &:hover {
-            color: $B1;
-          }
-        }
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        width: 100%;
-        border-top: 4px solid $B1;
-        opacity: 0;
-      }
-
-      &:hover {
-        cursor: pointer;
-
-        &:before {
-          opacity: 1;
-        }
-      }
-    }
   }
 }

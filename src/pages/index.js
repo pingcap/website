@@ -183,7 +183,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-case-studies has-light-background">
           <div className="container">
             <h2 className="title section-title">
-              Distributed SQL database, trusted and verified by innovation
+              Distributed SQL Database, trusted and verified by innovation
               leaders
             </h2>
             <div className="logos">
@@ -290,7 +290,6 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-architecture">
           <div className="container">
-            <h2 className="title section-title">Architecture</h2>
             <div ref={architectureRef} className="images has-light-background">
               <div className="left" />
               <div className="center" />
@@ -404,7 +403,11 @@ const IndexPage = ({ data }) => {
                   <Box className="logo tidb-cloud">
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                   </Box>
-                  <Button as={Link} to="/products/tidb-cloud/trial" color="primary">
+                  <Button
+                    as={Link}
+                    to="/products/tidb-cloud/trial"
+                    color="primary"
+                  >
                     Sign Up for a Trial
                   </Button>
                 </NormalBox>

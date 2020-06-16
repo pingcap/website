@@ -54,21 +54,32 @@ $navbar-height-mobile: 4.25rem; // 68px
     h4,
     h5,
     h6 {
-      @include mobile {
-        padding-top: $navbar-height-mobile;
-        margin-top: -$navbar-height-mobile;
-      }
-
-      padding-top: $navbar-height;
-      margin-top: -$navbar-height;
-
+      border-bottom: none;
       &:first-child {
         @include mobile {
           margin-top: -$navbar-height-mobile !important;
+          padding-top: $navbar-height-mobile;
         }
 
         margin-top: -$navbar-height !important;
+        padding-top: $navbar-height;
       }
+    }
+
+    h1 {
+      font-size: $size-4;
+    }
+
+    h2 {
+      font-size: $size-5;
+    }
+
+    h3 {
+      font-size: $size-6;
+    }
+
+    h4 {
+      font-size: $size-7;
     }
 
     a {
@@ -76,16 +87,18 @@ $navbar-height-mobile: 4.25rem; // 68px
 
       &.anchor {
         @include mobile {
-          top: $navbar-height-mobile;
+          margin-left: 0;
         }
-
-        top: $navbar-height;
       }
     }
 
     ul {
       list-style: inherit;
     }
+  }
+
+  .position-content {
+
   }
 
   .get-started-with-tidb {

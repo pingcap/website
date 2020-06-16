@@ -106,11 +106,15 @@ const Navbar = () => {
           </div>
           <div className="navbar-end">
             <div className="navbar-item with-get-tidb">
-              <Link to="/download">
-                <Button className="get-tidb" color="primary" rounded>
-                  Get TiDB
-                </Button>
-              </Link>
+              <Button
+                as={Link}
+                to="/download"
+                className="get-tidb"
+                color="primary"
+                rounded
+              >
+                Get TiDB
+              </Button>
             </div>
           </div>
         </div>
