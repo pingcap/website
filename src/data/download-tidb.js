@@ -4,28 +4,28 @@ import enterpriseSubscriptionSVG from '../../images/download/enterprise-subscrip
 const downloadTiDB = [
     {
         icon: communityEditionSVG,
-        title: 'Community Edition',
-        desc: 'Core components (TiDB, TIKV, PD) with ecosystem tools',
+        title: 'Open Source Download',
+        desc: 'Core components (TiDB, TiKV, PD) and ecosystem tools',
         detailList: [
             'Distributed SQL with horizontal scalability',
             'Elastic scaling',
             'Easy deployment via TiUP or on Kubernetes',
             'Community support'
         ],
-        buttonText: 'Free Download',
+        buttonText: 'FREE DOWNLOAD',
         buttonLink: '/download/community'
     },
     {
         icon: enterpriseSubscriptionSVG,
         title: 'Enterprise Subscription',
-        desc: 'Commercial support and warranty; no vendor lock-in',
+        desc: 'Commercial support and warranty',
         detailList: [
-            'TiDB Enterprise toolkits',
+            'No vendor lock-in',
             'Enterprise-grade support',
             'Technical training and consulting',
             'Stable releases with up-to-date security enhancements'
         ],
-        buttonText: 'FREE 30-DAY TRIAL',
+        buttonText: '30-DAY FREE TRIAL',
         buttonLink: '/download/enterprise'
     }
 ]

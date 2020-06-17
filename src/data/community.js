@@ -7,35 +7,40 @@ import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
 
 const contributionGrow = [
   {
-    icon: Code,
-    title: 'Contribute to Code',
-    collapseList: [
-      'Report an <a href="https://github.com/pingcap/tidb/issues" target="_blank">issue</a>',
-      'Fix a <a href="https://github.com/pingcap/tidb/issues?q=is%3Aissue+is%3Aopen+label%3Atype%2Fbug" target="_blank">bug</a>',
-      'Propose a <a href="https://github.com/pingcap/tidb/tree/master/docs/design" target="_blank">feature</a>'
-    ]
-  },
-  {
     icon: Help,
-    title: 'Help Others',
+    title: 'Help each other',
     collapseList: [
       'Join the community <a href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap" target="_blank">Slack</a>',
       'Answer questions on <a href="https://stackoverflow.com/questions/tagged/tidb" target="_blank">Stack overflow</a>'
     ]
   },
   {
-    icon: Writer,
-    title: 'Write about TiDB',
+    icon: Code,
+    title: 'Contribute the Way You Like',
     collapseList: [
+      'Join a <a href="https://github.com/pingcap/community/tree/master/special-interest-groups" target="_blank">Special Interest Group</a> (SIG)'
       'Improve TiDB <a href="https://github.com/pingcap/docs" target="_blank">docs</a>',
-      'Contribute a <a href="https://github.com/pingcap/blog" target="_blank">blog post</a>',
-      'Help translate docs or blogs'
+      'Fix a <a href="https://github.com/pingcap/tidb/issues?q=is%3Aissue+is%3Aopen+label%3Atype%2Fbug" target="_blank">bug</a>',
+      'Propose a <a href="https://github.com/pingcap/tidb/tree/master/docs/design" target="_blank">feature</a>'
+    ]
+  },
+  {
+    icon: Writer,
+    title: 'Give Feedback',
+    collapseList: [
+      'Report an <a href="https://github.com/pingcap/tidb/issues" target="_blank">issue</a>',
+      'Review a <a href="https://github.com/pingcap/tidb/pulls" target="_blank">pull request</a>',
+      'Write a <a href="https://github.com/pingcap/blog" target="_blank">blog post</a>',
     ]
   },
   {
     icon: Bullhorn,
-    title: 'Advocate for TiDB',
-    collapseList: ['Organize an event', 'Speak for us in an event']
+    title: 'Learn and Grow',
+    collapseList: [
+      'Join the <a href="https://github.com/pingcap/talent-plan" target="_blank">Talent Plan</a>',
+      'Grow along a guided <a href="https://github.com/pingcap/community/tree/master/architecture" target="_blank">path</a>'
+      'Speak about TiDB in an event'
+    ]
   }
 ]
 

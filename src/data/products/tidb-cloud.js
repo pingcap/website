@@ -15,37 +15,37 @@ const reasonsData = [
   {
     name: 'Hybrid Transactional/Analytical Processing (HTAP)',
     desc:
-      'Support massive-scale, mission-critical OLTP and real-time analytics workloads right out of the box . (Columnar-based OLAP support available in Q3, 2020)',
+      'Support massive-scale, mission-critical OLTP and real-time analytics workloads right out of the box. (Columnar-based OLAP support available in Q3, 2020)',
     placeholder: r1SVG
   },
   {
     name: 'Multi-Cloud Support',
     desc:
-      'Stay flexible with no cloud vendor lock-in. TiDB Cloud is currently  available on AWS and GCP.',
+      'Stay flexible with no cloud vendor lock-in. Currently available on AWS and GCP, with more platforms in the works.',
     placeholder: r2SVG
   },
   {
     name: 'Productivity Booster',
     desc:
-      'Boost your productivity with easy deployment, operations, and monitoring on TiDB Cloud in just a few clicks.',
+      'Boost your productivity with easy deployment, operation, and monitoring on TiDB Cloud in just a few clicks.',
     placeholder: r3SVG
   },
   {
     name: 'Enterprise Grade Security',
     desc:
-      'Secure your data in dedicated networks and machines, with support for encryption both in flight and at rest.',
+      'Secure your data in dedicated networks and machines, with support for encryption both in-flight and at-rest.',
     placeholder: r4SVG
   },
   {
     name: 'Highly Resilient',
     desc:
-      'Data is replicated across multiple Availability Zones and backed up daily to ensure your service is always on.',
+      'Data is replicated across multiple availability zones and backed up daily to ensure your service is always on.',
     placeholder: r5SVG
   },
   {
     name: 'Expert Support',
     desc:
-      'We support thousands of TiDB users, and we bring that same experience to our TiDB Cloud users.',
+      'We support hundreds of TiDB users, and we bring that same experience to our TiDB Cloud users.',
     placeholder: r6SVG
   }
 ]
@@ -60,7 +60,7 @@ const featuresData = [
   {
     name: 'Elastic Scaling',
     desc:
-      'As  your business grows, simply scale out by adding more nodes in just a few clicks. Let TiDB automatically balance data distribution for you.',
+      'As your business grows, simply scale out by adding more nodes in just a few clicks. Let TiDB automatically balance data distribution for you.',
     placeholder: f2SVG,
     reverse: true
   },
