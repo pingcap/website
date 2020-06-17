@@ -45,3 +45,7 @@ location: San Mateo • Full Time
   - Gym reimbursement
   - Employee referral bonus program
   - Awesome, supportive coworkers with a good sense of humor
+
+## Contact
+
+PingCAP is proud to be an Equal Opportunity Employer building a diverse and inclusive workforce. Apply now by sending a cover later and your latest resume to hire@pingcap.com.
