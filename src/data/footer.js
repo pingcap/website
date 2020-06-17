@@ -1,23 +1,24 @@
 const footerColumns = [
   {
-    name: 'Products',
+    name: 'Open Source Ecosystem',
     items: [
       {
         name: 'TiDB',
         link: '/products/tidb'
       },
       {
-        name: 'TiDB Cloud',
-        link: '/products/tidb-cloud'
-      },
-      {
-        name: 'Monthly',
-        link: 'https://pingcap.com/weekly/',
+        name: 'TiKV',
+        link: 'https://github.com/tikv/tikv'
         outbound: true
       },
       {
-        name: 'Custom support',
-        link: 'https://support.pingcap.com/',
+        name: 'TiSpark',
+        link: 'https://github.com/pingcap/tispark',
+        outbound: true
+      },
+      {
+        name: 'Chaos Mesh®',
+        link: 'https://github.com/pingcap/chaos-mesh',
         outbound: true
       }
     ]
