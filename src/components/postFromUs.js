@@ -33,7 +33,7 @@ const Field = () => (
 const PostFromUs = () => (
   <NormalBox as="section" className="PingCAP-PostFromUs" shadowless>
     <Img />
-    <h4 className="title is-6">Never Miss a Post from Us!</h4>
+    <h4 className="title is-6">Subscribe to Stay Informed!</h4>
     <Field />
   </NormalBox>
 )
