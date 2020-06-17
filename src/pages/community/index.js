@@ -193,6 +193,9 @@ const Community = ({ data }) => {
                   Project Management Committee (PMC) at
                   <a href="mailto:pmc@tidb.io"> pmc@tidb.io</a>
                 </p>
+                <p className="paragraph">
+                  Read our Code of Conduct <a href="https://github.com/pingcap/tidb/blob/master/CODE_OF_CONDUCT.md">here</a>.
+                </p>
               </div>
             </div>
           </div>

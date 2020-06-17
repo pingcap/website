@@ -33,7 +33,7 @@ const Download = ({ data }) => {
         <section className="section download-section">
           <div className="container">
             <div className="card deploy-in-cloud">
-              <h2 className="title section-title">Deploy TiDB in Cloud</h2>
+              <h2 className="title section-title">TiDB in Cloud</h2>
               <img
                 className="cloud-icon"
                 src={deployTiDBinCloudSVG.publicURL}
@@ -52,7 +52,7 @@ const Download = ({ data }) => {
               </Button>
             </div>
             <div className="deploy-on-premise">
-              <h2 className="title section-title">Deploy TiDB on Premise</h2>
+              <h2 className="title section-title">Self-hosted TiDB</h2>
               <div className="columns is-variable is-8">
                 {downloadTiDB.map(item => (
                   <div className="column" key={item.title}>

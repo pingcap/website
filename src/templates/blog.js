@@ -115,7 +115,7 @@ const Blog = ({ data }) => {
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
                     <Button as="a" className="get-started" outlined rounded>
-                      Get TiDB
+                      Download TiDB
                     </Button>
                     <Button as="a" outlined rounded>
                       Contact Us

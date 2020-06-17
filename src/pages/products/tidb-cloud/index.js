@@ -215,7 +215,7 @@ const TiDBCloudPage = ({ data }) => {
                 </h1>
                 <h2 className="title is-4">Fully-managed TiDB Service</h2>
                 <p className="paragraph">
-                  Bring everything great about TiDB to your cloud. TiDB Cloud
+                  Bring everything great about TiDB to the cloud. TiDB Cloud
                   lets you focus on your applications, not the complexities of
                   your database.
                 </p>

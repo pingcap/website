@@ -85,7 +85,7 @@ const CaseStudies = ({ data }) => {
         </div>
         <div className="container section">
           <h2 className="title section-title title-under-banner">
-            TiDB delivers values to innovation leaders
+           Featured Testimonials
           </h2>
           <div className="card swiper-container">
             <div className="swiper-wrapper top">
@@ -116,9 +116,6 @@ const CaseStudies = ({ data }) => {
                 src={quoteMarkSVG.publicURL}
                 alt="quote-mark"
               />
-              <div className="title column-or-card-title is-spaced">
-                Featured Testimonials
-              </div>
             </div>
             <img
               className="fixed-placeholder"
