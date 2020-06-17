@@ -36,7 +36,7 @@ const benefitsData = [
   {
     name: 'SQL at Scale',
     desc:
-      'TiDB is ACID-compliant and strongly consistent. You can use TiDB as a scale-out MySQL database with your familiar SQL syntax and ecosystem tools.',
+      'TiDB is ACID-compliant and strongly consistent. You can use TiDB as a scale-out MySQL database with familiar SQL syntaxes and ecosystem tools.',
     link: 'See how others succeed',
     href: '/case-studies',
     placeholder: b1SVG,
@@ -62,7 +62,7 @@ const benefitsData = [
   {
     name: 'Better Insights with Timely Data',
     desc:
-      'No more after-the-fact analysis on stale data. TiDB breaks the wall between OLTP and OLAP, making your applications adaptive to transient business opportunities.',
+      'TiDB supports real-time analytics. By breaking the wall between OLTP and OLAP, it makes your applications adaptive to transient business opportunities.',
     link: 'See how others succeed',
     href:
       '/case-studies',
