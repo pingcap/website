@@ -22,10 +22,6 @@ const Download = ({ data }) => {
               <div className="subtitle-under-main-title">
                 Everything you need from TiDB, in your way.
               </div>
-              <img
-                src={downloadTiDBHeroSVG.publicURL}
-                alt="Download TiDB Hero"
-              />
             </div>
           </div>
         </section>
