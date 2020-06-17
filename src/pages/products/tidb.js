@@ -19,19 +19,19 @@ const TiDB = ({ data }) => {
           <div className="hero-body">
             <div className="container has-text-centered">
               <h1 className="title section-title">
-                The Database for Your Hyper-growth in the Cloud Era
+                The Database for Your Hyper-growth
               </h1>
               <div className="subtitle-under-main-title">
-                With TiDB, you won’t have to worry that your business outgrows
+                With TiDB, you won’t have to worry about your business outgrowing
                 your database.
               </div>
               <img src={hyperGrowthHeroSVG.publicURL} alt="Hyper Growth Hero" />
               <p className="paragraph">
-                The TiDB platform is a distributed SQL database platform that
+                TiDB is a distributed SQL database platform that
                 features horizontal scalability, strong consistency, and high
                 availability. The goal of TiDB is to serve as a one-stop
                 solution for all online transactions and analysis so you can
-                build your applications just as simply as in the good old days.
+                build your applications just as simply as on a single node.
               </p>
             </div>
           </div>
@@ -39,7 +39,7 @@ const TiDB = ({ data }) => {
 
         <section className="section HTAP-section">
           <div className="container">
-            <h2 className="title section-title">HTAP</h2>
+            <h2 className="title section-title">Hybrid Transactional and Analytical Processing (HTAP)</h2>
             <img src={htapArchSVG.publicURL} alt="HATP Architecture" />
           </div>
         </section>
@@ -50,7 +50,7 @@ const TiDB = ({ data }) => {
           <div className="container">
             <div className="subtitle-under-main-title industry-title">
               <div>As an industry-agnostic database solution,</div>
-              <div>TiDB has been widely adopted by the following segments:</div>
+              <div>TiDB has been widely adopted in the following segments:</div>
             </div>
             <div className="columns">
               {industryIcons.map(i => (
@@ -74,9 +74,9 @@ const TiDB = ({ data }) => {
                 <thead>
                   <tr>
                     <th>Feature</th>
-                    <th>Amazon/Aurora</th>
+                    <th>Amazon Aurora</th>
                     <th>Google Cloud Spanner</th>
-                    <th>YugaByte DB</th>
+                    <th>YugaByteDB</th>
                     <th>CockroachDB</th>
                     <th>TiDB</th>
                   </tr>
@@ -157,6 +157,18 @@ const TiDB = ({ data }) => {
                     <td>Apache 2.0</td>
                   </tr>
                   <tr>
+                    <td>Open Source Contributor Count</td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>
+                      <CloseIcon className="close-icon" />
+                    </td>
+                    <td>100+</td>
+                    <td>300+</td>
+                    <td>400+</td>
+                  </tr>
+                  <tr>
                     <td>HTAP</td>
                     <td>
                       <CloseIcon className="close-icon" />
@@ -211,7 +223,7 @@ const TiDB = ({ data }) => {
                     </td>
                     <td>
                       <ul>
-                        <li>Scale-out MySQL for massive growth</li>
+                        <li>Scale-out relational database for massive growth</li>
                       </ul>
                     </td>
                     <td>

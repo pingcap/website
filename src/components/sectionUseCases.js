@@ -19,14 +19,14 @@ const SectionUseCase = prop => {
           <div className="column is-full-mobile">
             <Box className="oltp">
               <div className="inner">
-                <h3 className="title is-3 is-spaced">O L T P</h3>
-                <h4 className="title is-4">Horizontally-scalable MySQL</h4>
+                <h3 className="title is-3 is-spaced">OLTP</h3>
+                <h4 className="title is-4">Horizontally-scalable Relational Database</h4>
                 <div className="strikethrough-white" />
                 <div className="subtitle is-5">
                   Scalable online transactional processing
                 </div>
                 <ul>
-                  <li>200+ TB of production data in a single TiDB cluster</li>
+                  <li>400+ TB of transactional production data in a single TiDB cluster</li>
                   <li>Trillions of rows in a single distributed table</li>
                 </ul>
                 {/* <LinkWithArrow
@@ -40,7 +40,7 @@ const SectionUseCase = prop => {
           <div className="column is-full-mobile">
             <Box className="htap">
               <div className="inner">
-                <h3 className="title is-3 is-spaced">H T A P</h3>
+                <h3 className="title is-3 is-spaced">HTAP</h3>
                 <h4 className="title is-4">Real-time Analytics</h4>
                 <div className="strikethrough-white" />
                 <div className="subtitle is-5">
