@@ -6,7 +6,7 @@ title: Privacy Policy
 
 **Effective:** June 1, 2020
 
-Beijing PingCAP Xingchen Technology and Development Co., Ltd. (hereinafter referred as “PingCAP”, PingCAP and its affiliates hereinafter referred as “PingCAP Group”，” “we,” “our,” or “us”) understand that privacy is important to visitors to our websites (our “Sites”) and users of our products and services (our “Products”). This Privacy Statement explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Statement.
+PingCAP (US), Inc. (hereinafter referred as “PingCAP”, PingCAP and its affiliates hereinafter referred as “PingCAP Group”，” “we,” “our,” or “us”) understand that privacy is important to visitors to our websites (our “Sites”) and users of our products and services (our “Products”). This Privacy Statement explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Statement.
 
 This Privacy Statement does not apply to Sites or Products that display or link to different privacy statements. This Statement also does not apply where PingCAP processes the data of our customers on their behalf; our collection and processing of such data is governed by our agreements with those customers.
 
@@ -49,13 +49,13 @@ We collect several data within product telemetry data as below :
 - TiDB cluster software version information
 - TiDB cluster configuration information(Only the config items , config values are excluded)
 - TiDB cluster components information
-- TiDB cluster maintainence operation consumed time
+- TiDB cluster maintenance operation consumed time
 
 **Inferences.** We infer new information about you and your company from data we collect, including using automated means to generate information about your likely preferences, your service and product needs or other characteristics. For example, we infer your city, state, and country location based on your IP address
 
-**Information collected through social media and other platforms.\*\*** We receive information about you when you engage with us through various third-party platforms, for example, by joining our Slack community or Google group, liking us on Facebook, connecting on LinkedIn, GitHub, or Meetup, followingus on Twitter or Instagram, registering for training through WooCommerce, or sharing content from our Site on Facebook, Twitter, or LinkedIn. The data we exchange with these third-party platforms may depend upon your privacy settings with these platforms. You should review and consider adjusting your privacy settings on third-party websites and services before engaging. Do not provide us with any sensitive personal data through these platforms. We are not responsible for the data protection and use practices of these third-party platforms. Please see their privacy statements to learn how they use your information.
+**Information collected through social media and other platforms.\*\*** We receive information about you when you engage with us through various third-party platforms, for example, by joining our Slack community or Google group, liking us on Facebook, connecting on LinkedIn, GitHub, or Meetup, following us on Twitter or Instagram, registering for training through WooCommerce, or sharing content from our Site on Facebook, Twitter, or LinkedIn. The data we exchange with these third-party platforms may depend upon your privacy settings with these platforms. You should review and consider adjusting your privacy settings on third-party websites and services before engaging. Do not provide us with any sensitive personal data through these platforms. We are not responsible for the data protection and use practices of these third-party platforms. Please see their privacy statements to learn how they use your information.
 
-**Third-party sources.** We may occasionally receive your personal information from third party sources including our affiliates, marketing and research partners, and companies. Users of our Products may also provide your personal information when they identify you as a billing, support, or technical contact, or when inviting you to use our Products or attend our events. If you integrate or link a third-party service with our Sites or Products we may receive personal information about you from that third-party service based upon the settings and permissions you've established with such third party service, and that third party service's privacy practices
+**Third-party sources.** We may occasionally receive your personal information from third party sources including our affiliates, marketing and research partners, and companies. Users of our Products may also provide your personal information when they identify you as a billing, support, or technical contact, or when inviting you to use our Products or attend our events. If you integrate or link a third-party service with our Sites or Products we may receive personal information about you from that third-party service based upon the settings and permissions you've established with such third party service, and that third-party service's privacy practices
 
 The types of information we collect from third parties may include contact information, demographic data, and content and communications. We use this information to maintain and improve the accuracy of the records we hold about you, identify new customers, and provide a more tailored advertising experience. We may combine this information with other information we collect about you through our Sites and Products
 
@@ -65,11 +65,14 @@ When you are asked to provide personal information, you may decline. But if you 
 
 Our Sites and related online services use cookies and similar technologies to enable certain functionality and help collect information about your visit. “Cookies” are small text files, typically containing a unique string of letters and numbers, stored on your hard drive by a Site. When you return to the Site using the same browser, the Site can read the cookie and thereby gather information about your usage over time. Among other things, we use cookies and other technology to see which areas and features are popular and to count visits, which helps us to improve our Site, our Products, and your experience.
 
-**Web Beacons.** We may collect information using Web beacons. Web beacons are electronic images that may be used on our Site, Products, or in our emails. We use Web beacons to deliver cookies, count visits, understand usage and campaign effectiveness, and to tell if an email has been opened and acted upon.
+The cookies we use include:
+- Web beacons
+- Performance cookies
+-Functionality cookies
+- Marketing cookies
+- Third-party cookies from Google Analytics and Agolia 
 
-**Analytics and Advertising.** We work with third parties to provide analytics and advertising services in connection with our Sites and Products. These third parties use cookies, web beacons, or similar technologies to automatically collect some of the information described above from visitors of our Sites and Products over time and across third party Websites and mobile applications for purposes of analytics and advertising. We use the analytics information to analyze and improve our services. Our advertising partners use the information to try to understand your interests and show you relevant advertising about products and services from and on behalf of us and others.
-
-For additional information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third-parties, please see our Cookie Notice.
+For detailed information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third-parties, please see our [Cookie Policy](/).
 
 ## OUR USE OF PERSONAL INFORMATION
 
@@ -152,7 +155,7 @@ The California Consumer Privacy Act (“CCPA”), provides California residents 
 
 Right to know and right to delete. You may request a copy of the personal information we have collected, used, disclosed, and sold about you over the past twelve (12) months. We identify the categories of personal information we collect, the purposes for collection, the sources of personal information, and any information disclosed and shared in this Privacy Statement. You may also request that we delete certain personal information we have about you. You may “request to know” or “request to delete” your personal information by contacting us at legal@pingcap.com. Please know that any such request is subject to our ability to verify your identity and any exceptions provided under applicable laws.
 
-Right to opt out. As discussed in this Privacy Statement, our advertising and analytics providers may collect your IP address, cookie ID, and mobile ID when you use our websites, and such vendors may further share your information to provide similar advertising or analytics services to their other customers. PingCAP does not generally sell information as the terms “sale” or “sell” are traditionally understood. However, making a California resident’s personal information (including IP addresses, cookies IDs, and mobile IDs) available to third parties as described above may broadly be considered a “sale” under the CCPA. You can opt-out of third party tracking on our websites as described in our Cookie Notice.
+Right to opt out. As discussed in this Privacy Statement, our advertising and analytics providers may collect your IP address, cookie ID, and mobile ID when you use our websites, and such vendors may further share your information to provide similar advertising or analytics services to their other customers. PingCAP does not generally sell information as the terms “sale” or “sell” are traditionally understood. However, making a California resident’s personal information (including IP addresses, cookies IDs, and mobile IDs) available to third parties as described above may broadly be considered a “sale” under the CCPA. You can opt-out of third-party tracking on our websites as described in our Cookie Notice.
 
 ## CHANGES TO OUR PRIVACY STATEMENT
 
@@ -160,4 +163,4 @@ PingCAP may modify or update this Privacy Statement from time to time to reflect
 
 ## HOW TO CONTACT US
 
-If you have any questions, complaints, or concerns about how your information is handled, please email us at legal@pingcap.com. Our main address is PingCAP, Inc., 2955 Campus Drive #110, San Mateo, CA 94403, USA.
+If you have any questions, complaints, or concerns about how your information is handled, please email us at <legal@pingcap.com>. Our main address is PingCAP, Inc., 2955 Campus Drive #110, San Mateo, CA 94403, USA.
