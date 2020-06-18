@@ -366,8 +366,8 @@ const IndexPage = ({ data }) => {
                   </Box>
 
                   <Button
-                    as={a}
-                    to="https://docs.pingcap.com/tidb/v4.0/production-deployment-using-tiup"
+                    as="a"
+                    href="https://docs.pingcap.com/tidb/v4.0/production-deployment-using-tiup"
                     target="_blank"
                     color="primary"
                   >
@@ -391,8 +391,8 @@ const IndexPage = ({ data }) => {
                     />
                   </Box>
                   <Button
-                    as={a}
-                    to="https://docs.pingcap.com/tidb-in-kubernetes/v1.1/get-started"
+                    as="a"
+                    href="https://docs.pingcap.com/tidb-in-kubernetes/v1.1/get-started"
                     target="_blank"
                     color="primary"
                   >
@@ -410,8 +410,8 @@ const IndexPage = ({ data }) => {
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                   </Box>
                   <Button
-                    as={a}
-                    to="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart"
+                    as="a"
+                    href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart"
                     target="_blank"
                     color="primary"
                   >

@@ -62,12 +62,11 @@ const footerColumns = [
       },
       {
         name: 'Gaming',
-        link: '/case-studies/gaming',
+        link: '/case-studies/Gaming',
       },
       {
         name: 'Financial services',
         link: '/case-studies/Financial-Services',
-        outbound: true
       }
     ]
   },
