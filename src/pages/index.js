@@ -183,8 +183,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-case-studies has-light-background">
           <div className="container">
             <h2 className="title section-title">
-              Distributed SQL Database, Trusted and Verified by Innovation
-              Leaders
+            Trusted and Verified by Innovation Leaders
             </h2>
             <div className="logos">
               {caseLogos.map(logo => (
@@ -366,8 +365,13 @@ const IndexPage = ({ data }) => {
                     <img src={logos.tiup} alt="TiUP logo" />
                   </Box>
 
-                  <Button as="a" color="primary">
-                    See Guides
+                  <Button
+                    as={a}
+                    to="https://docs.pingcap.com/tidb/v4.0/production-deployment-using-tiup"
+                    target="_blank"
+                    color="primary"
+                  >
+                    See Documenatation
                   </Button>
                 </NormalBox>
               </div>
@@ -386,8 +390,13 @@ const IndexPage = ({ data }) => {
                       alt="Google Cloud Platform logo"
                     />
                   </Box>
-                  <Button as="a" color="primary">
-                    See Guides
+                  <Button
+                    as={a}
+                    to="https://docs.pingcap.com/tidb-in-kubernetes/v1.1/get-started"
+                    target="_blank"
+                    color="primary"
+                  >
+                    See Documenation
                   </Button>
                 </NormalBox>
               </div>
@@ -401,11 +410,12 @@ const IndexPage = ({ data }) => {
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                   </Box>
                   <Button
-                    as={Link}
-                    to="/products/tidb-cloud/"
+                    as={a}
+                    to="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart"
+                    target="_blank"
                     color="primary"
                   >
-                    Sign Up for a Trial
+                    Get Started
                   </Button>
                 </NormalBox>
               </div>
