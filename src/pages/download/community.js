@@ -3,7 +3,7 @@ import '../../styles/pages/download/community.scss'
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql } from 'gatsby'
+import { Link, graphql } from 'gatsby'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -143,9 +143,9 @@ const Community = ({ data }) => {
                 className="checkbox"
               />
               I agree to the{' '}
-              <a href="/community-license-agreement" target="_blank">
+              <Link to="/community-license-agreement">
                 PingCAP Community Software License Agreement.
-              </a>
+              </Link>
               <div>
                 <button
                   className="button is-primary is-rounded"

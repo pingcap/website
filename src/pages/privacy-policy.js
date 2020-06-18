@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 const PrivacyPolicy = () => {
   const data = useStaticQuery(graphql`
@@ -29,7 +29,7 @@ const PrivacyPolicy = () => {
   return (
     <Layout>
       <SEO
-        title="daf"
+        title={privacyPolicyTitle}
         link={[
           {
             rel: 'stylesheet',
