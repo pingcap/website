@@ -30,12 +30,12 @@ const footerColumns = [
       {
         name: 'Quick Start',
         link:
-          'https://pingcap.com/docs/dev/deploy-test-cluster-using-docker-compose/',
+          'https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb',
         outbound: true
       },
       {
-        name: 'Best Practices',
-        link: 'https://pingcap.com/blog/2017-07-24-tidbbestpractice/',
+        name: 'Documentation',
+        link: 'https://docs.pingcap.com/tidb/v4.0',
         outbound: true
       },
       {
@@ -58,17 +58,15 @@ const footerColumns = [
     items: [
       {
         name: 'Internet',
-        link: 'https://pingcap.com/case-studies/Internet',
-        outbound: true
+        link: '/case-studies/Internet',
       },
       {
         name: 'Gaming',
-        link: 'https://pingcap.com/case-studies/gaming',
-        outbound: true
+        link: '/case-studies/gaming',
       },
       {
         name: 'Financial services',
-        link: 'https://pingcap.com/case-studies/Financial-Services',
+        link: '/case-studies/Financial-Services',
         outbound: true
       }
     ]
@@ -87,6 +85,10 @@ const footerColumns = [
       {
         name: 'Careers',
         link: '/careers'
+      },
+      {
+        name: 'Cookie Policy',
+        link: '/cookie-policy'
       },
       {
         name: 'Privacy Policy',
