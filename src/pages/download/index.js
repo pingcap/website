@@ -13,23 +13,10 @@ const Download = ({ data }) => {
     <Layout>
       <SEO title="Download TiDB" />
       <article className="PingCAP-Download-TiDB">
-        <section className="hero is-medium">
-          <div className="hero-body">
-            <div className="container has-text-centered">
-              <h1 className="title section-title">
-                Get started with TiDB now!
-              </h1>
-              <div className="subtitle-under-main-title">
-                Everything you need from TiDB, in your way.
-              </div>
-            </div>
-          </div>
-        </section>
-
         <section className="section download-section">
           <div className="container">
             <div className="card deploy-in-cloud">
-              <h2 className="title section-title">TiDB in Cloud</h2>
+              <h2 className="title section-title">Fully Managed TiDB Cloud</h2>
               <img
                 className="cloud-icon"
                 src={deployTiDBinCloudSVG.publicURL}
@@ -37,14 +24,14 @@ const Download = ({ data }) => {
               />
               <p>
                 Fully managed TiDB service that lets you deploy and operate TiDB
-                in a few clicks. Available on AWS and GCP.
+                in a few clicks. Available on AWS and GCP. Other platforms coming soon!
               </p>
               <Button
                 as={Link}
                 to="/products/tidb-cloud/trial"
                 className="is-primary"
               >
-                APPLY FOR FREE TRIAL
+                APPLY FOR A FREE TRIAL
               </Button>
             </div>
             <div className="deploy-on-premise">
