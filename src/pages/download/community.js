@@ -143,7 +143,7 @@ const Community = ({ data }) => {
                 className="checkbox"
               />
               I agree to the{' '}
-              <a href="/terms" target="_blank">
+              <a href="/community-license-agreement" target="_blank">
                 PingCAP Community Software License Agreement.
               </a>
               <div>
