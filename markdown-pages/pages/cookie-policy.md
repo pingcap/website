@@ -1,5 +1,5 @@
 ---
-title: Cookie Policy on PingCAP.com
+title: Cookie Policy
 ---
 
 # Cookie Policy on PingCAP.com
