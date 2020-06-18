@@ -8,7 +8,7 @@ const footerColumns = [
       },
       {
         name: 'TiKV',
-        link: 'https://github.com/tikv/tikv'
+        link: 'https://github.com/tikv/tikv',
         outbound: true
       },
       {
