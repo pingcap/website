@@ -8,7 +8,7 @@ import { downloadTiDB } from '../../data/download-tidb'
 import { Button } from '@seagreenio/react-bulma'
 
 const Download = ({ data }) => {
-  const { downloadTiDBHeroSVG, deployTiDBinCloudSVG } = data
+  const { deployTiDBinCloudSVG } = data
   return (
     <Layout>
       <SEO title="Download TiDB" />
@@ -69,11 +69,6 @@ const Download = ({ data }) => {
 
 export const query = graphql`
   query {
-    downloadTiDBHeroSVG: file(
-      relativePath: { eq: "download/download-tidb-hero.svg" }
-    ) {
-      publicURL
-    }
     deployTiDBinCloudSVG: file(
       relativePath: { eq: "download/deploy-tidb-in-cloud.svg" }
     ) {
