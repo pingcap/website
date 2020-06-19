@@ -107,9 +107,9 @@ const HourlyNodeUsageInfo = () => {
             </td>
             <td>TiKV</td>
             <td>{value(tikv.cpu)} vCPU</td>
-            <td>{value(tikv.memory_gi)} Gi</td>
+            <td>{value(tikv.memory_gi)} GiB</td>
             <td>
-              {value(tikv.disks[0].disk_gi)} {tikv.disks[0].disk_type}
+              {value(tikv.disks[0].disk_gi)} GiB {tikv.disks[0].disk_type}
             </td>
             <td>$ {value(availablePrice.tikv)} /hr</td>
             <td>$ {precision(availablePrice.tikv * 24 * 30)} /month</td>
@@ -117,10 +117,8 @@ const HourlyNodeUsageInfo = () => {
           <tr className={`${isStriped ? 'has-light-background' : ''}`}>
             <td>TiDB</td>
             <td>{tidb.cpu} vCPU</td>
-            <td>{tidb.memory_gi} Gi</td>
-            <td>
-              {value(tidb.disks[0].disk_gi)} {tidb.disks[0].disk_type}
-            </td>
+            <td>{tidb.memory_gi} GiB</td>
+            <td>-</td>
             <td>$ {value(availablePrice.tidb)} /hr</td>
             <td>$ {precision(availablePrice.tidb * 24 * 30)} /month</td>
           </tr>
@@ -176,13 +174,13 @@ const HourlyNodeUsageInfo = () => {
       </div>
 
       <div className="regions">
-        <span className="paragraph">Select Region</span>
+        <label className="label">Select Region</label>
         <div className="select">
           {profile && profile.regions && (
             <select value={region} onChange={handleRegionChange}>
               {profile.regions.map(r => (
                 <option key={r.name} value={r.name}>
-                  {r.name}
+                  {r.display_name}
                 </option>
               ))}
             </select>
@@ -311,9 +309,14 @@ const TiDBCloudPage = ({ data }) => {
               <HourlyNodeUsageInfo />
               <p className="paragraph">
                 Data backup and data transfer need to be charged separately. See{' '}
-                <Link className="link-with-underline" to="/">
+                <a
+                  className="link-with-underline"
+                  href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-billing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Billing
-                </Link>{' '}
+                </a>{' '}
                 for more details.
               </p>
             </div>

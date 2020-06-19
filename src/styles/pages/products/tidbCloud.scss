@@ -237,7 +237,13 @@
           @include has-pingcap-style-border;
           width: 9rem;
           height: 5rem;
-          margin-right: 3rem;
+
+          &:first-child {
+            @include mobile {
+              margin-right: 3rem;
+            }
+            margin-right: 6rem;
+          }
 
           &.button:active,
           &.button.is-active {
@@ -257,19 +263,16 @@
         display: flex;
         align-items: center;
 
-        .paragraph {
-          padding-bottom: 0;
-          @include mobile {
-            margin-right: 1.5rem;
-          }
-
+        .label {
           display: inline-block;
-          margin: 0 3.2rem 0 0;
+          width: 9rem;
+          margin: 0;
+          padding-bottom: 0;
+          font-size: $size-7;
+          font-weight: 400;
         }
 
         .select {
-          width: 12rem;
-
           select {
             @include has-pingcap-style-border;
             width: 100%;
