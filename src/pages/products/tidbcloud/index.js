@@ -6,7 +6,7 @@ import {
   featuresData,
   logos,
   reasonsData
-} from '../../../data/products/tidb-cloud'
+} from '../../../data/products/tidbcloud'
 
 import { Button } from '@seagreenio/react-bulma'
 import Layout from '../../../components/layout'
@@ -19,7 +19,7 @@ const StartTrialButton = () => (
     color="primary"
     className="start-trial-button"
     rounded
-    to="/products/tidb-cloud/trial"
+    to="/products/tidbcloud/trial"
   >
     Start Your Free Trial Now
   </Button>
@@ -49,12 +49,12 @@ const HourlyNodeUsageInfo = () => {
       try {
         const aws = (
           await http.get(
-            'https://download.pingcap.org/data/tidb-cloud/aws_profiles.json'
+            'https://download.pingcap.org/data/tidbcloud/aws_profiles.json'
           )
         ).data
         const googleCloud = (
           await http.get(
-            'https://download.pingcap.org/data/tidb-cloud/gcp_profiles.json'
+            'https://download.pingcap.org/data/tidbcloud/gcp_profiles.json'
           )
         ).data
         setProfiles({ aws, googleCloud })
@@ -334,11 +334,11 @@ const TiDBCloudPage = ({ data }) => {
 export const query = graphql`
   query {
     TiDBCloudLogoPNG: file(
-      relativePath: { eq: "products/tidb-cloud/tidb-cloud-logo.png" }
+      relativePath: { eq: "products/tidbcloud/tidb-cloud-logo.png" }
     ) {
       publicURL
     }
-    BannerSVG: file(relativePath: { eq: "products/tidb-cloud/banner.svg" }) {
+    BannerSVG: file(relativePath: { eq: "products/tidbcloud/banner.svg" }) {
       publicURL
     }
   }

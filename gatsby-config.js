@@ -40,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages/pages',
-        path: `${__dirname}/markdown-pages/pages`,
+        name: 'markdown-pages/terms',
+        path: `${__dirname}/markdown-pages/terms`,
       },
     },
     {

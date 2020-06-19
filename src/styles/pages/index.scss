@@ -420,6 +420,9 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
 
   .section-join-us-newsletter {
     .PingCAP-PostFromUs {
+      .button {
+        min-width: 228px;
+      }
       @include mobile {
         flex-direction: column;
         text-align: center;

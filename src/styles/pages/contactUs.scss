@@ -1,9 +1,14 @@
 @import '../common';
 
 .PingCAP-Contact-Us {
-  .section-title,
+  .section-title {
+    font-size: $size-1;
+    color: $M1;
+  }
   .subtitle-under-main-title {
-
+    max-width: 1000px;
+      margin: 0 auto;
+    font-size: $size-5;
     color: $M1;
   }
 
@@ -11,11 +16,6 @@
     background-image: url(../../../images/contact-us/contact-us-hero.svg);
     background-color: $B3;
     background-size: contain;
-
-    h2 {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
   }
 
   .form-section {
@@ -47,13 +47,13 @@
       .address {
         text-align: left;
         margin-bottom: 2rem;
-  
+
         .addr-title {
           font-size: $size-5;
           font-weight: bold;
           color: $M3;
         }
-  
+
         .addr-detail {
           font-size: $size-7;
           color: $M4;

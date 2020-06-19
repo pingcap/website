@@ -14,7 +14,7 @@
   }
 
   .section-title {
-    @include section-title
+    @include section-title;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
@@ -28,51 +28,65 @@
     }
 
     .columns {
-        justify-content: space-evenly;
+      justify-content: space-evenly;
     }
 
     .card {
+      position: relative;
       padding: 2rem 1rem;
       height: 100%;
+
+      @include tablet {
+        min-height: 480px;
+      }
 
       img {
         height: 60px;
       }
-  
+
       p {
-          font-size: $size-7;
-          color: $B4;
-          margin: 0 auto 2rem;
-          width: 60%;
+        font-size: $size-7;
+        color: $B4;
+        margin: 0 auto 2rem;
+        width: 60%;
       }
 
       ul {
-          list-style: disc;
-          text-align: left;
-          min-height: 170px;
-          width: 70%;
-          margin: 0 auto;
+        list-style: disc;
+        text-align: left;
+        min-height: 170px;
+        width: 70%;
+        margin: 0 auto;
 
-          @include mobile {
-              margin: 0;
-              padding: 0 2rem;
-          }
+        @include mobile {
+          margin: 0;
+          padding: 0 2rem;
+          width: 100%;
+        }
       }
-  
+
       button {
-          padding: 0.5rem 1.5rem;
-          background-color: $B1;
-          color: $M1;
-          font-size: $size-7;
-          border-radius: 5px;
-          border: none;
-          cursor: pointer;
+        padding: 0.5rem 1.5rem;
+        background-color: $B1;
+        color: $M1;
+        font-size: $size-7;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
       }
     }
 
-
-    .deploy-on-premise > .title {
+    .deploy-on-premise {
+      > .title {
         margin-top: 5rem;
+      }
+
+      .button {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+      }
     }
   }
 }

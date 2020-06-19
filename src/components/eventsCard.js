@@ -7,7 +7,7 @@ const EventsCard = prop => {
   const cardsList = prop.cardsList
 
   return (
-    <div className="PingCAP-Event-Card columns is-variable is-8">
+    <div className="PingCAP-Event-Card columns is-variable is-8 is-multiline">
       {cardsList.map(card => (
         <div className="column is-4" key={card.name}>
           <div className="card">
