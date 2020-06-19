@@ -28,7 +28,7 @@ const Download = ({ data }) => {
               </p>
               <Button
                 as={Link}
-                to="/products/tidb-cloud/trial"
+                to="/products/tidbcloud/trial"
                 className="is-primary"
               >
                 APPLY FOR A FREE TRIAL

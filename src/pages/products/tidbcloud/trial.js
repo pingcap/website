@@ -7,7 +7,7 @@ import Loading from '../../../components/loading'
 import React from 'react'
 import SEO from '../../../components/seo'
 import { graphql } from 'gatsby'
-import { servicesData } from '../../../data/products/tidb-cloud'
+import { servicesData } from '../../../data/products/tidbcloud'
 
 const TiDBCloudTrialPage = ({ data }) => {
   const { TiDBCloudLogoPNG, shuttleSVG } = data
@@ -75,11 +75,11 @@ const TiDBCloudTrialPage = ({ data }) => {
 export const query = graphql`
   query {
     TiDBCloudLogoPNG: file(
-      relativePath: { eq: "products/tidb-cloud/tidb-cloud-logo.png" }
+      relativePath: { eq: "products/tidbcloud/tidb-cloud-logo.png" }
     ) {
       publicURL
     }
-    shuttleSVG: file(relativePath: { eq: "products/tidb-cloud/shuttle.svg" }) {
+    shuttleSVG: file(relativePath: { eq: "products/tidbcloud/shuttle.svg" }) {
       publicURL
     }
   }

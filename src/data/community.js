@@ -1,9 +1,10 @@
-import Code from '../../images/community/code.svg'
+import Heart from '../../images/community/heart.svg'
 import Help from '../../images/community/help-buoy.svg'
 import Writer from '../../images/community/writer.svg'
-import Bullhorn from '../../images/community/bullhorn.svg'
+import Learn from '../../images/community/learn.svg'
 import DevCon2020ThumbNail from '../../images/events/devcon2020.jpg'
 import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
+import MonthlyMeeting from '../../images/events/monthly-meeting.svg'
 
 const contributionGrow = [
   {
@@ -15,7 +16,7 @@ const contributionGrow = [
     ]
   },
   {
-    icon: Code,
+    icon: Heart,
     title: 'Contribute the Way You Like',
     collapseList: [
       'Join a <a href="https://github.com/pingcap/community/tree/master/special-interest-groups" target="_blank">Special Interest Group</a> (SIG)',
@@ -34,7 +35,7 @@ const contributionGrow = [
     ]
   },
   {
-    icon: Bullhorn,
+    icon: Learn,
     title: 'Learn and Grow',
     collapseList: [
       'Join the <a href="https://github.com/pingcap/talent-plan" target="_blank">Talent Plan</a>',
@@ -65,7 +66,7 @@ const communityActivities = [
     outboundLink: true
   },
   {
-    thumbnail: UsabilityThumbNail,
+    thumbnail: MonthlyMeeting,
     name: 'TiKV Monthly Updates',
     eventType: 'Virtual',
     time: 'Monthly on the fourth Thursday',
@@ -75,17 +76,6 @@ const communityActivities = [
       'https://docs.google.com/document/d/1CWUAkBrcm9KPclAu8fWHZzByZ0yhsQdRggnEdqtRMQ8/edit#',
     outboundLink: true
   },
-  {
-    thumbnail: UsabilityThumbNail,
-    name: 'TiKV Monthly Updates',
-    eventType: 'Virtual',
-    time: 'Monthly on the fourth Thursday',
-    desc:
-      'Monthly community meeting by video conference to discuss the status of TiKV and demo the new features. Anyone is welcome to join.',
-    readMoreLink:
-      'https://docs.google.com/document/d/1CWUAkBrcm9KPclAu8fWHZzByZ0yhsQdRggnEdqtRMQ8/edit#',
-    outboundLink: true
-  }
 ]
 
 export { contributionGrow, communityActivities }

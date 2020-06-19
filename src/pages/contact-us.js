@@ -5,6 +5,7 @@ import Layout from '../components/layout'
 import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
+import { Button } from '@seagreenio/react-bulma'
 
 const ContactUs = () => {
   return (
@@ -21,6 +22,15 @@ const ContactUs = () => {
                 are an existing customer and need our support, please contact
                 Enterprise Support (https://www.pingcap.com/support)
               </div>
+              <Button
+                as="a"
+                href="https://support.pingcap.com/"
+                target="_blank"
+                className="is-primary"
+                rounded
+              >
+                ENTERPRISE SUPPORT
+              </Button>
             </div>
           </div>
         </section>

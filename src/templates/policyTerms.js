@@ -3,33 +3,17 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { graphql, useStaticQuery } from 'gatsby'
 
-const PrivacyPolicy = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      privacyPolicy: allMarkdownRemark(
-        filter: {
-          fields: { collection: { eq: "markdown-pages/pages" } }
-          frontmatter: { title: { eq: "Privacy Policy" } }
-        }
-      ) {
-        edges {
-          node {
-            html
-            frontmatter {
-              title
-            }
-          }
-        }
-      }
-    }
-  `)
+const PrivacyPolicy = ({ data }) => {
+  const { markdownRemark } = data
+  const { frontmatter, html } = markdownRemark
 
-  const privacyPolicyContent = data.privacyPolicy.edges[0].node.html
-  const privacyPolicyTitle = data.privacyPolicy.edges[0].node.frontmatter.title
+  const policyContent = html
+  const policyTitle = frontmatter.title
+
   return (
     <Layout>
       <SEO
-        title={privacyPolicyTitle}
+        title={policyTitle}
         link={[
           {
             rel: 'stylesheet',
@@ -43,7 +27,7 @@ const PrivacyPolicy = () => {
           <div className="container">
             <div
               className="markdown-body blog-content position-content"
-              dangerouslySetInnerHTML={{ __html: privacyPolicyContent }}
+              dangerouslySetInnerHTML={{ __html: policyContent }}
             />
           </div>
         </section>
@@ -51,5 +35,16 @@ const PrivacyPolicy = () => {
     </Layout>
   )
 }
+
+export const query = graphql`
+  query($title: String) {
+    markdownRemark(frontmatter: { title: { eq: $title } }) {
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`
 
 export default PrivacyPolicy
