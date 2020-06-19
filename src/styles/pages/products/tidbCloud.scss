@@ -213,6 +213,12 @@
             flex-direction: row-reverse;
           }
         }
+
+        .has-text-left {
+          @include mobile {
+            text-align: center !important;
+          }
+        }
       }
     }
   }

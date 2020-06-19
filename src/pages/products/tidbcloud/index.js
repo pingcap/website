@@ -174,7 +174,7 @@ const HourlyNodeUsageInfo = () => {
       </div>
 
       <div className="regions">
-        <label className="label">Select Region</label>
+        <span className="label">Select Region</span>
         <div className="select">
           {profile && profile.regions && (
             <select value={region} onChange={handleRegionChange}>
@@ -299,9 +299,6 @@ const TiDBCloudPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">Pricing</h2>
             <div className="field">
-              <h3 className="title column-or-card-title has-text-left">
-                Hourly Node Usage
-              </h3>
               <p className="paragraph">
                 TiDB Cloud provides different cluster tiers. Detailed pricing
                 for TiDB/TiKV instances in different tiers are as follows:
