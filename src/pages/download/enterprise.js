@@ -13,7 +13,7 @@ const Enterprise = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Download TiDB Community" />
+      <SEO title="Download TiDB Community" description="" />
       <article className="PingCAP-Download-TiDB-Enterprise">
         <div className="container enterprise-wrapper">
           <div className="tidb-logo">

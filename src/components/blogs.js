@@ -115,7 +115,7 @@ const Blogs = ({
 
   return (
     <Layout>
-      <SEO title={title} />
+      <SEO title={title} description="" />
       <article className="PingCAP-Blogs">
         <section className="section section-blogs">
           <div className="container">

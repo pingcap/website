@@ -68,7 +68,7 @@ const CaseStudies = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Case Studies" />
+      <SEO title="Case Studies" description="" />
       <article className="PingCAP-CaseStudies">
         <div className="top-banner-wrapper">
           <Img

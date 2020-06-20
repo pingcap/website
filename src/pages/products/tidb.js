@@ -13,7 +13,7 @@ const TiDB = ({ data }) => {
   const { hyperGrowthHeroSVG, htapArchSVG } = data
   return (
     <Layout>
-      <SEO title="Product TiDB" />
+      <SEO title="Product TiDB" description="" />
       <article className="PingCAP-Product-TiDB">
         <section className="hero is-medium">
           <div className="hero-body">

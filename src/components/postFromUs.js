@@ -19,16 +19,16 @@ const Img = () => {
   return <img src={PostFromUsSVG.publicURL} alt="Post from Us" />
 }
 
-const Field = () => (
-  <div className="field has-addons">
-    <div className="control">
-      <input className="input" type="text" placeholder="Email" />
-    </div>
-    <div className="control">
-      <Button color="primary">Subscribe</Button>
-    </div>
-  </div>
-)
+// const Field = () => (
+//   <div className="field has-addons">
+//     <div className="control">
+//       <input className="input" type="text" placeholder="Email" />
+//     </div>
+//     <div className="control">
+//       <Button color="primary">Subscribe</Button>
+//     </div>
+//   </div>
+// )
 
 const PostFromUs = () => (
   <NormalBox as="section" className="PingCAP-PostFromUs" shadowless>
@@ -58,16 +58,18 @@ export const PostFromUsInHome = () => (
         Features, releases, showcases, meetups, talks...
       </div>
     </div>
-    <Img />
-    {/* <Field /> */}
-    <Button
-      as="a"
-      href="https://share.hsforms.com/1e2W03wLJQQKPd1d9rCbj_Q2npzm"
-      target="_blank"
-      color="primary"
-    >
-      Subscribe
-    </Button>
+    <div className="poster-wrapper">
+      <Img />
+      {/* <Field /> */}
+      <Button
+        as="a"
+        href="https://share.hsforms.com/1e2W03wLJQQKPd1d9rCbj_Q2npzm"
+        target="_blank"
+        color="primary"
+      >
+        Subscribe
+      </Button>
+    </div>
   </NormalBox>
 )
 

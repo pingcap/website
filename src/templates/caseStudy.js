@@ -54,6 +54,7 @@ const CaseStudy = ({ data }) => {
     <Layout>
       <SEO
         title={frontmatter.title}
+        description={frontmatter.summary}
         link={[
           {
             rel: 'stylesheet',
@@ -136,6 +137,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        summary
         date(formatString: "YYYY-MM-DD")
         customer
         customerCategory

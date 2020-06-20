@@ -23,7 +23,7 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Community" />
+      <SEO title="TiDB Community" description="" />
       <article className="PingCAP-TiDB-Community">
         <section className="hero is-medium">
           <div className="hero-body">
