@@ -1,5 +1,6 @@
 ---
 title: Privacy Statement
+summary: Learn about the Privacy Policy of PingCAP Sites and Products.
 ---
 
 # Privacy Statement

@@ -23,7 +23,7 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Community" description="" />
+      <SEO title="Community | PingCAP" description="Join our community to learn, contribute, grow, and connect with TiDB contributors and users all around the world!" />
       <article className="PingCAP-TiDB-Community">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -43,7 +43,7 @@ const Community = ({ data }) => {
                   target="_blank"
                   className="button join-slack is-primary is-rounded"
                 >
-                  Join Our Slack
+                  JOIN OUR SLACK
                 </Button>
                 <Button
                   as="a"
@@ -51,7 +51,7 @@ const Community = ({ data }) => {
                   target="_blank"
                   className="button become-a-contributor is-primary is-rounded"
                 >
-                  Become a Contributor
+                  BECOME A CONTRIBUTOR
                 </Button>
               </div>
             </div>
@@ -157,7 +157,7 @@ const Community = ({ data }) => {
                   to="/community/share-and-connect"
                   className="button-white-bg"
                 >
-                  Share Now
+                  SHARE NOW
                 </Button>
               </div>
             </div>

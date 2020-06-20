@@ -113,7 +113,7 @@ const Navbar = () => {
                 color="primary"
                 rounded
               >
-                Download TiDB
+                DOWNLOAD TiDB
               </Button>
             </div>
           </div>

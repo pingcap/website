@@ -116,10 +116,10 @@ const Blog = ({ data }) => {
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
                     <Button as="a" className="get-started" outlined rounded>
-                      Download TiDB
+                      DOWNLOAD TiDB
                     </Button>
                     <Button as="a" outlined rounded>
-                      Contact Us
+                      CONTACT US
                     </Button>
                   </div>
                 </section>

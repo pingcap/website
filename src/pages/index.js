@@ -128,7 +128,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" description=""/>
+      <SEO title="TiDB | SQL at Scale" description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"/>
       <article className="PingCAP-Home">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -152,7 +152,7 @@ const IndexPage = ({ data }) => {
                     target="_blank"
                     rounded
                   >
-                    Get Started
+                    GET STARTED
                   </Button>
                   <Button
                     as={Link}
@@ -161,7 +161,7 @@ const IndexPage = ({ data }) => {
                     rounded
                     outlined
                   >
-                    Ask an Expert
+                    ASK AN EXPERT
                   </Button>
                 </div>
               </div>
@@ -371,7 +371,7 @@ const IndexPage = ({ data }) => {
                     target="_blank"
                     color="primary"
                   >
-                    See Documenatation
+                   LEARN HOW
                   </Button>
                 </NormalBox>
               </div>
@@ -396,7 +396,7 @@ const IndexPage = ({ data }) => {
                     target="_blank"
                     color="primary"
                   >
-                    See Documenation
+                    LEARN HOW
                   </Button>
                 </NormalBox>
               </div>
@@ -415,7 +415,7 @@ const IndexPage = ({ data }) => {
                     target="_blank"
                     color="primary"
                   >
-                    Get Started
+                    GET STARTED
                   </Button>
                 </NormalBox>
               </div>

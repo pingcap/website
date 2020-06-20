@@ -198,7 +198,7 @@ const TiDBCloudPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Cloud" description="" />
+      <SEO title="TiDB Cloud | PingCAP" description="Fully Managed TiDB service. TiDB Cloud lets you focus on your applications, not the complexities of your database." />
       <main className="PingCAP-TiDBCloud">
         <section className="hero is-medium">
           <div className="hero-body">

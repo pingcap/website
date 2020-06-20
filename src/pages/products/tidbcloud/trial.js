@@ -14,7 +14,7 @@ const TiDBCloudTrialPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Cloud Trial" description="" />
+      <SEO title="TiDB Cloud Trial | PingCAP" description="Apply for TiDB Cloud Trial" />
       <main className="PingCAP-TiDBCloudTrial">
         <section className="section get-trial-section has-light-background">
           <div className="container">

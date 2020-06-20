@@ -68,7 +68,7 @@ const CaseStudies = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Case Studies" description="" />
+      <SEO title="TiDB Case Studies" description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders." />
       <article className="PingCAP-CaseStudies">
         <div className="top-banner-wrapper">
           <Img

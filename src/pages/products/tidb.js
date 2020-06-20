@@ -13,7 +13,7 @@ const TiDB = ({ data }) => {
   const { hyperGrowthHeroSVG, htapArchSVG } = data
   return (
     <Layout>
-      <SEO title="Product TiDB" description="" />
+      <SEO title="TiDB | PingCAP" description="TiDB is a distributed SQL database platform that features horizontal scalability, strong consistency, and high availability." />
       <article className="PingCAP-Product-TiDB">
         <section className="hero is-medium">
           <div className="hero-body">
