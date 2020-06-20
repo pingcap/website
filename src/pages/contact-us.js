@@ -10,7 +10,7 @@ import { Button } from '@seagreenio/react-bulma'
 const ContactUs = () => {
   return (
     <Layout>
-      <SEO title="Download TiDB Community" />
+      <SEO title="Download TiDB Community" description="" />
       <article className="PingCAP-Contact-Us">
         <section className="hero is-medium">
           <div className="hero-body">

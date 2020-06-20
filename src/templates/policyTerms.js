@@ -1,19 +1,17 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql } from 'gatsby'
 
 const PrivacyPolicy = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html } = markdownRemark
 
-  const policyContent = html
-  const policyTitle = frontmatter.title
-
   return (
     <Layout>
       <SEO
-        title={policyTitle}
+        title={frontmatter.title}
+        description={frontmatter.title}
         link={[
           {
             rel: 'stylesheet',
@@ -27,7 +25,7 @@ const PrivacyPolicy = ({ data }) => {
           <div className="container">
             <div
               className="markdown-body blog-content position-content"
-              dangerouslySetInnerHTML={{ __html: policyContent }}
+              dangerouslySetInnerHTML={{ __html: html }}
             />
           </div>
         </section>
@@ -42,6 +40,7 @@ export const query = graphql`
       html
       frontmatter {
         title
+        summary
       }
     }
   }

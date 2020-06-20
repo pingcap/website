@@ -200,7 +200,7 @@ const TiDBCloudPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Cloud" />
+      <SEO title="TiDB Cloud" description="" />
       <main className="PingCAP-TiDBCloud">
         <section className="hero is-medium">
           <div className="hero-body">

@@ -309,6 +309,8 @@
       top: 50%;
       left: 0;
       display: flex;
+      overflow: auto;
+      height: 100%;
       flex-direction: column;
       transform: translateY(-50%);
       opacity: 0;
@@ -350,7 +352,6 @@
       }
 
       .read-more {
-        margin-top: 1.5rem;
         color: $B3;
 
         &:hover {

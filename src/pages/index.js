@@ -128,7 +128,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" description=""/>
       <article className="PingCAP-Home">
         <section className="hero is-medium">
           <div className="hero-body">

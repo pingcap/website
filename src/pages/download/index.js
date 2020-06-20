@@ -11,7 +11,7 @@ const Download = ({ data }) => {
   const { deployTiDBinCloudSVG } = data
   return (
     <Layout>
-      <SEO title="Download TiDB" />
+      <SEO title="Download TiDB" description="" />
       <article className="PingCAP-Download-TiDB">
         <section className="section download-section">
           <div className="container">
