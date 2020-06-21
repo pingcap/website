@@ -3,7 +3,6 @@ import '../styles/pages/index.scss'
 import {
   Box,
   Button,
-  Buttons,
   withNormalHelpers
 } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
@@ -16,10 +15,16 @@ import SEO from '../components/seo'
 import { replaceTitle } from '../lib/string'
 import SectionUseCases from '../components/sectionUseCases'
 import LinkWithArrow from '../components/linkWithArrow'
+import StartTiDBRibbon from '../components/startTiDBRibbon'
 
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
+  'lenovo',
+  'tencent',
+  'oppo',
+  'bigo',
+  'blued',
   'paypay',
   'shopee',
   'bookmyshow',
@@ -128,7 +133,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Home" description=""/>
+      <SEO title="Home" description="" />
       <article className="PingCAP-Home">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -183,7 +188,7 @@ const IndexPage = ({ data }) => {
         <section className="section section-case-studies has-light-background">
           <div className="container">
             <h2 className="title section-title">
-            Trusted and Verified by Innovation Leaders
+              Trusted and Verified by Innovation Leaders
             </h2>
             <div className="logos">
               {caseLogos.map(logo => (
@@ -202,9 +207,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-celebrate-your-growth">
           <div className="container">
-            <h2 className="title section-title">
-              Why TiDB?
-            </h2>
+            <h2 className="title section-title">Why TiDB?</h2>
             <div className="columns is-variable is-6">
               {celebrateYourGrowthData.map(d => (
                 <div key={d.name} className="column">
@@ -263,29 +266,7 @@ const IndexPage = ({ data }) => {
 
         <SectionUseCases hasLightBg={false} />
 
-        <section className="section section-get-started">
-          <div className="container">
-            <h2 className="title is-3 has-text-white">
-              Ready to get started with TiDB?
-            </h2>
-            <Buttons>
-              <Button
-                className="contact-us"
-                as={Link}
-                to="/contact-us"
-                color="primary"
-                rounded
-                inverted
-                outlined
-              >
-                Contact Us
-              </Button>
-              <Button className="get-tidb" as={Link} to="/download" rounded>
-                Get TiDB
-              </Button>
-            </Buttons>
-          </div>
-        </section>
+        <StartTiDBRibbon />
 
         <section className="section section-architecture">
           <div className="container">
@@ -299,7 +280,9 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-learn-more">
           <div className="container">
-            <h2 className="title section-title">Learn More in Engineering Blogs</h2>
+            <h2 className="title section-title">
+              Learn More in Engineering Blogs
+            </h2>
             <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter } }) => (
                 <div key={frontmatter.title} className="column">
@@ -353,9 +336,7 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-or-card-title">
-                    Self-hosted
-                  </h3>
+                  <h3 className="title column-or-card-title">Self-hosted</h3>
                   <div className="strikethrough-primary" />
 
                   <Box className="logo">

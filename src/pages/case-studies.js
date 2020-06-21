@@ -170,7 +170,7 @@ function Logos({ logos }) {
                 {logo.customer}
               </div>
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
+                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
               />
               <div className="paragraph">
                 {truncate.apply(logo.summary, [200, true])}

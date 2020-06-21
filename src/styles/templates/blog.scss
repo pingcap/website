@@ -62,7 +62,7 @@
       }
 
       &:target > a.anchor.before {
-        transform: translate(-20px, $navbar-height);
+        transform: translate(-10%, $navbar-height);
 
         @include mobile {
           transform: translate(0, $navbar-height);
@@ -91,6 +91,7 @@
 
       &.anchor {
         &.before {
+          transform: translateX(-10%);
           @include mobile {
             transform: translateX(0);
           }
@@ -101,10 +102,6 @@
     ul {
       list-style: inherit;
     }
-  }
-
-  .position-content {
-
   }
 
   .get-started-with-tidb {

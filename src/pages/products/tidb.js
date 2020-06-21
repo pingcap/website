@@ -4,6 +4,7 @@ import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import SectionUseCases from '../../components/sectionUseCases'
+import StartTiDBRibbon from '../../components/startTiDBRibbon'
 import { graphql } from 'gatsby'
 import { industryIcons } from '../../data/product-tidb'
 import CloseIcon from '@material-ui/icons/Close'
@@ -247,6 +248,7 @@ const TiDB = ({ data }) => {
             </div>
           </div>
         </section>
+        <StartTiDBRibbon />
       </article>
     </Layout>
   )

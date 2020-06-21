@@ -92,14 +92,26 @@ const Navbar = () => {
                     </div>
                   </div>
                 ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className="navbar-item with-main-section"
-                    onTouchStart={() => {}}
-                  >
-                    {item.name}
-                  </Link>
+                  <>
+                    {item.outbound ? (
+                      <a
+                        key={item.name}
+                        href={item.href}
+                        className="navbar-item with-main-section"
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <Link
+                        key={item.name}
+                        to={item.href}
+                        className="navbar-item with-main-section"
+                        onTouchStart={() => {}}
+                      >
+                        {item.name}
+                      </Link>
+                    )}
+                  </>
                 )}
               </Fragment>
             ))}
