@@ -1,3 +1,6 @@
 {
-    "foo": "福"
+    "contact_us": {
+        "title": "联系 PingCAP",
+        "details": "感谢您对 TiDB 的喜爱\n请留下您的联系方式，我们会在 1 工作日内稍后联系您"
+    }
 }

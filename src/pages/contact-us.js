@@ -6,6 +6,7 @@ import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
 import { Button } from '@seagreenio/react-bulma'
+import { FormattedMessage } from 'gatsby-plugin-intl'
 
 const ContactUs = () => {
   return (
@@ -15,12 +16,11 @@ const ContactUs = () => {
         <section className="hero is-medium">
           <div className="hero-body">
             <div className="container has-text-centered">
-              <h1 className="title section-title">Contact PingCAP</h1>
+              <h1 className="title section-title">
+                <FormattedMessage id="contact_us.title" />
+              </h1>
               <div className="subtitle-under-main-title">
-                Thanks for your interest in TiDB. Please take a minute to fill
-                out the form below and we will get back to you shortly. If you
-                are an existing customer and need our support, please contact
-                Enterprise Support (https://www.pingcap.com/support)
+                <FormattedMessage id="contact_us.details" />
               </div>
               <Button
                 as="a"
