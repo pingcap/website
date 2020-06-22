@@ -1,0 +1,78 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:8.11.3
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            # https://circleci.com/gh/pingcap/pingcap.github.io/edit#checkout
+            - '1b:b6:ef:e0:fb:85:6d:8f:78:87:a6:ce:1f:34:ec:66'
+            # Use in scripts/push-gh-pages.sh
+            - '6a:a6:ac:e8:9e:ee:7d:ef:18:92:94:0b:b0:2c:34:82'
+
+      - checkout
+
+      # Dependencies required for deploy
+      # python3-pip for awscli
+      - run: sudo apt update && sudo apt install rsync python-bs4 python3-pip -y
+
+      # Download and cache dependencies and submodules
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # Fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          command: yarn download:blogs:prod && yarn build
+          no_output_timeout: 20m
+
+
+      - deploy:
+          name: 'Publish Website Could LA_1_HOST'
+          command : |
+            if [ "${CIRCLE_BRANCH}" == "src" ]
+            then
+              ssh-keyscan "${DEPLOY_UCLOUD_LA_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete dist/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+            fi
+      
+      - deploy:
+          name: 'Publish Website Could LA_2_HOST'
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "src" ]
+            then
+              ssh-keyscan "${DEPLOY_UCLOUD_LA_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete dist/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+              curl "http://www.google.com/ping?sitemap=https://pingcap.com/sitemap.xml"
+            fi
+      - deploy:
+          name: 'Publish Website Could BJ_1_HOST'
+          command: | 
+            if [ "${CIRCLE_BRANCH}" == "src" ]
+            then
+              ssh-keyscan "${DEPLOY_UCLOUD_BJ_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete dist/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+            fi
+        
+      - deploy:
+          name: 'Publish Website Could BJ_2_HOST'
+          command: | 
+            if [ "${CIRCLE_BRANCH}" == "src" ]
+            then
+              ssh-keyscan "${DEPLOY_UCLOUD_BJ_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete dist/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+            fi
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
