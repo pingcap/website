@@ -34,7 +34,7 @@ const logos = [
 
 const homeLogos = [
   'lenovo',
-  'tecent',
+  'tencent',
   'oppo',
   'bigo',
   'blued',

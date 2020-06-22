@@ -11,7 +11,7 @@ import { FormattedMessage } from 'gatsby-plugin-intl'
 const ContactUs = () => {
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
+      <SEO title="Contact " description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics" />
       <article className="PingCAP-Contact-Us">
         <section className="hero is-medium">
           <div className="hero-body">

@@ -34,7 +34,7 @@ const precision = (num, precision = 12) => {
 }
 
 const http = axios.create({
-  baseURL: '/static'
+  baseURL: 'https://download.pingcap.com/data/tidbcloud'
 })
 
 const HourlyNodeUsageInfo = () => {
@@ -48,16 +48,8 @@ const HourlyNodeUsageInfo = () => {
   useEffect(() => {
     async function fetchProfiles() {
       try {
-        const aws = (
-          await http.get(
-            'https://download.pingcap.org/data/tidbcloud/aws_profiles.json'
-          )
-        ).data
-        const googleCloud = (
-          await http.get(
-            'https://download.pingcap.org/data/tidbcloud/gcp_profiles.json'
-          )
-        ).data
+        const aws = (await http.get('/aws_profiles.json')).data
+        const googleCloud = (await http.get('/gcp_profiles.json')).data
         setProfiles({ aws, googleCloud })
         setRegion(aws.regions && aws.regions[0] ? aws.regions[0].name : '')
       } catch (error) {
@@ -199,7 +191,7 @@ const TiDBCloudPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Cloud" description="" />
+      <SEO title="TiDB Cloud " description="Fully Managed TiDB service. TiDB Cloud lets you focus on your applications, not the complexities of your database." />
       <main className="PingCAP-TiDBCloud">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -256,7 +248,7 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title column-or-card-title is-spaced">
+                    <h3 className="title column-title is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
@@ -285,7 +277,7 @@ const TiDBCloudPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <h3 className="title column-or-card-title has-text-left is-spaced">
+                    <h3 className="title column-title has-text-left is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
@@ -323,7 +315,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-get-started">
           <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud Now</h2>
+            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
             <StartTrialButton />
           </div>
         </section>

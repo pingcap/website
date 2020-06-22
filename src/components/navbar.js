@@ -6,10 +6,13 @@ import { navbarItems } from '../data/navbar'
 import { Link } from 'gatsby-plugin-intl'
 
 const Navbar = () => {
-  const { BrandSVG } = useStaticQuery(
+  const imageData = useStaticQuery(
     graphql`
       query {
         BrandSVG: file(relativePath: { eq: "pingcap-logo.svg" }) {
+          publicURL
+        }
+        GitHubSVG: file(relativePath: { eq: "github-icon-on-nav.svg" }) {
           publicURL
         }
       }
@@ -51,7 +54,7 @@ const Navbar = () => {
           <Link className="navbar-item with-brand" to="/">
             <img
               className="navbar-brand"
-              src={BrandSVG.publicURL}
+              src={imageData.BrandSVG.publicURL}
               alt="brand"
             />
           </Link>
@@ -99,6 +102,7 @@ const Navbar = () => {
                         key={item.name}
                         href={item.href}
                         className="navbar-item with-main-section"
+                        target="_blank"
                       >
                         {item.name}
                       </a>
@@ -118,6 +122,13 @@ const Navbar = () => {
             ))}
           </div>
           <div className="navbar-end">
+            <a
+              href="https://github.com/pingcap"
+              target="_blank"
+              className="navbar-item with-github-section"
+            >
+              <div className="github-icon"></div>
+            </a>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
@@ -126,7 +137,7 @@ const Navbar = () => {
                 color="primary"
                 rounded
               >
-                Download TiDB
+                DOWNLOAD TiDB
               </Button>
             </div>
           </div>

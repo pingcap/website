@@ -93,15 +93,14 @@ const CaseStudy = ({ data }) => {
                   <div className="destinations">
                     <Button
                       as="a"
-                      color="primary"
                       href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
                       target="_blank"
                       rounded
                     >
-                      Get Started
+                      GET STARTED
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      Contact Us
+                      CONTACT US
                     </Button>
                   </div>
                 </section>

@@ -10,7 +10,7 @@ const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG } = data
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
+      <SEO title="About PingCAP" description="Story about PingCAP, the team behind TiDB" />
       <article className="PingCAP-About">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -47,7 +47,7 @@ const About = ({ data }) => {
               to="/contact-us"
               className="button is-primary is-rounded"
             >
-              Contact Us
+              CONTACT US
             </Button>
           </div>
         </section>

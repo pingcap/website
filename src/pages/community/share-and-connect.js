@@ -12,7 +12,7 @@ const ShareYourStory = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
+      <SEO title="Share Your TiDB Story" description="Share your TiDB Story and connect with our community." />
       <article className="PingCAP-Share-Story">
         <section className="hero is-medium">
           <div className="hero-body">

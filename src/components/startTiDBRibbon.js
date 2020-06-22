@@ -21,10 +21,10 @@ const StartTiDBRibbon = () => {
             inverted
             outlined
           >
-            Contact Us
+            CONTACT US
           </Button>
           <Button className="get-tidb" as={Link} to="/download" rounded>
-            Get TiDB
+            DOWNLOAD TiDB
           </Button>
         </Buttons>
       </div>

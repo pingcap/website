@@ -116,11 +116,11 @@ const Blog = ({ data }) => {
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
-                    <Button as="a" className="get-started" outlined rounded>
-                      Download TiDB
+                    <Button as={Link} to="/download" className="get-started" outlined rounded>
+                      DOWNLOAD TiDB
                     </Button>
-                    <Button as="a" outlined rounded>
-                      Contact Us
+                    <Button as={Link} to="/contact-us" outlined rounded>
+                      CONTACT US
                     </Button>
                   </div>
                 </section>

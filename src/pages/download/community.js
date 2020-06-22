@@ -86,7 +86,7 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
+      <SEO title=" Download TiDB Community " description=""/>
       <article className="PingCAP-Download-TiDB-Enterprise">
         <section className="section">
           <div className="container enterprise-wrapper">
@@ -101,7 +101,7 @@ const Community = ({ data }) => {
                 <h1>Get Started with TiDB</h1>
               </div>
               <div className="title-field">
-                <p>Download the community version</p>
+                <p>Download the community edition</p>
                 <img
                   className="lazy linux-icon"
                   src={linuxIconSVG.publicURL}

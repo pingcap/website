@@ -71,7 +71,7 @@ const CaseStudies = ({ data, path }) => {
 
   return (
     <Layout>
-      <SEO title="Case Studies" description="" />
+      <SEO title="TiDB Case Studies" description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders." />
       <article className="PingCAP-CaseStudies">
         <div className="top-banner-wrapper">
           <Img
@@ -169,7 +169,7 @@ function Logos({ logos }) {
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
             <div className="detail-card">
-              <div className="title column-or-card-title has-text-left">
+              <div className="title column-title has-text-left">
                 {logo.customer}
               </div>
               <div

@@ -4,6 +4,8 @@
 @import '../components/blogHeader';
 @import '../components/blogTags';
 
+$navbar-height: 5.25rem; // 84px
+$navbar-height-mobile: 4.25rem; // 68px
 
 .PingCAP-Blog {
   .section.section-blog {
@@ -123,6 +125,8 @@
     }
 
     .destinations {
+      text-align: center;
+      
       a {
         @include mobile {
           padding: 0 1rem;
@@ -130,6 +134,7 @@
         }
 
         padding: 0 2rem;
+        margin: 1rem;
         color: $primary;
         font-size: $size-6;
         border-color: $primary;
@@ -137,10 +142,6 @@
         &:hover {
           color: #fff;
           background: $primary;
-        }
-
-        &.get-started {
-          margin-right: 4rem;
         }
       }
     }

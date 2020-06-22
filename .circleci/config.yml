@@ -1,0 +1,70 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:13.13.0
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            # https://circleci.com/gh/pingcap/pingcap.github.io/edit#checkout
+            - '48:b3:9a:93:c4:50:31:55:94:45:f1:82:0f:79:3c:e4'
+
+      - checkout
+
+      # Dependencies required for deploy
+      # python3-pip for awscli
+      - run: sudo apt update && sudo apt install rsync python-bs4 python3-pip -y
+
+      # Download and cache dependencies and submodules
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # Fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run:
+          command: yarn download:blogs:prod && yarn build
+          no_output_timeout: 20m
+
+
+      - deploy:
+          name: 'Publish Website Could LA_1_HOST'
+          command :
+              ssh-keyscan "${DEPLOY_UCLOUD_LA_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+
+      - deploy:
+          name: 'Publish Website Could LA_2_HOST'
+          command:
+              ssh-keyscan "${DEPLOY_UCLOUD_LA_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+              curl "http://www.google.com/ping?sitemap=https://pingcap.com/sitemap.xml"
+
+      - deploy:
+          name: 'Publish Website Could BJ_1_HOST'
+          command:
+              ssh-keyscan "${DEPLOY_UCLOUD_BJ_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+        
+      - deploy:
+          name: 'Publish Website Could BJ_2_HOST'
+          command:
+              ssh-keyscan "${DEPLOY_UCLOUD_BJ_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build:
+        filters:
+          branches:
+            only:
+              - master

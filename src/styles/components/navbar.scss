@@ -31,7 +31,7 @@
 
       @include mobile {
         display: none;
-        
+
         &.toggle-drop {
           display: block;
           background: none;
@@ -39,6 +39,10 @@
         }
       }
     }
+  }
+
+  a.navbar-item:hover {
+    background-color: transparent;
   }
 
   .navbar-item {
@@ -69,6 +73,24 @@
 
       &:active {
         background: #e9ecef;
+      }
+    }
+
+    &.with-github-section {
+      .github-icon {
+        width: 30px;
+        height: 30px;
+        background-size: contain;
+
+        background-image: url('../../../images/github-icon-on-nav.svg');
+
+        &:hover {
+          background-image: url('../../../images/github-icon-on-nav-hl.svg');
+        }
+      }
+
+      @include mobile {
+        margin: 0 0.75rem;
       }
     }
 
@@ -114,7 +136,7 @@
       border-radius: 5px;
     }
 
-    width: 140px;
+    width: 155px;
     font-size: $size-7;
   }
 }

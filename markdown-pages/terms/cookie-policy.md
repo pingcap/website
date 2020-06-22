@@ -1,5 +1,6 @@
 ---
 title: Cookie Policy
+summary: Learn about the Cookie Policy on PingCAP sites.
 ---
 
 # Cookie Policy on PingCAP.com

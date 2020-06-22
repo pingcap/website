@@ -116,7 +116,7 @@ const Blogs = ({
 
   return (
     <Layout>
-      <SEO title={title} description="" />
+      <SEO title="TiDB Blog" description="PingCAP blog is where we share everything about TiDB - open-source community, HTAP, distributed SQL, cloud-native, engineering journey, best practices, etc." />
       <article className="PingCAP-Blogs">
         <section className="section section-blogs">
           <div className="container">
