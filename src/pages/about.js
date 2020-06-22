@@ -47,7 +47,7 @@ const About = ({ data }) => {
               to="/contact-us"
               className="button is-primary is-rounded"
             >
-              Contact Us
+              CONTACT US
             </Button>
           </div>
         </section>

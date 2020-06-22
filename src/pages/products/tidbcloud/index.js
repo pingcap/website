@@ -49,12 +49,12 @@ const HourlyNodeUsageInfo = () => {
       try {
         const aws = (
           await http.get(
-            'https://download.pingcap.org/data/tidbcloud/aws_profiles.json'
+            'https://download.pingcap.com/data/tidbcloud/aws_profiles.json'
           )
         ).data
         const googleCloud = (
           await http.get(
-            'https://download.pingcap.org/data/tidbcloud/gcp_profiles.json'
+            'https://download.pingcap.com/data/tidbcloud/gcp_profiles.json'
           )
         ).data
         setProfiles({ aws, googleCloud })
