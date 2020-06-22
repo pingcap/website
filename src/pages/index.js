@@ -1,10 +1,6 @@
 import '../styles/pages/index.scss'
 
-import {
-  Box,
-  Button,
-  withNormalHelpers
-} from '@seagreenio/react-bulma'
+import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
@@ -133,7 +129,10 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB | SQL at Scale" description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"/>
+      <SEO
+        title="TiDB | SQL at Scale"
+        description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"
+      />
       <article className="PingCAP-Home">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -211,15 +210,13 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               {celebrateYourGrowthData.map(d => (
                 <div key={d.name} className="column">
-                  <NormalBox className="outer" shadowless>
+                  <NormalBox className="outer">
                     <img
                       src={d.placeholder}
                       alt={d.name}
                       className="placeholder"
                     />
-                    <h3 className="title is-spaced card-title">
-                      {d.name}
-                    </h3>
+                    <h3 className="title is-spaced card-title">{d.name}</h3>
                     <div className="paragraph has-text-centered">{d.desc}</div>
                   </NormalBox>
                 </div>
@@ -352,15 +349,13 @@ const IndexPage = ({ data }) => {
                     target="_blank"
                     color="primary"
                   >
-                   LEARN HOW
+                    LEARN HOW
                   </Button>
                 </NormalBox>
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">
-                    On Public Cloud
-                  </h3>
+                  <h3 className="title column-title">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo aws">
                     <img src={logos.aws} alt="AWS logo" />
@@ -383,9 +378,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">
-                    Database as a Service
-                  </h3>
+                  <h3 className="title column-title">Database as a Service</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo tidb-cloud">
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />

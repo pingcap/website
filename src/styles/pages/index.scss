@@ -202,6 +202,10 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
     .box {
       padding-top: 0;
 
+      &.outer {
+        background-color: $M1;
+      }
+
       .desc {
         line-height: 1.5;
         text-align: center;
