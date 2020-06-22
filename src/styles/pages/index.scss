@@ -19,8 +19,8 @@
   @include strikethrough($primary);
 }
 
-$logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
-  mi webank;
+$logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
+  hulu qiy netease-games jd-cloud mi webank;
 
 @mixin has-intro-and-placeholder {
   @include mobile {
@@ -230,55 +230,6 @@ $logos: paypay shopee bookmyshow bank-of-beijing hulu qiy netease-games jd-cloud
           @include tablet {
             flex-direction: row-reverse;
           }
-        }
-      }
-    }
-  }
-
-  .section-get-started {
-    background: url(../../../images/home/get-started-with-tidb-banner.svg)
-      center no-repeat;
-    background-size: cover;
-
-    .container {
-      @include mobile {
-        flex-direction: column;
-
-        .title {
-          margin-bottom: 1.5rem !important;
-          text-align: center;
-        }
-      }
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      .title {
-        margin: 0;
-      }
-
-      a {
-        font-size: $size-6;
-
-        &:first-child {
-          margin-right: 2.5rem;
-        }
-
-        &.contact-us,
-        &.get-tidb {
-          &:hover {
-            background: $primary;
-            color: #fff;
-            border-color: $primary;
-          }
-        }
-
-        &.get-tidb {
-          width: 140px;
-          background: #fff;
-          color: $B3;
-          border-color: #fff;
         }
       }
     }
