@@ -18,7 +18,8 @@ const navbarItems = [
   },
   {
     name: 'Docs',
-    href: '/'
+    href: 'https://docs.pingcap.com/tidb/v4.0',
+    outbound: true
   },
   {
     name: 'Blog',

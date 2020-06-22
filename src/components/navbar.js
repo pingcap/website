@@ -5,10 +5,13 @@ import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
 
 const Navbar = () => {
-  const { BrandSVG } = useStaticQuery(
+  const imageData = useStaticQuery(
     graphql`
       query {
         BrandSVG: file(relativePath: { eq: "pingcap-logo.svg" }) {
+          publicURL
+        }
+        GitHubSVG: file(relativePath: { eq: "github-icon-on-nav.svg" }) {
           publicURL
         }
       }
@@ -50,7 +53,7 @@ const Navbar = () => {
           <Link className="navbar-item with-brand" to="/">
             <img
               className="navbar-brand"
-              src={BrandSVG.publicURL}
+              src={imageData.BrandSVG.publicURL}
               alt="brand"
             />
           </Link>
@@ -98,6 +101,7 @@ const Navbar = () => {
                         key={item.name}
                         href={item.href}
                         className="navbar-item with-main-section"
+                        target="_blank"
                       >
                         {item.name}
                       </a>
@@ -117,6 +121,13 @@ const Navbar = () => {
             ))}
           </div>
           <div className="navbar-end">
+            <a
+              href="https://github.com/pingcap"
+              className="navbar-item"
+              target="_blank"
+            >
+              <img src={imageData.GitHubSVG.publicURL} alt="github icon" />
+            </a>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
