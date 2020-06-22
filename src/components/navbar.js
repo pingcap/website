@@ -123,10 +123,10 @@ const Navbar = () => {
           <div className="navbar-end">
             <a
               href="https://github.com/pingcap"
-              className="navbar-item with-main-section"
               target="_blank"
+              className="navbar-item with-github-section"
             >
-              <img src={imageData.GitHubSVG.publicURL} alt="github icon" />
+              <div className="github-icon"></div>
             </a>
             <div className="navbar-item with-get-tidb">
               <Button

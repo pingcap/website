@@ -166,7 +166,7 @@ function Logos({ logos }) {
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
             <div className="detail-card">
-              <div className="title column-or-card-title has-text-left">
+              <div className="title column-title has-text-left">
                 {logo.customer}
               </div>
               <div

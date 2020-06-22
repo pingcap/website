@@ -52,7 +52,7 @@ const Careers = ({ data }) => {
             {workEnv.map(w => (
               <div className="column is-4" key={w.desc}>
                 <img src={w.icon} alt={w.desc} />
-                <p className="column-or-card-title">{w.desc}</p>
+                <p className="column-title">{w.desc}</p>
               </div>
             ))}
           </div>

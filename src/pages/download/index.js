@@ -41,7 +41,7 @@ const Download = ({ data }) => {
                   <div className="column" key={item.title}>
                     <div className="card">
                       <img src={item.icon} alt={item.title} />
-                      <h2 className="column-or-card-title">{item.title}</h2>
+                      <h2 className="column-title">{item.title}</h2>
                       <p>{item.desc}</p>
                       <ul>
                         {item.detailList.map((list, idx) => (

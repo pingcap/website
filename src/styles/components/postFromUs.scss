@@ -30,12 +30,13 @@
     position: relative;
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    width: 50%;
+    width: 40%;
 
     @include mobile {
       width: 100%;
+      justify-content: center;
     }
   }
 }

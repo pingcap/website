@@ -33,7 +33,7 @@ const precision = (num, precision = 12) => {
 }
 
 const http = axios.create({
-  baseURL: '/static'
+  baseURL: 'https://download.pingcap.com/data/tidbcloud'
 })
 
 const HourlyNodeUsageInfo = () => {
@@ -47,16 +47,8 @@ const HourlyNodeUsageInfo = () => {
   useEffect(() => {
     async function fetchProfiles() {
       try {
-        const aws = (
-          await http.get(
-            'https://download.pingcap.com/data/tidbcloud/aws_profiles.json'
-          )
-        ).data
-        const googleCloud = (
-          await http.get(
-            'https://download.pingcap.com/data/tidbcloud/gcp_profiles.json'
-          )
-        ).data
+        const aws = (await http.get('/aws_profiles.json')).data
+        const googleCloud = (await http.get('/gcp_profiles.json')).data
         setProfiles({ aws, googleCloud })
         setRegion(aws.regions && aws.regions[0] ? aws.regions[0].name : '')
       } catch (error) {
@@ -255,7 +247,7 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title column-or-card-title is-spaced">
+                    <h3 className="title column-title is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
@@ -284,7 +276,7 @@ const TiDBCloudPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <h3 className="title column-or-card-title has-text-left is-spaced">
+                    <h3 className="title column-title has-text-left is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
