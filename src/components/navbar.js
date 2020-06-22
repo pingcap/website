@@ -123,7 +123,7 @@ const Navbar = () => {
           <div className="navbar-end">
             <a
               href="https://github.com/pingcap"
-              className="navbar-item"
+              className="navbar-item with-main-section"
               target="_blank"
             >
               <img src={imageData.GitHubSVG.publicURL} alt="github icon" />
