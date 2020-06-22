@@ -217,7 +217,7 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                       className="placeholder"
                     />
-                    <h3 className="title is-spaced column-or-card-title">
+                    <h3 className="title is-spaced card-title">
                       {d.name}
                     </h3>
                     <div className="paragraph has-text-centered">{d.desc}</div>
@@ -248,7 +248,7 @@ const IndexPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <div className="title is-spaced column-or-card-title has-text-left">
+                    <div className="title is-spaced column-title has-text-left">
                       {d.name}
                     </div>
                     <div className="paragraph">{d.desc}</div>
@@ -306,7 +306,7 @@ const IndexPage = ({ data }) => {
                       </figure>
                     </div>
                     <div className="card-content">
-                      <div className="title is-spaced column-or-card-title has-text-left">
+                      <div className="title is-spaced card-title has-text-left">
                         {frontmatter.title}
                       </div>
                       <div className="subtitle card-media-title">
@@ -336,7 +336,7 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-or-card-title">Self-hosted</h3>
+                  <h3 className="title column-title">Self-hosted</h3>
                   <div className="strikethrough-primary" />
 
                   <Box className="logo">
@@ -358,7 +358,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-or-card-title">
+                  <h3 className="title column-title">
                     On Public Cloud
                   </h3>
                   <div className="strikethrough-primary" />
@@ -383,7 +383,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-or-card-title">
+                  <h3 className="title column-title">
                     Database as a Service
                   </h3>
                   <div className="strikethrough-primary" />
