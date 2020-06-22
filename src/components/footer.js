@@ -7,6 +7,7 @@ import React from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
+import { useIntl, changeLocale } from 'gatsby-plugin-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -32,11 +33,13 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const intl = useIntl()
+
   return (
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map(column => (
+          {footerColumns.map((column, i) => (
             <div key={column.name} className="column">
               <div
                 role="button"
@@ -65,6 +68,19 @@ const Footer = () => {
                     )} */}
                   </li>
                 ))}
+                {i === 0 &&
+                  ['en', 'zh']
+                    .filter(lang => lang !== intl.locale)
+                    .map(lang => (
+                      <a
+                        key={lang}
+                        onClick={() => {
+                          changeLocale(lang)
+                        }}
+                      >
+                        {{ en: 'English', zh: '中文' }[lang]}
+                      </a>
+                    ))}
               </ul>
             </div>
           ))}
