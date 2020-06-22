@@ -1,6 +1,12 @@
 @import '../../common';
 
 .PingCAP-TiDB-Community {
+  .section-title {
+    @include mobile {
+      text-align: center !important;
+    }
+  }
+
   .button-white-bg {
     margin: 1rem 1rem 1rem 0;
     padding: 0.5rem 1rem;
