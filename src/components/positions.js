@@ -2,14 +2,14 @@ import '../styles/components/positions.scss'
 
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link, useIntl } from 'gatsby-plugin-intl'
 import { replaceTitle } from '../lib/string'
 
 const Positions = () => {
   let { positions } = useStaticQuery(graphql`
     query {
       positions: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/careers" } } }
+        filter: { fields: { collection: { glob: "markdown-pages/careers/*" } } }
       ) {
         edges {
           node {
@@ -18,13 +18,23 @@ const Positions = () => {
               title
               location
             }
+            fields {
+              collection
+            }
           }
         }
       }
     }
   `)
 
-  positions = positions.edges.map(edge => edge.node.frontmatter)
+  const intl = useIntl()
+
+  positions = positions.edges
+    .map(edge => edge.node)
+    .filter(
+      node => node.fields.collection === `markdown-pages/careers/${intl.locale}`
+    )
+    .map(node => node.frontmatter)
 
   return (
     <div className="PingCAP-Positions columns">

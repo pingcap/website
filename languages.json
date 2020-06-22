@@ -1,0 +1,13 @@
+{
+    "defaultLang": "zh",
+    "languages": [
+        {
+            "name": "en",
+            "displayName": "English"
+        },
+        {
+            "name": "zh",
+            "displayName": "中文"
+        }
+    ]
+}

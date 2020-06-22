@@ -1,4 +1,5 @@
 const purgecssWhitelist = require('./purgecss-whitelist')
+const langConfig = require('./languages.json')
 
 module.exports = {
   siteMetadata: {
@@ -52,13 +53,13 @@ module.exports = {
         path: `${__dirname}/markdown-pages/blogs`
       }
     },
-    {
+    ...langConfig.languages.map(({ name }) => ({
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages/careers',
-        path: `${__dirname}/markdown-pages/careers`
+        name: `markdown-pages/careers/${name}`,
+        path: `${__dirname}/markdown-pages/careers/${name}`
       }
-    },
+    })),
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -110,7 +111,8 @@ module.exports = {
       resolve: `gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/intl`,
-        languages: [`en`, `zh`],
+        languages: langConfig.languages.map(({ name }) => name),
+        ignores: ['/careers/.+'],
         defaultLanguage: `zh`,
         redirect: false
       }

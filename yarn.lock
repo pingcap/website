@@ -6984,10 +6984,8 @@ gatsby-plugin-google-analytics@^2.3.4:
     "@babel/runtime" "^7.10.2"
     minimatch "3.0.4"
 
-gatsby-plugin-intl@^0.3.3:
+gatsby-plugin-intl@../gatsby-plugin-intl:
   version "0.3.3"
-  resolved "https://registry.npm.taobao.org/gatsby-plugin-intl/download/gatsby-plugin-intl-0.3.3.tgz#3a0e55e6641bfcb09fae20215b8f72e2a0ec3de4"
-  integrity sha1-Og5V5mQb/LCfriAhW49y4qDsPeQ=
   dependencies:
     "@babel/runtime" "^7.8.4"
     "@formatjs/intl-pluralrules" "^1.5.2"
