@@ -97,10 +97,10 @@ const CaseStudy = ({ data }) => {
                       target="_blank"
                       rounded
                     >
-                      Get Started
+                      GET STARTED
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      Contact Us
+                      CONTACT US
                     </Button>
                   </div>
                 </section>
