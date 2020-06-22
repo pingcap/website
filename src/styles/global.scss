@@ -105,10 +105,26 @@ body {
   color: $M4
 }
 
-.column-or-card-title {
+// .column-or-card-title {
+//   margin-bottom: 2rem;
+//   text-align: center;
+//   font-size: $size-4;
+//   font-weight: 700;
+//   color: $M3;
+// }
+
+.column-title {
+  font-size: $size-4;
+}
+
+.card-title {
+  font-size: $size-5;
+}
+
+.clumn-title,
+.card-title {
   margin-bottom: 2rem;
   text-align: center;
-  font-size: $size-5;
   font-weight: 700;
   color: $M3;
 }

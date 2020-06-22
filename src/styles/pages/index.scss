@@ -371,10 +371,10 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
   .section-join-us-newsletter {
     .PingCAP-PostFromUs {
-      .button {
-        min-width: 228px;
-      }
       @include mobile {
+        .button {
+          min-width: 228px;
+        }
         flex-direction: column;
         text-align: center;
       }

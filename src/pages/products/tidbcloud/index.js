@@ -247,7 +247,7 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title column-or-card-title is-spaced">
+                    <h3 className="title column-title is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
@@ -276,7 +276,7 @@ const TiDBCloudPage = ({ data }) => {
                   </div>
                   <div className="divider" />
                   <div className="intro">
-                    <h3 className="title column-or-card-title has-text-left is-spaced">
+                    <h3 className="title column-title has-text-left is-spaced">
                       {d.name}
                     </h3>
                     <p className="paragraph">{d.desc}</p>
