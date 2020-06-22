@@ -1,15 +1,35 @@
 @import '../common';
 
 .PingCAP-Cookie-Consent {
-
-    max-width: 1344px;
   .CookieConsent {
     display: block !important;
     text-align: center;
+    background: $B4 !important;
+
+    .content {
+      max-width: 1344px;
+      margin: 2rem auto !important;
+      font-size: $size-8;
+
+      a {
+        color: $B1;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
 
     .decline-button {
-      background-color: $M1 !important;
       color: $M4 !important;
+      background-color: $M1 !important;
+      border-radius: 4px !important;
+    }
+
+    .accept-button {
+      color: $M1 !important;
+      background: $B1 !important;
+      border-radius: 4px !important;
     }
   }
 }
