@@ -322,7 +322,7 @@ const TiDBCloudPage = ({ data }) => {
 
         <section className="section section-get-started">
           <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud Now</h2>
+            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
             <StartTrialButton />
           </div>
         </section>
