@@ -222,7 +222,7 @@ const TiDBCloudPage = ({ data }) => {
                   Already have an account?{' '}
                   <a
                     className="link-with-underline"
-                    href="https://trial.tidbcloud.com/"
+                    href="https://tidbcloud.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

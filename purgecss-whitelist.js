@@ -1,5 +1,6 @@
 const logos = [
-  'JD-Cloud',
+  'VNG',
+  'JD-Cloud-&-AI',
   'Zhihu',
   'Xiaomi',
   'BookMyShow',
@@ -28,10 +29,15 @@ const logos = [
   'FUNYOURS-JAPAN',
   'Bank-of-Beijing',
   'Ping--',
-  '----Finance',
+  '----Finance'
 ].map(logo => logo + '-logo')
 
 const homeLogos = [
+  'lenovo',
+  'tecent',
+  'oppo',
+  'bigo',
+  'blued',
   'paypay',
   'shopee',
   'bookmyshow',
@@ -41,7 +47,7 @@ const homeLogos = [
   'netease-games',
   'jd-cloud',
   'mi',
-  'webank',
+  'webank'
 ].map(logo => logo + '-logo')
 
 module.exports = [...logos, ...homeLogos]

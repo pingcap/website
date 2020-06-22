@@ -53,14 +53,20 @@
     h5,
     h6 {
       border-bottom: none;
-      &:first-child {
-        @include mobile {
-          margin-top: -$navbar-height-mobile !important;
-          padding-top: $navbar-height-mobile;
-        }
 
-        margin-top: -$navbar-height !important;
-        padding-top: $navbar-height;
+      &:target:before {
+        content: '';
+        display: block;
+        height: $navbar-height;
+        margin-top: -$navbar-height;
+      }
+
+      &:target > a.anchor.before {
+        transform: translate(-10%, $navbar-height);
+
+        @include mobile {
+          transform: translate(0, $navbar-height);
+        }
       }
     }
 
@@ -84,8 +90,11 @@
       color: $primary;
 
       &.anchor {
-        @include mobile {
-          margin-left: 0;
+        &.before {
+          transform: translateX(-10%);
+          @include mobile {
+            transform: translateX(0);
+          }
         }
       }
     }
@@ -93,10 +102,6 @@
     ul {
       list-style: inherit;
     }
-  }
-
-  .position-content {
-
   }
 
   .get-started-with-tidb {

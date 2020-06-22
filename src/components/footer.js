@@ -1,10 +1,11 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import AddIcon from '@material-ui/icons/Add'
-import LanguageIcon from '@material-ui/icons/Language'
+// import LanguageIcon from '@material-ui/icons/Language'
 import React from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
+import BoundLink from './boundLink'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -51,13 +52,16 @@ const Footer = () => {
               <ul className="items">
                 {column.items.map(item => (
                   <li key={item.name}>
-                    {item.outbound ? (
+                    <BoundLink to={item.link} outbound={item.outbound}>
+                      {item.name}
+                    </BoundLink>
+                    {/* {item.outbound ? (
                       <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
                     ) : (
                       <Link to={item.link} onTouchStart={() => {}}>
                         {item.name}
                       </Link>
-                    )}
+                    )} */}
                   </li>
                 ))}
               </ul>
