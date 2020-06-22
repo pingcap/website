@@ -41,7 +41,7 @@ const PostFromUs = () => (
       target="_blank"
       color="primary"
     >
-      Subscribe
+      SUBSCRIBE
     </Button>
   </NormalBox>
 )
@@ -67,7 +67,7 @@ export const PostFromUsInHome = () => (
         target="_blank"
         color="primary"
       >
-        Subscribe
+        SUBSCRIBE
       </Button>
     </div>
   </NormalBox>

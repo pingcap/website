@@ -4,7 +4,7 @@ import enterpriseSubscriptionSVG from '../../images/download/enterprise-subscrip
 const downloadTiDB = [
     {
         icon: communityEditionSVG,
-        title: 'Open Source Download',
+        title: 'Community Edition',
         desc: 'Core components (TiDB, TiKV, PD) and ecosystem tools',
         detailList: [
             'Distributed SQL with horizontal scalability',

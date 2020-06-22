@@ -12,7 +12,7 @@ const Careers = ({ data }) => {
   const { careerHeroSVG } = data
   return (
     <Layout>
-      <SEO title="Careers" description="" />
+      <SEO title="Careers" description="Join us in building a database of the future, made by developers, for developers." />
       <article className="PingCAP-Careers">
         <section className="hero is-medium">
           <div className="hero-body">

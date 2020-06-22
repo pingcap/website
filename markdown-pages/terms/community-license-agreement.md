@@ -1,12 +1,13 @@
 ---
 title: Community Software License Agreement
+summary: Learn about the PingCAP Community Software License Agreement to be applied when you download or use PingCAP Community Software.
 ---
 
 # PingCAP Community Software License Agreement
 
 PLEASE READ THESE TERMS AND CONDITIONS (ESPECIALLY THE CONTENT HIGHLIGHTED IN BOLD) CAREFULLY BEFORE DOWNLOADING OR USING THE SOFTWARE ACCOMPANYING THIS AGREEMENT. BY USING THE SOFTWARE OR BY CLICKING A BUTTON MARKED “I ACCEPT” OR SOMETHING SIMILAR, YOU AGREE TO USE THE SOFTWARE SOLELY IN ACCORDANCE WITH THE FOLLOWING TERMS AND CONDITIONS OF THIS AGREEMENT.
 
-This PingCAP Community Software License Agreement (this “Agreement”) is a legally binding contract between you and Beijing PingCAP Xingchen Technology and Development Co., Ltd. (hereinafter referred as “PingCAP”, PingCAP and its affiliates hereinafter referred as “PingCAP Group”) and governs your use of the PingCAP Community Software (as defined below). “PingCAP Community Software”, means the community software provided by PingCAP Group, including but not limited to TiDB (community edition), TiFlash Columnstore (community edition), TiSpark (community edition), TiDB Tools and Utilities (community edition), and any TiDB community services or updates for the foregoing software, in addition to all versions of PingCAP’s community software described in section 1 of this Agreement below.
+This PingCAP Community Software License Agreement (this “Agreement”) is a legally binding contract between you and PingCAP (US), Inc. (hereinafter referred as “PingCAP”, PingCAP and its affiliates hereinafter referred as “PingCAP Group”) and governs your use of the PingCAP Community Software (as defined below). “PingCAP Community Software”, means the community software provided by PingCAP Group, including but not limited to TiDB (community edition), TiFlash Columnstore (community edition), TiSpark (community edition), TiDB Tools and Utilities (community edition), and any TiDB community services or updates for the foregoing software, in addition to all versions of PingCAP’s community software described in section 1 of this Agreement below.
 
 **BY INSTALLING OR OTHERWISE USING THE PINGCAP COMMUNITY SOFTWARE OR BY CLICKING A BUTTON MARKED “I ACCEPT”, YOU AGREE TO THE TERMS OF THIS AGREEMENT AND YOU AGREE TO BE BOUND BY THIS AGREEMENT AS OF THE DATE OF SUCH INSTALLMENT OR USE OF THE PINGCAP COMMUNITY SOFTWARE OR THE DATE OF CLICKING A BUTTON MARKED “I ACCEPT” (WHICH DATE IS EARLIEST)**.
 

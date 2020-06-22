@@ -10,7 +10,7 @@ import { Button } from '@seagreenio/react-bulma'
 const ContactUs = () => {
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
+      <SEO title="Contact " description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics" />
       <article className="PingCAP-Contact-Us">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -18,9 +18,7 @@ const ContactUs = () => {
               <h1 className="title section-title">Contact PingCAP</h1>
               <div className="subtitle-under-main-title">
                 Thanks for your interest in TiDB. Please take a minute to fill
-                out the form below and we will get back to you shortly. If you
-                are an existing customer and need our support, please contact
-                Enterprise Support (https://www.pingcap.com/support)
+                out the form below and we will get back to you shortly.
               </div>
               <Button
                 as="a"
