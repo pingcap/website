@@ -2,7 +2,7 @@ import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link, useIntl } from 'gatsby-plugin-intl'
 import React, { useEffect } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 
@@ -14,7 +14,7 @@ import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
 
-const CaseStudies = ({ data }) => {
+const CaseStudies = ({ data, path }) => {
   const {
     BannerSVG,
     quoteMarkSVG,
@@ -66,6 +66,8 @@ const CaseStudies = ({ data }) => {
       }
     })
   }, [])
+
+  const base = path.substring(0, path.indexOf('/case-studies'))
 
   return (
     <Layout>
@@ -143,7 +145,7 @@ const CaseStudies = ({ data }) => {
               </Link>
             ))}
           </div>
-          <Router basepath="/case-studies">
+          <Router basepath={`${base}/case-studies`}>
             <Logos key="/" path="/" logos={studiesByCategory[0].studies} />
             {studiesByCategory.map(r => (
               <Logos
