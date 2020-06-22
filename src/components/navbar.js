@@ -1,8 +1,9 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
+import { Link } from 'gatsby-plugin-intl'
 
 const Navbar = () => {
   const { BrandSVG } = useStaticQuery(

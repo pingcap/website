@@ -3,7 +3,8 @@ import '../../styles/pages/download/community.scss'
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -38,8 +39,10 @@ const Community = ({ data }) => {
       errMsg.push('agreement check')
     }
 
-    if(errMsg.length === 0) {
-      setDownloadURL(`https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`)
+    if (errMsg.length === 0) {
+      setDownloadURL(
+        `https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`
+      )
     } else {
       setDownloadURL('')
     }
@@ -79,7 +82,7 @@ const Community = ({ data }) => {
 
   useEffect(() => {
     validateForm()
-  },[selVersion, selPkg, termsChecked])
+  }, [selVersion, selPkg, termsChecked])
 
   return (
     <Layout>

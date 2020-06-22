@@ -1,6 +1,7 @@
 import '../styles/templates/blogs.scss'
 
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from './blogHeader'
@@ -17,14 +18,14 @@ const Blogs = ({
   pageContext,
   PaginationPathPrefix,
   isTagPage,
-  isCategoryPage,
+  isCategoryPage
 }) => {
   const blogs = data.allMarkdownRemark.edges
   const {
     currentPage,
     numPages,
     tag: currentTag,
-    category: currentCategory,
+    category: currentCategory
   } = pageContext
 
   const title = isTagPage

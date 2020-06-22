@@ -1,4 +1,4 @@
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import React from 'react'
 
 const Pagination = ({ pathPrefix, currentPage, numPages }) => (
@@ -11,7 +11,7 @@ const Pagination = ({ pathPrefix, currentPage, numPages }) => (
       {[
         ...Array(
           currentPage + 2 < numPages ? currentPage + 2 : numPages - 1
-        ).keys(),
+        ).keys()
       ]
         .map(i => i + 1)
         .map(i => (

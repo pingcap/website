@@ -1,6 +1,6 @@
 import CreateIcon from '@material-ui/icons/CreateOutlined'
 import DateRangeIcon from '@material-ui/icons/DateRange'
-import { Link } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { replaceTitle } from '../lib/string'
@@ -9,7 +9,7 @@ const BlogHeader = ({
   frontmatter,
   isTitleLink,
   withIcon = true,
-  isCaseStudy = false,
+  isCaseStudy = false
 }) => {
   const { title, date, author, customer } = frontmatter
   const category = isCaseStudy
@@ -48,9 +48,9 @@ BlogHeader.propTypes = {
   frontmatter: PropTypes.shape({
     title: PropTypes.string,
     date: PropTypes.string,
-    author: PropTypes.array,
+    author: PropTypes.array
   }),
-  isTitleLink: PropTypes.bool,
+  isTitleLink: PropTypes.bool
 }
 
 export default BlogHeader

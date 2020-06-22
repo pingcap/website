@@ -1,7 +1,8 @@
 import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import React, { useEffect } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 
@@ -85,7 +86,7 @@ const CaseStudies = ({ data }) => {
         </div>
         <div className="container section">
           <h2 className="title section-title title-under-banner">
-           Featured Testimonials
+            Featured Testimonials
           </h2>
           <div className="card swiper-container">
             <div className="swiper-wrapper top">

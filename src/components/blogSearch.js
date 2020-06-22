@@ -1,4 +1,5 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import React, { useState } from 'react'
 
 import SearchIcon from '@material-ui/icons/Search'

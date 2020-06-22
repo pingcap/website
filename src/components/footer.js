@@ -1,4 +1,5 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 
 import AddIcon from '@material-ui/icons/Add'
 // import LanguageIcon from '@material-ui/icons/Language'

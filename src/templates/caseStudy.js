@@ -1,4 +1,5 @@
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import { Link } from 'gatsby-plugin-intl'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
