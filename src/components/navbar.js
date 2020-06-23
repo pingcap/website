@@ -76,7 +76,9 @@ const Navbar = () => {
                 {item.dropdown ? (
                   <div
                     role="navigation"
-                    className="navbar-item has-dropdown is-hoverable with-main-section"
+                    className={`navbar-item has-dropdown is-hoverable with-main-section ${
+                      burgerActive ? '' : 'hide-burger'
+                    }"`}
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >

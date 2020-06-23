@@ -29,6 +29,10 @@
         }
       }
 
+      .hide-burger {
+        display: none;
+      }
+
       @include mobile {
         display: none;
 
