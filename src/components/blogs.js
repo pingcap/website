@@ -35,19 +35,7 @@ const Blogs = ({
     ? pageContext.category
     : 'Blogs'
 
-  const query = useStaticQuery(graphql`
-    query {
-      categories: allMarkdownRemark(
-        filter: { frontmatter: { customer: { eq: null } } }
-      ) {
-        group(field: frontmatter___categories) {
-          category: fieldValue
-        }
-      }
-    }
-  `)
-
-  const categories = query.categories.group.map(i => i.category)
+  const categories = data.categories.group.map(i => i.category)
   const tags = data.tags.group.map(i => i.tag)
 
   const [showCategories, setShowCategories] = useState(true)

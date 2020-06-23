@@ -47,6 +47,13 @@ export const query = graphql`
         tag: fieldValue
       }
     }
+    categories: allMarkdownRemark(
+      filter: { frontmatter: { customer: { eq: null } } }
+    ) {
+      group(field: frontmatter___categories) {
+        category: fieldValue
+      }
+    }
   }
 `
 

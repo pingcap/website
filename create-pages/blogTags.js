@@ -7,20 +7,20 @@ const createBlogTags = async ({ graphql, createPage }) => {
   )
   for (const { name: lang } of langConfig.languages) {
     const result = await graphql(`
-    query {
-      tags: allMarkdownRemark(
-        filter: { frontmatter: {
-          customer: { eq: null }
-          locale: { eq: "${lang}" }
-        } }
-      ) {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
-          totalCount
+      query {
+        tags: allMarkdownRemark(
+          filter: { frontmatter: {
+            customer: { eq: null }
+            locale: { eq: "${lang}" }
+          } }
+        ) {
+          group(field: frontmatter___tags) {
+            tag: fieldValue
+            totalCount
+          }
         }
       }
-    }
-  `)
+    `)
 
     const tags = result.data.tags.group
     const blogsPerPage = 6
