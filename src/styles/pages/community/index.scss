@@ -91,6 +91,8 @@
     .buttons {
       display: flex;
       flex-wrap: row wrap;
+      font-size: $size-6;
+      letter-spacing: 1px;
     }
   }
 

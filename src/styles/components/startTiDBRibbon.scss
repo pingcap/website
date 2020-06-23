@@ -43,6 +43,9 @@
 
           &.contact-us,
           &.get-tidb {
+            font-size: $size-7;
+            letter-spacing: 1px;
+
             &:hover {
               background: $primary;
               color: #fff;
