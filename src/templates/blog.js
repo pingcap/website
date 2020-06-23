@@ -11,10 +11,9 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 
-const Blog = ({ data, pageContext }) => {
+const Blog = ({ data }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  const filePath = { pageContext }
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
@@ -107,7 +106,7 @@ const Blog = ({ data, pageContext }) => {
                   <span> > </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath}/>
+                <BlogHeader frontmatter={frontmatter} />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -141,7 +140,6 @@ const Blog = ({ data, pageContext }) => {
                         <BlogHeader
                           key={blog.frontmatter.title}
                           frontmatter={blog.frontmatter}
-                          filePath={blog.parent.relativePath}
                           isTitleLink
                           withIcon={false}
                         />
@@ -196,11 +194,6 @@ export const query = graphql`
             author
             tags
             categories
-          }
-          parent {
-            ... on File {
-              relativePath
-            }
           }
         }
       }
