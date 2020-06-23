@@ -38,6 +38,15 @@ export const query = graphql`
         }
       }
     }
+    tags: allMarkdownRemark(
+      filter: {
+        frontmatter: { customer: { eq: null }, locale: { eq: $language } }
+      }
+    ) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
+      }
+    }
   }
 `
 

@@ -1,7 +1,7 @@
 import '../styles/pages/index.scss'
 
 import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
-import { graphql, navigate, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
@@ -12,7 +12,7 @@ import { replaceTitle } from '../lib/string'
 import SectionUseCases from '../components/sectionUseCases'
 import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
-import { useIntl } from 'gatsby-plugin-intl'
+import { navigate } from 'gatsby-plugin-intl'
 
 const NormalBox = withNormalHelpers(Box)
 

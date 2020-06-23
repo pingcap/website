@@ -20,6 +20,7 @@ const Blogs = ({
   isTagPage,
   isCategoryPage
 }) => {
+  console.log(data)
   const blogs = data.allMarkdownRemark.edges
   const {
     currentPage,
@@ -43,18 +44,11 @@ const Blogs = ({
           category: fieldValue
         }
       }
-      tags: allMarkdownRemark(
-        filter: { frontmatter: { customer: { eq: null } } }
-      ) {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
-        }
-      }
     }
   `)
 
   const categories = query.categories.group.map(i => i.category)
-  const tags = query.tags.group.map(i => i.tag)
+  const tags = data.tags.group.map(i => i.tag)
 
   const [showCategories, setShowCategories] = useState(true)
 
