@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link, useIntl } from 'gatsby-plugin-intl'
 import React, { useState } from 'react'
 
 import SearchIcon from '@material-ui/icons/Search'
@@ -20,6 +20,7 @@ const BlogSearch = ({ className }) => {
           node {
             frontmatter {
               title
+              locale
             }
           }
         }
@@ -34,15 +35,19 @@ const BlogSearch = ({ className }) => {
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState(null)
 
+  const intl = useIntl()
+
   const handleSearchOnChange = e => {
     const value = e.target.value
 
     setSearch(value)
 
     if (value.length > 3) {
-      const results = blogs.filter(blog =>
-        blog.frontmatter.title.toLowerCase().includes(value.toLowerCase())
-      )
+      const results = blogs
+        .filter(blog => blog.frontmatter.locale === intl.locale)
+        .filter(blog =>
+          blog.frontmatter.title.toLowerCase().includes(value.toLowerCase())
+        )
 
       setWithPanel(results.length > 0)
       setSearchResults(results.length ? results : null)

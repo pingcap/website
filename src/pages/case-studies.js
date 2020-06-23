@@ -22,9 +22,11 @@ const CaseStudies = ({ data, path }) => {
     caseStudies,
     caseStudiesWithoutReadMore
   } = data
+  const intl = useIntl()
   const categoriesOfStudies = [
     ...new Set(
       caseStudies.edges
+        .filter(({ node }) => node.frontmatter.locale === intl.locale)
         .map(({ node }) => node.frontmatter.customerCategory)
         .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
     )
@@ -212,7 +214,7 @@ export const query = graphql`
     }
     caseStudies: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { glob: "markdown-pages/blogs/*" } }
         frontmatter: { customer: { ne: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -225,6 +227,9 @@ export const query = graphql`
             customer
             customerCategory
             summary
+          }
+          fields {
+            collection
           }
         }
       }

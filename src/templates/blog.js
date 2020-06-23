@@ -167,7 +167,7 @@ const Blog = ({ data }) => {
 }
 
 export const query = graphql`
-  query($title: String) {
+  query($title: String, $language: String!) {
     markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
@@ -183,7 +183,7 @@ export const query = graphql`
     blogs: allMarkdownRemark(
       filter: {
         fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { customer: { eq: null } }
+        frontmatter: { customer: { eq: null }, locale: { eq: $language } }
       }
       limit: 1000
     ) {

@@ -12,11 +12,15 @@ const BlogCategories = ({ data, pageContext }) => (
 )
 
 export const query = graphql`
-  query($category: String, $limit: Int!, $skip: Int!) {
+  query($category: String, $limit: Int!, $skip: Int!, $language: String!) {
     allMarkdownRemark(
       filter: {
         fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { categories: { in: [$category] }, customer: { eq: null } }
+        frontmatter: {
+          categories: { in: [$category] }
+          customer: { eq: null }
+          locale: { eq: $language }
+        }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
@@ -32,6 +36,7 @@ export const query = graphql`
             categories
             summary
             image
+            locale
           }
         }
       }

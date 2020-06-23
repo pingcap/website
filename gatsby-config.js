@@ -112,7 +112,7 @@ module.exports = {
       options: {
         path: `${__dirname}/src/intl`,
         languages: langConfig.languages.map(({ name }) => name),
-        ignores: ['/careers/.+'],
+        ignores: ['/careers/.+', '/blog.*'],
         defaultLanguage: `zh`,
         redirect: false
       }

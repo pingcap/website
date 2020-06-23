@@ -19,6 +19,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
             frontmatter {
               title
               customerCategory
+              locale
             }
           }
         }
@@ -38,8 +39,8 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       path: `case-studies/${replaceTitle(node.frontmatter.title)}`,
       component: caseStudyTemplate,
       context: {
-        title: node.frontmatter.title,
-      },
+        title: node.frontmatter.title
+      }
     })
   })
 
@@ -50,7 +51,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
         .concat(
           data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name)
         )
-    ),
+    )
   ]
   categoriesOfStudies.forEach(c => {
     const pagePath = `case-studies/${c.split(' ').join('-')}`
@@ -58,7 +59,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
     createPage({
       path: pagePath,
       matchPath: pagePath,
-      component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
+      component: path.resolve(`${__dirname}/../src/pages/case-studies.js`)
     })
   })
 }
