@@ -94,10 +94,7 @@ const CaseStudies = ({ data }) => {
             <div className="swiper-wrapper top">
               {caseStudies.edges
                 .slice(0, 3)
-                .map(({ node }) => ({
-                  ...node.frontmatter,
-                  ...(node.parent ? { relativePath: node.parent.relativePath } : {})
-                }))
+                .map(({ node }) => node.frontmatter)
                 .map(study => (
                   <div key={study.customer} className="swiper-slide">
                     <div className="intro">
@@ -106,7 +103,7 @@ const CaseStudies = ({ data }) => {
                         {truncate.apply(study.summary, [250, true])}
                       </div>
                       <Link
-                        to={`/case-studies/${replaceTitle(study.relativePath)}`}
+                        to={`/case-studies/${replaceTitle(study.title)}`}
                         className="see-case-study"
                       >
                         See case study
@@ -168,10 +165,7 @@ function Logos({ logos }) {
   return (
     <div className="columns is-multiline logos">
       {logos
-        .map(({ node }) => ({
-          ...node.frontmatter,
-          ...(node.parent ? { relativePath: node.parent.relativePath } : {})
-        }))
+        .map(({ node }) => node.frontmatter)
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
             <div className="detail-card">
@@ -184,9 +178,9 @@ function Logos({ logos }) {
               <div className="paragraph">
                 {truncate.apply(logo.summary, [200, true])}
               </div>
-              {logo.relativePath && (
+              {logo.title && (
                 <Link
-                  to={`/case-studies/${replaceTitle(logo.relativePath)}`}
+                  to={`/case-studies/${replaceTitle(logo.title)}`}
                   className="read-more"
                 >
                   Read more >
@@ -231,11 +225,6 @@ export const query = graphql`
             customer
             customerCategory
             summary
-          }
-          parent {
-            ... on File {
-              relativePath
-            }
           }
         }
       }
