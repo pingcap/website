@@ -7,9 +7,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 
-const CaseStudy = ({ data }) => {
+const CaseStudy = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
+  const filePath = { pageContext }
   const category = frontmatter.customerCategory
 
   const [showProgress, setShowProgress] = useState(false)
@@ -82,7 +83,7 @@ const CaseStudy = ({ data }) => {
                   <span> > </span>
                   <Link to={`/case-studies/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} isCaseStudy />
+                <BlogHeader frontmatter={frontmatter} filePath={filePath} isCaseStudy />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}

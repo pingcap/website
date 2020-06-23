@@ -17,6 +17,11 @@ const createBlogs = async ({ graphql, createPage }) => {
             frontmatter {
               title
             }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
           }
         }
       }
@@ -25,10 +30,11 @@ const createBlogs = async ({ graphql, createPage }) => {
 
   result.data.blogs.edges.forEach(({ node }) => {
     createPage({
-      path: `blog/${replaceTitle(node.frontmatter.title)}`,
+      path: `blog/${replaceTitle(node.parent.relativePath)}`,
       component: blogTemplate,
       context: {
         title: node.frontmatter.title,
+        filePath: `${replaceTitle(node.parent.relativePath)}`
       },
     })
   })

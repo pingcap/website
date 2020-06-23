@@ -20,6 +20,11 @@ const createCaseStudies = async ({ graphql, createPage }) => {
               title
               customerCategory
             }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
           }
         }
       }
@@ -35,7 +40,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
 
   data.caseStudies.edges.forEach(({ node }) => {
     createPage({
-      path: `case-studies/${replaceTitle(node.frontmatter.title)}`,
+      path: `case-studies/${replaceTitle(node.parent.relativePath)}`,
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
