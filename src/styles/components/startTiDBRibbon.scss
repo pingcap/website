@@ -1,52 +1,63 @@
 @import '../common';
 
 .PingCAP-Start-TiDB-ribbon {
-    &.section-get-started {
-        background: url(../../../images/home/get-started-with-tidb-banner.svg)
-          center no-repeat;
-        background-size: cover;
-    
-        .container {
+  &.section-get-started {
+    background: url(../../../images/home/get-started-with-tidb-banner.svg)
+      center no-repeat;
+    background-size: cover;
+
+    .container {
+      @include mobile {
+        flex-direction: column;
+
+        .title {
+          margin-bottom: 1.5rem !important;
+          text-align: center;
+        }
+      }
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .title {
+        margin: 0;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+
+        a {
+          font-size: $size-6;
+
           @include mobile {
-            flex-direction: column;
-    
-            .title {
-              margin-bottom: 1.5rem !important;
-              text-align: center;
-            }
-          }
-    
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-    
-          .title {
-            margin: 0;
-          }
-    
-          a {
-            font-size: $size-6;
-    
             &:first-child {
-              margin-right: 2.5rem;
+              margin: 0 1rem 0.5rem !important;
             }
-    
-            &.contact-us,
-            &.get-tidb {
-              &:hover {
-                background: $primary;
-                color: #fff;
-                border-color: $primary;
-              }
+          }
+
+          &:first-child {
+            margin-right: 2.5rem;
+          }
+
+          &.contact-us,
+          &.get-tidb {
+            &:hover {
+              background: $primary;
+              color: #fff;
+              border-color: $primary;
             }
-    
-            &.get-tidb {
-              width: 140px;
-              background: #fff;
-              color: $B3;
-              border-color: #fff;
-            }
+          }
+
+          &.get-tidb {
+            width: 160px;
+            background: #fff;
+            color: $B3;
+            border-color: #fff;
           }
         }
       }
+    }
+  }
 }
