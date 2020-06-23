@@ -286,17 +286,17 @@ const IndexPage = ({ data }) => {
               Learn More in Engineering Blogs
             </h2>
             <div className="columns is-variable is-6">
-              {last3Blogs.edges.map(({ node: { frontmatter } }) => (
+              {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
                 <div key={frontmatter.title} className="column">
                   <div
                     role="button"
                     tabIndex={0}
                     className="card"
                     onClick={onCardClick(
-                      `/blog/${replaceTitle(frontmatter.title)}`
+                      `/blog/${replaceTitle(parent.relativePath)}`
                     )}
                     onKeyDown={onCardClick(
-                      `/blog/${replaceTitle(frontmatter.title)}`
+                      `/blog/${replaceTitle(parent.relativePath)}`
                     )}
                   >
                     <div className="card-image">
