@@ -7,6 +7,7 @@ import { replaceTitle } from '../lib/string'
 
 const BlogHeader = ({
   frontmatter,
+  filePath,
   isTitleLink,
   withIcon = true,
   isCaseStudy = false,
@@ -22,7 +23,7 @@ const BlogHeader = ({
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
         <h2 className="title is-4 is-spaced blog-link-title">
-          <Link to={`/blog/${replaceTitle(title)}`}>{title}</Link>
+          <Link to={`/blog/${replaceTitle(filePath)}`}>{title}</Link>
         </h2>
       ) : (
         <h2 className="title is-4 is-spaced blog-title">{title}</h2>

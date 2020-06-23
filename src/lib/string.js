@@ -13,5 +13,9 @@ export function truncate(n, useWordBoundary = false) {
 }
 
 export function replaceTitle(title) {
-  return title.replace(/[^\w-]/g, '-')
+  if (title.endsWith('.md')) {
+    return title.replace('.md', '')
+  } else {
+    return title.replace(/[^\w-]/g, '-')
+  }
 }
