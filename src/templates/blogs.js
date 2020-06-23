@@ -32,6 +32,11 @@ export const query = graphql`
             summary
             image
           }
+          parent {
+            ... on File {
+              relativePath
+            }
+          }
         }
       }
     }

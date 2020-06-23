@@ -29,6 +29,7 @@ const createPositions = async ({ graphql, createPage }) => {
   `)
 
   result.data.blogs.edges.forEach(({ node }) => {
+    console.log(node.parent.relativePath)
     createPage({
       path: `/${replaceTitle(node.parent.relativePath)}`,
       component: policyTermsTemplate,

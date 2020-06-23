@@ -125,7 +125,7 @@ const Blogs = ({
                 <CategoriesAndTags isDesktop={false} />
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
-                    <BlogHeader frontmatter={node.frontmatter} isTitleLink />
+                    <BlogHeader frontmatter={node.frontmatter} filePath={node.parent.relativePath} isTitleLink />
                     {node.frontmatter.image && (
                       <img
                         className="banner"

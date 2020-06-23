@@ -16,6 +16,11 @@ const createPositions = async ({ graphql, createPage }) => {
             frontmatter {
               title
             }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
           }
         }
       }
@@ -24,7 +29,7 @@ const createPositions = async ({ graphql, createPage }) => {
 
   result.data.blogs.edges.forEach(({ node }) => {
     createPage({
-      path: `careers/${replaceTitle(node.frontmatter.title)}`,
+      path: `careers/${replaceTitle(node.parent.relativePath)}`,
       component: positionTemplate,
       context: {
         title: node.frontmatter.title,
