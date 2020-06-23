@@ -13,7 +13,7 @@ import tidbCloud from '../../images/home/logos/tidb-cloud.svg'
 
 const celebrateYourGrowthData = [
   {
-    name: 'True Open-source, No Lock-in',
+    name: 'Open-source under Apache 2, No Lock-in',
     desc:
       'Supported by a wealth of open-source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
     placeholder: c1SVG
@@ -27,7 +27,7 @@ const celebrateYourGrowthData = [
   {
     name: 'Real-time Analytics',
     desc:
-      'The true open source HTAP database platform that enables real-time situation awareness and decision making on live transactional data and eliminates friction between IT and business goals.',
+      'HTAP database platform that enables real-time situation awareness and decision making on live transactional data and eliminates friction between IT and business goals.',
     placeholder: c3SVG
   }
 ]
