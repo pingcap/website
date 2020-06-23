@@ -134,7 +134,7 @@ const Blog = ({ data }) => {
                 </div>
                 {relatedBlogsRef && (
                   <div className="related-blog">
-                    <h3 className="title is-6">Related blog</h3>
+                    <h3 className="title is-6">Related posts</h3>
                     <div className="blogs">
                       {relatedBlogsRef.map(blog => (
                         <BlogHeader
