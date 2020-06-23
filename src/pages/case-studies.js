@@ -68,7 +68,10 @@ const CaseStudies = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Case Studies" description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders." />
+      <SEO
+        title="TiDB Case Studies"
+        description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders."
+      />
       <article className="PingCAP-CaseStudies">
         <div className="top-banner-wrapper">
           <Img
@@ -85,7 +88,7 @@ const CaseStudies = ({ data }) => {
         </div>
         <div className="container section">
           <h2 className="title section-title title-under-banner">
-           Featured Testimonials
+            Featured Testimonials
           </h2>
           <div className="card swiper-container">
             <div className="swiper-wrapper top">
@@ -186,7 +189,7 @@ function Logos({ logos }) {
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s]/g, '-')}-logo`}
+                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
               />
               <div className="title is-6">{logo.customer}</div>
             </div>

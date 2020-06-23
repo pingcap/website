@@ -1,6 +1,6 @@
 const logos = [
   'VNG',
-  'JD-Cloud-&-AI',
+  'JD-Cloud---AI',
   'Zhihu',
   'Xiaomi',
   'BookMyShow',
@@ -47,7 +47,12 @@ const homeLogos = [
   'netease-games',
   'jd-cloud',
   'mi',
-  'webank'
+  'webank',
+  'zalopay',
+  'unext',
+  'wuba',
+  'zhihu',
+  'meituan'
 ].map(logo => logo + '-logo')
 
 module.exports = [...logos, ...homeLogos]

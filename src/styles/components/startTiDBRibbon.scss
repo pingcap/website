@@ -33,7 +33,7 @@
 
           @include mobile {
             &:first-child {
-              margin: 1rem !important;
+              margin: 0 1rem 0.5rem !important;
             }
           }
 
@@ -43,6 +43,9 @@
 
           &.contact-us,
           &.get-tidb {
+            font-size: $size-7;
+            letter-spacing: 1px;
+
             &:hover {
               background: $primary;
               color: #fff;

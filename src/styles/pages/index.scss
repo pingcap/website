@@ -20,7 +20,7 @@
 }
 
 $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
-  hulu qiy netease-games jd-cloud mi webank;
+  hulu qiy netease-games jd-cloud mi webank zalopay unext wuba zhihu meituan;
 
 @mixin has-intro-and-placeholder {
   @include mobile {
@@ -122,7 +122,14 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
           }
 
           a {
-            font-size: $size-6;
+            font-size: $size-7;
+            letter-spacing: 1px;
+
+            @include mobile {
+              &:first-child {
+                margin: 0 1rem 0.5rem;
+              }
+            }
 
             @include mobile {
               &:first-child {

@@ -30,7 +30,12 @@ const caseLogos = [
   'netease-games',
   'jd-cloud',
   'mi',
-  'webank'
+  'webank',
+  'zalopay',
+  'unext',
+  'wuba',
+  'zhihu',
+  'meituan'
 ]
 
 const IndexPage = ({ data }) => {
