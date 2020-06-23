@@ -131,6 +131,12 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
               }
             }
 
+            @include mobile {
+              &:first-child {
+                margin: 1rem;
+              }
+            }
+
             &:first-child {
               margin-right: 1rem;
             }
