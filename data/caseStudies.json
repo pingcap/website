@@ -3,10 +3,6 @@
     "name": "Internet",
     "customers": [
       {
-        "name": "Yiguo.com",
-        "summary": "As the largest B2C fresh produce online marketplace in China, serving close to 5 million users and more than 1,000 enterprise customers, Yiguo.com uses TiDB to capture real-time insights from fresh transactional data, in order to make timely and accurate business decisions."
-      },
-      {
         "name": "Qingdao Telaidian",
         "summary": "As the biggest provider of electric car charger service in China, Qingdao Telaidian adopts TiDB as the solution for its offline computing scenario and some real-time OLAP scenarios. Currently, a single table contains nearly 2 billion rows of data with a daily increase at 8 million rows."
       },

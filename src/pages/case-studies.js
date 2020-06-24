@@ -19,37 +19,37 @@ const CaseStudies = ({ data }) => {
     quoteMarkSVG,
     placeholderSVG,
     caseStudies,
-    caseStudiesWithoutReadMore
+    caseStudiesWithoutReadMore,
   } = data
   const categoriesOfStudies = [
     ...new Set(
       caseStudies.edges
         .map(({ node }) => node.frontmatter.customerCategory)
         .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
-    )
+    ),
   ]
-  const studiesByCategory = categoriesOfStudies.map(c => ({
+  const studiesByCategory = categoriesOfStudies.map((c) => ({
     category: c.split(' ').join('-'),
     studies: caseStudies.edges
       .filter(({ node }) => node.frontmatter.customerCategory === c)
       .concat(
         caseStudiesWithoutReadMore.edges
           .filter(({ node }) => node.name === c)[0]
-          .node.customers.map(customer => ({
+          .node.customers.map((customer) => ({
             node: {
               frontmatter: {
                 customer: customer.name,
-                summary: customer.summary
-              }
-            }
+                summary: customer.summary,
+              },
+            },
           }))
-      )
+      ),
   }))
 
   useEffect(() => {
     new Swiper('.swiper-container', {
       autoplay: {
-        delay: 6000
+        delay: 6000,
       },
       loop: true,
       pagination: {
@@ -57,12 +57,12 @@ const CaseStudies = ({ data }) => {
         clickable: true,
         bulletClass: 'bullet',
         bulletActiveClass: 'active',
-        renderBullet: () => `<span class="bullet"></span>`
+        renderBullet: () => `<span class="bullet"></span>`,
       },
       navigation: {
         nextEl: '.swiper-next',
-        prevEl: '.swiper-prev'
-      }
+        prevEl: '.swiper-prev',
+      },
     })
   }, [])
 
@@ -96,9 +96,11 @@ const CaseStudies = ({ data }) => {
                 .slice(0, 3)
                 .map(({ node }) => ({
                   ...node.frontmatter,
-                  ...(node.parent ? { relativePath: node.parent.relativePath } : {})
+                  ...(node.parent
+                    ? { relativePath: node.parent.relativePath }
+                    : {}),
                 }))
-                .map(study => (
+                .map((study) => (
                   <div key={study.customer} className="swiper-slide">
                     <div className="intro">
                       <div className="subtitle is-7">{study.customer}</div>
@@ -138,7 +140,7 @@ const CaseStudies = ({ data }) => {
             Petabytes of Data Across Industries
           </h2>
           <div className="customer-categories">
-            {categoriesOfStudies.map(c => (
+            {categoriesOfStudies.map((c) => (
               <Link
                 key={c}
                 to={`/case-studies/${c.split(' ').join('-')}`}
@@ -150,7 +152,7 @@ const CaseStudies = ({ data }) => {
           </div>
           <Router basepath="/case-studies">
             <Logos key="/" path="/" logos={studiesByCategory[0].studies} />
-            {studiesByCategory.map(r => (
+            {studiesByCategory.map((r) => (
               <Logos
                 key={r.category}
                 path={`/${r.category}`}
@@ -170,7 +172,7 @@ function Logos({ logos }) {
       {logos
         .map(({ node }) => ({
           ...node.frontmatter,
-          ...(node.parent ? { relativePath: node.parent.relativePath } : {})
+          ...(node.parent ? { relativePath: node.parent.relativePath } : {}),
         }))
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
@@ -219,7 +221,7 @@ export const query = graphql`
     caseStudies: allMarkdownRemark(
       filter: {
         fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { customer: { ne: null } }
+        frontmatter: { customer: { ne: null }, notShowOnLogoWall: { ne: true } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
