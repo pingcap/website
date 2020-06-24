@@ -60,8 +60,8 @@ const CaseStudy = ({ data, pageContext }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
-          }
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
+          },
         ]}
         image={frontmatter.image ? frontmatter.image : null}
       />

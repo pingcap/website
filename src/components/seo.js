@@ -31,63 +31,63 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
   return (
     <Helmet
       htmlAttributes={{
-        lang
+        lang,
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: 'description',
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: 'og:title',
-          content: title
+          content: title,
         },
         {
           property: 'og:description',
-          content: metaDescription
+          content: metaDescription,
         },
         {
           property: 'og:type',
-          content: 'website'
+          content: 'website',
         },
         {
           property: 'og:image',
-          content: image
+          content: image,
         },
         {
           property: 'og:url',
-          content: site.siteMetadata.siteUrl
+          content: site.siteMetadata.siteUrl,
         },
         {
           property: 'og:image:width',
-          content: '1200'
+          content: '1200',
         },
         {
           property: 'og:image:height',
-          content: '400'
+          content: '400',
         },
         {
           name: 'twitter:card',
-          content: 'summary_large_image'
+          content: 'summary_large_image',
         },
         {
           name: `twitter:card`,
-          content: 'summary'
+          content: 'summary',
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author
+          content: site.siteMetadata.author,
         },
         {
           name: 'twitter:title',
-          content: title
+          content: title,
         },
         {
           name: 'twitter:description',
-          content: metaDescription
-        }
+          content: metaDescription,
+        },
       ].concat(meta)}
       link={link}
     />
@@ -98,7 +98,7 @@ SEO.defaultProps = {
   lang: 'en',
   description: '',
   meta: [],
-  link: []
+  link: [],
 }
 
 SEO.propTypes = {
@@ -107,7 +107,7 @@ SEO.propTypes = {
   description: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   image: PropTypes.string,
-  link: PropTypes.arrayOf(PropTypes.object)
+  link: PropTypes.arrayOf(PropTypes.object),
 }
 
 export default SEO
