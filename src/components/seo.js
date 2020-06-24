@@ -4,8 +4,8 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-function SEO({ lang, title, description, meta, link }) {
-  const { site } = useStaticQuery(
+function SEO({ lang, title, description, meta, image: metaImage, link }) {
+  const { site, favicon, defefaultMetaImg } = useStaticQuery(
     graphql`
       query {
         site {
@@ -13,56 +13,93 @@ function SEO({ lang, title, description, meta, link }) {
             title
             description
             author
+            siteUrl
           }
+        }
+        favicon: file(relativePath: { eq: "pingcap-logo.ico" }) {
+          publicURL
+        }
+        defefaultMetaImg: file(relativePath: { eq: "pingcap-icon.png" }) {
+          publicURL
         }
       }
     `
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const image = metaImage
+    ? `https://download.pingcap.com${metaImage}`
+    : defefaultMetaImg.publicURL
 
   return (
     <Helmet
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
         {
           name: 'description',
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: 'og:title',
-          content: title,
+          content: title
         },
         {
           property: 'og:description',
-          content: metaDescription,
+          content: metaDescription
         },
         {
           property: 'og:type',
-          content: 'website',
+          content: 'website'
+        },
+        {
+          property: 'og:image',
+          content: image
+        },
+        {
+          property: 'og:url',
+          content: site.siteMetadata.siteUrl
+        },
+        {
+          property: 'og:image:width',
+          content: '1200'
+        },
+        {
+          property: 'og:image:height',
+          content: '400'
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image'
         },
         {
           name: `twitter:card`,
-          content: 'summary',
+          content: 'summary'
         },
         {
           name: 'twitter:creator',
-          content: site.siteMetadata.author,
+          content: site.siteMetadata.author
         },
         {
           name: 'twitter:title',
-          content: title,
+          content: title
         },
         {
           name: 'twitter:description',
-          content: metaDescription,
-        },
+          content: metaDescription
+        }
       ].concat(meta)}
-      link={link}
+      link={[
+        {
+          href: favicon.publicURL,
+          rel: 'shortcut icon',
+          type: 'image/x-icon'
+        },
+        { link }
+      ].concat(link)}
     />
   )
 }
@@ -71,7 +108,7 @@ SEO.defaultProps = {
   lang: 'en',
   description: '',
   meta: [],
-  link: [],
+  link: []
 }
 
 SEO.propTypes = {
@@ -79,7 +116,8 @@ SEO.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  link: PropTypes.arrayOf(PropTypes.object),
+  image: PropTypes.string,
+  link: PropTypes.arrayOf(PropTypes.object)
 }
 
 export default SEO

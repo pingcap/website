@@ -84,9 +84,10 @@ const Blog = ({ data, pageContext }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
-          },
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
+          }
         ]}
+        image={frontmatter.image ? frontmatter.image : null}
       />
       <article className="PingCAP-Blog">
         {showProgress && (
@@ -107,7 +108,7 @@ const Blog = ({ data, pageContext }) => {
                   <span> > </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath}/>
+                <BlogHeader frontmatter={frontmatter} filePath={filePath} />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -116,7 +117,13 @@ const Blog = ({ data, pageContext }) => {
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
-                    <Button as={Link} to="/download" className="get-started" outlined rounded>
+                    <Button
+                      as={Link}
+                      to="/download"
+                      className="get-started"
+                      outlined
+                      rounded
+                    >
                       DOWNLOAD TiDB
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
@@ -178,6 +185,7 @@ export const query = graphql`
         author
         tags
         categories
+        image
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
     }

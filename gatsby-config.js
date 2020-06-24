@@ -4,7 +4,8 @@ module.exports = {
   siteMetadata: {
     title: 'PingCAP',
     description: 'PingCAP Website',
-    author: '@PingCAP'
+    author: '@PingCAP',
+    siteUrl: 'https://pingcap.com/'
   },
   plugins: [
     {
