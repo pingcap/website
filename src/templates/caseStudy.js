@@ -60,9 +60,10 @@ const CaseStudy = ({ data, pageContext }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
-          }
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
+          },
         ]}
+        image={frontmatter.image ? frontmatter.image : null}
       />
       <article className="PingCAP-Blog">
         {showProgress && (
@@ -83,7 +84,11 @@ const CaseStudy = ({ data, pageContext }) => {
                   <span> > </span>
                   <Link to={`/case-studies/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath} isCaseStudy />
+                <BlogHeader
+                  frontmatter={frontmatter}
+                  filePath={filePath}
+                  isCaseStudy
+                />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -141,6 +146,7 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         customer
         customerCategory
+        image
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
     }

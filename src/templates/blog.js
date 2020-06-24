@@ -61,12 +61,12 @@ const Blog = ({ data, pageContext }) => {
   useEffect(() => {
     setRelatedBlogsRef(
       data.blogs.edges
-        .map(edge => edge.node)
+        .map((edge) => edge.node)
         .filter(
-          node =>
+          (node) =>
             intersection(node.frontmatter.tags, frontmatter.tags).length > 0
         )
-        .filter(node => node.frontmatter.title !== frontmatter.title)
+        .filter((node) => node.frontmatter.title !== frontmatter.title)
         .sort(
           (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
         )
@@ -87,6 +87,7 @@ const Blog = ({ data, pageContext }) => {
               'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
           },
         ]}
+        image={frontmatter.image ? frontmatter.image : null}
       />
       <article className="PingCAP-Blog">
         {showProgress && (
@@ -107,7 +108,7 @@ const Blog = ({ data, pageContext }) => {
                   <span> > </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath}/>
+                <BlogHeader frontmatter={frontmatter} filePath={filePath} />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -116,7 +117,13 @@ const Blog = ({ data, pageContext }) => {
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
-                    <Button as={Link} to="/download" className="get-started" outlined rounded>
+                    <Button
+                      as={Link}
+                      to="/download"
+                      className="get-started"
+                      outlined
+                      rounded
+                    >
                       GET TiDB
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
@@ -137,7 +144,7 @@ const Blog = ({ data, pageContext }) => {
                   <div className="related-blog">
                     <h3 className="title is-6">Related posts</h3>
                     <div className="blogs">
-                      {relatedBlogsRef.map(blog => (
+                      {relatedBlogsRef.map((blog) => (
                         <BlogHeader
                           key={blog.frontmatter.title}
                           frontmatter={blog.frontmatter}
@@ -178,6 +185,7 @@ export const query = graphql`
         author
         tags
         categories
+        image
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
     }
