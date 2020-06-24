@@ -117,7 +117,7 @@ const Blog = ({ data, pageContext }) => {
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
                     <Button as={Link} to="/download" className="get-started" outlined rounded>
-                      DOWNLOAD TiDB
+                      GET TiDB
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
                       CONTACT US
