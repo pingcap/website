@@ -2,7 +2,7 @@ import '../styles/components/positions.scss'
 
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link, useIntl } from 'gatsby-plugin-intl'
+import { Link, useIntl } from '@std4453/gatsby-plugin-intl'
 import { replaceTitle } from '../lib/string'
 
 const Positions = () => {

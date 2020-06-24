@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link, useIntl } from 'gatsby-plugin-intl'
+import { Link, useIntl } from '@std4453/gatsby-plugin-intl'
 import React, { useState } from 'react'
 
 import SearchIcon from '@material-ui/icons/Search'

@@ -1,7 +1,7 @@
 import '../styles/templates/blog.scss'
 
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'

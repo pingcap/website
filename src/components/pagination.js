@@ -1,4 +1,4 @@
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 import React from 'react'
 
 const Pagination = ({ pathPrefix, currentPage, numPages }) => (

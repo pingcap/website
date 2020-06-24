@@ -1,6 +1,6 @@
 import CreateIcon from '@material-ui/icons/CreateOutlined'
 import DateRangeIcon from '@material-ui/icons/DateRange'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { replaceTitle } from '../lib/string'

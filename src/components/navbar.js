@@ -3,7 +3,7 @@ import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 const Navbar = () => {
   const { BrandSVG } = useStaticQuery(

@@ -2,7 +2,7 @@ import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
 import { graphql } from 'gatsby'
-import { Link, useIntl } from 'gatsby-plugin-intl'
+import { Link, useIntl } from '@std4453/gatsby-plugin-intl'
 import React, { useEffect } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 

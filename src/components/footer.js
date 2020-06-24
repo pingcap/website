@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 import AddIcon from '@material-ui/icons/Add'
 // import LanguageIcon from '@material-ui/icons/Language'
@@ -7,7 +7,7 @@ import React from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
-import { useIntl, changeLocale } from 'gatsby-plugin-intl'
+import { useIntl, changeLocale } from '@std4453/gatsby-plugin-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(

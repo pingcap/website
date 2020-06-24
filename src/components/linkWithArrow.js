@@ -1,6 +1,6 @@
 import React from 'react'
 import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 const LinkWithArrow = ({ to, linkText, outboundLink }) => {
   return (

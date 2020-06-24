@@ -2,7 +2,7 @@ import '../styles/components/startTiDBRibbon.scss'
 
 import React from 'react'
 import { Button, Buttons } from '@seagreenio/react-bulma'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 const StartTiDBRibbon = () => {
   return (

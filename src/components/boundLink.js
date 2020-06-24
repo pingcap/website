@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 const BoundLink = ({ to, children, outbound, ...rest }) => {
   return (

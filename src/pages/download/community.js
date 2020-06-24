@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { graphql } from 'gatsby'
-import { Link } from 'gatsby-plugin-intl'
+import { Link } from '@std4453/gatsby-plugin-intl'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'

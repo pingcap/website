@@ -108,7 +108,7 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-intl`,
+      resolve: `@std4453/gatsby-plugin-intl`,
       options: {
         path: `${__dirname}/src/intl`,
         languages: langConfig.languages.map(({ name }) => name),

@@ -12,7 +12,7 @@ import { replaceTitle } from '../lib/string'
 import SectionUseCases from '../components/sectionUseCases'
 import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
-import { navigate } from 'gatsby-plugin-intl'
+import { navigate } from '@std4453/gatsby-plugin-intl'
 
 const NormalBox = withNormalHelpers(Box)
 

@@ -6,7 +6,7 @@ import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
 import { Button } from '@seagreenio/react-bulma'
-import { FormattedMessage } from 'gatsby-plugin-intl'
+import { FormattedMessage } from '@std4453/gatsby-plugin-intl'
 
 const ContactUs = () => {
   return (
