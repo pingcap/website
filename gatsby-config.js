@@ -30,6 +30,14 @@ module.exports = {
         environments: ['production', 'development']
       }
     },
+    {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn:
+          'https://12d5de765f5941a8ac5518b32110aaa7@o226447.ingest.sentry.io/5287522',
+        enabled: (() => process.env.NODE_ENV === 'production')()
+      }
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,

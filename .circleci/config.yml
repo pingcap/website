@@ -33,26 +33,31 @@ jobs:
           command: yarn download:blogs:prod && yarn build
           no_output_timeout: 20m
 
-
       - deploy:
           name: 'Publish Website Could LA_1_HOST'
-          command :
-              ssh-keyscan "${DEPLOY_UCLOUD_LA_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+          command:
+            ssh-keyscan "${DEPLOY_UCLOUD_LA_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+            rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
 
       - deploy:
           name: 'Publish Website Could LA_2_HOST'
           command:
-              ssh-keyscan "${DEPLOY_UCLOUD_LA_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
-              curl "http://www.google.com/ping?sitemap=https://pingcap.com/sitemap.xml"
+            ssh-keyscan "${DEPLOY_UCLOUD_LA_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+            rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+            curl "http://www.google.com/ping?sitemap=https://pingcap.com/sitemap.xml"
 
       - deploy:
           name: 'Publish Website Could BJ_1_HOST'
           command:
-              ssh-keyscan "${DEPLOY_UCLOUD_BJ_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-              rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
-        
+            ssh-keyscan "${DEPLOY_UCLOUD_BJ_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+            rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+
+      - deploy:
+          name: 'Publish Website Could BJ_2_HOST'
+          command:
+            ssh-keyscan "${DEPLOY_UCLOUD_BJ_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
+            rsync -avz --delete public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+
 workflows:
   version: 2
   build:
