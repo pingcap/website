@@ -117,14 +117,8 @@ const Blog = ({ data, pageContext }) => {
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
-                    <Button
-                      as={Link}
-                      to="/download"
-                      className="get-started"
-                      outlined
-                      rounded
-                    >
-                      DOWNLOAD TiDB
+                    <Button as={Link} to="/download" className="get-started" outlined rounded>
+                      GET TiDB
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
                       CONTACT US
