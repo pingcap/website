@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function SEO({ lang, title, description, meta, image: metaImage, link }) {
-  const { site, favicon, defefaultMetaImg } = useStaticQuery(
+  const { site, defefaultMetaImg } = useStaticQuery(
     graphql`
       query {
         site {
@@ -15,9 +15,6 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
             author
             siteUrl
           }
-        }
-        favicon: file(relativePath: { eq: "pingcap-logo.ico" }) {
-          publicURL
         }
         defefaultMetaImg: file(relativePath: { eq: "pingcap-icon.png" }) {
           publicURL
@@ -92,14 +89,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
           content: metaDescription
         }
       ].concat(meta)}
-      link={[
-        {
-          href: favicon.publicURL,
-          rel: 'shortcut icon',
-          type: 'image/x-icon'
-        },
-        { link }
-      ].concat(link)}
+      link={link}
     />
   )
 }
