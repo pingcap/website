@@ -1,5 +1,5 @@
-import { Link } from 'gatsby'
 import React from 'react'
+import Link from './IntlLink'
 
 const Pagination = ({ pathPrefix, currentPage, numPages }) => (
   <nav
@@ -13,8 +13,8 @@ const Pagination = ({ pathPrefix, currentPage, numPages }) => (
           currentPage + 2 < numPages ? currentPage + 2 : numPages - 1
         ).keys(),
       ]
-        .map(i => i + 1)
-        .map(i => (
+        .map((i) => i + 1)
+        .map((i) => (
           <li key={i}>
             <Link
               to={`${pathPrefix}${i === 1 ? '' : '/' + i}`}

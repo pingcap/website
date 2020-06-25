@@ -1,6 +1,6 @@
 import '../styles/templates/blogs.scss'
 
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from './blogHeader'

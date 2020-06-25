@@ -1,9 +1,9 @@
 import '../styles/components/eventsCard.scss'
 
 import React from 'react'
-import { Link } from 'gatsby'
+import Link from './IntlLink'
 
-const EventsCard = prop => {
+const EventsCard = (prop) => {
   const cardsList = prop.cardsList
 
   const Card = ({ card }) => (
@@ -32,7 +32,7 @@ const EventsCard = prop => {
 
   return (
     <div className="PingCAP-Event-Card columns is-variable is-8 is-multiline">
-      {cardsList.map(card => (
+      {cardsList.map((card) => (
         <div className="column is-4" key={card.name}>
           {card.readMoreLink ? (
             <Link to={card.readMoreLink} target="_blank">
