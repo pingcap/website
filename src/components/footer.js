@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, navigate } from 'gatsby'
 
 import AddIcon from '@material-ui/icons/Add'
 // import LanguageIcon from '@material-ui/icons/Language'
@@ -6,6 +6,8 @@ import React from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
+import langConfig from '../../lang.config.json'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -18,7 +20,7 @@ const Footer = () => {
     `
   )
 
-  const handleSpreadItems = e => {
+  const handleSpreadItems = (e) => {
     const screenWidth = window.screen.width
     if (screenWidth > 768) {
       return
@@ -31,11 +33,13 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const intl = useIntl()
+
   return (
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map(column => (
+          {footerColumns.map((column, i) => (
             <div key={column.name} className="column">
               <div
                 role="button"
@@ -50,7 +54,7 @@ const Footer = () => {
                 </span>
               </div>
               <ul className="items">
-                {column.items.map(item => (
+                {column.items.map((item) => (
                   <li key={item.name}>
                     <BoundLink to={item.link} outbound={item.outbound}>
                       {item.name}
@@ -64,6 +68,29 @@ const Footer = () => {
                     )} */}
                   </li>
                 ))}
+                {i === 0 &&
+                  Object.keys(langConfig.languages)
+                    .filter((lang) => lang !== intl.locale)
+                    .map((lang) => (
+                      <li key={lang}>
+                        <a
+                          onClick={() => {
+                            navigate(
+                              window.location.pathname.replace(
+                                new RegExp(
+                                  `(/(${Object.keys(langConfig.languages).join(
+                                    '|'
+                                  )}))?`
+                                ),
+                                `/${lang}`
+                              )
+                            )
+                          }}
+                        >
+                          {langConfig.languages[lang].langName}
+                        </a>
+                      </li>
+                    ))}
               </ul>
             </div>
           ))}
