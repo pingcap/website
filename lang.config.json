@@ -1,0 +1,13 @@
+{
+    "defaultLang": "zh",
+    "languages": {
+        "zh": {
+            "langName": "中文",
+            "blogsPath": "markdown-pages/blogs-cn"
+        },
+        "en": {
+            "langName": "English",
+            "blogsPath": "markdown-pages/blogs"
+        }
+    }
+}

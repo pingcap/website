@@ -184,7 +184,7 @@ const Blog = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query($title: String) {
+  query($title: String, $blogsPath: String) {
     markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
@@ -200,7 +200,7 @@ export const query = graphql`
     }
     blogs: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { customer: { eq: null } }
       }
       limit: 1000
