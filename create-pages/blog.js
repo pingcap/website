@@ -43,6 +43,7 @@ const createBlogs = async ({ graphql, createPage }) => {
           context: {
             title: node.frontmatter.title,
             filePath: `${replaceTitle(node.parent.relativePath)}`,
+            language: lang,
             ...langConfig.languages[lang],
           },
         })

@@ -20,7 +20,7 @@ const createIntlPages = ({ page, actions }) => {
     ...page,
     context: {
       ...page.context,
-      locale: pageLang || defaultLang,
+      language: pageLang || defaultLang,
       ...langConfig.languages[pageLang || defaultLang],
     },
   })
@@ -35,7 +35,7 @@ const createIntlPages = ({ page, actions }) => {
       path: `/${lang}${pagePath}`,
       context: {
         ...page.context,
-        locale: lang,
+        language: lang,
         ...langConfig.languages[lang],
       },
     })

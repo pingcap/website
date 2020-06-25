@@ -47,6 +47,7 @@ const createBlogTags = async ({ graphql, createPage }) => {
               skip: i * blogsPerPage,
               numPages,
               currentPage: i + 1,
+              language: lang,
               ...langConfig.languages[lang],
             },
           })
