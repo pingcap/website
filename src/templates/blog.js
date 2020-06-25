@@ -10,6 +10,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
+import replaceInternalHref from '../lib/replaceInternalHref'
 
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
@@ -74,6 +75,14 @@ const Blog = ({ data, pageContext }) => {
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(
+    () => {
+      replaceInternalHref('blog')
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
 
   return (
     <Layout>
