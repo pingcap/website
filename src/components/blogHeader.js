@@ -38,7 +38,7 @@ const BlogHeader = ({
           {isCaseStudy ? customer : (author && author[0]) || 'PingCAP'}
         </span>
         <span className={!withIcon ? 'without-icon' : ''}>
-          <Link to={`/blog/category/${category}`}>{category}</Link>
+          {isCaseStudy ? `${category}` : <Link to={`/blog/category/${category}`}>{category}</Link>}
         </span>
       </div>
     </section>
