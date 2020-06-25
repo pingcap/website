@@ -42,5 +42,5 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
 }
 
 exports.onCreatePage = ({ page, actions }) => {
-  // createIntlPages({ page, actions })
+  createIntlPages({ page, actions })
 }

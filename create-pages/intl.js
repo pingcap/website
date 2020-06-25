@@ -3,8 +3,6 @@ const defaultLang = langConfig.defaultLang
 const langMapKeys = Object.keys(langConfig.languages)
 const dev404Page = '/dev-404-page'
 
-const ignores = ['/blog']
-
 const createIntlPages = ({ page, actions }) => {
   const pagePath = page.path
 
@@ -15,23 +13,19 @@ const createIntlPages = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
   console.log(pagePath)
-  const pageLang =
-    langMapKeys.find((lang) => pagePath.startsWith(lang)) || defaultLang
+  const pageLang = langMapKeys.find((lang) => pagePath.startsWith(lang))
 
   deletePage(page)
   createPage({
     ...page,
     context: {
       ...page.context,
-      locale: pageLang,
-      ...langConfig.languages[pageLang],
+      locale: pageLang || defaultLang,
+      ...langConfig.languages[pageLang || defaultLang],
     },
   })
 
-  if (
-    ignores.some((ignore) => pagePath.startsWith(ignore)) ||
-    langMapKeys.some((lang) => pagePath.startsWith(lang))
-  ) {
+  if (pageLang) {
     return
   }
 
