@@ -12,7 +12,6 @@ const createIntlPages = ({ page, actions }) => {
 
   const { createPage, deletePage } = actions
 
-  console.log(pagePath)
   const pageLang = langMapKeys.find((lang) => pagePath.startsWith(lang))
 
   deletePage(page)

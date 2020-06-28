@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+export const wrapPageElement = ({ element, props }) => {
+  const { pageContext } = props
+
+  return <IntlProvider locale={pageContext.language}>{element}</IntlProvider>
+}
