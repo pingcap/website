@@ -5,5 +5,5 @@ exports.replaceTitle = function (title) {
 }
 
 exports.langPrefixes = function (lang) {
-  return lang === langConfig.defaultLang ? ['', `${lang}/`] : [`${lang}/`]
+  return lang === langConfig.defaultLang ? [''] : [`${lang}/`]
 }
