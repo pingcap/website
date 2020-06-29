@@ -1,4 +1,5 @@
 const path = require('path')
+const { langPrefixes } = require('./utils')
 const langConfig = require('../lang.config.json')
 
 const createBlogTags = async ({ graphql, createPage }) => {
@@ -31,10 +32,7 @@ const createBlogTags = async ({ graphql, createPage }) => {
       const totalCount = tagObj.totalCount
       const numPages = Math.ceil(totalCount / blogsPerPage)
       Array.from({ length: numPages }).forEach((_, i) => {
-        const prefixes =
-          lang === langConfig.defaultLang ? ['', `${lang}/`] : [`${lang}/`]
-
-        prefixes.forEach((prefix) => {
+        langPrefixes(lang).forEach((prefix) => {
           createPage({
             path:
               i === 0

@@ -1,5 +1,5 @@
 const path = require('path')
-const replaceTitle = require('./utils').replaceTitle
+const { langPrefixes, replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
 const createBlogs = async ({ graphql, createPage }) => {
@@ -33,10 +33,7 @@ const createBlogs = async ({ graphql, createPage }) => {
     `)
 
     result.data.blogs.edges.forEach(({ node }) => {
-      const prefixes =
-        lang === langConfig.defaultLang ? ['', `${lang}/`] : [`${lang}/`]
-
-      prefixes.forEach((prefix) => {
+      langPrefixes(lang).forEach((prefix) => {
         createPage({
           path: `${prefix}blog/${replaceTitle(node.parent.relativePath)}`,
           component: blogTemplate,
