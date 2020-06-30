@@ -1,8 +1,8 @@
-import { graphql, useStaticQuery, navigate } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import AddIcon from '@material-ui/icons/Add'
-// import LanguageIcon from '@material-ui/icons/Language'
-import React from 'react'
+import LanguageIcon from '@material-ui/icons/Language'
+import React, { useState } from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
@@ -35,11 +35,55 @@ const Footer = () => {
 
   const intl = useIntl()
 
+  const Lang = ({ align }) => {
+    const [dropdownActive, setDropdownActive] = useState('')
+
+    const handleMenuOpen = () => {
+      if (dropdownActive) {
+        setDropdownActive('')
+      } else {
+        setDropdownActive(' is-active')
+      }
+    }
+
+    return (
+      <div className={`dropdown is-${align} is-up lang${dropdownActive}`}>
+        <div
+          role="button"
+          tabIndex={0}
+          className="dropdown-trigger"
+          onClick={handleMenuOpen}
+          onKeyDown={handleMenuOpen}
+        >
+          <LanguageIcon /> Language
+        </div>
+        <div className="dropdown-menu">
+          <div className="dropdown-content">
+            {Object.keys(langConfig.languages).map((lang) => (
+              <Link
+                key={lang}
+                className="dropdown-item"
+                to={window.location.pathname.replace(
+                  new RegExp(
+                    `(/(${Object.keys(langConfig.languages).join('|')}))?`
+                  ),
+                  `/${lang}`
+                )}
+              >
+                {langConfig.languages[lang].langName}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map((column, i) => (
+          {footerColumns.map((column) => (
             <div key={column.name} className="column">
               <div
                 role="button"
@@ -59,38 +103,8 @@ const Footer = () => {
                     <BoundLink to={item.link} outbound={item.outbound}>
                       {item.name}
                     </BoundLink>
-                    {/* {item.outbound ? (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
-                    ) : (
-                      <Link to={item.link} onTouchStart={() => {}}>
-                        {item.name}
-                      </Link>
-                    )} */}
                   </li>
                 ))}
-                {i === 0 &&
-                  Object.keys(langConfig.languages)
-                    .filter((lang) => lang !== intl.locale)
-                    .map((lang) => (
-                      <li key={lang}>
-                        <a
-                          onClick={() => {
-                            navigate(
-                              window.location.pathname.replace(
-                                new RegExp(
-                                  `(/(${Object.keys(langConfig.languages).join(
-                                    '|'
-                                  )}))?`
-                                ),
-                                `/${lang}`
-                              )
-                            )
-                          }}
-                        >
-                          {langConfig.languages[lang].langName}
-                        </a>
-                      </li>
-                    ))}
               </ul>
             </div>
           ))}
@@ -110,14 +124,10 @@ const Footer = () => {
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
-          {/* <div className="lang">
-            <LanguageIcon /> Language
-          </div> */}
+          <Lang align="right" />
         </div>
         <div className="annotations annotations-mobile">
-          {/* <div className="lang">
-            <LanguageIcon /> Language
-          </div> */}
+          <Lang align="left" />
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
