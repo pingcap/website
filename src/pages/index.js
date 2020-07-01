@@ -35,7 +35,7 @@ const caseLogos = [
   'unext',
   'wuba',
   'zhihu',
-  'meituan'
+  'meituan',
 ]
 
 const IndexPage = ({ data }) => {
@@ -43,7 +43,7 @@ const IndexPage = ({ data }) => {
     tidbSQLAtScaleSVG,
     tidbFeaturesPNG,
     tidbFeaturesMP4,
-    last3Blogs
+    last3Blogs,
   } = data
 
   const titlesRef = useRef()
@@ -51,7 +51,7 @@ const IndexPage = ({ data }) => {
   const architectureRef = useRef()
 
   useEffect(() => {
-    Array.from(titlesRef.current.children).forEach(c =>
+    Array.from(titlesRef.current.children).forEach((c) =>
       c.classList.add('animate-in')
     )
 
@@ -65,15 +65,15 @@ const IndexPage = ({ data }) => {
         displayStyle: 'opacity: 1; transform: translateY(0)',
         children: Array.from(benefitsRef.current.children),
         timeout: false,
-        triggerHeightRatio: [4 / 5, 0.25]
+        triggerHeightRatio: [4 / 5, 0.25],
       },
       {
         style: 'opacity: 0; transform: translateX(-12.5%)',
         displayStyle: 'opacity: 1; transform: translateX(0)',
         children: [architectureRef.current],
         timeout: true,
-        triggerHeightRatio: [4 / 5, 0.25]
-      }
+        triggerHeightRatio: [4 / 5, 0.25],
+      },
     ]
     let begin = 0
 
@@ -108,16 +108,16 @@ const IndexPage = ({ data }) => {
     }
 
     let index = 0
-    array.forEach(a => {
+    array.forEach((a) => {
       const style = a.style
 
-      a.children.forEach(b => {
+      a.children.forEach((b) => {
         const top = b.getBoundingClientRect().top
 
         if (top > document.documentElement.clientHeight) {
           bind(b, index++, a.displayStyle, a.timeout, a.triggerHeightRatio)
 
-          Array.from(b.children).forEach(c => {
+          Array.from(b.children).forEach((c) => {
             if (c.className !== 'intro') {
               c.style = style
             }
@@ -130,7 +130,7 @@ const IndexPage = ({ data }) => {
     })
   }
 
-  const onCardClick = href => () => navigate(href)
+  const onCardClick = (href) => () => navigate(href)
 
   return (
     <Layout>
@@ -195,7 +195,7 @@ const IndexPage = ({ data }) => {
               Trusted and Verified by Innovation Leaders
             </h2>
             <div className="logos">
-              {caseLogos.map(logo => (
+              {caseLogos.map((logo) => (
                 <div key={logo} className={`${logo}-logo`} />
               ))}
             </div>
@@ -213,7 +213,7 @@ const IndexPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">Why TiDB?</h2>
             <div className="columns is-variable is-6">
-              {celebrateYourGrowthData.map(d => (
+              {celebrateYourGrowthData.map((d) => (
                 <div key={d.name} className="column">
                   <NormalBox className="outer">
                     <img
@@ -236,7 +236,7 @@ const IndexPage = ({ data }) => {
               The Benefits of Distributed SQL
             </h2>
             <div ref={benefitsRef} className="benefits">
-              {benefitsData.map(d => (
+              {benefitsData.map((d) => (
                 <div
                   key={d.name}
                   className={`benefit${d.reverse ? ' reverse' : ''}`}
@@ -286,17 +286,17 @@ const IndexPage = ({ data }) => {
               Learn More in Engineering Blogs
             </h2>
             <div className="columns is-variable is-6">
-              {last3Blogs.edges.map(({ node: { frontmatter } }) => (
+              {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
                 <div key={frontmatter.title} className="column">
                   <div
                     role="button"
                     tabIndex={0}
                     className="card"
                     onClick={onCardClick(
-                      `/blog/${replaceTitle(frontmatter.title)}`
+                      `/blog/${replaceTitle(parent.relativePath)}`
                     )}
                     onKeyDown={onCardClick(
-                      `/blog/${replaceTitle(frontmatter.title)}`
+                      `/blog/${replaceTitle(parent.relativePath)}`
                     )}
                   >
                     <div className="card-image">
@@ -413,7 +413,7 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query {
+  query($blogsPath: String) {
     tidbSQLAtScaleSVG: file(
       relativePath: { eq: "home/tidb-sql-at-scale.svg" }
     ) {
@@ -427,7 +427,7 @@ export const query = graphql`
     }
     last3Blogs: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -440,6 +440,11 @@ export const query = graphql`
             author
             summary
             image
+          }
+          parent {
+            ... on File {
+              relativePath
+            }
           }
         }
       }

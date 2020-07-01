@@ -1,7 +1,8 @@
 import '../styles/components/positions.scss'
 
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import { replaceTitle } from '../lib/string'
 
 const Positions = () => {
@@ -17,24 +18,33 @@ const Positions = () => {
               title
               location
             }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
           }
         }
       }
     }
   `)
 
-  positions = positions.edges.map(edge => edge.node.frontmatter)
+  positions = positions.edges.map((edge) => edge.node)
 
   return (
     <div className="PingCAP-Positions columns">
-      {positions.map(p => (
-        <Link to={`/careers/${replaceTitle(p.title)}`} key={p.title} className="position column">
+      {positions.map((p) => (
+        <Link
+          to={`/careers/${replaceTitle(p.parent.relativePath)}`}
+          key={p.frontmatter.title}
+          className="position column"
+        >
           <div className="position-wrapper">
-            <div className="position-title">{p.title}</div>
-            <div className="location">{p.location}</div>
+            <div className="position-title">{p.frontmatter.title}</div>
+            <div className="location">{p.frontmatter.location}</div>
           </div>
         </Link>
-        ))}
+      ))}
     </div>
   )
 }

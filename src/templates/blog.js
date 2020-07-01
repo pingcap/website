@@ -1,6 +1,7 @@
 import '../styles/templates/blog.scss'
 
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from '../components/IntlLink'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -10,10 +11,12 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
+import replaceInternalHref from '../lib/replaceInternalHref'
 
-const Blog = ({ data }) => {
+const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
+  const filePath = { pageContext }
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
@@ -60,12 +63,12 @@ const Blog = ({ data }) => {
   useEffect(() => {
     setRelatedBlogsRef(
       data.blogs.edges
-        .map(edge => edge.node)
+        .map((edge) => edge.node)
         .filter(
-          node =>
+          (node) =>
             intersection(node.frontmatter.tags, frontmatter.tags).length > 0
         )
-        .filter(node => node.frontmatter.title !== frontmatter.title)
+        .filter((node) => node.frontmatter.title !== frontmatter.title)
         .sort(
           (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
         )
@@ -73,6 +76,14 @@ const Blog = ({ data }) => {
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(
+    () => {
+      replaceInternalHref('blog')
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
 
   return (
     <Layout>
@@ -86,6 +97,7 @@ const Blog = ({ data }) => {
               'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
           },
         ]}
+        image={frontmatter.image ? frontmatter.image : null}
       />
       <article className="PingCAP-Blog">
         {showProgress && (
@@ -106,7 +118,7 @@ const Blog = ({ data }) => {
                   <span> > </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} />
+                <BlogHeader frontmatter={frontmatter} filePath={filePath} />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -115,8 +127,14 @@ const Blog = ({ data }) => {
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
                   <div className="destinations">
-                    <Button as={Link} to="/download" className="get-started" outlined rounded>
-                      DOWNLOAD TiDB
+                    <Button
+                      as={Link}
+                      to="/download"
+                      className="get-started"
+                      outlined
+                      rounded
+                    >
+                      GET TiDB
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
                       CONTACT US
@@ -136,10 +154,11 @@ const Blog = ({ data }) => {
                   <div className="related-blog">
                     <h3 className="title is-6">Related posts</h3>
                     <div className="blogs">
-                      {relatedBlogsRef.map(blog => (
+                      {relatedBlogsRef.map((blog) => (
                         <BlogHeader
                           key={blog.frontmatter.title}
                           frontmatter={blog.frontmatter}
+                          filePath={blog.parent.relativePath}
                           isTitleLink
                           withIcon={false}
                         />
@@ -166,7 +185,7 @@ const Blog = ({ data }) => {
 }
 
 export const query = graphql`
-  query($title: String) {
+  query($title: String, $blogsPath: String) {
     markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
@@ -176,12 +195,13 @@ export const query = graphql`
         author
         tags
         categories
+        image
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
     }
     blogs: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { customer: { eq: null } }
       }
       limit: 1000
@@ -194,6 +214,11 @@ export const query = graphql`
             author
             tags
             categories
+          }
+          parent {
+            ... on File {
+              relativePath
+            }
           }
         }
       }

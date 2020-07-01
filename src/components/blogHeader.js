@@ -1,12 +1,13 @@
 import CreateIcon from '@material-ui/icons/CreateOutlined'
 import DateRangeIcon from '@material-ui/icons/DateRange'
-import { Link } from 'gatsby'
+import Link from './IntlLink'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { replaceTitle } from '../lib/string'
 
 const BlogHeader = ({
   frontmatter,
+  filePath,
   isTitleLink,
   withIcon = true,
   isCaseStudy = false,
@@ -22,7 +23,7 @@ const BlogHeader = ({
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
         <h2 className="title is-4 is-spaced blog-link-title">
-          <Link to={`/blog/${replaceTitle(title)}`}>{title}</Link>
+          <Link to={`/blog/${replaceTitle(filePath)}`}>{title}</Link>
         </h2>
       ) : (
         <h2 className="title is-4 is-spaced blog-title">{title}</h2>
@@ -37,7 +38,11 @@ const BlogHeader = ({
           {isCaseStudy ? customer : (author && author[0]) || 'PingCAP'}
         </span>
         <span className={!withIcon ? 'without-icon' : ''}>
-          <Link to={`/blog/category/${category}`}>{category}</Link>
+          {isCaseStudy ? (
+            `${category}`
+          ) : (
+            <Link to={`/blog/category/${category}`}>{category}</Link>
+          )}
         </span>
       </div>
     </section>

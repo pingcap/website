@@ -1,4 +1,5 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
@@ -71,7 +72,7 @@ const Navbar = () => {
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map(item => (
+            {navbarItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -84,7 +85,7 @@ const Navbar = () => {
                   >
                     {item.name}
                     <div className="navbar-dropdown">
-                      {item.dropdown.map(navItem => (
+                      {item.dropdown.map((navItem) => (
                         <Link
                           key={navItem.name}
                           to={navItem.href}
@@ -138,7 +139,7 @@ const Navbar = () => {
                 color="primary"
                 rounded
               >
-                DOWNLOAD TiDB
+                GET TiDB
               </Button>
             </div>
           </div>

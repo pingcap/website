@@ -24,7 +24,7 @@ const StartTiDBRibbon = () => {
             CONTACT US
           </Button>
           <Button className="get-tidb" as={Link} to="/download" rounded>
-            DOWNLOAD TiDB
+            GET TiDB
           </Button>
         </Buttons>
       </div>

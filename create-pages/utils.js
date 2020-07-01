@@ -1,13 +1,9 @@
-exports.replaceTitle = function(title) {
-  let _title = title
-  const re = /\/?.*\.md/
-  if (re.test(_title)) {
-    // use relative path as pathname
-    _title = _title.replace('.md', '').toLowerCase()
-  } else {
-    // use title of frontmatter as pathname
-    _title = _title.replace(/[^\w-]/g, '-')
-  }
+const langConfig = require('../lang.config.json')
 
-  return _title
+exports.replaceTitle = function (title) {
+  return title.replace('.md', '')
+}
+
+exports.langPrefixes = function (lang) {
+  return lang === langConfig.defaultLang ? [''] : [`${lang}/`]
 }

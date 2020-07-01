@@ -1,11 +1,14 @@
-import { graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery, Link } from 'gatsby'
 
 import AddIcon from '@material-ui/icons/Add'
-// import LanguageIcon from '@material-ui/icons/Language'
-import React from 'react'
+import LanguageIcon from '@material-ui/icons/Language'
+import React, { useState } from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
+import langConfig from '../../lang.config.json'
+import { useLocation } from '@reach/router'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -18,7 +21,7 @@ const Footer = () => {
     `
   )
 
-  const handleSpreadItems = e => {
+  const handleSpreadItems = (e) => {
     const screenWidth = window.screen.width
     if (screenWidth > 768) {
       return
@@ -31,11 +34,60 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const location = useLocation()
+  const intl = useIntl()
+
+  const Lang = ({ align }) => {
+    const [dropdownActive, setDropdownActive] = useState('')
+
+    const handleMenuOpen = () => {
+      if (dropdownActive) {
+        setDropdownActive('')
+      } else {
+        setDropdownActive(' is-active')
+      }
+    }
+
+    return (
+      <div className={`dropdown is-${align} is-up lang${dropdownActive}`}>
+        <div
+          role="button"
+          tabIndex={0}
+          className="dropdown-trigger"
+          onClick={handleMenuOpen}
+          onKeyDown={handleMenuOpen}
+        >
+          <LanguageIcon /> Language
+        </div>
+        <div className="dropdown-menu">
+          <div className="dropdown-content">
+            {Object.keys(langConfig.languages).map((lang) => (
+              <Link
+                key={lang}
+                className="dropdown-item"
+                to={location.pathname.replace(
+                  new RegExp(
+                    intl.locale === langConfig.defaultLang
+                      ? `^`
+                      : `^/${intl.locale}`
+                  ),
+                  lang === langConfig.defaultLang ? '' : `/${lang}`
+                )}
+              >
+                {langConfig.languages[lang].langName}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map(column => (
+          {footerColumns.map((column) => (
             <div key={column.name} className="column">
               <div
                 role="button"
@@ -50,18 +102,11 @@ const Footer = () => {
                 </span>
               </div>
               <ul className="items">
-                {column.items.map(item => (
+                {column.items.map((item) => (
                   <li key={item.name}>
                     <BoundLink to={item.link} outbound={item.outbound}>
                       {item.name}
                     </BoundLink>
-                    {/* {item.outbound ? (
-                      <a href={item.link} target="_blank" rel="noopener noreferrer">{item.name}</a>
-                    ) : (
-                      <Link to={item.link} onTouchStart={() => {}}>
-                        {item.name}
-                      </Link>
-                    )} */}
                   </li>
                 ))}
               </ul>
@@ -83,14 +128,10 @@ const Footer = () => {
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
-          {/* <div className="lang">
-            <LanguageIcon /> Language
-          </div> */}
+          <Lang align="right" />
         </div>
         <div className="annotations annotations-mobile">
-          {/* <div className="lang">
-            <LanguageIcon /> Language
-          </div> */}
+          <Lang align="left" />
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>

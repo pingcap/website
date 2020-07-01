@@ -1,4 +1,5 @@
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from '../components/IntlLink'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -7,9 +8,10 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 
-const CaseStudy = ({ data }) => {
+const CaseStudy = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
+  const filePath = { pageContext }
   const category = frontmatter.customerCategory
 
   const [showProgress, setShowProgress] = useState(false)
@@ -59,9 +61,10 @@ const CaseStudy = ({ data }) => {
           {
             rel: 'stylesheet',
             href:
-              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css'
-          }
+              'https://cdn.jsdelivr.net/gh/sindresorhus/github-markdown-css@3.0.1/github-markdown.css',
+          },
         ]}
+        image={frontmatter.image ? frontmatter.image : null}
       />
       <article className="PingCAP-Blog">
         {showProgress && (
@@ -82,7 +85,11 @@ const CaseStudy = ({ data }) => {
                   <span> > </span>
                   <Link to={`/case-studies/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} isCaseStudy />
+                <BlogHeader
+                  frontmatter={frontmatter}
+                  filePath={filePath}
+                  isCaseStudy
+                />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -140,6 +147,7 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         customer
         customerCategory
+        image
       }
       tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
     }

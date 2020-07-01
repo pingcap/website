@@ -9,9 +9,7 @@ const { createReplaceBlogImagePathStream } = require('./utils')
 const isDev = process.env.NODE_ENV === 'development'
 const blogName = process.argv[2]
 
-const blogsURL = '/repos/pingcap/blog/contents'
-
-async function downloadBlogs() {
+async function downloadBlogs(blogsURL, blogsPath) {
   let blogs
 
   try {
@@ -27,13 +25,13 @@ async function downloadBlogs() {
   }
 
   blogs = blogs
-    .map(b => ({ name: b.name, downloadURL: b.download_url }))
-    .filter(b => b.name.endsWith('.md'))
-    .filter(b => b.name !== 'README.md')
+    .map((b) => ({ name: b.name, downloadURL: b.download_url }))
+    .filter((b) => b.name.endsWith('.md'))
+    .filter((b) => b.name !== 'README.md')
   log(chalk.blue('Start downloading...'))
 
   if (blogName && isDev) {
-    if (blogs.map(blog => blog.name).includes(blogName)) {
+    if (blogs.map((blog) => blog.name).includes(blogName)) {
       blogs = [{ name: blogName }]
       log(chalk.blue('Downloading: ' + blogName))
     } else {
@@ -49,8 +47,8 @@ async function downloadBlogs() {
   }
 
   let blogIndex = 1
-  blogs.forEach(async blog => {
-    const distPath = `${__dirname}/blogs/${blog.name}`
+  blogs.forEach(async (blog) => {
+    const distPath = `${__dirname}/${blogsPath}/${blog.name}`
     const writeStream = fs.createWriteStream(distPath)
     writeStream.on('close', () => {
       log(chalk.blue(`(${blogIndex++}) Downloaded: `) + blog.name)
@@ -62,4 +60,5 @@ async function downloadBlogs() {
   })
 }
 
-downloadBlogs()
+downloadBlogs('/repos/pingcap/blog/contents', 'blogs')
+downloadBlogs('/repos/pingcap/blog-cn/contents', 'blogs-cn')

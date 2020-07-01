@@ -12,10 +12,10 @@ const BlogTags = ({ data, pageContext }) => (
 )
 
 export const query = graphql`
-  query($tag: String, $limit: Int!, $skip: Int!) {
+  query($tag: String, $limit: Int!, $skip: Int!, $blogsPath: String) {
     allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { tags: { in: [$tag] }, customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -33,7 +33,32 @@ export const query = graphql`
             summary
             image
           }
+          parent {
+            ... on File {
+              relativePath
+            }
+          }
         }
+      }
+    }
+    categories: allMarkdownRemark(
+      filter: {
+        fields: { collection: { eq: $blogsPath } }
+        frontmatter: { customer: { eq: null } }
+      }
+    ) {
+      group(field: frontmatter___categories) {
+        category: fieldValue
+      }
+    }
+    tags: allMarkdownRemark(
+      filter: {
+        fields: { collection: { eq: $blogsPath } }
+        frontmatter: { customer: { eq: null } }
+      }
+    ) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
       }
     }
   }
