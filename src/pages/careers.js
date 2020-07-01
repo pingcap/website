@@ -12,7 +12,10 @@ const Careers = ({ data }) => {
   const { careerHeroSVG } = data
   return (
     <Layout>
-      <SEO title="Careers" description="Join us in building a database of the future, made by developers, for developers." />
+      <SEO
+        title="Careers"
+        description="Join us in building a database of the future, made by developers, for developers."
+      />
       <article className="PingCAP-Careers">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -49,10 +52,10 @@ const Careers = ({ data }) => {
             </div>
           </div>
           <div className="columns is-multiline">
-            {workEnv.map(w => (
+            {workEnv.map((w) => (
               <div className="column is-4" key={w.desc}>
                 <img src={w.icon} alt={w.desc} />
-                <p className="column-title">{w.desc}</p>
+                <p className="card-title">{w.desc}</p>
               </div>
             ))}
           </div>
