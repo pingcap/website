@@ -7,6 +7,7 @@ import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
+import { useLocation } from '@reach/router'
 import { useIntl } from 'react-intl'
 
 const Footer = () => {
@@ -33,6 +34,7 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const location = useLocation()
   const intl = useIntl()
 
   const Lang = ({ align }) => {
@@ -63,11 +65,13 @@ const Footer = () => {
               <Link
                 key={lang}
                 className="dropdown-item"
-                to={window.location.pathname.replace(
+                to={location.pathname.replace(
                   new RegExp(
-                    `(/(${Object.keys(langConfig.languages).join('|')}))?`
+                    intl.locale === langConfig.defaultLang
+                      ? `^`
+                      : `^/${intl.locale}`
                   ),
-                  `/${lang}`
+                  lang === langConfig.defaultLang ? '' : `/${lang}`
                 )}
               >
                 {langConfig.languages[lang].langName}
