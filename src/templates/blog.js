@@ -1,6 +1,7 @@
 import '../styles/templates/blog.scss'
 
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from '../components/IntlLink'
 import React, { useEffect, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -10,6 +11,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
+import replaceInternalHref from '../lib/replaceInternalHref'
 
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
@@ -74,6 +76,14 @@ const Blog = ({ data, pageContext }) => {
     )
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  useEffect(
+    () => {
+      replaceInternalHref('blog')
+    },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    []
+  )
 
   return (
     <Layout>
@@ -175,7 +185,7 @@ const Blog = ({ data, pageContext }) => {
 }
 
 export const query = graphql`
-  query($title: String) {
+  query($title: String, $blogsPath: String) {
     markdownRemark(frontmatter: { title: { eq: $title } }) {
       html
       frontmatter {
@@ -191,7 +201,7 @@ export const query = graphql`
     }
     blogs: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { customer: { eq: null } }
       }
       limit: 1000

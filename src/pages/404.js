@@ -3,7 +3,7 @@ import '../styles/pages/404.scss'
 import Layout from '../components/layout'
 import React from 'react'
 import SEO from '../components/seo'
-import { Link } from 'gatsby'
+import Link from '../components/IntlLink'
 
 const NotFoundPage = () => (
   <Layout>

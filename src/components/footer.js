@@ -6,6 +6,9 @@ import React, { useState } from 'react'
 import Socials from './socials'
 import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
+import langConfig from '../../lang.config.json'
+import { useLocation } from '@reach/router'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -31,6 +34,9 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const location = useLocation()
+  const intl = useIntl()
+
   const Lang = ({ align }) => {
     const [dropdownActive, setDropdownActive] = useState('')
 
@@ -55,12 +61,22 @@ const Footer = () => {
         </div>
         <div className="dropdown-menu">
           <div className="dropdown-content">
-            <Link to="/" className="dropdown-item">
-              English
-            </Link>
-            <Link to="/zh" className="dropdown-item">
-              简体中文
-            </Link>
+            {Object.keys(langConfig.languages).map((lang) => (
+              <Link
+                key={lang}
+                className="dropdown-item"
+                to={location.pathname.replace(
+                  new RegExp(
+                    intl.locale === langConfig.defaultLang
+                      ? `^`
+                      : `^/${intl.locale}`
+                  ),
+                  lang === langConfig.defaultLang ? '' : `/${lang}`
+                )}
+              >
+                {langConfig.languages[lang].langName}
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 const purgecssWhitelist = require('./purgecss-whitelist')
+const langConfig = require('./lang.config.json')
 
 module.exports = {
   siteMetadata: {
@@ -54,13 +55,13 @@ module.exports = {
         path: `${__dirname}/data`,
       },
     },
-    {
+    ...Object.keys(langConfig.languages).map((lang) => ({
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages/blogs',
-        path: `${__dirname}/markdown-pages/blogs`,
+        name: langConfig.languages[lang].blogsPath,
+        path: `${__dirname}/${langConfig.languages[lang].blogsPath}`,
       },
-    },
+    })),
     {
       resolve: `gatsby-source-filesystem`,
       options: {

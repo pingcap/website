@@ -16,20 +16,20 @@ const celebrateYourGrowthData = [
     name: 'Open-source under Apache 2, No Lock-in',
     desc:
       'Supported by a wealth of open-source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
-    placeholder: c1SVG
+    placeholder: c1SVG,
   },
   {
     name: 'Scale-out Relational Database',
     desc:
       'Purposely built to deliver SQL at scale, TiDB eliminates the scaling problems of traditional relational databases without intrusion to your application.',
-    placeholder: c2SVG
+    placeholder: c2SVG,
   },
   {
     name: 'Real-time Analytics',
     desc:
       'HTAP database platform that enables real-time situation awareness and decision making on live transactional data and eliminates friction between IT and business goals.',
-    placeholder: c3SVG
-  }
+    placeholder: c3SVG,
+  },
 ]
 
 const benefitsData = [
@@ -40,15 +40,15 @@ const benefitsData = [
     link: 'See how others succeed',
     href: '/case-studies',
     placeholder: b1SVG,
-    reverse: true
+    reverse: true,
   },
   {
     name: 'Elastic Scalability',
     desc:
       'TiDB automatically shards your data so you don’t have to do it manually. You can simply add new nodes to scale horizontally and elastically to meet your business growth.',
     link: 'See how your data is distributed',
-    href: '/blog/TiDB-Internal--I----Data-Storage',
-    placeholder: b2SVG
+    href: '/blog/2017-07-11-tidbinternal1',
+    placeholder: b2SVG,
   },
   {
     name: 'Simplicity and Safety',
@@ -57,17 +57,16 @@ const benefitsData = [
     link: 'See how others succeed',
     href: '/case-studies',
     placeholder: b3SVG,
-    reverse: true
+    reverse: true,
   },
   {
     name: 'Better Insights with Timely Data',
     desc:
       'TiDB supports real-time analytics. By breaking the wall between OLTP and OLAP, it makes your applications adaptive to transient business opportunities.',
     link: 'See how others succeed',
-    href:
-      '/case-studies',
-    placeholder: b4SVG
-  }
+    href: '/case-studies',
+    placeholder: b4SVG,
+  },
 ]
 
 const logos = {
@@ -75,7 +74,7 @@ const logos = {
   tiup,
   googleCloudPlatform,
   aws,
-  tidbCloud
+  tidbCloud,
 }
 
 export { celebrateYourGrowthData, benefitsData, logos }

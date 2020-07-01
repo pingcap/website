@@ -3,7 +3,8 @@ import '../../styles/pages/download/community.scss'
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from '../../components/IntlLink'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -38,8 +39,10 @@ const Community = ({ data }) => {
       errMsg.push('agreement check')
     }
 
-    if(errMsg.length === 0) {
-      setDownloadURL(`https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`)
+    if (errMsg.length === 0) {
+      setDownloadURL(
+        `https://download.pingcap.org/${selPkg}-${selVersion}-linux-amd64.tar.gz`
+      )
     } else {
       setDownloadURL('')
     }
@@ -52,11 +55,11 @@ const Community = ({ data }) => {
     setWrongMsg(errMsg)
   }
 
-  const handleVersionChange = e => {
+  const handleVersionChange = (e) => {
     setSelVersion(e.target.value)
   }
 
-  const handlePackageChange = e => {
+  const handlePackageChange = (e) => {
     const val = e.target.value
     switch (val) {
       case 'tidb-community-server':
@@ -79,11 +82,11 @@ const Community = ({ data }) => {
 
   useEffect(() => {
     validateForm()
-  },[selVersion, selPkg, termsChecked])
+  }, [selVersion, selPkg, termsChecked])
 
   return (
     <Layout>
-      <SEO title=" Download TiDB Community " description=""/>
+      <SEO title=" Download TiDB Community " description="" />
       <article className="PingCAP-Download-TiDB-Enterprise">
         <section className="section">
           <div className="container enterprise-wrapper">
@@ -114,7 +117,7 @@ const Community = ({ data }) => {
                   onChange={handleVersionChange}
                   label="Select TiDB version"
                 >
-                  {versions.map(v => (
+                  {versions.map((v) => (
                     <MenuItem key={v} value={v}>
                       {v}
                     </MenuItem>
@@ -128,7 +131,7 @@ const Community = ({ data }) => {
                   onChange={handlePackageChange}
                   label="Select software package"
                 >
-                  {pkgs.map(p => (
+                  {pkgs.map((p) => (
                     <MenuItem key={p} value={p}>
                       {p}
                     </MenuItem>
