@@ -4,6 +4,7 @@ import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
+import { FormattedMessage } from 'react-intl'
 
 const Navbar = () => {
   const imageData = useStaticQuery(
@@ -83,7 +84,7 @@ const Navbar = () => {
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    {item.name}
+                    <FormattedMessage id={item.key} />
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
                         <Link
@@ -106,7 +107,7 @@ const Navbar = () => {
                         className="navbar-item with-main-section"
                         target="_blank"
                       >
-                        {item.name}
+                        <FormattedMessage id={item.key} />
                       </a>
                     ) : (
                       <Link
@@ -115,7 +116,7 @@ const Navbar = () => {
                         className="navbar-item with-main-section"
                         onTouchStart={() => {}}
                       >
-                        {item.name}
+                        <FormattedMessage id={item.key} />
                       </Link>
                     )}
                   </>
