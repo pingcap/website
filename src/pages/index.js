@@ -13,6 +13,8 @@ import SectionUseCases from '../components/sectionUseCases'
 import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
 
+import throttle from 'lodash.throttle'
+
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
@@ -78,7 +80,7 @@ const IndexPage = ({ data }) => {
     let begin = 0
 
     function bind(el, index, displayStyle, timeout, triggerHeightRatio) {
-      const listener = () => {
+      const listener = throttle(() => {
         if (index !== begin) {
           return
         }
@@ -102,8 +104,7 @@ const IndexPage = ({ data }) => {
           begin++
           window.removeEventListener('scroll', listener)
         }
-      }
-
+      }, 500)
       window.addEventListener('scroll', listener)
     }
 
