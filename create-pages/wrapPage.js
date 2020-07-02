@@ -1,5 +1,6 @@
 import React from 'react'
 import { IntlProvider } from 'react-intl'
+import langConfig from '../lang.config.json'
 
 const toPairs = (obj) => Object.keys(obj).map((key) => [key, obj[key]])
 const fromPairs = (pairs) => {
@@ -19,8 +20,11 @@ const flatten = (messages) => {
 
 export const wrapPageElement = ({ element, props }) => {
   const {
-    pageContext: { language },
+    pageContext: { language = langConfig.defaultLang },
   } = props
+  if (language === undefined) {
+    console.log(props.location.pathname)
+  }
   const messages = require(`${__dirname}/../data/i18n/${language}.json`)
   const flattened = fromPairs(flatten(messages))
 
