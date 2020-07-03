@@ -8,7 +8,7 @@ import { footerColumns } from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
 import { useLocation } from '@reach/router'
-import { useIntl } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -96,7 +96,7 @@ const Footer = () => {
                 onClick={handleSpreadItems}
                 onKeyDown={handleSpreadItems}
               >
-                {column.name}
+                <FormattedMessage id={column.key} />
                 <span className="spread">
                   <AddIcon />
                 </span>
@@ -105,7 +105,7 @@ const Footer = () => {
                 {column.items.map((item) => (
                   <li key={item.name}>
                     <BoundLink to={item.link} outbound={item.outbound}>
-                      {item.name}
+                      <FormattedMessage id={item.key} />
                     </BoundLink>
                   </li>
                 ))}
