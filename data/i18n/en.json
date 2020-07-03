@@ -1,0 +1,35 @@
+{
+    "components": {
+        "navbar": {
+            "product": "Product",
+            "caseStudies": "Case Studies",
+            "docs": "Docs",
+            "blog": "Blog",
+            "community": "Community",
+            "contactUs": "Contact Us"
+        },
+        "footer": {
+            "openSourceEco": "Open Source Ecosystem",
+            "tidb": "TiDB",
+            "tikv": "TiKV",
+            "tispark": "TiSpark",
+            "chaosMesh": "Chaos Mesh®",
+            "resources": "Resources",
+            "quickStart": "Quick Start",
+            "documentation": "Documentation",
+            "blog": "Blog",
+            "community": "Community",
+            "github": "Github",
+            "company": "Company",
+            "about": "About",
+            "contactUs": "Contact Us",
+            "careers": "Careers",
+            "cookiePolicy": "Cookie Policy",
+            "privacyPolicy": "Privacy Policy",
+            "useCases": "Use Cases",
+            "internet": "Internet",
+            "gaming": "Gaming",
+            "financial": "Financial Services"
+        }
+    }
+}
