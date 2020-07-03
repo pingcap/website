@@ -30,6 +30,16 @@
             "internet": "Internet",
             "gaming": "Gaming",
             "financial": "Financial Services"
+        },
+        "StartTiDBRibbon": {
+            "ready": "Ready to get started with TiDB?",
+            "contactUs": "CONTACT US",
+            "getTiDB": "GET TiDB"
+        },
+        "PostFromUsInHome": {
+            "subscribe": "Subscribe To Our Newsletter",
+            "features": "Features, releases, showcases, meetups, talks...",
+            "button": "SUBSCRIBE"
         }
     }
 }

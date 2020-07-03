@@ -22,9 +22,6 @@ export const wrapPageElement = ({ element, props }) => {
   const {
     pageContext: { language = langConfig.defaultLang },
   } = props
-  if (language === undefined) {
-    console.log(props.location.pathname)
-  }
   const messages = require(`${__dirname}/../data/i18n/${language}.json`)
   const flattened = fromPairs(flatten(messages))
 

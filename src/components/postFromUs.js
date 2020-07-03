@@ -2,6 +2,7 @@ import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import React from 'react'
+import { FormattedMessage } from 'react-intl'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -53,9 +54,11 @@ export const PostFromUsInHome = () => (
     shadowless
   >
     <div className="titles">
-      <h2 className="title is-4 is-spaced">Subscribe To Our Newsletter</h2>
+      <h2 className="title is-4 is-spaced">
+        <FormattedMessage id="components.PostFromUsInHome.subscribe" />
+      </h2>
       <div className="subtitle is-6">
-        Features, releases, showcases, meetups, talks...
+        <FormattedMessage id="components.PostFromUsInHome.features" />
       </div>
     </div>
     <div className="poster-wrapper">
@@ -67,7 +70,7 @@ export const PostFromUsInHome = () => (
         target="_blank"
         color="primary"
       >
-        SUBSCRIBE
+        <FormattedMessage id="components.PostFromUsInHome.button" />
       </Button>
     </div>
   </NormalBox>
