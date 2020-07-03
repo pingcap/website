@@ -3,7 +3,7 @@ title: Senior Product Manager (TiDB Cloud)
 location: San Mateo • Full Time
 ---
 
-# Field Marketing Specialist
+# Senior Product Manager (TiDB Cloud)
 
 ## About PingCAP:
 
