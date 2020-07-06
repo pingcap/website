@@ -114,6 +114,7 @@ module.exports = {
         ignore: [`src/styles/`],
       },
     },
+    `gatsby-plugin-meta-redirect`,
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
