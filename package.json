@@ -15,6 +15,7 @@
     "gatsby-plugin-gdpr-cookies": "^1.0.7",
     "gatsby-plugin-google-analytics": "^2.3.4",
     "gatsby-plugin-manifest": "^2.2.48",
+    "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.1.24",
     "gatsby-plugin-remove-serviceworker": "^1.0.0",

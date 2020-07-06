@@ -1,7 +1,7 @@
 const path = require('path')
 const replaceTitle = require('./utils').replaceTitle
 
-const createBlogs = async ({ graphql, createPage }) => {
+const createBlogs = async ({ graphql, createPage, createRedirect }) => {
   const blogTemplate = path.resolve(`${__dirname}/../src/templates/blog.js`)
   const result = await graphql(`
     query {
@@ -16,6 +16,7 @@ const createBlogs = async ({ graphql, createPage }) => {
           node {
             frontmatter {
               title
+              aliases
             }
             parent {
               ... on File {
@@ -29,14 +30,28 @@ const createBlogs = async ({ graphql, createPage }) => {
   `)
 
   result.data.blogs.edges.forEach(({ node }) => {
+    const _path = `blog/${replaceTitle(node.parent.relativePath)}`
     createPage({
-      path: `blog/${replaceTitle(node.parent.relativePath)}`,
+      path: _path,
       component: blogTemplate,
       context: {
         title: node.frontmatter.title,
         filePath: `${replaceTitle(node.parent.relativePath)}`
       },
     })
+
+    // create redirect
+    if (node.frontmatter.aliases) {
+      const aliasesArr = node.frontmatter.aliases
+
+      aliasesArr.forEach((alias) => {
+        createRedirect({
+          fromPath: `${alias}`,
+          toPath: _path,
+          isPermanent: true,
+        })
+      })
+    }
   })
 }
 
