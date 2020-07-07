@@ -139,34 +139,86 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
         }
       }
 
-      .video-wrapper {
-        @include mobile {
-          width: 80%;
-          margin-bottom: 2rem;
-        }
+      // .video-wrapper {
+      //   @include mobile {
+      //     width: 80%;
+      //     margin-bottom: 2rem;
+      //   }
 
-        @keyframes show {
-          from {
-            opacity: 0;
-            transform: translateY(25%);
-          }
+      //   @keyframes show {
+      //     from {
+      //       opacity: 0;
+      //       transform: translateY(25%);
+      //     }
 
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
+      //     to {
+      //       opacity: 1;
+      //       transform: translateY(0);
+      //     }
+      //   }
 
+      //   position: relative;
+      //   animation: show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+      //   video {
+      //     position: absolute;
+      //     top: 0;
+      //     left: 0;
+
+      //     // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
+      //     mask-image: radial-gradient(white, black);
+      //   }
+      // }
+
+      .swiper-outer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        width: 645.33px;
+        height: 409.66px;
         position: relative;
-        animation: show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+      
+      .swiper-container {
+        width: 100%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
-        video {
-          position: absolute;
-          top: 0;
-          left: 0;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
 
-          // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
-          mask-image: radial-gradient(white, black);
+      .swiper-custom-pagination {
+        margin-top: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .bullet {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            transform: scale(0.5);
+
+            border-radius: 50%;
+            background-color: #9FA8B9;
+          }
+
+          &.active:after {
+            background-color: #2E2FFF;
+          }
         }
       }
     }

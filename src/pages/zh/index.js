@@ -3,6 +3,7 @@ import '../../styles/pages/zh/index.scss'
 import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
+import Swiper from 'swiper'
 import { benefitsData, celebrateYourGrowthData, logos } from '../../data/zh'
 
 import Layout from '../../components/layout'
@@ -11,6 +12,10 @@ import SEO from '../../components/seo'
 import { replaceTitle } from '../../lib/string'
 import LinkWithArrow from '../../components/linkWithArrow'
 import StartTiDBRibbon from '../../components/startTiDBRibbon'
+
+import askTug from '../../../images/home/banners/zh/home-asktug-carousel.jpg'
+import university from '../../../images/home/banners/zh/university-carousel-img.png'
+import userMessage from '../../../images/home/banners/zh/user-message-2019-banner.png'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -45,6 +50,12 @@ const caseLogos = [
   'dailymotion',
 ]
 
+const banners = [
+  { img: askTug, url: 'https://asktug.com/t/topic/33760/2' },
+  { img: university, url: 'https://university.pingcap.com/' },
+  { img: userMessage, url: 'https://pingcap.com/cases-cn/user-message-2019/' },
+]
+
 const IndexPage = ({ data }) => {
   const {
     tidbSQLAtScaleSVG,
@@ -63,6 +74,22 @@ const IndexPage = ({ data }) => {
     )
 
     scrollToDisplay()
+  }, [])
+
+  useEffect(() => {
+    new Swiper('.swiper-container', {
+      autoplay: {
+        delay: 6000,
+      },
+      loop: true,
+      pagination: {
+        el: '.swiper-custom-pagination',
+        clickable: true,
+        bulletClass: 'bullet',
+        bulletActiveClass: 'active',
+        renderBullet: () => `<span class="bullet"></span>`,
+      },
+    })
   }, [])
 
   const scrollToDisplay = () => {
@@ -184,16 +211,19 @@ const IndexPage = ({ data }) => {
                   </Button>
                 </div>
               </div>
-              <div className="video-wrapper">
-                <img src={tidbFeaturesPNG.publicURL} alt="TiDB features" />
-                <video
-                  src={tidbFeaturesMP4.publicURL}
-                  type="video/mp4"
-                  playsInline
-                  autoPlay
-                  loop
-                  muted
-                />
+              <div className="swiper-outer">
+                <div className="swiper-container">
+                  <div className="swiper-wrapper top">
+                    {banners.map(({ img, url }, i) => (
+                      <div key={i} className="swiper-slide">
+                        <a href={url} rel="noopener noreferer" target="_blank">
+                          <img src={img} />
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="swiper-custom-pagination" />
               </div>
             </div>
           </div>
