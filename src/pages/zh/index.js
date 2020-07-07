@@ -7,7 +7,7 @@ import Swiper from 'swiper'
 import { benefitsData, celebrateYourGrowthData, logos } from '../../data/zh'
 
 import Layout from '../../components/layout'
-import { PostFromUsInHome } from '../../components/postFromUs'
+import { PostFromUsInHome } from '../../components/zh/postFromUs'
 import SEO from '../../components/seo'
 import { replaceTitle } from '../../lib/string'
 import LinkWithArrow from '../../components/linkWithArrow'

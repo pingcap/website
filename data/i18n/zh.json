@@ -35,11 +35,6 @@
             "ready": "开始试用！",
             "contactUs": "联系我们",
             "getTiDB": "试用 TiDB"
-        },
-        "PostFromUsInHome": {
-            "subscribe": "订阅信息",
-            "features": "功能，发布，展示，聚会，演讲...",
-            "button": "提交"
         }
     }
 }

@@ -175,13 +175,13 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
         flex-direction: column;
         justify-content: center;
         align-items: stretch;
-        width: 645.33px;
-        height: 409.66px;
         position: relative;
+        width: unset;
       }
       
       .swiper-container {
-        width: 100%;
+        width: 645.33px;
+        height: 409.66px;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
         img {
