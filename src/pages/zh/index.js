@@ -387,7 +387,7 @@ const IndexPage = ({ data }) => {
                   <h3 className="title column-title">数据库即服务</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo tidb-cloud">
-                    <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
+                    <img src={logos.database} alt="Database" />
                   </Box>
                   <Button
                     as="a"

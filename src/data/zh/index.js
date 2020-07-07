@@ -9,7 +9,7 @@ import kubernetes from '../../../images/home/logos/kubernetes.svg'
 import tiup from '../../../images/home/logos/tiup.svg'
 import aws from '../../../images/home/logos/aws.svg'
 import googleCloudPlatform from '../../../images/home/logos/google-cloud-platform.png'
-import tidbCloud from '../../../images/home/logos/tidb-cloud.svg'
+import database from '../../../images/home/logos/zh/database.svg'
 
 const celebrateYourGrowthData = [
   {
@@ -47,7 +47,7 @@ const benefitsData = [
     desc:
       '可以把 TiDB 想象成一个单机的 RDBMS，ACID 事务可以跨节点进行，提供金融级别的数据可靠性保证。',
     link: '查看如何使用',
-    href: '/blog/2017-07-11-tidbinternal1',
+    href: '/case-studies',
     placeholder: b2SVG,
   },
   {
@@ -74,7 +74,7 @@ const logos = {
   tiup,
   googleCloudPlatform,
   aws,
-  tidbCloud,
+  database,
 }
 
 export { celebrateYourGrowthData, benefitsData, logos }
