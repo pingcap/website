@@ -331,7 +331,7 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
         transition: 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         width: 1344px;
-        height: 820px;
+        height: 540px;
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -339,16 +339,15 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
 
       .center {
         @include mobile {
-          width: 250px;
-          height: 300px;
+          width: 450px;
+          height: 180px;
+          margin: 0;
         }
 
         margin: 0 2rem;
-        transform: scale(1.37);
+        // transform: scale(1.37);
         background-image: url(../../../../images/home/architecture/zh/architecture.svg);
       }
-
-
     }
   }
 
