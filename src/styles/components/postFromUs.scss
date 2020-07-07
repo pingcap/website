@@ -59,9 +59,22 @@
       width: 300px;
       border: none;
     }
-
+    
     button {
       width: 125px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        margin-top: 24px;
+        width: 100%;
+      }
     }
   }
 

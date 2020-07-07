@@ -188,6 +188,12 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
           width: 100%;
           height: 100%;
         }
+
+        @include mobile {
+          width: 100vw;
+          height: calc(409.66 / 645.33 * 100vw);
+          box-shadow: none;
+        }
       }
 
       .swiper-custom-pagination {
@@ -219,6 +225,10 @@ $logos: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance ten
           &.active:after {
             background-color: #2E2FFF;
           }
+        }
+
+        @include mobile {
+          visibility: hidden;
         }
       }
     }
