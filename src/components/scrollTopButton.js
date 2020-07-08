@@ -8,7 +8,6 @@ function useScrollTopButton() {
   useEffect(() => {
     const listener = throttle(() => {
       const shouldShow = window.scrollY >= 200
-      console.log(shouldShow)
       if (shouldShow !== show) {
         switchShow(shouldShow)
       }
@@ -21,7 +20,6 @@ function useScrollTopButton() {
 
 const ScrollTopButton = () => {
   const show = useScrollTopButton()
-  console.log(show)
   const hiddenStyle = {
     opacity: 0,
   }
