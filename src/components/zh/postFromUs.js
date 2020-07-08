@@ -21,23 +21,22 @@ const Img = () => {
 }
 
 const Field = () => {
-  const formRef = useRef()
+  const emailRef = useRef()
   return (
     <MailchimpSubscribe
       url="//pingcap.us16.list-manage.com/subscribe/post?u=ab57beb8a88391cf6193c1b48&amp;id=7c67af4f9d"
       render={({ subscribe, status, message }) => (
         <form
-          ref={formRef}
           onSubmit={(e) => {
             e.preventDefault()
-            console.log(new FormData(formRef.current))
-            if (formRef.current) subscribe(new FormData(formRef.current))
+            if (emailRef.current) subscribe({ EMAIL: emailRef.current.value })
           }}
           className={status === null || status === 'error' ? '' : 'pending'}
         >
           <div className="field has-addons">
             <div className="control">
               <input
+                ref={emailRef}
                 className="input"
                 type="text"
                 placeholder="email@pingcap.com"
