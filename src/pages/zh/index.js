@@ -1,4 +1,4 @@
-import '../../styles/pages/zh/index.scss'
+import '../../styles/pages/index.scss'
 
 import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
@@ -229,12 +229,12 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-case-studies has-light-background">
+        <section className="section section-case-studies has-light-background zh">
           <div className="container">
             <h2 className="title section-title">用户案例</h2>
             <div className="logos">
               {caseLogos.map((logo) => (
-                <div key={logo} className={`${logo}-logo`} />
+                <div key={logo} className={`${logo}-logo-zh`} />
               ))}
             </div>
             <div className="has-text-centered">
@@ -308,7 +308,7 @@ const IndexPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">架 构</h2>
             <div ref={architectureRef} className="images">
-              <div className="center" />
+              <div className="center-zh" />
             </div>
           </div>
         </section>
@@ -363,7 +363,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-get-started-with-tidb">
+        <section className="section section-get-started-with-tidb zh">
           <div className="container">
             <h2 className="title section-title">开始试用 TiDB</h2>
             <div className="columns is-variable is-6">
