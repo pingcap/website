@@ -1,0 +1,337 @@
+@import '../../common';
+
+@mixin subtitle {
+  @include section-title;
+  font-size: $H1;
+  color: $B3;
+}
+
+@mixin positioned-el(
+  $width,
+  $x-direction,
+  $y-direction,
+  $x-offset,
+  $y-offset,
+  $color
+) {
+  width: $width;
+  height: $width;
+  position: absolute;
+  @if $x-direction == left {
+    left: $x-offset;
+  } @else if $x-direction == right {
+    right: $x-offset;
+  }
+  @if $y-direction == top {
+    top: $y-offset;
+  } @else if $y-direction == bottom {
+    bottom: $y-offset;
+  }
+  background: $color;
+}
+
+@mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
+  --x-start: #{$x-start};
+  --x-end: #{$x-end};
+  --y-start: #{$y-start};
+  --y-end: #{$y-end};
+  animation: shaking $duration infinite alternate;
+}
+
+@mixin scaling-el($scale-start, $scale-end, $duration) {
+  --scale-start: #{$scale-start};
+  --scale-end: #{$scale-end};
+  animation: scaling $duration infinite alternate;
+}
+
+@keyframes shaking {
+  from {
+    transform: translate(var(--x-start), var(--y-start));
+  }
+  to {
+    transform: translate(var(--x-end), var(--y-end));
+  }
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(var(--scale-start));
+  }
+  to {
+    transform: scale(var(--scale-end));
+  }
+}
+
+.PingCAP-About-ZH {
+  $icons: office-equipment gym team-building snacks TGIF flexible;
+
+  @each $icon in $icons {
+    .#{$icon} {
+      background: url(../../../../images/zh/about/#{$icon}.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
+  .hero {
+    background-color: $B3;
+    height: 25vw;
+
+    .hero-body {
+      padding: 4rem 1rem;
+    }
+
+    img {
+      width: 35vw;
+    }
+  }
+
+  .intro-section {
+    .title {
+      @include subtitle; 
+      font-size: 1.75rem;
+      color: $M3;
+    }
+    .center-button {
+      display: block;
+      width: 10rem;
+      margin: 0 auto;
+    }
+  }
+
+  .timeline-section {
+    @include has-light-background;
+    .title {
+      @include subtitle;
+    }
+  }
+
+  .intro-video-section {
+    position: relative;
+    .intro-video {
+      width: 60rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .working-env-section {
+    @include has-light-background;
+    .title {
+      @include subtitle;
+      text-align: center;
+      margin-bottom: $LH2 + rem;
+    }
+    .photograph {
+      font-size: $P1;
+      color: $M4;
+      margin-bottom: $LH1 + rem;
+    }
+    .env-desc-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h3 {
+        font-size: $H3;
+        color: $M3;
+        margin: $LH2 + rem 0;
+      }
+      p {
+        font-size: $P1;
+        color: $M4;
+      }
+    }
+  }
+
+  .contact-us-section {
+    .title {
+      @include subtitle;
+    }
+    .left-column {
+      position: relative;
+    }
+    .left-column::after {
+      display: block;
+      content: '';
+      width: 20rem;
+      height: 1px;
+      background: #e5ebf3;
+      transform-origin: left;
+      transform: rotate(90deg);
+      position: absolute;
+      top: 2.1875rem;
+      left: 85%;
+    }
+    .address-title,.contact-title {
+      font-size: $H4;
+      font-weight: 600;
+      color: $M4;
+    }
+    .address,.contact {
+      font-size: $P1;
+      color: $M4;
+    }
+    .office-info {
+      margin-bottom: $LH3 + rem;
+    }
+    .contact-info {
+      margin-bottom: $LH2 + rem;
+      .contact-title {
+        margin-bottom: $LH4 + rem;
+      }
+    }
+    .consult-link {
+      font-size: $P1;
+      color: $B1;
+    }
+  }
+
+  .map-section {
+    .container {
+      position: relative;
+    }
+    .map-office {
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #3351ff;
+      &:hover button {
+        transform: scale(1.2);
+        box-shadow: 1px 1px 10px #bfbfbf;
+      }
+      .line {
+        transform-origin: left;
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        border: 1px solid #35f;
+        &:hover + button {
+          transform: scale(1.2);
+          box-shadow: 1px 1px 10px #bfbfbf;
+        }
+      }
+      button {
+        width: 5.5rem;
+        position: absolute;
+        background: #35f;
+        border: none;
+        color: #fff;
+        padding: 10px 10px;
+        border-radius: 4px;
+        transition: transform 0.2s ease-in-out;
+        font-size: 0.8125rem;
+      }
+    }
+    .map-office[data-name='北京office'] {
+      background: #E30C34;
+      .line {
+        border: 1px solid #E30C34;
+      }
+      button {
+        background: #E30C34;
+      }
+    }
+  }
+
+  .join-section {
+    position: relative;
+    text-align: center;
+    height: 20rem;
+    .el1 {
+      @include positioned-el(1rem, left, top, 10%, 2rem, #3351ff);
+      @include shaking-el(20px, 30px, 20px, 10px, 3s);
+      border-radius: 50%;
+    }
+    .el2 {
+      @include positioned-el(1.125rem, left, top, 15%, 10rem, #162d71);
+      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+      border-radius: 50%;
+    }
+    .el3 {
+      @include positioned-el(0.625rem, left, top, 30%, 6rem, #0fa7fa);
+      @include shaking-el(20px, 30px, 20px, 10px, 2s);
+      border-radius: 50%;
+    }
+    .el4 {
+      @include positioned-el(1.5625rem, right, top, 50%, 9.5rem, #e30c25);
+      @include scaling-el(0.7, 1, 3s);
+      clip-path: polygon(
+        30% 0%,
+        70% 0%,
+        100% 30%,
+        100% 70%,
+        70% 100%,
+        30% 100%,
+        0% 70%,
+        0% 30%
+      );
+      transform: rotate(14deg);
+    }
+    .el5 {
+      @include positioned-el(1.68rem, right, top, 10%, 8rem, #0fa7fa);
+      @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .el6 {
+      @include positioned-el(0.8125rem, left, top, 70%, 12rem, #162d71);
+      @include shaking-el(20px, 30px, 20px, 10px, 3s);
+      border-radius: 50%;
+    }
+    .el7 {
+      @include positioned-el(1.125rem, left, top, 75%, 2rem, #162d71);
+      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+      border-radius: 50%;
+    }
+    .el8 {
+      @include positioned-el(0.875rem, right, top, 35%, 7rem, #10a7fa);
+      @include shaking-el(20px, 30px, 20px, 10px, 2s);
+      border-radius: 50%;
+    }
+    .title {
+      @include subtitle;
+    }
+    .button {
+      width: 10rem;
+    }
+  }
+
+  .scroll-top-button {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 3rem;
+  }
+
+  .join-us-button {
+    --x-offset: 20%;
+    position: relative;
+    box-shadow: 0 0 8px 0 rgb(72, 126, 203);
+    svg {
+      opacity: 0;
+      position: absolute;
+      top:50%;
+      left: 20%;
+      transform: translateY(-50%);
+      transition: all .5s ease;
+    }
+    span {
+      display: inline-block;
+      transition:  all .5s ease;
+    }
+    &:hover {
+      background: #172d72;
+      box-shadow: none;
+    }
+    &:hover span{
+      transform :translateX(var(--x-offset));
+    }
+    &:hover svg {
+      transform :translate(var(--x-offset),-50%);
+      opacity: 1;
+    }
+  }
+}
