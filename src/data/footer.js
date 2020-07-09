@@ -241,4 +241,11 @@ const footerColumnsZh = [
   },
 ]
 
+const footerColumnsMap = {
+  zh: footerColumnsZh,
+  en: footerColumns,
+}
+
 export { footerColumns, footerColumnsZh }
+
+export default footerColumnsMap
