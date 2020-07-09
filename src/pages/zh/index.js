@@ -183,7 +183,7 @@ const IndexPage = ({ data }) => {
                     alt="PingCAP Home: TiDB | SQL At Scale"
                   />
                 </h1>
-                <h2 className="subtitle is-5">
+                <h2 className="subtitle is-7">
                   TiDB 是一款定位于在线事务处理/在线分析处理（ HTAP: Hybrid
                   Transactional/Analytical
                   Processing）的融合型数据库产品，实现了一键水平伸缩，强一致性的多副本数据安全，分布式事务，实时
@@ -231,7 +231,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-case-studies has-light-background zh">
           <div className="container">
-            <h2 className="title section-title">用户案例</h2>
+            <h2 className="title section-title is-4">用户案例</h2>
             <div className="logos">
               {caseLogos.map((logo) => (
                 <div key={logo} className={`${logo}-logo-zh`} />
@@ -249,7 +249,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-celebrate-your-growth">
           <div className="container">
-            <h2 className="title section-title">为什么选择 TiDB</h2>
+            <h2 className="title section-title is-4">为什么选择 TiDB</h2>
             <div className="columns is-variable is-6">
               {celebrateYourGrowthData.map((d) => (
                 <div key={d.name} className="column">
@@ -259,8 +259,10 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                       className="placeholder"
                     />
-                    <h3 className="title is-spaced card-title">{d.name}</h3>
-                    <div className="paragraph has-text-centered">{d.desc}</div>
+                    <h3 className="title is-spaced card-title is-7 zh">
+                      {d.name}
+                    </h3>
+                    <div className="paragraph desc zh">{d.desc}</div>
                   </NormalBox>
                 </div>
               ))}

@@ -102,7 +102,7 @@ body {
   text-align: center;
   font-size: $size-6;
   font-weight: 400;
-  color: $M4
+  color: $M4;
 }
 
 // .column-or-card-title {
@@ -127,6 +127,10 @@ body {
   text-align: center;
   font-weight: 700;
   color: $M3;
+
+  &.zh {
+    font-weight: 400;
+  }
 }
 
 .card-media-title {
@@ -143,6 +147,10 @@ body {
 
   a {
     color: $B1;
+  }
+
+  &.zh {
+    font-weight: 300;
   }
 }
 
