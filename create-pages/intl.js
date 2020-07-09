@@ -12,7 +12,8 @@ const createIntlPages = ({ page, actions }) => {
 
   const { createPage, deletePage } = actions
 
-  const pageLang = langMapKeys.find((lang) => pagePath.startsWith(lang))
+  const pageLang = langMapKeys.find((lang) => pagePath.startsWith(`/${lang}`))
+  if (pageLang) console.log(pageLang, pagePath)
 
   deletePage(page)
   createPage({
@@ -24,23 +25,23 @@ const createIntlPages = ({ page, actions }) => {
     },
   })
 
-  if (pageLang) {
-    return
-  }
+  // if (pageLang) {
+  //   return
+  // }
 
-  langMapKeys
-    .filter((lang) => lang !== defaultLang)
-    .forEach((lang) =>
-      createPage({
-        ...page,
-        path: `/${lang}${pagePath}`,
-        context: {
-          ...page.context,
-          language: lang,
-          ...langConfig.languages[lang],
-        },
-      })
-    )
+  // langMapKeys
+  //   .filter((lang) => lang !== defaultLang)
+  //   .forEach((lang) =>
+  //     createPage({
+  //       ...page,
+  //       path: `/${lang}${pagePath}`,
+  //       context: {
+  //         ...page.context,
+  //         language: lang,
+  //         ...langConfig.languages[lang],
+  //       },
+  //     })
+  //   )
 }
 
 module.exports = createIntlPages
