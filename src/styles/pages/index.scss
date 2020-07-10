@@ -6,7 +6,7 @@
 }
 
 @mixin strikethrough($color) {
-  width: 1rem;
+  width: 0.8rem;
   margin-bottom: 1rem;
   border-bottom: 3px solid $color;
 }
@@ -337,7 +337,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         .zh {
           font-weight: 300;
         }
-        
+
         font-size: $size-8;
         line-height: 2;
         padding-bottom: 0;
@@ -346,8 +346,29 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-benefits {
+    padding-bottom: 6rem;
+
+    .section-title {
+      margin-bottom: 4rem !important;
+    }
+
     .benefits {
       .benefit {
+        width: 83.3%;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        .placeholder-wrapper {
+          width: 40%;
+          flex: none;
+        }
+
+        .intro {
+          width: 40%;
+          flex: none;
+          margin-top: -2rem;
+        }
+
         @include has-intro-and-placeholder;
         @include mobile {
           margin-top: 3rem;
@@ -355,6 +376,10 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           &:first-child {
             margin-top: 0;
           }
+        }
+
+        .placeholder {
+          width: unset !important;
         }
 
         > * {
@@ -372,6 +397,13 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-architecture {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+
+    .section-title {
+      padding-bottom: 4rem;
+    }
+
     .images {
       @include mobile {
         flex-direction: column;
@@ -432,7 +464,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         }
 
         width: 1344px;
-        height: 540px;
+        height: 534px;
         margin: 0 2rem;
         background-image: url(../../../images/home/architecture/zh/architecture.svg);
       }
@@ -440,6 +472,20 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-learn-more {
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
+    .columns {
+      width: calc(83.3% + 5rem);
+      margin: 0 auto;
+    }
+
+    .column {
+      display: flex;
+      padding: 0 2.5rem;
+    }
+    
     .card {
       height: 100%;
       transition: 0.5s;
@@ -461,6 +507,39 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           max-width: 180%;
         }
       }
+
+      .title {
+        color: $M3;
+        font-size: $size-8;
+        margin-bottom: 1rem;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 400;
+        }
+      }
+      
+      .subtitle {
+        color: $M4;
+        font-size: $size-8;
+        margin-bottom: 1rem;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 300;
+        }
+      }
+      
+      .paragraph {
+        padding: unset;
+        color: $M4;
+        font-size: $size-8;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 300;
+        }
+      }
     }
 
     .view-more-wrapper {
@@ -471,49 +550,88 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   .section-get-started-with-tidb {
     padding-bottom: 0;
 
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
     .container {
       padding-bottom: 3rem;
       border-bottom: 1px solid $C2;
     }
 
+    .columns {
+      width: calc(83.3% + 5rem);
+      margin: 0 auto;
+    }
+
+    .column {
+      padding: 0 2.5rem;
+    }
+    
     .box {
+      padding: 2rem;
+      align-items: stretch;
+
+      .title.is-5 {
+        margin-bottom: 1.5rem;
+      }
+
+      .strikethrough-primary {
+        align-self: center;
+      }
+
       .title.is-7 {
         color: $C4;
       }
 
-      &.logo,
-      a.button {
-        width: 80%;
-      }
+      // &.logo,
+      // a.button {
+      //   width: 80%;
+      // }
 
       &.logo {
         @include VHCenter;
 
-        $image-height: 4rem;
+        height: 5rem;
+        margin-bottom: 1.5rem;
+        $image-height: 3rem;
 
         img {
           height: $image-height;
         }
 
-        &.tiup {
-          padding: calc(1.25rem + 0.5rem);
-
+        &.k8s {
           img {
-            height: calc(#{$image-height} - 1rem);
+            height: 3.1rem;
+          }
+        }
+
+        &.tiup {
+          img {
+            height: 2.3rem;
           }
         }
 
         &.aws {
-          padding: calc(1.25rem - 0.5rem);
-
           img {
             height: calc(#{$image-height} + 1rem);
           }
         }
 
-        &.tidb-cloud {
-          height: 14.5rem;
+        &.gcp {
+          img {
+            height: 4.6rem;
+          }
         }
+
+        &.tidb-cloud {
+          height: 11.5rem;
+        }
+      }
+
+      .button {
+        font-size: $size-7;
+        height: 3rem;
       }
     }
 

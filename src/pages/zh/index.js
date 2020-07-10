@@ -272,7 +272,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-benefits">
           <div className="container">
-            <h2 className="title section-title">分布式 SQL 的优势</h2>
+            <h2 className="title section-title is-4">分布式 SQL 的优势</h2>
             <div ref={benefitsRef} className="benefits">
               {benefitsData.map((d) => (
                 <div
@@ -286,12 +286,12 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                     />
                   </div>
-                  <div className="divider" />
+                  {/* <div className="divider" /> */}
                   <div className="intro">
-                    <div className="title is-spaced column-title has-text-left">
+                    <div className="title is-spaced column-title has-text-left is-5 zh">
                       {d.name}
                     </div>
-                    <div className="paragraph">{d.desc}</div>
+                    <div className="paragraph zh">{d.desc}</div>
                     <LinkWithArrow
                       to={d.href}
                       linkText={d.link}
@@ -308,7 +308,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-architecture">
           <div className="container">
-            <h2 className="title section-title">架 构</h2>
+            <h2 className="title section-title is-4">架 构</h2>
             <div ref={architectureRef} className="images">
               <div className="center-zh" />
             </div>
@@ -317,7 +317,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-learn-more">
           <div className="container">
-            <h2 className="title section-title">了解更多</h2>
+            <h2 className="title section-title is-4 zh">了解更多</h2>
             <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
                 <div key={frontmatter.title} className="column">
@@ -341,15 +341,15 @@ const IndexPage = ({ data }) => {
                       </figure>
                     </div>
                     <div className="card-content">
-                      <div className="title is-spaced card-title has-text-left">
+                      <div className="title is-spaced card-title has-text-left zh">
                         {frontmatter.title}
                       </div>
-                      <div className="subtitle card-media-title">
+                      <div className="subtitle card-media-title zh">
                         By{' '}
                         {(frontmatter.author && frontmatter.author[0]) ||
                           'PingCAP'}
                       </div>
-                      <div className="paragraph">{frontmatter.summary}</div>
+                      <div className="paragraph zh">{frontmatter.summary}</div>
                     </div>
                   </div>
                 </div>
@@ -367,14 +367,14 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-get-started-with-tidb zh">
           <div className="container">
-            <h2 className="title section-title">开始试用 TiDB</h2>
+            <h2 className="title section-title is-4">开始试用 TiDB</h2>
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">在数据中心</h3>
+                  <h3 className="title column-title is-5">在数据中心</h3>
                   <div className="strikethrough-primary" />
 
-                  <Box className="logo">
+                  <Box className="logo k8s">
                     <img src={logos.kubernetes} alt="Kubernetes logo" />
                   </Box>
                   <Box className="logo tiup">
@@ -393,12 +393,12 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">在公有云上</h3>
+                  <h3 className="title column-title is-5">在公有云上</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo aws">
                     <img src={logos.aws} alt="AWS logo" />
                   </Box>
-                  <Box className="logo">
+                  <Box className="logo gcp">
                     <img
                       src={logos.googleCloudPlatform}
                       alt="Google Cloud Platform logo"
@@ -416,7 +416,7 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">数据库即服务</h3>
+                  <h3 className="title column-title is-5">数据库即服务</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo tidb-cloud">
                     <img src={logos.database} alt="Database" />
