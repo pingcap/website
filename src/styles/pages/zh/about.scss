@@ -1,69 +1,87 @@
 @import '../../common';
 
-@mixin subtitle {
-  @include section-title;
-  font-size: $H1;
-  color: $B3;
-}
 
-@mixin positioned-el(
-  $width,
-  $x-direction,
-  $y-direction,
-  $x-offset,
-  $y-offset,
-  $color
-) {
-  width: $width;
-  height: $width;
-  position: absolute;
-  @if $x-direction == left {
-    left: $x-offset;
-  } @else if $x-direction == right {
-    right: $x-offset;
-  }
-  @if $y-direction == top {
-    top: $y-offset;
-  } @else if $y-direction == bottom {
-    bottom: $y-offset;
-  }
-  background: $color;
-}
-
-@mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
-  --x-start: #{$x-start};
-  --x-end: #{$x-end};
-  --y-start: #{$y-start};
-  --y-end: #{$y-end};
-  animation: shaking $duration infinite alternate;
-}
-
-@mixin scaling-el($scale-start, $scale-end, $duration) {
-  --scale-start: #{$scale-start};
-  --scale-end: #{$scale-end};
-  animation: scaling $duration infinite alternate;
-}
-
-@keyframes shaking {
-  from {
-    transform: translate(var(--x-start), var(--y-start));
-  }
-  to {
-    transform: translate(var(--x-end), var(--y-end));
-  }
-}
-
-@keyframes scaling {
-  from {
-    transform: scale(var(--scale-start));
-  }
-  to {
-    transform: scale(var(--scale-end));
-  }
-}
 
 .PingCAP-About-ZH {
+
   $icons: office-equipment gym team-building snacks TGIF flexible;
+  $is-12: 84.06rem;
+
+  @mixin paragraph {
+    font-size: $P1;
+    font-weight: 400;
+    color: $M3;
+  }
+
+  @mixin subtitle {
+    @include section-title;
+    font-size: $H1;
+    font-weight: 500;
+    color: $B3;
+    margin-bottom: 4rem;
+  }
+
+  @mixin custom-column-section($columns: 12) {
+    $size: ((12 - $columns) / 2) * $is-12 / 12;
+    padding-left: $size;
+    padding-right: $size;
+  }
+  
+  @mixin positioned-el(
+    $width,
+    $x-direction,
+    $y-direction,
+    $x-offset,
+    $y-offset,
+    $color
+  ) {
+    width: $width;
+    height: $width;
+    position: absolute;
+    @if $x-direction == left {
+      left: $x-offset;
+    } @else if $x-direction == right {
+      right: $x-offset;
+    }
+    @if $y-direction == top {
+      top: $y-offset;
+    } @else if $y-direction == bottom {
+      bottom: $y-offset;
+    }
+    background: $color;
+  }
+  
+  @mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
+    --x-start: #{$x-start};
+    --x-end: #{$x-end};
+    --y-start: #{$y-start};
+    --y-end: #{$y-end};
+    animation: shaking $duration infinite alternate;
+  }
+  
+  @mixin scaling-el($scale-start, $scale-end, $duration) {
+    --scale-start: #{$scale-start};
+    --scale-end: #{$scale-end};
+    animation: scaling $duration infinite alternate;
+  }
+  
+  @keyframes shaking {
+    from {
+      transform: translate(var(--x-start), var(--y-start));
+    }
+    to {
+      transform: translate(var(--x-end), var(--y-end));
+    }
+  }
+  
+  @keyframes scaling {
+    from {
+      transform: scale(var(--scale-start));
+    }
+    to {
+      transform: scale(var(--scale-end));
+    }
+  }
 
   @each $icon in $icons {
     .#{$icon} {
@@ -87,22 +105,39 @@
       width: 35vw;
     }
   }
-
+  >.section {
+    width: $is-12;
+    padding: 6rem 0 0;
+    margin: 0 auto;
+  }
   .intro-section {
-    .title {
-      @include subtitle; 
-      font-size: 1.75rem;
-      color: $M3;
+    @include custom-column-section(10);
+    .container {
+      .title {
+        @include subtitle; 
+        color: $M3;
+      }
+      .paragraph {
+        @include paragraph;
+        margin-bottom: 5rem;
+  
+      }
+      .center-button {
+        display: block;
+        width: 10rem;
+        margin: 0 auto 7.875rem;
+      }
     }
-    .center-button {
-      display: block;
-      width: 10rem;
-      margin: 0 auto;
-    }
+    
   }
 
   .timeline-section {
     @include has-light-background;
+    width: 100%;
+    .container {
+      margin: 0;
+      max-width: none;
+    }
     .title {
       @include subtitle;
     }
@@ -113,41 +148,47 @@
     .intro-video {
       width: 60rem;
       position: absolute;
-      top: 50%;
+      top: 6.25rem;
       left: 50%;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
     }
   }
 
   .working-env-section {
     @include has-light-background;
-    .title {
-      @include subtitle;
-      text-align: center;
-      margin-bottom: $LH2 + rem;
-    }
-    .photograph {
-      font-size: $P1;
-      color: $M4;
-      margin-bottom: $LH1 + rem;
-    }
-    .env-desc-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      h3 {
-        font-size: $H3;
-        color: $M3;
-        margin: $LH2 + rem 0;
+    @include custom-column-section(10);
+    width: 100%;
+    padding-bottom: 3rem;
+    .container {
+      .title {
+        @include subtitle;
       }
-      p {
-        font-size: $P1;
-        color: $M4;
+      .photograph {
+        @include paragraph;
+        margin-bottom: 6.56rem;
+      }
+      .env-desc-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        margin-bottom: 5rem;
+        h3 {
+          @include paragraph;
+          margin: 1rem 0 2rem;
+        }
+        p {
+          font-size: $P2;
+          font-weight: 300;
+          color: $M4;
+        }
       }
     }
   }
 
   .contact-us-section {
+    @include custom-column-section(8);
+    padding-bottom: 7rem;
     .title {
       @include subtitle;
     }
@@ -164,28 +205,32 @@
       transform: rotate(90deg);
       position: absolute;
       top: 2.1875rem;
-      left: 85%;
+      left: 38.5rem;
     }
     .address-title,.contact-title {
-      font-size: $H4;
-      font-weight: 600;
-      color: $M4;
+      @include paragraph;
+      // margin-bottom ?
     }
-    .address,.contact {
-      font-size: $P1;
-      color: $M4;
+    .address{
+      @include paragraph;
     }
     .office-info {
       margin-bottom: $LH3 + rem;
     }
     .contact-info {
-      margin-bottom: $LH2 + rem;
+      margin-bottom: 2.25rem;
       .contact-title {
-        margin-bottom: $LH4 + rem;
+        // margin-bottom ?
+      }
+      .contact {
+        font-size: $P1;
+        font-weight: 300;
+        color: $M4;
       }
     }
     .consult-link {
       font-size: $P1;
+      font-weight: 300;
       color: $B1;
     }
   }
@@ -209,7 +254,8 @@
         position: absolute;
         top: 6px;
         left: 6px;
-        border: 1px solid #35f;
+        height:2px;
+        background: #35f;
         &:hover + button {
           transform: scale(1.2);
           box-shadow: 1px 1px 10px #bfbfbf;
@@ -241,7 +287,7 @@
   .join-section {
     position: relative;
     text-align: center;
-    height: 20rem;
+    height: 24.63rem;
     .el1 {
       @include positioned-el(1rem, left, top, 10%, 2rem, #3351ff);
       @include shaking-el(20px, 30px, 20px, 10px, 3s);
@@ -258,7 +304,7 @@
       border-radius: 50%;
     }
     .el4 {
-      @include positioned-el(1.5625rem, right, top, 50%, 9.5rem, #e30c25);
+      @include positioned-el(1.5625rem, right, top, 70%, 9.5rem, #e30c25);
       @include scaling-el(0.7, 1, 3s);
       clip-path: polygon(
         30% 0%,
