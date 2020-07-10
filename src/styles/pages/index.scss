@@ -502,9 +502,11 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
 
         img {
           position: relative;
-          right: 40%;
-          width: 180%;
-          max-width: 180%;
+          height: 13.3rem;
+          object-fit: cover;
+          // right: 40%;
+          // width: 180%;
+          // max-width: 180%;
         }
       }
 

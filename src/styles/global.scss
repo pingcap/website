@@ -91,6 +91,7 @@ body {
   margin-bottom: 1.75rem !important;
   text-align: center;
   font-size: $size-3;
+  letter-spacing: 0.5px;
 
   @include mobile {
     font-size: $size-5;

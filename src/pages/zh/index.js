@@ -17,6 +17,10 @@ import askTug from '../../../images/home/banners/zh/home-asktug-carousel.jpg'
 import university from '../../../images/home/banners/zh/university-carousel-img.png'
 import userMessage from '../../../images/home/banners/zh/user-message-2019-banner.png'
 
+import banner1 from '../../../images/home/banners/banner 1.svg'
+import banner2 from '../../../images/home/banners/banner 2.svg'
+import banner3 from '../../../images/home/banners/banner 3.svg'
+
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
@@ -319,7 +323,7 @@ const IndexPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title is-4 zh">了解更多</h2>
             <div className="columns is-variable is-6">
-              {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
+              {last3Blogs.edges.map(({ node: { frontmatter, parent } }, i) => (
                 <div key={frontmatter.title} className="column">
                   <div
                     role="button"
@@ -335,7 +339,11 @@ const IndexPage = ({ data }) => {
                     <div className="card-image">
                       <figure className="image">
                         <img
-                          src={`https://download.pingcap.com${frontmatter.image}`}
+                          src={
+                            frontmatter.image
+                              ? `https://download.pingcap.com${frontmatter.image}`
+                              : [banner1, banner2, banner3][i]
+                          }
                           alt={frontmatter.title}
                         />
                       </figure>
