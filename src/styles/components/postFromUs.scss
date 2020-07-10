@@ -39,4 +39,55 @@
       justify-content: center;
     }
   }
+
+  .poster-wrapper-zh {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 58%;
+
+    @include mobile {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  .field {
+    input {
+      width: 300px;
+      border: none;
+    }
+    
+    button {
+      width: 125px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+
+      input {
+        width: 100%;
+      }
+
+      button {
+        margin-top: 24px;
+        width: 100%;
+      }
+    }
+  }
+
+  form.pending {
+    .field {
+      input {
+        pointer-events: none;
+      }
+
+      button {
+        pointer-events: none;
+        background-color: #9FA8B9;
+      }
+    }
+  }
 }

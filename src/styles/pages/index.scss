@@ -22,6 +22,10 @@
 $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   hulu qiy netease-games jd-cloud mi webank zalopay unext wuba zhihu meituan;
 
+$logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance tencent meituan xiaomi
+  netease-games iqiyi wuba zhihu china-mobile china-telecom china-unicom people oppo yumchina zto-express
+  paypay zalopay shopee bookmyshow hulu u-next dailymotion;
+
 @mixin has-intro-and-placeholder {
   @include mobile {
     flex-direction: column;
@@ -168,12 +172,81 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
           mask-image: radial-gradient(white, black);
         }
       }
+
+      .swiper-outer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: stretch;
+        position: relative;
+        width: unset;
+      }
+      
+      .swiper-container {
+        width: 645.33px;
+        height: 409.66px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        @include mobile {
+          width: 100vw;
+          height: calc(409.66 / 645.33 * 100vw);
+          box-shadow: none;
+        }
+      }
+
+      .swiper-custom-pagination {
+        margin-top: 10px;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        .bullet {
+          position: relative;
+          width: 20px;
+          height: 20px;
+          cursor: pointer;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            transform: scale(0.5);
+
+            border-radius: 50%;
+            background-color: #9FA8B9;
+          }
+
+          &.active:after {
+            background-color: #2E2FFF;
+          }
+        }
+
+        @include mobile {
+          visibility: hidden;
+        }
+      }
     }
   }
 
   @each $logo in $logos {
     .#{$logo}-logo {
       background: url(../../../images/home/logos/#{$logo}.png) center no-repeat;
+      background-size: contain;
+    }
+  }
+
+  @each $logo in $logos-zh {
+    .#{$logo}-logo-zh {
+      background: url(../../../images/home/logos/zh/#{$logo}.png) center no-repeat;
       background-size: contain;
     }
   }
@@ -197,6 +270,15 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
         flex-basis: 20%;
         height: 72px;
         margin-bottom: 3rem;
+      }
+    }
+
+    &.zh {
+      .logos {
+        > * {
+          transform: scale(0.8);
+          flex-basis: 14.2%;
+        }
       }
     }
   }
@@ -298,6 +380,19 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
         background-image: url(../../../images/home/architecture/right-desktop.svg);
       }
+
+      .center-zh {
+        @include mobile {
+          width: 450px;
+          height: 180px;
+          margin: 0;
+        }
+
+        width: 1344px;
+        height: 540px;
+        margin: 0 2rem;
+        background-image: url(../../../images/home/architecture/zh/architecture.svg);
+      }
     }
   }
 
@@ -375,6 +470,25 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
         &.tidb-cloud {
           height: 14.5rem;
+        }
+      }
+    }
+
+    &.zh {
+      .box {
+        &.logo {
+          &.tidb-cloud {
+            img {
+              height: 6rem;
+            }
+          }
+        }
+      }
+
+      .column:nth-child(3) {
+        a.button {
+          pointer-events: none;
+          background-color: #9FA8B9;
         }
       }
     }
