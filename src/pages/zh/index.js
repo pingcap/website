@@ -59,8 +59,8 @@ const banners = [
 const IndexPage = ({ data }) => {
   const {
     tidbSQLAtScaleSVG,
-    tidbFeaturesPNG,
-    tidbFeaturesMP4,
+    // tidbFeaturesPNG,
+    // tidbFeaturesMP4,
     last3Blogs,
   } = data
 
@@ -216,8 +216,8 @@ const IndexPage = ({ data }) => {
                   <div className="swiper-wrapper top">
                     {banners.map(({ img, url }, i) => (
                       <div key={i} className="swiper-slide">
-                        <a href={url} rel="noopener noreferer" target="_blank">
-                          <img src={img} />
+                        <a href={url} rel="noopener noreferrer" target="_blank">
+                          <img src={img} alt="" />
                         </a>
                       </div>
                     ))}

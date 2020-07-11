@@ -5,7 +5,7 @@ const BoundLink = ({ to, children, outbound, ...rest }) => {
   return (
     <>
       {outbound ? (
-        <a {...rest} href={to} target="_blank">
+        <a {...rest} href={to} target="_blank" rel="noreferrer noopener">
           {children}
         </a>
       ) : (

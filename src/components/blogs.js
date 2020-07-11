@@ -27,11 +27,11 @@ const Blogs = ({
     category: currentCategory,
   } = pageContext
 
-  const title = isTagPage
-    ? pageContext.tag
-    : isCategoryPage
-    ? pageContext.category
-    : 'Blogs'
+  // const title = isTagPage
+  //   ? pageContext.tag
+  //   : isCategoryPage
+  //   ? pageContext.category
+  //   : 'Blogs'
 
   const categories = data.categories.group.map((i) => i.category)
   const tags = data.tags.group.map((i) => i.tag)
