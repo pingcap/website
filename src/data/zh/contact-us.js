@@ -9,7 +9,7 @@ const offices = [
   },
   {
     name: '杭州 Office',
-    address: '杭州市西湖区中节能.西溪首座 A1-3-802',
+    address: '杭州市文一西路588号“中节能·西溪首座”5号楼A2-1 7层722室',
   },
   {
     name: '成都 Office',
@@ -21,7 +21,7 @@ const offices = [
   },
   {
     name: '广州 Office',
-    address: '广州市海珠区宸悦路 26 号保利叁悦 B710',
+    address: '广州市海珠区暄悦东街23号保利中悦广场3702',
   },
   {
     name: '硅谷 Office',
