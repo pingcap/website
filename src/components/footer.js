@@ -4,7 +4,7 @@ import AddIcon from '@material-ui/icons/Add'
 import LanguageIcon from '@material-ui/icons/Language'
 import React, { useState } from 'react'
 import Socials from './socials'
-import { footerColumns } from '../data/footer'
+import footerColumnsMap from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
 import { useLocation } from '@reach/router'
@@ -87,7 +87,7 @@ const Footer = () => {
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map((column) => (
+          {footerColumnsMap[intl.locale].map((column) => (
             <div key={column.name} className="column">
               <div
                 role="button"
@@ -96,7 +96,8 @@ const Footer = () => {
                 onClick={handleSpreadItems}
                 onKeyDown={handleSpreadItems}
               >
-                <FormattedMessage id={column.key} />
+                {/* <FormattedMessage id={column.key} /> */}
+                {column.name}
                 <span className="spread">
                   <AddIcon />
                 </span>
@@ -105,7 +106,8 @@ const Footer = () => {
                 {column.items.map((item) => (
                   <li key={item.name}>
                     <BoundLink to={item.link} outbound={item.outbound}>
-                      <FormattedMessage id={item.key} />
+                      {/* <FormattedMessage id={item.key} /> */}
+                      {item.name}
                     </BoundLink>
                   </li>
                 ))}
