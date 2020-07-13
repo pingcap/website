@@ -7,6 +7,34 @@
             "blog": "博客",
             "community": "社区",
             "contactUs": "联系我们"
+        },
+        "footer": {
+            "openSourceEco": "产品",
+            "tidb": "TiDB",
+            "tikv": "TiKV",
+            "tispark": "TiSpark",
+            "chaosMesh": "Chaos Mesh®",
+            "resources": "资源",
+            "quickStart": "快速上手",
+            "documentation": "文档",
+            "blog": "博客",
+            "community": "社区",
+            "github": "Github",
+            "company": "公司",
+            "about": "关于我们",
+            "contactUs": "联系我们",
+            "careers": "招贤纳士",
+            "cookiePolicy": "Cookie政策",
+            "privacyPolicy": "隐私政策",
+            "useCases": "使用案例",
+            "internet": "互联网",
+            "gaming": "游戏",
+            "financial": "金融服务"
+        },
+        "StartTiDBRibbon": {
+            "ready": "开始试用！",
+            "contactUs": "联系我们",
+            "getTiDB": "试用 TiDB"
         }
     }
 }
