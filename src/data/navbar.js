@@ -30,8 +30,8 @@ const navbarItems = [
     href: '/community',
   },
   {
-    name: 'Contact Us',
-    href: '/contact-us',
+    name: 'About',
+    href: '/about',
   },
   {
     name: 'Github',
