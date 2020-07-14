@@ -46,7 +46,14 @@ const navbarItems = [
 // const promotionText = null
 const promotionText = (
   <>
-    TiDB Cloud (beta) is open for free trial now. Apply&nbsp;<a href="">here</a>
+    TiDB Cloud (beta) is open for free trial now. Apply&nbsp;
+    <a
+      href="https://pingcap.com/products/tidbcloud"
+      target="_blank"
+      rel="noreferrer noopener"
+    >
+      Here
+    </a>
   </>
 )
 
