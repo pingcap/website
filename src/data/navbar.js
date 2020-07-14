@@ -4,35 +4,40 @@ const navbarItems = [
     dropdown: [
       {
         name: 'TiDB',
-        href: '/products/tidb'
+        href: '/products/tidb',
       },
       {
         name: 'TiDB Cloud',
-        href: '/products/tidbcloud'
-      }
-    ]
+        href: '/products/tidbcloud',
+      },
+    ],
   },
   {
     name: 'Case Studies',
-    href: '/case-studies'
+    href: '/case-studies',
   },
   {
     name: 'Docs',
     href: 'https://docs.pingcap.com/tidb/v4.0',
-    outbound: true
+    outbound: true,
   },
   {
     name: 'Blog',
-    href: '/blog'
+    href: '/blog',
   },
   {
     name: 'Community',
-    href: '/community'
+    href: '/community',
   },
   {
     name: 'Contact Us',
-    href: '/contact-us'
-  }
+    href: '/contact-us',
+  },
+  {
+    name: 'Github',
+    href: 'https://github.com/pingcap',
+    outbound: true,
+  },
 ]
 
 export { navbarItems }

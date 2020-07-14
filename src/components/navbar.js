@@ -71,7 +71,7 @@ const Navbar = () => {
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map(item => (
+            {navbarItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -84,7 +84,7 @@ const Navbar = () => {
                   >
                     {item.name}
                     <div className="navbar-dropdown">
-                      {item.dropdown.map(navItem => (
+                      {item.dropdown.map((navItem) => (
                         <Link
                           key={navItem.name}
                           to={navItem.href}
@@ -123,13 +123,18 @@ const Navbar = () => {
             ))}
           </div>
           <div className="navbar-end">
-            <a
-              href="https://github.com/pingcap"
-              target="_blank"
-              className="navbar-item with-github-section"
-            >
-              <div className="github-icon"></div>
-            </a>
+            <div className="navbar-item with-get-tidb">
+              <Button
+                as={Link}
+                to="/contact-us"
+                className="get-tidb"
+                color="primary"
+                rounded
+                outlined
+              >
+                ASK AN EXPERT
+              </Button>
+            </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
