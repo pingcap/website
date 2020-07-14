@@ -135,6 +135,14 @@ const Navbar = () => {
                 )}
               </Fragment>
             ))}
+
+            <a
+              href="https://github.com/pingcap"
+              target="_blank"
+              className="navbar-item with-github-section"
+            >
+              <div className="github-icon"></div>
+            </a>
           </div>
           <div className="navbar-end">
             <div className="navbar-item with-get-tidb">
@@ -146,7 +154,7 @@ const Navbar = () => {
                 rounded
                 outlined
               >
-                ASK AN EXPERT
+                CONTACT US
               </Button>
             </div>
             <div className="navbar-item with-get-tidb">

@@ -118,7 +118,25 @@
     }
 
     &.with-get-tidb {
-      padding: 0.5rem 1rem;
+      padding: 0.5rem 0.75rem;
+
+      @include mobile {
+        margin: 0 0.75rem;
+      }
+    }
+
+    &.with-github-section {
+      .github-icon {
+        width: 16px;
+        height: 16px;
+        background-size: contain;
+
+        background-image: url('../../../images/github-icon-on-nav.svg');
+
+        &:hover {
+          background-image: url('../../../images/github-icon-on-nav-hl.svg');
+        }
+      }
 
       @include mobile {
         margin: 0 0.75rem;
@@ -161,8 +179,8 @@
       border-radius: 5px;
     }
 
-    width: 150px;
-    height: 3rem;
+    width: 120px;
+    height: 2.5rem;
     font-size: $size-7;
   }
 }

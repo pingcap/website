@@ -35,11 +35,6 @@ const navbarItems = [
     name: 'About',
     href: '/about',
   },
-  {
-    name: 'Github',
-    href: 'https://github.com/pingcap',
-    outbound: true,
-  },
 ]
 
 // to hide promotion, uncomment:
