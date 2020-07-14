@@ -17,7 +17,7 @@
       background-color: $B5;
       border-radius: 4px;
       border-top: none;
-      box-shadow: 0 8px 8px rgba(10, 10, 10, 0.1);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
       font-size: $size-7;
       top: 80%;
 
@@ -74,31 +74,11 @@
       }
 
       margin: 0 0.25rem;
-
-      &:active {
-        background: #e9ecef;
-      }
-    }
-
-    &.with-github-section {
-      .github-icon {
-        width: 30px;
-        height: 30px;
-        background-size: contain;
-
-        background-image: url('../../../images/github-icon-on-nav.svg');
-
-        &:hover {
-          background-image: url('../../../images/github-icon-on-nav-hl.svg');
-        }
-      }
-
-      @include mobile {
-        margin: 0 0.75rem;
-      }
     }
 
     &.with-get-tidb {
+      padding: 0.5rem 1rem;
+
       @include mobile {
         margin: 0 0.75rem;
       }
@@ -140,7 +120,8 @@
       border-radius: 5px;
     }
 
-    width: 155px;
+    width: 150px;
+    height: 3rem;
     font-size: $size-7;
   }
 }
