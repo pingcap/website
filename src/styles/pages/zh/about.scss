@@ -6,6 +6,7 @@
 
   $icons: office-equipment gym team-building snacks TGIF flexible;
   $is-12: 82vw;
+  $fixed-is-12: 84.06rem;
 
   @mixin paragraph {
     font-size: $P1;
@@ -25,6 +26,14 @@
     $size: ((12 - $columns) / 2) * $is-12 / 12;
     padding-left: $size;
     padding-right: $size;
+  }
+
+  @function column-to-width($columns: 12) {
+    @return $columns * $is-12 / 12;
+  }
+
+  @function rem-to-vw($rem) {
+    @return $rem * $is-12 / $fixed-is-12;
   }
   
   @mixin positioned-el(
@@ -120,12 +129,13 @@
       .paragraph {
         @include paragraph;
         margin-bottom: 5rem;
+        color: $M4;
   
       }
       .center-button {
         display: block;
         width: 10rem;
-        margin: 0 auto 7.875rem;
+        margin: 0 auto 6rem;
       }
     }
     
@@ -137,18 +147,30 @@
     .container {
       margin: 0;
       max-width: none;
+      padding-bottom: 6rem;
     }
     .title {
       @include subtitle;
+    }
+    img {
+      width: column-to-width(10);
+      display: block;
+      margin: 0 auto;
     }
   }
 
   .intro-video-section {
     position: relative;
+    width: 100%;
+    height: rem-to-vw(49.69rem);
+    .particles {
+      height: 100%;
+    }
     .intro-video {
-      width: 60rem;
+      width: column-to-width(10);
       position: absolute;
-      top: 6.25rem;
+      top: rem-to-vw(6rem);
+      bottom: 6rem(6rem);
       left: 50%;
       transform: translateX(-50%);
     }
@@ -163,22 +185,25 @@
       .title {
         @include subtitle;
       }
-      .photograph {
+      .paragraph {
         @include paragraph;
-        margin-bottom: 6.56rem;
+        color: $M4;
+        margin-bottom: 5rem;
       }
       .env-desc-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
         h3 {
-          @include paragraph;
-          margin: 1rem 0 2rem;
+          font-size: $P1;
+          font-weight: 400;
+          color: $M3;
+          margin: 1rem 0 1.5rem;
         }
         p {
-          font-size: $P2;
+          font-size: $P1;
           font-weight: 300;
           color: $M4;
         }
@@ -196,6 +221,9 @@
       position: relative;
     }
     .left-column::after {
+      @media screen and (max-width: 90rem) {
+        display: none;
+      }
       display: block;
       content: '';
       width: 20rem;
@@ -204,24 +232,24 @@
       transform-origin: left;
       transform: rotate(90deg);
       position: absolute;
-      top: 2.1875rem;
-      left: 38.5rem;
+      top: rem-to-vw(2.1875rem);
+      left: rem-to-vw(38.5rem);
     }
     .address-title,.contact-title {
-      @include paragraph;
-      // margin-bottom ?
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
     }
     .address{
-      @include paragraph;
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
     }
     .office-info {
-      margin-bottom: $LH3 + rem;
+      margin-bottom: 1.5rem;
     }
     .contact-info {
       margin-bottom: 2.25rem;
-      .contact-title {
-        // margin-bottom ?
-      }
       .contact {
         font-size: $P1;
         font-weight: 300;
@@ -288,6 +316,7 @@
     position: relative;
     text-align: center;
     height: 24.63rem;
+    padding-bottom: 8rem;
     .el1 {
       @include positioned-el(1rem, left, top, 10%, 2rem, #3351ff);
       @include shaking-el(20px, 30px, 20px, 10px, 3s);
@@ -340,6 +369,7 @@
     }
     .title {
       @include subtitle;
+      margin-bottom: 6rem;
     }
     .button {
       width: 10rem;
