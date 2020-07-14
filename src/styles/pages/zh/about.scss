@@ -34,7 +34,6 @@
 
   @function rem-to-vw($rem) {
     @return $rem * $is-12 / $fixed-is-12;
-  }
   
   @mixin positioned-el(
     $width,
