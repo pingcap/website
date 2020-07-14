@@ -1,3 +1,5 @@
+import React from 'react'
+
 const navbarItems = [
   {
     name: 'Product',
@@ -40,4 +42,12 @@ const navbarItems = [
   },
 ]
 
-export { navbarItems }
+// to hide promotion, uncomment:
+// const promotionText = null
+const promotionText = (
+  <>
+    TiDB Cloud (beta) is open for free trial now. Apply&nbsp;<a href="">here</a>
+  </>
+)
+
+export { navbarItems, promotionText }
