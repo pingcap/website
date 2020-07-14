@@ -34,6 +34,11 @@
       }
     }
 
+    .subcolumn:not(:first-child) .title {
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
     .items {
       @include mobile {
         display: none;
