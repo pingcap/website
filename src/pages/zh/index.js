@@ -57,12 +57,7 @@ const banners = [
 ]
 
 const IndexPage = ({ data }) => {
-  const {
-    tidbSQLAtScaleSVG,
-    // tidbFeaturesPNG,
-    // tidbFeaturesMP4,
-    last3Blogs,
-  } = data
+  const { tidbSQLAtScaleSVG, last3Blogs } = data
 
   const titlesRef = useRef()
   const benefitsRef = useRef()
