@@ -2,6 +2,7 @@
 @import '../../../node_modules/swiper/css/swiper.min.css';
 
 .PingCAP-CaseStudies {
+  
   .top-banner-wrapper {
     position: relative;
 
@@ -33,20 +34,20 @@
 
   .title-under-banner,
   .title-under-swiper {
-    margin: 3rem 0 !important;
+    margin: 3rem 0;
     text-align: center;
   }
 
   .title-under-banner {
-    margin-top: 0 !important;
+    margin-top: 0;
   }
 
   .title-under-swiper {
     @include mobile {
-      margin-top: 7.5rem !important;
+      margin-top: 7.5rem;
     }
 
-    margin-top: 6rem !important;
+    margin-top: 6rem;
   }
 
   .container {
@@ -208,34 +209,6 @@
     }
   }
 
-  .customer-categories {
-    text-align: center;
-
-    a {
-      @include mobile {
-        margin-right: 1rem;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-      }
-
-      margin-right: 2rem;
-      background: $B5;
-      color: $B4;
-      border-color: $C2;
-      border-radius: 3px;
-      outline: none;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:hover {
-        background: $primary;
-        color: #fff;
-        border: 1px solid $primary;
-      }
-    }
-  }
 
   .logos {
     @include mobile {
@@ -356,6 +329,170 @@
 
         &:hover {
           color: $primary;
+        }
+      }
+    }
+  }
+}
+
+
+.PingCAP-CaseStudies-New {
+  $is-12: 80vw;
+  $is-1: $is-12 / 12;
+  $fixed-is-12: 84rem;
+  @function get-columns-width($n) {
+    @return $n * $is-12 / 12;
+  }
+  @function rem-to-vw($rem) {
+    @return $rem / $fixed-is-12 * $is-12;
+  }
+
+  @mixin main-title{
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+  }
+  > .container {
+    overflow: visible;
+  }
+  > .section {
+    width: $is-12;
+    padding: 6rem 0 6rem;
+    margin: 0 auto;
+  }
+  .title-under-banner {
+    @include main-title;
+  }
+  .title-under-swiper {
+    @include main-title;
+  }
+  .swiper-container {
+    @include mobile {
+      height: 40.625rem;
+      overflow: visible;
+    }
+    width: get-columns-width(10);
+    height: 28.06rem;
+    .top {
+      height: 100%;
+      .swiper-slide {
+        display: flex;
+        align-items: center;
+        .intro {
+          height: 11.27rem;
+          margin: 0;
+          .subtitle {
+            margin-bottom: 2rem;
+            position: relative;
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              background: url(../../../images/case-studies/quote-mark.svg);
+              background-repeat: no-repeat;
+              width: 3vw;
+              height: 2vw;
+              left: 50%;
+              top: -160%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .summary {
+            padding: 0;
+            margin: 0 $is-1 2rem;
+            font-size: 1rem;
+            font-weight: 300;
+            color: $M4;
+          }
+          .see-case-study {
+            margin-top: 0;
+          }
+        }
+        .placeholder {
+          height: inherit;
+          position: relative;
+        }
+      }
+    }
+    .quote-mark {
+      position: absolute;
+      left: get-columns-width(3);
+      top: 3.44rem;
+      width: 3.06rem;
+      height: 2.26rem;
+      transform: translateX(-50%);
+    }
+    .fixed-placeholder {
+      @include mobile {
+        top: 5%;
+        left: 50%;
+        right: unset;
+        width: 80%;
+        transform: translateX(-50%);
+      }
+      position: absolute;
+      width: get-columns-width(3);
+      right: $is-1;
+    }
+    .bottom {
+      position: absolute;
+      width: get-columns-width(8);
+      height: 3.25rem;
+      left: $is-1;
+      bottom: 1.5rem;
+      padding: 0;
+      z-index: 99;
+    }
+  }
+  .customer-categories {
+    width: get-columns-width(2);
+    position: relative;
+    bottom: 8vw;
+    left: get-columns-width(9);
+    .dropdown-trigger {
+      width: 100%;
+      .button {
+        width: 100%;
+        justify-content: space-between;
+        &:focus {
+          outline:  1px solid #2E2FFF;
+        }
+        .down-arrow {
+          width: 8%;
+          padding-top: 6%;
+          background: #6E77A3;
+          clip-path: polygon(50% 100%, 0 0, 100% 0);
+        }
+        .up-arrow {
+          @extend .down-arrow;
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+      }
+    }
+    .dropdown-menu{
+      width: get-columns-width(2);
+    }
+  }
+  .logos {
+    width: $is-12;
+    margin-left: 0;
+    margin-right: 0;
+    .detail-card {
+      @include tablet {
+        $size: get-columns-width(3);
+        width: $size;
+        height: $size;
+        padding: rem-to-vw(2.5rem) rem-to-vw(3rem);
+        box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+        .title {
+          margin-bottom: rem-to-vw(2rem);
+        }
+        .paragraph {
+          margin-bottom: rem-to-vw(2rem);
+          padding: 0;
+          font-weight: 400;
+          font-size: $P2;
+          color: $M4;
         }
       }
     }
