@@ -26,45 +26,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   netease-games iqiyi wuba zhihu china-mobile china-telecom china-unicom people oppo yumchina zto-express
   paypay zalopay shopee bookmyshow hulu u-next dailymotion;
 
-@mixin has-intro-and-placeholder {
-  @include mobile {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  display: flex;
-  align-items: center;
-
-  > * {
-    flex: 1;
-  }
-
-  $img-width: 90%;
-
-  .placeholder-wrapper {
-    @include VHCenter;
-
-    height: 100%;
-
-    .placeholder {
-      width: $img-width;
-    }
-  }
-
-  .divider {
-    flex: none;
-    width: (100% - $img-width) / 2;
-  }
-
-  .intro {
-    padding: 1.5rem 0;
-
-    .desc {
-      line-height: 1.75;
-    }
-  }
-}
-
 .box.outer {
   @extend .has-light-background;
 
@@ -358,28 +319,50 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         margin: 0 auto;
         justify-content: space-between;
 
+        @include mobile {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        display: flex;
+        align-items: center;
+
+        > * {
+          flex: 1;
+        }
+
+        $img-width: 90%;
+
         .placeholder-wrapper {
+          @include VHCenter;
+
+          height: 100%;
           width: 40%;
           flex: none;
+        }
+
+        .divider {
+          flex: none;
+          width: (100% - $img-width) / 2;
         }
 
         .intro {
+          padding: 1.5rem 0;
           width: 40%;
           flex: none;
           margin-top: -2rem;
+
+          .desc {
+            line-height: 1.75;
+          }
         }
 
-        @include has-intro-and-placeholder;
         @include mobile {
           margin-top: 3rem;
 
           &:first-child {
             margin-top: 0;
           }
-        }
-
-        .placeholder {
-          width: unset !important;
         }
 
         > * {
