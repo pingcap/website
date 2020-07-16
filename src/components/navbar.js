@@ -77,7 +77,8 @@ const Navbar = () => {
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
-                    role="navigation"
+                    role="button"
+                    tabIndex="0"
                     className={`navbar-item has-dropdown is-hoverable with-main-section ${
                       burgerActive ? '' : 'hide-burger'
                     }"`}
@@ -106,6 +107,7 @@ const Navbar = () => {
                         href={item.href}
                         className="navbar-item with-main-section"
                         target="_blank"
+                        rel="noreferrer noopener"
                       >
                         <FormattedMessage id={item.key} />
                       </a>
@@ -129,6 +131,7 @@ const Navbar = () => {
               href="https://github.com/pingcap"
               target="_blank"
               className="navbar-item with-github-section"
+              rel="noreferrer noopener"
             >
               <div className="github-icon"></div>
             </a>
