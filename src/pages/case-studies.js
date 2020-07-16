@@ -25,7 +25,10 @@ const CaseStudies = ({ data, path }) => {
     caseStudiesWithoutReadMore,
   } = data
 
+  console.log(caseStudiesWithoutReadMore)
+
   const categoriesOfStudies = [
+    'All',
     ...new Set(
       caseStudies.edges
         .map(({ node }) => node.frontmatter.customerCategory)
@@ -33,23 +36,32 @@ const CaseStudies = ({ data, path }) => {
     ),
   ]
 
-  const studiesByCategory = categoriesOfStudies.map((c) => ({
-    category: c.split(' ').join('-'),
-    studies: caseStudies.edges
-      .filter(({ node }) => node.frontmatter.customerCategory === c)
-      .concat(
-        caseStudiesWithoutReadMore.edges
-          .filter(({ node }) => node.name === c)[0]
-          .node.customers.map((customer) => ({
-            node: {
-              frontmatter: {
-                customer: customer.name,
-                summary: customer.summary,
-              },
+  const studiesByCategory = categoriesOfStudies.map((c) => {
+    let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
+      .filter(({ node }) => c === 'All' || node.name === c)
+      .map((edge) => {
+        return edge.node.customers.map((customer) => ({
+          node: {
+            frontmatter: {
+              customer: customer.name,
+              summary: customer.summary,
             },
-          }))
-      ),
-  }))
+          },
+        }))
+      })
+    withoutReadMoreNodes =
+      withoutReadMoreNodes.length === 1
+        ? withoutReadMoreNodes[0]
+        : withoutReadMoreNodes.flat()
+    return {
+      category: c.split(' ').join('-'),
+      studies: caseStudies.edges
+        .filter(
+          ({ node }) => c === 'All' || node.frontmatter.customerCategory === c
+        )
+        .concat(withoutReadMoreNodes),
+    }
+  })
 
   console.log(studiesByCategory)
 
@@ -188,7 +200,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
       </div>
       <div className="dropdown-menu" id="dropdown-menu" role="menu">
         <div className="dropdown-content">
-          {items.map((item, index) => {
+          {items.map((item) => {
             const className =
               item === selectedItem
                 ? 'dropdown-item is-active'
