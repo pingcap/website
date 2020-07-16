@@ -54,7 +54,7 @@ export const PostFromUsInHome = () => (
   >
     <div className="titles">
       <h2 className="title is-4 is-spaced">Subscribe To Our Newsletter</h2>
-      <div className="subtitle is-6">
+      <div className="subtitle is-7">
         Features, releases, showcases, meetups, talks...
       </div>
     </div>

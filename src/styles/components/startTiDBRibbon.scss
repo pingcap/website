@@ -5,6 +5,7 @@
     background: url(../../../images/home/get-started-with-tidb-banner.svg)
       center no-repeat;
     background-size: cover;
+    padding: 2.5rem 1.5rem;
 
     .container {
       @include mobile {
@@ -17,8 +18,15 @@
       }
 
       display: flex;
-      justify-content: space-between;
       align-items: center;
+
+      .column-placeholder {
+        width: 8.33%;
+      }
+
+      .column-grow {
+        flex-grow: 1;
+      }
 
       .title {
         margin: 0;
@@ -27,6 +35,7 @@
       .buttons {
         display: flex;
         justify-content: center;
+        margin-bottom: 0;
 
         a {
           font-size: $size-6;
@@ -38,13 +47,17 @@
           }
 
           &:first-child {
-            margin-right: 2.5rem;
+            margin-right: 4rem;
           }
 
           &.contact-us,
           &.get-tidb {
             font-size: $size-7;
             letter-spacing: 1px;
+            padding: 0 2rem;
+            height: 3rem;
+            min-width: 11rem;
+            margin-bottom: 0;
 
             &:hover {
               background: $primary;
