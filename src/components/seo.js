@@ -73,10 +73,6 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
           content: 'summary_large_image',
         },
         {
-          name: `twitter:card`,
-          content: 'summary',
-        },
-        {
           name: 'twitter:creator',
           content: site.siteMetadata.author,
         },

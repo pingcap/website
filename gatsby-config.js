@@ -117,6 +117,14 @@ module.exports = {
         ignore: [`src/styles/`],
       },
     },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/website-en-sitemap.xml`,
+        exclude: ['/404'],
+        sitemapSize: 500,
+      },
+    },
   ],
   proxy: {
     prefix: '/api/v1',

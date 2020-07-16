@@ -8,23 +8,30 @@
 
 import './src/styles/global.scss'
 
-export { wrapPageElement } from './create-pages/wrapPage'
+export const shouldUpdateScroll = ({ prevRouterProps, routerProps }) => {
+  const caseStudiesPath = /^\/case-studies((\/)|((\/Internet)|(\/Gaming)|(\/Financial-Services)|(\/All))(\/)?)?$/
+  const caseStudiesSubPath = /^\/case-studies((\/)|((\/Internet)|(\/Gaming)|(\/Financial-Services)|(\/All))(\/)?)$/
 
-// export const shouldUpdateScroll = ({
-//   prevRouterProps: { location },
-//   getSavedScrollPosition,
-// }) => {
-//   console.log('location', location)
-//   if (
-//     location.pathname.match(
-//       /^\/case-studies\/?(Internet|Gaming|Financial-Services)?\/?$/g
-//     )
-//   ) {
-//     const prevPosition = getSavedScrollPosition(location)
-//     window.scrollTo(...(prevPosition || [0, 0]))
+  if (
+    prevRouterProps &&
+    caseStudiesPath.test(prevRouterProps.location.pathname) &&
+    caseStudiesSubPath.test(routerProps.location.pathname)
+  ) {
+    // const prevPosition = getSavedScrollPosition(location)
+    // prevPostion is always 0, maybe getSavedScrollPostion's problem
+    console.log('prev router', prevRouterProps)
+    console.log('curr router', routerProps)
+    // prev scroll-y pos, which was stored in sessionStorage by gatsby
+    const location = prevRouterProps.location
+    const sessionKey = `@@scroll|${location.key}|${location.key}`
+    const scrollPosY = sessionStorage.getItem(sessionKey)
+    sessionStorage.removeItem(sessionKey)
+    /* it will scroll to 0 if you switch route continually, even though last pos-y is not 0
+       this is a bug, but it's inevitable because reading/writing session is async io operation
+    */
 
-//     return false
-//   }
-
-//   return true
-// }
+    window.scrollTo(0, scrollPosY || 0)
+    return false
+  }
+  return true
+}
