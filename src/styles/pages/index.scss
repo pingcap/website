@@ -35,6 +35,13 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   border: 1px solid rgba($color: $C2, $alpha: 0.5);
 }
 
+@mixin columns-10 {
+  .columns {
+    width: calc(83.3% + 5rem);
+    margin: 0 auto;
+  }
+}
+
 .PingCAP-Home {
   .hero {
     .container {
@@ -269,10 +276,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       margin-bottom: 4rem !important;
     }
 
-    .columns {
-      width: calc(83.3% + 5rem);
-      margin: 0 auto;
-    }
+    @include columns-10;
 
     .column {
       display: flex;
@@ -459,10 +463,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       margin-bottom: 4rem !important;
     }
 
-    .columns {
-      width: calc(83.3% + 5rem);
-      margin: 0 auto;
-    }
+    @include columns-10;
 
     .column {
       display: flex;
@@ -544,10 +545,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       border-bottom: 1px solid $C2;
     }
 
-    .columns {
-      width: calc(83.3% + 5rem);
-      margin: 0 auto;
-    }
+    @include columns-10;
 
     .column {
       padding: 0 2.5rem;
