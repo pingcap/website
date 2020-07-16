@@ -3,7 +3,7 @@ import '../lib/graphql/image'
 
 import { graphql, Link } from 'gatsby'
 // import Link from '../components/IntlLink'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 
 import Img from 'gatsby-image'
@@ -15,9 +15,12 @@ import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
 
-const CaseStudies = ({ data, path }) => {
+const CaseStudies = ({ data, location }) => {
+  const { pathname } = location
   const currentCategory =
-    path.slice(path.search('case-studies') + 'case-studies'.length + 1) || 'All'
+    pathname.slice(
+      pathname.search('case-studies') + 'case-studies'.length + 1
+    ) || 'All'
   const {
     BannerSVG,
     placeholderSVG,
@@ -25,45 +28,49 @@ const CaseStudies = ({ data, path }) => {
     caseStudiesWithoutReadMore,
   } = data
 
-  console.log(caseStudiesWithoutReadMore)
+  const categoriesOfStudies = useMemo(
+    () => [
+      'All',
+      ...new Set(
+        caseStudies.edges
+          .map(({ node }) => node.frontmatter.customerCategory)
+          .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
+      ),
+    ],
+    [caseStudies, caseStudiesWithoutReadMore]
+  )
 
-  const categoriesOfStudies = [
-    'All',
-    ...new Set(
-      caseStudies.edges
-        .map(({ node }) => node.frontmatter.customerCategory)
-        .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
-    ),
-  ]
-
-  const studiesByCategory = categoriesOfStudies.map((c) => {
-    let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
-      .filter(({ node }) => c === 'All' || node.name === c)
-      .map((edge) => {
-        return edge.node.customers.map((customer) => ({
-          node: {
-            frontmatter: {
-              customer: customer.name,
-              summary: customer.summary,
-            },
-          },
-        }))
-      })
-    withoutReadMoreNodes =
-      withoutReadMoreNodes.length === 1
-        ? withoutReadMoreNodes[0]
-        : withoutReadMoreNodes.flat()
-    return {
-      category: c.split(' ').join('-'),
-      studies: caseStudies.edges
-        .filter(
-          ({ node }) => c === 'All' || node.frontmatter.customerCategory === c
-        )
-        .concat(withoutReadMoreNodes),
-    }
-  })
-
-  console.log(studiesByCategory)
+  const studiesByCategory = useMemo(
+    () =>
+      categoriesOfStudies.map((c) => {
+        let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
+          .filter(({ node }) => c === 'All' || node.name === c)
+          .map((edge) => {
+            return edge.node.customers.map((customer) => ({
+              node: {
+                frontmatter: {
+                  customer: customer.name,
+                  summary: customer.summary,
+                },
+              },
+            }))
+          })
+        withoutReadMoreNodes =
+          withoutReadMoreNodes.length === 1
+            ? withoutReadMoreNodes[0]
+            : withoutReadMoreNodes.flat()
+        return {
+          category: c.split(' ').join('-'),
+          studies: caseStudies.edges
+            .filter(
+              ({ node }) =>
+                c === 'All' || node.frontmatter.customerCategory === c
+            )
+            .concat(withoutReadMoreNodes),
+        }
+      }),
+    [categoriesOfStudies, caseStudies, caseStudiesWithoutReadMore]
+  )
 
   useEffect(() => {
     new Swiper('.swiper-container', {
@@ -95,45 +102,10 @@ const CaseStudies = ({ data, path }) => {
           <h2 className="title section-title title-under-banner">
             Featured Testimonials
           </h2>
-          <div className="card swiper-container">
-            <div className="swiper-wrapper top">
-              {caseStudies.edges
-                .slice(0, 3)
-                .map(({ node }) => ({
-                  ...node.frontmatter,
-                  ...(node.parent
-                    ? { relativePath: node.parent.relativePath }
-                    : {}),
-                }))
-                .map((study) => (
-                  <div key={study.customer} className="swiper-slide">
-                    <div className="intro">
-                      <div className="subtitle is-7">{study.customer}</div>
-                      <div className="summary">
-                        {truncate.apply(study.summary, [250, true])}
-                      </div>
-                      <Link
-                        to={`/case-studies/${replaceTitle(study.relativePath)}`}
-                        className="see-case-study"
-                      >
-                        See case study
-                      </Link>
-                    </div>
-                    <div className="placeholder"></div>
-                  </div>
-                ))}
-            </div>
-            <img
-              src={placeholderSVG.publicURL}
-              alt="placeholder"
-              className="fixed-placeholder"
-            />
-            <div className="bottom">
-              <NavigateBeforeIcon className="swiper-prev" />
-              <div className="swiper-custom-pagination" />
-              <NavigateNextIcon className="swiper-next" />
-            </div>
-          </div>
+          <CaseSwiper
+            caseStudies={caseStudies}
+            placeholderSVG={placeholderSVG}
+          ></CaseSwiper>
           <h2 className="title section-title title-under-swiper">
             Petabytes of Data Across Industries
           </h2>
@@ -172,6 +144,48 @@ const Banner = React.memo(({ bannerSVG }) => {
           <div className="title is-2">Trusted and Verified by</div>
           <div className="title is-2">Web-scale Innovation Leaders</div>
         </h1>
+      </div>
+    </div>
+  )
+})
+
+const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
+  return (
+    <div className="card swiper-container">
+      <div className="swiper-wrapper top">
+        {caseStudies.edges
+          .slice(0, 3)
+          .map(({ node }) => ({
+            ...node.frontmatter,
+            ...(node.parent ? { relativePath: node.parent.relativePath } : {}),
+          }))
+          .map((study) => (
+            <div key={study.customer} className="swiper-slide">
+              <div className="intro">
+                <div className="subtitle is-7">{study.customer}</div>
+                <div className="summary">
+                  {truncate.apply(study.summary, [250, true])}
+                </div>
+                <Link
+                  to={`/case-studies/${replaceTitle(study.relativePath)}`}
+                  className="see-case-study"
+                >
+                  See case study
+                </Link>
+              </div>
+              <div className="placeholder"></div>
+            </div>
+          ))}
+      </div>
+      <img
+        src={placeholderSVG.publicURL}
+        alt="placeholder"
+        className="fixed-placeholder"
+      />
+      <div className="bottom">
+        <NavigateBeforeIcon className="swiper-prev" />
+        <div className="swiper-custom-pagination" />
+        <NavigateNextIcon className="swiper-next" />
       </div>
     </div>
   )
