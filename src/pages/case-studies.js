@@ -99,14 +99,12 @@ const CaseStudies = ({ data, location }) => {
       <article className="PingCAP-CaseStudies PingCAP-CaseStudies-New">
         <Banner bannerSVG={BannerSVG} />
         <div className="container section">
-          <h2 className="title section-title title-under-banner">
-            Featured Testimonials
-          </h2>
+          <h2 className="title title-under-banner">Featured Testimonials</h2>
           <CaseSwiper
             caseStudies={caseStudies}
             placeholderSVG={placeholderSVG}
           ></CaseSwiper>
-          <h2 className="title section-title title-under-swiper">
+          <h2 className="title title-under-swiper">
             Petabytes of Data Across Industries
           </h2>
           <Dropdown
