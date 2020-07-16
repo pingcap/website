@@ -9,9 +9,11 @@ const StartTiDBRibbon = () => {
   return (
     <section className="PingCAP-Start-TiDB-ribbon section section-get-started">
       <div className="container">
-        <h2 className="title is-3 has-text-white">
+        <div className="column-placeholder" />
+        <h2 className="title is-4 has-text-white">
           <FormattedMessage id="components.StartTiDBRibbon.ready" />
         </h2>
+        <div className="column-grow" />
         <Buttons>
           <Button
             className="contact-us"
@@ -28,6 +30,7 @@ const StartTiDBRibbon = () => {
             <FormattedMessage id="components.StartTiDBRibbon.getTiDB" />
           </Button>
         </Buttons>
+        <div className="column-placeholder" />
       </div>
     </section>
   )
