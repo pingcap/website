@@ -61,4 +61,4 @@ async function downloadBlogs(blogsURL, blogsPath) {
 }
 
 downloadBlogs('/repos/pingcap/blog/contents', 'blogs')
-downloadBlogs('/repos/pingcap/blog-cn/contents', 'blogs-cn')
+downloadBlogs('/repos/pingcap/blog-cn/contents', 'zh/blogs')
