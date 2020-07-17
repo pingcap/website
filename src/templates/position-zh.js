@@ -33,6 +33,7 @@ const Blog = ({ data }) => {
           <div className="container">
             <div className="columns">
               <div className="column is-3 categories">
+                <Link to={`/careers/join`}>All</Link>
                 {categories.map((category) => (
                   <Link
                     key={category}

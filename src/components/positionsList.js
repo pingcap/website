@@ -10,6 +10,7 @@ import { replaceTitle } from '../lib/string'
 
 const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
   const { currentPage, numPages, category: currentCategory } = pageContext
+  console.log(currentCategory)
 
   const positions = data.allMarkdownRemark.edges
   const categories = data.categories.group.map((i) => i.category)
@@ -22,6 +23,12 @@ const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
           <div className="container">
             <div className="columns">
               <div className="column is-3 categories">
+                <Link
+                  to={`/careers/join`}
+                  className={currentCategory === undefined ? 'active' : ''}
+                >
+                  All
+                </Link>
                 {categories.map((category) => (
                   <Link
                     key={category}

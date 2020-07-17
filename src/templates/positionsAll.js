@@ -6,17 +6,14 @@ const Positions = ({ data, pageContext }) => (
   <PositionsComponent
     data={data}
     pageContext={pageContext}
-    PaginationPathPrefix={`/careers/${pageContext.category}`}
+    PaginationPathPrefix={`/careers/join`}
   />
 )
 
 export const query = graphql`
-  query($category: String, $limit: Int!, $skip: Int!, $positionsPath: String) {
+  query($limit: Int!, $skip: Int!, $positionsPath: String) {
     allMarkdownRemark(
-      filter: {
-        fields: { collection: { eq: $positionsPath } }
-        frontmatter: { tags: { in: [$category] } }
-      }
+      filter: { fields: { collection: { eq: $positionsPath } } }
       limit: $limit
       skip: $skip
     ) {

@@ -14,6 +14,7 @@ const caseStudies = require('./create-pages/caseStudies')
 const createPositions = require('./create-pages/position')
 const createPositionsZH = require('./create-pages/position-zh')
 const createPositionsPagination = require('./create-pages/positions')
+const createPositionsAllPagination = require('./create-pages/positionsAll')
 const createPolicyTerms = require('./create-pages/policyTerms')
 const createIntlPages = require('./create-pages/intl')
 
@@ -28,6 +29,7 @@ exports.createPages = async ({ actions, graphql }) => {
   createPositions({ graphql, createPage })
   createPositionsZH({ graphql, createPage })
   createPositionsPagination({ graphql, createPage })
+  createPositionsAllPagination({ graphql, createPage })
   createPolicyTerms({ graphql, createPage })
 }
 
