@@ -1,0 +1,105 @@
+@import '../common';
+
+$navbar-height: 5.25rem; // 84px
+$navbar-height-mobile: 4.25rem; // 68px
+
+.PingCAP-PositionsList {
+    margin: 6rem 0;
+
+    .categories {
+        border-right: 1px solid #DBE4F0;
+
+        & > a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 1rem;
+            height: auto;
+            color: $B4;
+            background: $B5;
+            font-size: $size-7;
+            border: none;
+            border-radius: 3px;
+
+            &.active,
+            &:hover {
+                color: #fff;
+                background: $primary;
+            }
+        }
+    }
+
+    // Custom markdown body
+    .position-content {
+        color: $M4;
+        line-height: 1.75;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            border-bottom: none;
+
+            &:target:before {
+                content: '';
+                display: block;
+                height: $navbar-height;
+                margin-top: -$navbar-height;
+            }
+
+            &:target > a.anchor.before {
+                transform: translate(-10%, $navbar-height);
+
+                @include mobile {
+                transform: translate(0, $navbar-height);
+                }
+            }
+        }
+
+        h1 {
+            font-size: $size-4;
+        }
+
+        h2 {
+            font-size: $size-5;
+        }
+
+        h3 {
+            font-size: $size-6;
+        }
+
+        h4 {
+            font-size: $size-7;
+        }
+
+        a {
+            color: $primary;
+
+            &.anchor {
+                &.before {
+                    transform: translateX(-10%);
+                    @include mobile {
+                        transform: translateX(0);
+                    }
+                }
+            }
+        }
+
+        ul {
+            list-style: inherit;
+        }
+
+        .trackable-btns {
+            display: none;
+        }
+
+        .caption-center {
+            font-size: 80%;
+            color: $M4;
+            font-style: italic;
+            text-align: center;
+        }
+    }
+}
