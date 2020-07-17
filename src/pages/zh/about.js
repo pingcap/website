@@ -108,10 +108,10 @@ const About = ({ data }) => {
               梦想用科技改变世界的小伙伴。他们每个人都是这个行业的佼佼者，也是PingCAP团队最核心的价值。
               为了更好的追求梦想，我们为每一位小伙伴提供了最自由且舒适的工作环境。
             </p>
-            <div className="columns is-multiline">
+            <div className="col-container">
               {workEnv.map((w) => {
                 return (
-                  <div className="column is-4 env-desc-container" key={w.name}>
+                  <div className="col env-desc-container" key={w.name}>
                     <div className={w.icon}></div>
                     <h3>{w.name}</h3>
                     <p>{w.desc}</p>

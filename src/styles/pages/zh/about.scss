@@ -178,10 +178,10 @@
 
   .working-env-section {
     @include has-light-background;
-    @include custom-column-section(10);
     width: 100%;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     .container {
+      width: column-to-width(10);
       .title {
         @include subtitle;
       }
@@ -190,12 +190,26 @@
         color: $M4;
         margin-bottom: 5rem;
       }
+      .col-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .col {
+        width: column-to-width(2);
+        margin: 0 column-to-width(1);
+      }
+      .col:nth-child(3n+1) {
+        margin-left: 0;
+      }
+      .col:nth-child(3n) {
+        margin-right: 0;
+      }
       .env-desc-container {
         display: flex;
         flex-direction: column;
         align-items: center;
         padding: 0;
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
         h3 {
           font-size: $P1;
           font-weight: 400;
