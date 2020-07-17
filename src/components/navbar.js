@@ -1,10 +1,10 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
-import { navbarItems } from '../data/navbar'
+import { navbarItems, promotionText } from '../data/navbar'
 
-const Navbar = () => {
+const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
       query {
@@ -41,6 +41,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
+  const [promotionOpen, setPromotionOpen] = useState(showBanner)
+  const closePromotion = useCallback(() => setPromotionOpen(false))
+
   return (
     <nav
       className={`navbar is-fixed-top PingCAP-Navbar${
@@ -48,6 +51,17 @@ const Navbar = () => {
       }`}
       role="navigation"
     >
+      {promotionText && promotionOpen && (
+        <div className="promotion">
+          <div className="container">
+            <div className="horn" />
+            {promotionText}
+            <div className="blank" />
+            <div className="close" onClick={closePromotion} />
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item with-brand" to="/">
@@ -71,7 +85,7 @@ const Navbar = () => {
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map(item => (
+            {navbarItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -84,7 +98,7 @@ const Navbar = () => {
                   >
                     {item.name}
                     <div className="navbar-dropdown">
-                      {item.dropdown.map(navItem => (
+                      {item.dropdown.map((navItem) => (
                         <Link
                           key={navItem.name}
                           to={navItem.href}

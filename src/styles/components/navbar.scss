@@ -1,9 +1,66 @@
 .PingCAP-Navbar {
-  @include mobile {
-    height: 4.25rem;
-  }
+  display: block;
 
-  height: 5.25rem;
+  .promotion {
+    background-color: $B3;
+    color: $M1;
+
+    .container {
+      height: 4rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @include mobile {
+        padding: 0 1rem;
+        font-size: $size-8;
+        position: relative;
+      }
+
+      .horn {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-right: 1.25rem;
+        background: url(../../../images/horn.svg);
+        background-size: contain;
+
+        @include mobile {
+          margin-right: 0.5rem;
+        }
+      }
+
+      .blank {
+        flex-grow: 1;
+      }
+
+      .close {
+        width: 0.75rem;
+        height: 0.75rem;
+        background: url(../../../images/cross.svg);
+        background-size: contain;
+        cursor: pointer;
+
+        @include mobile {
+          position: absolute;
+          right: 1.5rem;
+          top: 1rem;
+        }
+      }
+
+      a {
+        color: inherit;
+        text-decoration: underline;
+      }
+    }
+  }
+  
+  & > .container {
+    @include mobile {
+      height: 4.25rem;
+    }
+
+    height: 5.25rem;
+  }
 
   &.has-border-and-shadow {
     border-bottom: 1px solid $C2;
