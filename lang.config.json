@@ -3,11 +3,13 @@
     "languages": {
         "zh": {
             "langName": "中文",
-            "blogsPath": "markdown-pages/blogs-cn"
+            "blogsPath": "markdown-pages/blogs-cn",
+            "positionsPath": "markdown-pages/zh/careers"
         },
         "en": {
             "langName": "English",
-            "blogsPath": "markdown-pages/blogs"
+            "blogsPath": "markdown-pages/blogs",
+            "positionsPath": null
         }
     }
 }
