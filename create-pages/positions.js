@@ -10,7 +10,7 @@ const createPositionsPagination = async ({ graphql, createPage }) => {
     const { positionsPath } = langConfig.languages[lang]
     if (!positionsPath) continue
 
-    const categories = await graphql(`
+    const result = await graphql(`
       query {
         categories: allMarkdownRemark(
           filter: {

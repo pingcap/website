@@ -1,0 +1,61 @@
+@import '../common';
+
+.PingCAP-PositionsList {
+    margin: 6rem 0;
+
+    .categories {
+        border-right: 1px solid #DBE4F0;
+
+        & > a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 1rem;
+            height: auto;
+            color: $B4;
+            background: $B5;
+            font-size: $size-7;
+            border: none;
+            border-radius: 3px;
+
+            &.active,
+            &:hover {
+                color: #fff;
+                background: $primary;
+            }
+        }
+    }
+
+    .positions {
+        margin-top: -2rem;
+        margin-bottom: -2rem;
+
+        & > a {
+            color: unset;
+        }
+
+        .position-card {
+            margin-left: -2rem;
+            padding: 2rem;
+
+            .title {
+                margin-bottom: 2rem;
+                font-weight: 500;
+            }
+            
+            .summary {
+                font-weight: 300;
+                color: $M4;
+                font-size: $size-8;
+            }
+
+            &:hover {
+                box-shadow:0px 1px 14px rgba(0,0,0,0.08);
+
+                .title {
+                    color: $B1;
+                }
+            }
+        }
+    }
+}

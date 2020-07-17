@@ -1,142 +1,68 @@
-import '../styles/templates/blogs.scss'
+import '../styles/templates/positionsList.scss'
 
 import Link from './IntlLink'
 import React, { useEffect, useState } from 'react'
 
-import BlogHeader from './blogHeader'
-// import BlogSearch from './blogSearch'
-import BlogTags from './blogTags'
 import Layout from './layout'
 import Pagination from './pagination'
-import PostFromUs from './postFromUs'
 import SEO from './seo'
-import Socials from './socials'
+import { replaceTitle } from '../lib/string'
 
-const Blogs = ({
-  data,
-  pageContext,
-  PaginationPathPrefix,
-  isTagPage,
-  isCategoryPage,
-}) => {
-  const blogs = data.allMarkdownRemark.edges
-  const {
-    currentPage,
-    numPages,
-    tag: currentTag,
-    category: currentCategory,
-  } = pageContext
+const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
+  const { currentPage, numPages, category: currentCategory } = pageContext
 
+  console.log(data)
+  const positions = data.allMarkdownRemark.edges
   const categories = data.categories.group.map((i) => i.category)
-  const tags = data.tags.group.map((i) => i.tag)
-
-  const [showCategories, setShowCategories] = useState(true)
-
-  useEffect(() => {
-    if (isTagPage) {
-      setShowCategories(false)
-    }
-  }, [isTagPage])
-
-  const handleShowCategories = (bool) => (_) => setShowCategories(bool)
-
-  const CategoriesAndTags = ({ isDesktop = true }) => (
-    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
-      <div className="titles">
-        <div
-          role="button"
-          tabIndex={0}
-          className={`title is-6 categories-title${
-            showCategories ? ' active' : ''
-          }`}
-          onClick={handleShowCategories(true)}
-          onKeyDown={handleShowCategories(true)}
-        >
-          Categories
-        </div>
-        <div
-          role="button"
-          tabIndex={0}
-          className={`title is-6${!showCategories ? ' active' : ''}`}
-          onClick={handleShowCategories(false)}
-          onKeyDown={handleShowCategories(false)}
-        >
-          Tags
-        </div>
-      </div>
-      <div className="labels">
-        {showCategories
-          ? categories.map((c) => (
-              <Link
-                key={c}
-                className={currentCategory === c ? 'active' : ''}
-                to={`/blog/category/${c}`}
-              >
-                {c}
-              </Link>
-            ))
-          : tags.map((t) => (
-              <Link
-                key={t}
-                className={currentTag === t ? 'active' : ''}
-                to={`/blog/tag/${t}`}
-              >
-                {t}
-              </Link>
-            ))}
-      </div>
-    </div>
-  )
 
   return (
     <Layout>
-      <SEO
-        title="TiDB Blog"
-        description="PingCAP blog is where we share everything about TiDB - open-source community, HTAP, distributed SQL, cloud-native, engineering journey, best practices, etc."
-      />
-      <article className="PingCAP-Blogs">
-        <section className="section section-blogs">
+      <SEO title="TiDB Positions" description="" />
+      <article className="PingCAP-PositionsList">
+        <section className="section">
           <div className="container">
             <div className="columns">
-              <div className="column is-7">
-                {/* <BlogSearch className="search-mobile" /> */}
-                <CategoriesAndTags isDesktop={false} />
-                {blogs.map(({ node }) => (
-                  <div key={node.frontmatter.title} className="blog-preview">
-                    <BlogHeader
-                      frontmatter={node.frontmatter}
-                      filePath={node.parent.relativePath}
-                      isTitleLink
-                    />
-                    {node.frontmatter.image && (
-                      <img
-                        className="banner"
-                        src={`https://download.pingcap.com${node.frontmatter.image}`}
-                        alt="banner"
-                      />
-                    )}
-                    <div className="summary">{node.frontmatter.summary}</div>
-                    <BlogTags tags={node.frontmatter.tags} />
-                  </div>
+              <div className="column is-3 categories">
+                {categories.map((category) => (
+                  <Link
+                    key={category}
+                    className={category === currentCategory ? 'active' : ''}
+                    to={`/careers/${category}`}
+                  >
+                    {category}
+                  </Link>
                 ))}
+              </div>
+              <div className="column is-8 is-offset-1 positions">
+                {positions.map(
+                  (
+                    {
+                      node: {
+                        frontmatter: { title },
+                        parent: { relativePath },
+                      },
+                    },
+                    i
+                  ) => (
+                    <Link to={`/careers/${replaceTitle(relativePath)}`} key={i}>
+                      <div className="position-card">
+                        <div className="title is-4 is-spaced">{title}</div>
+                        <div className="summary">
+                          开发基于 Kubernetes 的 TiDB Cloud
+                          版自动化部署和运维工具开发基于 Kubernetes 的企业版
+                          TiDB 自动化部署工具开发基于 Kubernetes 的 TiDB Cloud
+                          版自动化部署和运维工具开发基于 Kubernetes 的企业版
+                          TiDB 自动化部署工具…
+                        </div>
+                      </div>
+                    </Link>
+                  )
+                )}
                 <Pagination
                   pathPrefix={PaginationPathPrefix}
                   currentPage={currentPage}
                   numPages={numPages}
                 />
-              </div>
-              <div className="column is-4 is-offset-1 right-column">
-                <div className="main">
-                  {/* <BlogSearch className="search-desktop" /> */}
-                  <PostFromUs />
-                  <div className="follow-us">
-                    <h3 className="title is-6">Follow to Join Us!</h3>
-                    <div className="socials">
-                      <Socials type="follow" />
-                    </div>
-                  </div>
-                  <CategoriesAndTags />
-                </div>
               </div>
             </div>
           </div>
@@ -146,4 +72,4 @@ const Blogs = ({
   )
 }
 
-export default Blogs
+export default PositionsList
