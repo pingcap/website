@@ -16,7 +16,7 @@ import replaceInternalHref from '../lib/replaceInternalHref'
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  const filePath = { pageContext }
+  const { filePath, hasBlogCategories } = pageContext
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
@@ -118,7 +118,11 @@ const Blog = ({ data, pageContext }) => {
                   <span> > </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath} />
+                <BlogHeader
+                  frontmatter={frontmatter}
+                  filePath={filePath}
+                  hasBlogCategories={hasBlogCategories}
+                />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -161,6 +165,7 @@ const Blog = ({ data, pageContext }) => {
                           filePath={blog.parent.relativePath}
                           isTitleLink
                           withIcon={false}
+                          hasBlogCategories={hasBlogCategories}
                         />
                       ))}
                     </div>

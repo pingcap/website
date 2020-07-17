@@ -7,7 +7,8 @@ const createBlogCategories = async ({ graphql, createPage }) => {
     `${__dirname}/../src/templates/blogCategories.js`
   )
   for (const lang in langConfig.languages) {
-    const { blogsPath } = langConfig.languages[lang]
+    const { blogsPath, hasBlogCategories } = langConfig.languages[lang]
+    if (!hasBlogCategories) continue
 
     const result = await graphql(`
       query {
