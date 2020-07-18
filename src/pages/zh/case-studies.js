@@ -2,7 +2,7 @@ import '../../styles/pages/caseStudies.scss'
 import '../../lib/graphql/image'
 
 import { graphql, Link } from 'gatsby'
-// import Link from '../components/IntlLink'
+// import Link from '../../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../../lib/string'
 
@@ -20,16 +20,16 @@ const CaseStudies = ({ data, location }) => {
   const currentCategory =
     pathname.slice(
       pathname.search('case-studies') + 'case-studies'.length + 1
-    ) || '全部'
+    ) || '全部行业'
   console.log(pathname)
   const { BannerSVG, placeholderSVG, caseStudies } = data
   console.log(caseStudies)
   const categoriesOfStudies = useMemo(
     () => [
       ...new Set([
-        '全部',
+        '全部行业',
         ...caseStudies.edges.map(
-          ({ node }) => node.frontmatter.customerCategory || '全部'
+          ({ node }) => node.frontmatter.customerCategory || '全部行业'
         ),
       ]),
     ],
@@ -44,7 +44,7 @@ const CaseStudies = ({ data, location }) => {
           category: c.split(' ').join('-'),
           studies: caseStudies.edges.filter(
             ({ node }) =>
-              c === '全部' || node.frontmatter.customerCategory === c
+              c === '全部行业' || node.frontmatter.customerCategory === c
           ),
         }
       }),
@@ -80,13 +80,15 @@ const CaseStudies = ({ data, location }) => {
       <article className="PingCAP-CaseStudies PingCAP-CaseStudies-New">
         <Banner bannerSVG={BannerSVG} />
         <div className="container section">
-          <h2 className="title title-under-banner">Featured Testimonials</h2>
+          <h2 className="title title-under-banner title-under-banner-zh">
+            精选案例
+          </h2>
           <CaseSwiper
             caseStudies={caseStudies}
             placeholderSVG={placeholderSVG}
           ></CaseSwiper>
-          <h2 className="title title-under-swiper">
-            Petabytes of Data Across Industries
+          <h2 className="title title-under-swiper title-under-swiper-zh">
+            TiDB现已被近1000家不同行业的领先企业应用于生产环境
           </h2>
           <Dropdown
             className="customer-categories"
@@ -120,8 +122,7 @@ const Banner = React.memo(({ bannerSVG }) => {
       />
       <div className="titles">
         <h1>
-          <div className="title is-2">Trusted and Verified by</div>
-          <div className="title is-2">Web-scale Innovation Leaders</div>
+          <div className="title-zh">被全球众多领域的领先企业认可并信任</div>
         </h1>
       </div>
     </div>
@@ -146,10 +147,10 @@ const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
                   {truncate.apply(study.summary, [250, true])}
                 </div>
                 <Link
-                  to={`zh/case-studies/${replaceTitle(study.relativePath)}`}
+                  to={`/zh/case-studies/${replaceTitle(study.relativePath)}`}
                   className="see-case-study"
                 >
-                  See case study
+                  查看更多案例
                 </Link>
               </div>
               <div className="placeholder"></div>
@@ -243,10 +244,10 @@ function Logos({ logos }) {
               </div>
               {logo.relativePath && (
                 <Link
-                  to={`/case-studies/${replaceTitle(logo.relativePath)}`}
+                  to={`/zh/case-studies/${replaceTitle(logo.relativePath)}`}
                   className="read-more"
                 >
-                  Read more >
+                  查看更多 >
                 </Link>
               )}
             </div>

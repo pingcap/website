@@ -2,7 +2,6 @@
 @import '../../../node_modules/swiper/css/swiper.min.css';
 
 .PingCAP-CaseStudies {
-  
   .top-banner-wrapper {
     position: relative;
 
@@ -28,6 +27,13 @@
         }
 
         color: #fff;
+
+        &-zh {
+          font-size: 3.125rem;
+          font-weight: 500;
+          letter-spacing: 0.375rem;
+          color: white;
+        }
       }
     }
   }
@@ -209,7 +215,6 @@
     }
   }
 
-
   .logos {
     @include mobile {
       margin-left: 0;
@@ -260,20 +265,19 @@
       background: #fff;
       opacity: 1;
 
-      @each $logo in $logos{
+      @each $logo in $logos {
         .#{$logo}-logo {
           width: 30%;
           height: 30%;
         }
       }
 
-      @each $logo in $zh-logos{
+      @each $logo in $zh-logos {
         .#{$logo}-logo-zh {
           width: 30%;
           height: 30%;
         }
       }
-
 
       .title {
         margin-top: 1.5rem;
@@ -359,7 +363,6 @@
   }
 }
 
-
 .PingCAP-CaseStudies-New {
   $is-12: 80vw;
   $is-1: $is-12 / 12;
@@ -371,9 +374,14 @@
     @return $rem / $fixed-is-12 * $is-12;
   }
 
-  @mixin main-title{
+  @mixin main-title {
     font-size: $H1;
     font-weight: 700;
+    color: $M3;
+  }
+  @mixin main-title-zh {
+    font-size: $H1;
+    font-weight: 500;
     color: $M3;
   }
   > .container {
@@ -386,9 +394,17 @@
   }
   .title-under-banner {
     @include main-title;
+    &-zh {
+      @include main-title-zh;
+    }
+
   }
   .title-under-swiper {
     @include main-title;
+    &-zh {
+      @include main-title-zh;
+    }
+
   }
   .swiper-container {
     @include mobile {
@@ -481,22 +497,23 @@
         width: 100%;
         justify-content: space-between;
         &:focus {
-          box-shadow: unset; 
-          border: 1px solid #2E2FFF; 
+          box-shadow: unset;
+          border: 1px solid #2e2fff;
         }
         .down-arrow {
-          width: 8%;
-          padding-top: 6%;
-          background: #6E77A3;
-          clip-path: polygon(50% 100%, 0 0, 100% 0);
+          width: 0.875rem;
+          padding-top: 0.5rem;
+          background:  url(../../../images/case-studies/arrow-down.svg) no-repeat center;
         }
         .up-arrow {
           @extend .down-arrow;
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          transform-origin: center;
+          transform: rotate(180deg);
         }
+      
       }
     }
-    .dropdown-menu{
+    .dropdown-menu {
       width: get-columns-width(2);
       z-index: 99;
     }

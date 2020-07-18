@@ -1,8 +1,8 @@
 import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
-import { graphql, Link } from 'gatsby'
-// import Link from '../components/IntlLink'
+import { graphql } from 'gatsby'
+import Link from '../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 

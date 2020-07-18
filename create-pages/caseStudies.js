@@ -104,9 +104,9 @@ const createCaseStudies = async ({ graphql, createPage }) => {
 
   const categoriesOfStudiesZH = [
     ...new Set([
-      '全部',
+      '全部行业',
       ...data.caseStudiesZH.edges.map(
-        ({ node }) => node.frontmatter.customerCategory || '全部'
+        ({ node }) => node.frontmatter.customerCategory || '全部行业'
       ),
     ]),
   ]
