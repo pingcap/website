@@ -260,16 +260,26 @@
       background: #fff;
       opacity: 1;
 
-      @each $logo in $logos {
+      @each $logo in $logos{
         .#{$logo}-logo {
           width: 30%;
           height: 30%;
         }
       }
 
+      @each $logo in $zh-logos{
+        .#{$logo}-logo-zh {
+          width: 30%;
+          height: 30%;
+        }
+      }
+
+
       .title {
         margin-top: 1.5rem;
-        color: $B4;
+        font-size: $P1;
+        font-weight: 400;
+        color: $M4;
       }
     }
 
@@ -291,6 +301,20 @@
 
       @each $logo in $logos {
         .#{$logo}-logo {
+          @include tablet {
+            display: none;
+          }
+
+          position: absolute;
+          top: -0.5rem;
+          right: -0.25rem;
+          width: 36px;
+          height: 36px;
+        }
+      }
+
+      @each $logo in $zh-logos {
+        .#{$logo}-logo-zh {
           @include tablet {
             display: none;
           }
@@ -487,7 +511,7 @@
         width: $size;
         height: $size;
         padding: rem-to-vw(2.5rem) rem-to-vw(3rem);
-        box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
+        // box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
         .title {
           margin-bottom: rem-to-vw(2rem);
         }

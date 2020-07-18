@@ -9,6 +9,8 @@ url: /cases-cn/user-case-youzu/
 aliases: ['/blog-cn/user-case-youzu/']
 weight: 2
 logo: /images/blog-cn/customers/youzu-logo.png
+customer: 游族
+CustomerCategory: 游戏
 ---
 
 ## 公司介绍  

@@ -8,30 +8,20 @@
 
 import './src/styles/global.scss'
 
-export const shouldUpdateScroll = ({ prevRouterProps, routerProps }) => {
-  const caseStudiesPath = /^\/case-studies((\/)|((\/Internet)|(\/Gaming)|(\/Financial-Services)|(\/All))(\/)?)?$/
-  const caseStudiesSubPath = /^\/case-studies((\/)|((\/Internet)|(\/Gaming)|(\/Financial-Services)|(\/All))(\/)?)$/
-
-  if (
-    prevRouterProps &&
-    caseStudiesPath.test(prevRouterProps.location.pathname) &&
-    caseStudiesSubPath.test(routerProps.location.pathname)
-  ) {
-    // const prevPosition = getSavedScrollPosition(location)
-    // prevPostion is always 0, maybe getSavedScrollPostion's problem
-    console.log('prev router', prevRouterProps)
-    console.log('curr router', routerProps)
-    // prev scroll-y pos, which was stored in sessionStorage by gatsby
-    const location = prevRouterProps.location
-    const sessionKey = `@@scroll|${location.key}|${location.key}`
-    const scrollPosY = sessionStorage.getItem(sessionKey)
-    sessionStorage.removeItem(sessionKey)
-    /* it will scroll to 0 if you switch route continually, even though last pos-y is not 0
-       this is a bug, but it's inevitable because reading/writing session is async io operation
-    */
-
-    window.scrollTo(0, scrollPosY || 0)
-    return false
+export const onRouteUpdate = ({ location }) => {
+  const pathname = location.pathname
+  const caseStudiesSubPath = /^(\/zh)?\/case-studies\/.*/
+  if (caseStudiesSubPath.test(pathname)) {
+    try {
+      const anchor = document.getElementsByClassName('title-under-swiper')[0]
+      const navbar = document.getElementsByClassName('navbar')[0]
+      const scrollOffset = anchor.getBoundingClientRect().top
+      const navbarHeight = navbar.offsetHeight
+      window.scrollTo(0, scrollOffset + window.scrollY - navbarHeight)
+      return false
+    } catch (e) {}
+    return true
   }
-  return true
 }
+
+export { wrapPageElement } from './create-pages/wrapPage'

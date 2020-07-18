@@ -32,6 +32,13 @@
   }
 }
 
+@each $logo in $zh-logos {
+  .#{$logo}-logo-zh {
+    background: url(../../images/zh/logos/#{$logo}.svg) center no-repeat;
+    background-size: contain;
+  }
+}
+
 body {
   padding-top: 5.25rem;
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;

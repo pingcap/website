@@ -35,6 +35,27 @@ const createCaseStudies = async ({ graphql, createPage }) => {
           }
         }
       }
+      caseStudiesZH: allMarkdownRemark(
+        filter: {
+          fields: { collection: { eq: "markdown-pages/blogs-cn" } }
+          frontmatter: { category: { eq: "case" } }
+        }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+              customerCategory
+            }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
+          }
+        }
+      }
     }
   `)
 
@@ -48,33 +69,57 @@ const createCaseStudies = async ({ graphql, createPage }) => {
     })
   })
 
-  // const categoriesOfStudies = [
-  //   ...new Set(
-  //     data.caseStudies.edges
-  //       .map(({ node }) => node.frontmatter.customerCategory)
-  //       .concat(
-  //         data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name)
-  //       )
-  //   ),
-  // ]
-  // categoriesOfStudies.forEach(c => {
-  //   const pagePath = `case-studies/${c.split(' ').join('-')}`
+  data.caseStudiesZH.edges.forEach(({ node }) => {
+    createPage({
+      path: `zh/case-studies/${replaceTitle(node.parent.relativePath)}`,
+      component: caseStudyTemplate,
+      context: {
+        title: node.frontmatter.title,
+      },
+    })
+  })
 
-  //   createPage({
-  //     path: pagePath,
-  //     matchPath: pagePath,
-  //     component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
-  //   })
-  // })
+  const categoriesOfStudies = [
+    ...new Set(
+      data.caseStudies.edges
+        .map(({ node }) => node.frontmatter.customerCategory || 'All')
+        .concat(
+          data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name),
+          'All'
+        )
+    ),
+  ]
+
+  console.log(categoriesOfStudies)
+
+  categoriesOfStudies.forEach((c) => {
+    const pagePath = `case-studies/${c.split(' ').join('-')}`
+
+    createPage({
+      path: pagePath,
+      matchPath: pagePath,
+      component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
+    })
+  })
+
+  const categoriesOfStudiesZH = [
+    ...new Set([
+      '全部',
+      ...data.caseStudiesZH.edges.map(
+        ({ node }) => node.frontmatter.customerCategory || '全部'
+      ),
+    ]),
+  ]
+
+  categoriesOfStudiesZH.forEach((c) => {
+    const pagePath = `zh/case-studies/${c.split(' ').join('-')}`
+
+    createPage({
+      path: pagePath,
+      matchPath: pagePath,
+      component: path.resolve(`${__dirname}/../src/pages/zh/case-studies.js`),
+    })
+  })
 }
 
-const createCategoriesOfStudies = async ({ page, actions }) => {
-  const { createPage } = actions
-
-  if (page.path.match(/^\/case-studies\/$/)) {
-    page.matchPath = '/case-studies/*'
-    createPage(page)
-  }
-}
-
-module.exports = { createCaseStudies, createCategoriesOfStudies }
+module.exports = createCaseStudies

@@ -8,6 +8,8 @@ category: case
 url: /cases-cn/user-case-xiaomi/
 weight: 5
 logo: /images/blog-cn/customers/xiaomi-logo.png
+customer: 小米
+CustomerCategory: 高科技
 ---
 
 

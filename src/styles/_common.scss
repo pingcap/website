@@ -2,13 +2,20 @@
 @import '../../node_modules/bulma/sass/utilities/all';
 
 $socials: github twitter linkedin facebook reddit slack youtube yc;
-$logos: VNG JD-Cloud---AI Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
-  Zhuan-Zhuan Mobike Yuanfudao-com NetEase-Games GAEA Yiguo-com
-  Qingdao-Telaidian LY-com Qunar-com Jinri-Toutiao G--Networks -Dfire-com Keruyun
-  Phoenix-New-Media LinkDoc-Technology Yimian-Data Mobikok Seasun-Games Yoozoo-Games
-  FUNYOURS-JAPAN Bank-of-Beijing Ping-- ----Finance;
-
-@mixin VHCenter {
+// case should be consistent with class name, i use upper case both.
+$logos: -DFIRE-COM BANK-OF-BEIJING BOOKMYSHOW FUNYOURS-JAPAN 
+G--NETWORKS GAEA IQIYI JD-CLOUD---AI JINRI-TOUTIAO KERUYUN LINKDOC-TECHNOLOGY 
+LY-COM MEITUAN-DIANPING MOBIKE MOBIKOK NETEASE-GAMES PHOENIX-NEW-MEDIA PING-- 
+QINGDAO-TELAIDIAN QUNAR-COM SEASUN-GAMES SHOPEE VNG XIAOMI YIGUO-COM YIMIAN-DATA
+ YOOZOO-GAMES YUANFUDAO-COM ZHIHU ZHUAN-ZHUAN ----FINANCE;
+$zh-logos: 360 BIGO BILIBILI ETH PAYPAY SHOPEE U-NEXT UC-CLOUD VIPKID ZALOPAY
+  一点资讯 中国物联网 中国科学技术大学 中国银行 中科软 中通 乐信 云集 京东数科
+  人民在线 伴鱼 光大银行 光迅科技 北京银行 北大医信 华为 华润 国家电网河北
+  壹米滴答 天翼 威锐达 小红书 小鹏 平安科技 微众银行 拉卡拉 新东方 新华财经
+  新奥燃气 易建 普翔科技 曹操出行 武汉光电 汉得信息 汽车之家 爱可生 爱奇艺
+  理想制造 用友 百盛 知乎 神州信息 网易游戏 美团点评 联通 腾讯视频 贝壳 贝壳金服
+  车好多 转转 金山 陆金所 马上金融 马蜂窝; 
+  @mixin VHCenter {
   display: flex;
   justify-content: center;
   align-items: center;

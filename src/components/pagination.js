@@ -3,8 +3,6 @@ import Link from './IntlLink'
 
 const toPathLink = (page) => (page === 1 ? '' : `/${page}`)
 
-const toPathLink = (page) => (page === 1 ? '' : `/${page}`)
-
 const Pagination = ({ pathPrefix, currentPage, numPages }) => (
   <nav
     className="pagination PingCAP-Pagination"

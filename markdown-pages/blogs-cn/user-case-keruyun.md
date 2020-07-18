@@ -8,6 +8,8 @@ category: case
 url: /cases-cn/user-case-keruyun/
 weight: 16
 logo: /images/blog-cn/customers/keruyun-logo.png
+customer: 客如云
+CustomerCategory: 电商
 ---
 
 >作者：客如云 BigData Infra Team 

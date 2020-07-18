@@ -33,7 +33,7 @@ const CaseStudies = ({ data, location }) => {
       'All',
       ...new Set(
         caseStudies.edges
-          .map(({ node }) => node.frontmatter.customerCategory)
+          .map(({ node }) => node.frontmatter.customerCategory || 'All')
           .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
       ),
     ],
@@ -129,7 +129,6 @@ const CaseStudies = ({ data, location }) => {
 }
 
 const Banner = React.memo(({ bannerSVG }) => {
-  console.log('banner rerender')
   return (
     <div className="top-banner-wrapper">
       <Img
@@ -250,7 +249,9 @@ function Logos({ logos }) {
                 {logo.customer}
               </div>
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
+                className={`${logo.customer
+                  .replace(/[\d/+/.\s&]/g, '-')
+                  .toUpperCase()}-logo`}
               />
               <div className="paragraph">
                 {truncate.apply(logo.summary, [120, true])}
@@ -266,7 +267,9 @@ function Logos({ logos }) {
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
+                className={`${logo.customer
+                  .replace(/[\d/+/.\s&]/g, '-')
+                  .toUpperCase()}-logo`}
               />
               <div className="title is-6">{logo.customer}</div>
             </div>

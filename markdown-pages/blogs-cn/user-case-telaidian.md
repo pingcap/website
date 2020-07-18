@@ -8,6 +8,8 @@ category: case
 url: /cases-cn/user-case-telaidian/
 weight: 22
 logo: /images/blog-cn/customers/telaidian-logo.png
+customer: 特来电
+CustomerCategory: 高科技
 ---
 
 
