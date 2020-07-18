@@ -70,3 +70,7 @@ yarn-error.log
 
 # package lock file
 packge-lock.json
+
+# blog files
+/markdown-pages/blogs/*
+/markdown-pages/blogs-cn/*
