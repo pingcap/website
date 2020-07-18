@@ -28,49 +28,41 @@ const CaseStudies = ({ data, location }) => {
     caseStudiesWithoutReadMore,
   } = data
 
-  const categoriesOfStudies = useMemo(
-    () => [
-      'All',
-      ...new Set(
-        caseStudies.edges
-          .map(({ node }) => node.frontmatter.customerCategory)
-          .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
-      ),
-    ],
-    [caseStudies, caseStudiesWithoutReadMore]
-  )
+  const categoriesOfStudies = [
+    'All',
+    ...new Set(
+      caseStudies.edges
+        .map(({ node }) => node.frontmatter.customerCategory)
+        .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
+    ),
+  ]
 
-  const studiesByCategory = useMemo(
-    () =>
-      categoriesOfStudies.map((c) => {
-        let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
-          .filter(({ node }) => c === 'All' || node.name === c)
-          .map((edge) => {
-            return edge.node.customers.map((customer) => ({
-              node: {
-                frontmatter: {
-                  customer: customer.name,
-                  summary: customer.summary,
-                },
-              },
-            }))
-          })
-        withoutReadMoreNodes =
-          withoutReadMoreNodes.length === 1
-            ? withoutReadMoreNodes[0]
-            : withoutReadMoreNodes.flat()
-        return {
-          category: c.split(' ').join('-'),
-          studies: caseStudies.edges
-            .filter(
-              ({ node }) =>
-                c === 'All' || node.frontmatter.customerCategory === c
-            )
-            .concat(withoutReadMoreNodes),
-        }
-      }),
-    [categoriesOfStudies, caseStudies, caseStudiesWithoutReadMore]
-  )
+  const studiesByCategory = categoriesOfStudies.map((c) => {
+    let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
+      .filter(({ node }) => c === 'All' || node.name === c)
+      .map((edge) => {
+        return edge.node.customers.map((customer) => ({
+          node: {
+            frontmatter: {
+              customer: customer.name,
+              summary: customer.summary,
+            },
+          },
+        }))
+      })
+    withoutReadMoreNodes =
+      withoutReadMoreNodes.length === 1
+        ? withoutReadMoreNodes[0]
+        : withoutReadMoreNodes.flat()
+    return {
+      category: c.split(' ').join('-'),
+      studies: caseStudies.edges
+        .filter(
+          ({ node }) => c === 'All' || node.frontmatter.customerCategory === c
+        )
+        .concat(withoutReadMoreNodes),
+    }
+  })
 
   useEffect(() => {
     new Swiper('.swiper-container', {
@@ -128,7 +120,7 @@ const CaseStudies = ({ data, location }) => {
   )
 }
 
-const Banner = React.memo(({ bannerSVG }) => {
+const Banner = ({ bannerSVG }) => {
   console.log('banner rerender')
   return (
     <div className="top-banner-wrapper">
@@ -145,9 +137,9 @@ const Banner = React.memo(({ bannerSVG }) => {
       </div>
     </div>
   )
-})
+}
 
-const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
+const CaseSwiper = ({ caseStudies, placeholderSVG }) => {
   return (
     <div className="card swiper-container">
       <div className="swiper-wrapper top">
@@ -187,7 +179,7 @@ const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
       </div>
     </div>
   )
-})
+}
 
 const Dropdown = ({ className, items, selectedItem }) => {
   const [dropped, setDropped] = useState(false)
