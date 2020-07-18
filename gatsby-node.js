@@ -10,10 +10,7 @@ const createBlogs = require('./create-pages/blog')
 const createBlogPagination = require('./create-pages/blogs')
 const createBlogTags = require('./create-pages/blogTags')
 const createBlogCategories = require('./create-pages/blogCategories')
-const {
-  createCaseStudies,
-  createCategoriesOfStudies,
-} = require('./create-pages/caseStudies')
+const createCaseStudies = require('./create-pages/caseStudies')
 const createPositions = require('./create-pages/position')
 const createPolicyTerms = require('./create-pages/policyTerms')
 
@@ -41,8 +38,4 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
       value: parent.sourceInstanceName,
     })
   }
-}
-
-exports.onCreatePage = ({ page, actions }) => {
-  createCategoriesOfStudies({ page, actions })
 }

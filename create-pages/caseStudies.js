@@ -48,33 +48,25 @@ const createCaseStudies = async ({ graphql, createPage }) => {
     })
   })
 
-  // const categoriesOfStudies = [
-  //   ...new Set(
-  //     data.caseStudies.edges
-  //       .map(({ node }) => node.frontmatter.customerCategory)
-  //       .concat(
-  //         data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name)
-  //       )
-  //   ),
-  // ]
-  // categoriesOfStudies.forEach(c => {
-  //   const pagePath = `case-studies/${c.split(' ').join('-')}`
+  const categoriesOfStudies = [
+    ...new Set(
+      data.caseStudies.edges
+        .map(({ node }) => node.frontmatter.customerCategory || 'All')
+        .concat(
+          data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name),
+          'All'
+        )
+    ),
+  ]
+  categoriesOfStudies.forEach((c) => {
+    const pagePath = `case-studies/${c.split(' ').join('-')}`
 
-  //   createPage({
-  //     path: pagePath,
-  //     matchPath: pagePath,
-  //     component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
-  //   })
-  // })
+    createPage({
+      path: pagePath,
+      matchPath: pagePath,
+      component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
+    })
+  })
 }
 
-const createCategoriesOfStudies = async ({ page, actions }) => {
-  const { createPage } = actions
-
-  if (page.path.match(/^\/case-studies\/$/)) {
-    page.matchPath = '/case-studies/*'
-    createPage(page)
-  }
-}
-
-module.exports = { createCaseStudies, createCategoriesOfStudies }
+module.exports = createCaseStudies

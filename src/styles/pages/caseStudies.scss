@@ -269,7 +269,9 @@
 
       .title {
         margin-top: 1.5rem;
-        color: $B4;
+        font-size: $P1;
+        font-weight: 400;
+        color: $M4;
       }
     }
 
@@ -461,14 +463,14 @@
           border: 1px solid #2E2FFF; 
         }
         .down-arrow {
-          width: 8%;
-          padding-top: 6%;
-          background: #6E77A3;
-          clip-path: polygon(50% 100%, 0 0, 100% 0);
+          width: 0.875rem;
+          padding-top: 0.5rem;
+          background:  url(../../../images//case-studies/arrow-down.svg) no-repeat center;
         }
         .up-arrow {
           @extend .down-arrow;
-          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+          transform-origin: center;
+          transform: rotate(180deg);
         }
       }
     }
@@ -487,7 +489,6 @@
         width: $size;
         height: $size;
         padding: rem-to-vw(2.5rem) rem-to-vw(3rem);
-        box-shadow: 0rem 0rem 1rem rgba(0, 0, 0, 0.1);
         .title {
           margin-bottom: rem-to-vw(2rem);
         }
