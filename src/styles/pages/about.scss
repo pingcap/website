@@ -1,38 +1,218 @@
 @import '../common';
 
 .PingCAP-About {
+  $is-12: 80vw;
+  $fixed-is-12: 84rem;
+
+  @mixin custom-column-section($columns: 12) {
+    $size: ((12 - $columns) / 2) * $is-12 / 12;
+    padding-left: $size;
+    padding-right: $size;
+  }
+
+  @mixin column-to-padding($columns: 1) {
+    $size: $columns * $is-12 / 12;
+    padding-left: $size;
+    padding-right: $size;
+  }
+  @mixin sub-title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  @mixin paragraph {
+    font-size: $P1;
+    font-weight: 400;
+    color: $M4;
+  }
+
+  @function column-to-width($columns: 12) {
+    @return $columns * $is-12 / 12;
+  }
+
+  @function rem-to-vw($rem) {
+    @return $rem * $is-12 / $fixed-is-12;
+  }
+
+  @mixin positioned-el(
+    $width,
+    $x-direction,
+    $y-direction,
+    $x-offset,
+    $y-offset,
+    $color
+  ) {
+    width: $width;
+    height: $width;
+    position: absolute;
+    @if $x-direction == left {
+      left: $x-offset;
+    } @else if $x-direction == right {
+      right: $x-offset;
+    }
+    @if $y-direction == top {
+      top: $y-offset;
+    } @else if $y-direction == bottom {
+      bottom: $y-offset;
+    }
+    background: $color;
+  }
+
+  @mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
+    --x-start: #{$x-start};
+    --x-end: #{$x-end};
+    --y-start: #{$y-start};
+    --y-end: #{$y-end};
+    animation: shaking $duration infinite alternate;
+  }
+
+  @mixin scaling-el($scale-start, $scale-end, $duration) {
+    --scale-start: #{$scale-start};
+    --scale-end: #{$scale-end};
+    animation: scaling $duration infinite alternate;
+  }
+
+  @keyframes shaking {
+    from {
+      transform: translate(var(--x-start), var(--y-start));
+    }
+    to {
+      transform: translate(var(--x-end), var(--y-end));
+    }
+  }
+
+  @keyframes scaling {
+    from {
+      transform: scale(var(--scale-start));
+    }
+    to {
+      transform: scale(var(--scale-end));
+    }
+  }
 
   .hero {
-    background-color: $B3;
+    background-color: #172d72;
+    height: 26.25rem;
+    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
     }
 
     img {
-      width: 35vw;
+      width: 47.5rem;
     }
+  }
+
+  > .section {
+    width: column-to-width(12);
+    margin: 0 auto;
+    padding: 0;
   }
 
   .intro-section {
+    @include column-to-padding(1);
     text-align: center;
+    .title {
+      @include sub-title;
+    }
+    .paragraph {
+      @include paragraph;
+    }
+    .paragraph:nth-child(3) {
+      margin-bottom: 5rem;
+    }
+    .button {
+      margin-bottom: 6rem;
+    }
   }
 
   .timeline-section {
+    width: 100%;
+    padding: 6rem 0;
     @include has-light-background;
+    .title {
+      @include sub-title;
+    }
+    img {
+      display: block;
+      width: column-to-width(10);
+      margin: 0 auto;
+    }
   }
 
   .company-culture-section {
+    padding: 6rem 0 8rem 0;
+    position: relative;
     .container {
       text-align: center;
-      max-width: 800px;
       background-image: url(../../../images/about/map.svg);
       background-repeat: no-repeat;
       background-size: contain;
-    }
-
-    .last {
-      font-weight: bold;
+      .title {
+        @include sub-title;
+      }
+      .paragraph {
+        @include paragraph;
+      }
+      .last {
+        font-size: $H2;
+        font-weight: 700;
+        color: $M3;
+        margin-bottom: 6rem;
+      }
+      .el1 {
+        @include positioned-el(1rem, left, top, 10%, 20rem, #3351ff);
+        @include shaking-el(20px, 30px, 20px, 10px, 3s);
+        border-radius: 50%;
+      }
+      .el2 {
+        @include positioned-el(1.125rem, left, top, 15%, 28rem, #162d71);
+        @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+        border-radius: 50%;
+      }
+      .el3 {
+        @include positioned-el(0.625rem, left, top, 30%, 24rem, #0fa7fa);
+        @include shaking-el(20px, 30px, 20px, 10px, 2s);
+        border-radius: 50%;
+      }
+      .el4 {
+        @include positioned-el(1.5625rem, right, top, 70%, 27.5rem, #e30c25);
+        @include scaling-el(0.7, 1, 3s);
+        clip-path: polygon(
+          30% 0%,
+          70% 0%,
+          100% 30%,
+          100% 70%,
+          70% 100%,
+          30% 100%,
+          0% 70%,
+          0% 30%
+        );
+        transform: rotate(14deg);
+      }
+      .el5 {
+        @include positioned-el(1.68rem, right, top, 10%, 26rem, #0fa7fa);
+        @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+      }
+      .el6 {
+        @include positioned-el(0.8125rem, left, top, 70%, 30rem, #162d71);
+        @include shaking-el(20px, 30px, 20px, 10px, 3s);
+        border-radius: 50%;
+      }
+      .el7 {
+        @include positioned-el(1.125rem, left, top, 75%, 20rem, #162d71);
+        @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+        border-radius: 50%;
+      }
+      .el8 {
+        @include positioned-el(0.875rem, right, top, 35%, 25rem, #10a7fa);
+        @include shaking-el(20px, 30px, 20px, 10px, 2s);
+        border-radius: 50%;
+      }
     }
   }
 }

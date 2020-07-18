@@ -10,7 +10,10 @@ const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG } = data
   return (
     <Layout>
-      <SEO title="About PingCAP" description="Story about PingCAP, the team behind TiDB" />
+      <SEO
+        title="About PingCAP"
+        description="Story about PingCAP, the team behind TiDB"
+      />
       <article className="PingCAP-About">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -22,7 +25,7 @@ const About = ({ data }) => {
 
         <section className="section intro-section">
           <div className="container">
-            <h1 className="title section-title">About PingCAP</h1>
+            <h1 className="title">About PingCAP</h1>
             <p className="paragraph">
               PingCAP started in 2015 when three seasoned infrastructure
               engineers were sick and tired of the way databases were managed,
@@ -38,9 +41,11 @@ const About = ({ data }) => {
               distributed SQL layer with MySQL compatibility, and one of the
               most popular open source database projects in the world (don’t
               take our word for it, check it out:
-              https://github.com/pingcap/tidb). TiDB’s sister project, TiKV, is
-              a cloud-native distributed Key-Value store. It is now a CNCF
-              incubating project .
+              <a href="https://github.com/pingcap/tidb" target="_blank">
+                https://github.com/pingcap/tidb
+              </a>
+              ). TiDB’s sister project, TiKV, is a cloud-native distributed
+              Key-Value store. It is now a CNCF incubating project .
             </p>
             <Button
               as={Link}
@@ -54,13 +59,14 @@ const About = ({ data }) => {
 
         <section className="section timeline-section">
           <div className="container">
+            <h1 className="title">History of development</h1>
             <img src={timeLineSVG.publicURL} alt="Timeline" />
           </div>
         </section>
 
         <section className="section company-culture-section">
           <div className="container">
-            <h2 className="title section-title">Company Culture</h2>
+            <h2 className="title">Company Culture</h2>
             <p className="paragraph">
               Our mission is to build a hybrid transactional and analytical
               processing database with global scalability, so companies can
@@ -72,7 +78,10 @@ const About = ({ data }) => {
               big, hairy problems (and have fun doing it!); Working alongside a
               global team of self-starters, curious learners, builders, doers;
             </p>
-            <p className="paragraph last">We want to hear from you!</p>
+            <p className="last">We want to hear from you!</p>
+            {Array.from({ length: 8 }).map((_, index) => {
+              return <div className={`el${index + 1}`}></div>
+            })}
             <Button
               as={Link}
               to="/careers"
