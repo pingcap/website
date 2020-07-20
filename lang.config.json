@@ -3,7 +3,7 @@
     "languages": {
         "zh": {
             "langName": "中文",
-            "blogsPath": "markdown-pages/blogs-cn"
+            "blogsPath": "markdown-pages/zh/blogs"
         },
         "en": {
             "langName": "English",
