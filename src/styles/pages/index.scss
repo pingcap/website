@@ -74,6 +74,10 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   .columns {
     width: calc(83.3% + 5rem);
     margin: 0 auto;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 }
 
@@ -120,18 +124,27 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
             width: 75%;
           }
+
+          @include mobile {
+            margin-bottom: 2rem;
+          }
         }
 
         h2 {
           width: 100%;
           color: $M3;
           line-height: $LH4;
+
+          @include mobile {
+            margin-bottom: 3rem;
+          }
         }
 
         .buttons {
           @include mobile {
             display: flex;
             justify-content: center;
+            margin-bottom: 2.5rem;
           }
 
           a {
@@ -140,15 +153,18 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
             width: 9.375rem;
             height: 3rem;
             
-
             @include mobile {
-              &:first-child {
-                margin: 0 1rem 0.5rem;
-              }
+              width: 140px;
             }
 
             &:first-child {
               margin-right: 2.5rem;
+
+              @include mobile {
+                &:first-child {
+                  margin-right: 2rem;
+                }
+              }
             }
           }
 
@@ -198,9 +214,19 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
   .section-case-studies {
     padding: 4rem 1.5rem 5rem;
+
+    @include mobile {
+      padding: 3rem 1rem;
+    }
     
     h2 {
       margin-bottom: 4rem !important;
+      @include mobile {
+        width: 70%;
+        margin-bottom: 3rem !important;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     .logos {
@@ -211,10 +237,15 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
       width: calc(83.3% + 8rem);
       margin: 0 auto;
 
+      @include mobile {
+        width: 100%;
+      }
+
       > * {
         @include mobile {
-          flex-basis: 33.33333%;
-          margin-bottom: 1.5rem;
+          flex-basis: 33.3333333%;
+          margin-bottom: 2rem;
+          height: 40px;
 
           &:last-child {
             margin-bottom: 3rem;
@@ -224,6 +255,14 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
         flex-basis: 20%;
         height: 48px;
         margin-bottom: 5rem;
+      }
+
+      .mobile-fake-logo {
+        display: none;
+
+        @include mobile {
+          display: block;
+        }
       }
     }
 
@@ -240,8 +279,16 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   .section-celebrate-your-growth {
     padding: 6rem 1.5rem 6rem;
 
+    @include mobile {
+      padding: 3rem 1rem 0rem;
+    }
+
     h2 {
       margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
     }
 
     @include columns-10;
@@ -249,6 +296,12 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
     .column {
       display: flex;
       padding: 0 2.5rem;
+
+      @include mobile {
+        width: calc(85vw - 1.7rem);
+        margin: 0 auto 2rem;
+        padding: 0;
+      }
     }
 
     .placeholder {
@@ -277,8 +330,16 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   .section-benefits {
     padding-bottom: 6rem;
 
+    @include mobile {
+      padding: 2rem 1rem 0rem;
+    }
+
     .section-title {
       margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
     }
 
     .benefits {
@@ -307,6 +368,11 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
           height: 100%;
           width: 40%;
           flex: none;
+
+          @include mobile {
+            width: unset;
+            margin-bottom: 3rem;
+          }
         }
 
         .divider {
@@ -320,16 +386,21 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
           flex: none;
           margin-top: -2rem;
 
+          @include mobile {
+            width: unset;
+            padding-bottom: 2rem;
+
+            .paragraph {
+              padding-bottom: 2rem;
+            }
+
+            .column-title {
+              text-align: center !important;
+            }
+          }
+
           .desc {
             line-height: 1.75;
-          }
-        }
-
-        @include mobile {
-          margin-top: 3rem;
-
-          &:first-child {
-            margin-top: 0;
           }
         }
 
@@ -347,7 +418,17 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
     }
   }
 
+  .section-use-cases {
+    @include mobile {
+      padding: 3rem 1rem 0;
+    }
+  }
+
   .section-architecture {
+    @include mobile {
+      padding: 3rem 1rem 0;
+    }
+
     .images {
       @include mobile {
         flex-direction: column;
@@ -403,8 +484,16 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   }
 
   .section-learn-more {
+    @include mobile {
+      padding: 3rem 1rem 0;
+    }
+
     h2 {
       margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
     }
 
     @include columns-10;
@@ -412,6 +501,12 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
     .column {
       display: flex;
       padding: 0 2.5rem;
+
+      @include mobile {
+        width: calc(85vw - 1.7rem);
+        margin: 0 auto 2rem;
+        padding: 0;
+      }
     }
 
     .card {
@@ -470,17 +565,31 @@ $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
 
     h2 {
       margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
     }
 
     .container {
       padding-bottom: 3rem;
       border-bottom: 1px solid $C2;
+
+      @include mobile {
+        padding-bottom: 1rem;
+      }
     }
 
     @include columns-10;
 
     .column {
       padding: 0 2.5rem;
+
+      @include mobile {
+        width: calc(85vw - 1.7rem);
+        margin: 0 auto 2rem;
+        padding: 0;
+      }
     }
     
     .box {

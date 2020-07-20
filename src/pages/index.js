@@ -198,6 +198,7 @@ const IndexPage = ({ data }) => {
               {caseLogos.map((logo) => (
                 <div key={logo} className={`${logo}-logo`} />
               ))}
+              <div className="mobile-fake-logo" />
             </div>
             <div className="has-text-centered">
               <LinkWithArrow
