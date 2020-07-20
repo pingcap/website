@@ -98,6 +98,7 @@ body {
   margin-bottom: 1.75rem !important;
   text-align: center;
   font-size: $size-3;
+  letter-spacing: 0.5px;
 
   @include mobile {
     font-size: $size-5;
@@ -109,7 +110,7 @@ body {
   text-align: center;
   font-size: $size-6;
   font-weight: 400;
-  color: $M4
+  color: $M4;
 }
 
 // .column-or-card-title {
@@ -128,12 +129,16 @@ body {
   font-size: $size-5;
 }
 
-.clumn-title,
+.column-title,
 .card-title {
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
   color: $M3;
+
+  &.zh {
+    font-weight: 400;
+  }
 }
 
 .card-media-title {
@@ -150,6 +155,10 @@ body {
 
   a {
     color: $B1;
+  }
+
+  &.zh {
+    font-weight: 300;
   }
 }
 
@@ -210,6 +219,7 @@ body {
   font-weight: 400;
   color: $M4 !important;
 }
+
 
 @import 'components/navbar';
 @import 'components/footer';

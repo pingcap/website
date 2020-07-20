@@ -8,6 +8,9 @@
 
 import './src/styles/global.scss'
 
+
+export { wrapPageElement } from './create-pages/wrapPage'
+
 // export const shouldUpdateScroll = ({
 //   prevRouterProps: { location },
 //   getSavedScrollPosition,
@@ -26,6 +29,7 @@ import './src/styles/global.scss'
 
 //   return true
 // }
+
 
 export const onRouteUpdate = ({ location }) => {
   const pathname = location.pathname
