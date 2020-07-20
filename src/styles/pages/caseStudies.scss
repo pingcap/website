@@ -364,10 +364,6 @@
 }
 
 .PingCAP-CaseStudies-New {
-  $gap: 32px;
-  $desktop: 960px + (2 * $gap);
-  $widescreen: 1152px + (2 * $gap);
-  $fullhd: 1344px + (2 * $gap);
   @include desktop{
     $is-12: 960px !global;
   };
