@@ -1,6 +1,7 @@
 ---
 title: Customer Success Engineer
 location: San Mateo • Full Time
+aliases: ['/careers/demand-generation-specialist']
 ---
 
 # Customer Success Engineer
