@@ -69,6 +69,7 @@ const CaseStudies = ({ data }) => {
 
   return (
     <Layout>
+      <ColumnsForDebugging></ColumnsForDebugging>
       <SEO
         title="TiDB Case Studies"
         description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders."

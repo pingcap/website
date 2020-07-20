@@ -244,7 +244,7 @@
       }
 
       position: relative;
-      height: 250px;
+      height: 20rem;
       cursor: pointer;
     }
 
@@ -369,13 +369,13 @@
   $widescreen: 1152px + (2 * $gap);
   $fullhd: 1344px + (2 * $gap);
   @include desktop{
-    $is-12: (960px/$desktop)*100vw !global;
+    $is-12: 960px !global;
   };
   @include widescreen{
-    $is-12: (1152px/$widescreen)*100vw !global;
+    $is-12: 1152px !global;
   };
   @include fullhd{
-    $is-12: (1344px/$fullhd)*100vw !global;
+    $is-12: 1344px !global;
   };
   $is-1: $is-12 / 12;
   @function get-columns-width($n) {
@@ -396,7 +396,7 @@
     overflow: visible;
   }
   > .section {
-    width: $is-12;
+    max-width: $is-12;
     padding: 6rem 0 6rem;
     margin: 0 auto;
   }
@@ -532,7 +532,7 @@
     margin-right: 0;
     .detail-card {
       @include tablet {
-        $size: get-columns-width(3);
+        $size: 100%;
         width: $size;
         height: $size;
         padding: 2.5rem 3rem;
