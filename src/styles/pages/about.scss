@@ -4,12 +4,6 @@
   $is-12: 80vw;
   $fixed-is-12: 84rem;
 
-  @mixin custom-column-section($columns: 12) {
-    $size: ((12 - $columns) / 2) * $is-12 / 12;
-    padding-left: $size;
-    padding-right: $size;
-  }
-
   @mixin column-to-padding($columns: 1) {
     $size: $columns * $is-12 / 12;
     padding-left: $size;
@@ -30,10 +24,6 @@
 
   @function column-to-width($columns: 12) {
     @return $columns * $is-12 / 12;
-  }
-
-  @function rem-to-vw($rem) {
-    @return $rem * $is-12 / $fixed-is-12;
   }
 
   @mixin positioned-el(
