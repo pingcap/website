@@ -8,9 +8,6 @@
 
 import './src/styles/global.scss'
 
-import React from 'react'
-import { IntlProvider } from 'react-intl'
-
 // export const shouldUpdateScroll = ({
 //   prevRouterProps: { location },
 //   getSavedScrollPosition,
@@ -44,10 +41,4 @@ export const onRouteUpdate = ({ location }) => {
     } catch (e) {}
     return true
   }
-}
-
-export const wrapPageElement = ({ element, props }) => {
-  const { pageContext } = props
-
-  return <IntlProvider locale={pageContext.language}>{element}</IntlProvider>
 }
