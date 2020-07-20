@@ -11,6 +11,7 @@ const BlogHeader = ({
   isTitleLink,
   withIcon = true,
   isCaseStudy = false,
+  hasBlogCategories = true,
 }) => {
   const { title, date, author, customer } = frontmatter
   const category = isCaseStudy
@@ -37,13 +38,15 @@ const BlogHeader = ({
           {withIcon && <CreateIcon />}
           {isCaseStudy ? customer : (author && author[0]) || 'PingCAP'}
         </span>
-        <span className={!withIcon ? 'without-icon' : ''}>
-          {isCaseStudy ? (
-            `${category}`
-          ) : (
-            <Link to={`/blog/category/${category}`}>{category}</Link>
-          )}
-        </span>
+        {hasBlogCategories && (
+          <span className={!withIcon ? 'without-icon' : ''}>
+            {isCaseStudy ? (
+              `${category}`
+            ) : (
+              <Link to={`/blog/category/${category}`}>{category}</Link>
+            )}
+          </span>
+        )}
       </div>
     </section>
   )

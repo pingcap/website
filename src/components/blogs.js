@@ -25,12 +25,13 @@ const Blogs = ({
     numPages,
     tag: currentTag,
     category: currentCategory,
+    hasBlogCategories,
   } = pageContext
 
   const categories = data.categories.group.map((i) => i.category)
   const tags = data.tags.group.map((i) => i.tag)
 
-  const [showCategories, setShowCategories] = useState(true)
+  const [showCategories, setShowCategories] = useState(hasBlogCategories)
 
   useEffect(() => {
     if (isTagPage) {
@@ -43,17 +44,19 @@ const Blogs = ({
   const CategoriesAndTags = ({ isDesktop = true }) => (
     <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
       <div className="titles">
-        <div
-          role="button"
-          tabIndex={0}
-          className={`title is-6 categories-title${
-            showCategories ? ' active' : ''
-          }`}
-          onClick={handleShowCategories(true)}
-          onKeyDown={handleShowCategories(true)}
-        >
-          Categories
-        </div>
+        {hasBlogCategories && (
+          <div
+            role="button"
+            tabIndex={0}
+            className={`title is-6 categories-title${
+              showCategories ? ' active' : ''
+            }`}
+            onClick={handleShowCategories(true)}
+            onKeyDown={handleShowCategories(true)}
+          >
+            Categories
+          </div>
+        )}
         <div
           role="button"
           tabIndex={0}
@@ -107,6 +110,7 @@ const Blogs = ({
                       frontmatter={node.frontmatter}
                       filePath={node.parent.relativePath}
                       isTitleLink
+                      hasBlogCategories={hasBlogCategories}
                     />
                     {node.frontmatter.image && (
                       <img
