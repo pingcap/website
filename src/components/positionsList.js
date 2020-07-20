@@ -10,7 +10,6 @@ import { replaceTitle } from '../lib/string'
 
 const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
   const { currentPage, numPages, category: currentCategory } = pageContext
-  console.log(currentCategory)
 
   const positions = data.allMarkdownRemark.edges
   const categories = data.categories.group.map((i) => i.category)
