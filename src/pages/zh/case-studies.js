@@ -21,9 +21,7 @@ const CaseStudies = ({ data, location }) => {
     pathname.slice(
       pathname.search('case-studies') + 'case-studies'.length + 1
     ) || '全部行业'
-  console.log(pathname)
   const { BannerSVG, placeholderSVG, caseStudies } = data
-  console.log(caseStudies)
   const categoriesOfStudies = useMemo(
     () => [
       ...new Set([
@@ -35,7 +33,6 @@ const CaseStudies = ({ data, location }) => {
     ],
     [caseStudies]
   )
-  console.log(categoriesOfStudies)
 
   const studiesByCategory = useMemo(
     () =>
@@ -50,8 +47,6 @@ const CaseStudies = ({ data, location }) => {
       }),
     [categoriesOfStudies, caseStudies]
   )
-
-  console.log(studiesByCategory)
 
   useEffect(() => {
     new Swiper('.swiper-container', {
@@ -112,7 +107,6 @@ const CaseStudies = ({ data, location }) => {
 }
 
 const Banner = React.memo(({ bannerSVG }) => {
-  console.log('banner rerender')
   return (
     <div className="top-banner-wrapper">
       <Img
@@ -205,6 +199,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
                 to={`/zh/case-studies/${encodeURIComponent(
                   item.split(' ').join('-')
                 )}`}
+                key={item}
                 onMouseDown={(e) => {
                   e.preventDefault()
                 }}
@@ -220,7 +215,6 @@ const Dropdown = ({ className, items, selectedItem }) => {
 }
 
 function Logos({ logos }) {
-  console.log(logos)
   return (
     <div className="columns is-multiline logos">
       {logos

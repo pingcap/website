@@ -90,8 +90,6 @@ const createCaseStudies = async ({ graphql, createPage }) => {
     ),
   ]
 
-  console.log(categoriesOfStudies)
-
   categoriesOfStudies.forEach((c) => {
     const pagePath = `case-studies/${c.split(' ').join('-')}`
 
