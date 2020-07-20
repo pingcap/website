@@ -1,8 +1,16 @@
 @import '../common';
 
 .PingCAP-About {
-  $is-12: 80vw;
-  $fixed-is-12: 84rem;
+  
+  @include desktop{
+    $is-12: 960px !global;
+  };
+  @include widescreen{
+    $is-12: 1152px !global;
+  };
+  @include fullhd{
+    $is-12: 1344px !global;
+  };
 
   @mixin column-to-padding($columns: 1) {
     $size: $columns * $is-12 / 12;
@@ -97,7 +105,7 @@
   }
 
   > .section {
-    width: column-to-width(12);
+    max-width: column-to-width(12);
     margin: 0 auto;
     padding: 0;
   }
@@ -120,7 +128,7 @@
   }
 
   .timeline-section {
-    width: 100%;
+    max-width: 100%;
     padding: 6rem 0;
     @include has-light-background;
     .title {
@@ -137,10 +145,14 @@
     padding: 6rem 0 8rem 0;
     position: relative;
     .container {
-      text-align: center;
       background-image: url(../../../images/about/map.svg);
       background-repeat: no-repeat;
       background-size: contain;
+      .wrapper {
+        text-align: center;
+        max-width: column-to-width(8);
+        margin: 0 auto;
+      }
       .title {
         @include sub-title;
       }
@@ -152,6 +164,9 @@
         font-weight: 700;
         color: $M3;
         margin-bottom: 6rem;
+      }
+      .button {
+        width: 8.75rem;
       }
       .el1 {
         @include positioned-el(1rem, left, top, 10%, 20rem, #3351ff);

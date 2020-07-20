@@ -59,36 +59,39 @@ const About = ({ data }) => {
 
         <section className="section timeline-section">
           <div className="container">
-            <h1 className="title">History of development</h1>
+            <h1 className="title">History of Development</h1>
             <img src={timeLineSVG.publicURL} alt="Timeline" />
           </div>
         </section>
 
         <section className="section company-culture-section">
           <div className="container">
-            <h2 className="title">Company Culture</h2>
-            <p className="paragraph">
-              Our mission is to build a hybrid transactional and analytical
-              processing database with global scalability, so companies can
-              count on TiDB as its single unified database solution.
-            </p>
-            <p className="paragraph">
-              So, if you love the following: Open source, open collaboration,
-              open communication; Waking up every morning motivated to solve
-              big, hairy problems (and have fun doing it!); Working alongside a
-              global team of self-starters, curious learners, builders, doers;
-            </p>
-            <p className="last">We want to hear from you!</p>
+            <div className="wrapper">
+              <h2 className="title">Company Culture</h2>
+              <p className="paragraph">
+                Our mission is to build a hybrid transactional and analytical
+                processing database with global scalability, so companies can
+                count on TiDB as its single unified database solution.
+              </p>
+              <p className="paragraph">
+                So, if you love the following: Open source, open collaboration,
+                open communication; Waking up every morning motivated to solve
+                big, hairy problems (and have fun doing it!); Working alongside
+                a global team of self-starters, curious learners, builders,
+                doers;
+              </p>
+              <p className="last">We want to hear from you!</p>
+              <Button
+                as={Link}
+                to="/careers"
+                className="button is-primary is-rounded"
+              >
+                Join Us
+              </Button>
+            </div>
             {Array.from({ length: 8 }).map((_, index) => {
-              return <div className={`el${index + 1}`}></div>
+              return <div className={`el${index + 1}`} key={index}></div>
             })}
-            <Button
-              as={Link}
-              to="/careers"
-              className="button is-primary is-rounded"
-            >
-              Join Us
-            </Button>
           </div>
         </section>
       </article>
