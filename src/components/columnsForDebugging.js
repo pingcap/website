@@ -19,12 +19,11 @@ const ColumnsForDebugging = () => {
     }
   }
 
-  console.log(getWidth())
-
   const [display, setDisplay] = useState('none')
-  const [width, setWidth] = useState(getWidth())
+  const [width, setWidth] = useState(fullhdWidth)
 
   useEffect(() => {
+    setWidth(getWidth())
     const listner = () => {
       setWidth(getWidth())
     }
