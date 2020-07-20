@@ -121,7 +121,6 @@ const CaseStudies = ({ data, location }) => {
 }
 
 const Banner = ({ bannerSVG }) => {
-  console.log('banner rerender')
   return (
     <div className="top-banner-wrapper">
       <Img
