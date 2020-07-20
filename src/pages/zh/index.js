@@ -325,10 +325,10 @@ const IndexPage = ({ data }) => {
                     tabIndex={0}
                     className="card"
                     onClick={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
+                      `/zh/blog/${replaceTitle(parent.relativePath)}`
                     )}
                     onKeyDown={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
+                      `/zh/blog/${replaceTitle(parent.relativePath)}`
                     )}
                   >
                     <div className="card-image">

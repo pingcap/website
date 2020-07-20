@@ -15,7 +15,7 @@ import { offices, contacts } from '../../data/zh/contact-us'
 import { mapData } from '../../data/zh/map'
 
 const About = ({ data }) => {
-  const { aboutHeroSVG, timeLinePNG, mapSVG } = data
+  const { aboutHeroSVG, timeLineSVG, mapSVG } = data
   const particleConfig = {
     particles: {
       color: {
@@ -90,7 +90,7 @@ const About = ({ data }) => {
         <section className="section timeline-section">
           <div className="container">
             <h2 className="title">发展历程</h2>
-            <Img fluid={timeLinePNG.childImageSharp.fluid} alt="Timeline" />
+            <img src={timeLineSVG.publicURL} alt="Timeline" />
           </div>
         </section>
 
@@ -102,16 +102,16 @@ const About = ({ data }) => {
         <section className="section working-env-section">
           <div className="container">
             <h2 className="title">企业文化</h2>
-            <p className="photograph">
+            <p className="paragraph">
               PingCAP
               是一个年轻开放、崇尚自由的团队，集合了一群充满好奇心、有追求、技艺高超、
               梦想用科技改变世界的小伙伴。他们每个人都是这个行业的佼佼者，也是PingCAP团队最核心的价值。
               为了更好的追求梦想，我们为每一位小伙伴提供了最自由且舒适的工作环境。
             </p>
-            <div className="columns is-multiline">
+            <div className="col-container">
               {workEnv.map((w) => {
                 return (
-                  <div className="column is-4 env-desc-container" key={w.name}>
+                  <div className="col env-desc-container" key={w.name}>
                     <div className={w.icon}></div>
                     <h3>{w.name}</h3>
                     <p>{w.desc}</p>
@@ -232,8 +232,8 @@ export const query = graphql`
     aboutHeroSVG: file(relativePath: { eq: "zh/about/about-hero.svg" }) {
       publicURL
     }
-    timeLinePNG: file(relativePath: { eq: "zh/about/timeline.png" }) {
-      ...FluidUncompressed
+    timeLineSVG: file(relativePath: { eq: "zh/about/timeline.svg" }) {
+      publicURL
     }
     mapSVG: file(relativePath: { eq: "zh/about/map.svg" }) {
       publicURL
