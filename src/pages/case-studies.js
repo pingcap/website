@@ -5,7 +5,6 @@ import { graphql, Link } from 'gatsby'
 // import Link from '../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
-
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
 import ColumnsForDebugging from '../components/columnsForDebugging'
@@ -14,6 +13,7 @@ import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
 import SEO from '../components/seo'
 import Swiper from 'swiper'
+import flatten from 'lodash.flatten'
 
 const CaseStudies = ({ data, location }) => {
   const { pathname } = location
@@ -53,7 +53,7 @@ const CaseStudies = ({ data, location }) => {
     withoutReadMoreNodes =
       withoutReadMoreNodes.length === 1
         ? withoutReadMoreNodes[0]
-        : withoutReadMoreNodes.flat()
+        : flatten(withoutReadMoreNodes)
     return {
       category: c.split(' ').join('-'),
       studies: caseStudies.edges
