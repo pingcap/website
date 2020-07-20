@@ -352,15 +352,10 @@
   @include fullhd{
     $is-12: (1344px/$fullhd)*100vw !global;
   };
-  // $is-12:80vw;
   $is-1: $is-12 / 12;
-  // $fixed-is-12: 84rem;
   @function get-columns-width($n) {
     @return $n * $is-12 / 12;
   }
-  // @function rem-to-vw($rem) {
-  //   @return $rem / $fixed-is-12 * $is-12;
-  // }
 
   @mixin main-title{
     font-size: $H1;
