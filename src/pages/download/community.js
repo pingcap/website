@@ -1,6 +1,6 @@
 import '../../styles/pages/download/community.scss'
 
-import React, { useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import { graphql } from 'gatsby'
@@ -23,7 +23,7 @@ const Community = ({ data }) => {
   const versions = ['v4.0.0']
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     setWrongMsg([])
     let errMsg = []
 
@@ -48,7 +48,7 @@ const Community = ({ data }) => {
     }
 
     return errMsg
-  }
+  }, [selPkg, selVersion, termsChecked])
 
   const downloadPackage = () => {
     let errMsg = validateForm()
@@ -82,7 +82,7 @@ const Community = ({ data }) => {
 
   useEffect(() => {
     validateForm()
-  }, [selVersion, selPkg, termsChecked])
+  }, [validateForm])
 
   return (
     <Layout>
