@@ -12,11 +12,12 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
+import { useIntl } from 'react-intl'
 
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
   const { frontmatter, html, tableOfContents } = markdownRemark
-  const filePath = { pageContext }
+  const { filePath, hasBlogCategories } = pageContext
   const category = frontmatter.categories
     ? frontmatter.categories[0]
     : 'No Category'
@@ -25,6 +26,8 @@ const Blog = ({ data, pageContext }) => {
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
   const [relatedBlogsRef, setRelatedBlogsRef] = useState(null)
+
+  const intl = useIntl()
 
   useEffect(() => {
     const footer = document.querySelector('.footer.PingCAP-Footer')
@@ -114,11 +117,24 @@ const Blog = ({ data, pageContext }) => {
             <div className="columns">
               <div className="column is-7">
                 <div className="under-category">
-                  <Link to="/blog">Blog</Link>
-                  <span> > </span>
-                  <Link to={`/blog/category/${category}`}>{category}</Link>
+                  {intl.locale === 'zh' ? (
+                    <>
+                      <span> &lt; </span>
+                      <Link to="/blog">博客</Link>
+                    </>
+                  ) : (
+                    <>
+                      <Link to="/blog">Blog</Link>
+                      <span> > </span>
+                      <Link to={`/blog/category/${category}`}>{category}</Link>
+                    </>
+                  )}
                 </div>
-                <BlogHeader frontmatter={frontmatter} filePath={filePath} />
+                <BlogHeader
+                  frontmatter={frontmatter}
+                  filePath={filePath}
+                  hasBlogCategories={hasBlogCategories}
+                />
                 <div
                   className="markdown-body blog-content"
                   dangerouslySetInnerHTML={{ __html: html }}
@@ -161,6 +177,7 @@ const Blog = ({ data, pageContext }) => {
                           filePath={blog.parent.relativePath}
                           isTitleLink
                           withIcon={false}
+                          hasBlogCategories={hasBlogCategories}
                         />
                       ))}
                     </div>

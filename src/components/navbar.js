@@ -4,6 +4,7 @@ import React, { useEffect, useState, Fragment } from 'react'
 
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems } from '../data/navbar'
+import { FormattedMessage } from 'react-intl'
 
 const Navbar = () => {
   const imageData = useStaticQuery(
@@ -76,14 +77,15 @@ const Navbar = () => {
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
-                    role="navigation"
+                    role="button"
+                    tabIndex="0"
                     className={`navbar-item has-dropdown is-hoverable with-main-section ${
                       burgerActive ? '' : 'hide-burger'
                     }"`}
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    {item.name}
+                    <FormattedMessage id={item.key} />
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
                         <Link
@@ -105,8 +107,9 @@ const Navbar = () => {
                         href={item.href}
                         className="navbar-item with-main-section"
                         target="_blank"
+                        rel="noreferrer noopener"
                       >
-                        {item.name}
+                        <FormattedMessage id={item.key} />
                       </a>
                     ) : (
                       <Link
@@ -115,7 +118,7 @@ const Navbar = () => {
                         className="navbar-item with-main-section"
                         onTouchStart={() => {}}
                       >
-                        {item.name}
+                        <FormattedMessage id={item.key} />
                       </Link>
                     )}
                   </>
@@ -128,6 +131,7 @@ const Navbar = () => {
               href="https://github.com/pingcap"
               target="_blank"
               className="navbar-item with-github-section"
+              rel="noreferrer noopener"
             >
               <div className="github-icon"></div>
             </a>
