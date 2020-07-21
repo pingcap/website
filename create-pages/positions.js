@@ -6,51 +6,49 @@ const createPositionsPagination = async ({ graphql, createPage }) => {
   const positionsTemplate = path.resolve(
     `${__dirname}/../src/templates/positions.js`
   )
-  for (const lang in langConfig.languages) {
-    const { positionsPath } = langConfig.languages[lang]
-    if (!positionsPath) continue
+  const lang = 'zh'
+  const { positionsPath } = langConfig.languages[lang]
 
-    const result = await graphql(`
-      query {
-        categories: allMarkdownRemark(
-          filter: {
-            fields: { collection: { eq: "${positionsPath}" } }
-          }
-        ) {
-          group(field: frontmatter___tags) {
-            category: fieldValue
-            totalCount
-          }
+  const result = await graphql(`
+    query {
+      categories: allMarkdownRemark(
+        filter: {
+          fields: { collection: { eq: "${positionsPath}" } }
+        }
+      ) {
+        group(field: frontmatter___tags) {
+          category: fieldValue
+          totalCount
         }
       }
-    `)
+    }
+  `)
 
-    const categories = result.data.categories.group
-    const positionsPerPage = 5
-    categories.forEach(({ category, totalCount }) => {
-      const numPages = Math.ceil(totalCount / positionsPerPage)
-      Array.from({ length: numPages }).forEach((_, i) => {
-        langPrefixes(lang).forEach((prefix) => {
-          createPage({
-            path:
-              i === 0
-                ? `/${prefix}careers/${category}`
-                : `/${prefix}careers/${category}/${i + 1}`,
-            component: positionsTemplate,
-            context: {
-              category,
-              limit: positionsPerPage,
-              skip: i * positionsPerPage,
-              numPages,
-              currentPage: i + 1,
-              language: lang,
-              ...langConfig.languages[lang],
-            },
-          })
+  const categories = result.data.categories.group
+  const positionsPerPage = 5
+  categories.forEach(({ category, totalCount }) => {
+    const numPages = Math.ceil(totalCount / positionsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      langPrefixes(lang).forEach((prefix) => {
+        createPage({
+          path:
+            i === 0
+              ? `/${prefix}careers/${category}`
+              : `/${prefix}careers/${category}/${i + 1}`,
+          component: positionsTemplate,
+          context: {
+            category,
+            limit: positionsPerPage,
+            skip: i * positionsPerPage,
+            numPages,
+            currentPage: i + 1,
+            language: lang,
+            ...langConfig.languages[lang],
+          },
         })
       })
     })
-  }
+  })
 }
 
 module.exports = createPositionsPagination

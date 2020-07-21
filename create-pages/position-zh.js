@@ -6,49 +6,47 @@ const createPositionsZH = async ({ graphql, createPage }) => {
   const positionTemplate = path.resolve(
     `${__dirname}/../src/templates/position-zh.js`
   )
-  for (const lang in langConfig.languages) {
-    const { positionsPath } = langConfig.languages[lang]
-    if (!positionsPath) continue
+  const lang = 'zh'
+  const { positionsPath } = langConfig.languages[lang]
 
-    const result = await graphql(`
-      query {
-        positions: allMarkdownRemark(
-          filter: {
-            fields: { collection: { eq: "${positionsPath}" } }
-          }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              frontmatter {
-                title
-              }
-              parent {
-                ... on File {
-                  relativePath
-                }
+  const result = await graphql(`
+    query {
+      positions: allMarkdownRemark(
+        filter: {
+          fields: { collection: { eq: "${positionsPath}" } }
+        }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              title
+            }
+            parent {
+              ... on File {
+                relativePath
               }
             }
           }
         }
       }
-    `)
+    }
+  `)
 
-    result.data.positions.edges.forEach(({ node }) => {
-      langPrefixes(lang).forEach((prefix) => {
-        createPage({
-          path: `${prefix}careers/${replaceTitle(node.parent.relativePath)}`,
-          component: positionTemplate,
-          context: {
-            title: node.frontmatter.title,
-            filePath: `${replaceTitle(node.parent.relativePath)}`,
-            language: lang,
-            ...langConfig.languages[lang],
-          },
-        })
+  result.data.positions.edges.forEach(({ node }) => {
+    langPrefixes(lang).forEach((prefix) => {
+      createPage({
+        path: `${prefix}careers/${replaceTitle(node.parent.relativePath)}`,
+        component: positionTemplate,
+        context: {
+          title: node.frontmatter.title,
+          filePath: `${replaceTitle(node.parent.relativePath)}`,
+          language: lang,
+          ...langConfig.languages[lang],
+        },
       })
     })
-  }
+  })
 }
 
 module.exports = createPositionsZH
