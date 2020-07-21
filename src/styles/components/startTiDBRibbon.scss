@@ -12,7 +12,7 @@
         flex-direction: column;
 
         .title {
-          margin-bottom: 1.5rem !important;
+          margin-bottom: 2rem !important;
           text-align: center;
         }
       }
@@ -40,14 +40,12 @@
         a {
           font-size: $size-6;
 
-          @include mobile {
-            &:first-child {
-              margin: 0 1rem 0.5rem !important;
-            }
-          }
-
           &:first-child {
             margin-right: 4rem;
+
+            @include mobile {
+              margin-right: 2rem;
+            }
           }
 
           &.contact-us,
@@ -58,6 +56,11 @@
             height: 3rem;
             min-width: 11rem;
             margin-bottom: 0;
+
+            @include mobile {
+              min-width: 8.75rem;
+              padding: 0;
+            }
 
             &:hover {
               background: $primary;
@@ -71,6 +74,10 @@
             background: #fff;
             color: $B3;
             border-color: #fff;
+
+            @include mobile {
+              width: unset;
+            }
           }
         }
       }
