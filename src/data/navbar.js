@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const navbarItems = [
   {
@@ -32,8 +33,8 @@ const navbarItems = [
     href: '/community',
   },
   {
-    name: 'About',
-    href: '/about',
+    name: 'Contact Us',
+    href: '/contact-us',
   },
 ]
 
@@ -42,13 +43,7 @@ const navbarItems = [
 const promotionText = (
   <>
     TiDB Cloud (beta) is open for free trial now. Apply&nbsp;
-    <a
-      href="https://pingcap.com/products/tidbcloud"
-      target="_blank"
-      rel="noreferrer noopener"
-    >
-      Here
-    </a>
+    <Link to="/products/tidbcloud">Here</Link>
   </>
 )
 

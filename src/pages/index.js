@@ -133,7 +133,7 @@ const IndexPage = ({ data }) => {
   const onCardClick = (href) => () => navigate(href)
 
   return (
-    <Layout>
+    <Layout NavbarProps={{ showBanner: true }}>
       <SEO
         title="TiDB | SQL at Scale"
         description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"

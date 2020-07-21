@@ -22,8 +22,8 @@ exports.createPages = async ({ actions, graphql }) => {
   createBlogTags({ graphql, createPage })
   createBlogCategories({ graphql, createPage })
   caseStudies({ graphql, createPage })
-  createPositions({ graphql, createPage })
-  createPolicyTerms({ graphql, createPage})
+  createPositions({ graphql, createPage, createRedirect })
+  createPolicyTerms({ graphql, createPage })
 }
 
 exports.onCreateNode = ({ actions, node, getNode }) => {
@@ -35,7 +35,7 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
     createNodeField({
       node,
       name: 'collection',
-      value: parent.sourceInstanceName
+      value: parent.sourceInstanceName,
     })
   }
 }

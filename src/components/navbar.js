@@ -5,7 +5,7 @@ import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems, promotionText } from '../data/navbar'
 
-const Navbar = () => {
+const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
       query {
@@ -44,7 +44,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
-  const [promotionOpen, setPromotionOpen] = useState(true)
+  const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false))
 
   return (

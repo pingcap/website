@@ -11,12 +11,22 @@
       flex-direction: row;
       align-items: center;
 
+      @include mobile {
+        padding: 0 1rem;
+        font-size: $size-8;
+        position: relative;
+      }
+
       .horn {
         width: 1.25rem;
         height: 1.25rem;
         margin-right: 1.25rem;
         background: url(../../../images/horn.svg);
         background-size: contain;
+
+        @include mobile {
+          margin-right: 0.5rem;
+        }
       }
 
       .blank {
@@ -29,6 +39,12 @@
         background: url(../../../images/cross.svg);
         background-size: contain;
         cursor: pointer;
+
+        @include mobile {
+          position: absolute;
+          right: 1.5rem;
+          top: 1rem;
+        }
       }
 
       a {
@@ -37,7 +53,7 @@
       }
     }
   }
-
+  
   & > .container {
     @include mobile {
       height: 4.25rem;
