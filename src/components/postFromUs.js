@@ -52,13 +52,16 @@ export const PostFromUsInHome = () => (
     className="PingCAP-PostFromUs in-home is-borderless is-horizontal"
     shadowless
   >
+    <div className="poster-wrapper poster-wrapper-mobile">
+      <Img />
+    </div>
     <div className="titles">
       <h2 className="title is-4 is-spaced">Subscribe To Our Newsletter</h2>
       <div className="subtitle is-7">
         Features, releases, showcases, meetups, talks...
       </div>
     </div>
-    <div className="poster-wrapper">
+    <div className="poster-wrapper poster-wrapper-desktop">
       <Img />
       {/* <Field /> */}
       <Button
