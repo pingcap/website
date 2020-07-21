@@ -149,7 +149,7 @@ const IndexPage = ({ data }) => {
                     alt="PingCAP Home: TiDB | SQL At Scale"
                   />
                 </h1>
-                <h2 className="subtitle is-5">
+                <h2 className="subtitle is-7">
                   An open-source, cloud-native, distributed SQL database for
                   elastic scale and real-time analytics
                 </h2>
@@ -191,7 +191,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-case-studies has-light-background">
           <div className="container">
-            <h2 className="title section-title">
+            <h2 className="title section-title is-4">
               Trusted and Verified by Innovation Leaders
             </h2>
             <div className="logos">
@@ -211,7 +211,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-celebrate-your-growth">
           <div className="container">
-            <h2 className="title section-title">Why TiDB?</h2>
+            <h2 className="title section-title is-4">Why TiDB?</h2>
             <div className="columns is-variable is-6">
               {celebrateYourGrowthData.map((d) => (
                 <div key={d.name} className="column">
@@ -221,8 +221,10 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                       className="placeholder"
                     />
-                    <h3 className="title is-spaced card-title">{d.name}</h3>
-                    <div className="paragraph has-text-centered">{d.desc}</div>
+                    <h3 className="title is-spaced card-title is-7">
+                      {d.name}
+                    </h3>
+                    <div className="paragraph desc">{d.desc}</div>
                   </NormalBox>
                 </div>
               ))}
@@ -232,7 +234,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-benefits">
           <div className="container">
-            <h2 className="title section-title">
+            <h2 className="title section-title is-4">
               The Benefits of Distributed SQL
             </h2>
             <div ref={benefitsRef} className="benefits">
@@ -248,9 +250,9 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                     />
                   </div>
-                  <div className="divider" />
+                  {/* <div className="divider" /> */}
                   <div className="intro">
-                    <div className="title is-spaced column-title has-text-left">
+                    <div className="title is-spaced column-title has-text-left is-5">
                       {d.name}
                     </div>
                     <div className="paragraph">{d.desc}</div>
@@ -282,7 +284,7 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-learn-more">
           <div className="container">
-            <h2 className="title section-title">
+            <h2 className="title section-title is-4">
               Learn More in Engineering Blogs
             </h2>
             <div className="columns is-variable is-6">
@@ -334,14 +336,14 @@ const IndexPage = ({ data }) => {
 
         <section className="section section-get-started-with-tidb">
           <div className="container">
-            <h2 className="title section-title">Get Started with TiDB</h2>
+            <h2 className="title section-title is-4">Get Started with TiDB</h2>
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">Self-hosted</h3>
+                  <h3 className="title column-title is-5">Self-hosted</h3>
                   <div className="strikethrough-primary" />
 
-                  <Box className="logo">
+                  <Box className="logo k8s">
                     <img src={logos.kubernetes} alt="Kubernetes logo" />
                   </Box>
                   <Box className="logo tiup">
@@ -360,12 +362,12 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">On Public Cloud</h3>
+                  <h3 className="title column-title is-5">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo aws">
                     <img src={logos.aws} alt="AWS logo" />
                   </Box>
-                  <Box className="logo">
+                  <Box className="logo gcp">
                     <img
                       src={logos.googleCloudPlatform}
                       alt="Google Cloud Platform logo"
@@ -383,7 +385,9 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title">Database as a Service</h3>
+                  <h3 className="title column-title is-5">
+                    Database as a Service
+                  </h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo tidb-cloud">
                     <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
