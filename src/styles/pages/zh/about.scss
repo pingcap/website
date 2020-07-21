@@ -6,6 +6,7 @@
 
   $icons: office-equipment gym team-building snacks TGIF flexible;
 
+
   @include desktop{
     $is-12: 960px !global;
   };
@@ -15,6 +16,7 @@
   @include fullhd{
     $is-12: 1344px !global;
   };
+
 
   @mixin paragraph {
     font-size: $P1;
@@ -39,6 +41,7 @@
   @function column-to-width($columns: 12) {
     @return $columns * $is-12 / 12;
   }
+
 
   
   @mixin positioned-el(
