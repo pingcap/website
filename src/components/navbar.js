@@ -82,6 +82,12 @@ const Navbar = () => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </button>
+
+          <a
+            href="https://github.com/pingcap"
+            target="_blank"
+            className="github-icon-mobile"
+          />
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
