@@ -1,6 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
+import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems, promotionText } from '../data/navbar'
 
@@ -26,6 +27,8 @@ const Navbar = () => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       const dropdown = document.querySelector('.navbar-dropdown')
       dropdown.classList.toggle('toggle-drop')
+      const title = document.querySelector('.dropdown-title')
+      title.classList.toggle('toggle-drop')
     }
   }
 
@@ -102,7 +105,10 @@ const Navbar = () => {
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    {item.name}
+                    <div className="dropdown-title">
+                      {item.name}
+                      <AddIcon />
+                    </div>
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
                         <Link

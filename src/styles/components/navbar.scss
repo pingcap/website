@@ -54,6 +54,31 @@
   .has-dropdown {
     align-items: center;
 
+    .dropdown-title {
+      svg {
+        display: none;
+        transition: transform 0.25s;
+        fill: $B1;
+        
+        @include mobile {
+          display: unset;
+        }
+      }
+
+      &.toggle-drop {
+        svg {
+          transform: rotate(45deg);
+        }
+      }
+
+      @include mobile {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
     > .navbar-dropdown {
       background-color: $B5;
       border-radius: 4px;
