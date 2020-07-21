@@ -2,12 +2,22 @@
   background: $B5;
   padding-bottom: 3rem;
 
+  @include mobile {
+    padding: 0 1rem 1.5rem;
+  }
+
   .column {
+    @include mobile {
+      padding: 0;
+    }
+
     .title {
       @include mobile {
-        margin-bottom: 0;
+        margin-bottom: 0 !important;
+        padding-top: 1rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid $C2;
+        line-height: 1rem !important;
       }
 
       margin-bottom: 2rem;
@@ -45,11 +55,22 @@
 
         &.displayed {
           display: unset;
+
+          @include mobile {
+            display: block;
+            border-bottom: 1px solid $C2;
+          }
         }
       }
 
       li {
         margin: 1rem 0;
+
+        @include mobile {
+          margin: 0;
+          padding: 1rem 0;
+          line-height: 1rem;
+        }
 
         a {
           @include has-item-active;
@@ -142,10 +163,11 @@
   .annotations-mobile {
     @include mobile {
       display: block;
-      margin-bottom: 2rem;
+      margin-top: 1.5rem;
+      text-align: center;
 
       .lang {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
       }
     }
 
@@ -167,5 +189,11 @@
     }
 
     display: none;
+  }
+
+  .columns {
+    @include mobile {
+      margin: 0 0 1.5rem;
+    }
   }
 }

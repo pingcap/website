@@ -118,15 +118,16 @@ const Footer = () => {
           </div>
           <Lang align="right" />
         </div>
+
+        <div className="socials-mobile">
+          <Socials type="follow" />
+        </div>
+
         <div className="annotations annotations-mobile">
           <Lang align="left" />
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
-        </div>
-
-        <div className="socials-mobile">
-          <Socials type="follow" />
         </div>
       </div>
     </footer>
