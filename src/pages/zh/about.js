@@ -12,7 +12,6 @@ import SEO from '../../components/seo'
 import ScrollTopButton from '../../components/scrollTopButton'
 import { workEnv } from '../../data/zh/career-work-env'
 import { offices, contacts } from '../../data/zh/contact-us'
-import { mapData } from '../../data/zh/map'
 
 const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG, mapSVG } = data
@@ -156,7 +155,7 @@ const About = ({ data }) => {
             </div>
           </div>
         </section>
-
+        {/* 
         <section className="section map-section">
           <div className="container">
             <img
@@ -164,38 +163,8 @@ const About = ({ data }) => {
               alt="office-map"
               className="map-img"
             ></img>
-            {mapData.map((data) => {
-              return (
-                <div
-                  className="map-office"
-                  data-name={data.name}
-                  style={{
-                    top: data.dotOffset.top,
-                    right: data.dotOffset.right,
-                    left: data.dotOffset.left,
-                  }}
-                >
-                  <button
-                    className="button"
-                    style={{
-                      top: data.buttonOffset.top,
-                      left: data.buttonOffset.left,
-                    }}
-                  >
-                    {data.name}
-                  </button>
-                  <div
-                    className="line"
-                    style={{
-                      width: data.line.width,
-                      transform: `rotate(${data.line.angel}deg)`,
-                    }}
-                  ></div>
-                </div>
-              )
-            })}
           </div>
-        </section>
+        </section> */}
 
         <section className="section join-section">
           <div className="container">
