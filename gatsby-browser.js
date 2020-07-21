@@ -10,7 +10,7 @@ import './src/styles/global.scss'
 
 export const onRouteUpdate = ({ location }) => {
   const pathname = location.pathname
-  const caseStudiesSubPath = /^(\/zh)?\/case-studies\/.*/
+  const caseStudiesSubPath = /^(\/zh)?\/case-studies\/.+/
   if (caseStudiesSubPath.test(pathname)) {
     try {
       const anchor = document.getElementsByClassName('title-under-swiper')[0]

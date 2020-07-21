@@ -244,7 +244,7 @@ function Logos({ logos }) {
                 className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
               />
               <div className="paragraph">
-                {truncate.apply(logo.summary, [120, true])}
+                {truncate.apply(logo.summary, [200, true])}
               </div>
               {logo.relativePath && (
                 <Link

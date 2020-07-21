@@ -24,11 +24,11 @@ const ColumnsForDebugging = () => {
 
   useEffect(() => {
     setWidth(getWidth())
-    const listner = () => {
+    const listener = () => {
       setWidth(getWidth())
     }
-    window.addEventListener('resize', listner)
-    return () => window.removeEventListner('resize', listner)
+    window.addEventListener('resize', listener)
+    return () => window.removeEventListener('resize', listener)
   }, [])
   useEffect(() => {
     const root = document.getElementsByTagName('html')[0]
