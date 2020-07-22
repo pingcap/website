@@ -7,7 +7,7 @@ import { graphql, Link } from 'gatsby'
 import { Button } from '@seagreenio/react-bulma'
 
 const About = ({ data }) => {
-  const { aboutHeroSVG, timeLineSVG } = data
+  const { aboutHeroSVG, timeLineSVG, mobileTimeLineSVG } = data
   return (
     <Layout>
       <SEO
@@ -23,7 +23,7 @@ const About = ({ data }) => {
           </div>
         </section>
 
-        <section className="section intro-section">
+        <section className="section intro-section container">
           <div className="container">
             <h1 className="title">About PingCAP</h1>
             <p className="paragraph">
@@ -60,7 +60,13 @@ const About = ({ data }) => {
         <section className="section timeline-section">
           <div className="container">
             <h1 className="title">History of Development</h1>
-            <img src={timeLineSVG.publicURL} alt="Timeline" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset={mobileTimeLineSVG.publicURL}
+              ></source>
+              <img src={timeLineSVG.publicURL} alt="time line" />
+            </picture>
           </div>
         </section>
 
@@ -105,6 +111,9 @@ export const query = graphql`
       publicURL
     }
     timeLineSVG: file(relativePath: { eq: "about/timeline.svg" }) {
+      publicURL
+    }
+    mobileTimeLineSVG: file(relativePath: { eq: "about/mobile-timeline.svg" }) {
       publicURL
     }
   }
