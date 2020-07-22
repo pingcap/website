@@ -30,7 +30,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
-          command: yarn download:blogs:prod && yarn build
+          command: GITHUB_AUTHORIZATION_TOKEN=${GH_AUTO_TOKEN} yarn download:blogs:prod && yarn build
           no_output_timeout: 20m
 
       - deploy:
