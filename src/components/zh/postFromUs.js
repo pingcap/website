@@ -85,7 +85,7 @@ export const PostFromUsInHome = () => (
   >
     <div className="titles">
       <h2 className="title is-4 is-spaced">订阅我们的信息</h2>
-      <div className="subtitle is-6">功能，发布，展示，聚会，演讲...</div>
+      <div className="subtitle is-7">功能，发布，展示，聚会，演讲...</div>
     </div>
     <div className="poster-wrapper-zh">
       <Img />

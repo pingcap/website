@@ -65,7 +65,7 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
     "download:blogs:dev": "cross-env NODE_ENV=development node ./markdown-pages/download-blogs.js",
     "download:blogs:prod": "cross-env NODE_ENV=production node ./markdown-pages/download-blogs.js",
-    "delete:blogs": "rimraf ./markdown-pages/blogs/*.md"
+    "delete:blogs": "rimraf ./markdown-pages/blogs/*.md ./markdown-pages/zh/blogs/*.md"
   },
   "repository": {
     "type": "git",

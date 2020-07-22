@@ -9,7 +9,12 @@ const { createReplaceBlogImagePathStream } = require('./utils')
 const isDev = process.env.NODE_ENV === 'development'
 const blogName = process.argv[2]
 
-async function downloadBlogs(blogsURL, blogsPath) {
+async function downloadBlogs(
+  blogsURL,
+  blogsPath,
+  locale,
+  ignores = ['README.md']
+) {
   let blogs
 
   try {
@@ -27,7 +32,7 @@ async function downloadBlogs(blogsURL, blogsPath) {
   blogs = blogs
     .map((b) => ({ name: b.name, downloadURL: b.download_url }))
     .filter((b) => b.name.endsWith('.md'))
-    .filter((b) => b.name !== 'README.md')
+    .filter((b) => ignores.indexOf(b.name) === -1)
   log(chalk.blue('Start downloading...'))
 
   if (blogName && isDev) {
@@ -55,10 +60,13 @@ async function downloadBlogs(blogsURL, blogsPath) {
     })
 
     toReadableStream((await axios.get(blog.downloadURL)).data)
-      .pipe(createReplaceBlogImagePathStream())
+      .pipe(createReplaceBlogImagePathStream(locale))
       .pipe(writeStream)
   })
 }
 
-downloadBlogs('/repos/pingcap/blog/contents', 'blogs')
-downloadBlogs('/repos/pingcap/blog-cn/contents', 'blogs-cn')
+downloadBlogs('/repos/pingcap/blog/contents', 'blogs', 'en', ['README.md'])
+downloadBlogs('/repos/pingcap/blog-cn/contents', 'zh/blogs', 'zh', [
+  'README.md',
+  'TOC-User-Case.md',
+])

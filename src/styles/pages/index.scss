@@ -6,7 +6,7 @@
 }
 
 @mixin strikethrough($color) {
-  width: 1rem;
+  width: 0.8rem;
   margin-bottom: 1rem;
   border-bottom: 3px solid $color;
 }
@@ -26,45 +26,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   netease-games iqiyi wuba zhihu china-mobile china-telecom china-unicom people oppo yumchina zto-express
   paypay zalopay shopee bookmyshow hulu u-next dailymotion;
 
-@mixin has-intro-and-placeholder {
-  @include mobile {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  display: flex;
-  align-items: center;
-
-  > * {
-    flex: 1;
-  }
-
-  $img-width: 90%;
-
-  .placeholder-wrapper {
-    @include VHCenter;
-
-    height: 100%;
-
-    .placeholder {
-      width: $img-width;
-    }
-  }
-
-  .divider {
-    flex: none;
-    width: (100% - $img-width) / 2;
-  }
-
-  .intro {
-    padding: 1.5rem 0;
-
-    .desc {
-      line-height: 1.75;
-    }
-  }
-}
-
 .box.outer {
   @extend .has-light-background;
 
@@ -72,6 +33,13 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   flex-direction: column;
   align-items: center;
   border: 1px solid rgba($color: $C2, $alpha: 0.5);
+}
+
+@mixin columns-10 {
+  .columns {
+    width: calc(83.3% + 5rem);
+    margin: 0 auto;
+  }
 }
 
 .PingCAP-Home {
@@ -82,12 +50,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         justify-content: center;
       }
 
+      margin: -1rem auto -3rem;
+
       display: flex;
       justify-content: space-between;
       align-items: center;
 
       > * {
-        width: 40%;
+        width: 41.667%;
       }
 
       .titles-and-entry {
@@ -102,20 +72,24 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           }
 
           position: relative;
-          margin-bottom: 3rem;
+          margin-bottom: 4rem;
 
           @include items-on-hero-animate-in;
         }
 
         h1 {
           img {
-            width: 100%;
+            @include mobile {
+              width: 90%;
+            }
+
+            width: 75%;
           }
         }
 
         h2 {
           width: 100%;
-          color: $B3;
+          color: $M3;
           line-height: $LH4;
         }
 
@@ -128,17 +102,22 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           a {
             font-size: $size-7;
             letter-spacing: 1px;
+            padding: 0 2rem;
+            height: 3rem;
+            min-width: 8.7rem;
 
-            @include mobile {
-              &:first-child {
-                margin: 0 1rem 0.5rem;
-              }
-            }
+            // @include mobile {
+            //   &:first-child {
+            //     margin: 0 1rem 0.5rem;
+            //   }
+            // }
 
             &:first-child {
-              margin-right: 1rem;
+              margin-right: 1.7rem;
             }
           }
+
+          margin-bottom: 2rem;
         }
       }
 
@@ -183,8 +162,8 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       }
       
       .swiper-container {
-        width: 645.33px;
-        height: 409.66px;
+        width: 42rem;
+        height: 26.25rem;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 
         img {
@@ -252,10 +231,17 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-case-studies {
+    padding: 4rem 1.5rem 5rem;
+
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
     .logos {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
+      margin: 0 -3rem;
 
       > * {
         @include mobile {
@@ -269,14 +255,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
 
         flex-basis: 20%;
         height: 72px;
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
       }
     }
 
     &.zh {
       .logos {
         > * {
-          transform: scale(0.8);
+          height: 56px;
           flex-basis: 14.2%;
         }
       }
@@ -284,28 +270,97 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-celebrate-your-growth {
+    padding: 6rem 1.5rem 6rem;
+
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
+    @include columns-10;
+
     .column {
       display: flex;
+      padding: 0 2.5rem;
+    }
+
+    .placeholder {
+      width: 93%;
     }
 
     .box {
-      padding-top: 0;
+      padding: 1rem 2rem 2rem;
 
       &.outer {
         background-color: $M1;
       }
+      
+      .title.zh {
+        font-weight: 400;
+      }
 
       .desc {
-        line-height: 1.5;
-        text-align: center;
+        .zh {
+          font-weight: 300;
+        }
+
+        font-size: $size-8;
+        line-height: 2;
+        padding-bottom: 0;
       }
     }
   }
 
   .section-benefits {
+    padding-bottom: 6rem;
+
+    .section-title {
+      margin-bottom: 4rem !important;
+    }
+
     .benefits {
       .benefit {
-        @include has-intro-and-placeholder;
+        width: 83.3%;
+        margin: 0 auto;
+        justify-content: space-between;
+
+        @include mobile {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        display: flex;
+        align-items: center;
+
+        > * {
+          flex: 1;
+        }
+
+        $img-width: 90%;
+
+        .placeholder-wrapper {
+          @include VHCenter;
+
+          height: 100%;
+          width: 40%;
+          flex: none;
+        }
+
+        .divider {
+          flex: none;
+          width: (100% - $img-width) / 2;
+        }
+
+        .intro {
+          padding: 1.5rem 0;
+          width: 40%;
+          flex: none;
+          margin-top: -2rem;
+
+          .desc {
+            line-height: 1.75;
+          }
+        }
+
         @include mobile {
           margin-top: 3rem;
 
@@ -329,6 +384,13 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-architecture {
+    padding-top: 6rem;
+    padding-bottom: 1.5rem;
+
+    .section-title {
+      padding-bottom: 4rem;
+    }
+
     .images {
       @include mobile {
         flex-direction: column;
@@ -389,7 +451,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         }
 
         width: 1344px;
-        height: 540px;
+        height: 534px;
         margin: 0 2rem;
         background-image: url(../../../images/home/architecture/zh/architecture.svg);
       }
@@ -397,6 +459,17 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   }
 
   .section-learn-more {
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
+    @include columns-10;
+
+    .column {
+      display: flex;
+      padding: 0 2.5rem;
+    }
+    
     .card {
       height: 100%;
       transition: 0.5s;
@@ -413,9 +486,44 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
 
         img {
           position: relative;
-          right: 40%;
-          width: 180%;
-          max-width: 180%;
+          height: 13.3rem;
+          object-fit: cover;
+          // right: 40%;
+          // width: 180%;
+          // max-width: 180%;
+        }
+      }
+
+      .title {
+        color: $M3;
+        font-size: $size-8;
+        margin-bottom: 1rem;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 400;
+        }
+      }
+      
+      .subtitle {
+        color: $M4;
+        font-size: $size-8;
+        margin-bottom: 1rem;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 300;
+        }
+      }
+      
+      .paragraph {
+        padding: unset;
+        color: $M4;
+        font-size: $size-8;
+        line-height: $LH5;
+
+        &.zh {
+          font-weight: 300;
         }
       }
     }
@@ -428,49 +536,85 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
   .section-get-started-with-tidb {
     padding-bottom: 0;
 
+    h2 {
+      margin-bottom: 4rem !important;
+    }
+
     .container {
       padding-bottom: 3rem;
       border-bottom: 1px solid $C2;
     }
 
+    @include columns-10;
+
+    .column {
+      padding: 0 2.5rem;
+    }
+    
     .box {
+      padding: 2rem;
+      align-items: stretch;
+
+      .title.is-5 {
+        margin-bottom: 1.5rem;
+      }
+
+      .strikethrough-primary {
+        align-self: center;
+      }
+
       .title.is-7 {
         color: $C4;
       }
 
-      &.logo,
-      a.button {
-        width: 80%;
-      }
+      // &.logo,
+      // a.button {
+      //   width: 80%;
+      // }
 
       &.logo {
         @include VHCenter;
 
-        $image-height: 4rem;
+        height: 5rem;
+        margin-bottom: 1.5rem;
+        $image-height: 3rem;
 
         img {
           height: $image-height;
         }
 
-        &.tiup {
-          padding: calc(1.25rem + 0.5rem);
-
+        &.k8s {
           img {
-            height: calc(#{$image-height} - 1rem);
+            height: 3.1rem;
+          }
+        }
+
+        &.tiup {
+          img {
+            height: 2.3rem;
           }
         }
 
         &.aws {
-          padding: calc(1.25rem - 0.5rem);
-
           img {
             height: calc(#{$image-height} + 1rem);
           }
         }
 
-        &.tidb-cloud {
-          height: 14.5rem;
+        &.gcp {
+          img {
+            height: 4.6rem;
+          }
         }
+
+        &.tidb-cloud {
+          height: 11.5rem;
+        }
+      }
+
+      .button {
+        font-size: $size-7;
+        height: 3rem;
       }
     }
 

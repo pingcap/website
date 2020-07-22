@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-onchange */
+
 import '../../../styles/pages/products/tidbCloud.scss'
 
 import { Link, graphql } from 'gatsby'
@@ -5,7 +7,7 @@ import React, { useEffect, useMemo, useState } from 'react'
 import {
   featuresData,
   logos,
-  reasonsData
+  reasonsData,
 } from '../../../data/products/tidbcloud'
 
 import { Button } from '@seagreenio/react-bulma'
@@ -33,7 +35,7 @@ const precision = (num, precision = 12) => {
 }
 
 const http = axios.create({
-  baseURL: 'https://download.pingcap.com/data/tidbcloud'
+  baseURL: 'https://download.pingcap.com/data/tidbcloud',
 })
 
 const HourlyNodeUsageInfo = () => {
@@ -41,7 +43,7 @@ const HourlyNodeUsageInfo = () => {
   const [region, setRegion] = useState('')
   const [profiles, setProfiles] = useState({
     aws: null,
-    googleCloud: null
+    googleCloud: null,
   })
 
   useEffect(() => {
@@ -60,7 +62,7 @@ const HourlyNodeUsageInfo = () => {
     fetchProfiles()
   }, [])
 
-  const handleCloudClick = cloud => () => {
+  const handleCloudClick = (cloud) => () => {
     setCould(cloud)
     setRegion(
       profiles[cloud].regions && profiles[cloud].regions[0]
@@ -69,7 +71,7 @@ const HourlyNodeUsageInfo = () => {
     )
   }
 
-  const handleRegionChange = event => {
+  const handleRegionChange = (event) => {
     setRegion(event.target.value)
   }
 
@@ -77,18 +79,18 @@ const HourlyNodeUsageInfo = () => {
 
   const ProfileTable = () => {
     const instances = profile.instances || []
-    const availableProfiles = instances.filter(p =>
-      p.available_regions.map(r => r.region_name).includes(region)
+    const availableProfiles = instances.filter((p) =>
+      p.available_regions.map((r) => r.region_name).includes(region)
     )
 
-    const value = v => (v !== null && v !== undefined ? v : '-')
+    const value = (v) => (v !== null && v !== undefined ? v : '-')
 
     const TierTableRow = ({ tier, isStriped }) => {
       if (!tier) return null
 
       const { profile_name, available_regions, tidb, tikv } = tier
       const availablePrice = available_regions.filter(
-        p => p.region_name === region
+        (p) => p.region_name === region
       )[0].price
 
       return (
@@ -149,7 +151,7 @@ const HourlyNodeUsageInfo = () => {
   return (
     <div className="tidb-cloud-hourly-usage">
       <div className="cloud-providers">
-        {cloudProviders.map(c => (
+        {cloudProviders.map((c) => (
           <Button
             key={c}
             className="cloud-provider-button"
@@ -170,7 +172,7 @@ const HourlyNodeUsageInfo = () => {
         <div className="select">
           {profile && profile.regions && (
             <select value={region} onChange={handleRegionChange}>
-              {profile.regions.map(r => (
+              {profile.regions.map((r) => (
                 <option key={r.name} value={r.name}>
                   {r.display_name}
                 </option>
@@ -190,7 +192,10 @@ const TiDBCloudPage = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="TiDB Cloud " description="Fully Managed TiDB service. TiDB Cloud lets you focus on your applications, not the complexities of your database." />
+      <SEO
+        title="TiDB Cloud "
+        description="Fully Managed TiDB service. TiDB Cloud lets you focus on your applications, not the complexities of your database."
+      />
       <main className="PingCAP-TiDBCloud">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -237,7 +242,7 @@ const TiDBCloudPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">Why TiDB Cloud</h2>
             <div className="reasons">
-              {reasonsData.map(d => (
+              {reasonsData.map((d) => (
                 <div key={d.name} className="reason">
                   <div className="placeholder-wrapper">
                     <img
@@ -247,9 +252,7 @@ const TiDBCloudPage = ({ data }) => {
                     />
                   </div>
                   <div className="intro">
-                    <h3 className="title column-title is-spaced">
-                      {d.name}
-                    </h3>
+                    <h3 className="title column-title is-spaced">{d.name}</h3>
                     <p className="paragraph">{d.desc}</p>
                   </div>
                 </div>
@@ -262,7 +265,7 @@ const TiDBCloudPage = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">Key Features</h2>
             <div className="features">
-              {featuresData.map(d => (
+              {featuresData.map((d) => (
                 <div
                   key={d.name}
                   className={`feature${d.reverse ? ' reverse' : ''}`}
