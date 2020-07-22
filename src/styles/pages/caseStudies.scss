@@ -371,19 +371,28 @@
 }
 
 .PingCAP-CaseStudies-New {
+
+  // default value
+  --is-12: 960px;
+
   @include desktop{
-    $is-12: 960px !global;
+    --is-12: 960px;
   };
+
   @include widescreen{
-    $is-12: 1152px !global;
+    --is-12: 1152px;
   };
+
   @include fullhd{
-    $is-12: 1344px !global;
+    --is-12: 1344px;
   };
-  $is-1: $is-12 / 12;
+
+  $is-1: calc(var(--is-12) / 12);
+  $is-12: var(--is-12);
+
   @function get-columns-width($n) {
-    @return $n * $is-12 / 12;
-  }
+    @return calc(#{$n} * var(--is-12) / 12)
+  };
 
   @mixin main-title {
     font-size: $H1;
