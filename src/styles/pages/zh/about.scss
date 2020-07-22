@@ -6,15 +6,21 @@
 
   $icons: office-equipment gym team-building snacks TGIF flexible;
 
-  @include desktop{
-    $is-12: 960px !global;
-  };
-  @include widescreen{
-    $is-12: 1152px !global;
-  };
-  @include fullhd{
-    $is-12: 1344px !global;
-  };
+ // default value
+ --is-12: 960px;
+
+ @include desktop{
+   --is-12: 960px;
+ };
+
+ @include widescreen{
+   --is-12: 1152px;
+ };
+
+ @include fullhd{
+   --is-12: 1344px;
+ };
+
 
   @mixin paragraph {
     font-size: $P1;
@@ -31,13 +37,13 @@
   }
 
   @mixin custom-column-section($columns: 12) {
-    $size: ((12 - $columns) / 2) * $is-12 / 12;
+    $size: calc((12 - #{$columns}) / 2 * var(--is-12) / 12);
     padding-left: $size;
     padding-right: $size;
   }
 
   @function column-to-width($columns: 12) {
-    @return $columns * $is-12 / 12;
+    @return calc(#{$columns} * var(--is-12) / 12);
   }
 
   
@@ -120,7 +126,7 @@
     }
   }
   >.section {
-    max-width: $is-12;
+    max-width: var(--is-12);
     padding: 6rem 0 0;
     margin: 0 auto;
   }

@@ -3,7 +3,6 @@ import '../../lib/graphql/image'
 
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { Button } from '@seagreenio/react-bulma'
 import Particles from 'react-particles-js'
 
@@ -14,7 +13,7 @@ import { workEnv } from '../../data/zh/career-work-env'
 import { offices, contacts } from '../../data/zh/contact-us'
 
 const About = ({ data }) => {
-  const { aboutHeroSVG, timeLineSVG, mapSVG } = data
+  const { aboutHeroSVG, timeLineSVG } = data
   const particleConfig = {
     particles: {
       color: {
@@ -155,17 +154,6 @@ const About = ({ data }) => {
             </div>
           </div>
         </section>
-        {/* 
-        <section className="section map-section">
-          <div className="container">
-            <img
-              src={mapSVG.publicURL}
-              alt="office-map"
-              className="map-img"
-            ></img>
-          </div>
-        </section> */}
-
         <section className="section join-section">
           <div className="container">
             {Array.from({ length: 8 }).map((_, index) => {
@@ -202,9 +190,6 @@ export const query = graphql`
       publicURL
     }
     timeLineSVG: file(relativePath: { eq: "zh/about/timeline.svg" }) {
-      publicURL
-    }
-    mapSVG: file(relativePath: { eq: "zh/about/map.svg" }) {
       publicURL
     }
   }
