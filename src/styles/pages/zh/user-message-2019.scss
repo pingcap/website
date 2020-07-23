@@ -1,0 +1,210 @@
+@import '../../common';
+@import '../../../../node_modules/swiper/css/swiper.min.css';
+
+.PingCAP-UserMessage2019 {
+    .page {
+        height: calc(100vh - 5.25rem);
+    }
+
+    .page-1 {
+        background: url(../../../../images/zh/user-message-2019/desktop_bg1.svg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .page-2 {
+        background: url(../../../../images/zh/user-message-2019/desktop_bg2.svg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .page-3 {
+        background: url(../../../../images/zh/user-message-2019/desktop_bg3.svg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .page-4 {
+        background: url(../../../../images/zh/user-message-2019/desktop_bg4.svg) no-repeat center center;
+        background-size: cover;
+    }
+
+    .page-5 {
+        background: #211D35;
+    }
+
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            height: 100%;
+        }
+
+        .cards {
+            width: 83.333%;
+            margin: 0 auto;
+            height: 100%;
+            pointer-events: none;
+        }
+    }
+
+    .slide-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        .wrapper {
+            height: 0;
+            padding-bottom: 125%;
+            position: relative;
+
+            .inner {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #FFFFFF;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+                border-radius: 6px;
+
+                padding: 4rem 2rem 4.5rem;
+
+                display: flex;
+                flex-direction: column;
+
+                pointer-events: auto;
+
+                .quote {
+                    position: absolute;
+                    left: 2rem;
+                    top: -0.75rem;
+                    width: 5rem;
+                    height: 3.75rem;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                .content {
+                    color: $M3;
+                    line-height: $LH4;
+                    font-weight: 300;
+                    font-size: $P2;
+                    overflow: auto;
+                    margin: 0;
+                    flex-grow: 1;
+                }
+
+                .author {
+                    color: $M3;
+                    font-weight: 400;
+                    font-size: $P1;
+                    text-align: center;
+                    margin-top: 2.5rem;
+                }
+
+                .title {
+                    color: $M3;
+                    font-weight: 300;
+                    font-size: $P1;
+                    text-align: center;
+                    margin-top: 1rem;
+                    height: 1em;
+                    line-height: $LH4;
+                }
+
+                .avatar {
+                    position: absolute;
+                    left: 50%;
+                    width: 5rem;
+                    height: 5rem;
+                    bottom: -2.5rem;
+                    margin-left: -2.5rem;
+                    border-radius: 50%;
+                }
+            }
+        }
+    }
+
+    .page-2-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_1.svg);
+    }
+
+    .page-3-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_2.svg);
+    }
+
+    .page-4-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_3.svg);
+    }
+
+    .navigation {
+        position: absolute;
+        top: 50%;
+        width: 1rem;
+        height: 2rem;
+        margin-top: -1rem;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        &.swiper-button-disabled {
+            cursor: unset;
+            opacity: 0.5;
+        }
+    }
+
+    .navigation-prev {
+        left: 0;
+        background-image: url(../../../../images/zh/user-message-2019/arrow_left.svg);
+    }
+
+    .navigation-next {
+        right: 0;
+        background-image: url(../../../../images/zh/user-message-2019/arrow_right.svg);
+    }
+
+    .page-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        // card width = 3 cols = 25% parent width (.container)
+        // card height = 1.25 card width = 31.25%
+        // title starts from center, above cards (31.25% / 2) 4 rem
+        padding-bottom: calc(15.625% + 4rem);
+        text-align: center;
+        color: #FFFFFF;
+        font-size: $H2;
+        font-weight: 500;
+    }
+
+    .pagination {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        // see .page-title
+        padding-top: calc(15.625% + 5rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+
+        .bullet {
+            width: .75rem;
+            height: .75rem;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            cursor: pointer;
+            margin: 0 1rem;
+            pointer-events: auto;
+
+            &.active {
+                background-color: #FFFFFF;
+            }
+        }
+    }
+}
