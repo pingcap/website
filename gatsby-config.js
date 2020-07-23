@@ -72,6 +72,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: 'markdown-pages/zh/careers',
+        path: `${__dirname}/markdown-pages/zh/careers`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'markdown-pages/terms',
         path: `${__dirname}/markdown-pages/terms`,
       },
