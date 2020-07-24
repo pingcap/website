@@ -8,28 +8,28 @@ import swagPackageSVG from '../../images/careers/swag-package.svg'
 const workEnv = [
   {
     icon: hackerCultureSVG,
-    desc: 'Hacker Culture'
+    desc: 'Hacker Culture',
   },
   {
     icon: competitiveSVG,
-    desc: 'Competitive Compensation and Benefits'
+    desc: 'Competitive Compensation\nand Benefits',
   },
   {
     icon: flexibleSVG,
-    desc: 'Flexible Working Hours'
+    desc: 'Flexible Working Hours',
   },
   {
     icon: collaborativeSVg,
-    desc: 'Open Collaboration Environment'
+    desc: 'Open & Collaborative\nEnvironment',
   },
   {
     icon: tailoredGrowthSVG,
-    desc: 'Tailored Growth Path with Mentoring'
+    desc: 'Tailored Growth Path\nwith Mentoring',
   },
   {
     icon: swagPackageSVG,
-    desc: 'Awesome PingCAP Swag Packages'
-  }
+    desc: 'Awesome PingCAP\nSwag Packages',
+  },
 ]
 
 export { workEnv }

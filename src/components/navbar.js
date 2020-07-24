@@ -1,6 +1,7 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
+import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
 import { navbarItems, promotionText } from '../data/navbar'
 
@@ -26,6 +27,8 @@ const Navbar = ({ showBanner }) => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       const dropdown = document.querySelector('.navbar-dropdown')
       dropdown.classList.toggle('toggle-drop')
+      const title = document.querySelector('.dropdown-title')
+      title.classList.toggle('toggle-drop')
     }
   }
 
@@ -82,6 +85,12 @@ const Navbar = ({ showBanner }) => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </button>
+
+          <a
+            href="https://github.com/pingcap"
+            target="_blank"
+            className="github-icon-mobile"
+          />
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
@@ -96,7 +105,10 @@ const Navbar = ({ showBanner }) => {
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    {item.name}
+                    <div className="dropdown-title">
+                      {item.name}
+                      <AddIcon />
+                    </div>
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
                         <Link
@@ -135,8 +147,7 @@ const Navbar = ({ showBanner }) => {
                 )}
               </Fragment>
             ))}
-          </div>
-          <div className="navbar-end">
+
             <a
               href="https://github.com/pingcap"
               target="_blank"
@@ -144,6 +155,20 @@ const Navbar = ({ showBanner }) => {
             >
               <div className="github-icon"></div>
             </a>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item with-get-tidb">
+              <Button
+                as={Link}
+                to="/contact-us"
+                className="get-tidb"
+                color="primary"
+                rounded
+                outlined
+              >
+                CONTACT US
+              </Button>
+            </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
