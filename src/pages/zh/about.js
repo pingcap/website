@@ -1,4 +1,4 @@
-import '../../styles/pages/zh/about.scss'
+import '../../styles/pages/about.scss'
 import '../../lib/graphql/image'
 
 import React from 'react'
@@ -9,6 +9,7 @@ import Particles from 'react-particles-js'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
 import ScrollTopButton from '../../components/scrollTopButton'
+import AroundParticles from '../../components/particles'
 import { workEnv } from '../../data/zh/career-work-env'
 import { offices, contacts } from '../../data/zh/contact-us'
 
@@ -45,7 +46,7 @@ const About = ({ data }) => {
         title="About PingCAP"
         description="Story about PingCAP, the team behind TiDB"
       />
-      <article className="PingCAP-About-ZH">
+      <article className="PingCAP-About PingCAP-About-ZH">
         <section className="hero is-medium">
           <div className="hero-body">
             <div className="container has-text-centered">
@@ -69,17 +70,8 @@ const About = ({ data }) => {
             <Button
               as={Link}
               to="/zh/recruit"
-              className="button is-primary is-rounded center-button join-us-button"
+              className="button is-primary is-rounded"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="white"
-                viewBox="0 0 493.356 493.356"
-              >
-                <path d="M490.498 239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427-3.613 1.525-5.427 4.283-5.427 8.282v63.954H9.136c-2.666 0-4.856.855-6.567 2.568C.859 214.438 0 216.628 0 219.292v54.816c0 2.663.855 4.853 2.568 6.563 1.715 1.712 3.905 2.567 6.567 2.567h356.313v63.953c0 3.812 1.817 6.57 5.428 8.278 3.62 1.529 6.95.951 9.996-1.708l109.632-101.077c1.903-1.902 2.852-4.182 2.852-6.849 0-2.468-.955-4.654-2.858-6.557z"></path>
-              </svg>
               <span>加入我们</span>
             </Button>
           </div>
@@ -93,8 +85,10 @@ const About = ({ data }) => {
         </section>
 
         <section className="section intro-video-section">
-          <Particles params={particleConfig} className="particles" />
-          <video {...introVideoConfig} className="intro-video"></video>
+          <div className="container">
+            <Particles params={particleConfig} className="particles" />
+            <video {...introVideoConfig} className="intro-video"></video>
+          </div>
         </section>
 
         <section className="section working-env-section">
@@ -156,24 +150,13 @@ const About = ({ data }) => {
         </section>
         <section className="section join-section">
           <div className="container">
-            {Array.from({ length: 8 }).map((_, index) => {
-              return <div className={`el${index + 1}`}></div>
-            })}
             <h1 className="title">赶紧加入我们吧</h1>
             <Button
               as={Link}
               to="/zh/recruit"
-              className="button is-primary is-rounded join-us-button"
+              className="button is-primary is-rounded"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="white"
-                viewBox="0 0 493.356 493.356"
-              >
-                <path d="M490.498 239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427-3.613 1.525-5.427 4.283-5.427 8.282v63.954H9.136c-2.666 0-4.856.855-6.567 2.568C.859 214.438 0 216.628 0 219.292v54.816c0 2.663.855 4.853 2.568 6.563 1.715 1.712 3.905 2.567 6.567 2.567h356.313v63.953c0 3.812 1.817 6.57 5.428 8.278 3.62 1.529 6.95.951 9.996-1.708l109.632-101.077c1.903-1.902 2.852-4.182 2.852-6.849 0-2.468-.955-4.654-2.858-6.557z"></path>
-              </svg>
+              <AroundParticles />
               <span>立刻申请</span>
             </Button>
           </div>

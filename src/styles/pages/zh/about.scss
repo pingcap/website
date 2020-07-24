@@ -45,67 +45,9 @@
     @return calc(#{$columns} * var(--is-12) / 12);
   }
 
-
-  
-  @mixin positioned-el(
-    $width,
-    $x-direction,
-    $y-direction,
-    $x-offset,
-    $y-offset,
-    $color
-  ) {
-    width: $width;
-    height: $width;
-    position: absolute;
-    @if $x-direction == left {
-      left: $x-offset;
-    } @else if $x-direction == right {
-      right: $x-offset;
-    }
-    @if $y-direction == top {
-      top: $y-offset;
-    } @else if $y-direction == bottom {
-      bottom: $y-offset;
-    }
-    background: $color;
-  }
-  
-  @mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
-    --x-start: #{$x-start};
-    --x-end: #{$x-end};
-    --y-start: #{$y-start};
-    --y-end: #{$y-end};
-    animation: shaking $duration infinite alternate;
-  }
-  
-  @mixin scaling-el($scale-start, $scale-end, $duration) {
-    --scale-start: #{$scale-start};
-    --scale-end: #{$scale-end};
-    animation: scaling $duration infinite alternate;
-  }
-  
-  @keyframes shaking {
-    from {
-      transform: translate(var(--x-start), var(--y-start));
-    }
-    to {
-      transform: translate(var(--x-end), var(--y-end));
-    }
-  }
-  
-  @keyframes scaling {
-    from {
-      transform: scale(var(--scale-start));
-    }
-    to {
-      transform: scale(var(--scale-end));
-    }
-  }
-
   @each $icon in $icons {
     .#{$icon} {
-      background: url(../../../../images/zh/about/#{$icon}.svg);
+      background: url(../../../images/zh/about/#{$icon}.svg);
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;
@@ -115,7 +57,7 @@
   }
   .hero {
     background-color: $B3;
-    height: 25vw;
+
 
     .hero-body {
       padding: 4rem 1rem;
@@ -130,6 +72,7 @@
     padding: 6rem 0 0;
     margin: 0 auto;
   }
+
   .intro-section {
     @include custom-column-section(10);
     .container {
@@ -149,7 +92,6 @@
         margin: 0 auto 6rem;
       }
     }
-    
   }
 
   .timeline-section {
@@ -192,7 +134,7 @@
     max-width: 100%;
     padding-bottom: 1rem;
     .container {
-      width: column-to-width(10);
+      max-width: column-to-width(10);
       .title {
         @include subtitle;
       }
@@ -276,56 +218,7 @@
     text-align: center;
     height: 24.63rem;
     padding: 4rem 0 8rem;
-    .el1 {
-      @include positioned-el(1rem, left, top, 10%, 2rem, #3351ff);
-      @include shaking-el(20px, 30px, 20px, 10px, 3s);
-      border-radius: 50%;
-    }
-    .el2 {
-      @include positioned-el(1.125rem, left, top, 15%, 10rem, #162d71);
-      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
-      border-radius: 50%;
-    }
-    .el3 {
-      @include positioned-el(0.625rem, left, top, 30%, 6rem, #0fa7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2s);
-      border-radius: 50%;
-    }
-    .el4 {
-      @include positioned-el(1.5625rem, right, top, 70%, 9.5rem, #e30c25);
-      @include scaling-el(0.7, 1, 3s);
-      clip-path: polygon(
-        30% 0%,
-        70% 0%,
-        100% 30%,
-        100% 70%,
-        70% 100%,
-        30% 100%,
-        0% 70%,
-        0% 30%
-      );
-      transform: rotate(14deg);
-    }
-    .el5 {
-      @include positioned-el(1.68rem, right, top, 10%, 8rem, #0fa7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
-    .el6 {
-      @include positioned-el(0.8125rem, left, top, 70%, 12rem, #162d71);
-      @include shaking-el(20px, 30px, 20px, 10px, 3s);
-      border-radius: 50%;
-    }
-    .el7 {
-      @include positioned-el(1.125rem, left, top, 75%, 2rem, #162d71);
-      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
-      border-radius: 50%;
-    }
-    .el8 {
-      @include positioned-el(0.875rem, right, top, 35%, 7rem, #10a7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2s);
-      border-radius: 50%;
-    }
+    
     .title {
       @include subtitle;
       margin-bottom: 6rem;

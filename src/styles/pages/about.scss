@@ -1,38 +1,337 @@
 @import '../common';
 
+@mixin columns {
+  --is-12: 960px;
+
+  @include desktop{
+    --is-12: 960px;
+  };
+
+  @include widescreen{
+    --is-12: 1152px;
+  };
+
+  @include fullhd{
+    --is-12: 1344px;
+  };
+}
+
+@function column-to-width($columns: 12) {
+  @return calc(#{$columns} * var(--is-12) / 12);
+}
+
+@mixin paragraph {
+  font-size: $P1;
+  font-weight: 400;
+  color: $M4;
+}
+
 .PingCAP-About {
+  
+  @include columns;
+
+  @mixin sub-title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
 
   .hero {
-    background-color: $B3;
+
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+
+    background-color: #172d72;
+    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
     }
 
     img {
-      width: 35vw;
+      @include mobile {
+        width: 87.5%;
+      }
+      width: 47.5rem;
+    }
+  }
+
+  > .section {
+    max-width: column-to-width(12);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @include mobile {
+    > .section {
+      max-width: 100%;
+      padding: 0 $mobile-section-padding;
+    }
+  }
+
+  .intro-section { 
+    max-width: column-to-width(10);
+    margin:  0 auto;
+    text-align: center;
+    .title {
+      @include sub-title;
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+    }
+    .paragraph {
+      @include paragraph;
+    }
+    .paragraph:nth-child(3) {
+      @include mobile {
+        padding-bottom: 0;
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 5rem;
+    }
+    .button {
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 6rem;
+    }
+  }
+
+  .timeline-section {
+    max-width: 100%;
+    padding: 6rem 0;
+    @include mobile {
+      padding: 3rem 0;
+    }
+    @include has-light-background;
+    .title {
+      @include sub-title;
+    }
+    img {
+
+      @include mobile {
+        width: 60%;
+      }
+
+      display: block;
+      width: column-to-width(10);
+      margin: 0 auto;
+    }
+  }
+
+  .company-culture-section {
+    @include mobile {
+      padding: 3rem 0;
+    }
+    padding: 6rem 0 8rem 0;
+    position: relative;
+    .container {
+      @include mobile {
+        padding: 0 $mobile-section-padding;
+        width: 100vw;
+      }
+      background-image: url(../../../images/about/map.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      .wrapper {
+        text-align: center;
+        max-width: column-to-width(8);
+        margin: 0 auto;
+      }
+      .title {
+        @include sub-title;
+        margin-bottom: 2rem;
+      }
+      .paragraph {
+        @include paragraph;
+      }
+      .last {
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+        font-size: $H2;
+        font-weight: 700;
+        color: $M3;
+        margin-bottom: 6rem;
+      }
+      .button {
+        width: 8.75rem;
+      }
+      
+    }
+  }
+}
+
+.PingCAP-About-ZH {
+
+  $icons: office-equipment gym team-building snacks TGIF flexible;
+
+  @include columns;
+
+  @mixin subtitle {
+    @include section-title;
+    font-size: $H1;
+    font-weight: 500;
+    color: $M3;
+    margin-bottom: 4rem;
+  }
+
+  @each $icon in $icons {
+    .#{$icon} {
+      background: url(../../../images/zh/about/#{$icon}.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 3.75rem;
+      height: 3.75rem;
     }
   }
 
   .intro-section {
-    text-align: center;
-  }
 
-  .timeline-section {
-    @include has-light-background;
-  }
-
-  .company-culture-section {
     .container {
-      text-align: center;
-      max-width: 800px;
-      background-image: url(../../../images/about/map.svg);
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
 
-    .last {
-      font-weight: bold;
+      .title {
+        @include subtitle; 
+        color: $M3;
+      }
+
+      .paragraph {
+        @include paragraph;
+        margin-bottom: 5rem;
+      }
+
+      .center-button {
+        display: block;
+        width: 10rem;
+        margin: 0 auto 6rem;
+      }
+
     }
   }
+
+  .intro-video-section {
+    position: relative;
+    max-width: 100%;
+    height: 50vw;
+    .container {
+      height: 100%;
+      .particles {
+        height: 100%;
+      }
+      .intro-video {
+        width: 83.3%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+
+  .working-env-section {
+    @include has-light-background;
+    max-width: 100%;
+    padding: 6rem 0;
+    .container {
+      max-width: column-to-width(10);
+      .title {
+        @include subtitle;
+      }
+      .paragraph {
+        @include paragraph;
+        color: $M4;
+        margin-bottom: 4.5rem;
+      }
+      .col-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20%;
+        row-gap: 5rem;
+      }
+      .env-desc-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        h3 {
+          font-size: $P1;
+          font-weight: 400;
+          color: $M3;
+          margin: 1rem 0 1.5rem;
+        }
+        p {
+          font-size: $P1;
+          font-weight: 300;
+          color: $M4;
+        }
+      }
+    }
+  }
+
+  .contact-us-section {
+    max-width: column-to-width(12);
+    margin: 0 auto;
+    padding: 6rem column-to-width(2) 0;
+    background: url('../../../images/about/map.svg') center no-repeat;
+    background-size: contain;
+    .title {
+      @include subtitle;
+    }
+    .left-column {
+      position: relative;
+      line-height: 1.2;
+    }
+    .address-title,.contact-title {
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
+    }
+    .address{
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
+    }
+    .office-info {
+      margin-bottom: 1.5rem;
+    }
+    .contact-info {
+      margin-bottom: 2.25rem;
+      .contact {
+        font-size: $P1;
+        font-weight: 300;
+        color: $M4;
+      }
+    }
+    .consult-link {
+      font-size: $P1;
+      font-weight: 300;
+      color: $B1;
+    }
+  }
+
+  .join-section {
+    position: relative;
+    text-align: center;
+    height: 24.63rem;
+    padding: 4rem 0 8rem;
+    
+    .title {
+      @include subtitle;
+      margin-bottom: 6rem;
+    }
+    .button {
+      width: 10rem;
+    }
+  }
+
+  .scroll-top-button {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 3rem;
+  }
+
 }
