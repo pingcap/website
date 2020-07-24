@@ -1,38 +1,165 @@
 @import '../common';
 
 .PingCAP-About {
+  
+ // default value
+  --is-12: 960px;
+
+  @include desktop{
+    --is-12: 960px;
+  };
+
+  @include widescreen{
+    --is-12: 1152px;
+  };
+
+  @include fullhd{
+    --is-12: 1344px;
+  };
+
+
+  @mixin sub-title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+
+  @mixin paragraph {
+    font-size: $P1;
+    font-weight: 400;
+    color: $M4;
+  }
+
+  @function column-to-width($columns: 12) {
+    @return calc(#{$columns} * var(--is-12) / 12);
+  }
 
   .hero {
-    background-color: $B3;
+
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+
+    background-color: #172d72;
+    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
     }
 
     img {
-      width: 35vw;
+      @include mobile {
+        width: 87.5%;
+      }
+      width: 47.5rem;
     }
   }
 
-  .intro-section {
+  > .section {
+    max-width: column-to-width(12);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @include mobile {
+
+    > .section {
+      max-width: 100%;
+      padding: 0 $mobile-section-padding;
+    }
+  }
+
+  .intro-section { 
+    max-width: column-to-width(10);
+    margin:  0 auto;
     text-align: center;
+    .title {
+      @include sub-title;
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+    }
+    .paragraph {
+      @include paragraph;
+    }
+    .paragraph:nth-child(3) {
+      @include mobile {
+        padding-bottom: 0;
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 5rem;
+    }
+    .button {
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 6rem;
+    }
   }
 
   .timeline-section {
+    max-width: 100%;
+    padding: 6rem 0;
+    @include mobile {
+      padding: 3rem 0;
+    }
     @include has-light-background;
+    .title {
+      @include sub-title;
+    }
+    img {
+
+      @include mobile {
+        width: 60%;
+      }
+
+      display: block;
+      width: column-to-width(10);
+      margin: 0 auto;
+    }
   }
 
   .company-culture-section {
+    @include mobile {
+      padding: 3rem 0;
+    }
+    padding: 6rem 0 8rem 0;
+    position: relative;
     .container {
-      text-align: center;
-      max-width: 800px;
+      @include mobile {
+        padding: 0 $mobile-section-padding;
+        width: 100vw;
+      }
       background-image: url(../../../images/about/map.svg);
       background-repeat: no-repeat;
       background-size: contain;
-    }
-
-    .last {
-      font-weight: bold;
+      .wrapper {
+        text-align: center;
+        max-width: column-to-width(8);
+        margin: 0 auto;
+      }
+      .title {
+        @include sub-title;
+        margin-bottom: 2rem;
+      }
+      .paragraph {
+        @include paragraph;
+      }
+      .last {
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+        font-size: $H2;
+        font-weight: 700;
+        color: $M3;
+        margin-bottom: 6rem;
+      }
+      .button {
+        width: 8.75rem;
+      }
+      
     }
   }
 }
