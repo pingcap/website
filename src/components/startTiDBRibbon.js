@@ -8,9 +8,10 @@ const StartTiDBRibbon = () => {
   return (
     <section className="PingCAP-Start-TiDB-ribbon section section-get-started">
       <div className="container">
-        <h2 className="title is-3 has-text-white">
+        <h2 className="title is-4 has-text-white">
           Ready to get started with TiDB?
         </h2>
+        <div className="column-grow" />
         <Buttons>
           <Button
             className="contact-us"

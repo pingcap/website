@@ -1,10 +1,11 @@
 import { Link, graphql, useStaticQuery } from 'gatsby'
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
+import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
-import { navbarItems } from '../data/navbar'
+import { navbarItems, promotionText } from '../data/navbar'
 
-const Navbar = () => {
+const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
       query {
@@ -26,6 +27,8 @@ const Navbar = () => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       const dropdown = document.querySelector('.navbar-dropdown')
       dropdown.classList.toggle('toggle-drop')
+      const title = document.querySelector('.dropdown-title')
+      title.classList.toggle('toggle-drop')
     }
   }
 
@@ -41,6 +44,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
+  const [promotionOpen, setPromotionOpen] = useState(showBanner)
+  const closePromotion = useCallback(() => setPromotionOpen(false))
+
   return (
     <nav
       className={`navbar is-fixed-top PingCAP-Navbar${
@@ -48,6 +54,17 @@ const Navbar = () => {
       }`}
       role="navigation"
     >
+      {promotionText && promotionOpen && (
+        <div className="promotion">
+          <div className="container">
+            <div className="horn" />
+            {promotionText}
+            <div className="blank" />
+            <div className="close" onClick={closePromotion} />
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item with-brand" to="/">
@@ -68,10 +85,16 @@ const Navbar = () => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </button>
+
+          <a
+            href="https://github.com/pingcap"
+            target="_blank"
+            className="github-icon-mobile"
+          />
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map(item => (
+            {navbarItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -82,9 +105,12 @@ const Navbar = () => {
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    {item.name}
+                    <div className="dropdown-title">
+                      {item.name}
+                      <AddIcon />
+                    </div>
                     <div className="navbar-dropdown">
-                      {item.dropdown.map(navItem => (
+                      {item.dropdown.map((navItem) => (
                         <Link
                           key={navItem.name}
                           to={navItem.href}
@@ -121,8 +147,7 @@ const Navbar = () => {
                 )}
               </Fragment>
             ))}
-          </div>
-          <div className="navbar-end">
+
             <a
               href="https://github.com/pingcap"
               target="_blank"
@@ -130,6 +155,20 @@ const Navbar = () => {
             >
               <div className="github-icon"></div>
             </a>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item with-get-tidb">
+              <Button
+                as={Link}
+                to="/contact-us"
+                className="get-tidb"
+                color="primary"
+                rounded
+                outlined
+              >
+                ASK AN EXPERT
+              </Button>
+            </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
