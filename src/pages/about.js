@@ -3,7 +3,7 @@ import '../styles/pages/about.scss'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import Particles from '../components/particles'
+import AroundParticles from '../components/particles'
 import { graphql, Link } from 'gatsby'
 import { Button } from '@seagreenio/react-bulma'
 
@@ -94,7 +94,7 @@ const About = ({ data }) => {
                 className="button is-primary is-rounded"
               >
                 Join Us
-                <Particles />
+                <AroundParticles />
               </Button>
             </div>
           </div>

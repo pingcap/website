@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/components/particles.scss'
 
-const Particles = () => {
+const AroundParticles = () => {
   return (
     <>
       {Array.from({ length: 8 }).map((_, index) => {
@@ -11,4 +11,4 @@ const Particles = () => {
   )
 }
 
-export default Particles
+export default AroundParticles
