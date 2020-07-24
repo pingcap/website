@@ -72,7 +72,7 @@ const Careers = ({ data }) => {
               <div className="comment" key={pingcaper.github}>
                 <div className={`avatar ${pingcaper.github}-avatar`}></div>
                 <div className="comment-text">
-                  <p>{`${pingcaper.position} | ${pingcaper.location}`}</p>
+                  <p className="comment-title">{`${pingcaper.position} | ${pingcaper.location}`}</p>
                   <p>{pingcaper.statement}</p>
                 </div>
               </div>

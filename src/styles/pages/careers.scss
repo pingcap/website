@@ -158,9 +158,13 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 1.5rem;
+        padding: 1.5rem;
         background: #fff;
         box-shadow: 0 0.1875em 0.5em #f0f0f0;
+
+        .comment-title {
+          margin-bottom: 2rem;
+        }
 
         &::after {
           display: block;
