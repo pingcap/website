@@ -2,6 +2,7 @@
 @import '../../../node_modules/swiper/css/swiper.min.css';
 
 .PingCAP-CaseStudies {
+  
   .top-banner-wrapper {
     position: relative;
 
@@ -33,20 +34,20 @@
 
   .title-under-banner,
   .title-under-swiper {
-    margin: 3rem 0 !important;
+    margin: 4rem 0;
     text-align: center;
   }
 
   .title-under-banner {
-    margin-top: 0 !important;
+    margin-top: 0;
   }
 
   .title-under-swiper {
     @include mobile {
-      margin-top: 7.5rem !important;
+      margin-top: 7.5rem;
     }
 
-    margin-top: 6rem !important;
+    margin-top: 6rem;
   }
 
   .container {
@@ -55,7 +56,7 @@
 
   .swiper-container {
     @include mobile {
-      height: 650px;
+      height: 46rem;
       overflow: visible;
     }
     @include fullhd {
@@ -95,9 +96,9 @@
 
         .summary {
           @include mobile {
-            height: 200px;
             padding: 0 2rem;
             overflow: hidden;
+            margin-bottom: 2rem;
           }
 
           padding: 0 3rem;
@@ -106,11 +107,10 @@
 
         .see-case-study {
           @include mobile {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
           }
           @include has-item-active(-0.5rem);
 
-          margin-top: 1rem;
           color: $primary;
         }
       }
@@ -120,39 +120,13 @@
       }
     }
 
-    .fixed-intro {
-      @include VHCenter;
-      @include mobile {
-        top: 38%;
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-      }
-
-      $width: 180px;
-
-      position: absolute;
-      top: 15%;
-      left: 30%;
-      flex-direction: column;
-      width: $width;
-      transform: translateX(-$width / 2);
-
-      .quote-mark {
-        width: 18px;
-      }
-
-      .title {
-        margin-top: 1rem;
-      }
-    }
 
     .fixed-placeholder {
       @include mobile {
-        top: 5%;
+        top: 2rem;
         left: 50%;
         right: unset;
-        width: 80%;
+        width: 83%;
         transform: translateX(-50%);
       }
       @media screen and (min-width: 768px) and (max-width: 768px) {
@@ -165,20 +139,6 @@
       width: 35%;
       transform: translateY(-60%);
       z-index: 29;
-    }
-
-    .bottom {
-      @include mobile {
-        justify-content: center;
-      }
-
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 15%;
-      padding: 0 3rem;
-      padding-bottom: 2rem;
     }
 
     .swiper-prev,
@@ -208,34 +168,6 @@
     }
   }
 
-  .customer-categories {
-    text-align: center;
-
-    a {
-      @include mobile {
-        margin-right: 1rem;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
-      }
-
-      margin-right: 2rem;
-      background: $B5;
-      color: $B4;
-      border-color: $C2;
-      border-radius: 3px;
-      outline: none;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:hover {
-        background: $primary;
-        color: #fff;
-        border: 1px solid $primary;
-      }
-    }
-  }
 
   .logos {
     @include mobile {
@@ -247,7 +179,7 @@
 
     .column {
       @include mobile {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
 
         &:last-child {
           margin-bottom: 0;
@@ -266,7 +198,7 @@
       }
 
       position: relative;
-      height: 250px;
+      height: 16rem;
       cursor: pointer;
     }
 
@@ -296,13 +228,16 @@
 
       .title {
         margin-top: 1.5rem;
-        color: $B4;
+        font-size: $P1;
+        font-weight: 400;
+        color: $M4;
       }
     }
 
     .detail-card {
       @include mobile {
         opacity: 1;
+        height: auto;
       }
 
       position: absolute;
@@ -325,8 +260,8 @@
           position: absolute;
           top: -0.5rem;
           right: -0.25rem;
-          width: 36px;
-          height: 36px;
+          width: 68px;
+          padding-top: 68px;
         }
       }
 
@@ -344,6 +279,10 @@
       }
 
       .title {
+        @include mobile {
+          font-size: $H1;
+          font-weight: 700;
+        }
         margin-bottom: 1rem;
       }
 
@@ -360,4 +299,212 @@
       }
     }
   }
+}
+
+
+.PingCAP-CaseStudies-New {
+
+  // default value
+  --is-12: 960px;
+
+  @include desktop{
+    --is-12: 960px;
+  };
+
+  @include widescreen{
+    --is-12: 1152px;
+  };
+
+  @include fullhd{
+    --is-12: 1344px;
+  };
+
+  $is-1: calc(var(--is-12) / 12);
+
+  @function get-columns-width($n) {
+    @return calc(#{$n} * var(--is-12) / 12)
+  };
+
+  @mixin main-title{
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3; 
+  }
+
+  .title-under-banner {
+    @include main-title;
+    @include mobile {
+      margin-bottom: 4rem;
+    }
+  }
+
+  .title-under-swiper {
+    @include main-title;
+  }
+
+  .subtitle{
+    position: relative;
+    margin-bottom: 1rem;
+    font-size: $H2;
+    font-weight: 700;
+    color: $M3;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      background: url(../../../images/case-studies/quote-mark.svg);
+      background-repeat: no-repeat;
+      width: 3.05rem;
+      height: 2.26rem;
+      left: 50%;
+      top: -2.8rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .bottom {
+    @include mobile {
+      justify-content: center;
+      width: 50%;
+      bottom:  2rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: get-columns-width(8);
+    height: 3.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+    padding: 0;
+    z-index: 99;
+  }
+
+  .customer-categories{
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+
+    .dropdown-trigger{
+      width: 100%;
+
+      .button {
+        width: 100%;
+        justify-content: space-between;
+
+          &:focus {
+            box-shadow: unset; 
+            border: 1px solid #2E2FFF; 
+          }
+
+          .down-arrow {
+            width: 0.875rem;
+            padding-top: 0.5rem;
+            background:  url(../../../images//case-studies/arrow-down.svg) no-repeat center;
+          }
+
+          .up-arrow {
+            @extend .down-arrow;
+            transform-origin: center;
+            transform: rotate(180deg);
+          }
+        } 
+      }
+
+      .dropdown-menu {
+        width: 100%;
+        z-index: 99;
+      }
+    }
+
+  @include tablet {
+
+    > .container {
+      overflow: visible;
+    }
+
+    > .section {
+      max-width: var(--is-12);
+      padding: 6rem 0 6rem;
+      margin: 0 auto;
+    }
+
+
+    .swiper-container {
+      max-width: get-columns-width(10);
+      height: 28.06rem;
+
+      .top {
+        height: 100%;
+
+        .swiper-slide {
+          display: flex;
+          align-items: center;
+
+          .intro {
+            height: 11.27rem;
+            margin: 0;
+
+            .subtitle {
+              margin-bottom: 2rem;
+            }
+
+            .summary {
+              padding: 0;
+              margin: 0 $is-1 2rem;
+              font-size: 1rem;
+              font-weight: 300;
+              color: $M4;
+            }
+
+          }
+
+          .placeholder {
+            height: inherit;
+            position: relative;
+          }
+        }
+      }
+
+      .fixed-placeholder {
+        position: absolute;
+        width: get-columns-width(3);
+        right: $is-1;
+      }
+
+    }
+
+    .customer-categories {
+      width: get-columns-width(2);
+      margin: 0 auto;
+      display: flex;
+
+    .logos {
+      max-width: var(--is-12);
+      margin-left: 0;
+      margin-right: 0;
+
+      .detail-card {
+          $size: 100%;
+          width: $size;
+          height: $size;
+          padding: 2.5rem 3rem;
+          
+          .title {
+            margin-bottom: 2rem;
+          }
+
+          .paragraph {
+            margin-bottom: 2rem;
+            padding: 0;
+            font-weight: 400;
+            font-size: $P2;
+            color: $M4;
+          }
+      }
+    }
+  }
+ }
 }
