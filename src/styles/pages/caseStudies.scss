@@ -480,30 +480,28 @@
       width: get-columns-width(2);
       margin: 0 auto;
       display: flex;
+  }
 
-    .logos {
-      max-width: var(--is-12);
-      margin-left: 0;
-      margin-right: 0;
+  .logos {
+    max-width: var(--is-12);
 
-      .detail-card {
-          $size: 100%;
-          width: $size;
-          height: $size;
-          padding: 2.5rem 3rem;
-          
-          .title {
-            margin-bottom: 2rem;
-          }
+    .detail-card {
+        $size: 100%;
+        width: $size;
+        height: $size;
+        padding: 2.5rem 3rem;
+        
+        .title {
+          margin-bottom: 2rem;
+        }
 
-          .paragraph {
-            margin-bottom: 2rem;
-            padding: 0;
-            font-weight: 400;
-            font-size: $P2;
-            color: $M4;
-          }
-      }
+        .paragraph {
+          margin-bottom: 2rem;
+          padding: 0;
+          font-weight: 400;
+          font-size: $P2;
+          color: $M4;
+        }
     }
   }
  }
