@@ -55,25 +55,25 @@
     }
 
 .el1 {
-      @include positioned-el(1rem, left, top, 10%, 40%, #3351ff);
+      @include positioned-el(1rem, left, top, -30vw, 2vw, #3351ff);
       @include shaking-el(20px, 30px, 20px, 10px, 3s);
       border-radius: 50%;
     }
 
 .el2 {
-      @include positioned-el(1.125rem, left, top, 15%, 60%, #162d71);
+      @include positioned-el(1.125rem, left, top, -12vw, 10vw, #162d71);
       @include shaking-el(-5px, -10px, -5px, -10px, 2s);
       border-radius: 50%;
     }
 
 .el3 {
-      @include positioned-el(0.625rem, left, top, 30%, 30%, #0fa7fa);
+      @include positioned-el(0.625rem, left, top, -20vw, -6vw, #0fa7fa);
       @include shaking-el(20px, 30px, 20px, 10px, 2s);
       border-radius: 50%;
     }
 
 .el4 {
-      @include positioned-el(1.5625rem, right, top, 70%, 70%, #e30c25);
+      @include positioned-el(1.5625rem, right, top, 16vw, -8vw, #e30c25);
       @include scaling-el(0.7, 1, 3s);
       clip-path: polygon(
         30% 0%,
@@ -89,25 +89,25 @@
     }
 
 .el5 {
-      @include positioned-el(1.68rem, right, top, 10%, 50%, #0fa7fa);
+      @include positioned-el(1.68rem, right, top, -10vw, -2vw, #0fa7fa);
       @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
       clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
     }
 
 .el6 {
-      @include positioned-el(0.8125rem, left, top, 70%, 80%, #162d71);
+      @include positioned-el(0.8125rem, left, top, 30vw, -6vw, #162d71);
       @include shaking-el(20px, 30px, 20px, 10px, 3s);
       border-radius: 50%;
     }
 
 .el7 {
-      @include positioned-el(1.125rem, left, top, 75%, 20%, #162d71);
+      @include positioned-el(1.125rem, left, top, 44vw, 0, #162d71);
       @include shaking-el(-5px, -10px, -5px, -10px, 2s);
       border-radius: 50%;
     }
 
 .el8 {
-      @include positioned-el(0.875rem, right, top, 35%, 70%, #10a7fa);
+      @include positioned-el(0.875rem, right, top, -20vw, 8vw, #10a7fa);
       @include shaking-el(20px, 30px, 20px, 10px, 2s);
       border-radius: 50%;
     }

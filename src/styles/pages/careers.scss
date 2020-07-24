@@ -1,7 +1,6 @@
 @import '../common';
 
 .PingCAP-Careers {
-
   .hero {
     .hero-body {
       @include has-light-background;
@@ -39,21 +38,31 @@
   }
 }
 
-
-.PingCAP-Careers-ZH{
+.PingCAP-Careers-ZH {
+  @include mobile-section-padding;
 
   .hero {
-
     .hero-body {
+      @include mobile {
+        padding: 3rem $mobile-section-padding;
+      }
 
       padding-top: 3.75rem;
       padding-bottom: 4rem;
 
       .title {
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+
         margin-bottom: 4rem;
       }
 
       .subtitle-under-main-title {
+        @include mobile {
+          margin-bottom: 3rem;
+        }
+
         font-size: $H3;
         font-weight: 400;
         color: $M4;
@@ -62,6 +71,11 @@
     }
 
     img {
+      @include mobile {
+        width: calc((100% - #{$mobile-section-padding} * 2) * 3.32 / 4);
+        margin-bottom: 2rem;
+      }
+
       width: 33.3%;
       height: auto;
     }
@@ -72,7 +86,11 @@
   }
 
   .working-env-section {
-    
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
     padding-top: 6rem;
     padding-bottom: 6rem;
 
@@ -90,7 +108,11 @@
       margin-bottom: 4rem;
     }
 
-    .grid-container {
+    .work-env-container {
+      @include mobile {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+      }
 
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -118,16 +140,26 @@
   }
 
   .comments-list-section {
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
 
     @include has-light-background;
-    padding-top:  6rem;
-    padding-bottom:  6rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
 
     .title {
       text-align: center;
     }
 
     .comment {
+      @include mobile {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
 
       display: flex;
       width: 66.6%;
@@ -137,21 +169,34 @@
       $avatars: overvenus breeswish lilin90 sunhao2017 datahoecn fox-wolf;
 
       .avatar {
-        width: 12.5%;
+        $radius: 12.5%;
+
+        @include mobile {
+          $radius: 25%;
+          margin-bottom: 5%;
+        }
+
+        width: $radius;
         height: 0;
-        padding-top: 12.5%;
-        background: #E7E9EB;
+        padding-top: $radius;
+        background: #e7e9eb;
         border-radius: 50%;
       }
 
       @each $avatar in $avatars {
         .#{$avatar}-avatar {
-          background: url(../../../images/zh/career/avatar/#{$avatar}.svg) center no-repeat;
+          background: url(../../../images/zh/career/avatar/#{$avatar}.svg)
+            center
+            no-repeat;
           background-size: contain;
         }
       }
 
       .comment-text {
+        @include mobile {
+          width: 100%;
+        }
+
         width: 75%;
         height: inherit;
         position: relative;
@@ -167,6 +212,13 @@
         }
 
         &::after {
+          @include mobile {
+            left: 50%;
+            transform-origin: center;
+            transform: translateX(-50%) rotate(90deg);
+            top: calc((100vw - 2 * #{$mobile-section-padding}) * -0.05);
+          }
+
           display: block;
           content: '';
           position: absolute;
@@ -184,20 +236,27 @@
   }
 
   .join-us-section {
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
     position: relative;
     padding: 6rem 0;
     text-align: center;
-    
+
     .title {
+      @include mobile {
+        margin-bottom: 3rem;
+      }
       margin-bottom: 4rem;
     }
 
     .button {
+      @include mobile {
+        margin-bottom: 0;
+      }
       margin-bottom: 8rem;
     }
-  }
-
-  .open-positions-section {
-    
   }
 }

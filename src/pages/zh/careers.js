@@ -3,8 +3,7 @@ import '../../styles/pages/careers.scss'
 import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import Positions from '../../components/positions'
-import Particles from '../../components/particles'
+import AroundParticles from '../../components/particles'
 import { graphql, Link } from 'gatsby'
 import { workEnv } from '../../data/career-work-env'
 import { Button } from '@seagreenio/react-bulma'
@@ -23,7 +22,7 @@ const Careers = ({ data }) => {
           <div className="hero-body">
             <div className="container has-text-centered">
               <img src={careerHeroSVG.publicURL} alt="Hyper Growth Hero" />
-              <h1 className="title section-title">
+              <h1 className="title">
                 Join the team that is building the database of the future
               </h1>
               <div className="subtitle-under-main-title">
@@ -45,16 +44,16 @@ const Careers = ({ data }) => {
 
         <section className="section working-env-section">
           <div className="container">
-            <h2 className="title section-title">Working at PingCAP</h2>
+            <h2 className="title">Working at PingCAP</h2>
             <div className="subtitle-under-main-title">
               At PingCAP, you find yourself working with the most talented, and
               motivated people in the industry. Apart from inspirations and
               productivity, we do our best to provide you with a comfortable and
               free working environment.
             </div>
-            <div className="grid-container">
+            <div className="work-env-container">
               {workEnv.map((w) => (
-                <div className="grid-item" key={w.desc}>
+                <div className="env-item" key={w.desc}>
                   <img src={w.icon} alt={w.desc} />
                   <p className="env-title">{w.desc}</p>
                   {/* mock data */}
@@ -81,7 +80,6 @@ const Careers = ({ data }) => {
         </section>
 
         <section className="join-us-section">
-          <Particles />
           <h2 className="title">赶紧加入我们吧</h2>
           <Button
             as={Link}
@@ -89,6 +87,7 @@ const Careers = ({ data }) => {
             className="button is-primary is-rounded"
           >
             立刻申请
+            <AroundParticles />
           </Button>
         </section>
       </article>
