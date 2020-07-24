@@ -86,7 +86,15 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         },
       ].concat(meta)}
       link={link}
-    />
+    >
+      <script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js.hs-scripts.com/4466002.js"
+      ></script>
+    </Helmet>
   )
 }
 

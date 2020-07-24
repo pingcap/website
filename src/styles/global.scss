@@ -121,7 +121,7 @@ body {
   font-size: $size-5;
 }
 
-.clumn-title,
+.column-title,
 .card-title {
   margin-bottom: 2rem;
   text-align: center;
@@ -202,6 +202,12 @@ body {
   font-size: $size-7;
   font-weight: 400;
   color: $M4 !important;
+}
+
+.section {
+  @include mobile {
+    padding: 3rem 1rem;
+  }
 }
 
 @import 'components/navbar';

@@ -4,6 +4,10 @@
   align-items: center;
   border: 1px solid $C2;
 
+  @include mobile {
+    padding: 0;
+  }
+
   &.in-home {
     padding-left: 0;
     padding-right: 0;
@@ -37,6 +41,38 @@
     @include mobile {
       width: 100%;
       justify-content: center;
+    }
+  }
+
+  .title {
+    @include mobile {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .subtitle {
+    @include mobile {
+      margin-bottom: 2rem;
+    }
+  }
+
+  .poster-wrapper-desktop {
+    img {
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  .poster-wrapper-mobile {
+    display: none;
+
+    img {
+      width: calc(65vw - 1.3rem);
+    }
+
+    @include mobile {
+      display: unset;
     }
   }
 }

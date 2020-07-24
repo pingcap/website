@@ -71,29 +71,33 @@ const Footer = () => {
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map((column) => (
-            <div key={column.name} className="column">
-              <div
-                role="button"
-                tabIndex={0}
-                className="title is-7"
-                onClick={handleSpreadItems}
-                onKeyDown={handleSpreadItems}
-              >
-                {column.name}
-                <span className="spread">
-                  <AddIcon />
-                </span>
-              </div>
-              <ul className="items">
-                {column.items.map((item) => (
-                  <li key={item.name}>
-                    <BoundLink to={item.link} outbound={item.outbound}>
-                      {item.name}
-                    </BoundLink>
-                  </li>
-                ))}
-              </ul>
+          {footerColumns.map((columns, i) => (
+            <div key={i} className="column">
+              {columns.map((column) => (
+                <div key={column.name} className="subcolumn">
+                  <div
+                    role="button"
+                    tabIndex={0}
+                    className="title is-7"
+                    onClick={handleSpreadItems}
+                    onKeyDown={handleSpreadItems}
+                  >
+                    {column.name}
+                    <span className="spread">
+                      <AddIcon />
+                    </span>
+                  </div>
+                  <ul className="items">
+                    {column.items.map((item) => (
+                      <li key={item.name}>
+                        <BoundLink to={item.link} outbound={item.outbound}>
+                          {item.name}
+                        </BoundLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           ))}
           <div className="column with-socials">
@@ -114,15 +118,16 @@ const Footer = () => {
           </div>
           <Lang align="right" />
         </div>
+
+        <div className="socials-mobile">
+          <Socials type="follow" />
+        </div>
+
         <div className="annotations annotations-mobile">
           <Lang align="left" />
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
-        </div>
-
-        <div className="socials-mobile">
-          <Socials type="follow" />
         </div>
       </div>
     </footer>

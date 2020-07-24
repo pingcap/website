@@ -15,14 +15,14 @@ const createPositions = require('./create-pages/position')
 const createPolicyTerms = require('./create-pages/policyTerms')
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
-  createBlogs({ graphql, createPage })
+  createBlogs({ graphql, createPage, createRedirect })
   createBlogPagination({ graphql, createPage })
   createBlogTags({ graphql, createPage })
   createBlogCategories({ graphql, createPage })
   createCaseStudies({ graphql, createPage })
-  createPositions({ graphql, createPage })
+  createPositions({ graphql, createPage, createRedirect })
   createPolicyTerms({ graphql, createPage })
 }
 

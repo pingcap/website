@@ -4,9 +4,9 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import PingcCAPCookieConsent from './pingcapCookieConsent'
 
-const Layout = ({ children }) => (
+const Layout = ({ children, NavbarProps = {} }) => (
   <>
-    <Navbar />
+    <Navbar {...NavbarProps} />
     <main>{children}</main>
     <Footer />
     <PingcCAPCookieConsent />
@@ -14,7 +14,7 @@ const Layout = ({ children }) => (
 )
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

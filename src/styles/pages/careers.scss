@@ -1,6 +1,10 @@
 @import '../common';
 
 .PingCAP-Careers {
+  .section-title {
+    font-size: $size-4;
+  }
+
   .hero {
     .hero-body {
       @include has-light-background;
@@ -14,6 +18,11 @@
     .button {
       margin-top: 3rem;
       font-size: $size-7;
+    }
+
+    .subtitle-under-main-title {
+      width: 57%;
+      margin: 0 auto;
     }
   }
 
@@ -29,7 +38,18 @@
         img {
           height: 60px;
         }
+
+        .card-title {
+          color: $B3;
+          white-space: pre;
+          margin: 1rem 0 4rem;
+        }
       }
+    }
+
+    .subtitle-under-main-title {
+      width: 66%;
+      margin: 0 auto;
     }
   }
 
