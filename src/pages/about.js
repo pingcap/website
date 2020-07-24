@@ -3,6 +3,7 @@ import '../styles/pages/about.scss'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import Particles from '../components/particles'
 import { graphql, Link } from 'gatsby'
 import { Button } from '@seagreenio/react-bulma'
 
@@ -93,11 +94,9 @@ const About = ({ data }) => {
                 className="button is-primary is-rounded"
               >
                 Join Us
+                <Particles />
               </Button>
             </div>
-            {Array.from({ length: 8 }).map((_, index) => {
-              return <div className={`el${index + 1}`} key={index}></div>
-            })}
           </div>
         </section>
       </article>
