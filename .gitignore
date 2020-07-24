@@ -68,9 +68,6 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# package lock file
-packge-lock.json
-
 markdown-pages/blogs/*
 markdown-pages/blogs-cn/*
 markdown-pages/zh/blogs/*

@@ -123,6 +123,14 @@ module.exports = {
         sitemapSize: 500,
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://pingcap.com',
+        sitemap: 'https://pingcap.com/website-en-sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
   ],
   proxy: {
     prefix: '/api/v1',
