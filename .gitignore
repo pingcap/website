@@ -72,6 +72,7 @@ yarn-error.log
 packge-lock.json
 
 # blogs
-# markdown-pages/blogs/
-# markdown-pages/blogs-cn/
-# markdown-pages/zh/blogs
+markdown-pages/blogs/*
+markdown-pages/zh/blogs/*
+!markdown-pages/blogs/.gitkeep
+!markdown-pages/zh/blogs/.gitkeep
