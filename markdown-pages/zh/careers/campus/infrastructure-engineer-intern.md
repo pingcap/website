@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/campus/infrastructure-engineer-intern/
   - /recruit-cn/campus/infrastructure-engineer-intern/
+summary: 你能从工作中学习到什么？如何构建一个分布式关系数据库；如何将其包装成为一套完整的商业产品；亲身参与以上过程，并实践你所掌握的开发技术；
 ---
 
 # 数据库开发实习生

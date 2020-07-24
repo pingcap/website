@@ -7,6 +7,7 @@ avatar: marketing
 position: true
 aliases:
   - /recruit-cn/market/community-operation/
+summary: 社区活动的维护运营，包括活动的主题策划、内容统筹、人员沟通、现场执行等运营工作； 企业自媒体平台的日常运营，包括内容编辑、发布、维护、管理、互动、提高影响力和关注度； 了解技术社区用户需求，收集反馈，根据运营数据挖掘和分析用户需求； 资料的搜集与编辑整理。
 ---
 
 # 社区运营

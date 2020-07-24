@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/sales/presales-director/
   - /recruit-cn/business/presales-director/
+summary: 负责组织制定公司数据库产品、数据库解决方案的技术方案编写、标书的准备、讲解及用户答疑等工作；负责用户的技术交流、技术支持、POC 等工作，及合作伙伴厂商的技术交流；和产品、市场部门密切配合，负责相关的沟通、技术支持、技术文档撰写等工作。
 ---
 
 # 资深售前技术总监

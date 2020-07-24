@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineering/bizdev-qa-engineer/
   - /recruit-cn/engineering/qa-engineer/
+summary: 通过研发的手段保证 TiDB 产品质量； 参与自动化测试平台的开发建设； 参与混沌工程平台的研发设计。
 ---
 
 # QA 研发工程师

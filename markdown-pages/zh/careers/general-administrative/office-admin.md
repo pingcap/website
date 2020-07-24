@@ -7,6 +7,7 @@ avatar: admin
 position: true
 aliases:
   - /recruit-cn/general-administrative/office-admin/
+summary: 负责 Office 日常事务性工作，保障办公区域日常运转； 负责 Office 内部环境维护以及到访人员的接待； 负责公司办公场地租赁费用，水、电、宽带网络等费用结算、管理工作； 负责组织公司活动、对活动所需物品进行询价对比、采购工作； 负责 Office 相关人事工作，如新员工入离职手续办理，五险一金缴纳等； 完成上级领导安排的其他事项。
 ---
 
 # 分公司行政主管

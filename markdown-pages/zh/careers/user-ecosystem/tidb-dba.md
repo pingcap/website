@@ -10,6 +10,7 @@ aliases:
   - /recruit/engineer/tidb-dba/
   - /recruit-cn/business/tidb-dba/
   - /about-cn/recruit/business/tidb-dba/
+summary: 负责对客户进行 TiDB 技术支持（线上为主），包括配置管理、升级、扩容、备份、数据迁移等工作； 负责用户 TiDB 集群监控、故障响应、问题跟踪及性能分析处理； 负责与用户进行需求沟通、技术培训，介绍 TiDB 的原理、使用方式、最佳实践等； 研究 TiDB，对某细分方向，如 TiDB 自动化管理、SQL 优化、故障诊断、数据迁移等有持续产出、贡献； 对各种数据库、大数据库技术栈进行调研、测试，对数据库生态工具（如数据迁移等）进行调研、测试，方案落地； 熟悉 Docker & Kubernetes 的维护，熟悉 DevOps 脚本开发等优先。
 ---
 
 # 资深/高级/中级 TiDB DBA

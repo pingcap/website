@@ -9,6 +9,7 @@ aliases:
   - /recruit/engineer/bizdev-tools-engineer/
   - /recruit/engineering/bizdev-tools-engineer/
   - /recruit-cn/engineering/tools-engineer/
+summary: TiDB 商业工具开发，完善 TiDB 的周边生态，提升用户使用体验； 建设高度智能的自动化测试系统，进行各种破坏性测试，验证 TiDB 的可靠性。
 ---
 
 # Tools 研发工程师

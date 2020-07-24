@@ -5,7 +5,7 @@ tags:
 location: 北京，上海，杭州，成都，广州
 avatar: database
 position: true 
- 
+summary:  负责 TiFlash 列存引擎的设计，开发以及测试 发现和解决线上反馈问题
 ---
 
 # 分析引擎研发工程师

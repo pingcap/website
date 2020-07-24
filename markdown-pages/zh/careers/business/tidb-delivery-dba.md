@@ -9,6 +9,7 @@ aliases:
   - /recruit/sales/tidb-delivery-dba/
   - /recruit/engineer/tidb-delivery-dba/
   - /recruit-cn/business/tidb-delivery-dba/
+summary: 负责客户 POC ，TiDB 项目落地、客户关系、项目管理；负责与用户进行需求沟通、技术培训，介绍 TiDB 的原理、使用方式、最佳实践等；负责客户技术支持，包括配置管理、升级、扩容、备份、数据迁移等工作；负责用户 TiDB 集群监控、故障响应、问题跟踪及性能分析处理；负责 POC 相关文档编写、流程建设、优化；研究 TiDB，对某细分方向，如 TiDB 自动化管理、SQL 优化、故障诊断等有持续产出、贡献。
 ---
 
 # 资深/高级/中级 TiDB 交付 DBA

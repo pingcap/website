@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineer/tidb-engineer/
   - /recruit-cn/engineering/tidb-engineer/
+summary: 负责分布式数据库优化器、执行器、事务引擎、DDL 等相关的设计与开发，文档撰写和新人指导； 负责分布式数据库 SQL 层的设计，开发和性能优化； 参与分布式数据库内核系统的设计。
 ---
 
 # TiDB 研发工程师

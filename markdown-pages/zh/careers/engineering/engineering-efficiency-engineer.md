@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineering/bizdev-engineering-efficiency-engineer/
   - /recruit-cn/engineering/engineering-efficiency-engineer/
+summary: 构建自动化流程及工具，解决研发、测试与产品运维中遇到的各种效率问题； 负责公司内部 DevOps 平台的开发和维护； 负责 CI/CD 相关基础设施的调优及维护； 负责 tidb-ansible 部署工具的功能开发及维护。
 ---
 
 # 工程效率研发工程师

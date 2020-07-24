@@ -9,6 +9,7 @@ aliases:
   - /recruit/engineer/bizdev-cloud-engineer/
   - /recruit/engineering/bizdev-cloud-engineer/
   - /recruit-cn/engineering/cloud-engineer/
+summary: 开发基于 Kubernetes 的 TiDB Cloud 版自动化部署和运维工具；  开发基于 Kubernetes 的企业版 TiDB 自动化部署工具； 负责搭建基于 Kubernetes 和 TiDB 的企业级数据库云 DBaaS。
 ---
 
 # Cloud 研发工程师

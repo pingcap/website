@@ -9,6 +9,7 @@ position: true
 aliases:
   - /recruit/campus/campus-2019-content-strategist/
   - /about-cn/recruit-cn/campus/campus-2019-content-strategist/
+summary: Bachelor's degree or above in software, computer science or engineering relevant majors with an understanding of the software industry; Excellent command of both written and oral English; Experience and passion in writing software relevant topics; Experience in marketing research is a strong plus; An excellent communicator with a clear and concise writing style; Detail-oriented with sharp eyes and good troubleshooting skills; Comfortable in a fast-paced environment and with meeting deadlines.
 ---
 
 # Content Strategist

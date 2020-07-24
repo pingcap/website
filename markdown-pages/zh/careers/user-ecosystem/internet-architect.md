@@ -9,6 +9,7 @@ aliases:
   - /recruit-cn/sales/internet-architect/
   - /recruit-cn/business/internet-architect/
   - /about-cn/recruit/business/internet-architect/
+summary: 负责 TiDB 技术推广，布道； 负责互联网用户的技术交流、数据库架构设计； 作为桥梁连通 TiDB 用户与开发，反馈、整理用户需求，调研主流技术和方案； 与社区、市场部门密切配合，负责相关的沟通、技术支持、技术文档撰写等工作。
 ---
 
 # 资深互联网架构师

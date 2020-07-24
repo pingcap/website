@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit-cn/sales/channel-sales-director/
   - /recruit-cn/business/channel-sales-director/
+summary: 根据公司产品（分布式数据库），负责相关合作伙伴的建立、维护、发展与管理；制定相关合作伙伴的拓展计划，执行并完成相关合作伙伴拓展计划和销售任务；配合销售及市场部门完成相关工作。
 ---
 
 # 资深渠道合作总监

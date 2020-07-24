@@ -5,7 +5,7 @@ tags:
 location: 北京，上海，杭州，成都，广州
 avatar: database
 position: true 
- 
+summary:  通过各种手段，确保优化器做出稳定的执行计划 完善优化器内核，使其能够做出稳定的，高效的执行计划
 ---
 
 # 数据库内核开发（优化器方向）

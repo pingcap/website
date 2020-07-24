@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit-cn/business/user-ecosystem-technical-operations/
   - /about-cn/recruit/business/user-ecosystem-technical-operations/
+summary: 对开源生态、数据库或大数据领域有深度理解，负责制定有效、合理的运营策略，促进 TiDB 在广大用户中的应用深度，培养 TiDB 用户的使用热情，技术传播； 建立用户生态运营体系，制定有效、合理的运营推广方案，并快速推动方案落地，具备一定顶层策划思维； 有很好的亲和力，具有或者能快速融入数据库或大数据技术圈子，进行各种线上、线下 User Group 的活动策划、组织； 内部协调资源，辅助完成 TiDB 培训教学、认证考试等工作。
 ---
 
 # 用户生态技术运营
