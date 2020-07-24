@@ -1,6 +1,7 @@
 @import '../common';
 
 .PingCAP-Careers {
+
   .hero {
     .hero-body {
       @include has-light-background;
@@ -35,5 +36,164 @@
 
   .open-positions-section {
     @include has-light-background;
+  }
+}
+
+
+.PingCAP-Careers-ZH{
+
+  .hero {
+
+    .hero-body {
+
+      padding-top: 3.75rem;
+      padding-bottom: 4rem;
+
+      .title {
+        margin-bottom: 4rem;
+      }
+
+      .subtitle-under-main-title {
+        font-size: $H3;
+        font-weight: 400;
+        color: $M4;
+        margin-bottom: 4rem;
+      }
+    }
+
+    img {
+      width: 33.3%;
+      height: auto;
+    }
+
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .working-env-section {
+    
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .title {
+      font-size: $H1;
+      font-weight: 500;
+      color: $M3;
+    }
+
+    .subtitle-under-main-title {
+      font-size: $P1;
+      font-weight: 400;
+      color: $M4;
+      padding-bottom: 0;
+      margin-bottom: 4rem;
+    }
+
+    .grid-container {
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 4.17%;
+      row-gap: 5rem;
+
+      img {
+        height: 60px;
+        margin-bottom: 1.5rem;
+      }
+
+      .env-title {
+        font-size: $P1;
+        font-weight: 400;
+        color: $M3;
+        margin-bottom: 1.5rem;
+      }
+
+      .env-desc {
+        font-size: $P1;
+        font-weight: 300;
+        color: $M4;
+      }
+    }
+  }
+
+  .comments-list-section {
+
+    @include has-light-background;
+    padding-top:  6rem;
+    padding-bottom:  6rem;
+
+    .title {
+      text-align: center;
+    }
+
+    .comment {
+
+      display: flex;
+      width: 66.6%;
+      margin: 0 auto 4rem;
+      justify-content: space-between;
+
+      $avatars: overvenus breeswish lilin90 sunhao2017 datahoecn fox-wolf;
+
+      .avatar {
+        width: 12.5%;
+        height: 0;
+        padding-top: 12.5%;
+        background: #E7E9EB;
+        border-radius: 50%;
+      }
+
+      @each $avatar in $avatars {
+        .#{$avatar}-avatar {
+          background: url(../../../images/zh/career/avatar/#{$avatar}.svg) center no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .comment-text {
+        width: 75%;
+        height: inherit;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 1.5rem;
+        background: #fff;
+        box-shadow: 0 0.1875em 0.5em #f0f0f0;
+
+        &::after {
+          display: block;
+          content: '';
+          position: absolute;
+          left: -5%;
+          top: 50%;
+          width: 5%;
+          height: 0;
+          padding-top: 5%;
+          transform: translateY(-50%);
+          background: #fff;
+          clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        }
+      }
+    }
+  }
+
+  .join-us-section {
+    position: relative;
+    padding: 6rem 0;
+    text-align: center;
+    
+    .title {
+      margin-bottom: 4rem;
+    }
+
+    .button {
+      margin-bottom: 8rem;
+    }
+  }
+
+  .open-positions-section {
+    
   }
 }
