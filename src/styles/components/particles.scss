@@ -73,7 +73,7 @@
     }
 
 .el4 {
-      @include positioned-el(1.5625rem, right, top, 16vw, 14vw, #e30c25);
+      @include positioned-el(1.5625rem, right, top, 16vw, -8vw, #e30c25);
       @include scaling-el(0.7, 1, 3s);
       clip-path: polygon(
         30% 0%,
