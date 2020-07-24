@@ -166,7 +166,7 @@ const Navbar = ({ showBanner }) => {
                 rounded
                 outlined
               >
-                CONTACT US
+                ASK AN EXPERT
               </Button>
             </div>
             <div className="navbar-item with-get-tidb">
