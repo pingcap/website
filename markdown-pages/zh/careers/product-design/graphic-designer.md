@@ -5,7 +5,7 @@ tags:
 location: 北京，上海
 avatar: designer
 position: true
-
+summary: 参与并支持线下物料的平面视觉设计，例如易拉宝、海报、Banner、宣传册、T恤、周边等； 参与并支持线上产品的 UI 设计，如 Web 端和移动端的界面设计、以及 UI 相关的视觉优化和规范建立、对用户体验有一定把握和了解； 支持其他各业务部门的设计需求以及沟通； 参与日常的 design critique.
 ---
 
 # 平面视觉设计师

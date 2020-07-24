@@ -5,7 +5,7 @@ tags:
 location: 北京
 avatar: marketing
 position: true
-
+summary: Develop, build and manage marketing demand generation that fuels both short-term and sustainable long-term growth via closed-loop lead generation process; Achieve targets (volume and quality) and daily execution; Leading execution on content social media, design, email, and video to produce effective campaigns; Overseeing lead lifecycle from start to finish, with an emphasis on generating qualified leads that turn into prospects; Guiding technical execution on rules of engagement in lead distribution and follow-up processes for our sales team; Writing video scripts and overseeing the production of videos for our YouTube channel and social media accounts; Optimizing our website pages and blog posts for search engine optimization; Continuously testing and improving conversion rates through A/B testing; Staying on top of the latest trends and opportunities for us to test and learn from.
 ---
 
 # Demand Generation Specialist

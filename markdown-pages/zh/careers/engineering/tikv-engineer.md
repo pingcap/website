@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineer/tikv-engineer/
   - /recruit-cn/engineering/tikv-engineer/
+summary: 负责 TiDB 分布式存储引擎的架构以及研发工作，负责 TiDB 生态工具，效率工具的架构以及研发工作； 负责研发 team 管理工作； 负责提升整体产品的质量，以及性能； 负责新技术的探索以及落地。
 ---
 
 # 分布式存储系统研发经理

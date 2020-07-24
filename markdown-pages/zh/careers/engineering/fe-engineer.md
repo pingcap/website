@@ -9,6 +9,7 @@ aliases:
   - /recruit/engineer/bizdev-fe-engineer/
   - /recruit/engineering/bizdev-fe-engineer/
   - /recruit-cn/engineering/fe-engineer/
+summary: 负责 TiDB 商业产品前端研发，构建功能丰富且流畅易用的 UI 系统，持续提升产品的用户体验； 前端组件设计和开发，框架定制和保证快速迭代的效率和质量 探索前端开发新规范和模式。
 ---
 
 # 前端开发工程师

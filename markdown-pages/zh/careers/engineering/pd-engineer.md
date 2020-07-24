@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineer/pd-engineer/
   - /recruit-cn/engineering/pd-engineer/
+summary: 负责 TiDB AI 调度的架构与实现； 负责在云上通过 AI 技术构建更好的弹性系统，降低用户成本。
 ---
 
 # 分布式调度研发工程师

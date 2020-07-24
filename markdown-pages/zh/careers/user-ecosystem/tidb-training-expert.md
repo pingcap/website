@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit-cn/business/tidb-training-expert/
   - /about-cn/recruit/business/tidb-training-expert/
+summary: 精通技术培训体系，精通数据库技术，面向企业用户及个人用户，制定、规划 PingCAP University 课程体系、讲师体系； 负责课程内容架构设计，协同技术内容专家，完成有趣有料的课程开发； 研究技术人员的学习行为和反馈，持续提升课程质量及提升用户学习体验； 负责 PingCAP University 运营，包括线上推广、渠道商合作体系建立与管理。
 ---
 
 # PingCAP University 培训专家

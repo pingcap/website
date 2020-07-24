@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit-cn/engineering/product-manager/
   - /about-cn/recruit/engineering/product-manager/
+summary: 负责制定 TiDB / 工具 / 管理平台的产品规划，产品设计，产品阶段性目标制定，对产品负责； 负责跟踪业界动态，完成竞品分析，持续改产品，提升用户体验； 负责市场调研，收集外部用户、公司内部售前、售后支持、解决方案架构师、研发等团队的需求，完成需求排序，原型设计，BRD、MRD、PRD、原型图文档的编写； 负责协调推动后端各种资源合作及执行达成产品目标； 负责产品生命周期管理，协同售前、售后支持、解决方案架构师、研发、运营等团队共同完成产品商业目标。
 ---
 
 # 数据库产品经理

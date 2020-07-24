@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/engineering/bizdev-sa-engineer/
   - /recruit-cn/engineering/sa-engineer/
+summary: 保障服务稳定可靠：SA 负责从硬件到网络，从基础服务到各内外部应用的正常运行； 协调沟通第三方服务：从调研、协调、到使用第三方服务，诸如 CDN、公有云； 响应开发团队需求：访问控制，资源调度，环境准备，服务搭建等； 负责 IDC 和所有公有云资源的管理、分配、维护及安全加固； 负责监控报警体系建设、错误收集、后续处理及持续改进； 不断的用自动化工具优化以上这些流程；
 ---
 
 # 运维工程师

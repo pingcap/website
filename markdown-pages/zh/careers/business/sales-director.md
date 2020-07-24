@@ -8,6 +8,7 @@ position: true
 aliases:
   - /recruit/sales/sales-director/
   - /recruit-cn/business/sales-director/
+summary: 负责分布式数据库产品的业务拓展、合作及销售；完成整体业绩指标，包括销售额和回款额。
 ---
 
 # 资深行业销售总监
