@@ -244,11 +244,20 @@ function Logos({ logos }) {
               )}
             </div>
             <div className="simple-card">
-              <div
+              {/* <div
                 className={`${logo.customer
                   .replace(/[\d/+/.\s&]/g, '-')
                   .toUpperCase()}-logo-zh`}
-              />
+              /> */}
+              <div
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) 50% no-repeat`,
+                  backgroundSize: 'contain',
+                  width: '30%',
+                  height: '30%',
+                }}
+              ></div>
+
               <div className="title is-6">{logo.customer}</div>
             </div>
           </div>
@@ -280,6 +289,7 @@ export const query = graphql`
             customer
             customerCategory
             summary
+            logo
           }
           parent {
             ... on File {
