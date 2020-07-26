@@ -37,7 +37,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       }
       caseStudiesZH: allMarkdownRemark(
         filter: {
-          fields: { collection: { eq: "markdown-pages/blogs-cn" } }
+          fields: { collection: { eq: "markdown-pages/zh/blogs" } }
           frontmatter: { category: { eq: "case" } }
         }
         limit: 1000
