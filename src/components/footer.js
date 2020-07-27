@@ -8,7 +8,7 @@ import footerColumnsMap from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
 import { useLocation } from '@reach/router'
-import { useIntl, FormattedMessage } from 'react-intl'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -87,7 +87,7 @@ const Footer = () => {
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map((columns, i) => (
+          {footerColumnsMap[intl.locale].map((columns, i) => (
             <div key={i} className="column">
               {columns.map((column) => (
                 <div key={column.name} className="subcolumn">
