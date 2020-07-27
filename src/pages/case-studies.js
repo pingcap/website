@@ -228,7 +228,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
 
 function Logos({ logos }) {
   return (
-    <div className="columns is-multiline logos">
+    <div className="columns is-multiline is-gapless logos">
       {logos
         .map(({ node }) => ({
           ...node.frontmatter,
