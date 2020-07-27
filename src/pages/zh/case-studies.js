@@ -267,7 +267,7 @@ export const query = graphql`
     }
     caseStudies: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs-cn" } }
+        fields: { collection: { eq: "markdown-pages/zh/blogs" } }
         frontmatter: { category: { eq: "case" } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
