@@ -43,7 +43,7 @@ const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
                   (
                     {
                       node: {
-                        frontmatter: { title },
+                        frontmatter: { title, summary },
                         parent: { relativePath },
                       },
                     },
@@ -52,13 +52,7 @@ const PositionsList = ({ data, pageContext, PaginationPathPrefix }) => {
                     <Link to={`/careers/${replaceTitle(relativePath)}`} key={i}>
                       <div className="position-card">
                         <div className="title is-4 is-spaced">{title}</div>
-                        <div className="summary">
-                          开发基于 Kubernetes 的 TiDB Cloud
-                          版自动化部署和运维工具开发基于 Kubernetes 的企业版
-                          TiDB 自动化部署工具开发基于 Kubernetes 的 TiDB Cloud
-                          版自动化部署和运维工具开发基于 Kubernetes 的企业版
-                          TiDB 自动化部署工具…
-                        </div>
+                        <div className="summary">{summary}</div>
                       </div>
                     </Link>
                   )
