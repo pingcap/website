@@ -455,4 +455,38 @@
             }
         }
     }
+
+    .section-case-studies {
+        padding: 6rem 0;
+
+        @include mobile {
+            padding: 1rem 0 3rem;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                margin: 0 auto;
+            }
+        }
+
+        .logos {
+            width: 83.333%;
+            height: 49rem;
+            margin: 0 auto 6rem;
+            background: url(../../../../images/zh/user-message-2019/desktop_logos.png) no-repeat center center;
+            background-size: contain;
+
+            @include mobile {
+                width: 100%;
+                height: 67rem;
+                margin-bottom: 3rem;
+                background: url(../../../../images/zh/user-message-2019/mobile_logos.png) no-repeat center center;
+            }
+        }
+    }
 }

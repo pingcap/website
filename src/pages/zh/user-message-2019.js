@@ -1,8 +1,10 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react'
+import React, { useEffect, useState } from 'react'
 import Swiper from 'swiper'
+import { Button } from '@seagreenio/react-bulma'
 
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
+import Link from '../../components/IntlLink'
 import data from '../../data/zh/user-message-2019.json'
 
 import '../../styles/pages/zh/user-message-2019.scss'
@@ -248,6 +250,16 @@ const UserMessage2019 = () => {
             </div>
           </div>
         </div>
+        <section className="section section-case-studies">
+          <div className="container">
+            <div className="logos" />
+            <Link to="/case-studies">
+              <Button color="primary" rounded>
+                更多案例
+              </Button>
+            </Link>
+          </div>
+        </section>
       </article>
     </Layout>
   )
