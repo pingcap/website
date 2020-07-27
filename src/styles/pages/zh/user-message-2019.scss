@@ -2,23 +2,41 @@
 @import '../../../../node_modules/swiper/css/swiper.min.css';
 
 .PingCAP-UserMessage2019 {
+    @include mobile {
+        margin-top: 1rem;
+    }
+
     .page {
         height: calc(100vh - 5.25rem);
+
+        @include mobile {
+            height: calc(100vh - 4.25rem);
+        }
     }
 
     .page-1 {
-        background: url(../../../../images/zh/user-message-2019/desktop_bg1.svg) no-repeat center center;
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg1.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-self: center;
 
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg1.svg);
+        }
+
         .title {
             font-size: 3rem;
             font-weight: 500;
             letter-spacing: 0.5px;
             color: #FFFFFF;
+
+            @include mobile {
+                font-size: 1.875rem;
+            }
         }
 
         .content {
@@ -28,22 +46,44 @@
             font-weight: 300;
             line-height: $LH3;
             color: #FFFFFF;
+
+            @include mobile {
+                margin-top: 4rem;
+            }
         }
     }
 
     .page-2 {
-        background: url(../../../../images/zh/user-message-2019/desktop_bg2.svg) no-repeat center center;
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg2.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg2.svg);
+        }
     }
 
     .page-3 {
-        background: url(../../../../images/zh/user-message-2019/desktop_bg3.svg) no-repeat center center;
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg3.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg3.svg);
+        }
     }
 
     .page-4 {
-        background: url(../../../../images/zh/user-message-2019/desktop_bg4.svg) no-repeat center center;
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg4.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
         background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg4.svg);
+        }
     }
 
     .page-5 {
@@ -57,6 +97,10 @@
 
         .container {
             height: 100%;
+
+            @include mobile {
+                width: 100vw;
+            }
         }
 
         .cards {
@@ -64,6 +108,12 @@
             margin: 0 auto;
             height: 100%;
             pointer-events: none;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                position: relative;
+                overflow: unset !important;
+            }
         }
 
         position: relative;
@@ -90,6 +140,11 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
+
+        @include mobile {
+            width: 87.5%;
+            margin: 0 3.125%;
+        }
 
         .wrapper {
             height: 0;
@@ -192,6 +247,10 @@
             cursor: unset;
             opacity: 0.5;
         }
+
+        @include mobile {
+            display: none;
+        }
     }
 
     .navigation-prev {
@@ -217,6 +276,16 @@
         color: #FFFFFF;
         font-size: $H2;
         font-weight: 500;
+
+        @include mobile {
+            // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
+            // card height = 1.25 card width = 109.375% - 2.1875rem
+            // title start from center, above cards 3rem
+            padding-bottom: calc(54.69% + 0.41rem);
+            line-height: $LH3;
+            width: 73%;
+            margin: 0 auto;
+        }
     }
 
     .pagination {
@@ -243,6 +312,15 @@
             &.active {
                 background-color: #FFFFFF;
             }
+
+            @include mobile {
+                margin: 0 0.25rem;
+            }
+        }
+
+        @include mobile {
+            // see .page-title
+            padding-top: calc(54.69% + 3.41rem);
         }
     }
 

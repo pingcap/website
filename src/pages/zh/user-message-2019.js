@@ -41,22 +41,36 @@ const Card = ({ quoteClass, content, title, author, avatar }) => {
 
 const SliderPage = ({ pageClass, title, messages }) => {
   useEffect(() => {
-    new Swiper(`.${pageClass}-swiper`, {
-      loop: false,
-      slidesPerView: 3,
-      slidesPerGroup: 3,
-      spaceBetween: 56,
-      navigation: {
-        nextEl: `.${pageClass}-next`,
-        prevEl: `.${pageClass}-prev`,
-      },
-      pagination: {
-        el: `.${pageClass}-pagination`,
-        clickable: true,
-        bulletClass: 'bullet',
-        bulletActiveClass: 'active',
-      },
-    })
+    if (window.innerWidth >= 768) {
+      new Swiper(`.${pageClass}-swiper`, {
+        loop: false,
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        spaceBetween: 56,
+        navigation: {
+          nextEl: `.${pageClass}-next`,
+          prevEl: `.${pageClass}-prev`,
+        },
+        pagination: {
+          el: `.${pageClass}-pagination`,
+          clickable: true,
+          bulletClass: 'bullet',
+          bulletActiveClass: 'active',
+        },
+      })
+    } else {
+      new Swiper(`.${pageClass}-swiper`, {
+        loop: false,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        pagination: {
+          el: `.${pageClass}-pagination`,
+          clickable: true,
+          bulletClass: 'bullet',
+          bulletActiveClass: 'active',
+        },
+      })
+    }
   }, [])
 
   return (
@@ -86,7 +100,7 @@ const SliderPage = ({ pageClass, title, messages }) => {
 }
 
 const UserMessage2019 = () => {
-  // const isMobile = useMobile()
+  //   const isMobile = useMobile()
 
   useEffect(() => {
     new Swiper('.swiper-pages', {
