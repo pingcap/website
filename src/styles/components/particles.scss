@@ -1,113 +1,125 @@
+@import '../common';
+
 @mixin positioned-el(
-    $width,
-    $x-direction,
-    $y-direction,
-    $x-offset,
-    $y-offset,
-    $color
-  ) {
-      width: $width;
-      height: $width;
-      position: absolute;
-      @if $x-direction == left {
-        left: $x-offset;
-      } @else if $x-direction == right {
-        right: $x-offset;
-      }
-      @if $y-direction == top {
-        top: $y-offset;
-      } @else if $y-direction == bottom {
-        bottom: $y-offset;
-      }
-      background: $color;
+  $width,
+  $x-direction,
+  $y-direction,
+  $x-offset,
+  $y-offset,
+  $color
+) {
+  width: $width;
+  height: $width;
+  position: absolute;
+  @if $x-direction == left {
+    left: $x-offset;
+  } @else if $x-direction == right {
+    right: $x-offset;
   }
-  
+  @if $y-direction == top {
+    top: $y-offset;
+  } @else if $y-direction == bottom {
+    bottom: $y-offset;
+  }
+  background: $color;
+}
+
 @mixin shaking-el($x-start, $x-end, $y-start, $y-end, $duration) {
-      --x-start: #{$x-start};
-      --x-end: #{$x-end};
-      --y-start: #{$y-start};
-      --y-end: #{$y-end};
-      animation: shaking $duration infinite alternate;
-    }
+  --x-start: #{$x-start};
+  --x-end: #{$x-end};
+  --y-start: #{$y-start};
+  --y-end: #{$y-end};
+  animation: shaking $duration infinite alternate;
+}
 
 @mixin scaling-el($scale-start, $scale-end, $duration) {
-      --scale-start: #{$scale-start};
-      --scale-end: #{$scale-end};
-      animation: scaling $duration infinite alternate;
-    }
+  --scale-start: #{$scale-start};
+  --scale-end: #{$scale-end};
+  animation: scaling $duration infinite alternate;
+}
 
 @keyframes shaking {
-      from {
-          transform: translate(var(--x-start), var(--y-start));
-      }
-      to {
-          transform: translate(var(--x-end), var(--y-end));
-      }
-    }
+  from {
+    transform: translate(var(--x-start), var(--y-start));
+  }
+  to {
+    transform: translate(var(--x-end), var(--y-end));
+  }
+}
 
 @keyframes scaling {
-      from {
-          transform: scale(var(--scale-start));
-      }
-      to {
-          transform: scale(var(--scale-end));
-      }
+  from {
+    transform: scale(var(--scale-start));
+  }
+  to {
+    transform: scale(var(--scale-end));
+  }
+}
+
+$i: 8;
+@while $i > 0 {
+  .el#{$i} {
+    @include mobile {
+      display: none;
     }
+  }
+  $i: $i - 1;
+}
 
 .el1 {
-      @include positioned-el(1rem, left, top, -30vw, 2vw, #3351ff);
-      @include shaking-el(20px, 30px, 20px, 10px, 3s);
-      border-radius: 50%;
-    }
+  @include positioned-el(1rem, left, top, -30vw, 2vw, #3351ff);
+  @include shaking-el(20px, 30px, 20px, 10px, 3s);
+  border-radius: 50%;
+}
 
 .el2 {
-      @include positioned-el(1.125rem, left, top, -12vw, 10vw, #162d71);
-      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
-      border-radius: 50%;
-    }
+  @include positioned-el(1.125rem, left, top, -12vw, 10vw, #162d71);
+  @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+  border-radius: 50%;
+}
 
 .el3 {
-      @include positioned-el(0.625rem, left, top, -20vw, -6vw, #0fa7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2s);
-      border-radius: 50%;
-    }
+  @include positioned-el(0.625rem, left, top, -20vw, -6vw, #0fa7fa);
+  @include shaking-el(20px, 30px, 20px, 10px, 2s);
+  border-radius: 50%;
+}
 
 .el4 {
-      @include positioned-el(1.5625rem, right, top, 16vw, -8vw, #e30c25);
-      @include scaling-el(0.7, 1, 3s);
-      clip-path: polygon(
-        30% 0%,
-        70% 0%,
-        100% 30%,
-        100% 70%,
-        70% 100%,
-        30% 100%,
-        0% 70%,
-        0% 30%
-      );
-      transform: rotate(14deg);
-    }
+  @include positioned-el(1.5625rem, right, top, 16vw, -8vw, #e30c25);
+  @include scaling-el(0.7, 1, 3s);
+  clip-path: polygon(
+    30% 0%,
+    70% 0%,
+    100% 30%,
+    100% 70%,
+    70% 100%,
+    30% 100%,
+    0% 70%,
+    0% 30%
+  );
+  transform: rotate(14deg);
+}
 
 .el5 {
-      @include positioned-el(1.68rem, right, top, -10vw, -2vw, #0fa7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
-      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-    }
+  @include positioned-el(1.68rem, right, top, -10vw, -2vw, #0fa7fa);
+  @include shaking-el(20px, 30px, 20px, 10px, 2.5s);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
 
 .el6 {
-      @include positioned-el(0.8125rem, left, top, 30vw, -6vw, #162d71);
-      @include shaking-el(20px, 30px, 20px, 10px, 3s);
-      border-radius: 50%;
-    }
+  @include positioned-el(0.8125rem, left, top, 30vw, -6vw, #162d71);
+  @include shaking-el(20px, 30px, 20px, 10px, 3s);
+  border-radius: 50%;
+}
 
 .el7 {
-      @include positioned-el(1.125rem, left, top, 44vw, 0, #162d71);
-      @include shaking-el(-5px, -10px, -5px, -10px, 2s);
-      border-radius: 50%;
-    }
+  @include positioned-el(1.125rem, left, top, 44vw, 0, #162d71);
+  @include shaking-el(-5px, -10px, -5px, -10px, 2s);
+  border-radius: 50%;
+}
 
 .el8 {
-      @include positioned-el(0.875rem, right, top, -20vw, 8vw, #10a7fa);
-      @include shaking-el(20px, 30px, 20px, 10px, 2s);
-      border-radius: 50%;
-    }
+  @include positioned-el(0.875rem, right, top, -20vw, 8vw, #10a7fa);
+  @include shaking-el(20px, 30px, 20px, 10px, 2s);
+  border-radius: 50%;
+}

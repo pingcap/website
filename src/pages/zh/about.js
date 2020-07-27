@@ -14,7 +14,7 @@ import { workEnv } from '../../data/zh/career-work-env'
 import { offices, contacts } from '../../data/zh/contact-us'
 
 const About = ({ data }) => {
-  const { aboutHeroSVG, timeLineSVG } = data
+  const { aboutHeroSVG, timeLineSVG, mobileTimeLineSVG } = data
   const particleConfig = {
     particles: {
       color: {
@@ -80,7 +80,13 @@ const About = ({ data }) => {
         <section className="section timeline-section">
           <div className="container">
             <h2 className="title">发展历程</h2>
-            <img src={timeLineSVG.publicURL} alt="Timeline" />
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset={mobileTimeLineSVG.publicURL}
+              ></source>
+              <img src={timeLineSVG.publicURL} alt="time line" />
+            </picture>
           </div>
         </section>
 
@@ -128,7 +134,7 @@ const About = ({ data }) => {
                   )
                 })}
               </div>
-              <div className="column is-3">
+              <div className="column is-3 contact-info-container">
                 {contacts.map((contact) => {
                   return (
                     <div className="contact-info" key="contact.way">
@@ -156,7 +162,7 @@ const About = ({ data }) => {
               to="/zh/recruit"
               className="button is-primary is-rounded"
             >
-              <AroundParticles />
+              <AroundParticles className="around-particles" />
               <span>立刻申请</span>
             </Button>
           </div>
@@ -173,6 +179,11 @@ export const query = graphql`
       publicURL
     }
     timeLineSVG: file(relativePath: { eq: "zh/about/timeline.svg" }) {
+      publicURL
+    }
+    mobileTimeLineSVG: file(
+      relativePath: { eq: "zh/about/mobile-timeline.svg" }
+    ) {
       publicURL
     }
   }
