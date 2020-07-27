@@ -34,7 +34,7 @@
 
 @each $logo in $zh-logos {
   .#{$logo}-logo-zh {
-    background: url(../../../images/zh-logos/#{$logo}.svg) center no-repeat;
+    background: url(../../images/zh-logos/#{$logo}.svg) center no-repeat;
     background-size: contain;
   }
 }
