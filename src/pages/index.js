@@ -133,7 +133,7 @@ const IndexPage = ({ data }) => {
   const onCardClick = (href) => () => navigate(href)
 
   return (
-    <Layout>
+    <Layout NavbarProps={{ showBanner: true }}>
       <SEO
         title="TiDB | SQL at Scale"
         description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"
@@ -149,7 +149,7 @@ const IndexPage = ({ data }) => {
                     alt="PingCAP Home: TiDB | SQL At Scale"
                   />
                 </h1>
-                <h2 className="subtitle is-7">
+                <h2 className="subtitle is-4">
                   An open-source, cloud-native, distributed SQL database for
                   elastic scale and real-time analytics
                 </h2>
@@ -198,6 +198,7 @@ const IndexPage = ({ data }) => {
               {caseLogos.map((logo) => (
                 <div key={logo} className={`${logo}-logo`} />
               ))}
+              <div className="mobile-fake-logo" />
             </div>
             <div className="has-text-centered">
               <LinkWithArrow
@@ -250,7 +251,6 @@ const IndexPage = ({ data }) => {
                       alt={d.name}
                     />
                   </div>
-                  {/* <div className="divider" /> */}
                   <div className="intro">
                     <div className="title is-spaced column-title has-text-left is-5">
                       {d.name}
@@ -268,9 +268,9 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <SectionUseCases hasLightBg={false} />
-
         <StartTiDBRibbon />
+
+        <SectionUseCases hasLightBg={false} />
 
         <section className="section section-architecture">
           <div className="container">

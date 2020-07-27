@@ -1,12 +1,14 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Link from './IntlLink'
-import React, { useEffect, useState, Fragment } from 'react'
+import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
+import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
-import { navbarItems } from '../data/navbar'
-import { FormattedMessage } from 'react-intl'
 
-const Navbar = () => {
+import { FormattedMessage } from 'react-intl'
+import { navbarItems, promotionText } from '../data/navbar'
+
+const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
       query {
@@ -28,6 +30,8 @@ const Navbar = () => {
     if (window.matchMedia('(max-width: 768px)').matches) {
       const dropdown = document.querySelector('.navbar-dropdown')
       dropdown.classList.toggle('toggle-drop')
+      const title = document.querySelector('.dropdown-title')
+      title.classList.toggle('toggle-drop')
     }
   }
 
@@ -43,6 +47,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
 
+  const [promotionOpen, setPromotionOpen] = useState(showBanner)
+  const closePromotion = useCallback(() => setPromotionOpen(false), [])
+
   return (
     <nav
       className={`navbar is-fixed-top PingCAP-Navbar${
@@ -50,6 +57,24 @@ const Navbar = () => {
       }`}
       role="navigation"
     >
+      {promotionText && promotionOpen && (
+        <div className="promotion">
+          <div className="container">
+            <div className="horn" />
+            {promotionText}
+            <div className="blank" />
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="close"
+              className="close"
+              onClick={closePromotion}
+              onKeyDown={closePromotion}
+            />
+          </div>
+        </div>
+      )}
+
       <div className="container">
         <div className="navbar-brand">
           <Link className="navbar-item with-brand" to="/">
@@ -70,6 +95,15 @@ const Navbar = () => {
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </button>
+
+          {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
+          <a
+            href="https://github.com/pingcap"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="github icon"
+            className="github-icon-mobile"
+          />
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
@@ -85,7 +119,10 @@ const Navbar = () => {
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
-                    <FormattedMessage id={item.key} />
+                    <div className="dropdown-title">
+                      <FormattedMessage id={item.key} />
+                      <AddIcon />
+                    </div>
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
                         <Link
@@ -125,8 +162,7 @@ const Navbar = () => {
                 )}
               </Fragment>
             ))}
-          </div>
-          <div className="navbar-end">
+
             <a
               href="https://github.com/pingcap"
               target="_blank"
@@ -135,6 +171,20 @@ const Navbar = () => {
             >
               <div className="github-icon"></div>
             </a>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item with-get-tidb">
+              <Button
+                as={Link}
+                to="/contact-us"
+                className="get-tidb"
+                color="primary"
+                rounded
+                outlined
+              >
+                ASK AN EXPERT
+              </Button>
+            </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}

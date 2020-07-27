@@ -1,3 +1,6 @@
+import React from 'react'
+import { Link } from 'gatsby'
+
 const navbarItems = [
   {
     name: 'Product',
@@ -41,4 +44,13 @@ const navbarItems = [
   },
 ]
 
-export { navbarItems }
+// to hide promotion, uncomment:
+// const promotionText = null
+const promotionText = (
+  <>
+    TiDB Cloud (beta) is open for free trial now. Apply&nbsp;
+    <Link to="/products/tidbcloud">Here</Link>
+  </>
+)
+
+export { navbarItems, promotionText }

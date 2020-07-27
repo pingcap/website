@@ -7,7 +7,7 @@ summary: Learn about the Privacy Policy of PingCAP Sites and Products.
 
 **Effective:** June 1, 2020
 
-PingCAP (US), Inc. (hereinafter referred as “PingCAP”, PingCAP and its affiliates hereinafter referred as “PingCAP Group”，” “we,” “our,” or “us”) understand that privacy is important to visitors to our websites (our “Sites”) and users of our products and services (our “Products”). This Privacy Statement explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Statement.
+PingCAP (US), Inc. (hereinafter referred to as “PingCAP”, PingCAP and its affiliates hereinafter referred to as “PingCAP Group”，“we,” “our,” or “us”) understand that privacy is important to visitors to our websites (our “Sites”) and users of our products and services (our “Products”). This Privacy Statement explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Statement.
 
 This Privacy Statement does not apply to Sites or Products that display or link to different privacy statements. This Statement also does not apply where PingCAP processes the data of our customers on their behalf; our collection and processing of such data is governed by our agreements with those customers.
 

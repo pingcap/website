@@ -7,10 +7,10 @@ $size-6: 1.12rem;
 $size-7: 1rem;
 $size-8: 0.875rem;
 
+$H0: 1.875rem;
 $H1: 1.5rem;
 $H2: 1.25rem;
-$H3: 1.12rem;
-$H4: 1rem;
+$H3: 1.125rem;
 $P1: 1rem;
 $P2: 0.875rem;
 
@@ -59,6 +59,7 @@ $shadow-hover: 0 0.375em 0.75em #eaeaea;
 
 // box
 $box-shadow: $shadow;
+$box-radius: 0;
 
 // card
 $card-shadow: $shadow;
@@ -68,3 +69,6 @@ $navbar-item-hover-background-color: #e9ecef;
 
 // title
 $title-line-height: 1.2;
+
+// mobile section
+$mobile-section-padding: 1rem;

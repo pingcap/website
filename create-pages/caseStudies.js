@@ -51,13 +51,14 @@ const createCaseStudies = async ({ graphql, createPage }) => {
   const categoriesOfStudies = [
     ...new Set(
       data.caseStudies.edges
-        .map(({ node }) => node.frontmatter.customerCategory)
+        .map(({ node }) => node.frontmatter.customerCategory || 'All')
         .concat(
-          data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name)
+          data.caseStudiesWithoutReadMore.edges.map(({ node }) => node.name),
+          'All'
         )
     ),
   ]
-  categoriesOfStudies.forEach(c => {
+  categoriesOfStudies.forEach((c) => {
     const pagePath = `case-studies/${c.split(' ').join('-')}`
 
     createPage({

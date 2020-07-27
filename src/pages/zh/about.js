@@ -3,7 +3,6 @@ import '../../lib/graphql/image'
 
 import React from 'react'
 import { graphql, Link } from 'gatsby'
-import Img from 'gatsby-image'
 import { Button } from '@seagreenio/react-bulma'
 import Particles from 'react-particles-js'
 
@@ -96,7 +95,9 @@ const About = ({ data }) => {
 
         <section className="section intro-video-section">
           <Particles params={particleConfig} className="particles" />
-          <video {...introVideoConfig} className="intro-video"></video>
+          <video {...introVideoConfig} className="intro-video">
+            <track default kind="captions" srclang="en" src="/" />
+          </video>
         </section>
 
         <section className="section working-env-section">
@@ -149,6 +150,7 @@ const About = ({ data }) => {
                   href="http://pingcaptidb.mikecrm.com/LxRiDG8"
                   target="_blank"
                   className="consult-link"
+                  rel="noreferrer"
                 >
                   或让我们与您联系
                 </a>

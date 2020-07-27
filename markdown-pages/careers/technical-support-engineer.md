@@ -1,13 +1,18 @@
 ---
-title: Customer Success Engineer
-location: San Mateo • Full Time
+title: Technical Support Engineer
+location: San Mateo • Remote • Full Time
+aliases: ['/careers/demand-generation-specialist']
 ---
 
-# Customer Success Engineer
+# Technical Support Engineer
 
 ## About PingCAP:
 
 PingCAP is the fastest-growing enterprise subscription company our investors have ever seen. And how are we growing so fast? By building TiDB, a globally scalable hybrid transactional and analytical database and one of the most popular open source database in the world (don’t take our word for it, check it out: https://github.com/pingcap/tidb), which enables companies to painlessly scale their business while keeping the underlying infrastructure simple. Our product has been trusted and verified by web-scale application leaders and adopted by over 1000 users across industries. We’re being led by the best in the space—our founders were the original creators of TiDB. We’re looking for talented and amazing team players who want to accelerate our growth, while doing some of the best work of their careers. Join us as we build the database for the future!
+
+## About The Role:
+
+Technical Support Engineer work at the intersection of our client services and engineering teams and drive customer success by helping identify and resolve critical business issues. In this role you’ll interact directly with our customers to provide software development and operations expertise, leveraging deep knowledge of best practices in the use of TiDB, the ecosystem tools and TiDB Cloud. You will be hands on in fixing issues seen by PingCAP customers and contributing fixes back to the open source community. Throughout all of these interactions, you’ll build strong relationships with customers, ensuring exemplary support and timely resolution to customer requests.  
 
 ## What we are looking for:
 
@@ -16,8 +21,8 @@ PingCAP is the fastest-growing enterprise subscription company our investors hav
 - Working understanding of code and script in Python, Shell, or Golang;
 - Experience with web server, distributed system, load balancing, and system monitoring;
 - Familiarity with the setup, configuration, and optimization of Nginx, LVS, Keepalived, Zabbix, MySQL, Redis, etc.;
-- Docker/Kubernetes knowledge a strong plus;
-- Experience in a public cloud environment, e.g. AWS, Azure, Google Cloud Platform;
+- Docker/Kubernetes knowledge is a strong plus;
+- Experience in one or more public cloud environment, e.g. AWS, Azure, Google Cloud Platform;
 - Experience in automated operations using Puppet, Ansible, or SaltStack;
 - Bachelor’s degree in computer science strongly preferred;
 - Willingness to travel to customer sites.
@@ -33,6 +38,12 @@ PingCAP is the fastest-growing enterprise subscription company our investors hav
 - Build required infrastructure to automate deployment pipeline;
 - Deliver application level root-cause analysis, suggesting code optimization,s and assist with integrations;
 - Coordinate enhancement and feature requests with product and engineering teams;
+
+## What gives you an edge:
+
+- Experience in technical support of databases (MySQL, Postgres, Oracle, MongoDB, etc) or big data systems (Kafka, Cassandra, Elasticsearch, Hadoop, Spark, etc) is a strong plus;
+- Experience in operating MySQL, Cassandra, Postgres and other transactional databases in a production environment is a strong plus;
+- Experience in operating databases in Kubernetes or public cloud environments is a strong plus.
 
 ## What you will gain:
 
@@ -52,4 +63,4 @@ PingCAP is the fastest-growing enterprise subscription company our investors hav
 
 ## Contact
 
-PingCAP is proud to be an Equal Opportunity Employer building a diverse and inclusive workforce. Apply now by sending a cover later and your latest resume to hire@pingcap.com.
+PingCAP is proud to be an Equal Opportunity Employer building a diverse and inclusive workforce. Apply now by sending a cover letter and your latest resume to <hire@pingcap.com>.
