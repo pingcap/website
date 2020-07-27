@@ -9,6 +9,26 @@
     .page-1 {
         background: url(../../../../images/zh/user-message-2019/desktop_bg1.svg) no-repeat center center;
         background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+
+        .title {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+        }
+
+        .content {
+            margin-top: 6rem;
+            margin-bottom: 0;
+            font-size: $H3;
+            font-weight: 300;
+            line-height: $LH3;
+            color: #FFFFFF;
+        }
     }
 
     .page-2 {
@@ -44,6 +64,24 @@
             margin: 0 auto;
             height: 100%;
             pointer-events: none;
+        }
+
+        position: relative;
+        --transition-speed: 500ms;
+        --backdrop-opacity: 0;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: var(--backdrop-opacity);
+            transition: opacity linear var(--transition-speed);
         }
     }
 
@@ -205,6 +243,44 @@
             &.active {
                 background-color: #FFFFFF;
             }
+        }
+    }
+
+    .pages-pagination {
+        position: fixed;
+        right: calc(25vw - 336px);
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+
+        .bullet {
+            margin: 4px -5px;
+            width: 10px;
+            height: 32px;
+            cursor: pointer;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(../../../../images/zh/user-message-2019/pipe.svg);
+
+            &.active {
+                margin: 8px -14px;
+                width: 28px;
+                height: 44px;
+
+                background-image: url(../../../../images/zh/user-message-2019/mouse.svg);
+            }
+        }
+        
+        .page-1-bullet, .page-5-bullet {
+            visibility: hidden;
+        }
+
+        &.hidden {
+            visibility: hidden;
         }
     }
 }
