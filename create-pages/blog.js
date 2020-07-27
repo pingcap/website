@@ -2,7 +2,7 @@ const path = require('path')
 const { langPrefixes, replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
-const createBlogs = async ({ graphql, createPage }) => {
+const createBlogs = async ({ graphql, createPage, createRedirect }) => {
   const blogTemplate = path.resolve(`${__dirname}/../src/templates/blog.js`)
   for (const lang in langConfig.languages) {
     const { blogsPath } = langConfig.languages[lang]
@@ -34,8 +34,10 @@ const createBlogs = async ({ graphql, createPage }) => {
 
     result.data.blogs.edges.forEach(({ node }) => {
       langPrefixes(lang).forEach((prefix) => {
+        const _path = `${prefix}blog/${replaceTitle(node.parent.relativePath)}`
+
         createPage({
-          path: `${prefix}blog/${replaceTitle(node.parent.relativePath)}`,
+          path: _path,
           component: blogTemplate,
           context: {
             title: node.frontmatter.title,
@@ -44,6 +46,19 @@ const createBlogs = async ({ graphql, createPage }) => {
             ...langConfig.languages[lang],
           },
         })
+
+        // create redirect
+        if (node.frontmatter.aliases) {
+          const aliasesArr = node.frontmatter.aliases
+
+          aliasesArr.forEach((alias) => {
+            createRedirect({
+              fromPath: `${alias}`,
+              toPath: _path,
+              isPermanent: true,
+            })
+          })
+        }
       })
     })
   }

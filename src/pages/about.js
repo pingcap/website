@@ -3,14 +3,18 @@ import '../styles/pages/about.scss'
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import AroundParticles from '../components/particles'
 import { graphql, Link } from 'gatsby'
 import { Button } from '@seagreenio/react-bulma'
 
 const About = ({ data }) => {
-  const { aboutHeroSVG, timeLineSVG } = data
+  const { aboutHeroSVG, timeLineSVG, mobileTimeLineSVG } = data
   return (
     <Layout>
-      <SEO title="About PingCAP" description="Story about PingCAP, the team behind TiDB" />
+      <SEO
+        title="About PingCAP"
+        description="Story about PingCAP, the team behind TiDB"
+      />
       <article className="PingCAP-About">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -20,9 +24,9 @@ const About = ({ data }) => {
           </div>
         </section>
 
-        <section className="section intro-section">
+        <section className="section intro-section container">
           <div className="container">
-            <h1 className="title section-title">About PingCAP</h1>
+            <h1 className="title">About PingCAP</h1>
             <p className="paragraph">
               PingCAP started in 2015 when three seasoned infrastructure
               engineers were sick and tired of the way databases were managed,
@@ -38,9 +42,11 @@ const About = ({ data }) => {
               distributed SQL layer with MySQL compatibility, and one of the
               most popular open source database projects in the world (don’t
               take our word for it, check it out:
-              https://github.com/pingcap/tidb). TiDB’s sister project, TiKV, is
-              a cloud-native distributed Key-Value store. It is now a CNCF
-              incubating project .
+              <a href="https://github.com/pingcap/tidb" target="_blank">
+                https://github.com/pingcap/tidb
+              </a>
+              ). TiDB’s sister project, TiKV, is a cloud-native distributed
+              Key-Value store. It is now a CNCF incubating project .
             </p>
             <Button
               as={Link}
@@ -54,32 +60,43 @@ const About = ({ data }) => {
 
         <section className="section timeline-section">
           <div className="container">
-            <img src={timeLineSVG.publicURL} alt="Timeline" />
+            <h1 className="title">History of Development</h1>
+            <picture>
+              <source
+                media="(max-width: 768px)"
+                srcset={mobileTimeLineSVG.publicURL}
+              ></source>
+              <img src={timeLineSVG.publicURL} alt="time line" />
+            </picture>
           </div>
         </section>
 
         <section className="section company-culture-section">
           <div className="container">
-            <h2 className="title section-title">Company Culture</h2>
-            <p className="paragraph">
-              Our mission is to build a hybrid transactional and analytical
-              processing database with global scalability, so companies can
-              count on TiDB as its single unified database solution.
-            </p>
-            <p className="paragraph">
-              So, if you love the following: Open source, open collaboration,
-              open communication; Waking up every morning motivated to solve
-              big, hairy problems (and have fun doing it!); Working alongside a
-              global team of self-starters, curious learners, builders, doers;
-            </p>
-            <p className="paragraph last">We want to hear from you!</p>
-            <Button
-              as={Link}
-              to="/careers"
-              className="button is-primary is-rounded"
-            >
-              Join Us
-            </Button>
+            <div className="wrapper">
+              <h2 className="title">Company Culture</h2>
+              <p className="paragraph">
+                Our mission is to build a hybrid transactional and analytical
+                processing database with global scalability, so companies can
+                count on TiDB as its single unified database solution.
+              </p>
+              <p className="paragraph">
+                So, if you love the following: Open source, open collaboration,
+                open communication; Waking up every morning motivated to solve
+                big, hairy problems (and have fun doing it!); Working alongside
+                a global team of self-starters, curious learners, builders,
+                doers;
+              </p>
+              <p className="last">We want to hear from you!</p>
+              <Button
+                as={Link}
+                to="/careers"
+                className="button is-primary is-rounded"
+              >
+                Join Us
+                <AroundParticles />
+              </Button>
+            </div>
           </div>
         </section>
       </article>
@@ -93,6 +110,9 @@ export const query = graphql`
       publicURL
     }
     timeLineSVG: file(relativePath: { eq: "about/timeline.svg" }) {
+      publicURL
+    }
+    mobileTimeLineSVG: file(relativePath: { eq: "about/mobile-timeline.svg" }) {
       publicURL
     }
   }

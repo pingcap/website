@@ -27,6 +27,11 @@ const createBlogPagination = async ({ graphql, createPage }) => {
                 }
               }
             }
+            parent {
+              ... on File {
+                relativePath
+              }
+            }
           }
         }
       }

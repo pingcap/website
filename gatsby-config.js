@@ -103,9 +103,7 @@ module.exports = {
         icon: 'images/pingcap-icon.png', // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    `gatsby-plugin-offline`,
+    `gatsby-plugin-remove-serviceworker`,
     {
       resolve: `gatsby-plugin-sass`,
       options: {
@@ -122,6 +120,23 @@ module.exports = {
         ],
         whitelist: purgecssWhitelist,
         ignore: [`src/styles/`],
+      },
+    },
+    `gatsby-plugin-meta-redirect`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/website-en-sitemap.xml`,
+        exclude: ['/404'],
+        sitemapSize: 500,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://pingcap.com',
+        sitemap: 'https://pingcap.com/website-en-sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
   ],

@@ -10,7 +10,7 @@ const createBlogs = require('./create-pages/blog')
 const createBlogPagination = require('./create-pages/blogs')
 const createBlogTags = require('./create-pages/blogTags')
 const createBlogCategories = require('./create-pages/blogCategories')
-const caseStudies = require('./create-pages/caseStudies')
+const createCaseStudies = require('./create-pages/caseStudies')
 const createPositions = require('./create-pages/position')
 const createPositionsZH = require('./create-pages/position-zh')
 const createPositionsPagination = require('./create-pages/positions')
@@ -19,17 +19,17 @@ const createPolicyTerms = require('./create-pages/policyTerms')
 const createIntlPages = require('./create-pages/intl')
 
 exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
 
-  createBlogs({ graphql, createPage })
+  createBlogs({ graphql, createPage, createRedirect })
   createBlogPagination({ graphql, createPage })
   createBlogTags({ graphql, createPage })
   createBlogCategories({ graphql, createPage })
-  caseStudies({ graphql, createPage })
-  createPositions({ graphql, createPage })
   createPositionsZH({ graphql, createPage })
   createPositionsPagination({ graphql, createPage })
   createPositionsAllPagination({ graphql, createPage })
+  createCaseStudies({ graphql, createPage })
+  createPositions({ graphql, createPage, createRedirect })
   createPolicyTerms({ graphql, createPage })
 }
 

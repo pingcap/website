@@ -40,4 +40,4 @@ PingCAP is the fastest-growing enterprise subscription company our investors hav
 
 ## Contact
 
-PingCAP is proud to be an Equal Opportunity Employer building a diverse and inclusive workforce. Apply now by sending a cover later and your latest resume to hire@pingcap.com.
+PingCAP is proud to be an Equal Opportunity Employer building a diverse and inclusive workforce. Apply now by sending a cover letter and your latest resume to <hire@pingcap.com>.

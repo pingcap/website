@@ -213,6 +213,11 @@ body {
   color: $M4 !important;
 }
 
+.section {
+  @include mobile {
+    padding: 3rem 1rem;
+  }
+}
 
 @import 'components/navbar';
 @import 'components/footer';
