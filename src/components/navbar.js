@@ -48,7 +48,7 @@ const Navbar = ({ showBanner }) => {
   }, [])
 
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
-  const closePromotion = useCallback(() => setPromotionOpen(false))
+  const closePromotion = useCallback(() => setPromotionOpen(false), [])
 
   return (
     <nav
@@ -63,7 +63,14 @@ const Navbar = ({ showBanner }) => {
             <div className="horn" />
             {promotionText}
             <div className="blank" />
-            <div className="close" onClick={closePromotion} />
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="close"
+              className="close"
+              onClick={closePromotion}
+              onKeyDown={closePromotion}
+            />
           </div>
         </div>
       )}
@@ -89,9 +96,12 @@ const Navbar = ({ showBanner }) => {
             <span aria-hidden="true"></span>
           </button>
 
+          {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
           <a
             href="https://github.com/pingcap"
             target="_blank"
+            rel="noreferrer"
+            aria-label="github icon"
             className="github-icon-mobile"
           />
         </div>

@@ -42,7 +42,11 @@ const About = ({ data }) => {
               distributed SQL layer with MySQL compatibility, and one of the
               most popular open source database projects in the world (don’t
               take our word for it, check it out:
-              <a href="https://github.com/pingcap/tidb" target="_blank">
+              <a
+                href="https://github.com/pingcap/tidb"
+                target="_blank"
+                rel="noreferrer"
+              >
                 https://github.com/pingcap/tidb
               </a>
               ). TiDB’s sister project, TiKV, is a cloud-native distributed

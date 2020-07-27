@@ -2,7 +2,7 @@ import '../styles/templates/position-zh.scss'
 
 import { graphql } from 'gatsby'
 import Link from '../components/IntlLink'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'

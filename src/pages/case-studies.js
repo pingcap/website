@@ -188,7 +188,13 @@ const Dropdown = ({ className, items, selectedItem }) => {
     (dropped ? 'dropdown is-active' : 'dropdown') + ` ${className}`
   const arrowIconClass = dropped ? 'down-arrow' : 'up-arrow'
   return (
-    <div className={dropdownClass} onClick={() => setDropped(!dropped)}>
+    <div
+      role="button"
+      tabIndex={0}
+      className={dropdownClass}
+      onClick={() => setDropped(!dropped)}
+      onKeyDown={() => setDropped(!dropped)}
+    >
       <div className="dropdown-trigger">
         <button
           className="button"

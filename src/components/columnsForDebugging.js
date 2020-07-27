@@ -30,6 +30,7 @@ const ColumnsForDebugging = () => {
     window.addEventListener('resize', listener)
     return () => window.removeEventListener('resize', listener)
   }, [])
+
   useEffect(() => {
     const root = document.getElementsByTagName('html')[0]
     root.style.position = 'relative'
@@ -40,6 +41,7 @@ const ColumnsForDebugging = () => {
       delete window.hiddenColumns
     }
   }, [])
+
   const wrapperStyle = {
     position: 'absolute',
     display,

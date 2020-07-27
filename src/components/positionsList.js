@@ -1,7 +1,7 @@
 import '../styles/templates/positionsList.scss'
 
 import Link from './IntlLink'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
 import Layout from './layout'
 import Pagination from './pagination'
