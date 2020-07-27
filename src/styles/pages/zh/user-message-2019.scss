@@ -49,6 +49,7 @@
 
             @include mobile {
                 margin-top: 4rem;
+                text-align: center;
             }
         }
     }
@@ -281,7 +282,7 @@
             // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
             // card height = 1.25 card width = 109.375% - 2.1875rem
             // title start from center, above cards 3rem
-            padding-bottom: calc(54.69% + 0.41rem);
+            padding-bottom: calc(54.69% + 2.91rem);
             line-height: $LH3;
             width: 73%;
             margin: 0 auto;
@@ -320,7 +321,7 @@
 
         @include mobile {
             // see .page-title
-            padding-top: calc(54.69% + 3.41rem);
+            padding-top: calc(54.69% + 5.41rem);
         }
     }
 
@@ -359,6 +360,99 @@
 
         &.hidden {
             visibility: hidden;
+        }
+    }
+
+    .page-5 {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-set {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                margin: 0 auto;
+                position: relative;
+                flex-wrap: wrap;
+            }
+        }
+        
+        .data {
+            width: 16.67%;
+            position: relative;
+
+            @include mobile {
+                width: 50%;
+            }
+        }
+
+        .data-image {
+            width: 100%;
+            height: 8rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+
+            @include mobile {
+                height: 4rem;
+            }
+        }
+
+        .data-text {
+            text-align: center;
+            font-size: $H2;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 2.5rem;
+
+            @include mobile {
+                font-size: $P1;
+                width: 50%;
+                font-weight: 300;
+                line-height: $LH3;
+                margin: 1rem auto 1.5rem;
+            }
+        }
+
+        .data-image-1 {
+            background-image: url(../../../../images/zh/user-message-2019/data_1.svg);
+        }
+
+        .data-image-2 {
+            background-image: url(../../../../images/zh/user-message-2019/data_2.svg);
+        }
+
+        .data-image-3 {
+            background-image: url(../../../../images/zh/user-message-2019/data_3.svg);
+        }
+
+        .data-image-4 {
+            background-image: url(../../../../images/zh/user-message-2019/data_4.svg);
+        }
+
+        .desc {
+            font-size: $H3;
+            font-weight: 300;
+            line-height: $LH3;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 4rem;
+
+            @include mobile {
+                margin-top: 1.5rem;
+                font-size: $P1;
+                width: calc(100% - 2rem);
+                margin-left: auto;
+                margin-right: auto;
+            }
         }
     }
 }
