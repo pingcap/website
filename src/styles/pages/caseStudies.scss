@@ -2,6 +2,39 @@
 @import '../../../node_modules/swiper/css/swiper.min.css';
 
 .PingCAP-CaseStudies {
+  // default value
+  --is-12: 960px;
+
+  @include desktop {
+    --is-12: 960px;
+  }
+
+  @include widescreen {
+    --is-12: 1152px;
+  }
+
+  @include fullhd {
+    --is-12: 1344px;
+  }
+
+  $is-1: calc(var(--is-12) / 12);
+
+  @function get-columns-width($n) {
+    @return calc(#{$n} * var(--is-12) / 12);
+  }
+
+  @mixin main-title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+  }
+
+  @mixin main-title-zh {
+    font-size: $H1;
+    font-weight: 500;
+    color: $M3;
+  }
+
   .top-banner-wrapper {
     position: relative;
 
@@ -26,14 +59,14 @@
           font-size: $size-4;
         }
 
-        color: #fff;
-
         &-zh {
           font-size: 3.125rem;
           font-weight: 500;
           letter-spacing: 0.375rem;
           color: white;
         }
+
+        color: #fff;
       }
     }
   }
@@ -45,12 +78,26 @@
   }
 
   .title-under-banner {
+    @include main-title;
+
+    &-zh {
+      @include main-title-zh;
+    }
+
+    @include mobile {
+      margin-bottom: 4rem;
+    }
     margin-top: 0;
   }
 
   .title-under-swiper {
     @include mobile {
       margin-top: 7.5rem;
+    }
+    @include main-title;
+
+    &-zh {
+      @include main-title-zh;
     }
 
     margin-top: 6rem;
@@ -62,7 +109,7 @@
 
   .swiper-container {
     @include mobile {
-      height: 650px;
+      height: 46rem;
       overflow: visible;
     }
     @include fullhd {
@@ -97,14 +144,31 @@
         margin-top: 6rem;
 
         .subtitle {
-          font-weight: bold;
+          position: relative;
+          margin-bottom: 1rem;
+          font-size: $H2;
+          font-weight: 700;
+          color: $M3;
+
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            background: url(../../../images/case-studies/quote-mark.svg);
+            background-repeat: no-repeat;
+            width: 3.05rem;
+            height: 2.26rem;
+            left: 50%;
+            top: -2.8rem;
+            transform: translate(-50%, -50%);
+          }
         }
 
         .summary {
           @include mobile {
-            height: 200px;
             padding: 0 2rem;
             overflow: hidden;
+            margin-bottom: 2rem;
           }
 
           padding: 0 3rem;
@@ -113,11 +177,10 @@
 
         .see-case-study {
           @include mobile {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
           }
           @include has-item-active(-0.5rem);
 
-          margin-top: 1rem;
           color: $primary;
         }
       }
@@ -127,39 +190,12 @@
       }
     }
 
-    .fixed-intro {
-      @include VHCenter;
-      @include mobile {
-        top: 38%;
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-      }
-
-      $width: 180px;
-
-      position: absolute;
-      top: 15%;
-      left: 30%;
-      flex-direction: column;
-      width: $width;
-      transform: translateX(-$width / 2);
-
-      .quote-mark {
-        width: 18px;
-      }
-
-      .title {
-        margin-top: 1rem;
-      }
-    }
-
     .fixed-placeholder {
       @include mobile {
-        top: 5%;
+        top: 2rem;
         left: 50%;
         right: unset;
-        width: 80%;
+        width: 83%;
         transform: translateX(-50%);
       }
       @media screen and (min-width: 768px) and (max-width: 768px) {
@@ -172,20 +208,6 @@
       width: 35%;
       transform: translateY(-60%);
       z-index: 29;
-    }
-
-    .bottom {
-      @include mobile {
-        justify-content: center;
-      }
-
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 15%;
-      padding: 0 3rem;
-      padding-bottom: 2rem;
     }
 
     .swiper-prev,
@@ -215,14 +237,72 @@
     }
   }
 
+  .bottom {
+    @include mobile {
+      justify-content: center;
+      width: 50%;
+      bottom: 2rem;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: get-columns-width(8);
+    height: 3.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5rem;
+    padding: 0;
+    z-index: 99;
+  }
+
+  .customer-categories {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+
+    .dropdown-trigger {
+      width: 100%;
+
+      .button {
+        width: 100%;
+        justify-content: space-between;
+
+        &:focus {
+          box-shadow: unset;
+          border: 1px solid #2e2fff;
+        }
+
+        .down-arrow {
+          width: 0.875rem;
+          padding-top: 0.5rem;
+          background: url(../../../images//case-studies/arrow-down.svg)
+            no-repeat center;
+        }
+
+        .up-arrow {
+          @extend .down-arrow;
+          transform-origin: center;
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    .dropdown-menu {
+      width: 100%;
+      z-index: 99;
+    }
+  }
+
   .logos {
+
     @each $logo in $zh-logos {
       .#{$logo}-logo-zh {
         background: url(../../../images/zh-logos/#{$logo}.svg) center no-repeat;
         background-size: contain;
       }
     }
-    
+
     @include mobile {
       margin-left: 0;
       margin-right: 0;
@@ -232,7 +312,7 @@
 
     .column {
       @include mobile {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
 
         &:last-child {
           margin-bottom: 0;
@@ -251,7 +331,7 @@
       }
 
       position: relative;
-      height: 20rem;
+      height: 16rem;
       cursor: pointer;
     }
 
@@ -279,7 +359,7 @@
         }
       }
 
-      @each $logo in $zh-logos {
+       @each $logo in $zh-logos {
         .#{$logo}-logo-zh {
           width: 30%;
           height: 30%;
@@ -297,6 +377,7 @@
     .detail-card {
       @include mobile {
         opacity: 1;
+        height: auto;
       }
 
       position: absolute;
@@ -319,8 +400,8 @@
           position: absolute;
           top: -0.5rem;
           right: -0.25rem;
-          width: 36px;
-          height: 36px;
+          width: 68px;
+          padding-top: 68px;
         }
       }
 
@@ -337,7 +418,7 @@
           height: 36px;
         }
       }
-
+      
       $big-logos: Shopee Meituan-Dianping Mobike LinkDoc-Technology Seasun-Games
         Yoozoo-Games FUNYOURS-JAPAN Bank-of-Beijing Ping--;
 
@@ -352,6 +433,10 @@
       }
 
       .title {
+        @include mobile {
+          font-size: $H1;
+          font-weight: 700;
+        }
         margin-bottom: 1rem;
       }
 
@@ -368,189 +453,79 @@
       }
     }
   }
-}
 
-.PingCAP-CaseStudies-New {
-
-  // default value
-  --is-12: 960px;
-
-  @include desktop{
-    --is-12: 960px;
-  };
-
-  @include widescreen{
-    --is-12: 1152px;
-  };
-
-  @include fullhd{
-    --is-12: 1344px;
-  };
-
-  $is-1: calc(var(--is-12) / 12);
-  $is-12: var(--is-12);
-
-  @function get-columns-width($n) {
-    @return calc(#{$n} * var(--is-12) / 12)
-  };
-
-  @mixin main-title {
-    font-size: $H1;
-    font-weight: 700;
-    color: $M3;
-  }
-  @mixin main-title-zh {
-    font-size: $H1;
-    font-weight: 500;
-    color: $M3;
-  }
-  > .container {
-    overflow: visible;
-  }
-  > .section {
-    max-width: $is-12;
-    padding: 6rem 0 6rem;
-    margin: 0 auto;
-  }
-  .title-under-banner {
-    @include main-title;
-    &-zh {
-      @include main-title-zh;
-    }
-
-  }
-  .title-under-swiper {
-    @include main-title;
-    &-zh {
-      @include main-title-zh;
-    }
-
-  }
-  .swiper-container {
-    @include mobile {
-      height: 40.625rem;
+  @include tablet {
+    > .container {
       overflow: visible;
     }
-    max-width: get-columns-width(10);
-    height: 28.06rem;
-    .top {
-      height: 100%;
-      .swiper-slide {
-        display: flex;
-        align-items: center;
-        .intro {
-          height: 11.27rem;
-          margin: 0;
-          .subtitle {
-            margin-bottom: 2rem;
-            position: relative;
-            font-size: $H2;
-            font-weight: 700;
-            color: $M3;
-            &::after {
-              content: '';
-              display: block;
-              position: absolute;
-              background: url(../../../images/case-studies/quote-mark.svg);
-              background-repeat: no-repeat;
-              width: 3vw;
-              height: 2vw;
-              left: 50%;
-              top: -160%;
-              transform: translate(-50%, -50%);
+
+    > .section {
+      max-width: var(--is-12);
+      padding: 6rem 0 6rem;
+      margin: 0 auto;
+    }
+
+    .swiper-container {
+      max-width: get-columns-width(10);
+      height: 28.06rem;
+
+      .top {
+        height: 100%;
+
+        .swiper-slide {
+          display: flex;
+          align-items: center;
+
+          .intro {
+            height: 11.27rem;
+            margin: 0;
+
+            .subtitle {
+              margin-bottom: 2rem;
+            }
+
+            .summary {
+              padding: 0;
+              margin: 0 $is-1 2rem;
+              font-size: 1rem;
+              font-weight: 300;
+              color: $M4;
             }
           }
-          .summary {
-            padding: 0;
-            margin: 0 $is-1 2rem;
-            font-size: 1rem;
-            font-weight: 300;
-            color: $M4;
-          }
-          .see-case-study {
-            margin-top: 0;
+
+          .placeholder {
+            height: inherit;
+            position: relative;
           }
         }
-        .placeholder {
-          height: inherit;
-          position: relative;
-        }
+      }
+
+      .fixed-placeholder {
+        position: absolute;
+        width: get-columns-width(3);
+        right: $is-1;
       }
     }
-    .quote-mark {
-      position: absolute;
-      left: get-columns-width(3);
-      top: 3.44rem;
-      width: 3.06rem;
-      height: 2.26rem;
-      transform: translateX(-50%);
-    }
-    .fixed-placeholder {
-      @include mobile {
-        top: 5%;
-        left: 50%;
-        right: unset;
-        width: 80%;
-        transform: translateX(-50%);
-      }
-      position: absolute;
-      width: get-columns-width(3);
-      right: $is-1;
-    }
-    .bottom {
-      position: absolute;
-      width: get-columns-width(8);
-      height: 3.25rem;
-      left: $is-1;
-      bottom: 1.5rem;
-      padding: 0;
-      z-index: 99;
-    }
-  }
-  .customer-categories {
-    width: get-columns-width(2);
-    margin: 0 auto;
-    display: flex;
-    .dropdown-trigger {
-      width: 100%;
-      .button {
-        width: 100%;
-        justify-content: space-between;
-        &:focus {
-          box-shadow: unset;
-          border: 1px solid #2e2fff;
-        }
-        .down-arrow {
-          width: 0.875rem;
-          padding-top: 0.5rem;
-          background:  url(../../../images/case-studies/arrow-down.svg) no-repeat center;
-        }
-        .up-arrow {
-          @extend .down-arrow;
-          transform-origin: center;
-          transform: rotate(180deg);
-        }
-      
-      }
-    }
-    .dropdown-menu {
+
+    .customer-categories {
       width: get-columns-width(2);
-      z-index: 99;
+      margin: 0 auto;
+      display: flex;
     }
-  }
-  .logos {
-    max-width: $is-12;
-    margin-left: 0;
-    margin-right: 0;
-    .detail-card {
-      @include tablet {
+
+    .logos {
+      max-width: var(--is-12);
+
+      .detail-card {
         $size: 100%;
         width: $size;
         height: $size;
         padding: 2.5rem 3rem;
+
         .title {
           margin-bottom: 2rem;
         }
+
         .paragraph {
           margin-bottom: 2rem;
           padding: 0;
@@ -562,3 +537,4 @@
     }
   }
 }
+
