@@ -459,6 +459,7 @@
       width: get-columns-width(2);
       margin: 0 auto;
       display: flex;
+
     }
 
     .logos {
@@ -473,7 +474,7 @@
         .title {
           margin-bottom: 2rem;
         }
-
+        
         .paragraph {
           margin-bottom: 2rem;
           padding: 0;
@@ -481,6 +482,7 @@
           font-size: $P2;
           color: $M4;
         }
+
       }
     }
   }
