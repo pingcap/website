@@ -1,38 +1,472 @@
 @import '../common';
 
+@mixin columns {
+  --is-12: 960px;
+
+  @include desktop {
+    --is-12: 960px;
+  }
+
+  @include widescreen {
+    --is-12: 1152px;
+  }
+
+  @include fullhd {
+    --is-12: 1344px;
+  }
+}
+
+@function column-to-width($columns: 12) {
+  @return calc(#{$columns} * var(--is-12) / 12);
+}
+
+@mixin paragraph {
+  font-size: $P1;
+  font-weight: 400;
+  color: $M4;
+}
+
 .PingCAP-About {
+  @include columns;
+
+  @mixin sub-title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
+    margin-bottom: 4rem;
+    text-align: center;
+  }
 
   .hero {
-    background-color: $B3;
+    @include mobile {
+      margin-bottom: 3rem;
+    }
+
+    background-color: #172d72;
+    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
     }
 
     img {
-      width: 35vw;
+      @include mobile {
+        width: 87.5%;
+      }
+      width: 47.5rem;
+    }
+  }
+
+  > .section {
+    max-width: column-to-width(12);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  @include mobile {
+    > .section {
+      max-width: 100%;
+      padding: 3rem $mobile-section-padding;
     }
   }
 
   .intro-section {
+    max-width: column-to-width(10);
+    margin: 0 auto;
     text-align: center;
+    padding-top: 6rem;
+    .title {
+      @include sub-title;
+    }
+    .paragraph {
+      @include paragraph;
+    }
+    .paragraph:nth-child(3) {
+      @include mobile {
+        padding-bottom: 0;
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 5rem;
+    }
+    .button {
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+      margin-bottom: 6rem;
+    }
   }
 
   .timeline-section {
+    max-width: 100%;
+    padding: 6rem 0;
+    @include mobile {
+      padding: 3rem 0;
+    }
     @include has-light-background;
+    .title {
+      @include sub-title;
+    }
+    img {
+      @include mobile {
+        width: 60%;
+      }
+
+      display: block;
+      width: column-to-width(10);
+      margin: 0 auto;
+    }
   }
 
   .company-culture-section {
+    text-align: center;
+    @include mobile {
+      padding: 3rem 0;
+    }
+    padding: 6rem 0 8rem 0;
+    position: relative;
     .container {
-      text-align: center;
-      max-width: 800px;
+      @include mobile {
+        padding: 0 $mobile-section-padding;
+        width: 100vw;
+      }
       background-image: url(../../../images/about/map.svg);
       background-repeat: no-repeat;
       background-size: contain;
+      .wrapper {
+        text-align: center;
+        max-width: column-to-width(8);
+        margin: 0 auto;
+      }
+      .title {
+        @include sub-title;
+        margin-bottom: 2rem;
+      }
+      .paragraph {
+        @include paragraph;
+      }
+      .last {
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+        font-size: $H2;
+        font-weight: 700;
+        color: $M3;
+        margin-bottom: 6rem;
+      }
+      .button {
+        width: 8.75rem;
+      }
+    }
+  }
+}
+
+.PingCAP-About-ZH {
+  $icons: office-equipment gym team-building snacks TGIF flexible;
+
+  @include columns;
+
+  @mixin subtitle {
+    @include section-title;
+    font-size: $H1;
+    font-weight: 500;
+    color: $M3;
+    margin-bottom: 4rem;
+  }
+
+  @each $icon in $icons {
+    .#{$icon} {
+      background: url(../../../images/zh/about/#{$icon}.svg);
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 3.75rem;
+      height: 3.75rem;
+    }
+  }
+
+  @include mobile {
+    > .section {
+      padding: 3rem $mobile-section-padding;
+    }
+  }
+
+  .hero {
+    margin-bottom: 0;
+  }
+
+  .intro-section {
+    .container {
+      .title {
+        @include mobile {
+          margin-bottom: 3rem;
+        }
+
+        @include subtitle;
+        color: $M3;
+      }
+
+      .paragraph {
+        @include paragraph;
+
+        @include mobile {
+          padding: 0;
+          margin-bottom: 3rem;
+        }
+
+        margin-bottom: 5rem;
+      }
+
+      .button {
+        @include mobile {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .timeline-section {
+    .title {
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+
+  .intro-video-section {
+    position: relative;
+    max-width: 100%;
+    @include tablet {
+      padding: 6rem 0;
     }
 
-    .last {
-      font-weight: bold;
+    .container {
+      position: static;
+      // height: 100%;
+
+      .particles {
+        position: absolute;
+        height: 100%;
+        @include mobile {
+          display: none;
+        }
+        z-index: -1;
+      }
+
+      .intro-video {
+        @include mobile {
+          width: 100%;
+        }
+        display: block;
+        width: 88.3%;
+        margin: 0 auto;
+        position: relative;
+      }
     }
+  }
+
+  .working-env-section {
+
+    @include mobile{
+      margin-top: -3rem;
+    }
+
+    @include tablet {
+      @include has-light-background;
+      padding: 6rem 0;
+    }
+
+    max-width: 100%;
+
+    .container {
+      max-width: column-to-width(10);
+
+      .title {
+
+        @include mobile {
+          margin-bottom: 1.5rem;
+        }
+
+        @include subtitle;
+      }
+
+      .paragraph {
+
+        @include mobile {
+          padding: 0;
+          margin-bottom: 2rem;
+        }
+
+        @include paragraph;
+        color: $M4;
+        margin-bottom: 4.5rem;
+      }
+      .col-container {
+
+        @include mobile {
+          grid-template-columns: 1fr;
+          row-gap: 2rem;
+        }
+
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20%;
+        row-gap: 5rem;
+      }
+
+      .env-desc-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        h3 {
+          font-size: $P1;
+          font-weight: 400;
+          color: $M3;
+          margin: 1rem 0 1.5rem;
+        }
+
+        p {
+          @include mobile {
+            max-width: 18.75rem;
+          }
+          max-width: 23.75rem;
+          margin: 0 auto;
+          text-align: center;
+          font-size: $P1;
+          font-weight: 300;
+          color: $M4;
+        }
+      }
+    }
+  }
+
+  .contact-us-section {
+
+    @include mobile {
+      @include has-light-background;
+    }
+
+    @include tablet {
+      max-width: column-to-width(12);
+      margin: 0 auto;
+      padding: 6rem column-to-width(2) 0;
+      background: url('../../../images/about/map.svg') center no-repeat;
+      background-size: contain;
+    }
+
+    .title {
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+
+      @include subtitle;
+    }
+
+    .left-column {
+      position: relative;
+      line-height: 1.2;
+    }
+
+    .address-title,
+    .contact-title {
+
+      @include mobile {
+        display: block;
+        margin-bottom: 1.75rem;
+      }
+
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
+    }
+
+    .address {
+
+      font-size: $P1;
+      font-weight: 400;
+      color: $M3;
+    }
+
+    .office-info {
+
+      @include mobile {
+        margin-bottom: 1.75rem;
+      }
+
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-info-container {
+
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: -1.25rem;
+      }
+
+      .contact-info {
+
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2rem;
+        }
+
+        margin-bottom: 2.25rem;
+
+        .contact {
+          font-size: $P1;
+          font-weight: 300;
+          color: $M4;
+        }
+      }
+
+      .consult-link {
+        font-size: $P1;
+        font-weight: 300;
+        color: $B1;
+      }
+    }
+  }
+
+  .join-section {
+
+    position: relative;
+    text-align: center;
+
+    @include mobile {
+       background: url('../../../images/about/map.svg') center no-repeat;
+       background-size: contain;
+    }
+
+    @include tablet {
+      height: 24.63rem;
+      padding: 4rem 0 8rem;
+    }
+
+    .title {
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+
+      @include subtitle;
+      margin-bottom: 6rem;
+    }
+
+    .button {
+      width: 10rem;
+    }
+
+  }
+
+  .scroll-top-button {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 3rem;
   }
 }
