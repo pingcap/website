@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Swiper from 'swiper'
 import { Button } from '@seagreenio/react-bulma'
 
@@ -26,8 +26,18 @@ const useMobile = (breakpoint = 768) => {
 }
 
 const Card = ({ quoteClass, content, title, author, avatar }) => {
+  const cardRef = useRef()
+  useEffect(() => {
+    const el = cardRef.current
+    if (!el) return
+    const listener = (e) => {
+      e.stopPropagation()
+    }
+    el.addEventListener('wheel', listener)
+    return () => el.removeEventListener('wheel', listener)
+  }, [cardRef.current])
   return (
-    <div className="swiper-slide slide-card">
+    <div className="swiper-slide slide-card" ref={cardRef}>
       <div className="wrapper">
         <div className="inner">
           <div className={`quote ${quoteClass}`} />
