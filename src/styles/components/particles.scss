@@ -1,3 +1,5 @@
+@import '../common';
+
 @mixin positioned-el(
     $width,
     $x-direction,
@@ -53,6 +55,16 @@
           transform: scale(var(--scale-end));
       }
     }
+
+$i: 8;
+@while $i > 0 {
+  .el#{$i} {
+    @include mobile {
+      display: none;
+    }
+  }
+  $i: $i - 1;
+}
 
 .el1 {
       @include positioned-el(1rem, left, top, -30vw, 2vw, #3351ff);

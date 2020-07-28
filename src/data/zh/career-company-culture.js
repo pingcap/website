@@ -1,30 +1,30 @@
-import hackerCultureSVG from '../../../images/careers/hacker-culture.svg'
-import competitiveSVG from '../../../images/careers/competitive.svg'
-import flexibleSVG from '../../../images/careers/flexible.svg'
-import collaborativeSVg from '../../../images/careers/collaborative.svg'
-import tailoredGrowthSVG from '../../../images/careers/tailored-growth.svg'
-import swagPackageSVG from '../../../images/careers/swag-package.svg'
+import growthSVG from '../../../images/zh/career/work-env/growth.svg'
+import techCommunication from '../../../images/zh/career/work-env/tech-communication.svg'
+import flexibleSVG from '../../../images/zh/career/work-env/flexible.svg'
+import officeSVG from '../../../images/zh/career/work-env/office.svg'
+import dnaSVG from '../../../images/zh/career/work-env/DNA.svg'
+import swagPackageSVG from '../../../images/zh/career/work-env/swag-package.svg'
 
 const companyCulture = [
   {
-    icon: hackerCultureSVG,
+    icon: growthSVG,
     title: '持续的学习成长',
     desc:
       'One-on-One Mentoring 培养方式 + Learning Bonus 助力每一位爱学习的 PingCAPer 不断成长。',
   },
   {
-    icon: competitiveSVG,
+    icon: techCommunication,
     title: 'High-Tech 的技术交流',
     desc: '内容丰富的Infra Meetup 和 Technical Meetings 技术实力 upup！',
   },
   {
-    icon: tailoredGrowthSVG,
+    icon: dnaSVG,
     title: '技术人的DNA',
     desc:
       '我们有各种知名开源项目作者 还有代表未来的并对技术永葆热情和追求的你！',
   },
   {
-    icon: collaborativeSVg,
+    icon: officeSVG,
     title: '灵活的办公地点',
     desc:
       '北京、上海、广州、杭州、硅谷、Remote…… 在哪里不重要，重要的是 Get Things Done',

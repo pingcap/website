@@ -132,6 +132,11 @@
       }
 
       .env-desc {
+        @include mobile {
+          max-width: 18.75rem;
+        }
+        max-width: 23.75rem;
+        margin: 0 auto;
         font-size: $P1;
         font-weight: 300;
         color: $M4;
@@ -150,7 +155,13 @@
     padding-bottom: 6rem;
 
     .title {
+
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+
       text-align: center;
+      margin-bottom: 4rem;
     }
 
     .comment {
@@ -232,6 +243,10 @@
           clip-path: polygon(100% 0, 0 50%, 100% 100%);
         }
       }
+    }
+
+    .comment:last-child{
+      margin-bottom: 0;
     }
   }
 
