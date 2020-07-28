@@ -209,44 +209,44 @@ const UserMessage2019 = () => {
               pageClass="page-4"
               title="面对大家的期待，我们还在努力完善，也希望能得到更多的反馈"
             />
-            <div className="swiper-slide page page-5">
-              <div className="container">
-                <div className="data-set">
-                  <div className="data">
-                    <div className="data-image data-image-1" />
-                    <div className="data-text">节点规模</div>
-                  </div>
-                  <div className="data">
-                    <div className="data-image data-image-2" />
-                    <div className="data-text">单表最大数据规模</div>
-                  </div>
-                  <div className="data">
-                    <div className="data-image data-image-3" />
-                    <div className="data-text">单集群最大节点规模</div>
-                  </div>
-                  <div className="data">
-                    <div className="data-image data-image-4" />
-                    <div className="data-text">单公司最大集群规模</div>
-                  </div>
-                </div>
-                <div className="desc">
-                  2019 年
-                  <br />
-                  TiDB
-                  被广泛应用于海内外互联网、银行、保险、证券、支付、物流、制造业、快消、电信等多个行业
-                  <br />
-                  经受住了近 1000 家企业的线上环境打磨
-                  <br />
-                  护航数十家电商、物流及金融机构应对 6.18、11.11 等大促流量高峰
-                  <br />
-                  <br />
-                  TiDB 过硬的产品实力背后，有社区开发者持续贡献的支撑
-                  <br />
-                  也有一线用户在实操中对其的不断打磨
-                  <br />
-                  感谢所有热爱、信任 TiDB 的伙伴们
-                </div>
+          </div>
+        </div>
+        <div className="swiper-slide page page-5">
+          <div className="container">
+            <div className="data-set">
+              <div className="data">
+                <div className="data-image data-image-1" />
+                <div className="data-text">节点规模</div>
               </div>
+              <div className="data">
+                <div className="data-image data-image-2" />
+                <div className="data-text">单表最大数据规模</div>
+              </div>
+              <div className="data">
+                <div className="data-image data-image-3" />
+                <div className="data-text">单集群最大节点规模</div>
+              </div>
+              <div className="data">
+                <div className="data-image data-image-4" />
+                <div className="data-text">单公司最大集群规模</div>
+              </div>
+            </div>
+            <div className="desc">
+              2019 年
+              <br />
+              TiDB
+              被广泛应用于海内外互联网、银行、保险、证券、支付、物流、制造业、快消、电信等多个行业
+              <br />
+              经受住了近 1000 家企业的线上环境打磨
+              <br />
+              护航数十家电商、物流及金融机构应对 6.18、11.11 等大促流量高峰
+              <br />
+              <br />
+              TiDB 过硬的产品实力背后，有社区开发者持续贡献的支撑
+              <br />
+              也有一线用户在实操中对其的不断打磨
+              <br />
+              感谢所有热爱、信任 TiDB 的伙伴们
             </div>
           </div>
         </div>

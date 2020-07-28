@@ -46,10 +46,10 @@
             font-weight: 300;
             line-height: $LH3;
             color: #FFFFFF;
+            text-align: center;
 
             @include mobile {
                 margin-top: 4rem;
-                text-align: center;
             }
         }
     }
@@ -89,6 +89,10 @@
 
     .page-5 {
         background: #211D35;
+
+        @include mobile {
+            height: 760px;
+        }
     }
 
     .page {
@@ -281,8 +285,11 @@
         @include mobile {
             // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
             // card height = 1.25 card width = 109.375% - 2.1875rem
-            // title start from center, above cards 3rem
-            padding-bottom: calc(54.69% + 2.91rem);
+            // title has font size = 1.25rem, line height = 2, two lines = 5rem
+            // title should be placed between container top and card top
+            // container size is 100vh - 4.25rem
+            // so padding bottom should be ((109.375% - 2.1875rem) + (100vh - 4.25rem)) / 4 - 5rem / 2
+            padding-bottom: calc(27.34% + 25vh - 4.11rem);
             line-height: $LH3;
             width: 73%;
             margin: 0 auto;
@@ -316,12 +323,20 @@
 
             @include mobile {
                 margin: 0 0.25rem;
+                width: 12px;
+                height: 12px;
+                box-sizing: border-box;
             }
         }
 
         @include mobile {
-            // see .page-title
-            padding-top: calc(54.69% + 5.41rem);
+            // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
+            // card height = 1.25 card width = 109.375% - 2.1875rem
+            // pagination has size 12px
+            // title should be placed between container bottom and avatar bottom
+            // container size is 100vh - 4.25rem
+            // so padding top should be (((109.375% - 2.1875rem) / 2 + 2.5rem) + (100vh - 4.25rem) / 2) / 2 - 12px / 2
+            padding-top: calc(27.34% + 25vh - 0.36rem - 6px);
         }
     }
 
@@ -417,7 +432,7 @@
                 font-size: $P1;
                 width: 50%;
                 font-weight: 300;
-                line-height: $LH3;
+                line-height: $LH4;
                 margin: 1rem auto 1.5rem;
             }
         }
