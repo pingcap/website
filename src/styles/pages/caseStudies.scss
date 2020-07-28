@@ -295,14 +295,6 @@
   }
 
   .logos {
-
-    @each $logo in $zh-logos {
-      .#{$logo}-logo-zh {
-        background: url(../../../images/zh-logos/#{$logo}.svg) center no-repeat;
-        background-size: contain;
-      }
-    }
-
     @include mobile {
       margin-left: 0;
       margin-right: 0;
@@ -359,13 +351,6 @@
         }
       }
 
-       @each $logo in $zh-logos {
-        .#{$logo}-logo-zh {
-          width: 30%;
-          height: 30%;
-        }
-      }
-
       .title {
         margin-top: 1.5rem;
         font-size: $P1;
@@ -402,20 +387,6 @@
           right: -0.25rem;
           width: 68px;
           padding-top: 68px;
-        }
-      }
-
-      @each $logo in $zh-logos {
-        .#{$logo}-logo-zh {
-          @include tablet {
-            display: none;
-          }
-
-          position: absolute;
-          top: -0.5rem;
-          right: -0.25rem;
-          width: 36px;
-          height: 36px;
         }
       }
       
