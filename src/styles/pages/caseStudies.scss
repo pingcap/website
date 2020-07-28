@@ -295,14 +295,6 @@
   }
 
   .logos {
-
-    @each $logo in $zh-logos {
-      .#{$logo}-logo-zh {
-        background: url(../../../images/zh-logos/#{$logo}.svg) center no-repeat;
-        background-size: contain;
-      }
-    }
-
     @include mobile {
       margin-left: 0;
       margin-right: 0;
@@ -359,12 +351,12 @@
         }
       }
 
-       @each $logo in $zh-logos {
-        .#{$logo}-logo-zh {
-          width: 30%;
-          height: 30%;
-        }
-      }
+      // @each $logo in $zh-logos {
+      //   .#{$logo}-logo-zh {
+      //     width: 30%;
+      //     height: 30%;
+      //   }
+      // }
 
       .title {
         margin-top: 1.5rem;
@@ -405,20 +397,20 @@
         }
       }
 
-      @each $logo in $zh-logos {
-        .#{$logo}-logo-zh {
-          @include tablet {
-            display: none;
-          }
+      // @each $logo in $zh-logos {
+      //   .#{$logo}-logo-zh {
+      //     @include tablet {
+      //       display: none;
+      //     }
 
-          position: absolute;
-          top: -0.5rem;
-          right: -0.25rem;
-          width: 36px;
-          height: 36px;
-        }
-      }
-      
+      //     position: absolute;
+      //     top: -0.5rem;
+      //     right: -0.25rem;
+      //     width: 36px;
+      //     height: 36px;
+      //   }
+      // }
+
       $big-logos: Shopee Meituan-Dianping Mobike LinkDoc-Technology Seasun-Games
         Yoozoo-Games FUNYOURS-JAPAN Bank-of-Beijing Ping--;
 
@@ -537,4 +529,3 @@
     }
   }
 }
-
