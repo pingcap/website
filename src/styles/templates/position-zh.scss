@@ -3,8 +3,18 @@
 $navbar-height: 5.25rem; // 84px
 $navbar-height-mobile: 4.25rem; // 68px
 
-.PingCAP-PositionsList {
+.PingCAP-PositionZH {
     margin: 6rem 0;
+
+    @include mobile {
+        margin: 0;
+    }
+
+    .section {
+        @include mobile {
+            padding: 2rem 1rem 3rem;
+        }
+    }
 
     .categories {
         border-right: 1px solid #DBE4F0;
@@ -26,6 +36,18 @@ $navbar-height-mobile: 4.25rem; // 68px
                 color: #fff;
                 background: $primary;
             }
+
+            @include mobile {
+                margin-right: 1rem;
+            }
+        }
+
+        @include mobile {
+            border-right: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
     }
 
@@ -33,6 +55,7 @@ $navbar-height-mobile: 4.25rem; // 68px
     .position-content {
         color: $M4;
         line-height: 1.75;
+        font-family: inherit;
 
         h1,
         h2,
