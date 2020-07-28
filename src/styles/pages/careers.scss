@@ -51,11 +51,14 @@
       padding-bottom: 4rem;
 
       .title {
+
         @include mobile {
           margin-bottom: 2rem;
         }
 
+        font-size: $H1;
         margin-bottom: 4rem;
+
       }
 
       .subtitle-under-main-title {
@@ -171,8 +174,10 @@
         margin-bottom: 3rem;
       }
 
+
       text-align: center;
       margin-bottom: 4rem;
+      font-size: $H1;
     }
 
     .comment {
@@ -272,10 +277,14 @@
     text-align: center;
 
     .title {
+
       @include mobile {
         margin-bottom: 3rem;
       }
-      margin-bottom: 4rem ;
+
+      margin-bottom: 4rem;
+      font-size: $H1;
+      
     }
 
     .button {
