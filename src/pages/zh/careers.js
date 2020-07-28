@@ -30,7 +30,7 @@ const Careers = ({ data }) => {
               </div>
               <Button
                 as={Link}
-                to="/careers#see-more-positions"
+                to="/zh/careers/join"
                 className="button is-primary is-rounded"
               >
                 查看职位
@@ -80,7 +80,7 @@ const Careers = ({ data }) => {
           <h2 className="title">赶紧加入我们吧</h2>
           <Button
             as={Link}
-            to="/careers"
+            to="/zh/careers/join"
             className="button is-primary is-rounded"
           >
             立刻申请

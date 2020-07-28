@@ -59,6 +59,13 @@
       }
 
       .subtitle-under-main-title {
+
+        @include tablet {
+          max-width: 88.3%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
         @include mobile {
           margin-bottom: 3rem;
         }
@@ -114,10 +121,14 @@
         row-gap: 2rem;
       }
 
+      @include tablet {
+        max-width: 88.3%;
+      }
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       column-gap: 4.17%;
       row-gap: 5rem;
+      margin: 0 auto;
 
       img {
         height: 60px;
