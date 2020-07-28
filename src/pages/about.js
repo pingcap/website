@@ -68,7 +68,7 @@ const About = ({ data }) => {
             <picture>
               <source
                 media="(max-width: 768px)"
-                srcset={mobileTimeLineSVG.publicURL}
+                srcSet={mobileTimeLineSVG.publicURL}
               ></source>
               <img src={timeLineSVG.publicURL} alt="time line" />
             </picture>
