@@ -28,7 +28,7 @@ const Blog = ({ data }) => {
           },
         ]}
       />
-      <article className="PingCAP-PositionsList">
+      <article className="PingCAP-PositionZH">
         <section className="section">
           <div className="container">
             <div className="columns">
