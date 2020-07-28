@@ -227,10 +227,17 @@ function Logos({ logos }) {
                 {logo.customer}
               </div>
               <div
-                className={`${logo.customer
-                  .replace(/[\d/+/.\s&]/g, '-')
-                  .toUpperCase()}-logo-zh`}
-              />
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) center no-repeat`,
+                  backgroundSize: 'contain',
+                  position: 'absolute',
+                  top: '-0.75rem',
+                  right: '-0.25rem',
+                  width: '30%',
+                  height: '30%',
+                }}
+                className="detail-card-logo"
+              ></div>
               <div className="paragraph">
                 {truncate.apply(logo.summary, [120, true])}
               </div>
@@ -239,16 +246,19 @@ function Logos({ logos }) {
                   to={`/zh/case-studies/${replaceTitle(logo.relativePath)}`}
                   className="read-more"
                 >
-                  查看更多 >
+                  查看更多
                 </Link>
               )}
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer
-                  .replace(/[\d/+/.\s&]/g, '-')
-                  .toUpperCase()}-logo-zh`}
-              />
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) 50% no-repeat`,
+                  backgroundSize: 'contain',
+                  width: '30%',
+                  height: '30%',
+                }}
+              ></div>
               <div className="title is-6">{logo.customer}</div>
             </div>
           </div>
@@ -280,6 +290,7 @@ export const query = graphql`
             customer
             customerCategory
             summary
+            logo
           }
           parent {
             ... on File {
