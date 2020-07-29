@@ -4,11 +4,13 @@
         "zh": {
             "langName": "中文",
             "blogsPath": "markdown-pages/zh/blogs",
+            "positionsPath": "markdown-pages/zh/careers",
             "hasBlogCategories": false
         },
         "en": {
             "langName": "English",
             "blogsPath": "markdown-pages/blogs",
+            "positionsPath": null,
             "hasBlogCategories": true
         }
     }
