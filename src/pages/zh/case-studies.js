@@ -232,7 +232,7 @@ function Logos({ logos }) {
                   backgroundSize: 'contain',
                   position: 'absolute',
                   top: '-0.75rem',
-                  right: '-0.25rem',
+                  right: '0',
                   width: '30%',
                   height: '30%',
                 }}
