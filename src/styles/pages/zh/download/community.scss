@@ -133,7 +133,7 @@
       }
     }
 
-    button {
+    .button {
       margin-top: 2rem;
       width: 6rem;
       font-size: $size-7;
@@ -174,8 +174,39 @@
 
 .PingCAP-Download-TiDB-Enterprise-ZH {
   .card {
-    button {
+    .button {
       margin-top: 0.5rem;
     } 
+  }
+
+  .textfields {
+    position: relative;
+  }
+
+  .success-container {
+    position: absolute;
+    left: -1rem;
+    top: 0;
+    bottom: 4rem;
+    right: -1rem;
+    padding: 0 1rem;
+    background-color: #FFFFFF;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .success-title {
+      font-size: $H2;
+      font-weight: 400;
+      color: $M3;
+      margin-bottom: 2rem;
+    }
+    
+    .success-desc {
+      font-size: $P1;
+      font-weight: 400;
+      color: $M4;
+    }
   }
 }
