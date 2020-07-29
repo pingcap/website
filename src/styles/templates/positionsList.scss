@@ -3,6 +3,16 @@
 .PingCAP-PositionsList {
     margin: 6rem 0;
 
+    @include mobile {
+        margin: 0;
+    }
+
+    .section {
+        @include mobile {
+            padding: 2rem 1rem 5rem;
+        }
+    }
+
     .categories {
         border-right: 1px solid #DBE4F0;
 
@@ -23,6 +33,18 @@
                 color: #fff;
                 background: $primary;
             }
+
+            @include mobile {
+                margin-right: 1rem;
+            }
+        }
+
+        @include mobile {
+            border-right: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
         }
     }
 
@@ -47,14 +69,27 @@
                 font-weight: 300;
                 color: $M4;
                 font-size: $size-8;
+
+                @include mobile {
+                    line-height: $LH4;
+                }
             }
 
             &:hover {
-                box-shadow:0px 1px 14px rgba(0,0,0,0.08);
+                box-shadow: 0px 1px 14px rgba(0,0,0,0.08);
 
                 .title {
                     color: $B1;
                 }
+
+                @include mobile {
+                    box-shadow: none;
+                }
+            }
+
+            @include mobile {
+                margin-left: 0;
+                padding: 1.5rem 0;
             }
         }
     }
