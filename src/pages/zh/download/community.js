@@ -87,7 +87,7 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title=" Download TiDB Community " description="" />
+      <SEO title="Download TiDB Community" description="" />
       <article className="PingCAP-Download-TiDB-Community-ZH">
         <section className="section">
           <div className="container enterprise-wrapper">

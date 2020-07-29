@@ -1,7 +1,7 @@
 @import '../../../common';
 
 .PingCAP-Download-TiDB-Community-ZH,
-.PingCAP-Download-TiDB-Enterprise {
+.PingCAP-Download-TiDB-Enterprise-ZH {
   section {
     @include has-light-background;
 
@@ -32,7 +32,7 @@
   }
 
   .card {
-    padding: 2rem 3rem;
+    padding: 2rem 4rem;
     text-align: center;
     width: 100%;
 
@@ -169,5 +169,13 @@
     a {
       color: $B1;
     }
+  }
+}
+
+.PingCAP-Download-TiDB-Enterprise-ZH {
+  .card {
+    button {
+      margin-top: 0.5rem;
+    } 
   }
 }
