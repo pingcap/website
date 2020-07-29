@@ -4,18 +4,31 @@
 .PingCAP-Download-TiDB-Enterprise {
   section {
     @include has-light-background;
+
+    @include mobile {
+      padding: 3rem 1rem;
+    }
   }
 
   .enterprise-wrapper {
     padding: 2rem;
     max-width: 500px;
     margin: 0 auto;
+
+    @include mobile {
+      padding: 0;
+      max-width: unset;
+    }
   }
 
   .tidb-logo {
     text-align: center;
     width: 25%;
     margin: 0 auto 3rem;
+
+    @include mobile {
+      margin-bottom: 2rem;
+    }
   }
 
   .card {
@@ -24,10 +37,7 @@
     width: 100%;
 
     @include mobile {
-      box-shadow: none;
-      border: none;
-      background: transparent;
-      padding: 2rem 1rem;
+      padding: 2rem 2rem;
     }
 
     .header {
@@ -106,12 +116,12 @@
     }
 
     .agreement {
-      width: 100%;
+      width: calc(100% + 36px);
       text-align: left;
       display: flex;
       flex-direction: row;
       align-items: center;
-      margin: -12px;
+      margin: -12px -18px;
       margin-top: calc(1.5rem - 12px);
       font-size: $P2;
       font-weight: 400;
@@ -119,6 +129,7 @@
 
       .checkbox {
         transform: scale(0.8);
+        margin-right: -6px;
       }
     }
 
@@ -135,6 +146,28 @@
     .err-msg {
       font-size: $size-8;
       color: $T3;
+    }
+
+  }
+
+  .more-info {
+    font-size: $size-7;
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @include mobile {
+      align-items: center;
+    }
+
+    p, a {
+      line-height: $LH3;
+    }
+
+    a {
+      color: $B1;
     }
   }
 }

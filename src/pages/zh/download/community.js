@@ -156,9 +156,9 @@ const Community = ({ data }) => {
                   className="checkbox"
                 />
                 我同意&nbsp;
-                <Link to="/community-license-agreement">
-                  PingCAP 社区软件许可协议
-                </Link>
+                <Link to="/license">PingCAP 社区软件许可协议</Link>
+                与&nbsp;
+                <Link to="/zh/privacy-policy/">隐私协议</Link>
               </div>
               <div>
                 <button className="button is-primary" onClick={downloadPackage}>
@@ -177,6 +177,30 @@ const Community = ({ data }) => {
                   <span>required</span>
                 </div>
               )}
+            </div>
+            <div className="more-info">
+              <p>查看更多信息</p>
+              <a
+                href="https://docs.pingcap.com/zh/tidb/v4.0/production-deployment-using-tiup"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                如何安装
+              </a>
+              <a
+                href="https://docs.pingcap.com/zh/tidb/v4.0/upgrade-tidb-using-tiup"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                如何升级
+              </a>
+              <a
+                href="https://docs.pingcap.com/zh/tidb/v4.0/release-notes"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                Release Note
+              </a>
             </div>
           </div>
         </section>
