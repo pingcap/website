@@ -162,3 +162,12 @@ $logos: VNG JD-Cloud---AI Zhihu Xiaomi BookMyShow Shopee Meituan-Dianping iQiyi
     opacity: 1 !important;
   }
 }
+
+@mixin mobile-section-padding {
+  @include mobile {
+    >.section {
+      padding-left: $mobile-section-padding;
+      padding-right: $mobile-section-padding;
+    }
+  }
+}
