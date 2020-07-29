@@ -7,7 +7,6 @@ import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import ColumnsForDebugging from '../components/columnsForDebugging'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
@@ -87,7 +86,7 @@ const CaseStudies = ({ data, location }) => {
         title="TiDB Case Studies"
         description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders."
       />
-      <article className="PingCAP-CaseStudies PingCAP-CaseStudies-New">
+      <article className="PingCAP-CaseStudies">
         <Banner bannerSVG={BannerSVG} />
         <div className="container section">
           <h2 className="title title-under-banner">Featured Testimonials</h2>
