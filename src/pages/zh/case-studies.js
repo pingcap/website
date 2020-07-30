@@ -1,67 +1,51 @@
-import '../styles/pages/caseStudies.scss'
-import '../lib/graphql/image'
+import '../../styles/pages/caseStudies.scss'
+import '../../lib/graphql/image'
 
 import { graphql, Link } from 'gatsby'
-// import Link from '../components/IntlLink'
+// import Link from '../../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
-import { replaceTitle, truncate } from '../lib/string'
+import { replaceTitle, truncate } from '../../lib/string'
+
 import Img from 'gatsby-image'
-import Layout from '../components/layout'
+import Layout from '../../components/layout'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
-import SEO from '../components/seo'
+import SEO from '../../components/seo'
 import Swiper from 'swiper'
-import flatten from 'lodash.flatten'
 
 const CaseStudies = ({ data, location }) => {
-  const { pathname } = location
+  const pathname = decodeURI(location.pathname)
   const currentCategory =
     pathname.slice(
       pathname.search('case-studies') + 'case-studies'.length + 1
-    ) || 'All'
-  const {
-    BannerSVG,
-    placeholderSVG,
-    caseStudies,
-    caseStudiesWithoutReadMore,
-  } = data
+    ) || '全部行业'
+  const { BannerSVG, placeholderSVG, caseStudies } = data
+  const categoriesOfStudies = useMemo(
+    () => [
+      ...new Set([
+        '全部行业',
+        ...caseStudies.edges.map(
+          ({ node }) => node.frontmatter.customerCategory || '全部行业'
+        ),
+      ]),
+    ],
+    [caseStudies]
+  )
 
-  const categoriesOfStudies = [
-    'All',
-    ...new Set(
-      caseStudies.edges
-        .map(({ node }) => node.frontmatter.customerCategory)
-        .concat(caseStudiesWithoutReadMore.edges.map(({ node }) => node.name))
-    ),
-  ]
-
-  const studiesByCategory = categoriesOfStudies.map((c) => {
-    let withoutReadMoreNodes = caseStudiesWithoutReadMore.edges
-      .filter(({ node }) => c === 'All' || node.name === c)
-      .map((edge) => {
-        return edge.node.customers.map((customer) => ({
-          node: {
-            frontmatter: {
-              customer: customer.name,
-              summary: customer.summary,
-            },
-          },
-        }))
-      })
-    withoutReadMoreNodes =
-      withoutReadMoreNodes.length === 1
-        ? withoutReadMoreNodes[0]
-        : flatten(withoutReadMoreNodes)
-    return {
-      category: c.split(' ').join('-'),
-      studies: caseStudies.edges
-        .filter(
-          ({ node }) => c === 'All' || node.frontmatter.customerCategory === c
-        )
-        .concat(withoutReadMoreNodes),
-    }
-  })
+  const studiesByCategory = useMemo(
+    () =>
+      categoriesOfStudies.map((c) => {
+        return {
+          category: c.split(' ').join('-'),
+          studies: caseStudies.edges.filter(
+            ({ node }) =>
+              c === '全部行业' || node.frontmatter.customerCategory === c
+          ),
+        }
+      }),
+    [categoriesOfStudies, caseStudies]
+  )
 
   useEffect(() => {
     new Swiper('.swiper-container', {
@@ -89,25 +73,27 @@ const CaseStudies = ({ data, location }) => {
       <article className="PingCAP-CaseStudies">
         <Banner bannerSVG={BannerSVG} />
         <div className="container section">
-          <h2 className="title title-under-banner">Featured Testimonials</h2>
+          <h2 className="title title-under-banner title-under-banner-zh">
+            精选案例
+          </h2>
           <CaseSwiper
             caseStudies={caseStudies}
             placeholderSVG={placeholderSVG}
           ></CaseSwiper>
-          <h2 className="title title-under-swiper">
-            Petabytes of Data Across Industries
+          <h2 className="title title-under-swiper title-under-swiper-zh">
+            TiDB现已被近1000家不同行业的领先企业应用于生产环境
           </h2>
           <Dropdown
             className="customer-categories"
             items={categoriesOfStudies}
             selectedItem={currentCategory}
           ></Dropdown>
-          <Router basepath="/case-studies">
+          <Router basepath="/zh/case-studies">
             <Logos key="/" path="/" logos={studiesByCategory[0].studies} />
             {studiesByCategory.map((r) => (
               <Logos
                 key={r.category}
-                path={`/${r.category}`}
+                path={`/${encodeURIComponent(r.category)}`}
                 logos={r.studies}
               />
             ))}
@@ -118,7 +104,7 @@ const CaseStudies = ({ data, location }) => {
   )
 }
 
-const Banner = ({ bannerSVG }) => {
+const Banner = React.memo(({ bannerSVG }) => {
   return (
     <div className="top-banner-wrapper">
       <Img
@@ -128,15 +114,14 @@ const Banner = ({ bannerSVG }) => {
       />
       <div className="titles">
         <h1>
-          <div className="title is-2">Trusted and Verified by</div>
-          <div className="title is-2">Web-scale Innovation Leaders</div>
+          <div className="title-zh">被全球众多领域的领先企业认可并信任</div>
         </h1>
       </div>
     </div>
   )
-}
+})
 
-const CaseSwiper = ({ caseStudies, placeholderSVG }) => {
+const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
   return (
     <div className="card swiper-container">
       <div className="swiper-wrapper top">
@@ -154,10 +139,10 @@ const CaseSwiper = ({ caseStudies, placeholderSVG }) => {
                   {truncate.apply(study.summary, [250, true])}
                 </div>
                 <Link
-                  to={`/case-studies/${replaceTitle(study.relativePath)}`}
+                  to={`/zh/case-studies/${replaceTitle(study.relativePath)}`}
                   className="see-case-study"
                 >
-                  See case study
+                  查看更多案例
                 </Link>
               </div>
               <div className="placeholder"></div>
@@ -176,7 +161,7 @@ const CaseSwiper = ({ caseStudies, placeholderSVG }) => {
       </div>
     </div>
   )
-}
+})
 
 const Dropdown = ({ className, items, selectedItem }) => {
   const [dropped, setDropped] = useState(false)
@@ -209,7 +194,10 @@ const Dropdown = ({ className, items, selectedItem }) => {
             return (
               <Link
                 className={className}
-                to={`/case-studies/${item.split(' ').join('-')}`}
+                to={`/zh/case-studies/${encodeURIComponent(
+                  item.split(' ').join('-')
+                )}`}
+                key={item}
                 onMouseDown={(e) => {
                   e.preventDefault()
                 }}
@@ -226,7 +214,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
 
 function Logos({ logos }) {
   return (
-    <div className="columns is-multiline is-gapless logos">
+    <div className="columns is-multiline logos">
       {logos
         .map(({ node }) => ({
           ...node.frontmatter,
@@ -239,24 +227,38 @@ function Logos({ logos }) {
                 {logo.customer}
               </div>
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
-              />
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) center no-repeat`,
+                  backgroundSize: 'contain',
+                  position: 'absolute',
+                  top: '-0.75rem',
+                  right: '0',
+                  width: '30%',
+                  height: '30%',
+                }}
+                className="detail-card-logo"
+              ></div>
               <div className="paragraph">
-                {truncate.apply(logo.summary, [200, true])}
+                {truncate.apply(logo.summary, [120, true])}
               </div>
               {logo.relativePath && (
                 <Link
-                  to={`/case-studies/${replaceTitle(logo.relativePath)}`}
+                  to={`/zh/case-studies/${replaceTitle(logo.relativePath)}`}
                   className="read-more"
                 >
-                  Read more
+                  查看更多
                 </Link>
               )}
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
-              />
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) 50% no-repeat`,
+                  backgroundSize: 'contain',
+                  width: '30%',
+                  height: '30%',
+                }}
+              ></div>
               <div className="title is-6">{logo.customer}</div>
             </div>
           </div>
@@ -275,8 +277,8 @@ export const query = graphql`
     }
     caseStudies: allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
-        frontmatter: { customer: { ne: null }, notShowOnLogoWall: { ne: true } }
+        fields: { collection: { eq: "markdown-pages/zh/blogs" } }
+        frontmatter: { category: { eq: "case" } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: 1000
@@ -288,22 +290,12 @@ export const query = graphql`
             customer
             customerCategory
             summary
+            logo
           }
           parent {
             ... on File {
               relativePath
             }
-          }
-        }
-      }
-    }
-    caseStudiesWithoutReadMore: allCaseStudiesJson {
-      edges {
-        node {
-          name
-          customers {
-            name
-            summary
           }
         }
       }
