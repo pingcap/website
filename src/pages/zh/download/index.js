@@ -4,8 +4,8 @@ import ArrowForwardIcon from '@material-ui/icons/ArrowForward'
 
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
-import communityEditionSVG from '../../../../images/download/community-edition.svg'
-import enterpriseSubscriptionSVG from '../../../../images/download/enterprise-subscription.svg'
+import communityEditionSVG from '../../../../images/zh/download/community-edition.svg'
+import enterpriseSubscriptionSVG from '../../../../images/zh/download/enterprise-subscription.svg'
 import Link from '../../../components/IntlLink'
 
 import '../../../styles/pages/zh/download/index.scss'

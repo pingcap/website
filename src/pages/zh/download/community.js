@@ -1,5 +1,5 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -9,7 +9,6 @@ import Checkbox from '@material-ui/core/Checkbox'
 
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
-import Link from '../../../components/IntlLink'
 
 import '../../../styles/pages/zh/download/community.scss'
 
@@ -17,11 +16,12 @@ const Community = ({ data }) => {
   const { tidbLogoPNG, rocketIconSVG, linuxIconSVG } = data
   const [selVersion, setSelVersion] = useState('')
   const [selPkg, setSelPkg] = useState('')
+  // eslint-disable-next-line no-unused-vars
   const [pkgDesc, setPkgDesc] = useState('')
   const [termsChecked, setTermsChecked] = useState(false)
   const [downloadURL, setDownloadURL] = useState('')
   const [wrongMsg, setWrongMsg] = useState([])
-  const versions = ['v4.0.0']
+  const versions = ['v4.0.0', 'v4.0.1', 'v4.0.2', 'v4.0.3']
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
   const validateForm = useCallback(() => {
@@ -211,13 +211,13 @@ const Community = ({ data }) => {
 
 export const query = graphql`
   query {
-    tidbLogoPNG: file(relativePath: { eq: "download/tidb-logo.png" }) {
+    tidbLogoPNG: file(relativePath: { eq: "zh/download/tidb-logo.png" }) {
       publicURL
     }
-    rocketIconSVG: file(relativePath: { eq: "download/rocket-icon.svg" }) {
+    rocketIconSVG: file(relativePath: { eq: "zh/download/rocket-icon.svg" }) {
       publicURL
     }
-    linuxIconSVG: file(relativePath: { eq: "download/linux-icon.svg" }) {
+    linuxIconSVG: file(relativePath: { eq: "zh/download/linux-icon.svg" }) {
       publicURL
     }
   }

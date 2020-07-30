@@ -5,17 +5,19 @@ import axios from 'axios'
 
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
+import checkCircleSVG from '../../../../images/zh/download/check-circle.svg'
 
 import '../../../styles/pages/zh/download/community.scss'
 
 function validateForm(name, phone, email, company) {
   let errors = {}
   const phoneRegx = /^1[3456789]\d{9}$/
+  // eslint-disable-next-line no-useless-escape
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   let hasErrors = false
 
   // check name validation
-  if (name == '') {
+  if (name === '') {
     errors.name = '姓名为必填选项'
     hasErrors = true
   } else if (name.length > 64) {
@@ -24,7 +26,7 @@ function validateForm(name, phone, email, company) {
   }
 
   // check phone
-  if (phone == '') {
+  if (phone === '') {
     errors.phone = '手机为必填选项'
     hasErrors = true
   } else if (!phoneRegx.test(phone)) {
@@ -32,7 +34,7 @@ function validateForm(name, phone, email, company) {
     hasErrors = true
   }
 
-  if (email == '') {
+  if (email === '') {
     errors.email = '邮箱为必填选项'
     hasErrors = true
   } else if (!re.test(String(email).toLowerCase())) {
@@ -41,7 +43,7 @@ function validateForm(name, phone, email, company) {
   }
 
   // check company
-  if (company == '') {
+  if (company === '') {
     errors.company = '公司名称为必填选项'
     hasErrors = true
   } else if (company.length > 255) {
@@ -154,7 +156,10 @@ const Enterprise = ({ data }) => {
                   />
                   {mode === 'success' && (
                     <div className="success-container">
-                      <div className="success-title">提交成功</div>
+                      <div className="success-title">
+                        <img class="check-icon" src={checkCircleSVG} alt="" />
+                        提交成功
+                      </div>
                       <div className="success-desc">
                         您的申请已成功提交，我们的支持团队会在 24
                         小时内与您联系试用事宜，如需帮助，请联系&nbsp;
@@ -184,10 +189,10 @@ const Enterprise = ({ data }) => {
 
 export const query = graphql`
   query {
-    tidbLogoPNG: file(relativePath: { eq: "download/tidb-logo.png" }) {
+    tidbLogoPNG: file(relativePath: { eq: "zh/download/tidb-logo.png" }) {
       publicURL
     }
-    rocketIconSVG: file(relativePath: { eq: "download/rocket-icon.svg" }) {
+    rocketIconSVG: file(relativePath: { eq: "zh/download/rocket-icon.svg" }) {
       publicURL
     }
   }

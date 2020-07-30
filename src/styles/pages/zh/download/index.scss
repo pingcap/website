@@ -131,6 +131,10 @@
         flex-grow: unset;
         margin: 0 4.1667%;
 
+        @include until-fullhd {
+          width: 40%;
+        }
+
         @include mobile {
           width: 100%;
           margin: 0;

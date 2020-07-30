@@ -201,12 +201,21 @@
       font-weight: 400;
       color: $M3;
       margin-bottom: 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
     }
     
     .success-desc {
       font-size: $P1;
       font-weight: 400;
       color: $M4;
+    }
+
+    .check-icon {
+      height: 1em;
+      margin-right: 1em;
     }
   }
 }
