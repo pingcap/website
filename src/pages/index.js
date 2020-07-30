@@ -13,6 +13,8 @@ import SectionUseCases from '../components/sectionUseCases'
 import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
 
+import throttle from 'lodash.throttle'
+
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
@@ -59,6 +61,7 @@ const IndexPage = ({ data }) => {
   }, [])
 
   const scrollToDisplay = () => {
+    const documentHeight = document.documentElement.clientHeight
     const array = [
       {
         style: 'opacity: 0; transform: translateY(25%)',
@@ -78,7 +81,7 @@ const IndexPage = ({ data }) => {
     let begin = 0
 
     function bind(el, index, displayStyle, timeout, triggerHeightRatio) {
-      const listener = () => {
+      const listener = throttle(() => {
         if (index !== begin) {
           return
         }
@@ -88,7 +91,7 @@ const IndexPage = ({ data }) => {
           ? -height * (triggerHeightRatio ? triggerHeightRatio[1] : 0.25)
           : -height * (triggerHeightRatio ? triggerHeightRatio[0] : 0.75)
 
-        if (top - document.documentElement.clientHeight < triggerHeight) {
+        if (top - documentHeight < triggerHeight) {
           Array.from(el.children).forEach((c, i) => {
             if (timeout) {
               setTimeout(() => {
@@ -102,8 +105,7 @@ const IndexPage = ({ data }) => {
           begin++
           window.removeEventListener('scroll', listener)
         }
-      }
-
+      }, 500)
       window.addEventListener('scroll', listener)
     }
 
@@ -114,7 +116,7 @@ const IndexPage = ({ data }) => {
       a.children.forEach((b) => {
         const top = b.getBoundingClientRect().top
 
-        if (top > document.documentElement.clientHeight) {
+        if (top > documentHeight) {
           bind(b, index++, a.displayStyle, a.timeout, a.triggerHeightRatio)
 
           Array.from(b.children).forEach((c) => {
