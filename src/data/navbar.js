@@ -1,10 +1,9 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const navbarItems = [
+const navbarItemsEn = [
   {
     name: 'Product',
-    key: 'components.navbar.product',
     dropdown: [
       {
         name: 'TiDB',
@@ -19,28 +18,53 @@ const navbarItems = [
   {
     name: 'Case Studies',
     href: '/case-studies',
-    key: 'components.navbar.caseStudies',
   },
   {
     name: 'Docs',
-    href: 'https://docs.pingcap.com/tidb/v4.0',
+    href: 'https://docs.pingcap.com/tidb/stable',
     outbound: true,
-    key: 'components.navbar.docs',
   },
   {
     name: 'Blog',
     href: '/blog',
-    key: 'components.navbar.blog',
   },
   {
     name: 'Community',
     href: '/community',
-    key: 'components.navbar.community',
   },
   {
     name: 'Contact Us',
     href: '/contact-us',
-    key: 'components.navbar.contactUs',
+  },
+]
+
+const navbarItemsZh = [
+  {
+    name: '文档',
+    href: 'https://docs.pingcap.com/zh/tidb/stable',
+    outbound: true,
+  },
+  {
+    name: '案例',
+    href: '/case-studies',
+  },
+  {
+    name: '社区',
+    href: '/community',
+  },
+  {
+    name: '博客',
+    href: '/blog',
+  },
+  {
+    name: '问答',
+    href: 'https://asktug.com',
+    outbound: true,
+  },
+  {
+    name: 'University',
+    href: 'https://university.pingcap.com',
+    outbound: true,
   },
 ]
 
@@ -53,4 +77,4 @@ const promotionText = (
   </>
 )
 
-export { navbarItems, promotionText }
+export { navbarItemsEn, navbarItemsZh, promotionText }
