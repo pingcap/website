@@ -183,7 +183,7 @@
     position: relative;
   }
 
-  .success-container {
+  .result-container {
     position: absolute;
     left: -1rem;
     top: 0;
@@ -196,7 +196,7 @@
     flex-direction: column;
     justify-content: center;
 
-    .success-title {
+    .result-title {
       font-size: $H2;
       font-weight: 400;
       color: $M3;
@@ -207,7 +207,7 @@
       justify-content: center;
     }
     
-    .success-desc {
+    .result-desc {
       font-size: $P1;
       font-weight: 400;
       color: $M4;

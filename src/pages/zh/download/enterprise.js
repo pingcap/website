@@ -59,6 +59,7 @@ const Enterprise = ({ data }) => {
   const { tidbLogoPNG, rocketIconSVG } = data
   const [mode, setMode] = useState('waiting')
   const [errors, setErrors] = useState(null)
+  const [errMsg, setErrMsg] = useState('')
   const formRef = useRef()
   const onSubmit = useCallback(
     async (e) => {
@@ -75,7 +76,7 @@ const Enterprise = ({ data }) => {
         return
       }
       try {
-        await axios.post(
+        const { data, status } = await axios.post(
           'https://accounts.pingcap.com/api/customer-support/business-download-leads',
           {
             name,
@@ -86,8 +87,12 @@ const Enterprise = ({ data }) => {
         )
         setMode('success')
       } catch (e) {
-        console.log(e)
-        setMode('success')
+        if (e.response && e.response.data.detail) {
+          setErrMsg(e.response.data.detail)
+        } else {
+          setErrMsg('未知错误')
+        }
+        setMode('failure')
       }
     },
     [formRef]
@@ -155,12 +160,16 @@ const Enterprise = ({ data }) => {
                     helperText={errors && errors.company}
                   />
                   {mode === 'success' && (
-                    <div className="success-container">
-                      <div className="success-title">
-                        <img class="check-icon" src={checkCircleSVG} alt="" />
+                    <div className="result-container">
+                      <div className="result-title">
+                        <img
+                          className="check-icon"
+                          src={checkCircleSVG}
+                          alt=""
+                        />
                         提交成功
                       </div>
-                      <div className="success-desc">
+                      <div className="result-desc">
                         您的申请已成功提交，我们的支持团队会在 24
                         小时内与您联系试用事宜，如需帮助，请联系&nbsp;
                         <a href="mailto:tidb-support@pingcap.com">
@@ -169,12 +178,24 @@ const Enterprise = ({ data }) => {
                       </div>
                     </div>
                   )}
+                  {mode === 'failure' && (
+                    <div className="result-container">
+                      <div className="result-title">提交失败</div>
+                      <div className="result-desc">{errMsg}</div>
+                    </div>
+                  )}
                   <div>
                     <input
                       type="submit"
                       className="button is-primary"
-                      value={{ waiting: '提交', success: '返回' }[mode]}
-                      onClick={mode === 'success' ? onBack : null}
+                      value={
+                        { waiting: '提交', success: '返回', failure: '返回' }[
+                          mode
+                        ]
+                      }
+                      onClick={
+                        mode === 'success' || mode === 'failure' ? onBack : null
+                      }
                     />
                   </div>
                 </form>
