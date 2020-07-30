@@ -121,7 +121,7 @@ module.exports = {
           `${__dirname}/node_modules/@seagreenio/react-bulma/dist/index.es.js`,
         ],
         whitelist: purgecssWhitelist,
-        ignore: [`src/styles/`],
+        ignore: [`src/styles/`, 'node_modules/swiper/css/swiper.min.css'],
       },
     },
   ],
