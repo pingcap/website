@@ -59,7 +59,6 @@ const Enterprise = ({ data }) => {
   const { tidbLogoPNG, rocketIconSVG } = data
   const [mode, setMode] = useState('waiting')
   const [errors, setErrors] = useState(null)
-  const [errMsg, setErrMsg] = useState('')
   const formRef = useRef()
   const onSubmit = useCallback(
     async (e) => {
@@ -73,7 +72,7 @@ const Enterprise = ({ data }) => {
       const errors = validateForm(name, phone, email, company)
       if (errors) {
         setErrors(errors)
-        return
+        // return
       }
       try {
         const { data, status } = await axios.post(
@@ -87,11 +86,6 @@ const Enterprise = ({ data }) => {
         )
         setMode('success')
       } catch (e) {
-        if (e.response && e.response.data.detail) {
-          setErrMsg(e.response.data.detail)
-        } else {
-          setErrMsg('未知错误')
-        }
         setMode('failure')
       }
     },
@@ -181,7 +175,12 @@ const Enterprise = ({ data }) => {
                   {mode === 'failure' && (
                     <div className="result-container">
                       <div className="result-title">提交失败</div>
-                      <div className="result-desc">{errMsg}</div>
+                      <div className="result-desc">
+                        请联系&nbsp;
+                        <a href="mailto:tidb-support@pingcap.com">
+                          tidb-support@pingcap.com
+                        </a>
+                      </div>
                     </div>
                   )}
                   <div>
