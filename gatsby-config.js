@@ -139,6 +139,57 @@ module.exports = {
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.edges.map((edge) => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.frontmatter.summary,
+                  date: edge.node.frontmatter.date,
+                  url:
+                    site.siteMetadata.siteUrl +
+                    '/blog/' +
+                    edge.node.parent.relativePath.replace('.md', ''),
+                })
+              })
+            },
+            query: `
+              {
+                allMarkdownRemark(
+                  filter: {
+                    fields: { collection: { eq: "markdown-pages/blogs" } }
+                    frontmatter: { customer: { eq: null } }
+                  }
+                  limit: 1000
+                  sort: { order: DESC, fields: [frontmatter___date] },
+                ) {
+                  edges {
+                    node {
+                      html
+                      frontmatter {
+                        title
+                        date
+                        summary
+                      }
+                      parent {
+                        ... on File {
+                          relativePath
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `,
+            output: '/blog/index.xml',
+            title: 'PingCAP Blog RSS Feed',
+          },
+        ],
+      },
+    },
   ],
   proxy: {
     prefix: '/api/v1',
