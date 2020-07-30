@@ -27,6 +27,7 @@
     "gatsby-transformer-json": "^2.2.28",
     "gatsby-transformer-remark": "2.6.59",
     "gatsby-transformer-sharp": "^2.3.19",
+    "lodash.flatten": "^4.4.0",
     "lodash.intersection": "^4.4.0",
     "lodash.throttle": "^4.1.1",
     "prop-types": "^15.7.2",
