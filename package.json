@@ -43,7 +43,7 @@
     "react-intl": "^4.7.2",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-particles-js": "^3.2.1",
-    "swiper": "^5.3.6"
+    "swiper": "5.4.5"
   },
   "devDependencies": {
     "bulma": "^0.8.1",

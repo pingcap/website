@@ -1,0 +1,510 @@
+@import '../../common';
+@import '../../../../node_modules/swiper/css/swiper.min.css';
+
+.PingCAP-UserMessage2019 {
+    @include mobile {
+        margin-top: 1rem;
+    }
+
+    .page {
+        height: calc(100vh - 5.25rem);
+
+        @include mobile {
+            height: calc(100vh - 4.25rem);
+        }
+    }
+
+    .page-1 {
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg1.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg1.svg);
+        }
+
+        .title {
+            font-size: 3rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #FFFFFF;
+
+            @include mobile {
+                font-size: 1.875rem;
+            }
+        }
+
+        .content {
+            margin-top: 6rem;
+            margin-bottom: 0;
+            font-size: $H3;
+            font-weight: 300;
+            line-height: $LH3;
+            color: #FFFFFF;
+            text-align: center;
+
+            @include mobile {
+                margin-top: 4rem;
+            }
+        }
+    }
+
+    .page-2 {
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg2.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg2.svg);
+        }
+    }
+
+    .page-3 {
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg3.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg3.svg);
+        }
+    }
+
+    .page-4 {
+        background-image: url(../../../../images/zh/user-message-2019/desktop_bg4.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+
+        @include mobile {
+            background-image: url(../../../../images/zh/user-message-2019/mobile_bg4.svg);
+        }
+    }
+
+    .page-5 {
+        background: #211D35;
+
+        @include mobile {
+            height: 760px;
+        }
+    }
+
+    .page {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .container {
+            height: 100%;
+
+            @include mobile {
+                width: 100vw;
+            }
+        }
+
+        .cards {
+            width: 83.333%;
+            margin: 0 auto;
+            height: 100%;
+            pointer-events: none;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                position: relative;
+                overflow: unset !important;
+            }
+        }
+
+        position: relative;
+        --transition-speed: 500ms;
+        --backdrop-opacity: 0;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            pointer-events: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: var(--backdrop-opacity);
+            transition: opacity linear var(--transition-speed);
+        }
+    }
+
+    .slide-card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        @include mobile {
+            width: 87.5%;
+            margin: 0 3.125%;
+        }
+
+        .wrapper {
+            height: 0;
+            padding-bottom: 125%;
+            position: relative;
+
+            .inner {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #FFFFFF;
+                box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
+                border-radius: 6px;
+
+                padding: 4rem 2rem 4.5rem;
+
+                display: flex;
+                flex-direction: column;
+
+                pointer-events: auto;
+
+                .quote {
+                    position: absolute;
+                    left: 2rem;
+                    top: -0.75rem;
+                    width: 5rem;
+                    height: 3.75rem;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+
+                .content {
+                    color: $M3;
+                    line-height: $LH4;
+                    font-weight: 300;
+                    font-size: $P2;
+                    overflow: auto;
+                    margin: 0;
+                    flex-grow: 1;
+                }
+
+                .author {
+                    color: $M3;
+                    font-weight: 400;
+                    font-size: $P1;
+                    text-align: center;
+                    margin-top: 2.5rem;
+                }
+
+                .title {
+                    color: $M3;
+                    font-weight: 300;
+                    font-size: $P1;
+                    text-align: center;
+                    margin-top: 1rem;
+                    height: 1em;
+                    line-height: $LH4;
+                }
+
+                .avatar {
+                    position: absolute;
+                    left: 50%;
+                    width: 5rem;
+                    height: 5rem;
+                    bottom: -2.5rem;
+                    margin-left: -2.5rem;
+                    border-radius: 50%;
+                    border: 3px solid #FFFFFF;
+                    box-sizing: border-box;
+                    background: #FFFFFF;
+                }
+            }
+        }
+    }
+
+    .page-2-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_1.svg);
+    }
+
+    .page-3-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_2.svg);
+    }
+
+    .page-4-quote {
+        background: url(../../../../images/zh/user-message-2019/quote_3.svg);
+    }
+
+    .navigation {
+        position: absolute;
+        top: 50%;
+        width: 1rem;
+        height: 2rem;
+        margin-top: -1rem;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+
+        &.swiper-button-disabled {
+            cursor: unset;
+            opacity: 0.5;
+        }
+
+        @include mobile {
+            display: none;
+        }
+    }
+
+    .navigation-prev {
+        left: 0;
+        background-image: url(../../../../images/zh/user-message-2019/arrow_left.svg);
+    }
+
+    .navigation-next {
+        right: 0;
+        background-image: url(../../../../images/zh/user-message-2019/arrow_right.svg);
+    }
+
+    .page-title {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 50%;
+        // card width = 3 cols = 25% parent width (.container)
+        // card height = 1.25 card width = 31.25%
+        // title starts from center, above cards (31.25% / 2) 4 rem
+        padding-bottom: calc(15.625% + 4rem);
+        text-align: center;
+        color: #FFFFFF;
+        font-size: $H2;
+        font-weight: 500;
+
+        @include mobile {
+            // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
+            // card height = 1.25 card width = 109.375% - 2.1875rem
+            // title has font size = 1.25rem, line height = 2, two lines = 5rem
+            // title should be placed between container top and card top
+            // container size is 100vh - 4.25rem
+            // so padding bottom should be ((109.375% - 2.1875rem) + (100vh - 4.25rem)) / 4 - 5rem / 2
+            padding-bottom: calc(27.34% + 25vh - 4.11rem);
+            line-height: $LH3;
+            width: 73%;
+            margin: 0 auto;
+        }
+    }
+
+    .pagination {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        // see .page-title
+        padding-top: calc(15.625% + 5rem);
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        pointer-events: none;
+
+        .bullet {
+            width: .75rem;
+            height: .75rem;
+            border-radius: 50%;
+            border: 1px solid #FFFFFF;
+            cursor: pointer;
+            margin: 0 1rem;
+            pointer-events: auto;
+
+            &.active {
+                background-color: #FFFFFF;
+            }
+
+            @include mobile {
+                margin: 0 0.25rem;
+                width: 12px;
+                height: 12px;
+                box-sizing: border-box;
+            }
+        }
+
+        @include mobile {
+            // card width = 3.5cols = 3.5 * (100% - 2rem) / 4 = 87.5% - 1.75rem
+            // card height = 1.25 card width = 109.375% - 2.1875rem
+            // pagination has size 12px
+            // title should be placed between container bottom and avatar bottom
+            // container size is 100vh - 4.25rem
+            // so padding top should be (((109.375% - 2.1875rem) / 2 + 2.5rem) + (100vh - 4.25rem) / 2) / 2 - 12px / 2
+            padding-top: calc(27.34% + 25vh - 0.36rem - 6px);
+        }
+    }
+
+    .pages-pagination {
+        position: fixed;
+        right: calc(25vw - 336px);
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100;
+
+        .bullet {
+            margin: 4px -5px;
+            width: 10px;
+            height: 32px;
+            cursor: pointer;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-image: url(../../../../images/zh/user-message-2019/pipe.svg);
+
+            &.active {
+                margin: 8px -14px;
+                width: 28px;
+                height: 44px;
+
+                background-image: url(../../../../images/zh/user-message-2019/mouse.svg);
+            }
+        }
+        
+        .page-1-bullet, .page-5-bullet {
+            visibility: hidden;
+        }
+
+        &.hidden {
+            visibility: hidden;
+        }
+    }
+
+    .page-5 {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-set {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                margin: 0 auto;
+                position: relative;
+                flex-wrap: wrap;
+            }
+        }
+        
+        .data {
+            width: 16.67%;
+            position: relative;
+
+            @include mobile {
+                width: 50%;
+            }
+        }
+
+        .data-image {
+            width: 100%;
+            height: 8rem;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+
+            @include mobile {
+                height: 4rem;
+            }
+        }
+
+        .data-text {
+            text-align: center;
+            font-size: $H2;
+            font-weight: 400;
+            color: #FFFFFF;
+            margin-top: 2.5rem;
+
+            @include mobile {
+                font-size: $P1;
+                width: 50%;
+                font-weight: 300;
+                line-height: $LH4;
+                margin: 1rem auto 1.5rem;
+            }
+        }
+
+        .data-image-1 {
+            background-image: url(../../../../images/zh/user-message-2019/data_1.svg);
+        }
+
+        .data-image-2 {
+            background-image: url(../../../../images/zh/user-message-2019/data_2.svg);
+        }
+
+        .data-image-3 {
+            background-image: url(../../../../images/zh/user-message-2019/data_3.svg);
+        }
+
+        .data-image-4 {
+            background-image: url(../../../../images/zh/user-message-2019/data_4.svg);
+        }
+
+        .desc {
+            font-size: $H3;
+            font-weight: 300;
+            line-height: $LH3;
+            color: #FFFFFF;
+            text-align: center;
+            margin-top: 4rem;
+
+            @include mobile {
+                margin-top: 1.5rem;
+                font-size: $P1;
+                width: calc(100% - 2rem);
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
+
+    .section-case-studies {
+        padding: 6rem 0;
+
+        @include mobile {
+            padding: 1rem 0 3rem;
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            @include mobile {
+                width: calc(100% - 2rem);
+                margin: 0 auto;
+            }
+        }
+
+        .logos {
+            width: 83.333%;
+            height: 49rem;
+            margin: 0 auto 6rem;
+            background: url(../../../../images/zh/user-message-2019/desktop_logos.png) no-repeat center center;
+            background-size: contain;
+
+            @include mobile {
+                width: 100%;
+                height: 67rem;
+                margin-bottom: 3rem;
+                background: url(../../../../images/zh/user-message-2019/mobile_logos.png) no-repeat center center;
+            }
+        }
+    }
+}
