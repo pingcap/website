@@ -12867,13 +12867,6 @@ react-lifecycles-compat@^3.0.4:
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
   integrity sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==
 
-react-particles-js@^3.2.1:
-  version "3.2.1"
-  resolved "https://registry.npm.taobao.org/react-particles-js/download/react-particles-js-3.2.1.tgz#a331e80519c9e70f448090915def088f72ed6ed3"
-  integrity sha1-ozHoBRnJ5w9EgJCRXe8Ij3LtbtM=
-  dependencies:
-    lodash "^4.17.11"
-    tsparticles "^1.13.6"
 react-mailchimp-subscribe@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-mailchimp-subscribe/-/react-mailchimp-subscribe-2.1.0.tgz#a2bb7064af4bad310ef5d308322de95491d401c3"
@@ -12882,6 +12875,14 @@ react-mailchimp-subscribe@^2.1.0:
     jsonp "^0.2.1"
     prop-types "^15.5.10"
     to-querystring "^1.0.4"
+
+react-particles-js@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.npm.taobao.org/react-particles-js/download/react-particles-js-3.2.1.tgz#a331e80519c9e70f448090915def088f72ed6ed3"
+  integrity sha1-ozHoBRnJ5w9EgJCRXe8Ij3LtbtM=
+  dependencies:
+    lodash "^4.17.11"
+    tsparticles "^1.13.6"
 
 react-reconciler@^0.24.0:
   version "0.24.0"
