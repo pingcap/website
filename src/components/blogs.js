@@ -11,6 +11,7 @@ import Pagination from './pagination'
 import PostFromUs from './postFromUs'
 import SEO from './seo'
 import Socials from './socials'
+import { replaceTitle } from '../lib/string'
 
 const Blogs = ({
   data,
@@ -52,8 +53,8 @@ const Blogs = ({
     }
   `)
 
-  const categories = query.categories.group.map(i => i.category)
-  const tags = query.tags.group.map(i => i.tag)
+  const categories = query.categories.group.map((i) => i.category)
+  const tags = query.tags.group.map((i) => i.tag)
 
   const [showCategories, setShowCategories] = useState(true)
 
@@ -63,7 +64,7 @@ const Blogs = ({
     }
   }, [isTagPage])
 
-  const handleShowCategories = bool => _ => setShowCategories(bool)
+  const handleShowCategories = (bool) => (_) => setShowCategories(bool)
 
   const CategoriesAndTags = ({ isDesktop = true }) => (
     <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
@@ -91,7 +92,7 @@ const Blogs = ({
       </div>
       <div className="labels">
         {showCategories
-          ? categories.map(c => (
+          ? categories.map((c) => (
               <Link
                 key={c}
                 className={currentCategory === c ? 'active' : ''}
@@ -100,7 +101,7 @@ const Blogs = ({
                 {c}
               </Link>
             ))
-          : tags.map(t => (
+          : tags.map((t) => (
               <Link
                 key={t}
                 className={currentTag === t ? 'active' : ''}
@@ -115,7 +116,10 @@ const Blogs = ({
 
   return (
     <Layout>
-      <SEO title="TiDB Blog" description="PingCAP blog is where we share everything about TiDB - open-source community, HTAP, distributed SQL, cloud-native, engineering journey, best practices, etc." />
+      <SEO
+        title="TiDB Blog"
+        description="PingCAP blog is where we share everything about TiDB - open-source community, HTAP, distributed SQL, cloud-native, engineering journey, best practices, etc."
+      />
       <article className="PingCAP-Blogs">
         <section className="section section-blogs">
           <div className="container">
@@ -125,13 +129,21 @@ const Blogs = ({
                 <CategoriesAndTags isDesktop={false} />
                 {blogs.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
-                    <BlogHeader frontmatter={node.frontmatter} filePath={node.parent.relativePath} isTitleLink />
+                    <BlogHeader
+                      frontmatter={node.frontmatter}
+                      filePath={node.parent.relativePath}
+                      isTitleLink
+                    />
                     {node.frontmatter.image && (
-                      <img
-                        className="banner"
-                        src={`https://download.pingcap.com${node.frontmatter.image}`}
-                        alt="banner"
-                      />
+                      <Link
+                        to={`/blog/${replaceTitle(node.parent.relativePath)}`}
+                      >
+                        <img
+                          className="banner"
+                          src={`https://download.pingcap.com${node.frontmatter.image}`}
+                          alt="banner"
+                        />
+                      </Link>
                     )}
                     <div className="summary">{node.frontmatter.summary}</div>
                     <BlogTags tags={node.frontmatter.tags} />
