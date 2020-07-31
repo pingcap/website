@@ -74,6 +74,14 @@
           position: relative;
         }
 
+        a {
+          color: $B1;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
         .disc-icon {
           height: 0.45rem;
           width: 0.45rem;

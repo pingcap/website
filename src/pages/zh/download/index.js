@@ -35,11 +35,24 @@ const Download = ({ data }) => {
                       </li>
                       <li>
                         <div className="icon disc-icon" />
-                        用户社区 AskTUG
+                        用户社区&nbsp;
+                        <a
+                          href="https://asktug.com/"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          AskTUG
+                        </a>
                       </li>
                       <li className="more">
-                        <ArrowForwardIcon className="icon more-icon" />
-                        了解更多 TiDB 信息新一代分布式，HTAP 数据库
+                        <a
+                          href="https://docs.pingcap.com/zh/tidb/stable"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <ArrowForwardIcon className="icon more-icon" />
+                          了解更多 TiDB 信息新一代分布式，HTAP 数据库
+                        </a>
                       </li>
                     </ul>
                     <Button
@@ -69,8 +82,10 @@ const Download = ({ data }) => {
                         全面加强的安全特性
                       </li>
                       <li className="more">
-                        <ArrowForwardIcon className="icon more-icon" />
-                        了解更多 TiDB 客户解决方案
+                        <Link to="/case-studies">
+                          <ArrowForwardIcon className="icon more-icon" />
+                          了解更多 TiDB 客户解决方案
+                        </Link>
                       </li>
                     </ul>
                     <Button
