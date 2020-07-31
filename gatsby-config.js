@@ -140,8 +140,14 @@ module.exports = {
       },
     },
   ],
-  proxy: {
-    prefix: '/api/v1',
-    url: 'http://localhost:8001/api/v1',
-  },
+  proxy: [
+    // {
+    //   prefix: '/api/v1',
+    //   url: 'http://localhost:8001/api/v1',
+    // },
+    {
+      prefix: '/api',
+      url: 'https://forms.pingcap.com',
+    },
+  ],
 }
