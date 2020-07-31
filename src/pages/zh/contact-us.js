@@ -56,7 +56,7 @@ const ContactUs = () => {
                   width="100%"
                   height="100%"
                   id="gmap_canvas"
-                  src="https://maps.google.com/maps?q=2955%20Campus%20Drive%20%23110%2C%20San%20Mateo%2C%20CA%2094403&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  src="https://download.pingcap.com/contact-us-baidu-map.html"
                   scrolling="no"
                 ></iframe>
               </div>
@@ -144,7 +144,9 @@ const ContactUsForm = () => {
   return (
     <>
       {submitted ? (
-        '感谢联系我们, 我们将很快回复您'
+        <div className="submit-text--success">
+          感谢联系我们, 我们将很快回复您
+        </div>
       ) : (
         <form className="form-container" method="post">
           {formConfig.map((config) => {
