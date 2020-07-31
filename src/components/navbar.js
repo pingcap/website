@@ -4,9 +4,8 @@ import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
 import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
-
-import { FormattedMessage } from 'react-intl'
-import { navbarItems, promotionText } from '../data/navbar'
+import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
+import { useIntl } from 'react-intl'
 
 const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
@@ -21,6 +20,9 @@ const Navbar = ({ showBanner }) => {
       }
     `
   )
+
+  const intl = useIntl()
+  const navbarItems = intl.locale === 'zh' ? navbarItemsZh : navbarItemsEn
 
   const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
@@ -107,7 +109,7 @@ const Navbar = ({ showBanner }) => {
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map((item) => (
+            {navbarItems.navItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -120,7 +122,7 @@ const Navbar = ({ showBanner }) => {
                     onKeyDown={toggleDropdown}
                   >
                     <div className="dropdown-title">
-                      <FormattedMessage id={item.key} />
+                      {item.name}
                       <AddIcon />
                     </div>
                     <div className="navbar-dropdown">
@@ -146,7 +148,7 @@ const Navbar = ({ showBanner }) => {
                         target="_blank"
                         rel="noreferrer noopener"
                       >
-                        <FormattedMessage id={item.key} />
+                        {item.name}
                       </a>
                     ) : (
                       <Link
@@ -155,7 +157,7 @@ const Navbar = ({ showBanner }) => {
                         className="navbar-item with-main-section"
                         onTouchStart={() => {}}
                       >
-                        <FormattedMessage id={item.key} />
+                        {item.name}
                       </Link>
                     )}
                   </>
@@ -176,24 +178,24 @@ const Navbar = ({ showBanner }) => {
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/contact-us"
+                to={navbarItems.contactUs.href}
                 className="get-tidb"
                 color="primary"
                 rounded
                 outlined
               >
-                ASK AN EXPERT
+                {navbarItems.contactUs.name}
               </Button>
             </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/download"
+                to={navbarItems.downloadTiDB.href}
                 className="get-tidb"
                 color="primary"
                 rounded
               >
-                GET TiDB
+                {navbarItems.downloadTiDB.name}
               </Button>
             </div>
           </div>
