@@ -1,0 +1,145 @@
+@import '../../../common';
+
+.PingCAP-Download-TiDB {
+  .section-title {
+    @include section-title;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+      font-size: $H1;
+    }
+  }
+
+  .download-section {
+    @include has-light-background;
+    text-align: center;
+
+    @include mobile {
+      padding: 2rem 1rem;
+    }
+
+    .cloud-icon {
+      margin-bottom: 2rem;
+    }
+
+    .columns {
+      justify-content: center;
+    }
+
+    .card {
+      position: relative;
+      padding: 2rem 1rem;
+      height: 100%;
+
+      @include tablet {
+        min-height: 500px;
+      }
+
+      img {
+        height: 60px;
+        margin-bottom: 2rem;
+      }
+
+      p {
+        font-size: $size-7;
+        color: $B4;
+        margin: 0 auto 2rem;
+        width: 60%;
+      }
+
+      ul {
+        list-style: disc;
+        text-align: left;
+        width: 60%;
+        margin: 0 auto;
+        list-style-type: none;
+        color: $M4;
+
+        @include mobile {
+          width: 80%;
+        }
+
+        .icon {
+          position: absolute;
+          left: -1.8rem;
+          top: 1rem;
+          transform: translate(-50%, -50%);
+        }
+
+        li {
+          font-size: $P1;
+          font-weight: 400;
+          line-height: 2rem;
+          position: relative;
+        }
+
+        .disc-icon {
+          height: 0.45rem;
+          width: 0.45rem;
+          background-color: currentColor;
+          border-radius: 50%;
+        }
+
+        .more {
+          margin-top: 2rem;
+          color: $B1;
+        }
+
+        .more-icon {
+          width: 1.3rem;
+          height: 1.3rem;
+        }
+      }
+
+      button {
+        padding: 0.5rem 1.5rem;
+        background-color: $B1;
+        color: $M1;
+        font-size: $size-7;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    .deploy-on-premise {
+      > .title {
+        margin-top: 1rem;
+        margin-bottom: 2rem !important;
+      }
+
+      .button {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 14.375rem;
+        height: 3rem;
+        font-size: $size-7;
+
+        @include mobile {
+          position: static;
+          margin-top: 3rem;
+          transform: none;
+        }
+      }
+
+      .column {
+        width: 29.1667%;
+        flex-basis: unset;
+        flex-grow: unset;
+        margin: 0 4.1667%;
+
+        @include until-fullhd {
+          width: 40%;
+        }
+
+        @include mobile {
+          width: 100%;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -88,7 +88,7 @@ const CaseStudies = ({ data, location }) => {
         title="TiDB Case Studies"
         description="As a distributed, NewSQL, Hybrid Transactional/Analytical Processing database, TiDB is trusted and verified by web-scale application leaders."
       />
-      <article className="PingCAP-CaseStudies PingCAP-CaseStudies-New">
+      <article className="PingCAP-CaseStudies">
         <Banner bannerSVG={BannerSVG} />
         <div className="container section">
           <h2 className="title title-under-banner">Featured Testimonials</h2>
@@ -257,7 +257,7 @@ function Logos({ logos }) {
                   to={`/case-studies/${replaceTitle(logo.relativePath)}`}
                   className="read-more"
                 >
-                  Read more >
+                  Read more
                 </Link>
               )}
             </div>

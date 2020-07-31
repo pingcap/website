@@ -41,7 +41,6 @@ const ColumnsForDebugging = () => {
       delete window.hiddenColumns
     }
   }, [])
-
   const wrapperStyle = {
     position: 'absolute',
     display,
