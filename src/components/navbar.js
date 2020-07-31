@@ -50,7 +50,7 @@ const Navbar = ({ showBanner }) => {
   }, [])
 
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
-  const closePromotion = useCallback(() => setPromotionOpen(false))
+  const closePromotion = useCallback(() => setPromotionOpen(false), [])
 
   return (
     <nav
@@ -109,7 +109,7 @@ const Navbar = ({ showBanner }) => {
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map((item) => (
+            {navbarItems.navItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
@@ -178,24 +178,24 @@ const Navbar = ({ showBanner }) => {
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/contact-us"
+                to={navbarItems.contactUs.href}
                 className="get-tidb"
                 color="primary"
                 rounded
                 outlined
               >
-                {intl.locale === 'zh' ? '联系我们' : 'ASK AN EXPERT'}
+                {navbarItems.contactUs.name}
               </Button>
             </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/download"
+                to={navbarItems.downloadTiDB.href}
                 className="get-tidb"
                 color="primary"
                 rounded
               >
-                {intl.locale === 'zh' ? '下载试用' : 'GET TIDB'}
+                {navbarItems.downloadTiDB.name}
               </Button>
             </div>
           </div>
