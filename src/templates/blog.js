@@ -114,7 +114,7 @@ const Blog = ({ data, pageContext }) => {
               <div className="column is-7">
                 <div className="under-category">
                   <Link to="/blog">Blog</Link>
-                  <span> > </span>
+                  <span> &gt; </span>
                   <Link to={`/blog/category/${category}`}>{category}</Link>
                 </div>
                 <BlogHeader frontmatter={frontmatter} filePath={filePath} />

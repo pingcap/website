@@ -115,6 +115,11 @@ $navbar-height-mobile: 4.25rem; // 68px
       font-style: italic;
       text-align: center;
     }
+
+    p img {
+      display: block;
+      margin: 0 auto;
+    }
   }
 
   .get-started-with-tidb {
