@@ -19,7 +19,7 @@ const Community = ({ data }) => {
   const [termsChecked, setTermsChecked] = useState(false)
   const [downloadURL, setDownloadURL] = useState('')
   const [wrongMsg, setWrongMsg] = useState([])
-  const versions = ['v4.0.0', 'v4.0.1', 'v4.0.2', 'v4.0.3']
+  const versions = ['v4.0.0', 'v4.0.1', 'v4.0.2', 'v4.0.3', 'v4.0.4']
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
   const validateForm = () => {
