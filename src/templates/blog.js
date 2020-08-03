@@ -29,6 +29,22 @@ const Blog = ({ data, pageContext }) => {
 
   const intl = useIntl()
 
+  const getStartedSectionData =
+    intl.locale === 'zh'
+      ? {
+          title: '开始试用TiDB',
+          getStartedText: '试用TiDB',
+          contactUsText: '联系我们',
+        }
+      : {
+          title: 'Ready to get started with TiDB?',
+          getStartedText: 'GET TiDB',
+          contactUsText: 'CONTACT US',
+        }
+
+  getStartedSectionData.getStartedURL = '/download'
+  getStartedSectionData.contactUsURL = '/contact-us'
+
   useEffect(() => {
     const footer = document.querySelector('.footer.PingCAP-Footer')
     const footerHeight = footer.getBoundingClientRect().height
@@ -141,19 +157,24 @@ const Blog = ({ data, pageContext }) => {
                 />
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <h3 className="title">Ready to get started with TiDB?</h3>
+                  <h3 className="title">{getStartedSectionData.title}</h3>
                   <div className="destinations">
                     <Button
                       as={Link}
-                      to="/download"
+                      to={getStartedSectionData.getStartedURL}
                       className="get-started"
                       outlined
                       rounded
                     >
-                      GET TiDB
+                      {getStartedSectionData.getStartedText}
                     </Button>
-                    <Button as={Link} to="/contact-us" outlined rounded>
-                      CONTACT US
+                    <Button
+                      as={Link}
+                      to={getStartedSectionData.contactUsURL}
+                      outlined
+                      rounded
+                    >
+                      {getStartedSectionData.contactUsText}
                     </Button>
                   </div>
                 </section>
