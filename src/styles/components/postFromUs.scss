@@ -127,3 +127,20 @@
     }
   }
 }
+
+.PingCAP-PostFromUs.PingCAP-PostFromUs-Block-ZH {
+  background-color: $B5;
+
+  .field { 
+    input {
+      font-size: $size-7;
+      width: 180px;
+      border: 1px solid $B1;
+    }
+    
+    button {
+      font-size: $size-7;
+      width: 80px;
+    }
+  }
+}
