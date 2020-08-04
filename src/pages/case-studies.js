@@ -216,6 +216,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
                 : 'dropdown-item'
             return (
               <Link
+                key={item}
                 className={className}
                 key={item}
                 to={`/case-studies/${item.split(' ').join('-')}`}

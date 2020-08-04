@@ -1,5 +1,6 @@
 const path = require('path')
 const replaceTitle = require('./utils').replaceTitle
+const langConfig = require('../lang.config.json')
 
 const createCaseStudies = async ({ graphql, createPage }) => {
   const caseStudyTemplate = path.resolve(
@@ -65,6 +66,8 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
+        language: 'en',
+        ...langConfig.languages['en'],
       },
     })
   })
@@ -75,6 +78,8 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
+        language: 'zh',
+        ...langConfig.languages['zh'],
       },
     })
   })
@@ -97,6 +102,10 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       path: pagePath,
       matchPath: pagePath,
       component: path.resolve(`${__dirname}/../src/pages/case-studies.js`),
+      context: {
+        language: 'en',
+        ...langConfig.languages['en'],
+      },
     })
   })
 
@@ -116,6 +125,10 @@ const createCaseStudies = async ({ graphql, createPage }) => {
       path: pagePath,
       matchPath: pagePath,
       component: path.resolve(`${__dirname}/../src/pages/zh/case-studies.js`),
+      context: {
+        language: 'zh',
+        ...langConfig.languages['zh'],
+      },
     })
   })
 }

@@ -116,6 +116,7 @@ $navbar-height-mobile: 4.25rem; // 68px
       text-align: center;
     }
 
+
     .token.tag,
     .token.content,
     .token.number {
@@ -130,7 +131,12 @@ $navbar-height-mobile: 4.25rem; // 68px
       white-space: inherit;
       background: inherit;
       margin: inherit;
+
+    p img {
+      display: block;
+      margin: 0 auto;
     }
+      
   }
 
   .get-started-with-tidb {
