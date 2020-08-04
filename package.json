@@ -10,7 +10,7 @@
     "@seagreenio/react-bulma": "^0.1.0-beta.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
-    "gatsby": "^2.23.7",
+    "gatsby": "^2.23.10",
     "gatsby-image": "^2.2.45",
     "gatsby-plugin-feed": "^2.5.11",
     "gatsby-plugin-gdpr-cookies": "^1.0.7",
