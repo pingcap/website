@@ -125,7 +125,7 @@ const Blog = ({ data, pageContext }) => {
                   ) : (
                     <>
                       <Link to="/blog">Blog</Link>
-                      <span> > </span>
+                      <span> &gt; </span>
                       <Link to={`/blog/category/${category}`}>{category}</Link>
                     </>
                   )}
