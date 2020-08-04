@@ -25,6 +25,8 @@ export const wrapPageElement = ({ element, props }) => {
   const messages = require(`${__dirname}/../data/i18n/${language}.json`)
   const flattened = fromPairs(flatten(messages))
 
+  console.log(flattened)
+
   return (
     <IntlProvider locale={language} messages={flattened}>
       {element}

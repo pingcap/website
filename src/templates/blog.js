@@ -12,7 +12,7 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
-import { useIntl } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
@@ -28,22 +28,6 @@ const Blog = ({ data, pageContext }) => {
   const [relatedBlogsRef, setRelatedBlogsRef] = useState(null)
 
   const intl = useIntl()
-
-  const getStartedSectionData =
-    intl.locale === 'zh'
-      ? {
-          title: '开始试用TiDB',
-          getStartedText: '试用TiDB',
-          contactUsText: '联系我们',
-        }
-      : {
-          title: 'Ready to get started with TiDB?',
-          getStartedText: 'GET TiDB',
-          contactUsText: 'CONTACT US',
-        }
-
-  getStartedSectionData.getStartedURL = '/download'
-  getStartedSectionData.contactUsURL = '/contact-us'
 
   useEffect(() => {
     const footer = document.querySelector('.footer.PingCAP-Footer')
@@ -157,24 +141,30 @@ const Blog = ({ data, pageContext }) => {
                 />
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <h3 className="title">{getStartedSectionData.title}</h3>
+                  <FormattedMessage
+                    id="templates.blog.getStartedTitle"
+                    defaultMessage="Ready to get started with TiDB?"
+                  >
+                    {(txt) => <h3 className="title">{txt}</h3>}
+                  </FormattedMessage>
                   <div className="destinations">
                     <Button
                       as={Link}
-                      to={getStartedSectionData.getStartedURL}
+                      to="/download"
                       className="get-started"
                       outlined
                       rounded
                     >
-                      {getStartedSectionData.getStartedText}
+                      <FormattedMessage
+                        id="templates.blog.getStartedText"
+                        defaultMessage="GET TiDB"
+                      />
                     </Button>
-                    <Button
-                      as={Link}
-                      to={getStartedSectionData.contactUsURL}
-                      outlined
-                      rounded
-                    >
-                      {getStartedSectionData.contactUsText}
+                    <Button as={Link} to="/contact-us" outlined rounded>
+                      <FormattedMessage
+                        id="templates.blog.contactUsText"
+                        defaultMessage="CONTACT US"
+                      />
                     </Button>
                   </div>
                 </section>
