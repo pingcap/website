@@ -115,6 +115,22 @@ $navbar-height-mobile: 4.25rem; // 68px
       font-style: italic;
       text-align: center;
     }
+
+    .token.tag,
+    .token.content,
+    .token.number {
+      display: inline;
+      padding: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      text-align: inherit;
+      vertical-align: inherit;
+      border-radius: inherit;
+      font-weight: inherit;
+      white-space: inherit;
+      background: inherit;
+      margin: inherit;
+    }
   }
 
   .get-started-with-tidb {
@@ -137,7 +153,7 @@ $navbar-height-mobile: 4.25rem; // 68px
 
     .destinations {
       text-align: center;
-      
+
       a {
         @include mobile {
           padding: 0 1rem;

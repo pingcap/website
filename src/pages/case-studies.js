@@ -217,6 +217,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
             return (
               <Link
                 className={className}
+                key={item}
                 to={`/case-studies/${item.split(' ').join('-')}`}
                 onMouseDown={(e) => {
                   e.preventDefault()

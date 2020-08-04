@@ -7,6 +7,8 @@
 // You can delete this file if you're not using it
 
 import './src/styles/global.scss'
+// gatsby-browser.js
+import 'prismjs/themes/prism-solarizedlight.css'
 
 export { wrapPageElement } from './create-pages/wrapPage'
 
