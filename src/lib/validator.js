@@ -12,6 +12,12 @@ const regexpValidator = (regexp) => (label, value) => {
   return null
 }
 
+const mailValidator = regexpValidator(
+  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/m
+)
+
+const telValidator = regexpValidator(/^1[345678]\d{9}$/)
+
 const agreeValidator = (label, value) => {
   if (value === false) {
     return `您必须同意该协议`
@@ -19,4 +25,10 @@ const agreeValidator = (label, value) => {
   return null
 }
 
-export { nullValidator, regexpValidator, agreeValidator }
+export {
+  nullValidator,
+  regexpValidator,
+  agreeValidator,
+  mailValidator,
+  telValidator,
+}

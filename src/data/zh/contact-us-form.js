@@ -1,7 +1,8 @@
 import React from 'react'
 import {
   nullValidator,
-  regexpValidator,
+  mailValidator,
+  telValidator,
   agreeValidator,
 } from '../../lib/validator'
 
@@ -17,7 +18,7 @@ const formConfig = [
   {
     label: '邮箱',
     name: 'mail',
-    validators: [nullValidator],
+    validators: [nullValidator, mailValidator],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -25,7 +26,7 @@ const formConfig = [
   {
     label: '电话号码',
     name: 'tel',
-    validators: [nullValidator],
+    validators: [nullValidator, telValidator],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -52,12 +53,12 @@ const formConfig = [
     name: 'description',
     validators: [nullValidator],
     className: 'form-item--textarea',
-    default: 'abccc',
+    default: '',
     renderItem: () => <textarea></textarea>,
   },
   {
     label:
-      'I agree to receive communications from PingCAP on products, services, events, blog posts, etc.',
+      '我同意隐私条款和使用协议，这里的文字可能有点长，以便我们更好地为您提供帮助',
     name: 'agreement',
     validators: [agreeValidator],
     className: 'form-item--radio',

@@ -3,7 +3,6 @@ import '../../styles/pages/contactUs.scss'
 import React, { useState, useReducer } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-// import BaiduMap from '../../components/baiduMap'
 import { Button } from '@seagreenio/react-bulma'
 import formConfig from '../../data/zh/contact-us-form'
 import axios from 'axios'
@@ -50,7 +49,6 @@ const ContactUs = () => {
                 <p className="addr-tel-desc">+86 010-53326356</p>
               </div>
               <div className="addr-map">
-                {/* <BaiduMap></BaiduMap> */}
                 <iframe
                   title="NA office map"
                   width="100%"
@@ -132,12 +130,9 @@ const ContactUsForm = () => {
         },
       })
         .then((res) => {
-          console.log(res)
           setSubmitted(true)
         })
-        .catch((err) => {
-          console.log(err)
-        })
+        .catch((err) => {})
     }
   }
 
