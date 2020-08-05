@@ -62,6 +62,13 @@ module.exports = {
         path: `${__dirname}/${langConfig.languages[lang].blogsPath}`,
       },
     })),
+    ...Object.keys(langConfig.languages).map((lang) => ({
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: langConfig.languages[lang].policyTermsPath,
+        path: `${__dirname}/${langConfig.languages[lang].policyTermsPath}`,
+      },
+    })),
     {
       resolve: `gatsby-source-filesystem`,
       options: {
