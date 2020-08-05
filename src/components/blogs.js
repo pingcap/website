@@ -2,6 +2,7 @@ import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
 import React, { useEffect, useState } from 'react'
+import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
 // import BlogSearch from './blogSearch'
@@ -9,6 +10,7 @@ import BlogTags from './blogTags'
 import Layout from './layout'
 import Pagination from './pagination'
 import PostFromUs from './postFromUs'
+import PostFromUsZH from './zh/postFromUs'
 import SEO from './seo'
 import Socials from './socials'
 import { replaceTitle } from '../lib/string'
@@ -86,6 +88,8 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
     </div>
   )
 
+  const { locale } = useIntl()
+
   return (
     <Layout>
       <SEO
@@ -131,7 +135,7 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
               <div className="column is-4 is-offset-1 right-column">
                 <div className="main">
                   {/* <BlogSearch className="search-desktop" /> */}
-                  <PostFromUs />
+                  {locale === 'zh' ? <PostFromUsZH /> : <PostFromUs />}
                   <div className="follow-us">
                     <h3 className="title is-6">Follow to Join Us!</h3>
                     <div className="socials">

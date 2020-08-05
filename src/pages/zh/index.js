@@ -57,7 +57,7 @@ const caseLogos = [
 const banners = [
   { img: askTug, url: 'https://asktug.com/t/topic/33760/2' },
   { img: university, url: 'https://university.pingcap.com/' },
-  { img: userMessage, url: 'https://pingcap.com/cases-cn/user-message-2019/' },
+  { img: userMessage, url: 'https://pingcap.com/zh/user-message-2019/' },
 ]
 
 const IndexPage = ({ data }) => {

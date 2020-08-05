@@ -12,7 +12,7 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
-import { useIntl } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
@@ -145,7 +145,12 @@ const Blog = ({ data, pageContext }) => {
                 </div>
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <h3 className="title">Ready to get started with TiDB?</h3>
+                  <h3 className="title">
+                    <FormattedMessage
+                      id="templates.blog.getStartedTitle"
+                      defaultMessage="Ready to get started with TiDB?"
+                    />
+                  </h3>
                   <div className="destinations">
                     <Button
                       as={Link}
@@ -154,10 +159,16 @@ const Blog = ({ data, pageContext }) => {
                       outlined
                       rounded
                     >
-                      GET TiDB
+                      <FormattedMessage
+                        id="templates.blog.getStartedText"
+                        defaultMessage="GET TiDB"
+                      />
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      CONTACT US
+                      <FormattedMessage
+                        id="templates.blog.contactUsText"
+                        defaultMessage="CONTACT US"
+                      />
                     </Button>
                   </div>
                 </section>

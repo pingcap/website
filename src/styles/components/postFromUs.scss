@@ -69,14 +69,14 @@
     }
 
     @include mobile {
-      flex-direction: column;
+      flex-direction: row;
 
       input {
         width: 100%;
       }
 
       button {
-        margin-top: 24px;
+        margin-bottom: 24px;
         width: 100%;
       }
     }
@@ -124,6 +124,23 @@
 
     @include mobile {
       display: unset;
+    }
+  }
+}
+
+.PingCAP-PostFromUs.PingCAP-PostFromUs-Block-ZH {
+  background-color: $B5;
+
+  .field { 
+    input {
+      font-size: $size-7;
+      width: 180px;
+      border: 1px solid $B1;
+    }
+    
+    button {
+      font-size: $size-7;
+      width: 80px;
     }
   }
 }

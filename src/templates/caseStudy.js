@@ -10,6 +10,7 @@ import Socials from '../components/socials'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
+import { FormattedMessage } from 'react-intl'
 
 const CaseStudy = ({ data, pageContext }) => {
   const { mdx } = data
@@ -99,18 +100,30 @@ const CaseStudy = ({ data, pageContext }) => {
                   </MDXProvider>
                 </div>
                 <section className="section get-started-with-tidb">
-                  <div className="title">Ready to get started with TiDB?</div>
+                  <h3 className="title">
+                    <FormattedMessage
+                      id="templates.blog.getStartedTitle"
+                      defaultMessage="Ready to get started with TiDB?"
+                    />
+                  </h3>
                   <div className="destinations">
                     <Button
-                      as="a"
-                      href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
-                      target="_blank"
+                      as={Link}
+                      to="/download"
+                      className="get-started"
+                      outlined
                       rounded
                     >
-                      GET STARTED
+                      <FormattedMessage
+                        id="templates.blog.getStartedText"
+                        defaultMessage="GET TiDB"
+                      />
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      CONTACT US
+                      <FormattedMessage
+                        id="templates.blog.contactUsText"
+                        defaultMessage="CONTACT US"
+                      />
                     </Button>
                   </div>
                 </section>
