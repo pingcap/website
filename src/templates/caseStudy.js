@@ -7,6 +7,7 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
+import { FormattedMessage } from 'react-intl'
 
 const CaseStudy = ({ data, pageContext }) => {
   const { markdownRemark } = data
@@ -95,18 +96,30 @@ const CaseStudy = ({ data, pageContext }) => {
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
                 <section className="section get-started-with-tidb">
-                  <div className="title">Ready to get started with TiDB?</div>
+                  <h3 className="title">
+                    <FormattedMessage
+                      id="templates.blog.getStartedTitle"
+                      defaultMessage="Ready to get started with TiDB?"
+                    />
+                  </h3>
                   <div className="destinations">
                     <Button
-                      as="a"
-                      href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
-                      target="_blank"
+                      as={Link}
+                      to="/download"
+                      className="get-started"
+                      outlined
                       rounded
                     >
-                      GET STARTED
+                      <FormattedMessage
+                        id="templates.blog.getStartedText"
+                        defaultMessage="GET TiDB"
+                      />
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      CONTACT US
+                      <FormattedMessage
+                        id="templates.blog.contactUsText"
+                        defaultMessage="CONTACT US"
+                      />
                     </Button>
                   </div>
                 </section>
