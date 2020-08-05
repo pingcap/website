@@ -8,8 +8,8 @@ import { replaceTitle } from '../lib/string'
 const Positions = () => {
   let { positions } = useStaticQuery(graphql`
     query {
-      positions: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/careers" } } }
+      positions: allMdx(
+        filter: { fileAbsolutePath: { regex: "/markdown-pages/careers/" } }
       ) {
         edges {
           node {

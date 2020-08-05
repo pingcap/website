@@ -275,9 +275,9 @@ export const query = graphql`
     placeholderSVG: file(relativePath: { eq: "case-studies/placeholder.svg" }) {
       publicURL
     }
-    caseStudies: allMarkdownRemark(
+    caseStudies: allMdx(
       filter: {
-        fields: { collection: { eq: "markdown-pages/zh/blogs" } }
+        fileAbsolutePath: { regex: "/markdown-pages/zh/blogs/" }
         frontmatter: { category: { eq: "case" } }
       }
       sort: { fields: [frontmatter___date], order: DESC }

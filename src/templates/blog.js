@@ -13,10 +13,13 @@ import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
 import { useIntl } from 'react-intl'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import TOCRenderer from '../components/tocRenderer'
 
 const Blog = ({ data, pageContext }) => {
-  const { markdownRemark } = data
-  const { frontmatter, html, tableOfContents } = markdownRemark
+  const { mdx } = data
+  const { frontmatter, body: html, tableOfContents } = mdx
   const { filePath, hasBlogCategories } = pageContext
   const category = frontmatter.categories
     ? frontmatter.categories[0]
@@ -120,7 +123,7 @@ const Blog = ({ data, pageContext }) => {
                   {intl.locale === 'zh' ? (
                     <>
                       <span> &lt; </span>
-                      <Link to="/blog">博客</Link>
+                      <Link to="/blog">坚客</Link>
                     </>
                   ) : (
                     <>
@@ -135,10 +138,11 @@ const Blog = ({ data, pageContext }) => {
                   filePath={filePath}
                   hasBlogCategories={hasBlogCategories}
                 />
-                <div
-                  className="markdown-body blog-content"
-                  dangerouslySetInnerHTML={{ __html: html }}
-                />
+                <div className="markdown-body blog-content">
+                  <MDXProvider>
+                    <MDXRenderer>{html}</MDXRenderer>
+                  </MDXProvider>
+                </div>
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
                   <h3 className="title">Ready to get started with TiDB?</h3>
@@ -161,10 +165,9 @@ const Blog = ({ data, pageContext }) => {
               <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
                   <h3 className="title is-6">What's on this page</h3>
-                  <div
-                    className="toc-content"
-                    dangerouslySetInnerHTML={{ __html: tableOfContents }}
-                  />
+                  <div className="toc-content">
+                    <TOCRenderer>{tableOfContents.items}</TOCRenderer>
+                  </div>
                 </div>
                 {relatedBlogsRef && (
                   <div className="related-blog">
@@ -201,10 +204,11 @@ const Blog = ({ data, pageContext }) => {
   )
 }
 
+// TODO: tableOfContents query: absolute: false, pathToSlugField: "frontmatter.title"
 export const query = graphql`
   query($title: String, $blogsPath: String) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
-      html
+    mdx(frontmatter: { title: { eq: $title } }) {
+      body
       frontmatter {
         title
         summary
@@ -214,11 +218,11 @@ export const query = graphql`
         categories
         image
       }
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
+      tableOfContents
     }
-    blogs: allMarkdownRemark(
+    blogs: allMdx(
       filter: {
-        fields: { collection: { eq: $blogsPath } }
+        fileAbsolutePath: { regex: $blogsPath }
         frontmatter: { customer: { eq: null } }
       }
       limit: 1000

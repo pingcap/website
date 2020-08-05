@@ -74,7 +74,7 @@ The cookies we use include:
 - Marketing cookies
 - Third-party cookies from Google Analytics and Agolia
 
-For detailed information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third-parties, please see our Cookie Policy (</cookie-policy>).
+For detailed information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third-parties, please see our Cookie Policy [/cookie-policy].
 
 ## OUR USE OF PERSONAL INFORMATION
 

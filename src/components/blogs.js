@@ -13,13 +13,8 @@ import SEO from './seo'
 import Socials from './socials'
 import { replaceTitle } from '../lib/string'
 
-const Blogs = ({
-  data,
-  pageContext,
-  PaginationPathPrefix,
-  isTagPage,
-}) => {
-  const blogs = data.allMarkdownRemark.edges
+const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
+  const blogs = data.allMdx.edges
   const {
     currentPage,
     numPages,

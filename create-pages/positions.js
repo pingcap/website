@@ -11,9 +11,9 @@ const createPositionsPagination = async ({ graphql, createPage }) => {
 
   const result = await graphql(`
     query {
-      categories: allMarkdownRemark(
+      categories: allMdx(
         filter: {
-          fields: { collection: { eq: "${positionsPath}" } }
+          fileAbsolutePath: { regex: "${positionsPath}" }
         }
       ) {
         group(field: frontmatter___tags) {

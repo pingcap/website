@@ -7,8 +7,8 @@ const createPositions = async ({ graphql, createPage }) => {
   )
   const result = await graphql(`
     query {
-      blogs: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/terms" } } }
+      blogs: allMdx(
+        filter: { fileAbsolutePath: { regex: "/markdown-pages/terms/" } }
         limit: 1000
       ) {
         edges {
@@ -33,8 +33,8 @@ const createPositions = async ({ graphql, createPage }) => {
       path: `/${replaceTitle(node.parent.relativePath)}`,
       component: policyTermsTemplate,
       context: {
-        title: node.frontmatter.title
-      }
+        title: node.frontmatter.title,
+      },
     })
   })
 }
