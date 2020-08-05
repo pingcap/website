@@ -141,12 +141,12 @@ const Blog = ({ data, pageContext }) => {
                 />
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <FormattedMessage
-                    id="templates.blog.getStartedTitle"
-                    defaultMessage="Ready to get started with TiDB?"
-                  >
-                    {(txt) => <h3 className="title">{txt}</h3>}
-                  </FormattedMessage>
+                  <h3 className="title">
+                    <FormattedMessage
+                      id="templates.blog.getStartedTitle"
+                      defaultMessage="Ready to get started with TiDB?"
+                    />
+                  </h3>
                   <div className="destinations">
                     <Button
                       as={Link}
