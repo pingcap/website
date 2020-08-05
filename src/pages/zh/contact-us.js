@@ -1,13 +1,20 @@
 import '../../styles/pages/contactUs.scss'
 
 import React, { useState, useReducer } from 'react'
+import { graphql } from 'gatsby'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { Button } from '@seagreenio/react-bulma'
 import formConfig from '../../data/zh/contact-us-form'
 import axios from 'axios'
 
-const ContactUs = () => {
+const ContactUs = ({ data }) => {
+  const { submitSuccessSVG, submitFailSVG } = data
+
+  const [submitState, setSubmitState] = useState({
+    hasSubmitted: false,
+    isWrong: false,
+  })
+
   return (
     <Layout>
       <SEO
@@ -25,48 +32,78 @@ const ContactUs = () => {
                 感谢您对 TiDB 的喜爱
               </div>
               <div className="subtitle-under-main-title subtitle-under-main-title-zh">
-                请留下您的联系方式，我们会在 1 个工作日内稍后联系您
+                请留下您的联系方式，我们稍后会联系您
               </div>
             </div>
           </div>
         </section>
 
-        <section className="section form-section-zh">
-          <div className="container">
-            <ContactUsForm></ContactUsForm>
-          </div>
-        </section>
+        {submitState.hasSubmitted ? (
+          submitState.isWrong ? (
+            <>
+              <div className="submit-title-wrapper">
+                <img
+                  className="submit-icon"
+                  src={submitFailSVG.publicURL}
+                ></img>
+                <h3 className="submit-text--title">提交失败</h3>
+              </div>
+              <p className="submit-desc">
+                提交失败，请发邮件到 info@pingcap.com 寻求帮助
+              </p>
+            </>
+          ) : (
+            <>
+              <div className="submit-title-wrapper">
+                <img
+                  className="submit-icon"
+                  src={submitSuccessSVG.publicURL}
+                ></img>
+                <h3 className="submit-text--title">提交成功</h3>
+              </div>
+              <p className="submit-desc">请耐心等待，我们稍后会联系您</p>
+            </>
+          )
+        ) : (
+          <>
+            <section className="section form-section-zh">
+              <div className="container">
+                <ContactUsForm setSubmitState={setSubmitState}></ContactUsForm>
+              </div>
+            </section>
 
-        <section className="section map-section-zh">
-          <div className="container">
-            <div className="addr-container">
-              <div className="addr-text">
-                <p className="addr-company-title">公司地址</p>
-                <p className="addr-company-desc">
-                  北京市海淀区西小口路 66 号东升科技园 C-1 楼 2 层
-                </p>
-                <p className="addr-tel-title">电话</p>
-                <p className="addr-tel-desc">+86 010-53326356</p>
+            <section className="section map-section-zh">
+              <div className="container">
+                <div className="addr-container">
+                  <div className="addr-text">
+                    <p className="addr-company-title">公司地址</p>
+                    <p className="addr-company-desc">
+                      北京市海淀区西小口路 66 号东升科技园 C-1 楼 2 层
+                    </p>
+                    <p className="addr-tel-title">电话</p>
+                    <p className="addr-tel-desc">+86 010-53326356</p>
+                  </div>
+                  <div className="addr-map">
+                    <iframe
+                      title="NA office map"
+                      width="100%"
+                      height="100%"
+                      id="gmap_canvas"
+                      src="https://download.pingcap.com/contact-us-baidu-map.html"
+                      scrolling="no"
+                    ></iframe>
+                  </div>
+                </div>
               </div>
-              <div className="addr-map">
-                <iframe
-                  title="NA office map"
-                  width="100%"
-                  height="100%"
-                  id="gmap_canvas"
-                  src="https://download.pingcap.com/contact-us-baidu-map.html"
-                  scrolling="no"
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        </section>
+            </section>
+          </>
+        )}
       </article>
     </Layout>
   )
 }
 
-const ContactUsForm = () => {
+const ContactUsForm = ({ setSubmitState }) => {
   const formData = formConfig.reduce((prev, curr) => {
     return {
       ...prev,
@@ -86,8 +123,6 @@ const ContactUsForm = () => {
   }
 
   const [formState, dispatch] = useReducer(formDataReducer, formData)
-
-  const [submitted, setSubmitted] = useState(false)
 
   const submitHandler = (e) => {
     e.preventDefault()
@@ -114,7 +149,8 @@ const ContactUsForm = () => {
     if (!isError) {
       axios({
         method: 'POST',
-        url: '/api/external/f/cn-official-website-contact-us/submit',
+        url:
+          'https://forms.pingcap.com/api/external/f/cn-official-website-contact-us/submit',
         headers: {
           contentType: 'application/json',
           acceptLanguage: 'zh-hans',
@@ -130,42 +166,36 @@ const ContactUsForm = () => {
         },
       })
         .then((res) => {
-          setSubmitted(true)
+          setSubmitState({ hasSubmitted: true, isWrong: false })
         })
-        .catch((err) => {})
+        .catch((err) => {
+          setSubmitState({ hasSubmitted: true, isWrong: true })
+        })
     }
   }
 
   return (
-    <>
-      {submitted ? (
-        <div className="submit-text--success">
-          感谢联系我们, 我们将很快回复您
-        </div>
-      ) : (
-        <form className="form-container" method="post">
-          {formConfig.map((config) => {
-            return (
-              <FormItem
-                config={config}
-                dispatch={dispatch}
-                data={
-                  formState[config.name] || {
-                    value: '',
-                    isError: false,
-                    errMsg: '',
-                  }
-                }
-                key={config.name}
-              ></FormItem>
-            )
-          })}
-          <button className="submit-btn" onClick={submitHandler}>
-            提交
-          </button>
-        </form>
-      )}
-    </>
+    <form className="form-container" method="post">
+      {formConfig.map((config) => {
+        return (
+          <FormItem
+            config={config}
+            dispatch={dispatch}
+            data={
+              formState[config.name] || {
+                value: '',
+                isError: false,
+                errMsg: '',
+              }
+            }
+            key={config.name}
+          ></FormItem>
+        )
+      })}
+      <button className="submit-btn" onClick={submitHandler}>
+        提交
+      </button>
+    </form>
   )
 }
 
@@ -188,6 +218,9 @@ const FormItem = React.memo(
           setFormData(e.target.value)
           return
         case 'radio':
+          setFormData(e.target.checked)
+          return
+        case 'checkbox':
           setFormData(e.target.checked)
           return
       }
@@ -245,5 +278,18 @@ const validateAndDispatch = (validate, dispatch, name, value, label) => {
     })
   }
 }
+
+export const query = graphql`
+  query {
+    submitSuccessSVG: file(
+      relativePath: { eq: "zh/contact-us/submit-success.svg" }
+    ) {
+      publicURL
+    }
+    submitFailSVG: file(relativePath: { eq: "zh/contact-us/submit-fail.svg" }) {
+      publicURL
+    }
+  }
+`
 
 export default ContactUs

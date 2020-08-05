@@ -57,13 +57,12 @@ const formConfig = [
     renderItem: () => <textarea></textarea>,
   },
   {
-    label:
-      '我同意隐私条款和使用协议，这里的文字可能有点长，以便我们更好地为您提供帮助',
+    label: '我同意接收来自 PingCAP 的产品，服务，事件，博客等信息。',
     name: 'agreement',
     validators: [agreeValidator],
-    className: 'form-item--radio',
+    className: 'form-item--checkbox-radio',
     default: false,
-    renderItem: () => <input type="radio" name="agreement"></input>,
+    renderItem: () => <input type="checkbox" name="agreement"></input>,
   },
 ]
 

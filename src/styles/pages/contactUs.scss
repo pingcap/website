@@ -13,23 +13,21 @@
   }
 
   @mixin form-error-position {
-     position: absolute;
-            left: 0;
-            bottom: calc(-1 * (1rem + 1.5 * 1em));
+    position: absolute;
+    left: 0;
+    bottom: calc(-1 * (0.75rem + 1.5 * 1em));
   }
 
   .section-title {
-
     font-size: $size-1;
     color: $M1;
 
     &-zh {
-
       @include mobile {
         font-size: $H1;
         font-weight: 500;
         margin-bottom: 0 !important;
-    }
+      }
 
       font-size: $H0;
       font-weight: 500;
@@ -43,7 +41,6 @@
     color: $M1;
 
     &-zh {
-
       @include mobile {
         display: none;
       }
@@ -54,25 +51,23 @@
   }
 
   .hero {
-    background: url(../../../images/contact-us/contact-us-hero.svg) center no-repeat;
+    background: url(../../../images/contact-us/contact-us-hero.svg) center
+      no-repeat;
     background-color: $B3;
     background-size: contain;
   }
 
   .form-section {
-
     max-width: 800px;
     text-align: center;
     margin: 2rem auto;
 
     &-zh {
-
       @include mobile {
-      padding-bottom: 2rem;
-    }
+        padding-bottom: 2rem;
+      }
 
       .form-container {
-
         @include mobile {
           width: 100%;
           flex-direction: column;
@@ -86,7 +81,6 @@
         margin: 0 auto;
 
         .form-item--text {
-
           @include mobile {
             width: 75%;
             margin-bottom: 4rem;
@@ -101,8 +95,13 @@
 
           input {
             width: 100%;
-            height: 3rem;
+            height: 2.5rem;
             @include form-text-fill;
+          }
+
+          input:focus {
+            outline: none;
+            border: 1px solid $B1;
           }
 
           .form-text--error {
@@ -111,7 +110,6 @@
         }
 
         .form-item--textarea {
-
           position: relative;
           margin-bottom: 2.5rem;
 
@@ -127,13 +125,17 @@
             resize: none;
           }
 
+          textarea:focus {
+            outline: none;
+            border: 1px solid $B1;
+          }
+
           .form-text--error {
             @include form-error-position;
           }
         }
 
-        .form-item--radio {
-
+        .form-item--checkbox-radio {
           @include mobile {
             width: 75%;
             margin-bottom: 0;
@@ -159,7 +161,7 @@
 
         .form-item--error {
           input {
-            border: 1px solid #C87872;
+            border: 1px solid #fd746c;
           }
         }
 
@@ -170,10 +172,10 @@
           background: rgba(46, 47, 255, 1);
           box-shadow: 0px 3px 6px rgba(46, 47, 255, 0.2);
           opacity: 1;
-          border-radius: 6px;
+          border-radius: 4px;
           outline: none;
           border: none;
-          color: #FFF;
+          color: #fff;
           cursor: pointer;
 
           &:hover {
@@ -183,12 +185,13 @@
 
         .form-label {
           @include paragraph;
-          margin-bottom: 1rem;
+          margin-bottom: 0.75rem;
         }
 
         .form-text--error {
           @include paragraph;
-          color: #f2545b;
+          font-size: $P2;
+          color: #fd746c;
         }
       }
     }
@@ -233,15 +236,13 @@
   }
 
   .map-section-zh {
-
     @include mobile {
       padding-top: 0;
       padding-bottom: 0;
     }
 
     .addr-container {
-
-      @include mobile{
+      @include mobile {
         flex-direction: column-reverse;
         width: 100%;
       }
@@ -254,7 +255,6 @@
     }
 
     .addr-text {
-
       @include mobile {
         width: 50%;
         align-items: center;
@@ -264,28 +264,28 @@
       display: flex;
       flex-direction: column;
 
-       .addr-company-title, .addr-tel-title {
-         font-size: $H3;
-         font-weight: 400;
-         color: $M3;
-         margin-bottom: 1.5rem;
-       } 
+      .addr-company-title,
+      .addr-tel-title {
+        font-size: $H3;
+        font-weight: 400;
+        color: $M3;
+        margin-bottom: 1.5rem;
+      }
 
-       .addr-company-desc, .addr-tel-desc {
-
+      .addr-company-desc,
+      .addr-tel-desc {
         @include mobile {
           margin-bottom: 2rem;
         }
 
-         font-size: $H3;
-         font-weight: 300;
-         color: $M3;
-         margin-bottom: 3rem;
-       }
+        font-size: $H3;
+        font-weight: 300;
+        color: $M3;
+        margin-bottom: 3rem;
+      }
     }
 
     .addr-map {
-
       @include mobile {
         width: 100vw;
         height: 50vw;
@@ -294,6 +294,30 @@
       height: 25rem;
       width: 70%;
     }
+  }
+
+  .submit-title-wrapper {
+    margin: 8rem auto 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .submit-icon {
+      height: 100%;
+      margin-right: 1rem;
+    }
+    
+    .submit-text--title {
+      font-size: $H1;
+      color: $M3;
+      font-weight: 500;
+    }
+  }
+
+  .submit-desc {
+    @include paragraph;
+    text-align: center;
+    margin-bottom: 8rem;
   }
 
 }
