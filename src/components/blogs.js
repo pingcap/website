@@ -11,13 +11,13 @@ import Pagination from './pagination'
 import PostFromUs from './postFromUs'
 import SEO from './seo'
 import Socials from './socials'
+import { replaceTitle } from '../lib/string'
 
 const Blogs = ({
   data,
   pageContext,
   PaginationPathPrefix,
   isTagPage,
-  isCategoryPage,
 }) => {
   const blogs = data.allMarkdownRemark.edges
   const {
@@ -113,11 +113,15 @@ const Blogs = ({
                       hasBlogCategories={hasBlogCategories}
                     />
                     {node.frontmatter.image && (
-                      <img
-                        className="banner"
-                        src={`https://download.pingcap.com${node.frontmatter.image}`}
-                        alt="banner"
-                      />
+                      <Link
+                        to={`/blog/${replaceTitle(node.parent.relativePath)}`}
+                      >
+                        <img
+                          className="banner"
+                          src={`https://download.pingcap.com${node.frontmatter.image}`}
+                          alt="banner"
+                        />
+                      </Link>
                     )}
                     <div className="summary">{node.frontmatter.summary}</div>
                     <BlogTags tags={node.frontmatter.tags} />
