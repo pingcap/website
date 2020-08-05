@@ -161,7 +161,7 @@ module.exports = {
               {
                 allMdx(
                   filter: {
-                    fileAbsolutePath: { regex: "markdown-pages/blogs" }
+                    fileAbsolutePath: { regex: "/markdown-pages/blogs/" }
                     frontmatter: { customer: { eq: null } }
                   }
                   limit: 1000
