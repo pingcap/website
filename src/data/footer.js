@@ -53,7 +53,7 @@ const footerColumns = [
         },
         {
           name: 'Open Source',
-          link: 'blog/category/Open%20Source%20Community',
+          link: '/blog/category/Open%20Source%20Community',
         },
       ],
     },

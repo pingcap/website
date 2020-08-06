@@ -33,13 +33,9 @@ const navbarItemsEn = {
       name: 'Community',
       href: '/community',
     },
-    {
-      name: 'Contact Us',
-      href: '/contact-us',
-    },
   ],
   contactUs: {
-    name: 'ASK AN EXPERT',
+    name: 'CONTACT US',
     href: '/contact-us',
   },
   downloadTiDB: {
