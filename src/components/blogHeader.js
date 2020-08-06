@@ -1,6 +1,6 @@
 import CreateIcon from '@material-ui/icons/CreateOutlined'
 import DateRangeIcon from '@material-ui/icons/DateRange'
-import { Link } from 'gatsby'
+import Link from './IntlLink'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { replaceTitle } from '../lib/string'
@@ -11,6 +11,7 @@ const BlogHeader = ({
   isTitleLink,
   withIcon = true,
   isCaseStudy = false,
+  hasBlogCategories = true,
 }) => {
   const { title, date, author, customer } = frontmatter
   const category = isCaseStudy
@@ -38,8 +39,24 @@ const BlogHeader = ({
           {isCaseStudy ? customer : (author && author.join(', ')) || 'PingCAP'}
         </span>
         <span className={!withIcon ? 'without-icon' : ''}>
-          {isCaseStudy ? `${category}` : <Link to={`/blog/category/${category}`}>{category}</Link>}
+          {isCaseStudy ? (
+            `${category}`
+          ) : (
+            <Link to={`/blog/category/${category}`}>{category}</Link>
+          )}
         </span>
+        {/* uses an empty <span> so that span:last-child won't select the author <span> */}
+        {hasBlogCategories ? (
+          <span className={!withIcon ? 'without-icon' : ''}>
+            {isCaseStudy ? (
+              `${category}`
+            ) : (
+              <Link to={`/blog/category/${category}`}>{category}</Link>
+            )}
+          </span>
+        ) : (
+          <span />
+        )}
       </div>
     </section>
   )

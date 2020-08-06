@@ -57,3 +57,261 @@
     @include has-light-background;
   }
 }
+
+.PingCAP-Careers-ZH {
+  @include mobile-section-padding;
+
+  .hero {
+    .hero-body {
+      @include mobile {
+        padding: 3rem $mobile-section-padding;
+      }
+
+      padding-top: 3.75rem;
+      padding-bottom: 4rem;
+
+      .title {
+
+        @include mobile {
+          margin-bottom: 2rem;
+        }
+
+        font-size: $H1;
+        margin-bottom: 4rem;
+
+      }
+
+      .subtitle-under-main-title {
+
+        @include tablet {
+          max-width: 88.3%;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @include mobile {
+          margin-bottom: 3rem;
+        }
+
+        font-size: $H3;
+        font-weight: 400;
+        color: $M4;
+        margin-bottom: 4rem;
+      }
+    }
+
+    img {
+      @include mobile {
+        width: calc((100% - #{$mobile-section-padding} * 2) * 3.32 / 4);
+        margin-bottom: 2rem;
+      }
+
+      width: 33.3%;
+      height: auto;
+    }
+
+    .button {
+      margin-top: 0;
+    }
+  }
+
+  .working-env-section {
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .title {
+      font-size: $H1;
+      font-weight: 500;
+      color: $M3;
+    }
+
+    .subtitle-under-main-title {
+      font-size: $P1;
+      font-weight: 400;
+      color: $M4;
+      padding-bottom: 0;
+      margin-bottom: 4rem;
+    }
+
+    .work-env-container {
+      @include mobile {
+        grid-template-columns: 1fr;
+        row-gap: 2rem;
+      }
+
+      @include tablet {
+        max-width: 88.3%;
+      }
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      column-gap: 4.17%;
+      row-gap: 5rem;
+      margin: 0 auto;
+
+      img {
+        height: 60px;
+        margin-bottom: 1.5rem;
+      }
+
+      .env-title {
+        font-size: $P1;
+        font-weight: 400;
+        color: $M3;
+        margin-bottom: 1.5rem;
+      }
+
+      .env-desc {
+        @include mobile {
+          max-width: 18.75rem;
+        }
+        max-width: 23.75rem;
+        margin: 0 auto;
+        font-size: $P1;
+        font-weight: 300;
+        color: $M4;
+      }
+    }
+  }
+
+  .comments-list-section {
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    @include has-light-background;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+
+    .title {
+
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+
+
+      text-align: center;
+      margin-bottom: 4rem;
+      font-size: $H1;
+    }
+
+    .comment {
+      @include mobile {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      display: flex;
+      width: 66.6%;
+      margin: 0 auto 4rem;
+      justify-content: space-between;
+      align-items: center;
+
+      $avatars: overvenus breeswish lilin90 sunhao2017 datahoecn fox-wolf;
+
+      .avatar {
+        --radius: 12.5%;
+
+        @include mobile {
+          --radius: 25%;
+          margin-bottom: 5%;
+        }
+
+        width: var(--radius);
+        height: 0;
+        padding-top: var(--radius);
+        background: #e7e9eb;
+        border-radius: 50%;
+      }
+
+      @each $avatar in $avatars {
+        .#{$avatar}-avatar {
+          background: url(../../../images/zh/career/avatar/#{$avatar}.svg)
+            center
+            no-repeat;
+          background-size: contain;
+        }
+      }
+
+      .comment-text {
+        @include mobile {
+          width: 100%;
+        }
+
+        width: 75%;
+        height: inherit;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 1.5rem;
+        background: #fff;
+        box-shadow: 0 0.1875em 0.5em #f0f0f0;
+
+        .comment-title {
+          margin-bottom: 2rem;
+        }
+
+        &::after {
+          @include mobile {
+            left: 50%;
+            transform-origin: center;
+            transform: translateX(-50%) rotate(90deg);
+            top: calc((100vw - 2 * #{$mobile-section-padding}) * -0.05);
+          }
+
+          display: block;
+          content: '';
+          position: absolute;
+          left: -5%;
+          top: 50%;
+          width: 5%;
+          height: 0;
+          padding-top: 5%;
+          transform: translateY(-50%);
+          background: #fff;
+          clip-path: polygon(100% 0, 0 50%, 100% 100%);
+        }
+      }
+    }
+
+    .comment:last-child{
+      margin-bottom: 0;
+    }
+  }
+
+  .join-us-section {
+    @include mobile {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    position: relative;
+    padding: 6rem 0;
+    text-align: center;
+
+    .title {
+
+      @include mobile {
+        margin-bottom: 3rem;
+      }
+
+      margin-bottom: 4rem;
+      font-size: $H1;
+      
+    }
+
+    .button {
+      @include mobile {
+        margin-bottom: 0;
+      }
+      margin-bottom: 8rem;
+    }
+  }
+}

@@ -1,4 +1,5 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import React, { useState } from 'react'
 
 import SearchIcon from '@material-ui/icons/Search'
@@ -25,7 +26,7 @@ const BlogSearch = ({ className }) => {
       }
     }
   `)
-  blogs = blogs.edges.map(edge => edge.node)
+  blogs = blogs.edges.map((edge) => edge.node)
 
   const blogSearchclassName = cx('PingCAP-BlogSearch', className)
 
@@ -33,13 +34,13 @@ const BlogSearch = ({ className }) => {
   const [search, setSearch] = useState('')
   const [searchResults, setSearchResults] = useState(null)
 
-  const handleSearchOnChange = e => {
+  const handleSearchOnChange = (e) => {
     const value = e.target.value
 
     setSearch(value)
 
     if (value.length > 3) {
-      const results = blogs.filter(blog =>
+      const results = blogs.filter((blog) =>
         blog.frontmatter.title.toLowerCase().includes(value.toLowerCase())
       )
 
@@ -70,8 +71,8 @@ const BlogSearch = ({ className }) => {
       {searchResults && (
         <div className="panel">
           {searchResults
-            .map(blog => blog.frontmatter.title)
-            .map(title => (
+            .map((blog) => blog.frontmatter.title)
+            .map((title) => (
               <Link
                 key={title}
                 className="panel-block"

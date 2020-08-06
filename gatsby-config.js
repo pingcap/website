@@ -1,4 +1,6 @@
 const purgecssWhitelist = require('./purgecss-whitelist')
+const langConfig = require('./lang.config.json')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
@@ -54,18 +56,32 @@ module.exports = {
         path: `${__dirname}/data`,
       },
     },
-    {
+    ...Object.keys(langConfig.languages).map((lang) => ({
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages/blogs',
-        path: `${__dirname}/markdown-pages/blogs`,
+        name: langConfig.languages[lang].blogsPath,
+        path: `${__dirname}/${langConfig.languages[lang].blogsPath}`,
       },
-    },
+    })),
+    ...Object.keys(langConfig.languages).map((lang) => ({
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: langConfig.languages[lang].policyTermsPath,
+        path: `${__dirname}/${langConfig.languages[lang].policyTermsPath}`,
+      },
+    })),
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'markdown-pages/careers',
         path: `${__dirname}/markdown-pages/careers`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'markdown-pages/zh/careers',
+        path: `${__dirname}/markdown-pages/zh/careers`,
       },
     },
     {
@@ -111,7 +127,7 @@ module.exports = {
           `${__dirname}/node_modules/@seagreenio/react-bulma/dist/index.es.js`,
         ],
         whitelist: purgecssWhitelist,
-        ignore: [`src/styles/`],
+        ignore: [`src/styles/`, 'node_modules/swiper/css/swiper.min.css'],
       },
     },
     `gatsby-plugin-meta-redirect`,
@@ -183,8 +199,22 @@ module.exports = {
       },
     },
   ],
-  proxy: {
-    prefix: '/api/v1',
-    url: 'http://localhost:8001/api/v1',
+  proxy: [
+    {
+      prefix: '/api/v1',
+      url: 'http://localhost:8001/api/v1',
+    },
+  ],
+  developMiddleware: (app) => {
+    app.use(
+      '/api',
+      createProxyMiddleware({
+        target: 'https://forms.pingcap.com',
+        changeOrigin: true,
+        onProxyReq: (req) => {
+          req.setHeader('Origin', 'https://pingcap-zh-preview.netlify.app')
+        },
+      })
+    )
   },
 }

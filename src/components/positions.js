@@ -1,7 +1,8 @@
 import '../styles/components/positions.scss'
 
 import React from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import { replaceTitle } from '../lib/string'
 
 const Positions = () => {
