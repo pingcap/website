@@ -142,7 +142,7 @@ const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
                   to={`/zh/case-studies/${replaceTitle(study.relativePath)}`}
                   className="see-case-study"
                 >
-                  查看更多案例
+                  查看更多
                 </Link>
               </div>
               <div className="placeholder"></div>
