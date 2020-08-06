@@ -198,6 +198,11 @@ $navbar-height-mobile: 4.25rem; // 68px
 
       ul {
         list-style-type: circle;
+        display: block;
+        justify-content: unset;
+        align-items: unset;
+        flex: unset;
+        border: unset;
       }
 
 
@@ -214,6 +219,7 @@ $navbar-height-mobile: 4.25rem; // 68px
 
     }
   }
+}
 
   .get-started-with-tidb {
     @include mobile {
