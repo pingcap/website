@@ -187,6 +187,16 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           height: 100%;
         }
 
+        @media screen and (max-width: $fullhd) {
+          width: 30rem;
+          height: 18.75rem;
+        }
+
+        @media screen and (max-width: $desktop) {
+          width: calc(50vw - 3rem);
+          height: calc(31.25vw - 1.875rem);
+        }
+
         @include mobile {
           width: 100vw;
           height: calc(409.66 / 645.33 * 100vw);
