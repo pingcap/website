@@ -152,8 +152,7 @@ const ContactUsForm = ({ setSubmitState }) => {
         url:
           'https://forms.pingcap.com/api/external/f/cn-official-website-contact-us/submit',
         headers: {
-          contentType: 'application/json',
-          acceptLanguage: 'zh-hans',
+          'Accept-language': 'zh-hans',
         },
         data: {
           name: formState.name.value,

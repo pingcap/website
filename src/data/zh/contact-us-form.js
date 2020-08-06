@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  nullValidator,
-  mailValidator,
-  telValidator,
-  agreeValidator,
-} from '../../lib/validator'
+import { nullValidator, mailValidator, telValidator } from '../../lib/validator'
 
 const formConfig = [
   {
@@ -59,7 +54,7 @@ const formConfig = [
   {
     label: '我同意接收来自 PingCAP 的产品，服务，事件，博客等信息。',
     name: 'agreement',
-    validators: [agreeValidator],
+    validators: [],
     className: 'form-item--checkbox-radio',
     default: false,
     renderItem: () => <input type="checkbox" name="agreement"></input>,
