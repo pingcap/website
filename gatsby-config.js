@@ -1,5 +1,6 @@
 const purgecssWhitelist = require('./purgecss-whitelist')
 const langConfig = require('./lang.config.json')
+const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = {
   siteMetadata: {
@@ -60,6 +61,13 @@ module.exports = {
       options: {
         name: langConfig.languages[lang].blogsPath,
         path: `${__dirname}/${langConfig.languages[lang].blogsPath}`,
+      },
+    })),
+    ...Object.keys(langConfig.languages).map((lang) => ({
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: langConfig.languages[lang].policyTermsPath,
+        path: `${__dirname}/${langConfig.languages[lang].policyTermsPath}`,
       },
     })),
     {
@@ -191,8 +199,22 @@ module.exports = {
       },
     },
   ],
-  proxy: {
-    prefix: '/api/v1',
-    url: 'http://localhost:8001/api/v1',
+  proxy: [
+    {
+      prefix: '/api/v1',
+      url: 'http://localhost:8001/api/v1',
+    },
+  ],
+  developMiddleware: (app) => {
+    app.use(
+      '/api',
+      createProxyMiddleware({
+        target: 'https://forms.pingcap.com',
+        changeOrigin: true,
+        onProxyReq: (req) => {
+          req.setHeader('Origin', 'https://pingcap-zh-preview.netlify.app')
+        },
+      })
+    )
   },
 }

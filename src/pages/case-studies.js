@@ -216,6 +216,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
                 : 'dropdown-item'
             return (
               <Link
+                key={item}
                 className={className}
                 to={`/case-studies/${item.split(' ').join('-')}`}
                 onMouseDown={(e) => {

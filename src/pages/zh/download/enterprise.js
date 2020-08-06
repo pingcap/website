@@ -72,7 +72,7 @@ const Enterprise = ({ data }) => {
       const errors = validateForm(name, phone, email, company)
       if (errors) {
         setErrors(errors)
-        // return
+        return
       }
       try {
         const { data, status } = await axios.post(

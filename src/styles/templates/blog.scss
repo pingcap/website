@@ -116,7 +116,6 @@ $navbar-height-mobile: 4.25rem; // 68px
       text-align: center;
     }
 
-
     .tabs {
       min-width: 20rem;
       max-width: 100%;
@@ -200,6 +199,18 @@ $navbar-height-mobile: 4.25rem; // 68px
       ul {
         list-style-type: circle;
       }
+
+
+    p img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    table {
+      display: table;
+      width: unset;
+      margin-left: auto;
+      margin-right: auto;
 
     }
   }

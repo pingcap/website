@@ -12,7 +12,7 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
-import { useIntl } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 
 const Blog = ({ data, pageContext }) => {
   const { markdownRemark } = data
@@ -125,7 +125,7 @@ const Blog = ({ data, pageContext }) => {
                   ) : (
                     <>
                       <Link to="/blog">Blog</Link>
-                      <span> > </span>
+                      <span> &gt; </span>
                       <Link to={`/blog/category/${category}`}>{category}</Link>
                     </>
                   )}
@@ -141,7 +141,12 @@ const Blog = ({ data, pageContext }) => {
                 />
                 <BlogTags tags={frontmatter.tags} />
                 <section className="section get-started-with-tidb">
-                  <h3 className="title">Ready to get started with TiDB?</h3>
+                  <h3 className="title">
+                    <FormattedMessage
+                      id="templates.blog.getStartedTitle"
+                      defaultMessage="Ready to get started with TiDB?"
+                    />
+                  </h3>
                   <div className="destinations">
                     <Button
                       as={Link}
@@ -150,10 +155,16 @@ const Blog = ({ data, pageContext }) => {
                       outlined
                       rounded
                     >
-                      GET TiDB
+                      <FormattedMessage
+                        id="templates.blog.getStartedText"
+                        defaultMessage="GET TiDB"
+                      />
                     </Button>
                     <Button as={Link} to="/contact-us" outlined rounded>
-                      CONTACT US
+                      <FormattedMessage
+                        id="templates.blog.contactUsText"
+                        defaultMessage="CONTACT US"
+                      />
                     </Button>
                   </div>
                 </section>
