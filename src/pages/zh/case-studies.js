@@ -126,7 +126,7 @@ const CaseSwiper = React.memo(({ caseStudies, placeholderSVG }) => {
     <div className="card swiper-container">
       <div className="swiper-wrapper top">
         {caseStudies.edges
-          .slice(0, 3)
+          .slice(0, 4)
           .map(({ node }) => ({
             ...node.frontmatter,
             ...(node.parent ? { relativePath: node.parent.relativePath } : {}),
@@ -280,7 +280,10 @@ export const query = graphql`
         fields: { collection: { eq: "markdown-pages/zh/blogs" } }
         frontmatter: { category: { eq: "case" } }
       }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: {
+        fields: [frontmatter___showOnSwiper, frontmatter___date]
+        order: [ASC, DESC]
+      }
       limit: 1000
     ) {
       edges {
