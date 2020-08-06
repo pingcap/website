@@ -62,18 +62,14 @@ const Field = () => {
 }
 
 const PostFromUs = () => (
-  <NormalBox as="section" className="PingCAP-PostFromUs" shadowless>
+  <NormalBox
+    as="section"
+    className="PingCAP-PostFromUs PingCAP-PostFromUs-Block-ZH"
+    shadowless
+  >
     <Img />
-    <h4 className="title is-6">Subscribe to Stay Informed!</h4>
-    {/* <Field /> */}
-    <Button
-      as="a"
-      href="https://share.hsforms.com/1e2W03wLJQQKPd1d9rCbj_Q2npzm"
-      target="_blank"
-      color="primary"
-    >
-      SUBSCRIBE
-    </Button>
+    <h4 className="title is-5">订阅我们</h4>
+    <Field />
   </NormalBox>
 )
 

@@ -36,5 +36,12 @@
             "contactUs": "CONTACT US",
             "getTiDB": "GET TiDB"
         }
+    },
+    "templates": {
+    "blog": {
+      "getStartedTitle": "Ready to get started with TiDB?",
+      "getStartedText": "GET TiDB",
+      "contactUsText": "CONTACT US"
     }
+  }
 }

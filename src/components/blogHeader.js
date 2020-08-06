@@ -38,7 +38,8 @@ const BlogHeader = ({
           {withIcon && <CreateIcon />}
           {isCaseStudy ? customer : (author && author.join(', ')) || 'PingCAP'}
         </span>
-        {hasBlogCategories && (
+        {/* uses an empty <span> so that span:last-child won't select the author <span> */}
+        {hasBlogCategories ? (
           <span className={!withIcon ? 'without-icon' : ''}>
             {isCaseStudy ? (
               `${category}`
@@ -46,6 +47,8 @@ const BlogHeader = ({
               <Link to={`/blog/category/${category}`}>{category}</Link>
             )}
           </span>
+        ) : (
+          <span />
         )}
       </div>
     </section>

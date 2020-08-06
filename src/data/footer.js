@@ -218,8 +218,7 @@ const footerColumnsZh = [
         },
         {
           name: '联系我们',
-          link: 'mailto:',
-          outbound: true,
+          link: '/contact-us',
         },
         {
           name: '资源支持',

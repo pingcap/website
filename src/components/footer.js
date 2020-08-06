@@ -65,14 +65,7 @@ const Footer = () => {
               <Link
                 key={lang}
                 className="dropdown-item"
-                to={location.pathname.replace(
-                  new RegExp(
-                    intl.locale === langConfig.defaultLang
-                      ? `^`
-                      : `^/${intl.locale}`
-                  ),
-                  lang === langConfig.defaultLang ? '' : `/${lang}`
-                )}
+                to={lang === langConfig.defaultLang ? '/' : `/${lang}`}
               >
                 {langConfig.languages[lang].langName}
               </Link>
