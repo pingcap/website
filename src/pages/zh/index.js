@@ -370,7 +370,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-get-started-with-tidb zh">
+        {/* <section className="section section-get-started-with-tidb zh">
           <div className="container">
             <h2 className="title section-title is-4">开始试用 TiDB</h2>
             <div className="columns is-variable is-6">
@@ -438,6 +438,28 @@ const IndexPage = ({ data }) => {
               </div>
             </div>
           </div>
+        </section> */}
+
+        <section className="section">
+          <section className="container">
+            <h2 className="title section-title is-4">
+              体验全新的分布式 HTAP 数据库？
+            </h2>
+            <Button
+              as="a"
+              color="primary"
+              href="https://docs.pingcap.com/zh/tidb/stable/quick-start-with-tidb"
+              target="_blank"
+              rounded
+              style={{
+                display: 'block',
+                width: '9.375rem',
+                margin: '4rem auto 0',
+              }}
+            >
+              立即开始
+            </Button>
+          </section>
         </section>
 
         <section className="section section-join-us-newsletter">
