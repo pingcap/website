@@ -17,9 +17,9 @@ import askTug from '../../../images/home/banners/zh/home-asktug-carousel.jpg'
 import university from '../../../images/home/banners/zh/university-carousel-img.png'
 import userMessage from '../../../images/home/banners/zh/user-message-2019-banner.png'
 
-import banner1 from '../../../images/home/banners/banner 1.svg'
-import banner2 from '../../../images/home/banners/banner 2.svg'
-import banner3 from '../../../images/home/banners/banner 3.svg'
+import banner1 from '../../../images/home/banners/banner-1.svg'
+import banner2 from '../../../images/home/banners/banner-2.svg'
+import banner3 from '../../../images/home/banners/banner-3.svg'
 
 const NormalBox = withNormalHelpers(Box)
 
