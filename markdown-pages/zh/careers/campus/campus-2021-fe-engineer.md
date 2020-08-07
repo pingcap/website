@@ -6,10 +6,6 @@ tags:
 location: 北京，上海，广州，深圳，杭州，成都，特别优秀可 Remote
 avatar: hr
 position: true
-aliases:
-  - /recruit/campus/campus-2019-content-strategist/
-  - /recruit/campus/campus-2020-content-strategist/
-  - /about-cn/recruit-cn/campus/campus-2019-content-strategist/
 summary: 参与 TiDB 商业产品前端研发，构建功能丰富且流畅易用的 UI 系统，持续提升产品的用户体验；参与构建易于维护的，易于扩展的社区门户网站，丰富 CI 流程，打造高效地发布工具。
 ---
 
