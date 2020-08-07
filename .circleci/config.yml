@@ -28,7 +28,7 @@ jobs:
           key: v1-dependencies-{{ checksum "yarn.lock" }}
 
       - run:
-          command: yarn download:blogs:prod && yarn build
+          command: yarn download:blogs:prod && GATSBY_CPU_COUNT=1 yarn build
           no_output_timeout: 20m
 
       - deploy:
