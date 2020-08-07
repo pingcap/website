@@ -34,9 +34,9 @@ const About = ({ data }) => {
     },
   }
   const introVideoConfig = {
-    src: 'https://download.pingcap.com/videos/pingcap-intro-v2.mp4',
+    src: 'https://download.pingcap.com/videos/pingcap-intro-v4.mp4',
     type: 'video/mp4',
-    poster: 'https://download.pingcap.com/images/video-poster.jpg',
+    poster: 'https://download.pingcap.com/images/pingcap-intro-v4-cover.png',
     controls: true,
     playsInline: true,
   }
