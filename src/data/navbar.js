@@ -73,6 +73,10 @@ const navbarItemsZh = {
       href: 'https://university.pingcap.com',
       outbound: true,
     },
+    {
+      name: '关于',
+      href: '/about',
+    },
   ],
   contactUs: {
     name: '联系我们',

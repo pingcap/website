@@ -1,13 +1,14 @@
 ---
 title: Infrastructure Engineer
-season: 2020 校招 
+season: 2021 校招 
 tags:
   - Campus
-location: 北京，上海，广州，杭州，深圳，成都
+location: 北京，上海，广州，杭州，成都
 avatar: database
 position: true
 aliases:
   - /recruit/campus/hr-intern/campus-2019-infrastructure-engineer/
+  - /recruit/campus/hr-intern/campus-2020-infrastructure-engineer/
   - /recruit-cn/campus/campus-2019-infrastructure-engineer/
   - /about-cn/recruit/campus/campus-2019-infrastructure-engineer/
 summary: 如果你： 内心不安，喜欢挑战和创新； 熟悉分布式系统，大数据或者数据库领域； 想和简单有爱的 PingCAP 的工程师们一起做世界级的开源项目。 那么你就是我们要找的人。 
@@ -53,4 +54,4 @@ hire@pingcap.com
 
 **工作地点：**
 
-北京，上海，广州，杭州，深圳，成都
+北京，上海，广州，杭州，成都
