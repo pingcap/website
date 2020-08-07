@@ -1,6 +1,6 @@
 ---
 title: Marketing Specialist
-season: 2020 校招 
+season: 2021 校招 
 tags:
   - Campus
 location: 北京
