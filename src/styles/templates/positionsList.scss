@@ -1,0 +1,96 @@
+@import '../common';
+
+.PingCAP-PositionsList {
+    margin: 6rem 0;
+
+    @include mobile {
+        margin: 0;
+    }
+
+    .section {
+        @include mobile {
+            padding: 2rem 1rem 5rem;
+        }
+    }
+
+    .categories {
+        border-right: 1px solid #DBE4F0;
+
+        & > a {
+            display: block;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            padding: 0.25rem 1rem;
+            height: auto;
+            color: $B4;
+            background: $B5;
+            font-size: $size-7;
+            border: none;
+            border-radius: 3px;
+
+            &.active,
+            &:hover {
+                color: #fff;
+                background: $primary;
+            }
+
+            @include mobile {
+                margin-right: 1rem;
+            }
+        }
+
+        @include mobile {
+            border-right: none;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+    }
+
+    .positions {
+        margin-top: -2rem;
+        margin-bottom: -2rem;
+
+        & > a {
+            color: unset;
+        }
+
+        .position-card {
+            margin-left: -2rem;
+            padding: 2rem;
+
+            .title {
+                margin-bottom: 2rem;
+                font-weight: 500;
+            }
+            
+            .summary {
+                font-weight: 300;
+                color: $M4;
+                font-size: $size-8;
+
+                @include mobile {
+                    line-height: $LH4;
+                }
+            }
+
+            &:hover {
+                box-shadow: 0px 1px 14px rgba(0,0,0,0.08);
+
+                .title {
+                    color: $B1;
+                }
+
+                @include mobile {
+                    box-shadow: none;
+                }
+            }
+
+            @include mobile {
+                margin-left: 0;
+                padding: 1.5rem 0;
+            }
+        }
+    }
+}

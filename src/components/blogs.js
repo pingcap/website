@@ -1,7 +1,8 @@
 import '../styles/templates/blogs.scss'
 
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import React, { useEffect, useState } from 'react'
+import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
 // import BlogSearch from './blogSearch'
@@ -9,54 +10,25 @@ import BlogTags from './blogTags'
 import Layout from './layout'
 import Pagination from './pagination'
 import PostFromUs from './postFromUs'
+import PostFromUsZH from './zh/postFromUs'
 import SEO from './seo'
 import Socials from './socials'
 import { replaceTitle } from '../lib/string'
 
-const Blogs = ({
-  data,
-  pageContext,
-  PaginationPathPrefix,
-  isTagPage,
-  isCategoryPage,
-}) => {
+const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
   const blogs = data.allMarkdownRemark.edges
   const {
     currentPage,
     numPages,
     tag: currentTag,
     category: currentCategory,
+    hasBlogCategories,
   } = pageContext
 
-  const title = isTagPage
-    ? pageContext.tag
-    : isCategoryPage
-    ? pageContext.category
-    : 'Blogs'
+  const categories = data.categories.group.map((i) => i.category)
+  const tags = data.tags.group.map((i) => i.tag)
 
-  const query = useStaticQuery(graphql`
-    query {
-      categories: allMarkdownRemark(
-        filter: { frontmatter: { customer: { eq: null } } }
-      ) {
-        group(field: frontmatter___categories) {
-          category: fieldValue
-        }
-      }
-      tags: allMarkdownRemark(
-        filter: { frontmatter: { customer: { eq: null } } }
-      ) {
-        group(field: frontmatter___tags) {
-          tag: fieldValue
-        }
-      }
-    }
-  `)
-
-  const categories = query.categories.group.map((i) => i.category)
-  const tags = query.tags.group.map((i) => i.tag)
-
-  const [showCategories, setShowCategories] = useState(true)
+  const [showCategories, setShowCategories] = useState(hasBlogCategories)
 
   useEffect(() => {
     if (isTagPage) {
@@ -69,17 +41,19 @@ const Blogs = ({
   const CategoriesAndTags = ({ isDesktop = true }) => (
     <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
       <div className="titles">
-        <div
-          role="button"
-          tabIndex={0}
-          className={`title is-6 categories-title${
-            showCategories ? ' active' : ''
-          }`}
-          onClick={handleShowCategories(true)}
-          onKeyDown={handleShowCategories(true)}
-        >
-          Categories
-        </div>
+        {hasBlogCategories && (
+          <div
+            role="button"
+            tabIndex={0}
+            className={`title is-6 categories-title${
+              showCategories ? ' active' : ''
+            }`}
+            onClick={handleShowCategories(true)}
+            onKeyDown={handleShowCategories(true)}
+          >
+            Categories
+          </div>
+        )}
         <div
           role="button"
           tabIndex={0}
@@ -114,6 +88,8 @@ const Blogs = ({
     </div>
   )
 
+  const { locale } = useIntl()
+
   return (
     <Layout>
       <SEO
@@ -133,6 +109,7 @@ const Blogs = ({
                       frontmatter={node.frontmatter}
                       filePath={node.parent.relativePath}
                       isTitleLink
+                      hasBlogCategories={hasBlogCategories}
                     />
                     {node.frontmatter.image && (
                       <Link
@@ -158,7 +135,7 @@ const Blogs = ({
               <div className="column is-4 is-offset-1 right-column">
                 <div className="main">
                   {/* <BlogSearch className="search-desktop" /> */}
-                  <PostFromUs />
+                  {locale === 'zh' ? <PostFromUsZH /> : <PostFromUs />}
                   <div className="follow-us">
                     <h3 className="title is-6">Follow to Join Us!</h3>
                     <div className="socials">

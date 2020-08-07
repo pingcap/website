@@ -1,9 +1,10 @@
 import '../../styles/pages/download/community.scss'
 
-import React, { useState, useEffect } from 'react'
+import React, { useCallback, useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
+import Link from '../../components/IntlLink'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -22,7 +23,7 @@ const Community = ({ data }) => {
   const versions = ['v4.0.0', 'v4.0.1', 'v4.0.2', 'v4.0.3', 'v4.0.4']
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
-  const validateForm = () => {
+  const validateForm = useCallback(() => {
     setWrongMsg([])
     let errMsg = []
 
@@ -47,7 +48,7 @@ const Community = ({ data }) => {
     }
 
     return errMsg
-  }
+  }, [selPkg, selVersion, termsChecked])
 
   const downloadPackage = () => {
     let errMsg = validateForm()
@@ -81,7 +82,7 @@ const Community = ({ data }) => {
 
   useEffect(() => {
     validateForm()
-  }, [selVersion, selPkg, termsChecked])
+  }, [validateForm])
 
   return (
     <Layout>

@@ -120,6 +120,13 @@ $navbar-height-mobile: 4.25rem; // 68px
       display: block;
       margin: 0 auto;
     }
+
+    table {
+      display: table;
+      width: unset;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .get-started-with-tidb {

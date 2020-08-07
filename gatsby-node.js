@@ -12,18 +12,27 @@ const createBlogTags = require('./create-pages/blogTags')
 const createBlogCategories = require('./create-pages/blogCategories')
 const createCaseStudies = require('./create-pages/caseStudies')
 const createPositions = require('./create-pages/position')
+const createPositionsZH = require('./create-pages/position-zh')
+const createPositionsPagination = require('./create-pages/positions')
+const createPositionsAllPagination = require('./create-pages/positionsAll')
 const createPolicyTerms = require('./create-pages/policyTerms')
+const createIntlPages = require('./create-pages/intl')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
 
-  createBlogs({ graphql, createPage, createRedirect })
-  createBlogPagination({ graphql, createPage })
-  createBlogTags({ graphql, createPage })
-  createBlogCategories({ graphql, createPage })
-  createCaseStudies({ graphql, createPage })
-  createPositions({ graphql, createPage, createRedirect })
-  createPolicyTerms({ graphql, createPage })
+  await Promise.all([
+    createBlogs({ graphql, createPage, createRedirect }),
+    createBlogPagination({ graphql, createPage }),
+    createBlogTags({ graphql, createPage }),
+    createBlogCategories({ graphql, createPage }),
+    createPositionsZH({ graphql, createPage }),
+    createPositionsPagination({ graphql, createPage }),
+    createPositionsAllPagination({ graphql, createPage }),
+    createCaseStudies({ graphql, createPage }),
+    createPositions({ graphql, createPage, createRedirect }),
+    createPolicyTerms({ graphql, createPage }),
+  ])
 }
 
 exports.onCreateNode = ({ actions, node, getNode }) => {
@@ -38,4 +47,8 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
       value: parent.sourceInstanceName,
     })
   }
+}
+
+exports.onCreatePage = ({ page, actions }) => {
+  createIntlPages({ page, actions })
 }

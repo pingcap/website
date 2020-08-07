@@ -1,9 +1,11 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
+import Link from './IntlLink'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
 import AddIcon from '@material-ui/icons/Add'
 import { Button } from '@seagreenio/react-bulma'
-import { navbarItems, promotionText } from '../data/navbar'
+import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
+import { useIntl } from 'react-intl'
 
 const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
@@ -18,6 +20,9 @@ const Navbar = ({ showBanner }) => {
       }
     `
   )
+
+  const intl = useIntl()
+  const navbarItems = intl.locale === 'zh' ? navbarItemsZh : navbarItemsEn
 
   const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
@@ -45,7 +50,7 @@ const Navbar = ({ showBanner }) => {
   }, [])
 
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
-  const closePromotion = useCallback(() => setPromotionOpen(false))
+  const closePromotion = useCallback(() => setPromotionOpen(false), [])
 
   return (
     <nav
@@ -60,7 +65,14 @@ const Navbar = ({ showBanner }) => {
             <div className="horn" />
             {promotionText}
             <div className="blank" />
-            <div className="close" onClick={closePromotion} />
+            <div
+              role="button"
+              tabIndex={0}
+              aria-label="close"
+              className="close"
+              onClick={closePromotion}
+              onKeyDown={closePromotion}
+            />
           </div>
         </div>
       )}
@@ -86,19 +98,23 @@ const Navbar = ({ showBanner }) => {
             <span aria-hidden="true"></span>
           </button>
 
+          {/* eslint-disable-next-line jsx-a11y/anchor-has-content */}
           <a
             href="https://github.com/pingcap"
             target="_blank"
+            rel="noreferrer"
+            aria-label="github icon"
             className="github-icon-mobile"
           />
         </div>
         <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
           <div className="navbar-start">
-            {navbarItems.map((item) => (
+            {navbarItems.navItems.map((item) => (
               <Fragment key={item.name}>
                 {item.dropdown ? (
                   <div
-                    role="navigation"
+                    role="button"
+                    tabIndex="0"
                     className={`navbar-item has-dropdown is-hoverable with-main-section ${
                       burgerActive ? '' : 'hide-burger'
                     }"`}
@@ -130,6 +146,7 @@ const Navbar = ({ showBanner }) => {
                         href={item.href}
                         className="navbar-item with-main-section"
                         target="_blank"
+                        rel="noreferrer noopener"
                       >
                         {item.name}
                       </a>
@@ -152,6 +169,7 @@ const Navbar = ({ showBanner }) => {
               href="https://github.com/pingcap"
               target="_blank"
               className="navbar-item with-github-section"
+              rel="noreferrer noopener"
             >
               <div className="github-icon"></div>
             </a>
@@ -160,24 +178,24 @@ const Navbar = ({ showBanner }) => {
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/contact-us"
+                to={navbarItems.contactUs.href}
                 className="get-tidb"
                 color="primary"
                 rounded
                 outlined
               >
-                ASK AN EXPERT
+                {navbarItems.contactUs.name}
               </Button>
             </div>
             <div className="navbar-item with-get-tidb">
               <Button
                 as={Link}
-                to="/download"
+                to={navbarItems.downloadTiDB.href}
                 className="get-tidb"
                 color="primary"
                 rounded
               >
-                GET TiDB
+                {navbarItems.downloadTiDB.name}
               </Button>
             </div>
           </div>

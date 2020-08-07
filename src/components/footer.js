@@ -4,8 +4,11 @@ import AddIcon from '@material-ui/icons/Add'
 import LanguageIcon from '@material-ui/icons/Language'
 import React, { useState } from 'react'
 import Socials from './socials'
-import { footerColumns } from '../data/footer'
+import footerColumnsMap from '../data/footer'
 import BoundLink from './boundLink'
+import langConfig from '../../lang.config.json'
+import { useLocation } from '@reach/router'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(
@@ -31,6 +34,9 @@ const Footer = () => {
     title.nextSibling.classList.toggle('displayed')
   }
 
+  const location = useLocation()
+  const intl = useIntl()
+
   const Lang = ({ align }) => {
     const [dropdownActive, setDropdownActive] = useState('')
 
@@ -55,12 +61,15 @@ const Footer = () => {
         </div>
         <div className="dropdown-menu">
           <div className="dropdown-content">
-            <Link to="/" className="dropdown-item">
-              English
-            </Link>
-            <Link to="/zh" className="dropdown-item">
-              简体中文
-            </Link>
+            {Object.keys(langConfig.languages).map((lang) => (
+              <Link
+                key={lang}
+                className="dropdown-item"
+                to={lang === langConfig.defaultLang ? '/' : `/${lang}`}
+              >
+                {langConfig.languages[lang].langName}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
@@ -71,7 +80,7 @@ const Footer = () => {
     <footer className="footer PingCAP-Footer">
       <div className="container">
         <div className="columns">
-          {footerColumns.map((columns, i) => (
+          {footerColumnsMap[intl.locale].map((columns, i) => (
             <div key={i} className="column">
               {columns.map((column) => (
                 <div key={column.name} className="subcolumn">

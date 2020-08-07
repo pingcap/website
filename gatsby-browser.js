@@ -8,6 +8,8 @@
 
 import './src/styles/global.scss'
 
+export { wrapPageElement } from './create-pages/wrapPage'
+
 export const onRouteUpdate = ({ location }) => {
   const pathname = location.pathname
   const caseStudiesSubPath = /^(\/zh)?\/case-studies\/.+/

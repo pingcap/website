@@ -11,10 +11,10 @@ const Blogs = ({ data, pageContext }) => (
 )
 
 export const query = graphql`
-  query($limit: Int!, $skip: Int!) {
+  query($limit: Int!, $skip: Int!, $blogsPath: String) {
     allMarkdownRemark(
       filter: {
-        fields: { collection: { eq: "markdown-pages/blogs" } }
+        fields: { collection: { eq: $blogsPath } }
         frontmatter: { customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -38,6 +38,26 @@ export const query = graphql`
             }
           }
         }
+      }
+    }
+    categories: allMarkdownRemark(
+      filter: {
+        fields: { collection: { eq: $blogsPath } }
+        frontmatter: { customer: { eq: null } }
+      }
+    ) {
+      group(field: frontmatter___categories) {
+        category: fieldValue
+      }
+    }
+    tags: allMarkdownRemark(
+      filter: {
+        fields: { collection: { eq: $blogsPath } }
+        frontmatter: { customer: { eq: null } }
+      }
+    ) {
+      group(field: frontmatter___tags) {
+        tag: fieldValue
       }
     }
   }
