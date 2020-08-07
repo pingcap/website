@@ -62,13 +62,13 @@ const Footer = () => {
         <div className="dropdown-menu">
           <div className="dropdown-content">
             {Object.keys(langConfig.languages).map((lang) => (
-              <Link
+              <a
                 key={lang}
                 className="dropdown-item"
-                to={lang === langConfig.defaultLang ? '/' : `/${lang}`}
+                href={lang === langConfig.defaultLang ? '/' : `/${lang}`}
               >
                 {langConfig.languages[lang].langName}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
