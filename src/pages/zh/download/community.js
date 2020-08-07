@@ -156,7 +156,7 @@ const Community = ({ data }) => {
                   className="checkbox"
                 />
                 我同意&nbsp;
-                <Link to="/license">PingCAP 社区软件许可协议</Link>
+                <Link to="/zh/licenses">PingCAP 社区软件许可协议</Link>
                 与&nbsp;
                 <Link to="/zh/privacy-policy/">隐私协议</Link>
               </div>
