@@ -21,16 +21,18 @@ const createIntlPages = require('./create-pages/intl')
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
 
-  createBlogs({ graphql, createPage, createRedirect })
-  createBlogPagination({ graphql, createPage })
-  createBlogTags({ graphql, createPage })
-  createBlogCategories({ graphql, createPage })
-  createPositionsZH({ graphql, createPage })
-  createPositionsPagination({ graphql, createPage })
-  createPositionsAllPagination({ graphql, createPage })
-  createCaseStudies({ graphql, createPage })
-  createPositions({ graphql, createPage, createRedirect })
-  createPolicyTerms({ graphql, createPage })
+  await Promise.all([
+    createBlogs({ graphql, createPage, createRedirect }),
+    createBlogPagination({ graphql, createPage }),
+    createBlogTags({ graphql, createPage }),
+    createBlogCategories({ graphql, createPage }),
+    createPositionsZH({ graphql, createPage }),
+    createPositionsPagination({ graphql, createPage }),
+    createPositionsAllPagination({ graphql, createPage }),
+    createCaseStudies({ graphql, createPage }),
+    createPositions({ graphql, createPage, createRedirect }),
+    createPolicyTerms({ graphql, createPage }),
+  ])
 }
 
 exports.onCreateNode = ({ actions, node, getNode }) => {
