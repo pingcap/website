@@ -13,15 +13,13 @@ import database from '../../../images/home/logos/zh/database.svg'
 
 const celebrateYourGrowthData = [
   {
-    name: '真正的开源',
-    desc:
-      'TiDB 由生态系统中的大量开源数据迁移工具提供支持，支持用户自由选择供应商。',
+    name: '开源生态',
+    desc: 'TiDB 的开源生态系统提供各类开源服务工具，支持用户自由选择供应商。',
     placeholder: c1SVG,
   },
   {
-    name: '自由扩容的关系型数据库',
-    desc:
-      '专门为在不侵入应用程序的情况下按比例交付 SQL 和解决传统关系数据库的扩展难题而构建。',
+    name: '分布式关系型数据库',
+    desc: '实现一键水平伸缩及自由扩展，解决传统关系数据库的扩展难题。',
     placeholder: c2SVG,
   },
   {
