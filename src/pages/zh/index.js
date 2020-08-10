@@ -57,7 +57,7 @@ const caseLogos = [
 const banners = [
   { img: askTug, url: 'https://asktug.com/t/topic/33760/2' },
   { img: university, url: 'https://university.pingcap.com/' },
-  { img: userMessage, url: 'https://pingcap.com/zh/user-message-2019/' },
+  { img: userMessage, url: '/zh/user-message-2019/' },
 ]
 
 const IndexPage = ({ data }) => {
@@ -193,7 +193,7 @@ const IndexPage = ({ data }) => {
                   <Button
                     as="a"
                     color="primary"
-                    href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
+                    href="https://docs.pingcap.com/zh/tidb/stable/quick-start-with-tidb"
                     target="_blank"
                     rounded
                   >
@@ -202,11 +202,11 @@ const IndexPage = ({ data }) => {
                   <Button
                     as={Link}
                     color="primary"
-                    to="/contact-us"
+                    to="/zh/contact-us"
                     rounded
                     outlined
                   >
-                    Github
+                    联系我们
                   </Button>
                 </div>
               </div>
@@ -386,7 +386,7 @@ const IndexPage = ({ data }) => {
 
                   <Button
                     as="a"
-                    href="https://docs.pingcap.com/tidb/v4.0/production-deployment-using-tiup"
+                    href="https://docs.pingcap.com/zh/tidb/stable/production-deployment-using-tiup"
                     target="_blank"
                     color="primary"
                   >
@@ -409,7 +409,7 @@ const IndexPage = ({ data }) => {
                   </Box>
                   <Button
                     as="a"
-                    href="https://docs.pingcap.com/tidb-in-kubernetes/v1.1/get-started"
+                    href="https://docs.pingcap.com/zh/tidb/stable/production-deployment-using-tiup"
                     target="_blank"
                     color="primary"
                   >

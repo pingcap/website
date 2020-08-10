@@ -14,7 +14,7 @@ const Download = ({ data }) => {
   return (
     <Layout>
       <SEO title="Download TiDB" description="" />
-      <article className="PingCAP-Download-TiDB">
+      <article className="PingCAP-Download-TiDB-ZH">
         <section className="section download-section">
           <div className="container">
             <div className="deploy-on-premise">

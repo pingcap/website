@@ -116,6 +116,96 @@ $navbar-height-mobile: 4.25rem; // 68px
       text-align: center;
     }
 
+    .tabs {
+      min-width: 20rem;
+      max-width: 100%;
+      margin: 2rem auto;
+      background: #fff;
+      display: unset;
+      font-size: inherit;
+      align-items: unset;
+      justify-content: unset;
+      overflow: unset;
+      white-space: unset;
+
+      a {
+        display: unset;
+        align-items: unset;
+        justify-content: unset;
+        border: unset;
+        padding:unset;
+        margin: unset;
+        vertical-align: unset;
+      }
+
+      input {
+        display: none;
+      }
+
+      label {
+        line-height: 1.5;
+        font-size: 1rem;
+        -webkit-tap-highlight-color: transparent;
+        box-sizing: border-box;
+        position: relative;
+        display: inline-block;
+        margin: 0 0 -1px;
+        padding: 0.9375rem 1.5625rem;
+        font-weight: 600;
+        text-align: center;
+        color: #bbb;
+        border: 1px solid transparent;
+      }
+
+      input:checked+label {
+        color: #555;
+        border: 1px solid #ddd;
+        border-top: 2px solid #1e2969;
+        border-bottom: 1px solid #fff;
+      }
+
+      section {
+        display: none;
+        padding: 1.25rem 0;
+        border-top: 1px solid #ddd;
+      }
+
+      input[id="tabMacOS"]:checked~#macOSContent {
+        display: block;
+      }
+
+      input[id="tabLinux"]:checked~#linuxContent {
+        display: block;
+      }
+
+      h3 {
+        margin: 0 0 1.25rem;
+      }
+
+      ol,ul {     
+        padding-left: 2em;
+        margin: .7rem 0;
+        line-height: 1.7;
+        font-size: $P1;
+        font-weight: 400;
+        color: #3e3e3e;
+
+        li {
+          display: list-item;
+        }
+
+      }
+
+      ul {
+        list-style-type: circle;
+        display: block;
+        justify-content: unset;
+        align-items: unset;
+        flex: unset;
+        border: unset;
+      }
+
+
     p img {
       display: block;
       margin: 0 auto;
@@ -126,8 +216,10 @@ $navbar-height-mobile: 4.25rem; // 68px
       width: unset;
       margin-left: auto;
       margin-right: auto;
+
     }
   }
+}
 
   .get-started-with-tidb {
     @include mobile {
@@ -149,7 +241,7 @@ $navbar-height-mobile: 4.25rem; // 68px
 
     .destinations {
       text-align: center;
-      
+
       a {
         @include mobile {
           padding: 0 1rem;
