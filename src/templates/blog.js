@@ -123,7 +123,7 @@ const Blog = ({ data, pageContext }) => {
                   {intl.locale === 'zh' ? (
                     <>
                       <span> &lt; </span>
-                      <Link to="/blog">坚客</Link>
+                      <Link to="/blog">博客</Link>
                     </>
                   ) : (
                     <>
