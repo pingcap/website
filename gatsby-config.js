@@ -135,7 +135,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/website-en-sitemap.xml`,
-        exclude: ['/404'],
+        exclude: ['/404', `/zh/*`],
         sitemapSize: 500,
       },
     },
