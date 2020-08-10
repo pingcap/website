@@ -20,6 +20,7 @@ const createBlogs = async ({ graphql, createPage, createRedirect }) => {
             node {
               frontmatter {
                 title
+                aliases
               }
               parent {
                 ... on File {

@@ -26,10 +26,10 @@ exports.createPages = async ({ actions, graphql }) => {
     createBlogPagination({ graphql, createPage }),
     createBlogTags({ graphql, createPage }),
     createBlogCategories({ graphql, createPage }),
-    createPositionsZH({ graphql, createPage }),
+    createPositionsZH({ graphql, createPage, createRedirect }),
     createPositionsPagination({ graphql, createPage }),
     createPositionsAllPagination({ graphql, createPage }),
-    createCaseStudies({ graphql, createPage }),
+    createCaseStudies({ graphql, createPage, createRedirect }),
     createPositions({ graphql, createPage, createRedirect }),
     createPolicyTerms({ graphql, createPage }),
   ])
