@@ -2,7 +2,7 @@ const path = require('path')
 const { langPrefixes, replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
-const createPositionsZH = async ({ graphql, createPage }) => {
+const createPositionsZH = async ({ graphql, createPage, createRedirect }) => {
   const positionTemplate = path.resolve(
     `${__dirname}/../src/templates/position-zh.js`
   )
@@ -21,6 +21,7 @@ const createPositionsZH = async ({ graphql, createPage }) => {
           node {
             frontmatter {
               title
+              aliases
             }
             parent {
               ... on File {
@@ -35,8 +36,10 @@ const createPositionsZH = async ({ graphql, createPage }) => {
 
   result.data.positions.edges.forEach(({ node }) => {
     langPrefixes(lang).forEach((prefix) => {
+      const _path = `${prefix}careers/${replaceTitle(node.parent.relativePath)}`
+
       createPage({
-        path: `${prefix}careers/${replaceTitle(node.parent.relativePath)}`,
+        path: _path,
         component: positionTemplate,
         context: {
           title: node.frontmatter.title,
@@ -45,6 +48,19 @@ const createPositionsZH = async ({ graphql, createPage }) => {
           ...langConfig.languages[lang],
         },
       })
+
+      // create redirect
+      if (node.frontmatter.aliases) {
+        const aliasesArr = node.frontmatter.aliases
+
+        aliasesArr.forEach((alias) => {
+          createRedirect({
+            fromPath: `${alias}`,
+            toPath: _path,
+            isPermanent: true,
+          })
+        })
+      }
     })
   })
 }

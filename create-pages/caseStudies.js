@@ -2,7 +2,7 @@ const path = require('path')
 const replaceTitle = require('./utils').replaceTitle
 const langConfig = require('../lang.config.json')
 
-const createCaseStudies = async ({ graphql, createPage }) => {
+const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
   const caseStudyTemplate = path.resolve(
     `${__dirname}/../src/templates/caseStudy.js`
   )
@@ -20,6 +20,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
             frontmatter {
               title
               customerCategory
+              aliases
             }
             parent {
               ... on File {
@@ -48,6 +49,7 @@ const createCaseStudies = async ({ graphql, createPage }) => {
             frontmatter {
               title
               customerCategory
+              aliases
             }
             parent {
               ... on File {
@@ -61,8 +63,9 @@ const createCaseStudies = async ({ graphql, createPage }) => {
   `)
 
   data.caseStudies.edges.forEach(({ node }) => {
+    const _path = `case-studies/${replaceTitle(node.parent.relativePath)}`
     createPage({
-      path: `case-studies/${replaceTitle(node.parent.relativePath)}`,
+      path: _path,
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
@@ -70,11 +73,25 @@ const createCaseStudies = async ({ graphql, createPage }) => {
         ...langConfig.languages['en'],
       },
     })
+
+    // create redirect
+    if (node.frontmatter.aliases) {
+      const aliasesArr = node.frontmatter.aliases
+
+      aliasesArr.forEach((alias) => {
+        createRedirect({
+          fromPath: `${alias}`,
+          toPath: _path,
+          isPermanent: true,
+        })
+      })
+    }
   })
 
   data.caseStudiesZH.edges.forEach(({ node }) => {
+    const _path = `zh/case-studies/${replaceTitle(node.parent.relativePath)}`
     createPage({
-      path: `zh/case-studies/${replaceTitle(node.parent.relativePath)}`,
+      path: _path,
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
@@ -82,6 +99,19 @@ const createCaseStudies = async ({ graphql, createPage }) => {
         ...langConfig.languages['zh'],
       },
     })
+
+    // create redirect
+    if (node.frontmatter.aliases) {
+      const aliasesArr = node.frontmatter.aliases
+
+      aliasesArr.forEach((alias) => {
+        createRedirect({
+          fromPath: `${alias}`,
+          toPath: _path,
+          isPermanent: true,
+        })
+      })
+    }
   })
 
   const categoriesOfStudies = [
