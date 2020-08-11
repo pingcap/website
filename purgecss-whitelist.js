@@ -1,4 +1,5 @@
 const logos = [
+  'PayPay',
   'VNG',
   'JD-Cloud---AI',
   'Zhihu',
