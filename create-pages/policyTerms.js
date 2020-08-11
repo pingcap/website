@@ -13,7 +13,7 @@ const createPositions = async ({ graphql, createPage }) => {
     const result = await graphql(`
       query {
         blogs: allMdx(
-          filter: { fields: { collection: { eq: "${policyTermsPath}" } } }
+          filter: { fileAbsolutePath: { regex: "${policyTermsPath}" } }
           limit: 1000
         ) {
           edges {

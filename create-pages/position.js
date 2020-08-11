@@ -9,7 +9,7 @@ const createPositions = async ({ graphql, createPage, createRedirect }) => {
   const result = await graphql(`
     query {
       blogs: allMdx(
-        filter: { fileAbsolutePath: { regex: "${langConfig.languages.en.positionsPath}" } }
+        filter: { fileAbsolutePath: { regex: "/markdown-pages/careers/" } }
         limit: 1000
       ) {
         edges {
