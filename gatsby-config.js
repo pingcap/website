@@ -92,9 +92,10 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [`gatsby-remark-autolink-headers`],
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [`gatsby-remark-autolink-headers`],
       },
     },
     `gatsby-plugin-sharp`,
@@ -152,8 +153,8 @@ module.exports = {
       options: {
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.edges.map((edge) => {
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map((edge) => {
                 return Object.assign({}, edge.node.frontmatter, {
                   description: edge.node.frontmatter.summary,
                   date: edge.node.frontmatter.date,
@@ -166,9 +167,9 @@ module.exports = {
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
                   filter: {
-                    fields: { collection: { eq: "markdown-pages/blogs" } }
+                    fileAbsolutePath: { regex: "/markdown-pages/blogs/" }
                     frontmatter: { customer: { eq: null } }
                   }
                   limit: 1000
@@ -176,7 +177,7 @@ module.exports = {
                 ) {
                   edges {
                     node {
-                      html
+                      body
                       frontmatter {
                         title
                         date

@@ -9,9 +9,9 @@ const createBlogs = async ({ graphql, createPage, createRedirect }) => {
 
     const result = await graphql(`
       query {
-        blogs: allMarkdownRemark(
+        blogs: allMdx(
           filter: {
-            fields: { collection: { eq: "${blogsPath}" } }
+            fileAbsolutePath: { regex: "${blogsPath}" }
             frontmatter: { customer: { eq: null } }
           }
           limit: 1000

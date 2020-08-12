@@ -12,9 +12,9 @@ const Positions = ({ data, pageContext }) => (
 
 export const query = graphql`
   query($category: String, $limit: Int!, $skip: Int!, $positionsPath: String) {
-    allMarkdownRemark(
+    allMdx(
       filter: {
-        fields: { collection: { eq: $positionsPath } }
+        fileAbsolutePath: { regex: $positionsPath }
         frontmatter: { tags: { in: [$category] } }
       }
       limit: $limit
@@ -34,8 +34,8 @@ export const query = graphql`
         }
       }
     }
-    categories: allMarkdownRemark(
-      filter: { fields: { collection: { eq: $positionsPath } } }
+    categories: allMdx(
+      filter: { fileAbsolutePath: { regex: $positionsPath } }
     ) {
       group(field: frontmatter___tags) {
         category: fieldValue

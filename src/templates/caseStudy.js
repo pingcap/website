@@ -7,11 +7,14 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Socials from '../components/socials'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
+import TOCRenderer from '../components/tocRenderer'
 import { FormattedMessage } from 'react-intl'
 
 const CaseStudy = ({ data, pageContext }) => {
-  const { markdownRemark } = data
-  const { frontmatter, html, tableOfContents } = markdownRemark
+  const { mdx } = data
+  const { frontmatter, body: html, tableOfContents } = mdx
   const filePath = { pageContext }
   const category = frontmatter.customerCategory
 
@@ -91,10 +94,11 @@ const CaseStudy = ({ data, pageContext }) => {
                   filePath={filePath}
                   isCaseStudy
                 />
-                <div
-                  className="markdown-body blog-content"
-                  dangerouslySetInnerHTML={{ __html: html }}
-                />
+                <div className="markdown-body blog-content">
+                  <MDXProvider>
+                    <MDXRenderer>{html}</MDXRenderer>
+                  </MDXProvider>
+                </div>
                 <section className="section get-started-with-tidb">
                   <h3 className="title">
                     <FormattedMessage
@@ -127,10 +131,9 @@ const CaseStudy = ({ data, pageContext }) => {
               <div className="column is-4 is-offset-1 right-column">
                 <div className="toc">
                   <div className="title is-6">What's on this page</div>
-                  <div
-                    className="toc-content"
-                    dangerouslySetInnerHTML={{ __html: tableOfContents }}
-                  />
+                  <div className="toc-content">
+                    <TOCRenderer>{tableOfContents.items}</TOCRenderer>
+                  </div>
                 </div>
                 <div
                   className="follow-us"
@@ -150,10 +153,11 @@ const CaseStudy = ({ data, pageContext }) => {
   )
 }
 
+// TODO: tableOfContents query: absolute: false, pathToSlugField: "frontmatter.title"
 export const query = graphql`
   query($title: String) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
-      html
+    mdx(frontmatter: { title: { eq: $title } }) {
+      body
       frontmatter {
         title
         summary
@@ -162,7 +166,7 @@ export const query = graphql`
         customerCategory
         image
       }
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
+      tableOfContents
     }
   }
 `

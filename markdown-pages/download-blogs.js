@@ -46,7 +46,7 @@ async function downloadBlogs(
   }
 
   if (!blogName && isDev) {
-    blogs = [blogs[0]]
+    blogs = [blogs[0], blogs[1], blogs[2]]
     log(chalk.blue('No blog name specified. Use first blog for development.'))
     log(chalk.blue('Downloading: ' + blogs[0].name))
   }

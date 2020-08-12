@@ -11,9 +11,9 @@ const createBlogTags = async ({ graphql, createPage }) => {
 
     const result = await graphql(`
       query {
-        tags: allMarkdownRemark(
+        tags: allMdx(
           filter: {
-            fields: { collection: { eq: "${blogsPath}" } }
+            fileAbsolutePath: { regex: "${blogsPath}" }
             frontmatter: { customer: { eq: null } }
           }
         ) {

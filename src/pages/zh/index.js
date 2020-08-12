@@ -461,9 +461,9 @@ export const query = graphql`
     tidbFeaturesMP4: file(relativePath: { eq: "home/tidb-features.mp4" }) {
       publicURL
     }
-    last3Blogs: allMarkdownRemark(
+    last3Blogs: allMdx(
       filter: {
-        fields: { collection: { eq: $blogsPath } }
+        fileAbsolutePath: { regex: $blogsPath }
         frontmatter: { customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }

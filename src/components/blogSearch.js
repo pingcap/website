@@ -9,9 +9,9 @@ import { replaceTitle } from '../lib/string'
 const BlogSearch = ({ className }) => {
   let { blogs } = useStaticQuery(graphql`
     query {
-      blogs: allMarkdownRemark(
+      blogs: allMdx(
         filter: {
-          fields: { collection: { eq: "markdown-pages/blogs" } }
+          fileAbsolutePath: { regex: "/markdown-pages/blogs/" }
           frontmatter: { customer: { eq: null } }
         }
         limit: 1000
