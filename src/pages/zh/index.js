@@ -57,7 +57,7 @@ const caseLogos = [
 
 const banners = [
   { img: campus2021, url: '/zh/careers/Campus' },
-  { img: askTug, url: 'https://asktug.com/t/topic/33760/2' },
+  { img: askTug, url: 'https://asktug.com/t/topic/33760' },
   { img: university, url: 'https://university.pingcap.com/' },
   { img: userMessage, url: '/zh/user-message-2019/' },
 ]
@@ -168,7 +168,7 @@ const IndexPage = ({ data }) => {
   const onCardClick = (href) => () => navigate(href)
 
   return (
-    <Layout>
+    <Layout showCookieConsent={false}>
       <SEO
         title="TiDB | SQL at Scale"
         description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"
@@ -217,7 +217,7 @@ const IndexPage = ({ data }) => {
                   <div className="swiper-wrapper top">
                     {banners.map(({ img, url }, i) => (
                       <div key={i} className="swiper-slide">
-                        <a href={url} rel="noopener noreferrer" target="_blank">
+                        <a href={url} rel="noopener" target="_blank">
                           <img src={img} alt="" />
                         </a>
                       </div>

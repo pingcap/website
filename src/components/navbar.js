@@ -146,7 +146,7 @@ const Navbar = ({ showBanner }) => {
                         href={item.href}
                         className="navbar-item with-main-section"
                         target="_blank"
-                        rel="noreferrer noopener"
+                        rel="noopener"
                       >
                         {item.name}
                       </a>

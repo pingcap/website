@@ -2,14 +2,14 @@ import Footer from './footer'
 import Navbar from './navbar'
 import PropTypes from 'prop-types'
 import React from 'react'
-import PingcCAPCookieConsent from './pingcapCookieConsent'
+import PingCAPCookieConsent from './pingcapCookieConsent'
 
-const Layout = ({ children, NavbarProps = {} }) => (
+const Layout = ({ children, NavbarProps = {}, showCookieConsent = true }) => (
   <>
     <Navbar {...NavbarProps} />
     <main>{children}</main>
     <Footer />
-    <PingcCAPCookieConsent />
+    {showCookieConsent && <PingCAPCookieConsent />}
   </>
 )
 
