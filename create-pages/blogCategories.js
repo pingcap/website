@@ -12,9 +12,9 @@ const createBlogCategories = async ({ graphql, createPage }) => {
 
     const result = await graphql(`
       query {
-        categories: allMarkdownRemark(
+        categories: allMdx(
           filter: {
-            fields: { collection: { eq: "${blogsPath}" } }
+            fileAbsolutePath: { regex: "${blogsPath}" }
             frontmatter: { customer: { eq: null } }
           }
         ) {

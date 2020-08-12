@@ -11,9 +11,9 @@ const createPositionsZH = async ({ graphql, createPage, createRedirect }) => {
 
   const result = await graphql(`
     query {
-      positions: allMarkdownRemark(
+      positions: allMdx(
         filter: {
-          fields: { collection: { eq: "${positionsPath}" } }
+          fileAbsolutePath: { regex: "${positionsPath}" }
         }
         limit: 1000
       ) {

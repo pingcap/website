@@ -13,9 +13,9 @@ const BlogCategories = ({ data, pageContext }) => (
 
 export const query = graphql`
   query($category: String, $limit: Int!, $skip: Int!, $blogsPath: String) {
-    allMarkdownRemark(
+    allMdx(
       filter: {
-        fields: { collection: { eq: $blogsPath } }
+        fileAbsolutePath: { regex: $blogsPath }
         frontmatter: { categories: { in: [$category] }, customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
@@ -41,9 +41,9 @@ export const query = graphql`
         }
       }
     }
-    categories: allMarkdownRemark(
+    categories: allMdx(
       filter: {
-        fields: { collection: { eq: $blogsPath } }
+        fileAbsolutePath: { regex: $blogsPath }
         frontmatter: { customer: { eq: null } }
       }
     ) {
@@ -51,9 +51,9 @@ export const query = graphql`
         category: fieldValue
       }
     }
-    tags: allMarkdownRemark(
+    tags: allMdx(
       filter: {
-        fields: { collection: { eq: $blogsPath } }
+        fileAbsolutePath: { regex: $blogsPath }
         frontmatter: { customer: { eq: null } }
       }
     ) {

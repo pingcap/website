@@ -1,5 +1,6 @@
 const path = require('path')
 const replaceTitle = require('./utils').replaceTitle
+const langConfig = require('../lang.config.json')
 
 const createPositions = async ({ graphql, createPage, createRedirect }) => {
   const positionTemplate = path.resolve(
@@ -7,8 +8,8 @@ const createPositions = async ({ graphql, createPage, createRedirect }) => {
   )
   const result = await graphql(`
     query {
-      blogs: allMarkdownRemark(
-        filter: { fields: { collection: { eq: "markdown-pages/careers" } } }
+      blogs: allMdx(
+        filter: { fileAbsolutePath: { regex: "/markdown-pages/careers/" } }
         limit: 1000
       ) {
         edges {

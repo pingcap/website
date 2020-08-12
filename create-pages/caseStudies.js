@@ -8,9 +8,9 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
   )
   const { data } = await graphql(`
     query {
-      caseStudies: allMarkdownRemark(
+      caseStudies: allMdx(
         filter: {
-          fields: { collection: { eq: "markdown-pages/blogs" } }
+          fileAbsolutePath: { regex: "${langConfig.languages.en.blogsPath}" }
           frontmatter: { customer: { ne: null } }
         }
         limit: 1000
@@ -37,9 +37,9 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
           }
         }
       }
-      caseStudiesZH: allMarkdownRemark(
+      caseStudiesZH: allMdx(
         filter: {
-          fields: { collection: { eq: "markdown-pages/zh/blogs" } }
+          fileAbsolutePath: { regex: "${langConfig.languages.zh.blogsPath}" }
           frontmatter: { category: { eq: "case" } }
         }
         limit: 1000

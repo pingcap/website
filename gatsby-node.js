@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
 exports.onCreateNode = ({ actions, node, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `mdx`) {
     const parent = getNode(node.parent)
 
     createNodeField({

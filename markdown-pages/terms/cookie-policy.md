@@ -57,7 +57,7 @@ PingCAP may modify or update this COOKIE POLICY from time to time to reflect the
 
 ## More Information
 
-You can find out more about cookies at <www.allaboutcookies.org>. To learn about how your privacy is protected on our website, see [Privacy Policy](https://pingcap.com/privacy-policy).
+You can find out more about cookies at [www.allaboutcookies.org]. To learn about how your privacy is protected on our website, see [Privacy Policy](https://pingcap.com/privacy-policy).
 
 If you are looking for more information then you can contact us through one of our preferred contact methods:
 

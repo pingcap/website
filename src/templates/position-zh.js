@@ -3,16 +3,18 @@ import '../styles/templates/position-zh.scss'
 import { graphql } from 'gatsby'
 import Link from '../components/IntlLink'
 import React from 'react'
+import { MDXProvider } from '@mdx-js/react'
+import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 const Blog = ({ data }) => {
   const {
-    markdownRemark: { html },
+    mdx: { body: html },
   } = data
 
-  const currentCategory = data.markdownRemark.frontmatter.tags[0]
+  const currentCategory = data.mdx.frontmatter.tags[0]
   const categories = data.categories.group.map((i) => i.category)
 
   return (
@@ -44,10 +46,11 @@ const Blog = ({ data }) => {
                   </Link>
                 ))}
               </div>
-              <div
-                className="column is-8 is-offset-1 markdown-body position-content"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
+              <div className="column is-8 is-offset-1 markdown-body position-content">
+                <MDXProvider>
+                  <MDXRenderer>{html}</MDXRenderer>
+                </MDXProvider>
+              </div>
             </div>
           </div>
         </section>
@@ -56,17 +59,18 @@ const Blog = ({ data }) => {
   )
 }
 
+// TODO: tableOfContents query: absolute: false, pathToSlugField: "frontmatter.title"
 export const query = graphql`
   query($title: String, $positionsPath: String) {
-    markdownRemark(frontmatter: { title: { eq: $title } }) {
-      html
+    mdx(frontmatter: { title: { eq: $title } }) {
+      body
       frontmatter {
         tags
       }
-      tableOfContents(absolute: false, pathToSlugField: "frontmatter.title")
+      tableOfContents
     }
-    categories: allMarkdownRemark(
-      filter: { fields: { collection: { eq: $positionsPath } } }
+    categories: allMdx(
+      filter: { fileAbsolutePath: { regex: $positionsPath } }
     ) {
       group(field: frontmatter___tags) {
         category: fieldValue

@@ -62,14 +62,6 @@ $navbar-height-mobile: 4.25rem; // 68px
         height: $navbar-height;
         margin-top: -$navbar-height;
       }
-
-      &:target > a.anchor.before {
-        transform: translate(-10%, $navbar-height);
-
-        @include mobile {
-          transform: translate(0, $navbar-height);
-        }
-      }
     }
 
     h1 {

@@ -3,16 +3,16 @@
     "languages": {
         "zh": {
             "langName": "中文",
-            "blogsPath": "markdown-pages/zh/blogs",
-            "positionsPath": "markdown-pages/zh/careers",
-            "policyTermsPath": "markdown-pages/zh/terms",
+            "blogsPath": "/markdown-pages/zh/blogs/",
+            "positionsPath": "/markdown-pages/zh/careers/",
+            "policyTermsPath": "/markdown-pages/zh/terms/",
             "hasBlogCategories": false
         },
         "en": {
             "langName": "English",
-            "blogsPath": "markdown-pages/blogs",
+            "blogsPath": "/markdown-pages/blogs/",
             "positionsPath": null,
-            "policyTermsPath": "markdown-pages/terms",
+            "policyTermsPath": "/markdown-pages/terms/",
             "hasBlogCategories": true
         }
     }
