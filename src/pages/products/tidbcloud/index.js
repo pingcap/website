@@ -233,7 +233,11 @@ const TiDBCloudPage = ({ data }) => {
                   title="TiDB Cloud Walk-through"
                   src="https://www.youtube.com/embed/MhUVadAOGxc?rel=0"
                   frameborder="0"
-                  allowfullscreen
+                  allowfullscreen="allowfullscreen"
+                  mozallowfullscreen="mozallowfullscreen"
+                  msallowfullscreen="msallowfullscreen"
+                  oallowfullscreen="oallowfullscreen"
+                  webkitallowfullscreen="webkitallowfullscreen"
                 ></iframe>
               </div>
             </div>
