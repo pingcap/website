@@ -68,7 +68,7 @@ const TiDB = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">Comparison</h2>
             <div className="subtitle-under-main-title">
-              Comparisons between TiDB and other SQL distributed databases
+              Comparisons between TiDB and other distributed SQL databases
             </div>
             <div className="table-container">
               <table className="table is-bordered comparison-table">
