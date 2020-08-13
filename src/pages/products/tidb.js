@@ -167,7 +167,7 @@ const TiDB = ({ data }) => {
                     </td>
                     <td>100+</td>
                     <td>300+</td>
-                    <td>1000+</td>
+                    <td>400+</td>
                   </tr>
                   <tr>
                     <td>HTAP</td>
