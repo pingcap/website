@@ -14,3 +14,9 @@ exports.createReplaceBlogImagePathStream = function (locale) {
       }[locale]
   )
 }
+
+exports.createReplaceCopyableStream = function () {
+  return replaceStream(/{{<\scopyable(.+)>}}/g, (match, copyMsg) => {
+    return `<WithCopy tag="${copyMsg.replace(/"/g, '').trim()}" />`
+  })
+}
