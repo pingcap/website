@@ -102,7 +102,11 @@ module.exports = {
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: {},
+              aliases: {
+                'c++': 'cpp',
+                golang: 'go',
+                proto: 'protobuf',
+              },
               showLineNumbers: false,
               noInlineHighlight: false,
               escapeEntities: {},
@@ -141,7 +145,11 @@ module.exports = {
           `${__dirname}/node_modules/@seagreenio/react-bulma/dist/index.es.js`,
         ],
         whitelist: purgecssWhitelist,
-        ignore: [`src/styles/`, 'node_modules/swiper/css/swiper.min.css'],
+        ignore: [
+          `src/styles/`,
+          'prismjs/',
+          'node_modules/swiper/css/swiper.min.css',
+        ],
       },
     },
     `gatsby-plugin-meta-redirect`,
