@@ -95,7 +95,24 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
-        gatsbyRemarkPlugins: [`gatsby-remark-autolink-headers`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-autolink-headers`,
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: 'language-',
+              inlineCodeMarker: null,
+              aliases: {
+                'c++': 'cpp',
+                golang: 'go',
+                proto: 'protobuf',
+              },
+              showLineNumbers: false,
+              noInlineHighlight: false,
+              escapeEntities: {},
+            },
+          },
+        ],
       },
     },
     `gatsby-plugin-sharp`,
@@ -128,7 +145,11 @@ module.exports = {
           `${__dirname}/node_modules/@seagreenio/react-bulma/dist/index.es.js`,
         ],
         whitelist: purgecssWhitelist,
-        ignore: [`src/styles/`, 'node_modules/swiper/css/swiper.min.css'],
+        ignore: [
+          `src/styles/`,
+          'prismjs/',
+          'node_modules/swiper/css/swiper.min.css',
+        ],
       },
     },
     `gatsby-plugin-meta-redirect`,
