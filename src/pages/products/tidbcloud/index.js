@@ -188,7 +188,7 @@ const HourlyNodeUsageInfo = () => {
 }
 
 const TiDBCloudPage = ({ data }) => {
-  const { TiDBCloudLogoPNG, BannerSVG } = data
+  const { TiDBCloudLogoPNG } = data
 
   return (
     <Layout>
@@ -228,11 +228,17 @@ const TiDBCloudPage = ({ data }) => {
                 </p>
               </div>
               <div className="image-wrapper">
-                <img
-                  src={BannerSVG.publicURL}
-                  className="banner"
-                  alt="TiDB Cloud"
-                />
+                <iframe
+                  id="video"
+                  title="TiDB Cloud Walk-through"
+                  src="https://www.youtube.com/embed/MhUVadAOGxc?rel=0"
+                  frameborder="0"
+                  allowfullscreen="allowfullscreen"
+                  mozallowfullscreen="mozallowfullscreen"
+                  msallowfullscreen="msallowfullscreen"
+                  oallowfullscreen="oallowfullscreen"
+                  webkitallowfullscreen="webkitallowfullscreen"
+                ></iframe>
               </div>
             </div>
           </div>
@@ -331,9 +337,6 @@ export const query = graphql`
     TiDBCloudLogoPNG: file(
       relativePath: { eq: "products/tidbcloud/tidb-cloud-logo.png" }
     ) {
-      publicURL
-    }
-    BannerSVG: file(relativePath: { eq: "products/tidbcloud/banner.svg" }) {
       publicURL
     }
   }

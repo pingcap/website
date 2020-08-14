@@ -242,11 +242,12 @@ const footerColumnsZh = [
         },
         {
           name: '新闻报道',
-          link: '/about-cn/news',
+          link: 'https://pingcap.com/about-cn/news',
+          outbound: true,
         },
         {
           name: '隐私声明',
-          link: '/zh/privacy-policy/',
+          link: '/privacy-policy',
         },
       ],
     },
