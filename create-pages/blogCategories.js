@@ -1,5 +1,5 @@
 const path = require('path')
-const { langPrefixes } = require('./utils')
+const { langPrefixes, replaceSpaceToMiddleLine } = require('./utils')
 const langConfig = require('../lang.config.json')
 
 const createBlogCategories = async ({ graphql, createPage }) => {
@@ -30,6 +30,7 @@ const createBlogCategories = async ({ graphql, createPage }) => {
     const blogsPerPage = 6
     categories.forEach((categoryObj) => {
       const category = categoryObj.category
+      const categoryPath = replaceSpaceToMiddleLine(category)
       const totalCount = categoryObj.totalCount
       const numPages = Math.ceil(totalCount / blogsPerPage)
       Array.from({ length: numPages }).forEach((_, i) => {
@@ -37,8 +38,8 @@ const createBlogCategories = async ({ graphql, createPage }) => {
           createPage({
             path:
               i === 0
-                ? `/${prefix}blog/category/${category}`
-                : `/${prefix}blog/category/${category}/${i + 1}`,
+                ? `/${prefix}blog/category/${categoryPath}`
+                : `/${prefix}blog/category/${categoryPath}/${i + 1}`,
             component: blogCategoriesTemplate,
             context: {
               category,
