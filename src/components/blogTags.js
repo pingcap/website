@@ -2,11 +2,11 @@ import { Button } from '@seagreenio/react-bulma'
 import PropTypes from 'prop-types'
 import React from 'react'
 import { navigate } from 'gatsby'
-import { replaceSpaceToMiddleLine } from '../lib/string'
+import { replaceSpaceWithDash } from '../lib/string'
 
 const BlogTags = ({ tags }) => {
   const onClick = (tag) => () => {
-    navigate(`/blog/tag/${replaceSpaceToMiddleLine(tag)}`)
+    navigate(`/blog/tag/${replaceSpaceWithDash(tag)}`)
   }
 
   return (

@@ -8,6 +8,6 @@ exports.langPrefixes = function (lang) {
   return lang === langConfig.defaultLang ? [''] : [`${lang}/`]
 }
 
-exports.replaceSpaceToMiddleLine = function (s) {
+exports.replaceSpaceWithDash = function (s) {
   return s.replace(/\s+/g, '-')
 }

@@ -22,6 +22,6 @@ export function replaceTitle(title) {
   }
 }
 
-export function replaceSpaceToMiddleLine(s) {
+export function replaceSpaceWithDash(s) {
   return s.replace(/\s+/g, '-')
 }

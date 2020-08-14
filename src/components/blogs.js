@@ -13,7 +13,7 @@ import PostFromUs from './postFromUs'
 import PostFromUsZH from './zh/postFromUs'
 import SEO from './seo'
 import Socials from './socials'
-import { replaceTitle, replaceSpaceToMiddleLine } from '../lib/string'
+import { replaceTitle, replaceSpaceWithDash } from '../lib/string'
 
 const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
   const blogs = data.allMdx.edges
@@ -70,7 +70,7 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
               <Link
                 key={c}
                 className={currentCategory === c ? 'active' : ''}
-                to={`/blog/category/${replaceSpaceToMiddleLine(c)}`}
+                to={`/blog/category/${replaceSpaceWithDash(c)}`}
               >
                 {c}
               </Link>
@@ -79,7 +79,7 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
               <Link
                 key={t}
                 className={currentTag === t ? 'active' : ''}
-                to={`/blog/tag/${replaceSpaceToMiddleLine(t)}`}
+                to={`/blog/tag/${replaceSpaceWithDash(t)}`}
               >
                 {t}
               </Link>
