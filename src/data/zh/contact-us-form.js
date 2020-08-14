@@ -4,7 +4,7 @@ import { nullValidator, mailValidator, telValidator } from '../../lib/validator'
 const withNullValidator = (formConfig) =>
   formConfig.map((conf) => {
     if (conf.required) {
-      conf.validators.push(nullValidator)
+      conf.validators.unshift(nullValidator)
     }
     return conf
   })
