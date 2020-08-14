@@ -156,15 +156,16 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/website-en-sitemap.xml`,
+        output: `/sitemap.xml`,
         exclude: ['/404', '/zh/**'],
+        sitemapSize: 2000,
       },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://pingcap.com',
-        sitemap: 'https://pingcap.com/website-en-sitemap.xml',
+        sitemap: 'https://pingcap.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
