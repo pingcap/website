@@ -125,7 +125,7 @@ $navbar-height-mobile: 4.25rem; // 68px
         align-items: unset;
         justify-content: unset;
         border: unset;
-        padding:unset;
+        padding: unset;
         margin: unset;
         vertical-align: unset;
       }
@@ -149,7 +149,7 @@ $navbar-height-mobile: 4.25rem; // 68px
         border: 1px solid transparent;
       }
 
-      input:checked+label {
+      input:checked + label {
         color: #555;
         border: 1px solid #ddd;
         border-top: 2px solid #1e2969;
@@ -162,11 +162,11 @@ $navbar-height-mobile: 4.25rem; // 68px
         border-top: 1px solid #ddd;
       }
 
-      input[id="tabMacOS"]:checked~#macOSContent {
+      input[id='tabMacOS']:checked ~ #macOSContent {
         display: block;
       }
 
-      input[id="tabLinux"]:checked~#linuxContent {
+      input[id='tabLinux']:checked ~ #linuxContent {
         display: block;
       }
 
@@ -174,9 +174,10 @@ $navbar-height-mobile: 4.25rem; // 68px
         margin: 0 0 1.25rem;
       }
 
-      ol,ul {     
+      ol,
+      ul {
         padding-left: 2em;
-        margin: .7rem 0;
+        margin: 0.7rem 0;
         line-height: 1.7;
         font-size: $P1;
         font-weight: 400;
@@ -185,7 +186,6 @@ $navbar-height-mobile: 4.25rem; // 68px
         li {
           display: list-item;
         }
-
       }
 
       ul {
@@ -197,21 +197,19 @@ $navbar-height-mobile: 4.25rem; // 68px
         border: unset;
       }
 
+      p img {
+        display: block;
+        margin: 0 auto;
+      }
 
-    p img {
-      display: block;
-      margin: 0 auto;
-    }
-
-    table {
-      display: table;
-      width: unset;
-      margin-left: auto;
-      margin-right: auto;
-
+      table {
+        display: table;
+        width: unset;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
   }
-}
 
   .get-started-with-tidb {
     @include mobile {
@@ -259,8 +257,12 @@ $navbar-height-mobile: 4.25rem; // 68px
   }
 
   .right-column {
-    position: sticky;
-    top: 0.625rem;
+    @include tablet {
+      position: sticky;
+      height: 100vh;
+      overflow: scroll;
+      top: 0.625rem;
+    }
   }
 
   .toc {

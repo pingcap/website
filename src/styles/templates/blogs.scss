@@ -29,8 +29,12 @@
   }
 
   .right-column {
-    position: sticky;
-    top: 2.25rem;
+    @include tablet {
+      position: sticky;
+      height: 100vh;
+      overflow: scroll;
+      top: 2.25rem;
+    }
     .main {
       margin-top: 2.25rem;
     }
