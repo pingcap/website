@@ -89,9 +89,12 @@
 
     .page-5 {
         background: #211D35;
+        height: auto;
+        min-height: calc(100vh - 5.25rem);
 
         @include mobile {
             height: 760px;
+            min-height: initial; 
         }
     }
 

@@ -1,11 +1,20 @@
 import React from 'react'
 import { nullValidator, mailValidator, telValidator } from '../../lib/validator'
 
+const withNullValidator = (formConfig) =>
+  formConfig.map((conf) => {
+    if (conf.required) {
+      conf.validators.push(nullValidator)
+    }
+    return conf
+  })
+
 const formConfig = [
   {
     label: '姓名',
     name: 'name',
-    validators: [nullValidator],
+    required: true,
+    validators: [],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -13,7 +22,8 @@ const formConfig = [
   {
     label: '邮箱',
     name: 'mail',
-    validators: [nullValidator, mailValidator],
+    required: true,
+    validators: [mailValidator],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -21,7 +31,8 @@ const formConfig = [
   {
     label: '电话号码',
     name: 'tel',
-    validators: [nullValidator, telValidator],
+    required: true,
+    validators: [telValidator],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -29,7 +40,8 @@ const formConfig = [
   {
     label: '公司',
     name: 'company',
-    validators: [nullValidator],
+    required: true,
+    validators: [],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -37,7 +49,8 @@ const formConfig = [
   {
     label: '职业',
     name: 'occupation',
-    validators: [nullValidator],
+    required: true,
+    validators: [],
     className: 'form-item--text',
     default: '',
     renderItem: () => <input type="text"></input>,
@@ -46,7 +59,8 @@ const formConfig = [
     label:
       '请描述您遇到的使用情况、商业规模和问题，以便我们更好地为您提供帮助。',
     name: 'description',
-    validators: [nullValidator],
+    required: true,
+    validators: [],
     className: 'form-item--textarea',
     default: '',
     renderItem: () => <textarea></textarea>,
@@ -54,6 +68,7 @@ const formConfig = [
   {
     label: '我同意接收来自 PingCAP 的产品，服务，事件，博客等信息。',
     name: 'agreement',
+    required: false,
     validators: [],
     className: 'form-item--checkbox-radio',
     default: false,
@@ -61,4 +76,4 @@ const formConfig = [
   },
 ]
 
-export default formConfig
+export default withNullValidator(formConfig)

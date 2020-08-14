@@ -222,7 +222,7 @@ const footerColumnsZh = [
         },
         {
           name: '资源支持',
-          link: 'https://github.com/pingcap/docs-cn/blob/master/support.md',
+          link: 'https://docs.pingcap.com/zh/tidb/stable/support',
           outbound: true,
         },
       ],
@@ -239,6 +239,14 @@ const footerColumnsZh = [
         {
           name: '招贤纳士',
           link: '/careers',
+        },
+        {
+          name: '新闻报道',
+          link: '/about-cn/news',
+        },
+        {
+          name: '隐私声明',
+          link: '/zh/privacy-policy/',
         },
       ],
     },
