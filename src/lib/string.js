@@ -1,3 +1,5 @@
+import { func } from 'prop-types'
+
 export function truncate(n, useWordBoundary = false) {
   if (this.length <= n) {
     return this
@@ -18,4 +20,8 @@ export function replaceTitle(title) {
   } else {
     return title.replace(/[^\w-]/g, '-')
   }
+}
+
+export function replaceSpaceWithDash(s) {
+  return s.replace(/\s+/g, '-')
 }
