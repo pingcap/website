@@ -137,6 +137,10 @@
     }
   }
 
+  a.navbar-item:focus {
+    background-color: transparent;
+  }
+
   a.navbar-item:hover {
     background-color: transparent;
   }

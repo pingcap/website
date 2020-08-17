@@ -186,6 +186,11 @@
         .form-label {
           @include paragraph;
           margin-bottom: 0.75rem;
+
+          .label-star {
+            color: red;
+          }
+
         }
 
         .form-text--error {

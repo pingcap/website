@@ -196,18 +196,34 @@ $navbar-height-mobile: 4.25rem; // 68px
         flex: unset;
         border: unset;
       }
+    }
 
-      p img {
-        display: block;
-        margin: 0 auto;
-      }
+    p img {
+      display: block;
+      margin: 0 auto;
+    }
 
-      table {
-        display: table;
-        width: unset;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    table {
+      display: table;
+      width: unset;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .token.tag,
+    .token.content,
+    .token.number {
+      display: inline;
+      padding: inherit;
+      font-size: inherit;
+      line-height: inherit;
+      text-align: inherit;
+      vertical-align: inherit;
+      border-radius: inherit;
+      font-weight: inherit;
+      white-space: inherit;
+      background: inherit;
+      margin: inherit;
     }
   }
 

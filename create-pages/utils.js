@@ -7,3 +7,7 @@ exports.replaceTitle = function (title) {
 exports.langPrefixes = function (lang) {
   return lang === langConfig.defaultLang ? [''] : [`${lang}/`]
 }
+
+exports.replaceSpaceWithDash = function (s) {
+  return s.replace(/\s+/g, '-')
+}

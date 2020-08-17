@@ -143,6 +143,15 @@
         }
 
         width: 48%;
+        
+        iframe {
+          width: 100%;
+          height: 400px;
+
+          @include mobile {
+            height: 200px;
+          }
+        }
       }
     }
   }

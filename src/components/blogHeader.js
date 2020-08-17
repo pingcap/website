@@ -3,7 +3,7 @@ import DateRangeIcon from '@material-ui/icons/DateRange'
 import Link from './IntlLink'
 import PropTypes from 'prop-types'
 import React from 'react'
-import { replaceTitle } from '../lib/string'
+import { replaceTitle, replaceSpaceWithDash } from '../lib/string'
 
 const BlogHeader = ({
   frontmatter,
@@ -44,7 +44,9 @@ const BlogHeader = ({
             {isCaseStudy ? (
               `${category}`
             ) : (
-              <Link to={`/blog/category/${category}`}>{category}</Link>
+              <Link to={`/blog/category/${replaceSpaceWithDash(category)}`}>
+                {category}
+              </Link>
             )}
           </span>
         ) : (

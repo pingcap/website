@@ -150,14 +150,9 @@ const About = ({ data }) => {
                     </div>
                   )
                 })}
-                <a
-                  href="http://pingcaptidb.mikecrm.com/LxRiDG8"
-                  target="_blank"
-                  className="consult-link"
-                  rel="noreferrer"
-                >
+                <Link to="/zh/contact-us" className="consult-link">
                   或让我们与您联系
-                </a>
+                </Link>
               </div>
             </div>
           </div>

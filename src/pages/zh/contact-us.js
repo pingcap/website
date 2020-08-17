@@ -200,7 +200,7 @@ const ContactUsForm = ({ setSubmitState }) => {
 
 const FormItem = React.memo(
   ({
-    config: { label, name, validators, className, renderItem },
+    config: { label, name, validators, className, renderItem, required },
     dispatch,
     data: { value, isError, errMsg },
   }) => {
@@ -239,7 +239,10 @@ const FormItem = React.memo(
 
     return (
       <label className={className + (isError ? ' form-item--error' : '')}>
-        <p className="form-label">{label}</p>
+        <p className="form-label">
+          {label}
+          {required && <span className="label-star">*</span>}
+        </p>
         {childrenWithMoreProps}
         {isError && <p className="form-text--error">{errMsg}</p>}
       </label>
