@@ -2,6 +2,46 @@ const purgecssWhitelist = require('./purgecss-whitelist')
 const langConfig = require('./lang.config.json')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
+const getSitemapForLanguage = (lang) => {
+  const langPrefix = lang === 'en' ? '' : '/zh'
+  const _ouput = `/sitemap-${lang}.xml`
+  const _exclude = [`${langPrefix}/404`]
+  const filterRegex = lang === 'en' ? '/^((?!/zh/).)*$/' : '/^/zh//'
+
+  const _query = `{
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
+    allSitePage( filter: { path: { regex: "${filterRegex}" } } ) {
+      edges {
+        node {
+          path
+        }
+      }
+    }
+  }`
+
+  return {
+    output: _ouput,
+    exclude: _exclude,
+    createLinkInHead: false,
+    query: _query,
+    serialize: ({ site, allSitePage }) =>
+      allSitePage.edges.map((edge) => ({
+        url: site.siteMetadata.siteUrl + edge.node.path,
+        priority: 0.7,
+        links: [
+          {
+            lang: lang,
+            url: site.siteMetadata.siteUrl + edge.node.path,
+          },
+        ],
+      })),
+  }
+}
+
 module.exports = {
   siteMetadata: {
     title: 'PingCAP',
@@ -153,18 +193,26 @@ module.exports = {
       },
     },
     `gatsby-plugin-meta-redirect`,
+    ...Object.keys(langConfig.languages).map((lang) => ({
+      resolve: `gatsby-plugin-sitemap`,
+      options: getSitemapForLanguage(lang),
+    })),
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/website-en-sitemap.xml`,
-        exclude: ['/404', '/zh/**'],
+        output: '/sitemap.xml',
+        serialize: () =>
+          Object.keys(langConfig.languages).map((lang) => ({
+            priority: 1,
+            url: `https://pingcap.com/sitemap-${lang}.xml`,
+          })),
       },
     },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
         host: 'https://pingcap.com',
-        sitemap: 'https://pingcap.com/website-en-sitemap.xml',
+        sitemap: 'https://pingcap.com/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }],
       },
     },
