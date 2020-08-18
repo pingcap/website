@@ -24,7 +24,17 @@
     }
   }
 
+  .columns {
+    align-items: flex-start;
+  }
+
   .right-column {
+    @include tablet {
+      position: sticky;
+      height: 100vh;
+      overflow: scroll;
+      top: 2.25rem;
+    }
     .main {
       margin-top: 2.25rem;
     }

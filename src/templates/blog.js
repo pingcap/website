@@ -43,17 +43,20 @@ const Blog = ({ data, pageContext }) => {
       const winClientHeight = document.documentElement.clientHeight
       const winScrollTop = document.documentElement.scrollTop
       const toFooter = winScrollHeight - winClientHeight - footerHeight
+      const isMobile = matchMedia('(max-width: 768px)').matches
 
       setShowProgress(winScrollTop > 0)
 
-      if (winScrollTop > toFooter && !isReachFooter) {
-        setFixedSocials(false)
-        isReachFooter = true
-      }
+      if (isMobile) {
+        if (winScrollTop > toFooter && !isReachFooter) {
+          setFixedSocials(false)
+          isReachFooter = true
+        }
 
-      if (winScrollTop < toFooter && isReachFooter) {
-        setFixedSocials(true)
-        isReachFooter = false
+        if (winScrollTop < toFooter && isReachFooter) {
+          setFixedSocials(true)
+          isReachFooter = false
+        }
       }
 
       const height = winScrollHeight - winClientHeight

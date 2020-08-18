@@ -268,8 +268,17 @@ $navbar-height-mobile: 4.25rem; // 68px
     }
   }
 
+  .columns {
+    align-items: flex-start;
+  }
+
   .right-column {
-    position: relative;
+    @include tablet {
+      position: sticky;
+      height: 100vh;
+      overflow: scroll;
+      top: 0.625rem;
+    }
   }
 
   .toc {
