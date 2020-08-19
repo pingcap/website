@@ -1,10 +1,10 @@
 import c3SVG from '../../../images/home/celebrate-your-growth/real-time-analysis.svg'
 import c2SVG from '../../../images/home/celebrate-your-growth/scale-out-mysql.svg'
 import c1SVG from '../../../images/home/celebrate-your-growth/true-open-source.svg'
-import b1SVG from '../../../images/home/benefits/sql-at-scale.svg'
+import b1SVG from '../../../images/home/benefits/horizontal-scale.svg'
 import b2SVG from '../../../images/home/benefits/high-availability.svg'
-import b3SVG from '../../../images/home/benefits/cloud-native-distributed-db.svg'
-import b4SVG from '../../../images/home/benefits/real-time-hatp.svg'
+import b3SVG from '../../../images/home/benefits/real-time-hatp.svg'
+import b4SVG from '../../../images/home/benefits/cloud-native-distributed-db.svg'
 import b5SVG from '../../../images/home/benefits/compatibility.svg'
 import kubernetes from '../../../images/home/logos/kubernetes.svg'
 import tiup from '../../../images/home/logos/tiup.svg'
@@ -72,7 +72,8 @@ const benefitsData = [
       '兼容 MySQL 5.7 协议、MySQL 常用的功能、MySQL 生态，应用无需或者修改少量代码即可从 MySQL 迁移到 TiDB。提供丰富的数据迁移工具帮助应用便捷完成数据迁移。',
     link: '查看如何使用',
     href: '/case-studies',
-    placeholder: b4SVG,
+    placeholder: b5SVG,
+    reverse: true,
   },
 ]
 
