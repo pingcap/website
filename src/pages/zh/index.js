@@ -185,11 +185,12 @@ const IndexPage = ({ data }) => {
                   />
                 </h1>
                 <h2 className="subtitle is-7">
-                  TiDB 是一款定位于在线事务处理/在线分析处理（ HTAP: Hybrid
-                  Transactional/Analytical
-                  Processing）的融合型数据库产品，实现了一键水平伸缩，强一致性的多副本数据安全，分布式事务，实时
-                  OLAP 等重要特性。同时兼容 MySQL
-                  协议和生态，迁移便捷，运维成本极低。
+                  TiDB 是一款同时支持在线事务处理与在线分析处理 (Hybrid
+                  Transactional and Analytical Processing,
+                  HTAP）的融合型分布式数据库产品，具备水平扩容或者缩容、金融级高可用、实时
+                  HTAP、云原生的分布式数据库、兼容 MySQL 5.7 协议和 MySQL
+                  生态等重要特性。向用户提供一站式 OLTP、OLAP、HTAP
+                  解决方案，适合高可用、一致性要求高、数据规模较大等各种应用场景。
                 </h2>
                 <div className="buttons">
                   <Button
