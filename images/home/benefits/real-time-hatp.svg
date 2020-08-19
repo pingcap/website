@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="506" height="404" viewBox="0 0 506 404">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="矩形_4026" data-name="矩形 4026" width="448" height="340" transform="translate(335 3567)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+    <clipPath id="clip-实时_HTAP">
+      <rect width="506" height="404"/>
+    </clipPath>
+  </defs>
+  <g id="实时_HTAP" data-name="实时 HTAP" clip-path="url(#clip-实时_HTAP)">
+    <g id="蒙版组_138" data-name="蒙版组 138" transform="translate(-306 -3535)" clip-path="url(#clip-path)">
+      <g id="组_4575" data-name="组 4575" transform="translate(-200 -1719)">
+        <g id="组_4574" data-name="组 4574" transform="translate(591 5296)">
+          <g id="组_4571" data-name="组 4571" transform="translate(3.283 0)">
+            <rect id="矩形_4006" data-name="矩形 4006" width="206.165" height="256.065" transform="translate(8.535)" fill="#f7f8f9"/>
+            <rect id="矩形_4007" data-name="矩形 4007" width="206.165" height="256.065" transform="translate(0 8.535)" fill="none" stroke="#3f3d56" stroke-width="1"/>
+            <rect id="矩形_4008" data-name="矩形 4008" width="9.849" height="9.192" transform="translate(97.173 115.557)" fill="#3351ff"/>
+            <rect id="矩形_4009" data-name="矩形 4009" width="9.849" height="9.849" transform="translate(97.173 135.255)" fill="#ff6584"/>
+            <rect id="矩形_4010" data-name="矩形 4010" width="69.092" height="13.76" transform="translate(147.154 144.695) rotate(-90)" fill="#3351ff"/>
+            <rect id="矩形_4011" data-name="矩形 4011" width="42.408" height="13.76" transform="translate(168.268 144.695) rotate(-90)" fill="#ff6584"/>
+            <path id="路径_13765" data-name="路径 13765" d="M419.811,154.454a35.97,35.97,0,0,0,32.15,52.085V173.484Z" transform="translate(-392.886 25.429)" fill="#6c63ff"/>
+            <line id="直线_436" data-name="直线 436" x1="158.674" transform="translate(23.354 145.053)" fill="none" stroke="#d0cde1" stroke-width="1"/>
+            <line id="直线_437" data-name="直线 437" x1="158.674" transform="translate(23.354 245.593)" fill="none" stroke="#d0cde1" stroke-width="1"/>
+            <ellipse id="椭圆_1331" data-name="椭圆 1331" cx="3.611" cy="3.283" rx="3.611" ry="3.283" transform="translate(175.306 198.943)" fill="#6c63ff"/>
+            <g id="组_4568" data-name="组 4568" transform="translate(114.244 177.276)">
+              <rect id="矩形_4012" data-name="矩形 4012" width="3.939" height="3.939" fill="#3351ff"/>
+              <rect id="矩形_4013" data-name="矩形 4013" width="3.939" height="3.939" transform="translate(0 7.222)" fill="#3351ff"/>
+              <rect id="矩形_4014" data-name="矩形 4014" width="3.939" height="3.939" transform="translate(0 14.445)" fill="#3351ff"/>
+            </g>
+            <rect id="矩形_4015" data-name="矩形 4015" width="9" height="10" transform="translate(97.717 95)" fill="#6c63ff"/>
+            <rect id="矩形_4016" data-name="矩形 4016" width="53.368" height="13.76" transform="translate(126.04 144.695) rotate(-90)" fill="#6c63ff"/>
+            <g id="组_4569" data-name="组 4569" transform="translate(121.467 178.589)">
+              <rect id="矩形_4017" data-name="矩形 4017" width="21.667" height="1.313" transform="translate(0 0)" fill="#3f3d56"/>
+              <rect id="矩形_4018" data-name="矩形 4018" width="21.667" height="1.313" transform="translate(0 7.222)" fill="#3f3d56"/>
+              <rect id="矩形_4019" data-name="矩形 4019" width="21.667" height="1.97" transform="translate(0 14.445)" fill="#3f3d56"/>
+            </g>
+            <g id="组_4570" data-name="组 4570" transform="translate(22.98 28.233)">
+              <rect id="矩形_4020" data-name="矩形 4020" width="159.548" height="3.939" fill="#c9cedd"/>
+              <rect id="矩形_4021" data-name="矩形 4021" width="159.548" height="4.596" transform="translate(0 15.101)" fill="#c9cedd"/>
+              <rect id="矩形_4022" data-name="矩形 4022" width="78.789" height="4.596" transform="translate(0 29.546)" fill="#c9cedd"/>
+              <path id="路径_13766" data-name="路径 13766" d="M591,61.441v72.311a36.155,36.155,0,0,0,0-72.311Z" transform="translate(-552.07 70.205)" fill="#dcdfe8"/>
+              <path id="路径_13767" data-name="路径 13767" d="M474.013,68.694a33.041,33.041,0,0,0-29.538,18.229L474.013,104.4Z" transform="translate(-438.135 62.952)" fill="#dcdfe8"/>
+              <rect id="矩形_4023" data-name="矩形 4023" width="52.526" height="1.313" transform="translate(0.657 76.163)" fill="#c9cedd"/>
+              <rect id="矩形_4024" data-name="矩形 4024" width="52.526" height="1.97" transform="translate(0.657 87.981)" fill="#c9cedd"/>
+              <rect id="矩形_4025" data-name="矩形 4025" width="52.526" height="1.97" transform="translate(0.657 100.456)" fill="#c9cedd"/>
+            </g>
+            <path id="路径_13768" data-name="路径 13768" d="M437.6,167.256l-.31-.307L460.244,144h39.973v.437H460.424Z" transform="translate(-387.959 41.982)" fill="#2f2e41"/>
+          </g>
+          <g id="组_4573" data-name="组 4573" transform="translate(164.032 134.456)">
+            <path id="路径_13769" data-name="路径 13769" d="M254.587,593.754a86.411,86.411,0,1,0-148.352,0Z" transform="translate(-94 -463)" fill="#3f3d56"/>
+            <line id="直线_438" data-name="直线 438" y1="27.904" x2="37.753" transform="translate(86.123 52.997)" fill="none" stroke="#6c63ff" stroke-linecap="round" stroke-miterlimit="10" stroke-width="4"/>
+            <g id="组_4572" data-name="组 4572" transform="translate(15.869 9.61)">
+              <circle id="椭圆_1332" data-name="椭圆 1332" cx="3.939" cy="3.939" r="3.939" transform="translate(0 80.483)" fill="#6c63ff"/>
+              <circle id="椭圆_1333" data-name="椭圆 1333" cx="4.169" cy="4.169" r="4.169" transform="translate(2.495 44.483)" fill="#6c63ff"/>
+              <circle id="椭圆_1334" data-name="椭圆 1334" cx="4.169" cy="4.169" r="4.169" transform="translate(23.189 14.792)" fill="#6c63ff"/>
+              <circle id="椭圆_1335" data-name="椭圆 1335" cx="4.169" cy="4.169" r="4.169" transform="translate(56.219)" fill="#6c63ff"/>
+              <circle id="椭圆_1336" data-name="椭圆 1336" cx="4.169" cy="4.169" r="4.169" transform="translate(92.15 4.333)" fill="#6c63ff"/>
+              <circle id="椭圆_1337" data-name="椭圆 1337" cx="4.169" cy="4.169" r="4.169" transform="translate(120.718 26.552)" fill="#6c63ff"/>
+              <circle id="椭圆_1338" data-name="椭圆 1338" cx="4.169" cy="4.169" r="4.169" transform="translate(133.761 60.311)" fill="#6c63ff"/>
+              <circle id="椭圆_1339" data-name="椭圆 1339" cx="4.169" cy="4.169" r="4.169" transform="translate(127.554 95.966)" fill="#6c63ff"/>
+            </g>
+            <ellipse id="椭圆_1340" data-name="椭圆 1340" cx="8.535" cy="8.207" rx="8.535" ry="8.207" transform="translate(77.587 73.022)" fill="#6c63ff"/>
+          </g>
+          <ellipse id="椭圆_1341" data-name="椭圆 1341" cx="168.412" cy="13.132" rx="168.412" ry="13.132" transform="translate(0 295.459)" fill="#f7f8f9"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

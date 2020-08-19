@@ -2,9 +2,10 @@ import c3SVG from '../../../images/home/celebrate-your-growth/real-time-analysis
 import c2SVG from '../../../images/home/celebrate-your-growth/scale-out-mysql.svg'
 import c1SVG from '../../../images/home/celebrate-your-growth/true-open-source.svg'
 import b1SVG from '../../../images/home/benefits/sql-at-scale.svg'
-import b3SVG from '../../../images/home/benefits/simplification-and-safety.svg'
-import b4SVG from '../../../images/home/benefits/timely-data-means-better-insights.svg'
-import b2SVG from '../../../images/home/benefits/elastic-scalability.svg'
+import b2SVG from '../../../images/home/benefits/high-availability.svg'
+import b3SVG from '../../../images/home/benefits/scloud-native-distributed-db.svg'
+import b4SVG from '../../../images/home/benefits/real-time-hatp.svg'
+import b5SVG from '../../../images/home/benefits/compatibility.svg'
 import kubernetes from '../../../images/home/logos/kubernetes.svg'
 import tiup from '../../../images/home/logos/tiup.svg'
 import aws from '../../../images/home/logos/aws.svg'
@@ -32,35 +33,43 @@ const celebrateYourGrowthData = [
 
 const benefitsData = [
   {
-    name: '水平弹性扩展',
+    name: '一键水平扩容或者缩容',
     desc:
-      '分布式的 TiDB 可随着你的数据或者流量增长而无缝地水平扩展，只需要通过增加更多的机器来满足业务增长需要，应用层可以不用关心容量和吞吐量等问题。',
+      '得益于 TiDB 存储计算分离的架构的设计，可按需对计算、存储分别进行在线扩容或者缩容，扩容或者缩容过程中对应用运维人员透明。',
     link: '查看如何使用',
     href: '/case-studies',
     placeholder: b1SVG,
     reverse: true,
   },
   {
-    name: '分布式事务',
+    name: '金融级高可用',
     desc:
-      '可以把 TiDB 想象成一个单机的 RDBMS，ACID 事务可以跨节点进行，提供金融级别的数据可靠性保证。',
+      '数据采用多副本存储，数据副本通过 Multi-Raft 协议同步事务日志，多数派写入成功事务才能提交，确保数据强一致性且少数副本发生故障时不影响数据的可用性。可按需配置副本地理位置、副本数量等策略满足不同容灾级别的要求。',
     link: '查看如何使用',
     href: '/case-studies',
     placeholder: b2SVG,
   },
   {
-    name: '高可用和数据安全',
+    name: '实时 HTAP',
     desc:
-      'TiDB 使用强一致性的 Raft 算法实现多副本存储，提供跨数据中心的数据安全保证，任意一个数据中心出现宕机，自动在短时间内进行主副本切换，无需人工介入，保证服务的持续可用。',
+      '提供行存储引擎 TiKV、列存储引擎 TiFlash 两款存储引擎，TiFlash 通过 Multi-Raft Learner 协议实时从 TiKV 复制数据，确保行存储引擎 TiKV 和列存储引擎 TiFlash 之间的数据强一致。TiKV、TiFlash 可按需部署在不同的机器，解决 HTAP 资源隔离的问题。',
     link: '查看如何使用',
     href: '/case-studies',
     placeholder: b3SVG,
     reverse: true,
   },
   {
-    name: '实时海量数据分析查询',
+    name: '云原生的分布式数据库',
     desc:
-      '在大数据量的场景下，TiDB 提供海量数据的聚合和汇总支持，提供自由灵活的大规模实时分析以及查询能力。',
+      '专为云而设计的分布式数据库，通过 TiDB Operator 可在公有云、私有云、混合云中实现部署工具化、自动化。',
+    link: '查看如何使用',
+    href: '/case-studies',
+    placeholder: b4SVG,
+  },
+  {
+    name: '兼容 MySQL 5.7 协议和 MySQL 生态',
+    desc:
+      '兼容 MySQL 5.7 协议、MySQL 常用的功能、MySQL 生态，应用无需或者修改少量代码即可从 MySQL 迁移到 TiDB。提供丰富的数据迁移工具帮助应用便捷完成数据迁移。',
     link: '查看如何使用',
     href: '/case-studies',
     placeholder: b4SVG,
