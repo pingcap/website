@@ -3,7 +3,7 @@ import c2SVG from '../../../images/home/celebrate-your-growth/scale-out-mysql.sv
 import c1SVG from '../../../images/home/celebrate-your-growth/true-open-source.svg'
 import b1SVG from '../../../images/home/benefits/sql-at-scale.svg'
 import b2SVG from '../../../images/home/benefits/high-availability.svg'
-import b3SVG from '../../../images/home/benefits/scloud-native-distributed-db.svg'
+import b3SVG from '../../../images/home/benefits/cloud-native-distributed-db.svg'
 import b4SVG from '../../../images/home/benefits/real-time-hatp.svg'
 import b5SVG from '../../../images/home/benefits/compatibility.svg'
 import kubernetes from '../../../images/home/logos/kubernetes.svg'
