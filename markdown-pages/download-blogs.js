@@ -4,7 +4,10 @@ const log = console.log
 const http = require('./http')
 const axios = require('axios').default
 const toReadableStream = require('to-readable-stream')
-const { createReplaceBlogImagePathStream } = require('./utils')
+const {
+  createReplaceBlogImagePathStream,
+  createReplaceCopyableStream,
+} = require('./utils')
 
 const isDev = process.env.NODE_ENV === 'development'
 const blogName = process.argv[2]
@@ -61,6 +64,7 @@ async function downloadBlogs(
 
     toReadableStream((await axios.get(blog.downloadURL)).data)
       .pipe(createReplaceBlogImagePathStream(locale))
+      .pipe(createReplaceCopyableStream())
       .pipe(writeStream)
   })
 }
