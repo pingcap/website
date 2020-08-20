@@ -229,6 +229,15 @@ $navbar-height-mobile: 4.25rem; // 68px
       background: inherit;
       margin: inherit;
     }
+
+    #youtube-video {
+      width: 100%;
+      height: 450px;
+
+      @include mobile {
+        height: 230px;
+      }
+    }
   }
 
   .get-started-with-tidb {
