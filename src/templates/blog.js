@@ -16,12 +16,11 @@ import { useIntl, FormattedMessage } from 'react-intl'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
-import WithCopy from '../components/shortcodes/withCopy'
+import * as Shortcodes from '../components/shortcodes'
 
 const Blog = ({ data, pageContext }) => {
   const { mdx } = data
   const { frontmatter, body: html, tableOfContents } = mdx
-  const shortcodes = { WithCopy }
   const { filePath, hasBlogCategories } = pageContext
   const category = frontmatter.categories
     ? frontmatter.categories[0]
@@ -144,7 +143,7 @@ const Blog = ({ data, pageContext }) => {
                   hasBlogCategories={hasBlogCategories}
                 />
                 <div className="markdown-body blog-content">
-                  <MDXProvider components={shortcodes}>
+                  <MDXProvider components={Shortcodes}>
                     <MDXRenderer>{html}</MDXRenderer>
                   </MDXProvider>
                 </div>
