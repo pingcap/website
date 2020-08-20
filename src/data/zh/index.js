@@ -26,7 +26,7 @@ const celebrateYourGrowthData = [
   {
     name: '实时的数据分析',
     desc:
-      '真正的开源 HTAP 数据库平台，能够对实时事务数据进行实时感知和决策，消除 IT 与业务目标之间的摩擦。',
+      '开源的 Real-Time HTAP 数据库，能够对实时事务数据进行实时感知和决策，消除 IT 与业务目标之间的摩擦。',
     placeholder: c3SVG,
   },
 ]
