@@ -58,7 +58,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         },
         {
           property: 'og:image:width',
-          content: '1200',
+          content: '400',
         },
         {
           property: 'og:image:height',
@@ -66,7 +66,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         },
         {
           name: 'twitter:card',
-          content: 'summary_large_image',
+          content: 'summary',
         },
         {
           name: 'twitter:creator',
