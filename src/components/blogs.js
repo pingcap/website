@@ -90,6 +90,14 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
 
   const { locale } = useIntl()
 
+  // make old urls compatible with new urls
+  // eg. change /blog-cn#社区 to /zh/blog/
+  useEffect(() => {
+    if (window.location.hash && locale === 'zh') {
+      window.history.pushState('', '', '/zh/blog/')
+    }
+  }, [])
+
   return (
     <Layout>
       <SEO
