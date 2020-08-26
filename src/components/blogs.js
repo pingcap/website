@@ -92,11 +92,11 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
 
   // make old urls compatible with new urls
   // eg. change /blog-cn#社区 to /zh/blog/
-  useEffect(() => {
-    if (window.location.hash && locale === 'zh') {
-      window.history.pushState('', '', '/zh/blog/')
-    }
-  }, [])
+  // useEffect(() => {
+  //   if (window.location.hash && locale === 'zh') {
+  //     window.history.pushState('', '', '/zh/blog/')
+  //   }
+  // }, [])
 
   return (
     <Layout>
@@ -104,6 +104,7 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
         title="TiDB Blog"
         description="PingCAP blog is where we share everything about TiDB - open-source community, HTAP, distributed SQL, cloud-native, engineering journey, best practices, etc."
       />
+
       <article className="PingCAP-Blogs">
         <section className="section section-blogs">
           <div className="container">
