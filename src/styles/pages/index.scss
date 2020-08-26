@@ -22,9 +22,10 @@
 $logos: lenovo tencent oppo bigo blued paypay shopee bookmyshow bank-of-beijing
   hulu qiy netease-games jd-cloud mi webank zalopay unext wuba zhihu meituan;
 
-$logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance tencent meituan xiaomi
-  netease-games iqiyi wuba zhihu china-mobile china-telecom china-unicom people oppo yumchina zto-express
-  paypay zalopay shopee bookmyshow hulu u-next dailymotion;
+$logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
+  tencent meituan xiaomi netease-games iqiyi wuba zhihu china-mobile
+  china-telecom china-unicom people oppo yumchina zto-express paypay zalopay
+  shopee bookmyshow hulu u-next dailymotion;
 
 .box.outer {
   @extend .has-light-background;
@@ -117,7 +118,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
             letter-spacing: 1px;
             width: 9.375rem;
             height: 3rem;
-            
+
             @include mobile {
               width: 140px;
             }
@@ -176,7 +177,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         position: relative;
         width: unset;
       }
-      
+
       .swiper-container {
         width: 42rem;
         height: 26.25rem;
@@ -227,11 +228,11 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
             transform: scale(0.5);
 
             border-radius: 50%;
-            background-color: #9FA8B9;
+            background-color: #9fa8b9;
           }
 
           &.active:after {
-            background-color: #2E2FFF;
+            background-color: #2e2fff;
           }
         }
 
@@ -251,7 +252,9 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
 
   @each $logo in $logos-zh {
     .#{$logo}-logo-zh {
-      background: url(../../../images/home/logos/zh/#{$logo}.png) center no-repeat;
+      background: url(../../../images/home/logos/zh/#{$logo}.png)
+        center
+        no-repeat;
       background-size: contain;
     }
   }
@@ -262,7 +265,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
     @include mobile {
       padding: 3rem 1rem;
     }
-    
+
     h2 {
       margin-bottom: 4rem !important;
       @include mobile {
@@ -366,7 +369,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       &.outer {
         background-color: $M1;
       }
-      
+
       .title.zh {
         font-weight: 400;
       }
@@ -612,7 +615,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           font-weight: 400;
         }
       }
-      
+
       .subtitle {
         color: $M4;
         font-size: $size-8;
@@ -623,7 +626,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
           font-weight: 300;
         }
       }
-      
+
       .paragraph {
         padding: unset;
         color: $M4;
@@ -641,14 +644,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         margin-bottom: 1rem;
         line-height: $LH5;
       }
-      
+
       .subtitle {
         color: $M4;
         font-size: $size-8;
         margin-bottom: 1rem;
         line-height: $LH5;
       }
-      
+
       .paragraph {
         padding: unset;
         color: $M4;
@@ -693,7 +696,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         padding: 0;
       }
     }
-    
+
     .box {
       padding: 2rem;
       align-items: stretch;
@@ -754,6 +757,10 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
         font-size: $size-7;
         height: 3rem;
       }
+
+      &.outer {
+        padding-bottom: 2.5rem;
+      }
     }
 
     &.zh {
@@ -770,7 +777,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance 
       .column:nth-child(3) {
         a.button {
           pointer-events: none;
-          background-color: #9FA8B9;
+          background-color: #9fa8b9;
         }
       }
 

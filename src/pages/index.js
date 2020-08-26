@@ -157,9 +157,9 @@ const IndexPage = ({ data }) => {
                 </h2>
                 <div className="buttons">
                   <Button
-                    as="a"
+                    as={Link}
+                    to="/download"
                     color="primary"
-                    href="https://docs.pingcap.com/tidb/v4.0/quick-start-with-tidb"
                     target="_blank"
                     rounded
                   >
@@ -342,24 +342,27 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               <div className="column">
                 <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title is-5">Self-hosted</h3>
+                  <h3 className="title column-title is-5">On Bare-metal</h3>
                   <div className="strikethrough-primary" />
 
                   <Box className="logo k8s">
-                    <img src={logos.kubernetes} alt="Kubernetes logo" />
+                    <a
+                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started#get-started-with-tidb-operator-in-kubernetes"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <img src={logos.kubernetes} alt="Kubernetes logo" />
+                    </a>
                   </Box>
                   <Box className="logo tiup">
-                    <img src={logos.tiup} alt="TiUP logo" />
+                    <a
+                      href="https://docs.pingcap.com/tidb/stable/production-deployment-using-tiup"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <img src={logos.tiup} alt="TiUP logo" />
+                    </a>
                   </Box>
-
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/tidb/v4.0/production-deployment-using-tiup"
-                    target="_blank"
-                    color="primary"
-                  >
-                    LEARN HOW
-                  </Button>
                 </NormalBox>
               </div>
               <div className="column">
@@ -367,22 +370,26 @@ const IndexPage = ({ data }) => {
                   <h3 className="title column-title is-5">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo aws">
-                    <img src={logos.aws} alt="AWS logo" />
+                    <a
+                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-aws-eks"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <img src={logos.aws} alt="AWS logo" />
+                    </a>
                   </Box>
                   <Box className="logo gcp">
-                    <img
-                      src={logos.googleCloudPlatform}
-                      alt="Google Cloud Platform logo"
-                    />
+                    <a
+                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-gcp-gke"
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      <img
+                        src={logos.googleCloudPlatform}
+                        alt="Google Cloud Platform logo"
+                      />
+                    </a>
                   </Box>
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/tidb-in-kubernetes/v1.1/get-started"
-                    target="_blank"
-                    color="primary"
-                  >
-                    LEARN HOW
-                  </Button>
                 </NormalBox>
               </div>
               <div className="column">
@@ -392,16 +399,10 @@ const IndexPage = ({ data }) => {
                   </h3>
                   <div className="strikethrough-primary" />
                   <Box className="logo tidb-cloud">
-                    <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
+                    <Link to="/products/tidbcloud/trial">
+                      <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
+                    </Link>
                   </Box>
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart"
-                    target="_blank"
-                    color="primary"
-                  >
-                    GET STARTED
-                  </Button>
                 </NormalBox>
               </div>
             </div>

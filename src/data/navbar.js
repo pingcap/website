@@ -4,17 +4,12 @@ import { Link } from 'gatsby'
 const navbarItemsEn = {
   navItems: [
     {
-      name: 'Product',
-      dropdown: [
-        {
-          name: 'TiDB',
-          href: '/products/tidb',
-        },
-        {
-          name: 'TiDB Cloud',
-          href: '/products/tidbcloud',
-        },
-      ],
+      name: 'TiDB',
+      href: '/products/tidb',
+    },
+    {
+      name: 'TiDB Cloud',
+      href: '/products/tidbcloud',
     },
     {
       name: 'Case Studies',
