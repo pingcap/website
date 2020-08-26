@@ -24,7 +24,7 @@ exports.createPages = async ({ actions, graphql }) => {
   await Promise.all([
     createBlogs({ graphql, createPage, createRedirect }),
     createBlogPagination({ graphql, createPage }),
-    createBlogTags({ graphql, createPage, createRedirect }),
+    createBlogTags({ graphql, createPage }),
     createBlogCategories({ graphql, createPage }),
     createPositionsZH({ graphql, createPage, createRedirect }),
     createPositionsPagination({ graphql, createPage }),

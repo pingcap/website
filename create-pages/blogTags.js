@@ -2,7 +2,7 @@ const path = require('path')
 const { langPrefixes, replaceSpaceWithDash } = require('./utils')
 const langConfig = require('../lang.config.json')
 
-const createBlogTags = async ({ graphql, createPage, createRedirect }) => {
+const createBlogTags = async ({ graphql, createPage }) => {
   const blogTagsTemplate = path.resolve(
     `${__dirname}/../src/templates/blogTags.js`
   )
@@ -52,14 +52,6 @@ const createBlogTags = async ({ graphql, createPage, createRedirect }) => {
           })
         })
       })
-
-      if (blogsPath === '/markdown-pages/zh/blogs/') {
-        createRedirect({
-          fromPath: `/zh/blog/#${tagPath}`,
-          toPath: `/zh/blog/${tagPath}`,
-          isPermanent: true,
-        })
-      }
     })
   }
 }
