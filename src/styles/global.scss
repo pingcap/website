@@ -25,9 +25,16 @@
   }
 }
 
-@each $logo in $logos {
+@each $logo in $logos-png {
   .#{$logo}-logo {
     background: url(../../images/logos/#{$logo}.png) center no-repeat;
+    background-size: contain;
+  }
+}
+
+@each $logo in $logos-svg {
+  .#{$logo}-logo {
+    background: url(../../images/logos/#{$logo}.svg) center no-repeat;
     background-size: contain;
   }
 }
@@ -43,7 +50,7 @@ body {
 
 .button {
   font-size: $size-6;
-  
+
   &.is-primary {
     &:hover {
       background-color: darken($color: $primary, $amount: 5%);

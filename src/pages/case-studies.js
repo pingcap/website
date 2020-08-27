@@ -1,7 +1,7 @@
 import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, navigate } from 'gatsby'
 import React, { useEffect, useState, useRef } from 'react'
 
 import { replaceTitle, truncate } from '../lib/string'
@@ -243,7 +243,14 @@ function Logos({ logos }) {
         }))
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
-            <div className="detail-card">
+            <div
+              className="detail-card"
+              onClick={() => {
+                if (logo.relativePath) {
+                  navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)
+                }
+              }}
+            >
               <div className="title column-title has-text-left">
                 {logo.customer}
               </div>
