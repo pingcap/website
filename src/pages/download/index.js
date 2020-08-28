@@ -90,7 +90,6 @@ const Menu = ({
           onSelect: setSelectedKey,
         }
         const el = React.cloneElement(child, props)
-        console.log(el)
         return el
       })}
     </div>
@@ -102,7 +101,6 @@ const MenuItem = ({ children, onSelect, menuKey, className }) => {
     <div
       className={className}
       onClick={() => {
-        console.log(menuKey)
         onSelect(menuKey)
       }}
     >
