@@ -297,7 +297,7 @@ const IndexPage = ({ data }) => {
                     <LinkWithArrow
                       to={d.href}
                       linkText={d.link}
-                      outboundLink={false}
+                      outboundLink={true}
                     />
                   </div>
                 </div>
