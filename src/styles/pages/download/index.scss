@@ -1,92 +1,156 @@
 @import '../../common';
 
 .PingCAP-Download-TiDB {
-  .hero {
-    img {
-      margin: 4rem 0 0;
-      height: 200px;
-    }
-
-    .section-subtitle {
-      font-size: $size-5;
-      color: $B4;
-    }
+  @mixin title {
+    font-size: $H1;
+    font-weight: 700;
+    color: $M3;
   }
 
-  .section-title {
-    @include section-title;
-    margin-top: 1rem;
+  @mixin desc-text {
+    font-size: $P1;
+    font-weight: 400;
+    color: $M4;
+  }
+
+  .slogan {
+    @include title;
+    text-align: center;
+  }
+
+  .content-wrapper {
+    width: 66%;
+    margin: 0 auto;
+  }
+
+  .catalogue-wrapper {
+    display: flex;
     margin-bottom: 2rem;
   }
 
-  .download-section {
-    @include has-light-background;
-    text-align: center;
+  .catalogue-item {
+    height: 3rem;
+    display: flex;
+    padding: 0 1.5rem;
+    align-items: center;
+    background: $B5;
+    font-size: $P1;
+    font-weight: 700;
+    color: $B3;
+    cursor: pointer;
+  }
 
-    .cloud-icon {
+  .catalogue-item--selected {
+    background: $B3;
+    color: white;
+  }
+
+  .desc-section {
+    line-height: 1.75rem;
+  }
+
+  .intro-text {
+    font-size: $P1;
+    font-weight: 400;
+    color: $M4;
+    margin-bottom: 2rem;
+  }
+
+  .deployment-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .deployment-item {
+    width: 12.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $B5;
+    cursor: pointer;
+    img {
+      height: 4.375rem;
+    }
+  }
+
+  .kubernetes-item {
+    width: 14.8%;
+  }
+
+  .deployment-item--selected {
+    border: 1px solid $B3;
+  }
+
+  .desc-title {
+    font-size: $H3;
+    font-weight: 700;
+    color: $M3;
+  }
+
+  .enterprise-desc-title {
+    margin-bottom: 1.5rem;
+  }
+
+  .desc-title-wrapper {
+    display: flex;
+
+    .desc-title {
+      margin-right: 2rem;
+    }
+
+    .link-to-full-doc {
+      font-size: $P2;
+      font-weight: 400;
+      color: $B1;
+    }
+  }
+
+  .desc-paragraph {
+    margin-bottom: 1rem;
+  }
+
+  .tidb-desc {
+    margin-bottom: 2rem;
+  }
+
+  ol {
+    list-style-position: inside;
+
+    li {
       margin-bottom: 2rem;
-    }
 
-    .columns {
-      justify-content: space-evenly;
-    }
-
-    .card {
-      position: relative;
-      padding: 2rem 1rem;
-      height: 100%;
-
-      @include tablet {
-        min-height: 480px;
-      }
-
-      img {
-        height: 60px;
-      }
-
-      p {
-        font-size: $size-7;
-        color: $B4;
-        margin: 0 auto 2rem;
-        width: 60%;
-      }
-
-      ul {
-        list-style: disc;
-        text-align: left;
-        min-height: 170px;
-        width: 70%;
-        margin: 0 auto;
-
-        @include mobile {
-          margin: 0;
-          padding: 0 2rem;
-          width: 100%;
-        }
-      }
-
-      button {
-        padding: 0.5rem 1.5rem;
-        background-color: $B1;
-        color: $M1;
-        font-size: $size-7;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
+      code {
+        @include desc-text;
       }
     }
+  }
 
-    .deploy-on-premise {
-      > .title {
-        margin-top: 5rem;
-      }
+  ul {
+    list-style: disc;
+    list-style-position: inside;
+    margin-bottom: 2rem;
 
-      .button {
-        position: absolute;
-        bottom: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-      }
+    .desc-li-text {
+      @include desc-text;
     }
+  }
+
+  .step-title {
+    display: inline;
+    font-size: $P1;
+    font-weight: 700;
+    color: $M3;
+  }
+
+  .tidb-cloud-full-edition-text {
+    font-size: $P1;
+    font-weight: 400;
+    color: $B1;
+  }
+
+  .tidb-cloud-trial-btn {
+    margin-bottom: 1.25rem;
   }
 }

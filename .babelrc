@@ -1,0 +1,10 @@
+{
+  "presets": ["babel-preset-gatsby"],
+  "plugins": [
+    ["prismjs", {
+      "languages": ["shell"],
+      "theme": "solarizedlight",
+      "css": true
+    }]
+  ]
+}

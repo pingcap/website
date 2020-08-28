@@ -32,7 +32,6 @@
   }
 }
 
-
 body {
   padding-top: 5.25rem;
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;
@@ -43,7 +42,7 @@ body {
 
 .button {
   font-size: $size-6;
-  
+
   &.is-primary {
     &:hover {
       background-color: darken($color: $primary, $amount: 5%);
@@ -218,6 +217,22 @@ body {
   @include mobile {
     padding: 3rem 1rem;
   }
+}
+
+.token.tag,
+.token.content,
+.token.number {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
+  background: inherit;
+  margin: inherit;
 }
 
 @import 'components/navbar';
