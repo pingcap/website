@@ -25,9 +25,6 @@ const Download = ({ data }) => {
     menuItems,
     defaultKey
   )
-  useEffect(() => {
-    Prism.highlightAll()
-  })
   return (
     <Layout>
       <SEO title="Download TiDB" description="" />
@@ -126,6 +123,9 @@ const CommunityEdition = () => {
     menuItems,
     defaultKey
   )
+  useEffect(() => {
+    Prism.highlightAll()
+  })
   return (
     <>
       <p className="intro-text">
