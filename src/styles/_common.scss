@@ -7,7 +7,7 @@ $logos-png: PayPay VNG JD-Cloud---AI Zhihu BookMyShow Shopee Meituan-Dianping iQ
   Qingdao-Telaidian LY-com Qunar-com Jinri-Toutiao G--Networks -Dfire-com Keruyun
   Phoenix-New-Media LinkDoc-Technology Yimian-Data Mobikok Seasun-Games Yoozoo-Games
   FUNYOURS-JAPAN Bank-of-Beijing Ping--;
-$logos-svg: ----Finance NetEase-Games GAEA Xiaomi VIPkid;
+$logos-svg: ----Finance NetEase-Games GAEA Xiaomi VIPKid;
 $logos: join($list1: $logos-png, $list2: $logos-svg);
 
 @mixin VHCenter {
