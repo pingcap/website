@@ -141,6 +141,15 @@
           border-bottom: 1px solid $C2;
           bottom: -1rem;
         }
+
+        &:hover {
+          color: $B1;
+
+          img {
+            filter: invert(21%) sepia(97%) saturate(7453%) hue-rotate(246deg)
+              brightness(99%) contrast(105%);
+          }
+        }
       }
 
       ul {
@@ -204,6 +213,11 @@
     .container {
       @include has-light-background;
       padding: 2rem;
+    }
+
+    .code-conduct-wrapper {
+      display: flex;
+      align-items: center;
     }
 
     img {

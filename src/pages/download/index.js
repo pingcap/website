@@ -24,7 +24,8 @@ const Download = ({ data }) => {
               />
               <p>
                 Fully managed TiDB service that lets you deploy and operate TiDB
-                in a few clicks. Available on AWS and GCP. Other platforms coming soon!
+                in a few clicks. Available on AWS and GCP. Other platforms
+                coming soon!
               </p>
               <Button
                 as={Link}
@@ -37,7 +38,7 @@ const Download = ({ data }) => {
             <div className="deploy-on-premise">
               <h2 className="title section-title">Self-hosted TiDB</h2>
               <div className="columns is-variable is-8">
-                {downloadTiDB.map(item => (
+                {downloadTiDB.map((item) => (
                   <div className="column" key={item.title}>
                     <div className="card">
                       <img src={item.icon} alt={item.title} />

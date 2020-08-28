@@ -13,7 +13,7 @@ const Community = ({ data }) => {
     communityHeroSVG,
     onBoardWithTiDBSVG,
     shareStoriesSVG,
-    codeConductSCG
+    codeConductSCG,
   } = data
 
   function collapse(e) {
@@ -23,7 +23,10 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Community " description="Join our community to learn, contribute, grow, and connect with TiDB contributors and users all around the world!" />
+      <SEO
+        title="Community "
+        description="Join our community to learn, contribute, grow, and connect with TiDB contributors and users all around the world!"
+      />
       <article className="PingCAP-TiDB-Community">
         <section className="hero is-medium">
           <div className="hero-body">
@@ -110,7 +113,7 @@ const Community = ({ data }) => {
               drive of its contributors around the world.
             </div>
             <div className="collapse-items">
-              {contributionGrow.map(c => (
+              {contributionGrow.map((c) => (
                 <div className="content" key={c.title}>
                   <div
                     aria-hidden="true"
@@ -177,7 +180,7 @@ const Community = ({ data }) => {
         <section className="section code-conduct-section">
           <div className="container">
             <div className="columns is-variable is-8">
-              <div className="column">
+              <div className="column code-conduct-wrapper">
                 <div className="side-icon">
                   <img src={codeConductSCG.publicURL} alt="Code conduct" />
                 </div>
@@ -194,7 +197,11 @@ const Community = ({ data }) => {
                   <a href="mailto:pmc@tidb.io"> pmc@tidb.io</a>
                 </p>
                 <p className="paragraph">
-                  Read our Code of Conduct <a href="https://github.com/pingcap/tidb/blob/master/CODE_OF_CONDUCT.md">here</a>.
+                  Read our Code of Conduct{' '}
+                  <a href="https://github.com/pingcap/tidb/blob/master/CODE_OF_CONDUCT.md">
+                    here
+                  </a>
+                  .
                 </p>
               </div>
             </div>
