@@ -37,7 +37,7 @@ const benefitsData = [
     desc:
       '得益于 TiDB 存储计算分离的架构的设计，可按需对计算、存储分别进行在线扩容或者缩容，扩容或者缩容过程中对应用运维人员透明。',
     link: '查看如何使用',
-    href: '/case-studies',
+    href: 'https://docs.pingcap.com/zh/tidb/stable',
     placeholder: b1SVG,
     reverse: true,
   },
@@ -46,7 +46,8 @@ const benefitsData = [
     desc:
       '数据采用多副本存储，数据副本通过 Multi-Raft 协议同步事务日志，多数派写入成功事务才能提交，确保数据强一致性且少数副本发生故障时不影响数据的可用性。可按需配置副本地理位置、副本数量等策略满足不同容灾级别的要求。',
     link: '查看如何使用',
-    href: '/case-studies',
+    href:
+      'https://pingcap-staging.knat.network/zh/case-studies/%E9%87%91%E8%9E%8D',
     placeholder: b2SVG,
   },
   {
@@ -54,7 +55,7 @@ const benefitsData = [
     desc:
       '提供行存储引擎 TiKV、列存储引擎 TiFlash 两款存储引擎，TiFlash 通过 Multi-Raft Learner 协议实时从 TiKV 复制数据，确保行存储引擎 TiKV 和列存储引擎 TiFlash 之间的数据强一致。TiKV、TiFlash 可按需部署在不同的机器，解决 HTAP 资源隔离的问题。',
     link: '查看如何使用',
-    href: '/case-studies',
+    href: 'https://docs.pingcap.com/zh/tidb/stable/tiflash-overview',
     placeholder: b3SVG,
     reverse: true,
   },
@@ -63,7 +64,7 @@ const benefitsData = [
     desc:
       '专为云而设计的分布式数据库，通过 TiDB Operator 可在公有云、私有云、混合云中实现部署工具化、自动化。',
     link: '查看如何使用',
-    href: '/case-studies',
+    href: 'https://docs.pingcap.com/zh/tidb-in-kubernetes/stable',
     placeholder: b4SVG,
   },
   {
@@ -71,7 +72,7 @@ const benefitsData = [
     desc:
       '兼容 MySQL 5.7 协议、MySQL 常用的功能、MySQL 生态，应用无需或者修改少量代码即可从 MySQL 迁移到 TiDB。提供丰富的数据迁移工具帮助应用便捷完成数据迁移。',
     link: '查看如何使用',
-    href: '/case-studies',
+    href: 'https://docs.pingcap.com/zh/tidb/stable/migration-overview',
     placeholder: b5SVG,
     reverse: true,
   },
