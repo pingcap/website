@@ -115,11 +115,22 @@
     margin-bottom: 2rem;
   }
 
+  .gatsby-highlight {
+    background: #f6f8fa;
+  }
+
   ol {
     list-style-position: inside;
 
     li {
       margin-bottom: 2rem;
+      font-size: $P1;
+      font-weight: 700;
+      color: $M3;
+
+      pre {
+        background: #f6f8fa;
+      }
 
       code {
         @include desc-text;

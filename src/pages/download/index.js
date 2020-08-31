@@ -7,6 +7,7 @@ import { graphql, Link } from 'gatsby'
 import { logos } from '../../data/download-tidb'
 import Prism from 'prismjs'
 import { Button } from '@seagreenio/react-bulma'
+import WithCopy from '../../components/shortcodes/withCopy'
 
 const useMenu = (menuItems, defaultKey) => {
   const [selectedKey, setSelectedKey] = useState(defaultKey)
@@ -105,6 +106,18 @@ const MenuItem = ({ children, onSelect, menuKey, className }) => {
       }}
     >
       {children}
+    </div>
+  )
+}
+
+const CodeSnippet = ({ lang, copyable = true, children }) => {
+  const className = `language-${lang}`
+  return (
+    <div className="gatsby-highlight">
+      {copyable && <WithCopy></WithCopy>}
+      <pre className={className}>
+        <code className={className}>{children}</code>
+      </pre>
     </div>
   )
 }
@@ -223,7 +236,7 @@ const TiUP = () => {
             className="link-to-full-doc"
             rel="noopener"
           >
-            see Full Doc
+            See Full Doc
           </a>
         </div>
         <p className="desc-paragraph">
@@ -236,17 +249,13 @@ const TiUP = () => {
         <ol>
           <li>
             <h3 className="step-title">Deploy TiDB</h3>
-            <pre className="language-shell">
-              <code className="language-shell">tiup playground</code>
-            </pre>
+            <CodeSnippet lang="shell">tiup playground</CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Access TiDB</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                mysql --host 127.0.0.1 --port 4000 -u root
-              </code>
-            </pre>
+            <CodeSnippet lang="shell">
+              mysql --host 127.0.0.1 --port 4000 -u root
+            </CodeSnippet>
           </li>
         </ol>
       </section>
@@ -265,7 +274,7 @@ const Kubernetes = () => {
             className="link-to-full-doc"
             rel="noopener"
           >
-            see Full Doc
+            See Full Doc
           </a>
         </div>
         <p className="desc-paragraph">
@@ -278,32 +287,24 @@ const Kubernetes = () => {
         <ol>
           <li>
             <h3 className="step-title">Install TiDB Operator</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/{tidb-operator version}/manifests/crd.yaml
+            <CodeSnippet lang="shell">{`kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/{tidb-operator version}/manifests/crd.yaml
 helm repo add pingcap https://charts.pingcap.org/
 helm install tidb-operator pingcap/tidb-operator --version {​tidb-operator version}
-`}
-              </code>
-            </pre>
+`}</CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Deploy TiDB and TiDB Monitor</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-cluster.yaml
+            <CodeSnippet lang="shell">
+              {`kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-cluster.yaml
 kubectl apply -f https://raw.githubusercontent.com/pingcap/tidb-operator/master/examples/basic/tidb-monitor.yaml`}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Access the database</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`kubectl port-forward svc/basic-tidb 4000 > pf4000.out &
+            <CodeSnippet lang="shell">
+              {`kubectl port-forward svc/basic-tidb 4000 > pf4000.out &
 mysql -h 127.0.0.1 -P 4000 -u root`}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
         </ol>
       </section>
@@ -322,7 +323,7 @@ const AWS = () => {
             className="link-to-full-doc"
             rel="noopener"
           >
-            see Full Doc
+            See Full Doc
           </a>
         </div>
         <p className="desc-paragraph">
@@ -337,37 +338,31 @@ const AWS = () => {
             <h3 className="step-title">
               Deploy EKS, TiDB Operator, and TiDB cluster node pool
             </h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`git clone --depth=1 https://github.com/pingcap/tidb-operator && \
+            <CodeSnippet lang="shell">
+              {`git clone --depth=1 https://github.com/pingcap/tidb-operator && \
 cd tidb-operator/deploy/aws
 cp demo.tfvars terraform.tfvars
 terraform init
 terraform apply
 `}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Deploy TiDB cluster and monitor</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`sed "s/CLUSTER_NAME/\${cluster_name}/g" manifests/db.yaml.example > db.yaml
+            <CodeSnippet lang="shell">
+              {`sed "s/CLUSTER_NAME/\${cluster_name}/g" manifests/db.yaml.example > db.yaml
 sed "s/CLUSTER_NAME/\${cluster_name}/g" manifests/db-monitor.yaml.example > db-monitor.yaml
 kubectl --kubeconfig credentials/kubeconfig_\${eks_name} create -f db.yaml
 kubectl --kubeconfig credentials/kubeconfig_\${eks_name} create -f db-monitor.yaml
 `}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Access the database</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`ssh -i credentials/\${eks_name}.pem centos@\${bastion_ip}
+            <CodeSnippet lang="shell">
+              {`ssh -i credentials/\${eks_name}.pem centos@\${bastion_ip}
 mysql -h \${tidb_lb} -P 4000 -u root`}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
         </ol>
       </section>
@@ -386,7 +381,7 @@ const GoogleCloud = () => {
             className="link-to-full-doc"
             rel="noopener"
           >
-            see Full Doc
+            See Full Doc
           </a>
         </div>
         <p className="desc-paragraph">
@@ -401,37 +396,31 @@ const GoogleCloud = () => {
             <h3 className="step-title">
               Deploy GKE, TiDB Operator, and TiDB cluster node pool
             </h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`git clone --depth=1 https://github.com/pingcap/tidb-operator && \
+            <CodeSnippet lang="shell">
+              {`git clone --depth=1 https://github.com/pingcap/tidb-operator && \
 cd tidb-operator/deploy/gcp
 cat small.tfvars >> terraform.tfvars
 terraform init
 terraform apply
 `}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Deploy TiDB cluster and monitor</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`sed "s/CLUSTER_NAME/tidb-cluster/g" manifests/db.yaml.example > db.yaml
+            <CodeSnippet lang="shell">
+              {`sed "s/CLUSTER_NAME/tidb-cluster/g" manifests/db.yaml.example > db.yaml
 sed "s/CLUSTER_NAME/tidb-cluster/g" manifests/db-monitor.yaml.example > db-monitor.yaml
 kubectl --kubeconfig credentials/kubeconfig_\${gke_name} create -f db.yaml
 kubectl --kubeconfig credentials/kubeconfig_\${gke_name} create -f db-monitor.yaml
 `}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
           <li>
             <h3 className="step-title">Access the database</h3>
-            <pre className="language-shell">
-              <code className="language-shell">
-                {`gcloud compute ssh \${gke_cluster_name}-bastion --zone \${zone}
+            <CodeSnippet lang="shell">
+              {`gcloud compute ssh \${gke_cluster_name}-bastion --zone \${zone}
 mysql -h \${tidb_lb} -P 4000 -u root`}
-              </code>
-            </pre>
+            </CodeSnippet>
           </li>
         </ol>
       </section>
