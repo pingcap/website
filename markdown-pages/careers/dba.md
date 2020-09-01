@@ -1,10 +1,10 @@
 ---
-title: Technical Support Engineer
+title: DBA
 location: San Mateo • Singapore • Remote • Full Time
-aliases: ['/careers/demand-generation-specialist']
+
 ---
 
-# Technical Support Engineer
+# DBA
 
 ## About PingCAP:
 
