@@ -177,7 +177,7 @@ const CommunityEdition = () => {
 
 const EnterpriseSubscription = () => {
   return (
-    <section>
+    <section className="enterprise-section">
       <h1 className="desc-title enterprise-desc-title">
         The TiDB Platform with commercial support provided by PingCAP
       </h1>
@@ -198,7 +198,7 @@ const EnterpriseSubscription = () => {
 
 const TiDBCloud = () => {
   return (
-    <section>
+    <section className="tidb-cloud-section">
       <p className="tidb-desc">
         Fully-managed Database-as-a-Service (DBaaS) that brings everything great
         about TiDB to your cloud, and lets you focus on your applications, not

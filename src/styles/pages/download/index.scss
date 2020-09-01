@@ -13,6 +13,12 @@
     color: $M4;
   }
 
+  .slogan-section {
+    @include mobile {
+      padding-bottom: 2rem;
+    }
+  }
+
   .slogan {
     @include title;
     text-align: center;
@@ -21,11 +27,29 @@
   .content-wrapper {
     width: 66%;
     margin: 0 auto;
+
+    @include mobile {
+      width: auto;
+    }
+  }
+
+  .download-menu-section {
+    @include mobile {
+      padding-top: 0;
+    }
   }
 
   .catalogue-wrapper {
     display: flex;
     margin-bottom: 2rem;
+
+    @include mobile {
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
   }
 
   .catalogue-item {
@@ -61,6 +85,11 @@
     flex-wrap: nowrap;
     gap: 2rem;
     margin-bottom: 2rem;
+
+    @include mobile {
+      justify-content: space-between;
+      gap: 0;
+    }
   }
 
   .deployment-item {
@@ -72,11 +101,23 @@
     cursor: pointer;
     img {
       height: 4.375rem;
+
+      @include mobile {
+        height: 3.125rem;
+      }
+    }
+
+    @include mobile {
+      width: 20%;
     }
   }
 
   .kubernetes-item {
     width: 14.8%;
+
+    @include mobile {
+      width: 24%;
+    }
   }
 
   .deployment-item--selected {
@@ -95,6 +136,11 @@
 
   .desc-title-wrapper {
     display: flex;
+
+    @include mobile {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
 
     .desc-title {
       margin-right: 2rem;
@@ -117,6 +163,16 @@
 
   .gatsby-highlight {
     background: #f6f8fa;
+  }
+
+  .enterprise-section, .tidb-cloud-section {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 75%;
+      margin: 0 auto;
+    }
   }
 
   ol {
