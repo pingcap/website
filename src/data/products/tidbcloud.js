@@ -15,7 +15,7 @@ const reasonsData = [
   {
     name: 'Hybrid Transactional/Analytical Processing (HTAP)',
     desc:
-      'Support massive-scale, mission-critical OLTP and real-time analytics workloads right out of the box. (Columnar-based OLAP support available in Q3, 2020)',
+      'Support massive-scale, mission-critical OLTP and real-time analytics workloads right out of the box.',
     placeholder: r1SVG
   },
   {

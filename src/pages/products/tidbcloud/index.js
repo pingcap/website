@@ -88,34 +88,49 @@ const HourlyNodeUsageInfo = () => {
     const TierTableRow = ({ tier, isStriped }) => {
       if (!tier) return null
 
-      const { profile_name, available_regions, tidb, tikv } = tier
+      const { profile_name, available_regions, tidb, tikv, tiflash } = tier
       const availablePrice = available_regions.filter(
         (p) => p.region_name === region
       )[0].price
+      const names = {
+        tidb: 'TiDB',
+        tikv: 'TiKV',
+        tiflash: 'TiFlash',
+      }
+
+      const TierCells = ({ name, instance }) => (
+        <>
+          <td>{names[name]}</td>
+          <td>{value(instance.cpu)} vCPU</td>
+          <td>{value(instance.memory_gi)} GiB</td>
+          <td>
+            {name === 'tidb'
+              ? '-'
+              : `${value(instance.disks[0].disk_gi)} GiB ${
+                  instance.disks[0].disk_type
+                }`}
+          </td>
+          <td>$ {value(availablePrice[name])} /hr</td>
+          <td>$ {precision(availablePrice[name] * 24 * 30)} /month</td>
+        </>
+      )
 
       return (
         <>
           <tr className={`${isStriped ? 'has-light-background' : ''}`}>
-            <td rowSpan="2" className="tier-td">
+            <td rowSpan={`${tiflash ? '3' : '2'}`} className="tier-td">
               {profile_name}
             </td>
-            <td>TiKV</td>
-            <td>{value(tikv.cpu)} vCPU</td>
-            <td>{value(tikv.memory_gi)} GiB</td>
-            <td>
-              {value(tikv.disks[0].disk_gi)} GiB {tikv.disks[0].disk_type}
-            </td>
-            <td>$ {value(availablePrice.tikv)} /hr</td>
-            <td>$ {precision(availablePrice.tikv * 24 * 30)} /month</td>
+            <TierCells name="tikv" instance={tikv} />
           </tr>
           <tr className={`${isStriped ? 'has-light-background' : ''}`}>
-            <td>TiDB</td>
-            <td>{tidb.cpu} vCPU</td>
-            <td>{tidb.memory_gi} GiB</td>
-            <td>-</td>
-            <td>$ {value(availablePrice.tidb)} /hr</td>
-            <td>$ {precision(availablePrice.tidb * 24 * 30)} /month</td>
+            <TierCells name="tidb" instance={tidb} />
           </tr>
+          {tiflash && (
+            <tr className={`${isStriped ? 'has-light-background' : ''}`}>
+              <TierCells name="tiflash" instance={tiflash} />
+            </tr>
+          )}
         </>
       )
     }
@@ -302,7 +317,8 @@ const TiDBCloudPage = ({ data }) => {
             <div className="field">
               <p className="paragraph">
                 TiDB Cloud provides different cluster tiers. Detailed pricing
-                for TiDB/TiKV instances in different tiers are as follows:
+                for TiDB/TiKV/TiFlash instances in different tiers are as
+                follows:
               </p>
               <HourlyNodeUsageInfo />
               <p className="paragraph">
