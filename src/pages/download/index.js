@@ -216,7 +216,7 @@ const TiDBCloud = () => {
         to="/products/tidbcloud/trial"
         className="button is-primary tidb-cloud-trial-btn"
       >
-        APPLY FOR FREE TRIAL
+        Apply For Free Trial
       </Button>
       <p className="tidb-cloud-full-edition-text">
         with $4500 worth of credits and full power of TiDB Cloud

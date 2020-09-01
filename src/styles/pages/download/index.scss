@@ -13,6 +13,26 @@
     color: $M4;
   }
 
+  @mixin flex-container-gap($direction, $gap) {
+    @if $direction == 'row' {
+      margin-left: -1 * $gap / 2;
+      margin-right: -1 * $gap / 2;
+    } @else if $direction == 'column' {
+      margin-top: -1 * $gap / 2;
+      margin-bottom: -1 * $gap / 2;
+    }
+  }
+
+  @mixin flex-item-gap($direction, $gap) {
+    @if $direction == 'row' {
+      margin-left: 1 * $gap / 2;
+      margin-right: 1 * $gap / 2;
+    } @else if $direction == 'column' {
+      margin-top: 1 * $gap / 2;
+      margin-bottom: 1 * $gap / 2;
+    }
+  }
+
   .slogan-section {
     @include mobile {
       padding-bottom: 2rem;
@@ -40,6 +60,8 @@
   }
 
   .catalogue-wrapper {
+    $direction: 'column';
+    $gap: 1rem;
     display: flex;
     margin-bottom: 2rem;
 
@@ -47,26 +69,30 @@
       flex-direction: column;
       justify-content: space-between;
       align-items: center;
-      gap: 1rem;
+      @include flex-item-gap($direction, $gap);
       margin-bottom: 2.5rem;
     }
-  }
 
-  .catalogue-item {
-    height: 3rem;
-    display: flex;
-    padding: 0 1.5rem;
-    align-items: center;
-    background: $B5;
-    font-size: $P1;
-    font-weight: 700;
-    color: $B3;
-    cursor: pointer;
-  }
+    .catalogue-item {
+      height: 3rem;
+      display: flex;
+      padding: 0 1.5rem;
+      align-items: center;
+      background: $B5;
+      font-size: $P1;
+      font-weight: 700;
+      color: $B3;
+      cursor: pointer;
 
-  .catalogue-item--selected {
-    background: $B3;
-    color: white;
+      @include mobile {
+        @include flex-item-gap($direction, $gap);
+      }
+    }
+
+    .catalogue-item--selected {
+      background: $B3;
+      color: white;
+    }
   }
 
   .desc-section {
@@ -81,47 +107,51 @@
   }
 
   .deployment-wrapper {
+    $direction: 'row';
+    $gap: 2rem;
     display: flex;
     flex-wrap: nowrap;
-    gap: 2rem;
     margin-bottom: 2rem;
+    @include flex-container-gap($direction, $gap);
 
     @include mobile {
       justify-content: space-between;
-      gap: 0;
+      @include flex-container-gap($direction, 0);
     }
-  }
 
-  .deployment-item {
-    width: 12.5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $B5;
-    cursor: pointer;
-    img {
-      height: 4.375rem;
+    .deployment-item {
+      @include flex-item-gap($direction, $gap);
+      width: 12.5%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $B5;
+      cursor: pointer;
+      img {
+        height: 4.375rem;
+
+        @include mobile {
+          height: 3.125rem;
+        }
+      }
 
       @include mobile {
-        height: 3.125rem;
+        width: 20%;
+        @include flex-container-gap($direction, 0);
       }
     }
 
-    @include mobile {
-      width: 20%;
+    .kubernetes-item {
+      width: 14.8%;
+
+      @include mobile {
+        width: 24%;
+      }
     }
-  }
 
-  .kubernetes-item {
-    width: 14.8%;
-
-    @include mobile {
-      width: 24%;
+    .deployment-item--selected {
+      border: 1px solid $B3;
     }
-  }
-
-  .deployment-item--selected {
-    border: 1px solid $B3;
   }
 
   .desc-title {
@@ -165,7 +195,8 @@
     background: #f6f8fa;
   }
 
-  .enterprise-section, .tidb-cloud-section {
+  .enterprise-section,
+  .tidb-cloud-section {
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -176,9 +207,11 @@
   }
 
   ol {
-    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
 
     li {
+      margin-left: 1em;
       margin-bottom: 2rem;
       font-size: $P1;
       font-weight: 700;
@@ -196,11 +229,16 @@
 
   ul {
     list-style: disc;
-    list-style-position: inside;
+    margin-left: 0;
+    padding-left: 0;
     margin-bottom: 2rem;
 
     .desc-li-text {
       @include desc-text;
+    }
+
+    li {
+      margin-left: 1em;
     }
   }
 
@@ -215,6 +253,7 @@
     font-size: $P1;
     font-weight: 400;
     color: $B1;
+    text-align: center;
   }
 
   .tidb-cloud-trial-btn {
