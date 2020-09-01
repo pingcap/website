@@ -302,7 +302,8 @@ const TiDBCloudPage = ({ data }) => {
             <div className="field">
               <p className="paragraph">
                 TiDB Cloud provides different cluster tiers. Detailed pricing
-                for TiDB/TiKV instances in different tiers are as follows:
+                for TiDB/TiKV/TiFlash instances in different tiers are as
+                follows:
               </p>
               <HourlyNodeUsageInfo />
               <p className="paragraph">
