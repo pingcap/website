@@ -1,7 +1,7 @@
 import '../../styles/pages/caseStudies.scss'
 import '../../lib/graphql/image'
 
-import { graphql, Link } from 'gatsby'
+import { graphql, Link, navigate } from 'gatsby'
 // import Link from '../../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../../lib/string'
@@ -222,7 +222,12 @@ function Logos({ logos }) {
         }))
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
-            <div className="detail-card">
+            <div
+              className="detail-card"
+              onClick={() => {
+                navigate(`/zh/case-studies/${replaceTitle(logo.relativePath)}`)
+              }}
+            >
               <div className="title column-title has-text-left">
                 {logo.customer}
               </div>

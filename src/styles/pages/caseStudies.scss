@@ -303,8 +303,6 @@
 
   .logos {
 
-  
-
     @include mobile {
       margin-left: 0;
       margin-right: 0;
@@ -314,6 +312,7 @@
 
     .column {
       @include mobile {
+        height: 16rem;
         margin-bottom: 1rem;
 
         &:last-child {
@@ -321,6 +320,7 @@
         }
       }
       @include tablet {
+        height: calc(var(--is-12) / 4);
         &:hover {
           .simple-card {
             opacity: 0;
@@ -333,7 +333,6 @@
       }
 
       position: relative;
-      height: 16rem;
       cursor: pointer;
     }
 
@@ -379,7 +378,7 @@
       top: 50%;
       left: 0;
       display: flex;
-      overflow: auto;
+      overflow: hidden;
       height: 100%;
       flex-direction: column;
       transform: translateY(-50%);
@@ -501,7 +500,8 @@
         $size: 100%;
         width: $size;
         height: $size;
-        padding: 2.5rem 3rem;
+        padding: 2rem;
+        box-shadow:0px 3px 8px rgba(0,0,0,0.1);
 
         .detail-card-logo{
           display: none;
@@ -517,6 +517,7 @@
           font-weight: 400;
           font-size: $P2;
           color: $M4;
+          overflow: auto;
         }
       }
     }
