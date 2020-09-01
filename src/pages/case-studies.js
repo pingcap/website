@@ -250,9 +250,7 @@ function Logos({ logos }) {
               <div
                 className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
               />
-              <div className="paragraph">
-                {truncate.apply(logo.summary, [200, true])}
-              </div>
+              <div className="paragraph">{logo.summary}</div>
               {logo.relativePath && (
                 <Link
                   to={`/case-studies/${replaceTitle(logo.relativePath)}`}
