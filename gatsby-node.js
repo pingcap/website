@@ -51,4 +51,11 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   createIntlPages({ page, actions })
+
+  // create page /blog-cn/* for redirection
+  const { createPage } = actions
+  if (page.path.match(/^\/blog-cn/)) {
+    page.matchPath = '/blog-cn/*'
+    createPage(page)
+  }
 }
