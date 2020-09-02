@@ -7,8 +7,6 @@ const BlogCN = () => {
   const blogTag = location.hash.slice(1)
   const blogPathName = location.pathname.split('/')[2]
 
-  console.log('blogPath name', blogTag, blogPathName)
-
   useEffect(() => {
     if (blogTag) {
       // redirect /blog-cn/#tag
