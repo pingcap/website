@@ -14,9 +14,7 @@ const BlogCN = () => {
     } else if (blogPathName) {
       // redirect /blog-cn/BLOG_PATH
       navigate(`/zh/blog/${blogPathName}`)
-    } else {
-      navigate('/zh/blog')
-    }
+    } 
     return null
   }
 
