@@ -20,13 +20,19 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
   const {
     currentPage,
     numPages,
-    tag: currentTag,
-    category: currentCategory,
+    tag,
+    category,
     hasBlogCategories,
   } = pageContext
 
   const categories = data.categories.group.map((i) => i.category)
   const tags = data.tags.group.map((i) => i.tag)
+
+  categories.unshift('All')
+  tags.unshift('All')
+
+  const currentCategory = category || 'All'
+  const currentTag = tag || 'All'
 
   const [showCategories, setShowCategories] = useState(hasBlogCategories)
 
@@ -70,7 +76,11 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
               <Link
                 key={c}
                 className={currentCategory === c ? 'active' : ''}
-                to={`/blog/category/${replaceSpaceWithDash(c)}`}
+                to={
+                  c === 'All'
+                    ? '/blog'
+                    : `/blog/category/${replaceSpaceWithDash(c)}`
+                }
               >
                 {c}
               </Link>
@@ -79,7 +89,9 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
               <Link
                 key={t}
                 className={currentTag === t ? 'active' : ''}
-                to={`/blog/tag/${replaceSpaceWithDash(t)}`}
+                to={
+                  t === 'All' ? '/blog' : `/blog/tag/${replaceSpaceWithDash(t)}`
+                }
               >
                 {t}
               </Link>
