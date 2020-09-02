@@ -17,6 +17,7 @@ const createPositionsPagination = require('./create-pages/positions')
 const createPositionsAllPagination = require('./create-pages/positionsAll')
 const createPolicyTerms = require('./create-pages/policyTerms')
 const createIntlPages = require('./create-pages/intl')
+const createBlogCNPages = require('./create-pages/blogCNPages')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
@@ -51,11 +52,5 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   createIntlPages({ page, actions })
-
-  // create page /blog-cn/* for redirection
-  const { createPage } = actions
-  if (page.path.match(/^\/blog-cn/)) {
-    page.matchPath = '/blog-cn/*'
-    createPage(page)
-  }
+  createBlogCNPages({ page, actions })
 }

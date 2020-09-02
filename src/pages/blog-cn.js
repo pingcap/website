@@ -1,5 +1,5 @@
-import React from 'react'
-import { Router, useLocation } from '@reach/router'
+import React, { useEffect } from 'react'
+import { useLocation } from '@reach/router'
 import { navigate } from 'gatsby'
 
 const BlogCN = () => {
@@ -7,22 +7,21 @@ const BlogCN = () => {
   const blogTag = location.hash.slice(1)
   const blogPathName = location.pathname.split('/')[2]
 
-  const RedirectBlogCNPath = () => {
-    // redirect /blog-cn/#tag
+  console.log('blogPath name', blogTag, blogPathName)
+
+  useEffect(() => {
     if (blogTag) {
+      // redirect /blog-cn/#tag
       navigate(`/zh/blog/tag/${blogTag}`)
     } else if (blogPathName) {
       // redirect /blog-cn/BLOG_PATH
       navigate(`/zh/blog/${blogPathName}`)
-    } 
-    return null
-  }
+    } else {
+      navigate('/zh/blog')
+    }
+  }, [])
 
-  return (
-    <Router basepath="/blog-cn">
-      <RedirectBlogCNPath path="/*" />
-    </Router>
-  )
+  return null
 }
 
 export default BlogCN
