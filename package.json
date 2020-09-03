@@ -52,6 +52,8 @@
     "swiper": "5.4.5"
   },
   "devDependencies": {
+    "babel-plugin-prismjs": "^2.0.1",
+    "babel-preset-gatsby": "^0.5.7",
     "bulma": "^0.8.1",
     "chalk": "^3.0.0",
     "cross-env": "^7.0.2",
