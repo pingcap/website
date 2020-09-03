@@ -1,45 +1,30 @@
-<svg id="_011-network" data-name="011-network" xmlns="http://www.w3.org/2000/svg" width="163.688" height="163.688" viewBox="0 0 163.688 163.688">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100" height="100" viewBox="0 0 100 100">
   <defs>
-    <style>
-      .cls-1 {
-        fill: #3333ce;
-        opacity: 0.199;
-      }
-
-      .cls-2 {
-        fill: #083863;
-      }
-    </style>
+    <clipPath id="clip-path">
+      <rect id="矩形_3673" data-name="矩形 3673" width="100" height="100" transform="translate(1330 842)" fill="none" stroke="#707070" stroke-width="1"/>
+    </clipPath>
   </defs>
-  <circle id="Ellipse_642" data-name="Ellipse 642" class="cls-1" cx="34.102" cy="34.102" r="34.102" transform="translate(36.872 41.668)"/>
-  <g id="Group_3015" data-name="Group 3015" transform="translate(3.41 3.41)">
-    <path id="Path_10776" data-name="Path 10776" class="cls-1" d="M414.255,20.9V55a3.41,3.41,0,0,1-3.41,3.41h-34.1a3.41,3.41,0,0,1-3.41-3.41V14.077a3.41,3.41,0,0,1,3.41-3.41h27.281V20.9h10.23Z" transform="translate(-257.388 -10.667)"/>
-    <path id="Path_10777" data-name="Path 10777" class="cls-1" d="M51.588,375.871v20.461a3.41,3.41,0,0,1-3.41,3.41h-34.1a3.41,3.41,0,0,1-3.41-3.41V355.41a3.41,3.41,0,0,1,3.41-3.41H41.357v10.23h10.23v13.641Z" transform="translate(-10.666 -242.875)"/>
-  </g>
-  <g id="Group_3016" data-name="Group 3016" transform="translate(3.41 3.41)">
-    <path id="Path_10778" data-name="Path 10778" class="cls-1" d="M414.255,362.23v34.1a3.41,3.41,0,0,1-3.41,3.41h-34.1a3.41,3.41,0,0,1-3.41-3.41V355.41a3.41,3.41,0,0,1,3.41-3.41h27.281v10.23Z" transform="translate(-257.388 -242.875)"/>
-    <path id="Path_10779" data-name="Path 10779" class="cls-1" d="M51.588,34.537V55a3.41,3.41,0,0,1-3.41,3.41h-34.1A3.41,3.41,0,0,1,10.666,55V14.076a3.41,3.41,0,0,1,3.41-3.41H41.357V20.9h10.23V34.537Z" transform="translate(-10.666 -10.666)"/>
-  </g>
-  <g id="Group_3017" data-name="Group 3017">
-    <path id="Path_10780" data-name="Path 10780" class="cls-2" d="M409.41,11.23,399.18,1a3.409,3.409,0,0,0-2.411-1H369.487a6.82,6.82,0,0,0-6.82,6.82h0V47.742a6.82,6.82,0,0,0,6.82,6.82h34.1a6.82,6.82,0,0,0,6.82-6.82v-34.1A3.412,3.412,0,0,0,409.41,11.23ZM369.487,47.742V6.82h23.871v6.82a3.41,3.41,0,0,0,3.41,3.41h6.82V47.742Z" transform="translate(-246.722)"/>
-    <path id="Path_10781" data-name="Path 10781" class="cls-2" d="M6.82,54.563h34.1a6.82,6.82,0,0,0,6.82-6.82v-34.1a3.411,3.411,0,0,0-1-2.411L36.513,1A3.409,3.409,0,0,0,34.1,0H6.82A6.82,6.82,0,0,0,0,6.821H0V47.743A6.82,6.82,0,0,0,6.82,54.563Zm0-47.742H30.691v6.82a3.41,3.41,0,0,0,3.41,3.41h6.82V47.743H6.82Z" transform="translate(0 -0.001)"/>
-    <path id="Path_10782" data-name="Path 10782" class="cls-2" d="M36.513,342.333a3.409,3.409,0,0,0-2.411-1H6.82A6.82,6.82,0,0,0,0,348.154v40.922a6.82,6.82,0,0,0,6.82,6.82h34.1a6.82,6.82,0,0,0,6.82-6.82v-34.1a3.411,3.411,0,0,0-1-2.411ZM6.82,389.076V348.154H30.691v6.82a3.41,3.41,0,0,0,3.41,3.41h6.82v30.691Z" transform="translate(0 -232.209)"/>
-    <path id="Path_10783" data-name="Path 10783" class="cls-2" d="M399.18,342.333a3.409,3.409,0,0,0-2.411-1H369.487a6.82,6.82,0,0,0-6.82,6.82v40.922a6.82,6.82,0,0,0,6.82,6.82h34.1a6.82,6.82,0,0,0,6.82-6.82v-34.1a3.411,3.411,0,0,0-1-2.411Zm-29.692,46.743V348.154h23.871v6.82a3.41,3.41,0,0,0,3.41,3.41h6.82v30.691Z" transform="translate(-246.722 -232.209)"/>
-    <path id="Path_10784" data-name="Path 10784" class="cls-2" d="M170.667,74.667H225.23v6.82H170.667Z" transform="translate(-116.104 -50.796)"/>
-    <path id="Path_10785" data-name="Path 10785" class="cls-2" d="M170.667,416H225.23v6.82H170.667Z" transform="translate(-116.104 -283.004)"/>
-    <path id="Path_10786" data-name="Path 10786" class="cls-2" d="M64,192h6.82v40.922H64Z" transform="translate(-43.539 -130.617)"/>
-    <path id="Path_10787" data-name="Path 10787" class="cls-2" d="M426.667,192h6.82v40.922h-6.82Z" transform="translate(-290.261 -130.617)"/>
-    <path id="Path_10788" data-name="Path 10788" class="cls-2" d="M176.179,138.667a37.512,37.512,0,1,0,37.512,37.512A37.512,37.512,0,0,0,176.179,138.667Zm0,68.2a30.691,30.691,0,1,1,30.691-30.691A30.692,30.692,0,0,1,176.179,206.87Z" transform="translate(-94.335 -94.335)"/>
-    <path id="Path_10789" data-name="Path 10789" class="cls-2" d="M245.333,245.333h6.82v6.82h-6.82v-6.82Z" transform="translate(-166.9 -166.9)"/>
-    <path id="Path_10790" data-name="Path 10790" class="cls-2" d="M288,245.333h6.82v6.82H288Z" transform="translate(-195.926 -166.9)"/>
-    <path id="Path_10791" data-name="Path 10791" class="cls-2" d="M202.667,245.333h6.82v6.82h-6.82Z" transform="translate(-137.874 -166.9)"/>
-    <path id="Path_10792" data-name="Path 10792" class="cls-2" d="M42.667,64H52.9v6.82H42.667Z" transform="translate(-29.026 -43.539)"/>
-    <path id="Path_10793" data-name="Path 10793" class="cls-2" d="M42.667,106.667H63.128v6.82H42.667Z" transform="translate(-29.026 -72.565)"/>
-    <path id="Path_10794" data-name="Path 10794" class="cls-2" d="M405.333,64h10.23v6.82h-10.23Z" transform="translate(-275.747 -43.539)"/>
-    <path id="Path_10795" data-name="Path 10795" class="cls-2" d="M405.333,106.667h20.461v6.82H405.333Z" transform="translate(-275.747 -72.565)"/>
-    <path id="Path_10796" data-name="Path 10796" class="cls-2" d="M405.333,405.333h10.23v6.82h-10.23Z" transform="translate(-275.747 -275.747)"/>
-    <path id="Path_10797" data-name="Path 10797" class="cls-2" d="M405.333,448h20.461v6.82H405.333Z" transform="translate(-275.747 -304.773)"/>
-    <path id="Path_10798" data-name="Path 10798" class="cls-2" d="M42.667,405.333H52.9v6.82H42.667Z" transform="translate(-29.026 -275.747)"/>
-    <path id="Path_10799" data-name="Path 10799" class="cls-2" d="M42.667,448H63.128v6.82H42.667Z" transform="translate(-29.026 -304.773)"/>
+  <g id="蒙版组_121" data-name="蒙版组 121" transform="translate(-1330 -842)" clip-path="url(#clip-path)">
+    <g id="组_4327" data-name="组 4327" transform="translate(888 -961)">
+      <circle id="椭圆_1156" data-name="椭圆 1156" cx="11" cy="11" r="11" transform="translate(477 1825)" fill="#ff6584"/>
+      <path id="路径_13545" data-name="路径 13545" d="M136,144c0-2-6-8-6-8l-6-15a2.946,2.946,0,0,1,3-3,3.7,3.7,0,0,1,3,2l4,8V107a3,3,0,0,1,6,0v11a3,3,0,1,1,6,0v2a3,3,0,0,1,6,0v2a3,3,0,1,1,6,0v7c0,7-4,11-4,13v2" transform="translate(351 1730)" fill="#fff"/>
+      <rect id="矩形_3628" data-name="矩形 3628" width="22" height="10" transform="translate(485 1875)" fill="#6c63ff"/>
+      <g id="组_4320" data-name="组 4320" transform="translate(473 1821)">
+        <rect id="矩形_3631" data-name="矩形 3631" width="2" height="3" transform="translate(29 30)" fill="#3f3d56"/>
+        <rect id="矩形_3632" data-name="矩形 3632" width="2" height="3" transform="translate(23 29)" fill="#3f3d56"/>
+        <rect id="矩形_3633" data-name="矩形 3633" width="2" height="4" transform="translate(17 27)" fill="#3f3d56"/>
+        <g id="组_4320-2" data-name="组 4320">
+          <path id="路径_13546" data-name="路径 13546" d="M220,435h-2v-9H198v9h-2V424h24Z" transform="translate(-185 -371)" fill="#3f3d56"/>
+          <rect id="矩形_3629" data-name="矩形 3629" width="2" height="2" transform="translate(29 57)" fill="#3f3d56"/>
+          <rect id="矩形_3630" data-name="矩形 3630" width="2" height="2" transform="translate(25 57)" fill="#3f3d56"/>
+          <path id="路径_13547" data-name="路径 13547" d="M148,137h-2v-2a8.342,8.342,0,0,1,1.2-3.3A19.949,19.949,0,0,0,150,122v-7a2,2,0,0,0-4,0h-2v-2a2,2,0,0,0-4,0h-2v-2a2,2,0,0,0-4,0h-2V100a2,2,0,0,0-4,0v25.2l-5.9-11.8A2.805,2.805,0,0,0,120,112a2.046,2.046,0,0,0-2,1.8l5.8,14.6c1.6,1.6,6.1,6.4,6.1,8.6h-2c0-.9-2.6-4.2-5.7-7.3l-.1-.1L116,114.2V114a4.012,4.012,0,0,1,4-4,4.6,4.6,0,0,1,3.9,2.6l2.1,4.2V100a4,4,0,0,1,8,0v7.5a4.552,4.552,0,0,1,2-.5,4.1,4.1,0,0,1,3.8,2.7,3.957,3.957,0,0,1,6,2,4.1,4.1,0,0,1,2.2-.7,4.012,4.012,0,0,1,4,4v7a21.957,21.957,0,0,1-3,10.6,8.126,8.126,0,0,0-1,2.4Z" transform="translate(-115 -84)" fill="#3f3d56"/>
+          <rect id="矩形_3634" data-name="矩形 3634" width="2" height="8" transform="translate(14)" fill="#3f3d56"/>
+          <path id="路径_13548" data-name="路径 13548" d="M269,31a.908.908,0,0,1-.7-.3.967.967,0,0,1,0-1.4l5-5a.99.99,0,0,1,1.4,1.4l-5,5A.908.908,0,0,1,269,31Z" transform="translate(-248 -21)" fill="#3f3d56"/>
+          <path id="路径_13549" data-name="路径 13549" d="M145,38a.908.908,0,0,1-.7-.3l-4-4a.99.99,0,1,1,1.4-1.4l4,4a.967.967,0,0,1,0,1.4A.908.908,0,0,1,145,38Z" transform="translate(-136 -28)" fill="#3f3d56"/>
+          <rect id="矩形_3635" data-name="矩形 3635" width="8" height="2" transform="translate(22 14)" fill="#3f3d56"/>
+          <rect id="矩形_3636" data-name="矩形 3636" width="8" height="2" transform="translate(0 14)" fill="#3f3d56"/>
+        </g>
+      </g>
+    </g>
   </g>
 </svg>
