@@ -344,52 +344,52 @@ const IndexPage = ({ data }) => {
                 <NormalBox className="outer" shadowless>
                   <h3 className="title column-title is-5">On Bare-metal</h3>
                   <div className="strikethrough-primary" />
-
-                  <Box className="logo k8s">
-                    <a
-                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started#get-started-with-tidb-operator-in-kubernetes"
-                      target="_blank"
-                      rel="noopener"
-                    >
+                  <a
+                    href="https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started#get-started-with-tidb-operator-in-kubernetes"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {' '}
+                    <Box className="logo k8s">
                       <img src={logos.kubernetes} alt="Kubernetes logo" />
-                    </a>
-                  </Box>
-                  <Box className="logo tiup">
-                    <a
-                      href="https://docs.pingcap.com/tidb/stable/production-deployment-using-tiup"
-                      target="_blank"
-                      rel="noopener"
-                    >
+                    </Box>
+                  </a>
+                  <a
+                    href="https://docs.pingcap.com/tidb/stable/production-deployment-using-tiup"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Box className="logo tiup">
                       <img src={logos.tiup} alt="TiUP logo" />
-                    </a>
-                  </Box>
+                    </Box>
+                  </a>
                 </NormalBox>
               </div>
               <div className="column">
                 <NormalBox className="outer" shadowless>
                   <h3 className="title column-title is-5">On Public Cloud</h3>
                   <div className="strikethrough-primary" />
-                  <Box className="logo aws">
-                    <a
-                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-aws-eks"
-                      target="_blank"
-                      rel="noopener"
-                    >
+                  <a
+                    href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-aws-eks"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Box className="logo aws">
                       <img src={logos.aws} alt="AWS logo" />
-                    </a>
-                  </Box>
-                  <Box className="logo gcp">
-                    <a
-                      href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-gcp-gke"
-                      target="_blank"
-                      rel="noopener"
-                    >
+                    </Box>
+                  </a>
+                  <a
+                    href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-gcp-gke"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    <Box className="logo gcp">
                       <img
                         src={logos.googleCloudPlatform}
                         alt="Google Cloud Platform logo"
                       />
-                    </a>
-                  </Box>
+                    </Box>
+                  </a>
                 </NormalBox>
               </div>
               <div className="column">
@@ -398,11 +398,11 @@ const IndexPage = ({ data }) => {
                     Database as a Service
                   </h3>
                   <div className="strikethrough-primary" />
-                  <Box className="logo tidb-cloud">
-                    <Link to="/products/tidbcloud/trial">
+                  <Link to="/products/tidbcloud/trial">
+                    <Box className="logo tidb-cloud">
                       <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
-                    </Link>
-                  </Box>
+                    </Box>
+                  </Link>
                 </NormalBox>
               </div>
             </div>
