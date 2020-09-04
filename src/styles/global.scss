@@ -25,20 +25,6 @@
   }
 }
 
-@each $logo in $logos-png {
-  .#{$logo}-logo {
-    background: url(../../images/logos/#{$logo}.png) center no-repeat;
-    background-size: contain;
-  }
-}
-
-@each $logo in $logos-svg {
-  .#{$logo}-logo {
-    background: url(../../images/logos/#{$logo}.svg) center no-repeat;
-    background-size: contain;
-  }
-}
-
 body {
   padding-top: 5.25rem;
   @extend .has-spaced-navbar-fixed-top; // padding-top: 5.25rem;

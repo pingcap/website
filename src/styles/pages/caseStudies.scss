@@ -60,7 +60,6 @@
         }
 
         &-zh {
-
           @include mobile {
             font-size: $H1;
             letter-spacing: 0.1875rem;
@@ -143,7 +142,6 @@
       display: flex;
 
       .intro {
-
         @include VHCenter;
 
         flex-direction: column;
@@ -302,7 +300,6 @@
   }
 
   .logos {
-
     @include mobile {
       margin-left: 0;
       margin-right: 0;
@@ -353,11 +350,10 @@
       background: #fff;
       opacity: 1;
 
-      @each $logo in $logos {
-        .#{$logo}-logo {
-          width: 30%;
-          height: 30%;
-        }
+      .simple-card-logo {
+        background-size: contain !important;
+        height: 30%;
+        width: 30%;
       }
 
       .title {
@@ -374,6 +370,19 @@
         height: auto;
       }
 
+      .detail-card-logo {
+        display: none;
+        background-size: contain !important;
+        position: absolute;
+        right: 0;
+        width: 30%;
+        height: 20%;
+
+        @include mobile {
+          display: block;
+        }
+      }
+
       position: absolute;
       top: 50%;
       left: 0;
@@ -384,33 +393,6 @@
       transform: translateY(-50%);
       opacity: 0;
       z-index: 29;
-
-      @each $logo in $logos {
-        .#{$logo}-logo {
-          @include tablet {
-            display: none;
-          }
-
-          position: absolute;
-          top: -0.5rem;
-          right: -0.25rem;
-          width: 68px;
-          padding-top: 68px;
-        }
-      }
-
-      $big-logos: Shopee Meituan-Dianping Mobike LinkDoc-Technology Seasun-Games
-        Yoozoo-Games FUNYOURS-JAPAN Bank-of-Beijing Ping--;
-
-      @each $logo in $big-logos {
-        .#{$logo}-logo {
-          @include mobile {
-            top: -1.5rem;
-            width: 72px;
-            height: 72px;
-          }
-        }
-      }
 
       .title {
         @include mobile {
@@ -429,6 +411,22 @@
 
         &:hover {
           color: $primary;
+        }
+      }
+
+      .paragraph {
+        &.mobile {
+          display: none;
+        }
+
+        @include mobile {
+          &.pc {
+            display: none;
+          }
+
+          &.mobile {
+            display: block;
+          }
         }
       }
     }
@@ -501,11 +499,7 @@
         width: $size;
         height: $size;
         padding: 2rem;
-        box-shadow:0px 3px 8px rgba(0,0,0,0.1);
-
-        .detail-card-logo{
-          display: none;
-        }
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
 
         .title {
           margin-bottom: 2rem;
@@ -523,4 +517,3 @@
     }
   }
 }
-
