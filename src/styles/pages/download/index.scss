@@ -99,6 +99,12 @@
         box-shadow: 0 1px 0 0 inset $B3, 1px 0 0 0 inset $B3, -1px 0 0 0 inset $B3;
       }
 
+      @include mobile {
+        &:hover {
+          box-shadow: 0 0 0 1px inset $B3;
+        }
+      }
+
 
       @include mobile {
         @include flex-item-gap($direction, $gap);
@@ -141,11 +147,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $B5;
+      // background: $B5;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
       cursor: pointer;
 
       &:hover {
-        box-shadow: 0 1px 6px rgba(0,0,0,0.08);
         outline: 1px solid $B3;
       }
 
@@ -173,7 +179,6 @@
 
     .deployment-item--selected {
       outline: 1px solid $B3;
-      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
     }
   }
 
