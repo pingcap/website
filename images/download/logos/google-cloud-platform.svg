@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="112" height="70" viewBox="0 0 112 70">
-  <g id="组_4551" data-name="组 4551" transform="translate(-841 -375)">
-    <rect id="矩形_3885" data-name="矩形 3885" width="112" height="70" transform="translate(841 375)" fill="#f7f8f9"/>
-    <g id="icons8-google-cloud-platform" transform="translate(876.574 390)">
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="70" viewBox="0 0 113 70">
+  <g id="组_4557" data-name="组 4557" transform="translate(-841 -386)">
+    <rect id="矩形_3605" data-name="矩形 3605" width="113" height="70" transform="translate(841 386)" fill="#fff"/>
+    <g id="icons8-google-cloud-platform" transform="translate(877.576 401)">
       <path id="路径_13632" data-name="路径 13632" d="M26.306,13H16.639L11,21.861l5.639,8.861h9.667l5.639-8.861ZM21.472,25.889A4.028,4.028,0,1,1,25.5,21.861,3.989,3.989,0,0,1,21.472,25.889Z" transform="translate(-1.473 -1.361)" fill="#cfd8dc"/>
       <path id="路径_13633" data-name="路径 13633" d="M29.472,6.967A2.214,2.214,0,0,0,27.7,6H13.844a2.214,2.214,0,0,0-1.772.967L7.4,14.619,11.106,20.5l5.075-8.056H32.775ZM14.328,10.028a.806.806,0,1,1,.806-.806A.761.761,0,0,1,14.328,10.028Zm12.889,0a.806.806,0,1,1,.806-.806A.761.761,0,0,1,27.217,10.028Z" transform="translate(-0.773)" fill="#2196f3"/>
       <path id="路径_13634" data-name="路径 13634" d="M15.408,30.656,6.627,16.8l-2.9,4.753a2.109,2.109,0,0,0,0,2.175L11.3,36.133a2.021,2.021,0,0,0,1.772.967H20.4l4.108-6.444Zm-8.3-7.25a.806.806,0,0,1,0-1.611.806.806,0,1,1,0,1.611Zm6.444,11.278a.806.806,0,1,1,.806-.806A.761.761,0,0,1,13.555,34.683Z" transform="translate(0 -2.1)" fill="#ffc107"/>
