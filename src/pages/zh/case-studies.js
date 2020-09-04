@@ -237,7 +237,10 @@ function Logos({ logos }) {
                 }}
                 className="detail-card-logo"
               ></div>
-              <div className="paragraph">{logo.summary}</div>
+              <div className="paragraph pc">{logo.summary}</div>
+              <div className="paragraph mobile">
+                {truncate.apply(logo.summary, [100, true])}
+              </div>
               {logo.relativePath && (
                 <Link
                   to={`/zh/case-studies/${replaceTitle(logo.relativePath)}`}

@@ -367,7 +367,7 @@
     .detail-card {
       @include mobile {
         opacity: 1;
-        height: 100%;
+        height: auto;
       }
 
       .detail-card-logo {
@@ -411,6 +411,22 @@
 
         &:hover {
           color: $primary;
+        }
+      }
+
+      .paragraph {
+        &.mobile {
+          display: none;
+        }
+
+        @include mobile {
+          &.pc {
+            display: none;
+          }
+
+          &.mobile {
+            display: block;
+          }
         }
       }
     }
