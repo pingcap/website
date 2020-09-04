@@ -96,8 +96,7 @@
       cursor: pointer;
 
       &:hover {
-        border: 1px solid $B3;
-        border-bottom: none;
+        box-shadow: 0 1px 0 0 inset $B3, 1px 0 0 0 inset $B3, -1px 0 0 0 inset $B3;
       }
 
 
@@ -173,13 +172,8 @@
     }
 
     .deployment-item--selected {
-      border: 1px solid $B3;
-
-      &:hover {
-        box-shadow: none;
-        outline: none;
-      }
-
+      outline: 1px solid $B3;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
     }
   }
 
