@@ -234,6 +234,14 @@ const Dropdown = ({ className, items, selectedItem }) => {
   )
 }
 
+function truncateSummary(summary) {
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    return truncate.apply(summary, [180, true])
+  } else {
+    return summary
+  }
+}
+
 function Logos({ logos }) {
   return (
     <div className="columns is-multiline is-gapless logos">
@@ -261,7 +269,7 @@ function Logos({ logos }) {
                 }}
                 className="detail-card-logo"
               />
-              <div className="paragraph">{logo.summary}</div>
+              <div className="paragraph">{truncateSummary(logo.summary)}</div>
               {logo.relativePath && (
                 <Link
                   to={`/case-studies/${replaceTitle(logo.relativePath)}`}
