@@ -31,6 +31,7 @@
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   > * {
     flex: 1;
@@ -44,22 +45,23 @@
     height: 100%;
 
     .placeholder {
-      width: $img-width;
-      margin: 2.5rem 0;
+      margin-bottom: 2rem;
+
+      @include tablet {
+        margin: 2.5rem 0;
+      }
     }
   }
 
   .divider {
     flex: none;
-    width: (100% - $img-width) / 2;
+    width: 20%;
   }
 
   .intro {
     @include mobile {
       padding: 0;
     }
-
-    padding: 0 3rem;
 
     .title.is-5 {
       margin-bottom: 2.5rem;
@@ -72,7 +74,7 @@
 
   @include mobile {
     width: 12rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
 
   width: 18rem;
@@ -106,10 +108,20 @@
 
   .start-trial-button {
     margin-top: 2.5rem;
+
+    @include mobile {
+      margin-top: 2rem;
+    }
   }
 
   .hero {
     .hero-body {
+      padding: 8rem 1.5rem;
+
+      @include mobile {
+        padding: 0 1rem 3rem;
+      }
+
       .container {
         @include mobile {
           flex-direction: column-reverse;
@@ -131,6 +143,21 @@
 
         .logo {
           @include tidb-cloud-logo;
+          width: 40%;
+        }
+
+        .title {
+          font-size: $H1;
+          font-weight: 700;
+          color: $M3;
+        }
+
+        .paragraph {
+          padding: 0;
+        }
+
+        .button {
+          margin-bottom: 1rem;
         }
       }
 
@@ -139,10 +166,12 @@
 
         @include mobile {
           width: 84%;
-          margin-bottom: 2rem;
+          margin-bottom: 3rem;
         }
 
         width: 48%;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+        border-radius: 6px;
         
         iframe {
           width: 100%;
@@ -163,6 +192,10 @@
   }
 
   .section-why-tidb-cloud {
+    @include tablet {
+      padding: 6rem 1.5rem 4rem;
+    }
+
     .reasons {
       @include mobile {
         flex-direction: column;
@@ -184,12 +217,31 @@
 
         .placeholder-wrapper {
           width: 6rem;
-          margin: 3rem auto;
+          margin: 2.25rem auto 1rem;
+
+          @include mobile {
+            margin: 0.25rem auto 2rem;
+          }
         }
 
         .intro {
           @include mobile {
             padding: 0;
+          }
+
+          .title {
+            font-size: $P1;
+            font-weight: 700;
+            color: $M3;
+
+            @include mobile {
+              margin-bottom: 1.5rem;
+            }
+          }
+
+          .paragraph {
+            padding-top: 0;
+            padding-bottom: 0.75rem;
           }
         }
       }
@@ -197,15 +249,30 @@
   }
 
   .section-features {
+    @include tablet {
+      padding-top: 6rem;
+    }
+
+    .section-title {
+      margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
+    }
+
     .section-subtitle {
       text-align: left;
     }
     .features {
+      width: 83.3%;
+      margin: 0 auto;
+
       .feature {
         @include has-intro-and-placeholder;
 
         @include mobile {
-          margin-top: 3rem;
+          margin-top: 0.5rem;
 
           &:first-child {
             margin-top: 0;
