@@ -46,6 +46,7 @@ const CaseStudies = ({ data, location }) => {
             frontmatter: {
               customer: customer.name,
               summary: customer.summary,
+              logo: customer.logo,
             },
           },
         }))
@@ -255,7 +256,10 @@ function Logos({ logos }) {
                 {logo.customer}
               </div>
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) center no-repeat`,
+                }}
+                className="detail-card-logo"
               />
               <div className="paragraph">{logo.summary}</div>
               {logo.relativePath && (
@@ -269,7 +273,10 @@ function Logos({ logos }) {
             </div>
             <div className="simple-card">
               <div
-                className={`${logo.customer.replace(/[\d/+/.\s&]/g, '-')}-logo`}
+                className="simple-card-logo"
+                style={{
+                  background: `url(https://download.pingcap.com${logo.logo}) 50% no-repeat`,
+                }}
               />
               <div className="title is-6">{logo.customer}</div>
             </div>
@@ -302,6 +309,7 @@ export const query = graphql`
             customer
             customerCategory
             summary
+            logo
           }
           parent {
             ... on File {
@@ -318,6 +326,7 @@ export const query = graphql`
           customers {
             name
             summary
+            logo
           }
         }
       }

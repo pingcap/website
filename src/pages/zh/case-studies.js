@@ -234,12 +234,6 @@ function Logos({ logos }) {
               <div
                 style={{
                   background: `url(https://download.pingcap.com${logo.logo}) center no-repeat`,
-                  backgroundSize: 'contain',
-                  position: 'absolute',
-                  top: '-0.75rem',
-                  right: '0',
-                  width: '30%',
-                  height: '30%',
                 }}
                 className="detail-card-logo"
               ></div>
@@ -255,11 +249,9 @@ function Logos({ logos }) {
             </div>
             <div className="simple-card">
               <div
+                className="simple-card-logo"
                 style={{
                   background: `url(https://download.pingcap.com${logo.logo}) 50% no-repeat`,
-                  backgroundSize: 'contain',
-                  width: '30%',
-                  height: '30%',
                 }}
               ></div>
               <div className="title is-6">{logo.customer}</div>
