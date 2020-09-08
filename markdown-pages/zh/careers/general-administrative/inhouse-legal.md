@@ -3,7 +3,7 @@ title: 法务专员／主管
 tags:
   - General & Administrative
 location: 北京
-avatar: legal
+avatar: business
 position: true
 summary: 起草、审核、修改公司各类法律文件；负责为公司各部门提供日常法律问题咨询及解答；了解公司合同管理等情况，针对合同审批流程提出优化建议；为公司重要合同洽谈及招投标等工作提供法务支持；参与商标、专利等知识产权申请工作，协助处理公司法律纠纷、诉讼等。
 ---
