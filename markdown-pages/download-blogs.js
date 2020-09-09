@@ -66,7 +66,7 @@ async function downloadBlogs(
     toReadableStream((await axios.get(blog.downloadURL)).data)
       .pipe(createReplaceBlogImagePathStream(locale))
       .pipe(createReplaceCopyableStream())
-      // .pipe(createReplaceTrackGABtns())
+      .pipe(createReplaceTrackGABtns())
       .pipe(writeStream)
   })
 }
