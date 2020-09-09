@@ -7,6 +7,7 @@ const toReadableStream = require('to-readable-stream')
 const {
   createReplaceBlogImagePathStream,
   createReplaceCopyableStream,
+  createReplaceTrackGABtns,
 } = require('./utils')
 
 const isDev = process.env.NODE_ENV === 'development'
@@ -65,6 +66,7 @@ async function downloadBlogs(
     toReadableStream((await axios.get(blog.downloadURL)).data)
       .pipe(createReplaceBlogImagePathStream(locale))
       .pipe(createReplaceCopyableStream())
+      // .pipe(createReplaceTrackGABtns())
       .pipe(writeStream)
   })
 }
