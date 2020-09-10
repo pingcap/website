@@ -1,6 +1,7 @@
 const path = require('path')
 const { langPrefixes, replaceSpaceWithDash } = require('./utils')
 const langConfig = require('../lang.config.json')
+const { queryCategories } = require('../src/lib/graphql/blog')
 
 const createBlogCategories = async ({ graphql, createPage }) => {
   const blogCategoriesTemplate = path.resolve(
@@ -10,21 +11,7 @@ const createBlogCategories = async ({ graphql, createPage }) => {
     const { blogsPath, hasBlogCategories } = langConfig.languages[lang]
     if (!hasBlogCategories) continue
 
-    const result = await graphql(`
-      query {
-        categories: allMdx(
-          filter: {
-            fileAbsolutePath: { regex: "${blogsPath}" }
-            frontmatter: { customer: { eq: null } }
-          }
-        ) {
-          group(field: frontmatter___categories) {
-            category: fieldValue
-            totalCount
-          }
-        }
-      }
-    `)
+    const result = await queryCategories(graphql, blogsPath)
 
     const categories = result.data.categories.group
     const blogsPerPage = 6
