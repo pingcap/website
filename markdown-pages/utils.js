@@ -31,7 +31,3 @@ exports.createReplaceTrackGABtns = function () {
     }
   )
 }
-
-// (?<=^onclick="trackViews\(')(.*)(?=[$,])
-
-// onclick="trackViews\('(.+)', 'download-tidb-btn-middle'\)"><button>Download TiDB<\/button>
