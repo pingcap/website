@@ -1,7 +1,7 @@
 import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
@@ -15,40 +15,9 @@ import SEO from './seo'
 import Socials from './socials'
 import { MenuGenerator } from './menu'
 import { replaceTitle, replaceSpaceWithDash } from '../lib/string'
-import getProxyHandler from '../lib/proxy'
-
-const Labels = ({
-  className,
-  selectedClassName,
-  labels,
-  currentLabel,
-  pathPrefix,
-  labelPathMap = {},
-}) => {
-  const labelPathProxy = new Proxy(labelPathMap, {
-    get(target, name) {
-      return name in target
-        ? target[name]
-        : `${pathPrefix}/${replaceSpaceWithDash(name)}`
-    },
-  })
-
-  return (
-    <div className={className}>
-      {labels.map((label) => {
-        return (
-          <Link
-            key={label}
-            className={currentLabel === label ? selectedClassName : ''}
-            to={labelPathProxy[label]}
-          >
-            {label}
-          </Link>
-        )
-      })}
-    </div>
-  )
-}
+import { getBaseSchemaProxyHandler } from '../lib/proxy'
+import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
+import Labels from '../components/labels'
 
 const Blogs = ({
   data,
@@ -59,6 +28,11 @@ const Blogs = ({
   isIndustryPage = false,
   isCompanyPage = false,
 }) => {
+  const [isFirstRender, setIsFirstRender] = useState(true)
+  useEffect(() => {
+    setIsFirstRender(false)
+  }, [])
+
   const articles = data.allMdx.edges
   const {
     currentPage,
@@ -81,103 +55,17 @@ const Blogs = ({
     : null
   const tags = data.tags ? data.tags.group.map((i) => i.tag) : null
 
-  categories && categories.unshift('All')
-  industries && industries.unshift('All')
-  companies && companies.unshift('All')
-  tags && tags.unshift('All')
+  if (isFirstRender) {
+    categories && categories.unshift('All')
+    industries && industries.unshift('All')
+    companies && companies.unshift('All')
+    tags && tags.unshift('All')
+  }
 
   const currentCategory = category || 'All'
   const currentTag = tag || 'All'
   const currentIndustry = industry || 'All'
   const currentCompany = company || 'All'
-
-  const menuItemFactory = (
-    articleType,
-    categoryType,
-    key,
-    className,
-    children
-  ) => {
-    const menuItemConstructor = (key, className, children, props) => {
-      return {
-        key,
-        className,
-        children,
-        props,
-      }
-    }
-
-    const blogMenuItemPropsConstructor = (categoryType) => {
-      const labelPathMap = {
-        All: '/blog',
-      }
-      let props
-      switch (categoryType) {
-        case 'category':
-          props = {
-            labels: categories,
-            currentLabel: currentCategory,
-            pathPrefix: '/blog/category',
-            labelPathMap,
-          }
-          break
-        case 'tag':
-          props = {
-            labels: tags,
-            currentLabel: currentTag,
-            pathPrefix: '/blog/tag',
-            labelPathMap,
-          }
-          break
-      }
-      return props
-    }
-
-    const caseMenuItemPropsConstructor = (categoryType) => {
-      const labelPathMap = {
-        All: '/case-studies/category',
-      }
-      let props
-      switch (categoryType) {
-        case 'industry':
-          props = {
-            labels: industries,
-            currentLabel: currentIndustry,
-            pathPrefix: '/case-studies/category/industry',
-            labelPathMap,
-          }
-          break
-        case 'company':
-          props = {
-            labels: companies,
-            currentLabel: currentCompany,
-            pathPrefix: '/case-studies/category/company',
-            labelPathMap,
-          }
-          break
-        case 'tag':
-          props = {
-            labels: tags,
-            currentLabel: currentTag,
-            pathPrefix: '/case-studies/category/tags',
-            labelPathMap,
-          }
-          break
-      }
-      return props
-    }
-
-    let props
-    switch (articleType) {
-      case 'blog':
-        props = blogMenuItemPropsConstructor(categoryType)
-        break
-      case 'case':
-        props = caseMenuItemPropsConstructor(categoryType)
-        break
-    }
-    return menuItemConstructor(key, className, children, props)
-  }
 
   const baseCateMenuCfg = {
     menu: {
@@ -200,15 +88,18 @@ const Blogs = ({
             defaultKey: isTagPage ? 'tag' : 'category',
           },
           menuItems: [
-            menuItemFactory(
-              'blog',
-              'category',
+            categoryMenuItemForBlogAndCase(
               'category',
               'title is-6 categories-title',
-              'Categories'
-            ),
-            ,
-            menuItemFactory('blog', 'tag', 'tag', 'title is-6', 'Tags'),
+              'Categories',
+              'blog'
+            )('category')(categories, currentCategory),
+            categoryMenuItemForBlogAndCase(
+              'tag',
+              'title is-6',
+              'Tags',
+              'blog'
+            )('tag')(tags, currentTag),
           ],
         }
       : {
@@ -216,7 +107,12 @@ const Blogs = ({
             defaultKey: 'tag',
           },
           menuItems: [
-            menuItemFactory('blog', 'tag', 'tag', 'title is-6', 'Tags'),
+            categoryMenuItemForBlogAndCase(
+              'tag',
+              'title is-6',
+              'Tags',
+              'blog'
+            )('tag')(tags, currentTag),
           ],
         }
     : {
@@ -228,33 +124,30 @@ const Blogs = ({
             : 'tag',
         },
         menuItems: [
-          menuItemFactory(
-            'case',
-            'industry',
+          categoryMenuItemForBlogAndCase(
             'industry',
             'title is-6 categories-title',
-            'Industries'
-          ),
-          menuItemFactory(
-            'case',
-            'company',
+            'Industries',
+            'case'
+          )('industry')(industries, currentIndustry),
+          categoryMenuItemForBlogAndCase(
             'company',
             'title is-6 categories-title',
-            'Companies'
-          ),
-          menuItemFactory(
-            'case',
-            'tag',
+            'Companies',
+            'case'
+          )('company')(companies, currentCompany),
+          categoryMenuItemForBlogAndCase(
             'tag',
             'title is-6 categories-title',
-            'Tags'
-          ),
+            'Tags',
+            'case'
+          )('tag')(tags, currentTag),
         ],
       }
 
   const cateMenuCfgMergedWithBase = new Proxy(
     categoryMenuConfig,
-    getProxyHandler(baseCateMenuCfg)
+    getBaseSchemaProxyHandler(baseCateMenuCfg)
   )
 
   const CategoryMenu = ({ isDesktop = true }) => {

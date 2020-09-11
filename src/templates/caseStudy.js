@@ -11,18 +11,19 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
 import { FormattedMessage } from 'react-intl'
+import Labels from '../components/labels'
+import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
+import { MenuGenerator } from '../components/menu'
+import { getBaseSchemaProxyHandler } from '../lib/proxy'
 
 const CaseStudy = ({ data, pageContext }) => {
-  const { mdx } = data
-  const { frontmatter, body: html, tableOfContents } = mdx
-  const filePath = { pageContext }
-  const category = frontmatter.customerCategory
-
   const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
+  const [isFirstRender, setIsFirstRender] = useState(true)
 
   useEffect(() => {
+    setIsFirstRender(false)
     const footer = document.querySelector('.footer.PingCAP-Footer')
     const footerHeight = footer.getBoundingClientRect().height
 
@@ -55,6 +56,77 @@ const CaseStudy = ({ data, pageContext }) => {
 
     return () => window.removeEventListener('scroll', scrollListener)
   }, [])
+
+  const { mdx } = data
+  const { frontmatter, body: html, tableOfContents } = mdx
+  const filePath = { pageContext }
+  const { industries, companies, tags } = pageContext
+  const category = frontmatter.customerCategory
+
+  const currentIndustry = frontmatter.customerCategory
+  const currentCompany = frontmatter.customer
+  const currentTag = frontmatter.tags
+
+  if (isFirstRender) {
+    industries && industries.unshift('All')
+    companies && companies.unshift('All')
+    tags && tags.unshift('All')
+  }
+
+  const baseCateMenuCfg = {
+    menu: {
+      className: 'titles',
+      selectedClassName: 'active',
+    },
+    menuItems: {
+      linkedItem: Labels,
+      props: {
+        className: 'labels',
+        selectedClassName: 'active',
+      },
+    },
+  }
+
+  const categoryMenuConfig = {
+    menu: {
+      defaultKey: 'industry',
+    },
+    menuItems: [
+      categoryMenuItemForBlogAndCase(
+        'industry',
+        'title is-6 categories-title',
+        'Industries',
+        'case'
+      )('industry')(industries, currentIndustry),
+      categoryMenuItemForBlogAndCase(
+        'company',
+        'title is-6 categories-title',
+        'Companies',
+        'case'
+      )('company')(companies, currentCompany),
+      categoryMenuItemForBlogAndCase(
+        'tag',
+        'title is-6 categories-title',
+        'Tags',
+        'case'
+      )('tag')(tags, currentTag),
+    ],
+  }
+
+  const cateMenuCfgMergedWithBase = new Proxy(
+    categoryMenuConfig,
+    getBaseSchemaProxyHandler(baseCateMenuCfg)
+  )
+
+  const CategoryMenu = ({ isDesktop = true }) => {
+    return (
+      <div
+        className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}
+      >
+        <MenuGenerator menuConfig={cateMenuCfgMergedWithBase} />
+      </div>
+    )
+  }
 
   return (
     <Layout>
@@ -144,6 +216,7 @@ const CaseStudy = ({ data, pageContext }) => {
                     <Socials type="share" title={frontmatter.title} />
                   </div>
                 </div>
+                <CategoryMenu />
               </div>
             </div>
           </div>
@@ -164,6 +237,7 @@ export const query = graphql`
         date(formatString: "YYYY-MM-DD")
         customer
         customerCategory
+        tags
         image
       }
       tableOfContents

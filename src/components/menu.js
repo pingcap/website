@@ -65,7 +65,6 @@ const MenuGenerator = ({ menuConfig }) => {
   )
 
   const allPropSymbol = Symbol.for('allProps')
-  console.log(selectedMenuItem.props[allPropSymbol])
 
   return (
     <>

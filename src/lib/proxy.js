@@ -1,6 +1,6 @@
 import { isObject, isArray, isPrimitive, isUndefined } from './dataType'
 
-const getProxyHandler = (base) => {
+const getBaseSchemaProxyHandler = (base) => {
   const handler = {
     base,
     get(target, name) {
@@ -65,4 +65,4 @@ const getHandlerWithNewBase = (handler, newBase) => {
   }
 }
 
-export default getProxyHandler
+export { getBaseSchemaProxyHandler }

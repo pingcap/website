@@ -361,4 +361,68 @@ $navbar-height-mobile: 4.25rem; // 68px
       }
     }
   }
+
+  .categories-and-tags {
+    margin-top: 2rem;
+
+    &.desktop {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &.mobile {
+      @include tablet {
+        display: none;
+      }
+
+      margin-top: 0;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid $C2;
+    }
+
+    .titles {
+      display: flex;
+      cursor: pointer;
+
+      .title {
+        @include has-item-active;
+
+        color: $B3;
+        outline: none;
+
+        &.active {
+          color: $primary;
+        }
+      }
+
+      .categories-title {
+        margin-bottom: 0;
+        margin-right: 1rem;
+      }
+    }
+
+    .labels {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+
+      > a {
+        margin: 1rem 1rem 0 0;
+        padding: 0.25rem 0.5rem;
+        height: auto;
+        color: $B4;
+        background: $B5;
+        font-size: $size-7;
+        border: none;
+        border-radius: 3px;
+
+        &.active,
+        &:hover {
+          color: #fff;
+          background: $primary;
+        }
+      }
+    }
+  }
 }
