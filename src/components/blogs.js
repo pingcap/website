@@ -1,7 +1,7 @@
 import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
@@ -18,6 +18,14 @@ import { replaceTitle, replaceSpaceWithDash } from '../lib/string'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
 import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import Labels from '../components/labels'
+
+const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
+  return (
+    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
+      <MenuGenerator menuConfig={menuConfig} />
+    </div>
+  )
+})
 
 const Blogs = ({
   data,
@@ -45,15 +53,15 @@ const Blogs = ({
   } = pageContext
 
   const categories = data.categories
-    ? data.categories.group.map((i) => i.category)
+    ? [...data.categories.group.map((i) => i.category)]
     : null
   const industries = data.industries
-    ? data.industries.group.map((i) => i.industry)
+    ? [...data.industries.group.map((i) => i.industry)]
     : null
   const companies = data.companies
-    ? data.companies.group.map((i) => i.company)
+    ? [...data.companies.group.map((i) => i.company)]
     : null
-  const tags = data.tags ? data.tags.group.map((i) => i.tag) : null
+  const tags = data.tags ? [...data.tags.group.map((i) => i.tag)] : null
 
   if (isFirstRender) {
     categories && categories.unshift('All')
@@ -150,15 +158,7 @@ const Blogs = ({
     getBaseSchemaProxyHandler(baseCateMenuCfg)
   )
 
-  const CategoryMenu = ({ isDesktop = true }) => {
-    return (
-      <div
-        className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}
-      >
-        <MenuGenerator menuConfig={cateMenuCfgMergedWithBase} />
-      </div>
-    )
-  }
+  const cateMenuCfgMergedWithBaseRef = useRef(cateMenuCfgMergedWithBase)
 
   const { locale } = useIntl()
 
@@ -174,7 +174,10 @@ const Blogs = ({
             <div className="columns">
               <div className="column is-7">
                 {/* <BlogSearch className="search-mobile" /> */}
-                <CategoryMenu isDesktop={false} />
+                <CategoryMenu
+                  isDesktop={false}
+                  menuConfig={cateMenuCfgMergedWithBaseRef.current}
+                />
                 {articles.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
                     <BlogHeader
@@ -217,7 +220,9 @@ const Blogs = ({
                       <Socials type="follow" />
                     </div>
                   </div>
-                  <CategoryMenu />
+                  <CategoryMenu
+                    menuConfig={cateMenuCfgMergedWithBaseRef.current}
+                  />
                 </div>
               </div>
             </div>

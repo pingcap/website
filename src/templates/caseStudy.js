@@ -1,6 +1,6 @@
 import { graphql } from 'gatsby'
 import Link from '../components/IntlLink'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 import BlogHeader from '../components/blogHeader'
 import { Button } from '@seagreenio/react-bulma'
@@ -15,6 +15,14 @@ import Labels from '../components/labels'
 import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { MenuGenerator } from '../components/menu'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
+
+const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
+  return (
+    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
+      <MenuGenerator menuConfig={menuConfig} />
+    </div>
+  )
+})
 
 const CaseStudy = ({ data, pageContext }) => {
   const [showProgress, setShowProgress] = useState(false)
@@ -60,7 +68,10 @@ const CaseStudy = ({ data, pageContext }) => {
   const { mdx } = data
   const { frontmatter, body: html, tableOfContents } = mdx
   const filePath = { pageContext }
-  const { industries, companies, tags } = pageContext
+  let { industries, companies, tags } = pageContext
+  industries = [...industries]
+  companies = [...companies]
+  tags = [...companies]
   const category = frontmatter.customerCategory
 
   const currentIndustry = frontmatter.customerCategory
@@ -118,15 +129,7 @@ const CaseStudy = ({ data, pageContext }) => {
     getBaseSchemaProxyHandler(baseCateMenuCfg)
   )
 
-  const CategoryMenu = ({ isDesktop = true }) => {
-    return (
-      <div
-        className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}
-      >
-        <MenuGenerator menuConfig={cateMenuCfgMergedWithBase} />
-      </div>
-    )
-  }
+  const cateMenuCfgMergedWithBaseRef = useRef(cateMenuCfgMergedWithBase)
 
   return (
     <Layout>
@@ -216,7 +219,9 @@ const CaseStudy = ({ data, pageContext }) => {
                     <Socials type="share" title={frontmatter.title} />
                   </div>
                 </div>
-                <CategoryMenu />
+                <CategoryMenu
+                  menuConfig={cateMenuCfgMergedWithBaseRef.current}
+                />
               </div>
             </div>
           </div>

@@ -48,7 +48,7 @@ const MenuItem = ({ children, onSelect, menuKey, className }) => {
   )
 }
 
-const MenuGenerator = ({ menuConfig }) => {
+const MenuGenerator = React.memo(({ menuConfig }) => {
   const { className, selectedClassName, defaultKey } = menuConfig.menu
   const menuItems = menuConfig.menuItems.reduce((prev, curr) => {
     prev[curr.key] = {
@@ -63,8 +63,6 @@ const MenuGenerator = ({ menuConfig }) => {
     defaultKey,
     selectedKey
   )
-
-  const allPropSymbol = Symbol.for('allProps')
 
   return (
     <>
@@ -94,6 +92,6 @@ const MenuGenerator = ({ menuConfig }) => {
       )}
     </>
   )
-}
+})
 
 export { useMenu, Menu, MenuItem, MenuGenerator }
