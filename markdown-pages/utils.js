@@ -20,3 +20,14 @@ exports.createReplaceCopyableStream = function () {
     return `<WithCopy tag="${copyMsg.replace(/"/g, '').trim()}" />`
   })
 }
+
+exports.createReplaceTrackGABtns = function () {
+  return replaceStream(
+    /<a href="\/download"(.+)<\/button><\/a>/gs,
+    (trackCode, middle) => {
+      const regx = /(?<=onclick="trackViews\(').*?(?=\', 'download-tidb-btn-middle')/gs
+      const blogName = trackCode.match(regx)
+      return `<TrackGABtns blogName="${blogName}" />`
+    }
+  )
+}
