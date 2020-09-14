@@ -71,7 +71,7 @@ const CaseStudy = ({ data, pageContext }) => {
   let { industries, companies, tags } = pageContext
   industries = [...industries]
   companies = [...companies]
-  tags = [...companies]
+  tags = [...tags]
   const category = frontmatter.customerCategory
 
   const currentIndustry = frontmatter.customerCategory
