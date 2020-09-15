@@ -11,7 +11,7 @@ Our Sites and related online services use cookies and similar technologies to en
 
 ## What Are Cookies
 
-“Cookies” are small text files, typically containing a unique string of letters and numbers, stored on your hard drive by a Site. When you return to the Site using the same browser, the Site can read the cookie and thereby gather information about your usage over time. Among other things, we use cookies and other technology to see which areas and features are popular and to count visits, which helps us to improve our Site, our Products, and your experience.
+"Cookies" are small text files, typically containing a unique string of letters and numbers, stored on your hard drive by a Site. When you return to the Site using the same browser, the Site can read the cookie and thereby gather information about your usage over time. Among other things, we use cookies and other technology to see which areas and features are popular and to count visits, which helps us to improve our Site, our Products, and your experience.
 
 ## How We Use Cookies
 
@@ -35,17 +35,15 @@ We use cookies for a variety of reasons detailed below. Unfortunately, in most c
 
     Targeting cookies are used to help in providing users with adverts that are relevant to them by collecting information about their browsing habits and Site usage. They can also be used to allow third parties to display relevant and personalized ads to users through their networks, to measure the effectiveness of advertising campaigns and to limit the number of times you see the same advert.
 
-
 ## Third-Party Cookies
 
 In some special cases, we also use cookies provided by trusted third parties. The following section details which third party cookies you might encounter through this site.
 
 * This site uses Google Analytics which is one of the most widespread and trusted analytics solutions on the web for helping us to understand how you use the site and ways that we can improve your experience. These cookies may track things such as how long you spend on the site and the pages that you visit so we can continue to produce engaging content.
 
+  For more information on Google Analytics cookies, see the official [Google Analytics](https://analytics.google.com/analytics/web/) page.
 
-    For more information on Google Analytics cookies, see the official [Google Analytics](https://analytics.google.com/analytics/web/) page.
-
-* This site uses the Agolia search API to provide in-site search services, which may track the keywords you search to provide better search experience. For more information on Agolia cookies, see the [Agolia](https://www.algolia.com/) page.
+* This site uses the Algolia search API to provide in-site search services, which may track the keywords you search to provide better search experience. For more information on Algolia cookies, see the [Algolia](https://www.algolia.com/) page.
 
 ## Disabling Cookies
 
