@@ -54,7 +54,7 @@ We collect several data within product telemetry data as below :
 
 **Inferences.** We infer new information about you and your company from data we collect, including using automated means to generate information about your likely preferences, your service and product needs or other characteristics. For example, we infer your city, state, and country location based on your IP address.
 
-**Information collected through social media and other platforms.\*\*** We receive information about you when you engage with us through various third-party platforms, for example, by joining our Slack community or Google group, liking us on Facebook, connecting on LinkedIn, GitHub, or Meetup, following us on Twitter or Instagram, registering for training through WooCommerce, or sharing content from our Site on Facebook, Twitter, or LinkedIn. The data we exchange with these third-party platforms may depend upon your privacy settings with these platforms. You should review and consider adjusting your privacy settings on third-party websites and services before engaging. Do not provide us with any sensitive personal data through these platforms. We are not responsible for the data protection and use practices of these third-party platforms. Please see their privacy statements to learn how they use your information.
+**Information collected through social media and other platforms.** We receive information about you when you engage with us through various third-party platforms, for example, by joining our Slack community or Google group, liking us on Facebook, connecting on LinkedIn, GitHub, or Meetup, following us on Twitter or Instagram, registering for training through WooCommerce, or sharing content from our Site on Facebook, Twitter, or LinkedIn. The data we exchange with these third-party platforms may depend upon your privacy settings with these platforms. You should review and consider adjusting your privacy settings on third-party websites and services before engaging. Do not provide us with any sensitive personal data through these platforms. We are not responsible for the data protection and use practices of these third-party platforms. Please see their privacy statements to learn how they use your information.
 
 **Third-party sources.** We may occasionally receive your personal information from third party sources including our affiliates, marketing and research partners, and companies. Users of our Products may also provide your personal information when they identify you as a billing, support, or technical contact, or when inviting you to use our Products or attend our events. If you integrate or link a third-party service with our Sites or Products we may receive personal information about you from that third-party service based upon the settings and permissions you've established with such third party service, and that third-party service's privacy practices.
 
@@ -69,7 +69,7 @@ Our Sites and related online services use cookies and similar technologies to en
 The cookies we use include:
 - Web beacons
 - Performance cookies
--Functionality cookies
+- Functionality cookies
 - Marketing cookies
 - Third-party cookies from Google Analytics and Algolia
 
