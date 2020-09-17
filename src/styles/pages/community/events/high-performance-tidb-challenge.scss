@@ -1,0 +1,975 @@
+@import '../../../common';
+
+// define colors
+$C1: #ff5670;
+$C2: #0097ff;
+$C3: #0442c3;
+$C4: #343275;
+$C5: #0a053e;
+$C6: white;
+$body-bg: #f1f6f9;
+$progress-bar-background-color: $C5 !important;
+$progress-value-background-color: $C2 !important;
+$progress-border-radius: 5px !important;
+
+body {
+  background: $body-bg;
+}
+
+section {
+  @include mobile {
+    margin-top: 7rem;
+    &.hero {
+      .reverse {
+        flex-flow: column-reverse;
+      }
+    }
+  }
+
+  margin-top: 7rem;
+
+  &.hero {
+    margin-top: 0 !important;
+  }
+}
+
+@mixin round-btn {
+  margin-top: 3rem;
+  width: 180px;
+  height: 55px;
+  font-size: $size-5;
+  border-color: transparent;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+
+  @include mobile {
+    width: 130px;
+    height: auto;
+    font-size: $size-7;
+  }
+}
+
+@mixin terminal-header {
+  width: 100%;
+  background: url('https://download.pingcap.com/images/community/high-performance-tidb/terminal-dot.svg')
+    center no-repeat;
+  background-position: 20px;
+  background-color: $C5;
+  border-radius: 10px 10px 0 0;
+}
+
+.PingCAP-HPTC {
+  .title-wrapper {
+    position: relative;
+    z-index: 1;
+
+    .date,
+    .title {
+      position: relative;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: $C5;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+        border-bottom: 20px solid $C1;
+      }
+    }
+
+    @include mobile {
+      .date,
+      .title {
+        margin-bottom: 2rem;
+        line-height: 1.4;
+        font-size: 1.5rem;
+
+        &::before {
+          border-bottom: 15px solid $C1;
+        }
+      }
+    }
+  }
+
+  .show-mobile {
+    display: none;
+    @include mobile {
+      display: block !important;
+    }
+  }
+
+  .show {
+      display: block !important;
+  }
+
+  .show-pc {
+    @include mobile {
+      display: none;
+    }
+
+    display: block;
+  }
+
+  [class$='-body'] {
+    padding: 0 1.5rem;
+  }
+
+  .hero-body {
+    padding: 0 1.5rem !important;
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .title-and-entry {
+        margin-top: 10rem;
+        @include mobile {
+          margin-top: 4rem;
+        }
+      }
+
+      .title-and-entry,
+      .image-wrapper {
+        @include mobile {
+          width: 100%;
+        }
+
+        width: 50%;
+
+        .title {
+          margin: 5rem 0 2rem;
+          color: $C5;
+        }
+
+        h1 {
+          @include mobile {
+            font-size: $size-3;
+            margin: 3rem 0 1rem !important;
+          }
+
+          font-size: 3.5rem;
+        }
+
+        .date,
+        .buttons {
+          @include mobile {
+            width: 100%;
+          }
+
+          display: flex;
+          justify-content: space-between;
+          width: 67%;
+          color: $C5;
+
+          .button {
+            @include round-btn;
+
+            &.signUp-btn {
+              background: $C5;
+              color: $C6;
+
+              &:hover {
+                background: $C1;
+              }
+            }
+
+            &.rules-btn {
+              color: $C5;
+
+              &:hover {
+                background: $C5;
+                color: $C6;
+              }
+            }
+          }
+        }
+
+        .date {
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  .intro-body {
+    @include mobile {
+      background-size: 35%;
+    }
+
+    background: url('../../../../../images/community/events/hptc/intro-bg.svg')
+      no-repeat;
+    background-size: contain;
+
+    .intro-and-desc {
+      @include mobile {
+        width: 75%;
+        margin-left: 25%;
+      }
+
+      margin-left: 42%;
+      width: 58%;
+
+      .desc {
+        padding-top: 2.5rem;
+        font-size: $size-6;
+        color: $C5;
+      }
+    }
+  }
+
+  .task-body {
+    text-align: center;
+
+    .title {
+      @include mobile {
+        &::before {
+          width: 30% !important;
+        }
+      }
+      text-align: center;
+
+      &::before {
+        left: 50%;
+        width: 15%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .task-card {
+      @include mobile {
+        width: 100%;
+      }
+      width: 67%;
+
+      img {
+        margin: 0 auto;
+      }
+
+      margin: 0 auto;
+    }
+
+    .button {
+      @include round-btn;
+      background: $C5;
+      color: $C6;
+
+      &:hover {
+        background: $C1;
+      }
+    }
+  }
+
+  .how-body {
+    @include mobile {
+      background: url('https://download.pingcap.com/images/community/high-performance-tidb/step1-bg.svg')
+        no-repeat;
+      background-size: 60%;
+    }
+
+    .title {
+      @include mobile {
+        padding-top: 2rem;
+        &::before {
+          width: 20% !important;
+        }
+      }
+      text-align: right;
+
+      &::before {
+        left: auto;
+        right: 0;
+        width: 10%;
+      }
+    }
+
+    .step-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+
+      .step {
+        position: relative;
+        margin-bottom: 8rem;
+        width: 42%;
+      }
+
+      .numb {
+        position: relative;
+        padding-left: 3rem;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $C1;
+        font-style: italic;
+
+        &::before {
+          position: absolute;
+          content: '';
+          left: 0;
+          width: 48px;
+          height: 40px;
+          transform: translateY(50%);
+          background: url('https://download.pingcap.com/images/community/high-performance-tidb/step-icon.svg')
+            center no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .name {
+        margin: 2rem 0 1rem;
+        font-size: $size-5;
+        font-weight: 600;
+        color: $C5;
+      }
+
+      .desc {
+        margin-top: 2rem;
+        font-size: $size-6;
+        line-height: 1.7;
+        color: $C5;
+
+        a {
+          color: $C2;
+        }
+      }
+
+      .button {
+        @include round-btn;
+        background: $C4;
+        color: $C6;
+
+        &:hover {
+          background: $C1;
+        }
+      }
+
+      .grading {
+        display: none;
+        position: absolute;
+        padding: 1.5rem;
+        bottom: -75%;
+        z-index: 2;
+        border-radius: 5px;
+        background: $C6;
+
+        .grading-title {
+          font-size: $size-5;
+          font-weight: 600;
+          color: $C5;
+          text-align: center;
+        }
+
+        .item {
+          position: relative;
+          margin-top: 1rem;
+          padding-left: 1.5rem;
+
+          .criterion {
+            font-size: 18px;
+            font-weight: 600;
+            color: $C5;
+          }
+
+          .detail {
+            font-size: $size-7;
+            color: $C5;
+            opacity: 0.75;
+          }
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: url('https://download.pingcap.com/images/community/high-performance-tidb/grading-icon.svg')
+              center no-repeat;
+            background-size: contain;
+          }
+        }
+
+        .close {
+          width: 0.75rem;
+          height: 0.75rem;
+          background: url('../../../../../images/cross-dark.svg');
+          background-size: contain;
+          cursor: pointer;
+
+          @include mobile {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+          }
+        }
+      }
+
+      .grading-btn {
+        width: 180px;
+      }
+
+      @include mobile {
+        .step {
+          margin-bottom: 0;
+          margin-top: 3rem;
+          width: 100%;
+
+          &:nth-child(2n) {
+            margin-left: 25%;
+          }
+        }
+
+        .numb {
+          padding-left: 2rem;
+          font-size: $size-4;
+
+          &::before {
+            width: 24px;
+            height: 20px;
+          }
+        }
+
+        .name {
+          margin: 1rem 0 0;
+          font-size: $size-6;
+        }
+
+        .desc {
+          font-size: $size-8;
+        }
+
+        .button {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  .awards-body {
+    @include mobile {
+      background-size: 45%;
+    }
+    background: url('../../../../../images/community/events/hptc/awards-bg.svg')
+      no-repeat;
+    background-size: contain;
+
+    .title {
+      @include mobile {
+        &::before {
+          width: 27% !important;
+        }
+      }
+      text-align: right;
+
+      &::before {
+        left: auto;
+        right: 0;
+        width: 25%;
+      }
+    }
+
+    .awards-and-desc {
+      @include mobile {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .title-wrapper {
+        padding-top: 3rem;
+      }
+
+      margin-left: 58%;
+      width: 42%;
+    }
+
+    .awards-list {
+      @include mobile {
+        padding-top: 6rem;
+      }
+    }
+
+    .item {
+      .award {
+        position: relative;
+        padding-left: 3rem;
+        font-size: 2rem;
+        font-weight: 600;
+        color: $C1;
+
+        &::before {
+          position: absolute;
+          content: '';
+          left: 0;
+          width: 36px;
+          height: 30px;
+          transform: translateY(50%);
+          background: url('https://download.pingcap.com/images/community/high-performance-tidb/step-icon.svg')
+            center no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .desc {
+        padding: 0 0 2rem;
+        line-height: 1.7;
+        font-size: $size-6;
+        color: $C5;
+
+        .strong {
+          font-size: $size-4;
+          font-weight: 600;
+        }
+      }
+    }
+
+    .annotation {
+      font-size: $size-7;
+      line-height: 1.7;
+      color: $C5;
+      opacity: 0.75;
+
+      @include mobile {
+        font-size: 13px;
+      }
+    }
+  }
+
+  .materials-body {
+    background: url('https://download.pingcap.com/images/community/high-performance-tidb/learning-material-bg.svg')
+      center no-repeat;
+    background-size: cover;
+
+    .title {
+      padding: 4rem 0 0;
+
+      &::before {
+        width: 20%;
+      }
+
+      @include mobile {
+        text-align: center;
+
+        &::before {
+          left: 50%;
+          width: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .card-list {
+      display: flex;
+      flex-flow: row wrap;
+      padding: 3rem 4%;
+      justify-content: space-between;
+    }
+
+    .learning-card {
+      @include mobile {
+        margin-bottom: 3rem;
+        width: 100%;
+        min-height: auto;
+        height: 100%;
+      }
+      width: 45%;
+      min-height: 450px;
+      color: $C5;
+
+      .header {
+        @include terminal-header;
+        height: 30px;
+      }
+
+      .content {
+        height: 80%;
+        justify-content: center;
+        padding: 0 2rem;
+        border-radius: 0 0 10px 10px;
+        background-color: $C6;
+
+        .thumb-img {
+          padding: 1rem 0;
+          height: 150px;
+          width: auto;
+
+          img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .name {
+          padding: 1rem 0;
+          margin-bottom: 0;
+          font-size: $size-5;
+          font-weight: 600;
+          color: $C5;
+        }
+
+        .desc {
+          padding: 0.5rem 0;
+          font-size: $size-7;
+          opacity: 0.75;
+          color: $C5;
+
+          @include mobile {
+            padding-bottom: 2rem;
+          }
+        }
+      }
+    }
+  }
+
+  .leader-board-body {
+    .terminal {
+      width: 83%;
+      margin: 5rem auto;
+
+      .terminal-header {
+        .season-score {
+          position: relative;
+          margin-left: 8rem;
+          padding-left: 3rem;
+          color: $C6;
+          opacity: 0.5;
+          font-size: $size-5;
+          font-weight: 400;
+          transform: translateY(45%);
+
+          &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 40px;
+            height: 40px;
+            transform: translateY(-12%);
+            background: url('https://download.pingcap.com/images/community/high-performance-tidb/season-score.svg')
+              center no-repeat;
+            background-size: contain;
+          }
+        }
+
+        @include mobile {
+          height: 50px;
+
+          .season-score {
+            font-size: 1rem;
+            margin-left: 4.5rem;
+            transform: translateY(50%);
+
+            &::before {
+              width: 30px;
+              height: 30px;
+              transform: translateY(-3px);
+            }
+          }
+        }
+
+        @include terminal-header;
+        height: 60px;
+      }
+
+      .terminal-body {
+        position: relative;
+        padding: 3rem 0 5rem;
+        text-align: center;
+        max-height: 600px;
+        overflow: auto;
+        border-radius: 0 0 10px 10px;
+        background: $C6;
+
+        .annotation {
+          position: absolute;
+          right: 3rem;
+          bottom: 1rem;
+          font-size: 13px;
+          color: $C5;
+
+          @include mobile {
+            right: 50%;
+            transform: translateX(50%);
+            width: 80%;
+          }
+        }
+      }
+    }
+
+    .title {
+      text-align: center;
+
+      &::before {
+        left: 50%;
+        width: 25%;
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        &::before {
+          width: 50%;
+        }
+      }
+    }
+
+    #ranking-list {
+      width: 83%;
+      margin: 0 auto;
+      text-align: center;
+      color: $C5;
+    }
+
+    .ranking-item {
+      display: flex;
+      align-items: center;
+      padding: 0 0 1rem 0;
+
+      .progress-wrapper {
+        position: relative;
+        margin-left: 1.5rem;
+        width: 100%;
+
+        .team-name,
+        .score {
+          position: absolute;
+          transform: translateY(20%);
+          font-size: $size-5;
+          font-weight: 700;
+          color: $C6;
+        }
+
+        .team-name {
+          left: 1rem;
+        }
+
+        .score {
+          right: 1rem;
+        }
+
+        progress {
+          background: $C5;
+          border-radius: $progress-border-radius;
+          height: 50px;
+
+          &::-webkit-progress-bar {
+            background-color: $progress-bar-background-color;
+          }
+
+          &::-webkit-progress-value {
+            background-color: $progress-value-background-color;
+          }
+
+          &::-moz-progress-bar {
+            background-color: $progress-value-background-color;
+          }
+
+          &::-ms-fill {
+            background-color: $progress-value-background-color;
+          }
+        }
+
+        @include mobile {
+          .team-name,
+          .score {
+            position: absolute;
+            transform: translateY(30%);
+            font-size: 16px;
+          }
+
+          progress {
+            height: 40px;
+          }
+        }
+      }
+
+      .medal {
+        width: 50px;
+        height: 50px;
+        background-size: contain !important;
+
+        &.medal-1 {
+          background: url(https://download.pingcap.com/images/community/high-performance-tidb/medal1.svg)
+            center no-repeat;
+        }
+
+        &.medal-2 {
+          background: url(https://download.pingcap.com/images/community/high-performance-tidb/medal2.svg)
+            center no-repeat;
+        }
+
+        &.medal-3 {
+          background: url(https://download.pingcap.com/images/community/high-performance-tidb/medal3.svg)
+            center no-repeat;
+        }
+
+        &.normal-rank {
+          background: url(https://download.pingcap.com/images/community/high-performance-tidb/normal-medal.svg)
+            center no-repeat;
+        }
+      }
+    }
+  }
+
+  .notice-body {
+    @include mobile {
+      background: none;
+    }
+
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    background: url('https://download.pingcap.com/images/community/high-performance-tidb/entry-notice.svg')
+      no-repeat;
+    background-size: contain;
+
+    .title {
+      text-align: right;
+      &::before {
+        left: auto;
+        right: 0;
+        width: 15%;
+      }
+
+      @include mobile {
+        text-align: center;
+        margin-bottom: 1rem;
+
+        &::before {
+          width: 40%;
+          right: 50%;
+          transform: translateX(50%);
+        }
+      }
+    }
+
+    .notice-list {
+      @include mobile {
+        width: 100%;
+        margin-left: 0;
+      }
+      position: relative;
+      margin-left: 58%;
+      padding-top: 4rem;
+      width: 42%;
+
+      .list-card {
+        margin-bottom: 2rem;
+        padding: 1rem 2rem;
+        text-align: right;
+        z-index: 2;
+        border-radius: 10px;
+        background: white;
+        font-size: $size-5;
+        font-weight: 600;
+        color: $C5;
+        cursor: pointer;
+
+        &::before {
+          content: '';
+          position: absolute;
+          width: 36px;
+          height: 30px;
+          left: 1rem;
+          background: url('https://download.pingcap.com/images/community/high-performance-tidb/step-icon.svg')
+            center no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .detail {
+        position: absolute;
+        display: none;
+        padding: 1rem;
+        top: 4rem;
+        right: 110%;
+        width: 80%;
+        text-align: left;
+        background: white;
+        color: $C5;
+
+        .item {
+          display: flex;
+
+          .numb {
+            display: inline;
+            font-size: $size-4;
+            font-weight: 600;
+            font-style: italic;
+            color: $C1;
+          }
+
+          a {
+            color: $C2;
+          }
+
+          .desc {
+            padding: 1rem 1rem 0;
+            font-size: $size-7;
+            color: $C5;
+            opacity: 0.75;
+          }
+        }
+      }
+
+      .show-detail {
+        display: block;
+      }
+
+      .detail-mobile {
+        position: relative;
+        display: block;
+        right: 0;
+        top: 1rem;
+        width: 100%;
+        background: transparent;
+      }
+    }
+  }
+
+  .review-body {
+    .title {
+      text-align: center;
+
+      &::before {
+        left: 50%;
+        width: 20%;
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        &::before {
+          width: 40%;
+          border-bottom: 15px solid $C1;
+        }
+      }
+    }
+
+    .cards {
+      padding: 4rem 0;
+
+      .usability {
+        margin-left: 8.3%;
+      }
+
+      .performance {
+        margin-left: 42%;
+        margin-top: -10rem;
+      }
+
+      @include mobile {
+        padding-top: 1rem;
+
+        .usability {
+          width: 50%;
+        }
+
+        .performance {
+          margin-top: -3rem;
+          width: 50%;
+        }
+      }
+    }
+  }
+}
