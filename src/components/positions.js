@@ -3,26 +3,16 @@ import '../styles/components/positions.scss'
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import Link from './IntlLink'
-import { replaceTitle } from '../lib/string'
 
 const Positions = () => {
   let { positions } = useStaticQuery(graphql`
     query {
-      positions: allMdx(
-        filter: { fileAbsolutePath: { regex: "/markdown-pages/careers/" } }
-      ) {
+      positions: allPositionsJson {
         edges {
           node {
-            id
-            frontmatter {
-              title
-              location
-            }
-            parent {
-              ... on File {
-                relativePath
-              }
-            }
+            link
+            location
+            title
           }
         }
       }
@@ -35,13 +25,14 @@ const Positions = () => {
     <div className="PingCAP-Positions columns is-multiline">
       {positions.map((p) => (
         <Link
-          to={`/careers/${replaceTitle(p.parent.relativePath)}`}
-          key={p.frontmatter.title}
+          to={p.link}
+          key={p.link}
           className="position column is-4"
+          type="outBoundLink"
         >
           <div className="position-wrapper">
-            <div className="position-title">{p.frontmatter.title}</div>
-            <div className="location">{p.frontmatter.location}</div>
+            <div className="position-title">{p.title}</div>
+            <div className="location">{p.location}</div>
           </div>
         </Link>
       ))}
