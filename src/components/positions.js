@@ -26,7 +26,7 @@ const Positions = () => {
       {positions.map((p) => (
         <Link
           to={p.link}
-          key={p.title}
+          key={p.link}
           className="position column is-4"
           type="outBoundLink"
         >
