@@ -110,9 +110,9 @@
       <stop offset="1" stop-color="#080c01" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <g id="组_3774" data-name="组 3774" transform="translate(-730 -9489)">
-    <rect id="矩形_214" data-name="矩形 214" width="559.358" height="334" rx="14" transform="translate(730 9489)" fill="url(#radial-gradient)"/>
-    <g id="组_3720" data-name="组 3720" transform="translate(47.358 427.346)">
+  <g id="组_4106" data-name="组 4106" transform="translate(-730 -8575)">
+    <rect id="矩形_214" data-name="矩形 214" width="559.358" height="334" rx="14" transform="translate(730 8575)" fill="url(#radial-gradient)"/>
+    <g id="组_3720" data-name="组 3720" transform="translate(47.358 -486.654)">
       <g id="OBJECTS" transform="translate(808 9084)">
         <g id="组_3730" data-name="组 3730" transform="translate(60.72 134.617)">
           <g id="组_3720-2" data-name="组 3720">
@@ -274,6 +274,6 @@
         </g>
       </g>
     </g>
-    <text id="_2019_性能挑战赛" data-name="2019 性能挑战赛" transform="translate(1099 9540)" fill="#fff" font-size="20" font-family="HelveticaNeue, Helvetica Neue" letter-spacing="0.05em"><tspan x="0" y="0">2019 </tspan><tspan y="0" font-family="PingFangSC-Regular, PingFang SC">性能挑战赛</tspan></text>
+    <text id="_2019_TiDB_Performance_Challenge" data-name="2019 TiDB Performance Challenge" transform="translate(1258 8626)" fill="#fff" font-size="20" font-family="HelveticaNeue-Medium, Helvetica Neue" font-weight="500"><tspan x="-317.56" y="0">2019 TiDB Performance Challenge</tspan></text>
   </g>
 </svg>

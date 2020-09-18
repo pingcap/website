@@ -23,6 +23,8 @@ const HPTC = ({ data }) => {
     usabilityCard,
     performanceCard,
   } = data
+
+  // track sign up button click event
   const trackViews = (event, category) => {
     trackCustomEvent({
       category: category,
@@ -35,9 +37,10 @@ const HPTC = ({ data }) => {
   const [signUpBannerLink, setSignUpBannerLink] = useState('')
   const [signUpStepLink, setSignUpStepLink] = useState('')
   const http = axios.create({
-    baseURL: 'http://bots.tidb.io/ti-challenge-bot/program/2/ranks',
+    baseURL: 'https://bots.tidb.io/ti-challenge-bot/program/2/ranks',
   })
 
+  // append params to track media source
   const getURLParams = () => {
     let utmSource = 'pingcap'
     let utmMediuBanner = 'banner'
@@ -58,7 +61,7 @@ const HPTC = ({ data }) => {
     }
 
     let registerBtnURLBanner =
-      'https://forms.pingcap.com/f/high-performance-challenge-cn?' +
+      'https://forms.pingcap.com/f/high-performance-challenge-en?' +
       'utm_source=' +
       utmSource +
       '&utm_medium=' +
@@ -67,7 +70,7 @@ const HPTC = ({ data }) => {
       utmCampaign
 
     let registerBtnURLStep =
-      'https://forms.pingcap.com/f/high-performance-challenge-cn?' +
+      'https://forms.pingcap.com/f/high-performance-challenge-en?' +
       'utm_source=' +
       utmSource +
       '&utm_medium=' +
@@ -137,7 +140,7 @@ const HPTC = ({ data }) => {
                 <div className="buttons columns">
                   <Button
                     as="a"
-                    href="/"
+                    href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md"
                     target="_blank"
                     rounded
                     className="rules-btn"
@@ -208,7 +211,7 @@ const HPTC = ({ data }) => {
               </div>
               <Button
                 as="a"
-                href="/"
+                href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md"
                 target="_blank"
                 rounded
                 className="signUp-btn"
@@ -236,7 +239,10 @@ const HPTC = ({ data }) => {
                     Challenge Application (available until Nov.15)
                   </div>
                   <div className="desc">
-                    Make sure you read the <a href="/">Participation Notes</a>{' '}
+                    Make sure you read the{' '}
+                    <a href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md#participation-notes">
+                      Participation Notes
+                    </a>{' '}
                     before you apply for the program. To apply, fill in the form
                     below and submit. Note that once the form is submitted, it
                     cannot be modified.
@@ -264,6 +270,15 @@ const HPTC = ({ data }) => {
                     Once the bottlenecks are identified, you need to create the
                     corresponding issues and start coding to optimize.
                   </div>
+                  <Button
+                    as="a"
+                    href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md"
+                    target="_blank"
+                    rounded
+                    className="signUp-btn"
+                  >
+                    About Challenge
+                  </Button>
                 </div>
 
                 <div className="step">
@@ -339,7 +354,7 @@ const HPTC = ({ data }) => {
                   <div className="item">
                     <div className="award">2nd prize</div>
                     <div className="desc">
-                      <span className="strong">4,250</span> dollars for the
+                      <span className="strong">4,250</span> US dollars for the
                       team; <span className="strong">1,350</span> US dollars for
                       the mentor
                     </div>
@@ -465,7 +480,12 @@ const HPTC = ({ data }) => {
                         {noticeDetailsData[`details${i}`].map((detail, idx) => (
                           <div className="item" key={idx}>
                             <p className="numb">{idx + 1}.</p>
-                            <p className="desc">{detail}</p>
+                            <p
+                              className="desc"
+                              dangerouslySetInnerHTML={{
+                                __html: detail,
+                              }}
+                            />
                           </div>
                         ))}
                       </div>
@@ -481,16 +501,24 @@ const HPTC = ({ data }) => {
           <div className="review-body">
             <div className="container">
               <div className="title-wrapper">
-                <div className="title">往期回顾</div>
+                <div className="title">
+                  Previous TiDB Performance Challenges review
+                </div>
               </div>
               <div className="cards">
                 <div className="usability">
-                  <a href="/community/tidb-usability-challenge/">
+                  <a
+                    href="https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md"
+                    target="_blank"
+                  >
                     <img src={usabilityCard.publicURL} alt="TiDB usability" />
                   </a>
                 </div>
                 <div className="performance">
-                  <a href="/community/tidb-performance-challenge/">
+                  <a
+                    href="https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-1.md"
+                    target="_blank"
+                  >
                     <img
                       src={performanceCard.publicURL}
                       alt="TiDB performance"

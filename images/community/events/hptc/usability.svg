@@ -9,9 +9,9 @@
       <stop offset="1" stop-color="#e466ff"/>
     </linearGradient>
   </defs>
-  <g id="组_3773" data-name="组 3773" transform="translate(-281 -9344)">
-    <rect id="矩形_109" data-name="矩形 109" width="559" height="334" rx="14" transform="translate(281 9344)" fill="url(#radial-gradient)"/>
-    <g id="组_3719" data-name="组 3719" transform="translate(401.453 9378.186)">
+  <g id="组_4105" data-name="组 4105" transform="translate(-281 -8430)">
+    <rect id="矩形_109" data-name="矩形 109" width="559" height="334" rx="14" transform="translate(281 8430)" fill="url(#radial-gradient)"/>
+    <g id="组_3719" data-name="组 3719" transform="translate(401.453 8464.186)">
       <g id="组_3631" data-name="组 3631" transform="translate(0 78.561)">
         <path id="路径_11891" data-name="路径 11891" d="M104.956,273.2l150.411-86.84L405.778,273.2,255.367,360.04Z" transform="translate(-104.956 -172.473)" fill="#4666b9" style="mix-blend-mode: multiply;isolation: isolate"/>
         <path id="路径_11892" data-name="路径 11892" d="M104.956,259.2l150.411-86.84L405.778,259.2,255.367,346.04Z" transform="translate(-104.956 -172.361)" fill="#ec827d"/>
@@ -93,6 +93,6 @@
         </g>
       </g>
     </g>
-    <text id="_2019_易用性挑战赛" data-name="2019 易用性挑战赛" transform="translate(312 9649)" fill="#fff" font-size="20" font-family="HelveticaNeue, Helvetica Neue" letter-spacing="0.05em"><tspan x="0" y="0">2019 </tspan><tspan y="0" font-family="PingFangSC-Regular, PingFang SC">易用性挑战赛</tspan></text>
+    <text id="_2019_TiDB_Usability_Challenge" data-name="2019 TiDB Usability Challenge" transform="translate(312 8735)" fill="#fff" font-size="20" font-family="HelveticaNeue-Medium, Helvetica Neue" font-weight="500"><tspan x="0" y="0">2019 TiDB Usability Challenge</tspan></text>
   </g>
 </svg>

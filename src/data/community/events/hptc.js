@@ -8,7 +8,7 @@ const noticeDetailsData = {
   details0: [
     'You need to team up before submitting the application form. One team could only select one workload for optimization. Once the form is submitted, no information can be modified.',
     'Up to five participants are allowed in a team; cross team-up is not allowed.',
-    'If you have trouble in team-up, give a shout in the Slack channel for help. Or you can sign up as a one-person team.',
+    'If you have trouble teaming up, give a shout in the <a href="https://slack.tidb.io/invite?team=tidb-community&channel=tidb-challenge-program&ref=website-en">Slack channel</a> for help. Or you can sign up as a one-person team.',
   ],
   details1: [
     'Your team only earns points when you resolve the issues that you proposed for workload optimization. If the issues resolved are not relevant, there will be no points granted. ',
@@ -16,7 +16,7 @@ const noticeDetailsData = {
   ],
   details2: [
     'Only one mentor is allowed in a team and one mentor could only provide instructions to one team. ',
-    'The team that needs mentoring could contact the organizing committee on the Slack channel.',
+    'The team that needs mentoring could contact the organizing committee in the <a href="https://slack.tidb.io/invite?team=tidb-community&channel=tidb-challenge-program&ref=website-en">Slack channel</a>.',
   ],
 }
 

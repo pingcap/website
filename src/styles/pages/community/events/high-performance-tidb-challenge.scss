@@ -445,6 +445,12 @@ section {
         .button {
           margin-top: 1rem;
         }
+
+        .image-wrapper {
+          margin-left: 70% !important;
+          margin-top: -2rem;
+          width: 30%;
+        }
       }
     }
   }
@@ -934,13 +940,13 @@ section {
 
       &::before {
         left: 50%;
-        width: 20%;
+        width: 65%;
         transform: translateX(-50%);
       }
 
       @include mobile {
         &::before {
-          width: 40%;
+          width: 60%;
           border-bottom: 15px solid $C1;
         }
       }
