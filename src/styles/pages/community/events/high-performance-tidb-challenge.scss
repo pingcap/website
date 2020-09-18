@@ -641,7 +641,6 @@ section {
           margin-left: 8rem;
           padding-left: 3rem;
           color: $C6;
-          opacity: 0.5;
           font-size: $size-5;
           font-weight: 400;
           transform: translateY(45%);
@@ -692,7 +691,7 @@ section {
           position: absolute;
           right: 3rem;
           bottom: 1rem;
-          font-size: 13px;
+          font-size: $size-7;
           color: $C5;
 
           @include mobile {

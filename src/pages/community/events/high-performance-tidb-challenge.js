@@ -502,7 +502,7 @@ const HPTC = ({ data }) => {
             <div className="container">
               <div className="title-wrapper">
                 <div className="title">
-                  Previous TiDB Performance Challenges review
+                  Previous TiDB Performance Challenges Review
                 </div>
               </div>
               <div className="cards">

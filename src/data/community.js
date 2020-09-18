@@ -52,18 +52,9 @@ const communityActivities = [
     name: 'High Performance TiDB Challenge',
     eventType: 'Communtiy Activity',
     time: 'Step 17 - Nov 21, 2020',
-    desc:
-      'TiDB DevCon is the annual developer conference for the TiDB community. This 2-day event aims to provide a venue where we showcase the evolution of product and technology in the past year and the latest progress in the TiDB ecosystem.',
+    desc: '',
     readMoreLink: '/community/events/high-performance-tidb-challenge',
     outboundLink: false,
-  },
-  {
-    thumbnail: DevCon2020ThumbNail,
-    name: 'TiDB DevCon 2020',
-    eventType: 'Virtual Conference',
-    time: 'July 6 - July 7, 2020 (Ended)',
-    desc:
-      'TiDB DevCon is the annual developer conference for the TiDB community. This 2-day event aims to provide a venue where we showcase the evolution of product and technology in the past year and the latest progress in the TiDB ecosystem.',
   },
   {
     thumbnail: UsabilityThumbNail,
