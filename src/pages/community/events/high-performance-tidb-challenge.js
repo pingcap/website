@@ -1,6 +1,6 @@
 import '../../../styles/pages/community/events/high-performance-tidb-challenge.scss'
 import { Button } from '@seagreenio/react-bulma'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Link from '../../../components/IntlLink'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
@@ -36,9 +36,12 @@ const HPTC = ({ data }) => {
   const [rankList, setRankList] = useState([])
   const [signUpBannerLink, setSignUpBannerLink] = useState('')
   const [signUpStepLink, setSignUpStepLink] = useState('')
+  const gradingModalRef = useRef(null)
   const http = axios.create({
     baseURL: 'https://bots.tidb.io/ti-challenge-bot/program/2/ranks',
   })
+
+  const noticeRef = useRef(null)
 
   // append params to track media source
   const getURLParams = () => {
@@ -47,6 +50,7 @@ const HPTC = ({ data }) => {
     let utmMediumStep = 'step'
     let utmCampaign = 'hptc'
     let params = window.location.search.slice(1).split('&')
+    const baseURL = 'https://forms.pingcap.com/f/high-performance-challenge-en?'
 
     let paramsObj = {}
     if (params.length > 1) {
@@ -61,7 +65,7 @@ const HPTC = ({ data }) => {
     }
 
     let registerBtnURLBanner =
-      'https://forms.pingcap.com/f/high-performance-challenge-en?' +
+      baseURL +
       'utm_source=' +
       utmSource +
       '&utm_medium=' +
@@ -70,7 +74,7 @@ const HPTC = ({ data }) => {
       utmCampaign
 
     let registerBtnURLStep =
-      'https://forms.pingcap.com/f/high-performance-challenge-en?' +
+      baseURL +
       'utm_source=' +
       utmSource +
       '&utm_medium=' +
@@ -100,26 +104,22 @@ const HPTC = ({ data }) => {
     getRankList()
   }, [])
 
-  const openNoticeDetail = (idx) => {
+  const openNoticeDetail = useCallback((idx) => {
     let className = 'show-detail'
     if (window.matchMedia('(max-width:550px)').matches) {
       className = 'detail-mobile'
     }
 
-    const allEle = document.getElementsByClassName(className)
+    const allEle = noticeRef.current.children
     Array.from(allEle).forEach((ele) => {
       ele.classList.remove(className)
     })
 
-    document.getElementsByClassName(`detail-${idx}`)[0].classList.add(className)
-  }
+    noticeRef.current.children[idx + 3].classList.add(className)
+  })
 
-  const openGradingDetail = () => {
-    document.getElementsByClassName('grading')[0].classList.add('show')
-  }
-
-  const closeGradingDetail = () => {
-    document.getElementsByClassName('grading')[0].classList.remove('show')
+  const toggleGradingDetail = () => {
+    gradingModalRef.current.classList.toggle('show')
   }
 
   return (
@@ -300,12 +300,12 @@ const HPTC = ({ data }) => {
                   <Button
                     rounded
                     className="grading-btn"
-                    onClick={openGradingDetail}
+                    onClick={toggleGradingDetail}
                   >
                     Evaluation criteria
                   </Button>
-                  <div className="grading">
-                    <div className="close" onClick={closeGradingDetail}></div>
+                  <div className="grading" ref={gradingModalRef}>
+                    <div className="close" onClick={toggleGradingDetail}></div>
                     <div className="grading-title">Evaluation criteria</div>
                     <div className="item">
                       <p className="criterion">Performance improvement (65%)</p>
@@ -464,7 +464,7 @@ const HPTC = ({ data }) => {
                 <div className="title-wrapper">
                   <div className="title">NOTICE</div>
                 </div>
-                <div className="notice-list">
+                <div className="notice-list" ref={noticeRef}>
                   <>
                     {noticeItemData.map((notice, i) => (
                       <div
