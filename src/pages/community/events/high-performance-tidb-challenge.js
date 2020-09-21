@@ -179,12 +179,13 @@ const HPTC = ({ data }) => {
                   </div>
                 </div>
                 <div className="desc">
-                  This time we focus on workload optimization to bring TiDB
-                  performance to a higher level! Several typical workloads in
-                  need of optimization are now open for participants to discuss
-                  and work on! Completion of each challenge task under the
-                  selected workload is recognized through challenge points,
-                  which could be redeemed into cash awards and swags.
+                  High-Performance TiDB Challenge is a mentoring program which
+                  focuses on workload optimization to bring TiDB performance to
+                  a higher level.Several typical workloads in need of
+                  optimization are now open for participants to discuss and work
+                  on. Completion of each challenge task under the selected
+                  workload is recognized through challenge points, which could
+                  be redeemed into cash awards and swags.
                 </div>
               </div>
             </div>
@@ -195,7 +196,7 @@ const HPTC = ({ data }) => {
           <div className="task-body">
             <div className="container">
               <div className="title-wrapper">
-                <div className="title">TASKS</div>
+                <div className="title">Tasks</div>
               </div>
               <div className="task-card">
                 <img
@@ -226,7 +227,7 @@ const HPTC = ({ data }) => {
           <div className="how-body">
             <div className="container">
               <div className="title-wrapper">
-                <div className="title">HOW</div>
+                <div className="title">How to Challenge</div>
               </div>
               <div className="step-list">
                 <div className="step image-wrapper show-pc">
@@ -235,9 +236,7 @@ const HPTC = ({ data }) => {
 
                 <div className="step">
                   <div className="numb">Step 1</div>
-                  <div className="name">
-                    Challenge Application (available until Nov.15)
-                  </div>
+                  <div className="name">Challenge Application</div>
                   <div className="desc">
                     Make sure you read the{' '}
                     <a href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md#participation-notes">
@@ -261,9 +260,7 @@ const HPTC = ({ data }) => {
 
                 <div className="step">
                   <div className="numb">Step 2</div>
-                  <div className="name">
-                    Team Bonding and Coding (Sept.17- Nov.15)
-                  </div>
+                  <div className="name">Team Bonding and Coding</div>
                   <div className="desc">
                     In this period, you get to know your teammates and mentors
                     and work together on diagnosing performance bottlenecks.
@@ -283,7 +280,7 @@ const HPTC = ({ data }) => {
 
                 <div className="step">
                   <div className="numb">Step 3</div>
-                  <div className="name">Code Submission (before Nov.15)</div>
+                  <div className="name">Code Submission</div>
                   <div className="desc">
                     Submit the code change before Nov.15. PRs merged after
                     Nov.15 will not be counted for the points.
@@ -292,6 +289,7 @@ const HPTC = ({ data }) => {
 
                 <div className="step">
                   <div className="numb">Step 4</div>
+                  <div className="name">Presentation</div>
                   <div className="desc">
                     Submit your presentation slides before 10:00 (China Standard
                     Time), Nov.20. The team leader presents the optimization
@@ -310,14 +308,15 @@ const HPTC = ({ data }) => {
                     <div className="item">
                       <p className="criterion">Performance improvement (65%)</p>
                       <p className="detail">
-                        The percentage of performance improvement compared with
-                        the base Master branch when the program started
+                        The performance improvement (percentage) of your working
+                        branch compared with the base Master branch when the
+                        program started
                       </p>
                     </div>
                     <div className="item">
                       <p className="criterion">PR points of the team (30%)</p>
                       <p className="detail">
-                        The validated PRs merged into Master
+                        The validated PRs merged into the Master branch
                       </p>
                     </div>
                     <div className="item">
@@ -340,7 +339,7 @@ const HPTC = ({ data }) => {
             <div className="container">
               <div className="awards-and-desc">
                 <div className="title-wrapper">
-                  <div className="title">AWARS</div>
+                  <div className="title">Awards</div>
                 </div>
                 <div className="awards-list">
                   <div className="item">
@@ -367,13 +366,22 @@ const HPTC = ({ data }) => {
                     </div>
                   </div>
                 </div>
-                <div className="annotation">
-                  Note: Teams that finish the final presentation will be
-                  evaluated by the judges, among which no more than five winning
-                  teams will be generated. The winning teams will be awarded as
-                  described above. Each member of the finisher team can get a
-                  special swag. If the winning team does not have a mentor, the
-                  mentor prize will be automatically added to the team.
+                <div className="annotation content">
+                  <strong>Note:</strong>
+                  <ul>
+                    <li>
+                      Teams that finish the final presentation will be evaluated
+                      by the judges, among which no more than five winning teams
+                      will be generated.
+                    </li>
+                    <li>
+                      If the winning team does not have a mentor, the mentor
+                      prize will be automatically added to the team.
+                    </li>
+                    <li>
+                      Each member of the finisher team can get a special swag.
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
@@ -384,7 +392,7 @@ const HPTC = ({ data }) => {
           <div className="materials-body">
             <div className="container">
               <div className="title-wrapper">
-                <div className="title">MATERIALS</div>
+                <div className="title">Learning materials</div>
               </div>
               <div className="card-list">
                 {materialsData.map((material) => (
@@ -410,11 +418,11 @@ const HPTC = ({ data }) => {
           <div className="leader-board-body">
             <div className="container">
               <div className="title-wrapper">
-                <div className="title">LEADR BOARD</div>
+                <div className="title">Leaderboard</div>
               </div>
               <div className="terminal">
                 <div className="terminal-header">
-                  <div className="season-score">PR Points Ranking</div>
+                  <div className="season-score">PR points ranking</div>
                 </div>
                 <div className="terminal-body">
                   <div id="ranking-list">
@@ -449,7 +457,7 @@ const HPTC = ({ data }) => {
                   </div>
                   <div className="annotation">
                     Note: The leaderboard does not indicate the final group
-                    rankings.{' '}
+                    ranking.
                   </div>
                 </div>
               </div>
@@ -462,7 +470,7 @@ const HPTC = ({ data }) => {
             <div className="container">
               <div className="notice-and-list">
                 <div className="title-wrapper">
-                  <div className="title">NOTICE</div>
+                  <div className="title">Participation notes</div>
                 </div>
                 <div className="notice-list" ref={noticeRef}>
                   <>
@@ -502,7 +510,7 @@ const HPTC = ({ data }) => {
             <div className="container">
               <div className="title-wrapper">
                 <div className="title">
-                  Previous TiDB Performance Challenges Review
+                  Previous TiDB performance challenges
                 </div>
               </div>
               <div className="cards">
