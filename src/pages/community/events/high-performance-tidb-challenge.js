@@ -212,7 +212,7 @@ const HPTC = ({ data }) => {
               </div>
               <Button
                 as="a"
-                href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md"
+                href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md#step-1-sign-up"
                 target="_blank"
                 rounded
                 className="signUp-btn"
