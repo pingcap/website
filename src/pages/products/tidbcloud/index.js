@@ -245,8 +245,8 @@ const TiDBCloudPage = ({ data }) => {
               <div className="image-wrapper">
                 <iframe
                   id="video"
-                  title="TiDB Cloud Walk-through"
-                  src="https://www.youtube.com/embed/MhUVadAOGxc?rel=0"
+                  title="TiDB Cloud in 3-min"
+                  src="https://www.youtube.com/embed/x9YQ-9APYC0"
                   frameborder="0"
                   allowfullscreen="allowfullscreen"
                   mozallowfullscreen="mozallowfullscreen"
