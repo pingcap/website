@@ -87,8 +87,7 @@ const navbarItemsZh = {
 // const promotionText = null
 const promotionText = (
   <>
-    TiDB Cloud (beta) is open for free trial now. Apply&nbsp;
-    <Link to="/products/tidbcloud">Here</Link>
+    Join the TiDB Community Slack channel <Link to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">&nbsp;HERE&nbsp;</Link> to interact with the community!
   </>
 )
 
