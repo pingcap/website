@@ -59,8 +59,49 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
           }
         }
       }
+      categories: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "${langConfig.languages.en.blogsPath}"}
+            frontmatter: { customer: { ne: null } }
+          }
+        ) {
+          industries: group(field: frontmatter___customerCategory) {
+            industry: fieldValue
+          }
+          companies: group(field: frontmatter___customer) {
+            company: fieldValue
+          }
+          tags: group(field: frontmatter___tags) {
+            tag: fieldValue
+          }
+      }
+      categoriesZH: allMdx(
+          filter: {
+            fileAbsolutePath: { regex: "${langConfig.languages.zh.blogsPath}"}
+            frontmatter: { customer: { ne: null } }
+          }
+        ) {
+          industries: group(field: frontmatter___customerCategory) {
+            industry: fieldValue
+          }
+          companies: group(field: frontmatter___customer) {
+            company: fieldValue
+          }
+          tags: group(field: frontmatter___tags) {
+            tag: fieldValue
+          }
+      }
     }
   `)
+
+  const industries = data.categories.industries.map((node) => node['industry'])
+  const companies = data.categories.companies.map((node) => node['company'])
+  const tags = data.categories.tags.map((node) => node['tag'])
+  const industriesZH = data.categoriesZH.industries.map(
+    (node) => node['industry']
+  )
+  const companiesZH = data.categoriesZH.companies.map((node) => node['company'])
+  const tagsZH = data.categoriesZH.tags.map((node) => node['tag'])
 
   data.caseStudies.edges.forEach(({ node }) => {
     const _path = `case-studies/${replaceTitle(node.parent.relativePath)}`
@@ -69,6 +110,9 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
+        industries,
+        companies,
+        tags,
         language: 'en',
         ...langConfig.languages['en'],
       },
@@ -95,6 +139,9 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
       component: caseStudyTemplate,
       context: {
         title: node.frontmatter.title,
+        industries: industriesZH,
+        companies: companiesZH,
+        tags: tagsZH,
         language: 'zh',
         ...langConfig.languages['zh'],
       },

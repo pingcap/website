@@ -1,7 +1,7 @@
 import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
-import React, { useEffect, useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
@@ -13,92 +13,152 @@ import PostFromUs from './postFromUs'
 import PostFromUsZH from './zh/postFromUs'
 import SEO from './seo'
 import Socials from './socials'
+import { MenuGenerator } from './menu'
 import { replaceTitle, replaceSpaceWithDash } from '../lib/string'
+import { getBaseSchemaProxyHandler } from '../lib/proxy'
+import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
+import Labels from '../components/labels'
 
-const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
-  const blogs = data.allMdx.edges
+const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
+  return (
+    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
+      <MenuGenerator menuConfig={menuConfig} />
+    </div>
+  )
+})
+
+const Blogs = ({
+  data,
+  pageContext,
+  PaginationPathPrefix,
+  isTagPage,
+  isBlog = true,
+  isIndustryPage = false,
+  isCompanyPage = false,
+}) => {
+  const [isFirstRender, setIsFirstRender] = useState(true)
+  useEffect(() => {
+    setIsFirstRender(false)
+  }, [])
+
+  const articles = data.allMdx.edges
   const {
     currentPage,
     numPages,
     tag,
     category,
+    industry,
+    company,
     hasBlogCategories,
   } = pageContext
 
-  const categories = data.categories.group.map((i) => i.category)
-  const tags = data.tags.group.map((i) => i.tag)
+  const categories = data.categories
+    ? [...data.categories.group.map((i) => i.category)]
+    : null
+  const industries = data.industries
+    ? [...data.industries.group.map((i) => i.industry)]
+    : null
+  const companies = data.companies
+    ? [...data.companies.group.map((i) => i.company)]
+    : null
+  const tags = data.tags ? [...data.tags.group.map((i) => i.tag)] : null
 
-  categories.unshift('All')
-  tags.unshift('All')
+  if (isFirstRender) {
+    categories && categories.unshift('All')
+    industries && industries.unshift('All')
+    companies && companies.unshift('All')
+    tags && tags.unshift('All')
+  }
 
   const currentCategory = category || 'All'
   const currentTag = tag || 'All'
+  const currentIndustry = industry || 'All'
+  const currentCompany = company || 'All'
 
-  const [showCategories, setShowCategories] = useState(hasBlogCategories)
+  const baseCateMenuCfg = {
+    menu: {
+      className: 'titles',
+      selectedClassName: 'active',
+    },
+    menuItems: {
+      linkedItem: Labels,
+      props: {
+        className: 'labels',
+        selectedClassName: 'active',
+      },
+    },
+  }
 
-  useEffect(() => {
-    if (isTagPage) {
-      setShowCategories(false)
-    }
-  }, [isTagPage])
+  const categoryMenuConfig = isBlog
+    ? hasBlogCategories
+      ? {
+          menu: {
+            defaultKey: isTagPage ? 'tag' : 'category',
+          },
+          menuItems: [
+            categoryMenuItemForBlogAndCase(
+              'category',
+              'title is-6 categories-title',
+              'Categories',
+              'blog'
+            )('category')(categories, currentCategory),
+            categoryMenuItemForBlogAndCase(
+              'tag',
+              'title is-6',
+              'Tags',
+              'blog'
+            )('tag')(tags, currentTag),
+          ],
+        }
+      : {
+          menu: {
+            defaultKey: 'tag',
+          },
+          menuItems: [
+            categoryMenuItemForBlogAndCase(
+              'tag',
+              'title is-6',
+              'Tags',
+              'blog'
+            )('tag')(tags, currentTag),
+          ],
+        }
+    : {
+        menu: {
+          defaultKey: isIndustryPage
+            ? 'industry'
+            : isCompanyPage
+            ? 'company'
+            : 'tag',
+        },
+        menuItems: [
+          categoryMenuItemForBlogAndCase(
+            'industry',
+            'title is-6 categories-title',
+            'Industries',
+            'case'
+          )('industry')(industries, currentIndustry),
+          categoryMenuItemForBlogAndCase(
+            'company',
+            'title is-6 categories-title',
+            'Companies',
+            'case'
+          )('company')(companies, currentCompany),
+          categoryMenuItemForBlogAndCase(
+            'tag',
+            'title is-6 categories-title',
+            'Tags',
+            'case'
+          )('tag')(tags, currentTag),
+        ],
+      }
 
-  const handleShowCategories = (bool) => (_) => setShowCategories(bool)
-
-  const CategoriesAndTags = ({ isDesktop = true }) => (
-    <div className={`categories-and-tags${isDesktop ? ' desktop' : ' mobile'}`}>
-      <div className="titles">
-        {hasBlogCategories && (
-          <div
-            role="button"
-            tabIndex={0}
-            className={`title is-6 categories-title${
-              showCategories ? ' active' : ''
-            }`}
-            onClick={handleShowCategories(true)}
-            onKeyDown={handleShowCategories(true)}
-          >
-            Categories
-          </div>
-        )}
-        <div
-          role="button"
-          tabIndex={0}
-          className={`title is-6${!showCategories ? ' active' : ''}`}
-          onClick={handleShowCategories(false)}
-          onKeyDown={handleShowCategories(false)}
-        >
-          Tags
-        </div>
-      </div>
-      <div className="labels">
-        {showCategories
-          ? categories.map((c) => (
-              <Link
-                key={c}
-                className={currentCategory === c ? 'active' : ''}
-                to={
-                  c === 'All'
-                    ? '/blog'
-                    : `/blog/category/${replaceSpaceWithDash(c)}`
-                }
-              >
-                {c}
-              </Link>
-            ))
-          : tags.map((t) => (
-              <Link
-                key={t}
-                className={currentTag === t ? 'active' : ''}
-                to={
-                  t === 'All' ? '/blog' : `/blog/tag/${replaceSpaceWithDash(t)}`
-                }
-              >
-                {t}
-              </Link>
-            ))}
-      </div>
-    </div>
+  const cateMenuCfgMergedWithBase = new Proxy(
+    categoryMenuConfig,
+    getBaseSchemaProxyHandler(baseCateMenuCfg)
   )
+
+  const cateMenuCfgMergedWithBaseRef = useRef(cateMenuCfgMergedWithBase)
 
   const { locale } = useIntl()
 
@@ -114,18 +174,24 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
             <div className="columns">
               <div className="column is-7">
                 {/* <BlogSearch className="search-mobile" /> */}
-                <CategoriesAndTags isDesktop={false} />
-                {blogs.map(({ node }) => (
+                <CategoryMenu
+                  isDesktop={false}
+                  menuConfig={cateMenuCfgMergedWithBaseRef.current}
+                />
+                {articles.map(({ node }) => (
                   <div key={node.frontmatter.title} className="blog-preview">
                     <BlogHeader
                       frontmatter={node.frontmatter}
                       filePath={node.parent.relativePath}
                       isTitleLink
+                      isCaseStudy={!isBlog}
                       hasBlogCategories={hasBlogCategories}
                     />
                     {node.frontmatter.image && (
                       <Link
-                        to={`/blog/${replaceTitle(node.parent.relativePath)}`}
+                        to={`${
+                          isBlog ? '/blog/' : '/case-study/'
+                        }${replaceTitle(node.parent.relativePath)}`}
                       >
                         <img
                           className="banner"
@@ -154,7 +220,9 @@ const Blogs = ({ data, pageContext, PaginationPathPrefix, isTagPage }) => {
                       <Socials type="follow" />
                     </div>
                   </div>
-                  <CategoriesAndTags />
+                  <CategoryMenu
+                    menuConfig={cateMenuCfgMergedWithBaseRef.current}
+                  />
                 </div>
               </div>
             </div>

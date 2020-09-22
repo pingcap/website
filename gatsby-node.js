@@ -11,6 +11,8 @@ const createBlogPagination = require('./create-pages/blogs')
 const createBlogTags = require('./create-pages/blogTags')
 const createBlogCategories = require('./create-pages/blogCategories')
 const createCaseStudies = require('./create-pages/caseStudies')
+const createCaseStudyCategories = require('./create-pages/caseStudyCategories')
+const createCaseStudyPagination = require('./create-pages/allCaseStudies')
 const createPositions = require('./create-pages/position')
 const createPositionsZH = require('./create-pages/position-zh')
 const createPositionsPagination = require('./create-pages/positions')
@@ -31,6 +33,8 @@ exports.createPages = async ({ actions, graphql }) => {
     createPositionsPagination({ graphql, createPage }),
     createPositionsAllPagination({ graphql, createPage }),
     createCaseStudies({ graphql, createPage, createRedirect }),
+    createCaseStudyCategories({ graphql, createPage }),
+    createCaseStudyPagination({ graphql, createPage }),
     createPositions({ graphql, createPage, createRedirect }),
     createPolicyTerms({ graphql, createPage }),
   ])

@@ -24,7 +24,13 @@ const BlogHeader = ({
     <section className="PingCAP-BlogHeader">
       {isTitleLink ? (
         <h2 className="title is-4 is-spaced blog-link-title">
-          <Link to={`/blog/${replaceTitle(filePath)}`}>{title}</Link>
+          <Link
+            to={`${isCaseStudy ? '/case-studies/' : '/blog/'}${replaceTitle(
+              filePath
+            )}`}
+          >
+            {title}
+          </Link>
         </h2>
       ) : (
         <h2 className="title is-4 is-spaced blog-title">{title}</h2>
