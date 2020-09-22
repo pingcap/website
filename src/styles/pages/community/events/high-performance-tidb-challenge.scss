@@ -633,7 +633,7 @@ section {
   .leader-board-body {
     .terminal {
       width: 83%;
-      margin: 5rem auto;
+      margin: 5rem auto 2rem;
 
       .terminal-header {
         .season-score {
@@ -686,19 +686,20 @@ section {
         overflow: auto;
         border-radius: 0 0 10px 10px;
         background: $C6;
+      }
+    }
 
-        .annotation {
-          position: absolute;
-          right: 3rem;
-          font-size: $size-7;
-          color: $C5;
+    .annotation {
+      margin: 0 auto;
+      width: 83%;
+      text-align: right;
+      font-size: $size-7;
+      color: $C5;
 
-          @include mobile {
-            right: 50%;
-            transform: translateX(50%);
-            width: 80%;
-          }
-        }
+      @include mobile {
+        right: 50%;
+        transform: translateX(50%);
+        width: 80%;
       }
     }
 

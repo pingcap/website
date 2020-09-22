@@ -2,10 +2,9 @@ import Heart from '../../images/community/heart.svg'
 import Help from '../../images/community/help-buoy.svg'
 import Writer from '../../images/community/writer.svg'
 import Learn from '../../images/community/learn.svg'
-import DevCon2020ThumbNail from '../../images/events/devcon2020.jpg'
 import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
 import MonthlyMeeting from '../../images/events/monthly-meeting.svg'
-import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.png'
+import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.svg'
 
 const contributionGrow = [
   {

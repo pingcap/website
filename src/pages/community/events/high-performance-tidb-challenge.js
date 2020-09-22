@@ -242,8 +242,9 @@ const HPTC = ({ data }) => {
                     <a href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md#participation-notes">
                       Participation Notes
                     </a>{' '}
-                    before you apply for the program. To apply, click the <strong>Sign Up</strong>{' '}
-                    button below and fill in the application form. Note that once the form is submitted, it
+                    before you apply for the program. To apply, click the{' '}
+                    <strong>Sign Up</strong> button below and fill in the
+                    application form. Note that once the form is submitted, it
                     cannot be modified.
                   </div>
                   <Button
@@ -455,11 +456,10 @@ const HPTC = ({ data }) => {
                       <>The ranking board update from 2020.9.17 to 2020.11.15</>
                     )}
                   </div>
-                  <div className="annotation">
-                    Note: The leaderboard does not indicate the final group
-                    ranking.
-                  </div>
                 </div>
+              </div>
+              <div className="annotation">
+                Note: The leaderboard does not indicate the final group ranking.
               </div>
             </div>
           </div>

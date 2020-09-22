@@ -27,7 +27,8 @@ const materialsData = [
     title: 'Performance Tuning Package',
     desc:
       'This package provides workload-related background knowledge and commonly used tuning tools for participants to better understand TiDB performance workloads.',
-    link: '/',
+    link:
+      'https://github.com/pingcap/community/blob/master/challenge-programs/performance-tuning-package.md',
   },
   {
     thumbImg:
