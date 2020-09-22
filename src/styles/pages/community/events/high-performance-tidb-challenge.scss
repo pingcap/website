@@ -12,27 +12,6 @@ $progress-bar-background-color: $C5 !important;
 $progress-value-background-color: $C2 !important;
 $progress-border-radius: 5px !important;
 
-body {
-  background: $body-bg;
-}
-
-section {
-  @include mobile {
-    margin-top: 7rem;
-    &.hero {
-      .reverse {
-        flex-flow: column-reverse;
-      }
-    }
-  }
-
-  margin-top: 7rem;
-
-  &.hero {
-    margin-top: 0 !important;
-  }
-}
-
 @mixin round-btn {
   margin-top: 3rem;
   width: 180px;
@@ -58,6 +37,25 @@ section {
 }
 
 .PingCAP-HPTC {
+  section {
+    background-color: $body-bg;
+    @include mobile {
+      padding-top: 7rem;
+      &.hero {
+        .reverse {
+          flex-flow: column-reverse;
+        }
+      }
+    }
+
+    padding-top: 7rem;
+
+    &.hero {
+      margin-top: 0 !important;
+      padding-top: 0;
+    }
+  }
+
   .title-wrapper {
     position: relative;
     z-index: 1;
