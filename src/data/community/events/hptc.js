@@ -1,3 +1,10 @@
+import Juejin from '../../../../images/community/events/hptc/juejin.svg'
+import DataFun from '../../../../images/community/events/hptc/datafun.svg'
+import GoCN from '../../../../images/community/events/hptc/gocn.svg'
+import CSDN from '../../../../images/community/events/hptc/csdn.svg'
+import UCloud from '../../../../images/community/events/hptc/ucloud.svg'
+import Oschina from '../../../../images/community/events/hptc/oschina.svg'
+
 const noticeItemData = [
   'About team-up',
   'About challenge points',
@@ -40,4 +47,21 @@ const materialsData = [
   },
 ]
 
-export { noticeItemData, noticeDetailsData, materialsData }
+const sponsorsData = [
+  {
+    subTitle: 'Cloud computing equipment support',
+    logos: [{ logo: UCloud, alt: 'ucloud logo' }],
+  },
+  {
+    subTitle: 'Community support',
+    logos: [
+      { logo: Juejin, alt: 'jue jin logo' },
+      { logo: DataFun, alt: 'data fun logo' },
+      { logo: GoCN, alt: 'go cn logo' },
+      { logo: CSDN, alt: 'csdn logo' },
+      { logo: Oschina, alt: 'os china logo' },
+    ],
+  },
+]
+
+export { noticeItemData, noticeDetailsData, materialsData, sponsorsData }

@@ -8,6 +8,7 @@ import {
   noticeItemData,
   noticeDetailsData,
   materialsData,
+  sponsorsData,
 } from '../../../data/community/events/hptc'
 import axios from 'axios'
 
@@ -533,6 +534,28 @@ const HPTC = ({ data }) => {
                     />
                   </a>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="sponsors">
+          <div className="sponsors-body">
+            <div className="container">
+              <div className="title-wrapper">
+                <div className="title">Partners</div>
+              </div>
+              <div className="sponsors-list">
+                {sponsorsData.map((d) => (
+                  <div className="sponsors-wrapper">
+                    <p className="sponsors-title">{d.subTitle}</p>
+                    <div className="logos">
+                      {d.logos.map((logo) => (
+                        <img src={logo.logo} alt={logo.alt} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
