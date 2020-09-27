@@ -55,11 +55,11 @@ const sponsorsData = [
   {
     subTitle: 'Community support',
     logos: [
+      { logo: Oschina, alt: 'os china logo' },
       { logo: Juejin, alt: 'jue jin logo' },
       { logo: DataFun, alt: 'data fun logo' },
-      { logo: GoCN, alt: 'go cn logo' },
       { logo: CSDN, alt: 'csdn logo' },
-      { logo: Oschina, alt: 'os china logo' },
+      { logo: GoCN, alt: 'go cn logo' },
     ],
   },
 ]
