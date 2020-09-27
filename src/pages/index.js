@@ -18,9 +18,9 @@ import throttle from 'lodash.throttle'
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
+  'square',
   'lenovo',
   'tencent',
-  'oppo',
   'bigo',
   'blued',
   'paypay',

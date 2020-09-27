@@ -1,7 +1,7 @@
 const homeLogos = [
+  'square',
   'lenovo',
   'tencent',
-  'oppo',
   'bigo',
   'blued',
   'paypay',
