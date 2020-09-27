@@ -102,7 +102,7 @@ $progress-border-radius: 5px !important;
   }
 
   .show {
-      display: block !important;
+    display: block !important;
   }
 
   .show-pc {
@@ -972,6 +972,57 @@ $progress-border-radius: 5px !important;
         .performance {
           margin-top: -3rem;
           width: 50%;
+        }
+      }
+    }
+  }
+
+  .sponsors-body {
+    .title {
+      text-align: center;
+
+      &::before {
+        left: 50%;
+        width: 15%;
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        &::before {
+          width: 40%;
+          border-bottom: 15px solid $C1;
+        }
+      }
+    }
+
+    .sponsors-wrapper {
+      text-align: center;
+      padding-bottom: 4rem;
+
+      .sponsors-title {
+        font-size: $size-5;
+        font-weight: 600;
+        color: $C5;
+      }
+
+      .logos {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: 1rem auto;
+
+        img {
+          width: auto;
+          height: 70px;
+          margin: 10px 9%;
+        }
+      }
+
+      @include mobile {
+        padding-bottom: 2rem;
+
+        .logos img {
+          height: 55px;
         }
       }
     }
