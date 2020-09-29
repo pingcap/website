@@ -13,7 +13,6 @@ const Positions = () => {
         await axios.get('https://api.lever.co/v0/postings/pingcap?mode=json')
       ).data
       setPositions(positionRes)
-      console.log('positions', positionRes)
     } catch (e) {
       console.log('Failed to fetch positions')
       return
