@@ -1,13 +1,13 @@
 import '../styles/pages/caseStudies.scss'
 import '../lib/graphql/image'
 
-import { graphql, Link, navigate } from 'gatsby'
-import React, { useEffect, useState, useRef } from 'react'
-
+import { Link, graphql, navigate } from 'gatsby'
+import React, { useEffect, useRef, useState } from 'react'
 import { replaceTitle, truncate } from '../lib/string'
+
+import ColumnsForDebugging from '../components/columnsForDebugging'
 import Img from 'gatsby-image'
 import Layout from '../components/layout'
-import ColumnsForDebugging from '../components/columnsForDebugging'
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore'
 import NavigateNextIcon from '@material-ui/icons/NavigateNext'
 import { Router } from '@reach/router'
@@ -18,9 +18,9 @@ import flatten from 'lodash.flatten'
 const CaseStudies = ({ data, location }) => {
   const { pathname } = location
   const currentCategory =
-    pathname.slice(
-      pathname.search('case-studies') + 'case-studies'.length + 1
-    ) || 'All'
+    pathname
+      .slice(pathname.search('case-studies') + 'case-studies'.length + 1)
+      .replace('-', ' ') || 'All'
   const {
     BannerSVG,
     placeholderSVG,
