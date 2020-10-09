@@ -11,8 +11,6 @@ const Labels = ({
   pathPrefix,
   labelPathMap = {},
 }) => {
-  console.log(pathPrefix)
-
   if (!isArray(currentLabel)) {
     currentLabel = [currentLabel]
   }

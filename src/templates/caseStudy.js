@@ -86,8 +86,6 @@ const CaseStudy = ({ data, pageContext }) => {
     tags && tags.unshift('All')
   }
 
-  console.log(intl.locale)
-
   const baseCateMenuCfg = {
     menu: {
       className: 'titles',
