@@ -1,20 +1,20 @@
-import { graphql } from 'gatsby'
-import Link from '../components/IntlLink'
-import React, { useEffect, useState, useRef } from 'react'
+import { FormattedMessage, useIntl } from 'react-intl'
+import React, { useEffect, useRef, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
 import { Button } from '@seagreenio/react-bulma'
+import Labels from '../components/labels'
 import Layout from '../components/layout'
-import SEO from '../components/seo'
-import Socials from '../components/socials'
+import Link from '../components/IntlLink'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-import TOCRenderer from '../components/tocRenderer'
-import { FormattedMessage } from 'react-intl'
-import Labels from '../components/labels'
-import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { MenuGenerator } from '../components/menu'
+import SEO from '../components/seo'
+import Socials from '../components/socials'
+import TOCRenderer from '../components/tocRenderer'
+import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
+import { graphql } from 'gatsby'
 
 const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
   return (
@@ -25,6 +25,8 @@ const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
 })
 
 const CaseStudy = ({ data, pageContext }) => {
+  const intl = useIntl()
+
   const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
@@ -83,6 +85,8 @@ const CaseStudy = ({ data, pageContext }) => {
     companies && companies.unshift('All')
     tags && tags.unshift('All')
   }
+
+  console.log(intl.locale)
 
   const baseCateMenuCfg = {
     menu: {

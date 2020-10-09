@@ -1,7 +1,7 @@
-import React from 'react'
 import { Link } from 'gatsby'
-import { replaceSpaceWithDash } from '../lib/string'
+import React from 'react'
 import { isArray } from '../lib/dataType'
+import { replaceSpaceWithDash } from '../lib/string'
 
 const Labels = ({
   className,
@@ -11,6 +11,8 @@ const Labels = ({
   pathPrefix,
   labelPathMap = {},
 }) => {
+  console.log(pathPrefix)
+
   if (!isArray(currentLabel)) {
     currentLabel = [currentLabel]
   }

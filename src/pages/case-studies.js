@@ -20,7 +20,8 @@ const CaseStudies = ({ data, location }) => {
   const currentCategory =
     pathname
       .slice(pathname.search('case-studies') + 'case-studies'.length + 1)
-      .replace('-', ' ') || 'All'
+      .replace('-', ' ')
+      .replace('/', '') || 'All'
   const {
     BannerSVG,
     placeholderSVG,
