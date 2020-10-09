@@ -83,11 +83,6 @@
     "name": "Financial Services",
     "customers": [
       {
-        "name": "Bank of Beijing",
-        "summary": "Bank of Beijing began deploying TiDB to supports its mission-critical online payment system on March 2018. This is the first time a NewSQL database is adopted to support core banking workloads in China.",
-        "logo": "/images/blog/customers/bank-of-beijing-logo.png"
-      },
-      {
         "name": "Ping++",
         "summary": "As the leading payment SaaS solution provider in China, Ping++ serves 25,000 customers across 70 industries. Ping++ chooses TiDB as its real-time data warehouse solution because TiDB breaks the separation between OLTP and OLAP and provides a scalable Hybrid Transactional and Analytical Processing (HTAP) database. It also provides industry-standard security features to support financial services.",
         "logo": "/images/blog/customers/ping++-logo.png"
