@@ -6,7 +6,7 @@ const BlogTags = ({ data, pageContext }) => (
   <BlogsComponent
     data={data}
     pageContext={pageContext}
-    PaginationPathPrefix={`/blog/tag/${pageContext.tag}`}
+    PaginationPathPrefix={`/blog/tag/${pageContext.tag.replace(/\s+/g, '-')}`}
     isTagPage
   />
 )

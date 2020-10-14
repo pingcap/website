@@ -6,7 +6,10 @@ const BlogCategories = ({ data, pageContext }) => (
   <BlogsComponent
     data={data}
     pageContext={pageContext}
-    PaginationPathPrefix={`/case-studies/category/company/${pageContext.company}`}
+    PaginationPathPrefix={`/case-studies/category/company/${pageContext.company.replace(
+      /\s+/g,
+      '-'
+    )}`}
     isBlog={false}
     isCompanyPage={true}
   />
