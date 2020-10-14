@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef, useCallback } from 'react'
 import Link from '../../../components/IntlLink'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
+import { graphql } from 'gatsby'
 import {
   noticeItemData,
   noticeDetailsData,
