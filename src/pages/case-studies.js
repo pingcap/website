@@ -245,8 +245,14 @@ function Logos({ logos }) {
         }))
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
+            {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
               className="detail-card"
+              onKeyDown={() => {
+                if (logo.relativePath) {
+                  navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)
+                }
+              }}
               onClick={() => {
                 if (logo.relativePath) {
                   navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)

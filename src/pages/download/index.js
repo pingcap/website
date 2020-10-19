@@ -3,7 +3,7 @@ import '../../styles/pages/download/index.scss'
 import React, { useState, useEffect } from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql, Link } from 'gatsby'
+import { Link } from 'gatsby'
 import { logos } from '../../data/download-tidb'
 import Prism from 'prismjs'
 import { Button } from '@seagreenio/react-bulma'
@@ -100,7 +100,12 @@ const Menu = ({
 const MenuItem = ({ children, onSelect, menuKey, className }) => {
   return (
     <div
+      role="button"
+      tabIndex={0}
       className={className}
+      onKeyDown={() => {
+        onSelect(menuKey)
+      }}
       onClick={() => {
         onSelect(menuKey)
       }}

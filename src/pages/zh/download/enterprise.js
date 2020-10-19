@@ -75,7 +75,7 @@ const Enterprise = ({ data }) => {
         return
       }
       try {
-        const { data, status } = await axios.post(
+        await axios.post(
           'https://accounts.pingcap.com/api/customer-support/business-download-leads',
           {
             name,

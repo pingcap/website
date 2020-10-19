@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Swiper from 'swiper'
 import { Button } from '@seagreenio/react-bulma'
 
@@ -8,22 +8,6 @@ import Link from '../../components/IntlLink'
 import data from '../../data/zh/user-message-2019.json'
 
 import '../../styles/pages/zh/user-message-2019.scss'
-
-const useWidth = () => {
-  const [width, setWidth] = useState(window.innerWidth)
-  useEffect(() => {
-    const onResize = () => setWidth(window.innerWidth)
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
-  return width
-}
-
-const useMobile = (breakpoint = 768) => {
-  const width = useWidth()
-  const mobile = width >= breakpoint
-  return mobile
-}
 
 const Card = ({ quoteClass, content, title, author, avatar }) => {
   const cardRef = useRef()
@@ -35,7 +19,8 @@ const Card = ({ quoteClass, content, title, author, avatar }) => {
     }
     el.addEventListener('wheel', listener)
     return () => el.removeEventListener('wheel', listener)
-  }, [cardRef.current])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
   return (
     <div className="swiper-slide slide-card" ref={cardRef}>
       <div className="wrapper">
@@ -83,6 +68,7 @@ const SliderPage = ({ pageClass, title, messages }) => {
         },
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -112,8 +98,6 @@ const SliderPage = ({ pageClass, title, messages }) => {
 }
 
 const UserMessage2019 = () => {
-  //   const isMobile = useMobile()
-
   useEffect(() => {
     new Swiper('.swiper-pages', {
       direction: 'vertical',

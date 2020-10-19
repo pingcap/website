@@ -1,5 +1,3 @@
-import { func } from 'prop-types'
-
 export function truncate(n, useWordBoundary = false) {
   if (this.length <= n) {
     return this

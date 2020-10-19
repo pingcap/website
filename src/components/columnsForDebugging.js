@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 const ColumnsForDebugging = () => {
   const gap = 32
-  const desktop = 960 + gap * 2 + 'px'
   const widescreen = 1152 + gap * 2 + 'px'
   const fullhd = 1334 + gap * 2 + 'px'
   const desktopWidth = '960px'
@@ -29,6 +28,8 @@ const ColumnsForDebugging = () => {
     }
     window.addEventListener('resize', listener)
     return () => window.removeEventListener('resize', listener)
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     const root = document.getElementsByTagName('html')[0]
