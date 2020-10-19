@@ -3,6 +3,8 @@ import DataFun from '../../../../images/community/events/hptc/datafun.svg'
 import GoCN from '../../../../images/community/events/hptc/gocn.svg'
 import CSDN from '../../../../images/community/events/hptc/csdn.svg'
 import UCloud from '../../../../images/community/events/hptc/ucloud.svg'
+import PingAnTech from '../../../../images/community/events/hptc/pingankeji.png'
+import Segmengfault from '../../../../images/community/events/hptc/segmentfault.png'
 import Oschina from '../../../../images/community/events/hptc/oschina.svg'
 
 const noticeItemData = [
@@ -28,6 +30,39 @@ const noticeDetailsData = {
   ],
 }
 
+const judgesData = [
+  {
+    avatar:
+      'https://download.pingcap.com//images/community/high-performance-tidb/huangdongxu.png',
+    name: 'Ed Huang',
+    title: 'CTO & Co-founder at PingCAP',
+  },
+  {
+    avatar:
+      'https://download.pingcap.com//images/community/high-performance-tidb/wangyang.png',
+    name: 'Yang Wang',
+    title: 'Head of Database Product Department at Ping An Technology',
+  },
+  {
+    avatar:
+      'https://download.pingcap.com//images/community/high-performance-tidb/sunxiaoguang.png',
+    name: 'Xiaoguang Sun',
+    title: 'Head of Technology Platform at Zhihu',
+  },
+  {
+    avatar:
+      'https://download.pingcap.com//images/community/high-performance-tidb/xuchengxuan.png',
+    name: 'Chengxuan Xu',
+    title: 'Head of Database Infrastructure at PalFish',
+  },
+  {
+    avatar:
+      'https://download.pingcap.com//images/community/high-performance-tidb/tangliu.png',
+    name: 'Siddon Tang',
+    title: 'Chief Engineer at PingCAP',
+  },
+]
+
 const materialsData = [
   {
     thumbImg:
@@ -51,7 +86,10 @@ const materialsData = [
 const sponsorsData = [
   {
     subTitle: 'Cloud computing equipment support',
-    logos: [{ logo: UCloud, alt: 'ucloud logo' }],
+    logos: [
+      { logo: UCloud, alt: 'ucloud logo' },
+      { logo: PingAnTech, alt: 'Ping An Technology' },
+    ],
   },
   {
     subTitle: 'Community support',
@@ -60,9 +98,16 @@ const sponsorsData = [
       { logo: Juejin, alt: 'jue jin logo' },
       { logo: DataFun, alt: 'data fun logo' },
       { logo: CSDN, alt: 'csdn logo' },
+      { logo: Segmengfault, alt: 'segmentfault logo' },
       { logo: GoCN, alt: 'go cn logo' },
     ],
   },
 ]
 
-export { noticeItemData, noticeDetailsData, materialsData, sponsorsData }
+export {
+  noticeItemData,
+  noticeDetailsData,
+  judgesData,
+  materialsData,
+  sponsorsData,
+}
