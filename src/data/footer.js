@@ -81,6 +81,11 @@ const footerColumns = [
           link: 'https://github.com/pingcap',
           outbound: true,
         },
+        {
+          name: 'TiDB Monthly',
+          link: 'https://pingcap.com/weekly/',
+          outbound: true,
+        },
       ],
     },
   ],
