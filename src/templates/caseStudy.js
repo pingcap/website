@@ -1,4 +1,4 @@
-import { FormattedMessage, useIntl } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import React, { useEffect, useRef, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -25,8 +25,6 @@ const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
 })
 
 const CaseStudy = ({ data, pageContext }) => {
-  const intl = useIntl()
-
   const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)

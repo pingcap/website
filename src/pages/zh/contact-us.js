@@ -45,7 +45,8 @@ const ContactUs = ({ data }) => {
                 <img
                   className="submit-icon"
                   src={submitFailSVG.publicURL}
-                ></img>
+                  alt="submit icon"
+                />
                 <h3 className="submit-text--title">提交失败</h3>
               </div>
               <p className="submit-desc">
@@ -58,7 +59,8 @@ const ContactUs = ({ data }) => {
                 <img
                   className="submit-icon"
                   src={submitSuccessSVG.publicURL}
-                ></img>
+                  alt="submit icon"
+                />
                 <h3 className="submit-text--title">提交成功</h3>
               </div>
               <p className="submit-desc">请耐心等待，我们稍后会联系您</p>
@@ -221,6 +223,8 @@ const FormItem = React.memo(
           return
         case 'checkbox':
           setFormData(e.target.checked)
+          return
+        default:
           return
       }
     }

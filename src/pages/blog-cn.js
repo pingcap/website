@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from '@reach/router'
 import { navigate } from 'gatsby'
 
@@ -17,7 +17,7 @@ const BlogCN = () => {
     } else {
       navigate('/zh/blog')
     }
-  }, [])
+  }, [blogTag, blogPathName])
 
   return null
 }

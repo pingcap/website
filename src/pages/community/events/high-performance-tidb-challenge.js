@@ -105,8 +105,10 @@ const HPTC = ({ data }) => {
     }
 
     getRankList()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const openNoticeDetail = useCallback((idx) => {
     let className = 'show-detail'
     if (window.matchMedia('(max-width:550px)').matches) {
@@ -307,7 +309,14 @@ const HPTC = ({ data }) => {
                     Evaluation criteria
                   </Button>
                   <div className="grading" ref={gradingModalRef}>
-                    <div className="close" onClick={toggleGradingDetail}></div>
+                    {/* eslint-disable-next-line jsx-a11y/control-has-associated-label */}
+                    <div
+                      className="close"
+                      role="button"
+                      tabIndex={0}
+                      onKeyDown={toggleGradingDetail}
+                      onClick={toggleGradingDetail}
+                    ></div>
                     <div className="grading-title">Evaluation criteria</div>
                     <div className="item">
                       <p className="criterion">Performance improvement (65%)</p>
@@ -402,7 +411,11 @@ const HPTC = ({ data }) => {
                 {judgesData.map((judge) => (
                   <div className="judge" key={judge.name}>
                     <div className="avatar">
-                      <img className="avatar" src={judge.avatar} />
+                      <img
+                        className="avatar"
+                        src={judge.avatar}
+                        alt="judge avatar"
+                      />
                       <div className="name">{judge.name}</div>
                       <div className="desc">{judge.title}</div>
                     </div>
@@ -426,7 +439,7 @@ const HPTC = ({ data }) => {
                     <Link to={material.link} type="aHrefLink">
                       <div className="content">
                         <div className="thumb-img">
-                          <img src={material.thumbImg} />
+                          <img src={material.thumbImg} alt="material thumb" />
                         </div>
                         <div className="name">{material.title}</div>
                         <div className="desc">{material.desc}</div>
@@ -500,8 +513,11 @@ const HPTC = ({ data }) => {
                   <>
                     {noticeItemData.map((notice, i) => (
                       <div
+                        role="button"
+                        tabIndex={0}
                         className="list-card"
                         key={i}
+                        onKeyDown={() => openNoticeDetail(i)}
                         onClick={() => openNoticeDetail(i)}
                       >
                         {notice}
@@ -542,6 +558,7 @@ const HPTC = ({ data }) => {
                   <a
                     href="https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img src={usabilityCard.publicURL} alt="TiDB usability" />
                   </a>
@@ -550,6 +567,7 @@ const HPTC = ({ data }) => {
                   <a
                     href="https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-1.md"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <img
                       src={performanceCard.publicURL}

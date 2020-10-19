@@ -61,6 +61,7 @@ const MenuGenerator = React.memo(({ menuConfig }) => {
   const [selectedKey, selectedMenuItem, setSelectedKey] = useMenu(
     menuItems,
     defaultKey,
+    // eslint-disable-next-line no-use-before-define
     selectedKey
   )
 

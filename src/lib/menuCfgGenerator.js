@@ -45,6 +45,8 @@ const categoryMenuItemForBlogAndCase = (
                 labelPathMap,
               })
             }
+          default:
+            return
         }
       }
     case 'case':
@@ -80,8 +82,14 @@ const categoryMenuItemForBlogAndCase = (
                 labelPathMap,
               })
             }
+
+          default:
+            return
         }
       }
+
+    default:
+      return
   }
 }
 
