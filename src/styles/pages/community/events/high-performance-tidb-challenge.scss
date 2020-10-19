@@ -542,6 +542,61 @@ $progress-border-radius: 5px !important;
     }
   }
 
+  .judges-body {
+    .title {
+      text-align: center;
+
+      &::before {
+        left: 50%;
+        width: 15%;
+        transform: translateX(-50%);
+      }
+
+      @include mobile {
+        &::before {
+          width: 30%;
+        }
+      }
+    }
+
+    .judge-list {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-around;
+
+      .judge {
+          margin: 1rem 3rem 2rem;
+          width: 15%;
+          height: auto;
+          text-align: center;
+          color: $C5;
+
+          .name {
+              margin: 2rem 0 0.3rem;
+              font-size: 18px;
+              font-weight: 600;
+          }
+
+          .desc {
+              font-size: 16px;
+          }
+
+        @include mobile {
+          margin: 1rem;
+          width: 40%;
+
+          .name {
+            font-size: 14px;
+          }
+
+          .desc {
+            font-size: 12px;
+          }
+        }
+      }
+  }
+  }
+
   .materials-body {
     background: url('https://download.pingcap.com/images/community/high-performance-tidb/learning-material-bg.svg')
       center no-repeat;

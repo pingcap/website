@@ -8,6 +8,7 @@ import { graphql } from 'gatsby'
 import {
   noticeItemData,
   noticeDetailsData,
+  judgesData,
   materialsData,
   sponsorsData,
 } from '../../../data/community/events/hptc'
@@ -391,6 +392,27 @@ const HPTC = ({ data }) => {
           </div>
         </section>
 
+        <section className="judges">
+          <div className="judges-body">
+            <div className="container">
+              <div className="title-wrapper">
+                <div className="title">Judges</div>
+              </div>
+              <div className="judge-list">
+                {judgesData.map((judge) => (
+                  <div className="judge" key={judge.name}>
+                    <div className="avatar">
+                      <img className="avatar" src={judge.avatar} />
+                      <div className="name">{judge.name}</div>
+                      <div className="desc">{judge.title}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="materials">
           <div className="materials-body">
             <div className="container">
@@ -548,11 +570,11 @@ const HPTC = ({ data }) => {
               </div>
               <div className="sponsors-list">
                 {sponsorsData.map((d) => (
-                  <div className="sponsors-wrapper">
+                  <div className="sponsors-wrapper" key={d.subTitle}>
                     <p className="sponsors-title">{d.subTitle}</p>
                     <div className="logos">
                       {d.logos.map((logo) => (
-                        <img src={logo.logo} alt={logo.alt} />
+                        <img src={logo.logo} alt={logo.alt} key={logo.alt} />
                       ))}
                     </div>
                   </div>
