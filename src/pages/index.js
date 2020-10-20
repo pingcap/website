@@ -347,7 +347,7 @@ const IndexPage = ({ data }) => {
                   <a
                     href="https://docs.pingcap.com/tidb-in-kubernetes/stable/get-started#get-started-with-tidb-operator-in-kubernetes"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     {' '}
                     <Box className="logo k8s">
@@ -357,7 +357,7 @@ const IndexPage = ({ data }) => {
                   <a
                     href="https://docs.pingcap.com/tidb/stable/production-deployment-using-tiup"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     <Box className="logo tiup">
                       <img src={logos.tiup} alt="TiUP logo" />
@@ -372,7 +372,7 @@ const IndexPage = ({ data }) => {
                   <a
                     href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-aws-eks"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     <Box className="logo aws">
                       <img src={logos.aws} alt="AWS logo" />
@@ -381,7 +381,7 @@ const IndexPage = ({ data }) => {
                   <a
                     href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-gcp-gke"
                     target="_blank"
-                    rel="noopener"
+                    rel="noopener noreferrer"
                   >
                     <Box className="logo gcp">
                       <img

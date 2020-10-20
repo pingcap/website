@@ -114,7 +114,7 @@ const Navbar = ({ showBanner }) => {
                 {item.dropdown ? (
                   <div
                     role="button"
-                    tabIndex="0"
+                    tabIndex={0}
                     className={`navbar-item has-dropdown is-hoverable with-main-section ${
                       burgerActive ? '' : 'hide-burger'
                     }"`}
@@ -146,7 +146,7 @@ const Navbar = ({ showBanner }) => {
                         href={item.href}
                         className="navbar-item with-main-section"
                         target="_blank"
-                        rel="noopener"
+                        rel="noopener noreferrer"
                       >
                         {item.name}
                       </a>

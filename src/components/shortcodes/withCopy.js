@@ -15,6 +15,7 @@ const WithCopy = () => {
     copy(txt)
     eventEmitter.emit('hasCopied', thisBtnID.current)
     selectText(copiedNode)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     thisBtnID.current = eventEmitter.getListenerNumber('hasCopied')
@@ -25,6 +26,7 @@ const WithCopy = () => {
         setCopied(false)
       }
     })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   return (
     <button ref={btnEl} onClick={clickToCopy} className="PingCAP-copyBtn">

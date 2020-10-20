@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery, Link } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 
 import AddIcon from '@material-ui/icons/Add'
 import LanguageIcon from '@material-ui/icons/Language'
@@ -7,7 +7,6 @@ import Socials from './socials'
 import footerColumnsMap from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
-import { useLocation } from '@reach/router'
 import { useIntl } from 'react-intl'
 
 const Footer = () => {
@@ -29,12 +28,10 @@ const Footer = () => {
 
     const title = e.currentTarget
     const spread = title.children[0]
-    title.tabIndex = title.tabIndex === 0 ? 1 : 0
     spread.classList.toggle('clicked')
     title.nextSibling.classList.toggle('displayed')
   }
 
-  const location = useLocation()
   const intl = useIntl()
 
   const Lang = ({ align }) => {

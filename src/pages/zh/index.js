@@ -4,7 +4,7 @@ import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import Swiper from 'swiper'
-import { benefitsData, celebrateYourGrowthData, logos } from '../../data/zh'
+import { benefitsData, celebrateYourGrowthData } from '../../data/zh'
 
 import Layout from '../../components/layout'
 import { PostFromUsInHome } from '../../components/zh/postFromUs'
@@ -218,7 +218,7 @@ const IndexPage = ({ data }) => {
                   <div className="swiper-wrapper top">
                     {banners.map(({ img, url }, i) => (
                       <div key={i} className="swiper-slide">
-                        <a href={url} rel="noopener" target="_blank">
+                        <a href={url} rel="noopener noreferrer" target="_blank">
                           <img src={img} alt="" />
                         </a>
                       </div>
@@ -370,76 +370,6 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </section>
-
-        {/* <section className="section section-get-started-with-tidb zh">
-          <div className="container">
-            <h2 className="title section-title is-4">开始试用 TiDB</h2>
-            <div className="columns is-variable is-6">
-              <div className="column">
-                <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title is-5">在数据中心</h3>
-                  <div className="strikethrough-primary" />
-
-                  <Box className="logo k8s">
-                    <img src={logos.kubernetes} alt="Kubernetes logo" />
-                  </Box>
-                  <Box className="logo tiup">
-                    <img src={logos.tiup} alt="TiUP logo" />
-                  </Box>
-
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/zh/tidb/stable/production-deployment-using-tiup"
-                    target="_blank"
-                    color="primary"
-                  >
-                    查看手册
-                  </Button>
-                </NormalBox>
-              </div>
-              <div className="column">
-                <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title is-5">在公有云上</h3>
-                  <div className="strikethrough-primary" />
-                  <Box className="logo aws">
-                    <img src={logos.aws} alt="AWS logo" />
-                  </Box>
-                  <Box className="logo gcp">
-                    <img
-                      src={logos.googleCloudPlatform}
-                      alt="Google Cloud Platform logo"
-                    />
-                  </Box>
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/zh/tidb/stable/production-deployment-using-tiup"
-                    target="_blank"
-                    color="primary"
-                  >
-                    查看手册
-                  </Button>
-                </NormalBox>
-              </div>
-              <div className="column">
-                <NormalBox className="outer" shadowless>
-                  <h3 className="title column-title is-5">数据库即服务</h3>
-                  <div className="strikethrough-primary" />
-                  <Box className="logo tidb-cloud">
-                    <img src={logos.database} alt="Database" />
-                  </Box>
-                  <Button
-                    as="a"
-                    href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart"
-                    target="_blank"
-                    color="primary"
-                  >
-                    敬请期待
-                  </Button>
-                </NormalBox>
-              </div>
-            </div>
-          </div>
-        </section> */}
 
         <section className="section">
           <section className="container">

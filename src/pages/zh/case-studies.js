@@ -2,7 +2,6 @@ import '../../styles/pages/caseStudies.scss'
 import '../../lib/graphql/image'
 
 import { graphql, Link, navigate } from 'gatsby'
-// import Link from '../../components/IntlLink'
 import React, { useEffect, useState, useRef, useMemo } from 'react'
 import { replaceTitle, truncate } from '../../lib/string'
 
@@ -171,7 +170,13 @@ const Dropdown = ({ className, items, selectedItem }) => {
     (dropped ? 'dropdown is-active' : 'dropdown') + ` ${className}`
   const arrowIconClass = dropped ? 'down-arrow' : 'up-arrow'
   return (
-    <div className={dropdownClass} onClick={() => setDropped(!dropped)}>
+    <div
+      role="button"
+      tabIndex={0}
+      className={dropdownClass}
+      onClick={() => setDropped(!dropped)}
+      onKeyDown={() => setDropped(!dropped)}
+    >
       <div className="dropdown-trigger">
         <button
           className="button"
@@ -213,6 +218,11 @@ const Dropdown = ({ className, items, selectedItem }) => {
 }
 
 function Logos({ logos }) {
+  const navigateFromLogo = (logo) => {
+    if (logo.relativePath) {
+      navigate(`/zh/case-studies/${replaceTitle(logo.relativePath)}`)
+    }
+  }
   return (
     <div className="columns is-multiline logos">
       {logos
@@ -223,10 +233,11 @@ function Logos({ logos }) {
         .map((logo, i) => (
           <div key={logo.customer + '-' + i} className="column is-3">
             <div
+              role="button"
+              tabIndex={0}
               className="detail-card"
-              onClick={() => {
-                navigate(`/zh/case-studies/${replaceTitle(logo.relativePath)}`)
-              }}
+              onKeyDown={() => navigateFromLogo(logo)}
+              onClick={() => navigateFromLogo(logo)}
             >
               <div className="title column-title has-text-left">
                 {logo.customer}
