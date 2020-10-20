@@ -1,6 +1,10 @@
 .PingCAP-Navbar {
   display: block;
 
+  transition: all .25s;
+  border-bottom: 1px solid rgba($C2, 0);
+  box-shadow: 0 2px 8px rgba(#000, 0.00);
+
   .promotion {
     background-color: $B3;
     color: $M1;
