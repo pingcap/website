@@ -22,7 +22,8 @@
     border-radius: 0;
     z-index: 30; // Same as .navbar.is-fixed-top
 
-    &:-webkit-progress-bar {
+    // pseudo class should use :: , not :
+    &::-webkit-progress-bar {
       background: transparent;
     }
   }
