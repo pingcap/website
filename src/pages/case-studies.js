@@ -236,6 +236,11 @@ const Dropdown = ({ className, items, selectedItem }) => {
 }
 
 function Logos({ logos }) {
+  const navigateFromLogo = (logo) => {
+    if (logo.relativePath) {
+      navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)
+    }
+  }
   return (
     <div className="columns is-multiline is-gapless logos">
       {logos
@@ -248,16 +253,8 @@ function Logos({ logos }) {
             {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
             <div
               className="detail-card"
-              onKeyDown={() => {
-                if (logo.relativePath) {
-                  navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)
-                }
-              }}
-              onClick={() => {
-                if (logo.relativePath) {
-                  navigate(`/case-studies/${replaceTitle(logo.relativePath)}`)
-                }
-              }}
+              onKeyDown={() => navigateFromLogo(logo)}
+              onClick={() => navigateFromLogo(logo)}
             >
               <div className="title column-title has-text-left">
                 {logo.customer}
