@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 const navbarItemsEn = {
   navItems: [
@@ -87,7 +86,11 @@ const navbarItemsZh = {
 // const promotionText = null
 const promotionText = (
   <>
-    Join the TiDB Community Slack channel <Link to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">&nbsp;HERE&nbsp;</Link> to interact with the community!
+    Join the TiDB Community Slack channel{' '}
+    <a href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">
+      &nbsp;HERE&nbsp;
+    </a>{' '}
+    to interact with the community!
   </>
 )
 
