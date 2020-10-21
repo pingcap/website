@@ -10,7 +10,10 @@ import { Button } from '@seagreenio/react-bulma'
 const ContactUs = () => {
   return (
     <Layout>
-      <SEO title="Contact " description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics" />
+      <SEO
+        title="Contact"
+        description="An open-source, cloud-native, distributed SQL database for elastic scale and real-time analytics"
+      />
       <article className="PingCAP-Contact-Us">
         <section className="hero is-medium">
           <div className="hero-body">
