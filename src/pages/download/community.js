@@ -28,6 +28,7 @@ const Community = ({ data }) => {
     'v4.0.4',
     'v4.0.5',
     'v4.0.6',
+    'v4.0.7',
   ]
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
