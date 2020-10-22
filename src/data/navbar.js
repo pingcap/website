@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from '../components/IntlLink'
 
 const navbarItemsEn = {
   navItems: [
@@ -87,9 +88,12 @@ const navbarItemsZh = {
 const promotionText = (
   <>
     Join the TiDB Community Slack channel{' '}
-    <a href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">
+    <Link
+      to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+      type="outBoundLink"
+    >
       &nbsp;HERE&nbsp;
-    </a>{' '}
+    </Link>{' '}
     to interact with the community!
   </>
 )
