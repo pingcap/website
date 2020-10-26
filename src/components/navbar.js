@@ -13,9 +13,11 @@ function PromotionBanner({ promotionText, closePromotion }) {
   return (
     <div className="promotion">
       <div className="container">
-        <div className="horn" />
-        <div className="text">{promotionText}</div>
-        <div className="blank" />
+        <div className="left">
+          <div className="horn" />
+          <div className="text">{promotionText}</div>
+        </div>
+        {/*<div className="blank" />*/}
         <div
           role="button"
           tabIndex={0}
