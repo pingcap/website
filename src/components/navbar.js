@@ -17,7 +17,6 @@ function PromotionBanner({ promotionText, closePromotion }) {
           <div className="horn" />
           <div className="text">{promotionText}</div>
         </div>
-        {/*<div className="blank" />*/}
         <div
           role="button"
           tabIndex={0}

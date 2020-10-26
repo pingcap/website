@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 4rem;
+    height: $height-promotion;
     background-color: $B3;
     color: $M1;
 
@@ -37,10 +37,6 @@
             margin-right: 0.5rem;
           }
         }
-
-        .blank {
-          flex-grow: 1;
-        }
       }
 
       .close {
@@ -49,12 +45,6 @@
         background: url(../../../images/cross.svg);
         background-size: contain;
         cursor: pointer;
-
-        @include mobile {
-          position: absolute;
-          right: 1.5rem;
-          top: 1rem;
-        }
       }
 
       a {
@@ -66,10 +56,10 @@
   
   & > .container {
     @include mobile {
-      height: $navbar-height-mobile;
+      height: $height-navbar-mobile;
     }
 
-    height: $navbar-height;
+    height: $height-navbar;
   }
 
   &.has-border-and-shadow {
