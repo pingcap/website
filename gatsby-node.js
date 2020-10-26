@@ -24,6 +24,14 @@ const createBlogCNPages = require('./create-pages/blogCNPages')
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
 
+  // remove page: /download/community
+  createRedirect({
+    fromPath: '/download/community',
+    toPath: '/download',
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
   await Promise.all([
     createBlogs({ graphql, createPage, createRedirect }),
     createBlogPagination({ graphql, createPage }),
