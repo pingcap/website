@@ -2,11 +2,14 @@
   display: block;
 
   .promotion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 4rem;
     background-color: $B3;
     color: $M1;
 
     .container {
-      height: 4rem;
       display: flex;
       flex-direction: row;
       align-items: center;

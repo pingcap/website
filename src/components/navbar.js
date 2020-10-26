@@ -9,6 +9,26 @@ import { useIntl } from 'react-intl'
 
 import classNames from 'classnames'
 
+function PromotionBanner({ promotionText, closePromotion }) {
+  return (
+    <div className="promotion">
+      <div className="container">
+        <div className="horn" />
+        <div className="text">{promotionText}</div>
+        <div className="blank" />
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="close"
+          className="close"
+          onClick={closePromotion}
+          onKeyDown={closePromotion}
+        />
+      </div>
+    </div>
+  )
+}
+
 const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
@@ -61,23 +81,9 @@ const Navbar = ({ showBanner }) => {
       })}
       role="navigation"
     >
-      {promotionText && promotionOpen && (
-        <div className="promotion">
-          <div className="container">
-            <div className="horn" />
-            {promotionText}
-            <div className="blank" />
-            <div
-              role="button"
-              tabIndex={0}
-              aria-label="close"
-              className="close"
-              onClick={closePromotion}
-              onKeyDown={closePromotion}
-            />
-          </div>
-        </div>
-      )}
+      {promotionText &&
+        promotionOpen &&
+        PromotionBanner({ promotionText, closePromotion })}
 
       <div className="container">
         <div className="navbar-brand">
