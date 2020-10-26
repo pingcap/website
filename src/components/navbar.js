@@ -7,6 +7,8 @@ import { Button } from '@seagreenio/react-bulma'
 import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
 import { useIntl } from 'react-intl'
 
+import classNames from 'classnames'
+
 const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
@@ -54,9 +56,9 @@ const Navbar = ({ showBanner }) => {
 
   return (
     <nav
-      className={`navbar is-fixed-top PingCAP-Navbar${
-        showBorder ? ' has-border-and-shadow' : ''
-      }`}
+      className={classNames('navbar is-fixed-top PingCAP-Navbar', {
+        'has-border-and-shadow': showBorder,
+      })}
       role="navigation"
     >
       {promotionText && promotionOpen && (
@@ -88,7 +90,9 @@ const Navbar = ({ showBanner }) => {
           </Link>
 
           <button
-            className={`navbar-burger${burgerActive ? ' is-active' : ''}`}
+            className={classNames('navbar-burger', {
+              'is-active': burgerActive,
+            })}
             aria-label="menu"
             aria-expanded="false"
             onClick={handleSetBurgerActive}
@@ -107,7 +111,9 @@ const Navbar = ({ showBanner }) => {
             className="github-icon-mobile"
           />
         </div>
-        <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
+        <div
+          className={classNames('navbar-menu', { 'is-active': burgerActive })}
+        >
           <div className="navbar-start">
             {navbarItems.navItems.map((item) => (
               <Fragment key={item.name}>
@@ -115,9 +121,12 @@ const Navbar = ({ showBanner }) => {
                   <div
                     role="button"
                     tabIndex={0}
-                    className={`navbar-item has-dropdown is-hoverable with-main-section ${
-                      burgerActive ? '' : 'hide-burger'
-                    }"`}
+                    className={classNames(
+                      'navbar-item has-dropdown is-hoverable with-main-section',
+                      {
+                        'hide-burger': !burgerActive,
+                      }
+                    )}
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >
