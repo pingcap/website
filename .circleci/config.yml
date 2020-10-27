@@ -35,26 +35,26 @@ jobs:
           name: 'Publish Website Could LA_1_HOST'
           command:
             ssh-keyscan "${DEPLOY_UCLOUD_LA_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-            rsync -avz public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+            rsync -avz --delete --exclude css --exclude js --exclude images public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_1_HOST}:${DEPLOY_UCLOUD_PATH}";
 
       - deploy:
           name: 'Publish Website Could LA_2_HOST'
           command:
             ssh-keyscan "${DEPLOY_UCLOUD_LA_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-            rsync -avz public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+            rsync -avz --delete --exclude css --exclude js --exclude images public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_LA_2_HOST}:${DEPLOY_UCLOUD_PATH}";
             curl "http://www.google.com/ping?sitemap=https://pingcap.com/sitemap.xml"
 
       - deploy:
           name: 'Publish Website Could BJ_1_HOST'
           command:
             ssh-keyscan "${DEPLOY_UCLOUD_BJ_1_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-            rsync -avz public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
+            rsync -avz --delete --exclude css --exclude js --exclude images public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_1_HOST}:${DEPLOY_UCLOUD_PATH}";
 
       - deploy:
           name: 'Publish Website Could BJ_2_HOST'
           command:
             ssh-keyscan "${DEPLOY_UCLOUD_BJ_2_HOST}" >> ~/.ssh/known_hosts 2>/dev/null;
-            rsync -avz public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_2_HOST}:${DEPLOY_UCLOUD_PATH}";
+            rsync -avz --delete --exclude css --exclude js --exclude images public/ "${DEPLOY_UCLOUD_USER}@${DEPLOY_UCLOUD_BJ_2_HOST}:${DEPLOY_UCLOUD_PATH}";
 
 workflows:
   version: 2
