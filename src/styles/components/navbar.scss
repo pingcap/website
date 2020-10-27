@@ -3,56 +3,39 @@
   position: sticky;
   top: 0;
 
-  .promotion {
+  .PromotionBanner {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: $height-promotion;
     background-color: $B3;
     color: $M1;
-
+    @include mobile {
+      padding: 0 $padding-page-mobile;
+      font-size: $size-8;
+    }
     .container {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-
-      @include mobile {
-        padding: 0 1rem;
-        font-size: $size-8;
-        position: relative;
-      }
-
-      .left {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        .horn {
-          width: 1.25rem;
-          height: 1.25rem;
-          margin-right: 1.25rem;
-          background: url(../../../images/horn.svg);
-          background-size: contain;
-
-          @include mobile {
-            margin-right: 0.5rem;
-          }
+    }
+    &-main {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      &-horn {
+        display: inline-block;
+        user-select: none;
+        margin-right: 1.25rem;
+        @include mobile {
+          margin-right: 0.5rem;
         }
       }
-
-      .close {
-        width: 0.75rem;
-        height: 0.75rem;
-        background: url(../../../images/cross.svg);
-        background-size: contain;
-        cursor: pointer;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: underline;
-      }
+    }
+    &-close {
+      user-select: none;
+      cursor: pointer;
     }
   }
   

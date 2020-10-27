@@ -9,22 +9,32 @@ import { useIntl } from 'react-intl'
 
 import classNames from 'classnames'
 
-function PromotionBanner({ promotionText, closePromotion }) {
+function PromotionBanner({
+  promotionText,
+  closePromotion,
+  crossSVGPublicURL,
+  hornSVGPublicURL,
+}) {
+  const classname = `PromotionBanner`
   return (
-    <div className="promotion">
+    <div className={`${classname}`}>
       <div className="container">
-        <div className="left">
-          <div className="horn" />
+        <div className={`${classname}-main`}>
+          <div className={`${classname}-main-horn`}>
+            <img src={hornSVGPublicURL} alt="horn" />
+          </div>
           <div className="text">{promotionText}</div>
         </div>
         <div
           role="button"
           tabIndex={0}
           aria-label="close"
-          className="close"
+          className={`${classname}-close`}
           onClick={closePromotion}
           onKeyDown={closePromotion}
-        />
+        >
+          <img src={crossSVGPublicURL} alt="close" />
+        </div>
       </div>
     </div>
   )
@@ -38,6 +48,12 @@ const Navbar = ({ showBanner }) => {
           publicURL
         }
         GitHubSVG: file(relativePath: { eq: "github-icon-on-nav.svg" }) {
+          publicURL
+        }
+        CrossSVG: file(relativePath: { eq: "cross.svg" }) {
+          publicURL
+        }
+        HornSVG: file(relativePath: { eq: "horn.svg" }) {
           publicURL
         }
       }
@@ -84,7 +100,12 @@ const Navbar = ({ showBanner }) => {
     >
       {promotionText &&
         promotionOpen &&
-        PromotionBanner({ promotionText, closePromotion })}
+        PromotionBanner({
+          promotionText,
+          closePromotion,
+          crossSVGPublicURL: imageData.CrossSVG.publicURL,
+          hornSVGPublicURL: imageData.HornSVG.publicURL,
+        })}
 
       <div className="container">
         <div className="navbar-brand">
