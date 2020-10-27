@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 
 function SEO({ lang, title, description, meta, image: metaImage, link }) {
-  const { site, defefaultMetaImg } = useStaticQuery(
+  const { site, defaultMetaImg } = useStaticQuery(
     graphql`
       query {
         site {
@@ -16,7 +16,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
             siteUrl
           }
         }
-        defefaultMetaImg: file(relativePath: { eq: "pingcap-icon.png" }) {
+        defaultMetaImg: file(relativePath: { eq: "pingcap-icon.png" }) {
           publicURL
         }
       }
@@ -26,7 +26,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
   const metaDescription = description || site.siteMetadata.description
   const image = metaImage
     ? `https://download.pingcap.com${metaImage}`
-    : defefaultMetaImg.publicURL
+    : defaultMetaImg.publicURL
 
   return (
     <Helmet
@@ -89,7 +89,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         async
         defer
         src="//js.hs-scripts.com/4466002.js"
-      ></script>
+      />
     </Helmet>
   )
 }

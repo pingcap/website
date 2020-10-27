@@ -49,11 +49,11 @@ const footerColumns = [
         },
         {
           name: 'MySQL Scalability',
-          link: '/blog/category/MySQL%20Scalability',
+          link: '/blog/category/MySQL-Scalability',
         },
         {
           name: 'Open Source',
-          link: '/blog/category/Open%20Source%20Community',
+          link: '/blog/category/Open-Source-Community',
         },
       ],
     },
