@@ -28,6 +28,10 @@ const navbarItemsEn = {
       name: 'Community',
       href: '/community',
     },
+    {
+      name: 'About',
+      href: '/about',
+    },
   ],
   contactUs: {
     name: 'CONTACT US',
@@ -87,7 +91,11 @@ const navbarItemsZh = {
 // const promotionText = null
 const promotionText = (
   <>
-    Join the TiDB Community Slack channel <Link to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">&nbsp;HERE&nbsp;</Link> to interact with the community!
+    Join the TiDB Community Slack channel{' '}
+    <Link to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap">
+      &nbsp;HERE&nbsp;
+    </Link>{' '}
+    to interact with the community!
   </>
 )
 
