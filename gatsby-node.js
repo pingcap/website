@@ -26,7 +26,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   // remove page: /download/community
   createRedirect({
-    fromPath: '/download/community',
+    fromPath: '/download/community/',
     toPath: '/download',
     redirectInBrowser: true,
     isPermanent: true,
