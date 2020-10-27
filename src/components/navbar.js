@@ -77,7 +77,7 @@ const Navbar = ({ showBanner }) => {
 
   return (
     <nav
-      className={classNames('navbar is-fixed-top PingCAP-Navbar', {
+      className={classNames('navbar PingCAP-Navbar', {
         'has-border-and-shadow': showBorder,
       })}
       role="navigation"
