@@ -5,7 +5,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 const getSitemapForLanguage = (lang) => {
   const langPrefix = lang === 'en' ? '' : '/zh'
   const _ouput = `/sitemap-${lang}.xml`
-  const _exclude = [`${langPrefix}/404`]
+  const _exclude =
+    lang === 'en' ? [`${langPrefix}/404`, '/careers/*'] : [`${langPrefix}/404`]
   const filterRegex = lang === 'en' ? '/^((?!/zh/).)*$/' : '/^/zh//'
 
   const _query = `{
