@@ -1,5 +1,10 @@
+import '../../styles/pages/download/community.scss'
+
 import React, { useCallback, useState, useEffect } from 'react'
-import { graphql, Link } from 'gatsby'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { graphql } from 'gatsby'
+import Link from '../../components/IntlLink'
 
 import InputLabel from '@material-ui/core/InputLabel'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -7,16 +12,10 @@ import FormControl from '@material-ui/core/FormControl'
 import Select from '@material-ui/core/Select'
 import Checkbox from '@material-ui/core/Checkbox'
 
-import Layout from '../../../components/layout'
-import SEO from '../../../components/seo'
-
-import '../../../styles/pages/zh/download/community.scss'
-
 const Community = ({ data }) => {
   const { tidbLogoPNG, rocketIconSVG, linuxIconSVG } = data
   const [selVersion, setSelVersion] = useState('')
   const [selPkg, setSelPkg] = useState('')
-  // eslint-disable-next-line no-unused-vars
   const [pkgDesc, setPkgDesc] = useState('')
   const [termsChecked, setTermsChecked] = useState(false)
   const [downloadURL, setDownloadURL] = useState('')
@@ -96,8 +95,8 @@ const Community = ({ data }) => {
 
   return (
     <Layout>
-      <SEO title="Download TiDB Community" description="" />
-      <article className="PingCAP-Download-TiDB-Community-ZH">
+      <SEO title=" Download TiDB Community " description="" />
+      <article className="PingCAP-Download-TiDB-Enterprise">
         <section className="section">
           <div className="container enterprise-wrapper">
             <div className="tidb-logo">
@@ -105,32 +104,27 @@ const Community = ({ data }) => {
             </div>
             <div className="card">
               <div className="header">
-                <h1>开始体验 TiDB</h1>
                 <div className="rocket-icon">
                   <img src={rocketIconSVG.publicURL} alt="rocket icon" />
                 </div>
+                <h1>Get Started with TiDB</h1>
               </div>
               <div className="title-field">
-                <p>社区版下载</p>
+                <p>Download the community edition</p>
                 <img
                   className="lazy linux-icon"
                   src={linuxIconSVG.publicURL}
                   alt="Linux icon"
                 />
               </div>
-              <FormControl
-                className="form-control"
-                variant="outlined"
-                margin="dense"
-              >
+              <FormControl className="form-control" variant="outlined">
                 <InputLabel htmlFor="uncontrolled-native">
-                  选择 TiDB 版本
+                  Select TiDB version
                 </InputLabel>
                 <Select
                   value={selVersion}
                   onChange={handleVersionChange}
-                  label="选择 TiDB 版本"
-                  classes={{ select: 'download-select' }}
+                  label="Select TiDB version"
                 >
                   {versions.map((v) => (
                     <MenuItem key={v} value={v}>
@@ -139,16 +133,12 @@ const Community = ({ data }) => {
                   ))}
                 </Select>
               </FormControl>
-              <FormControl
-                className="form-control"
-                variant="outlined"
-                margin="dense"
-              >
-                <InputLabel>选择软件下载包</InputLabel>
+              <FormControl className="form-control" variant="outlined">
+                <InputLabel>Select software package</InputLabel>
                 <Select
                   value={selPkg}
                   onChange={handlePackageChange}
-                  label="选择软件下载包"
+                  label="Select software package"
                 >
                   {pkgs.map((p) => (
                     <MenuItem key={p} value={p}>
@@ -157,26 +147,28 @@ const Community = ({ data }) => {
                   ))}
                 </Select>
               </FormControl>
-              <div className="agreement">
-                <Checkbox
-                  checked={termsChecked}
-                  onChange={handleTermsChange}
-                  color="primary"
-                  className="checkbox"
-                />
-                我同意&nbsp;
-                <Link to="/zh/licenses">PingCAP 社区软件许可协议</Link>
-                与&nbsp;
-                <Link to="/zh/privacy-policy/">隐私协议</Link>
-              </div>
+              {pkgDesc && <div className="pkg-desc">{pkgDesc}</div>}
+              <Checkbox
+                checked={termsChecked}
+                onChange={handleTermsChange}
+                color="primary"
+                className="checkbox"
+              />
+              I agree to the{' '}
+              <Link to="/community-license-agreement">
+                PingCAP Community Software License Agreement.
+              </Link>
               <div>
-                <button className="button is-primary" onClick={downloadPackage}>
+                <button
+                  className="button is-primary is-rounded"
+                  onClick={downloadPackage}
+                >
                   {downloadURL ? (
                     <a href={downloadURL} download>
-                      下载
+                      Download
                     </a>
                   ) : (
-                    '下载'
+                    'Download'
                   )}
                 </button>
               </div>
@@ -187,30 +179,6 @@ const Community = ({ data }) => {
                 </div>
               )}
             </div>
-            <div className="more-info">
-              <p>查看更多信息</p>
-              <a
-                href="https://docs.pingcap.com/zh/tidb/v4.0/production-deployment-using-tiup"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                如何安装
-              </a>
-              <a
-                href="https://docs.pingcap.com/zh/tidb/v4.0/upgrade-tidb-using-tiup"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                如何升级
-              </a>
-              <a
-                href="https://docs.pingcap.com/zh/tidb/v4.0/release-notes"
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                Release Note
-              </a>
-            </div>
           </div>
         </section>
       </article>
@@ -220,13 +188,13 @@ const Community = ({ data }) => {
 
 export const query = graphql`
   query {
-    tidbLogoPNG: file(relativePath: { eq: "zh/download/tidb-logo.png" }) {
+    tidbLogoPNG: file(relativePath: { eq: "download/tidb-logo.png" }) {
       publicURL
     }
-    rocketIconSVG: file(relativePath: { eq: "zh/download/rocket-icon.svg" }) {
+    rocketIconSVG: file(relativePath: { eq: "download/rocket-icon.svg" }) {
       publicURL
     }
-    linuxIconSVG: file(relativePath: { eq: "zh/download/linux-icon.svg" }) {
+    linuxIconSVG: file(relativePath: { eq: "download/linux-icon.svg" }) {
       publicURL
     }
   }
