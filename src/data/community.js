@@ -4,7 +4,7 @@ import Writer from '../../images/community/writer.svg'
 import Learn from '../../images/community/learn.svg'
 import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
 import MonthlyMeeting from '../../images/events/monthly-meeting.svg'
-import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.svg'
+import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.png'
 
 const contributionGrow = [
   {
@@ -50,9 +50,9 @@ const communityActivities = [
     thumbnail: HPTCThumbNail,
     name: 'High Performance TiDB Challenge',
     eventType: 'Communtiy Activity',
-    time: 'Sep 17 - Nov, 21, 2020',
+    time: 'Sept 17 - Dec 5, 2020',
     desc:
-      'High Performance TiDB Challenge is a community bounty program which focuses on workload optimization to bring TiDB performance to a higher level! Multiple workloads are open for your optimization, with mentoring, and good sum of prize.',
+      'High Performance TiDB Challenge is a mentoring program which focuses on workload optimization to bring TiDB performance to a higher level!',
     readMoreLink: '/community/events/high-performance-tidb-challenge',
     outboundLink: false,
   },
