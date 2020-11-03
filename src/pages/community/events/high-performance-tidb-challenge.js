@@ -383,7 +383,14 @@ const HPTC = ({ data }) => {
                     <div className="desc">
                       The committee has decided to offer more resources for the
                       teams, including benchmark facilities on cloud platforms
-                      and TiDB Cloud credit coupons! Refer to About Challenge
+                      and TiDB Cloud credit coupons! Refer to{' '}
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md "
+                      >
+                        About Challenge{' '}
+                      </a>
                       for more details.
                     </div>
                   </div>
