@@ -17,6 +17,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
 import * as Shortcodes from '../components/shortcodes'
+import { replaceSpaceWithDash } from '../lib/string'
 
 const Blog = ({ data, pageContext }) => {
   const { mdx } = data
@@ -133,7 +134,11 @@ const Blog = ({ data, pageContext }) => {
                     <>
                       <Link to="/blog">Blog</Link>
                       <span> &gt; </span>
-                      <Link to={`/blog/category/${category}`}>{category}</Link>
+                      <Link
+                        to={`/blog/category/${replaceSpaceWithDash(category)}`}
+                      >
+                        {category}
+                      </Link>
                     </>
                   )}
                 </div>
