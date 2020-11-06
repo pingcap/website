@@ -136,7 +136,7 @@ const HPTC = ({ data }) => {
             <div className="container reverse">
               <div className="title-and-entry">
                 <div className="title-wrapper">
-                  <div className="date">Sept.17 - Nov. 21, 2020</div>
+                  <div className="date">Sept 17 - Dec 5, 2020</div>
                 </div>
                 <h1 className="title">
                   High Performance <br />
@@ -288,8 +288,8 @@ const HPTC = ({ data }) => {
                   <div className="numb">Step 3</div>
                   <div className="name">Code Submission</div>
                   <div className="desc">
-                    Submit the code change before Nov.15. PRs merged after
-                    Nov.15 will not be counted for the points.
+                    Submit the code change before Nov 29. PRs merged after Nov
+                    29 will not be counted for the points.
                   </div>
                 </div>
 
@@ -298,8 +298,8 @@ const HPTC = ({ data }) => {
                   <div className="name">Presentation</div>
                   <div className="desc">
                     Submit your presentation slides before 10:00 (China Standard
-                    Time), Nov.20. The team leader presents the optimization
-                    process and results at 13:00-17:00 on Nov.21 (online).
+                    Time), Dec 4. The team leader presents the optimization
+                    process and results at 13:00-17:00 on Dec 5(online).
                   </div>
                   <Button
                     rounded
@@ -376,6 +376,22 @@ const HPTC = ({ data }) => {
                     <div className="desc">
                       <span className="strong">1,350</span> US dollars for the
                       team
+                    </div>
+                  </div>
+                  <div className="item">
+                    <div className="award">Follow-up updates</div>
+                    <div className="desc">
+                      The committee has decided to offer more resources for the
+                      teams, including benchmark facilities on cloud platforms
+                      and TiDB Cloud credit coupons! Refer to{' '}
+                      <a
+                        target="_blank"
+                        rel="noreferrer"
+                        href="https://github.com/pingcap/community/blob/master/challenge-programs/high-performance-tidb-challenge.md "
+                      >
+                        About Challenge{' '}
+                      </a>
+                      for more details.
                     </div>
                   </div>
                 </div>
