@@ -1,0 +1,328 @@
+[
+  {
+    "title": "Metrics Relation Graph Helps DBAs Quickly Locate Performance Problems in TiDB",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/metrics-relation-graph-helps-dbas-quickly-locate-p",
+    "date": "2020-10-30"
+  },
+  {
+    "title": "Embracing NewSQL: Why PalFish Chose TiDB",
+    "logo": "/images/news/thenewstack-logo.png",
+    "link": "https://thenewstack.io/embracing-newsql-why-palfish-chose-tidb/",
+    "date": "2020-10-22"
+  },
+  {
+    "title": "How We Build an HTAP Database That Simplifies Your Data Platform",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-we-build-an-htap-database-that-simplifies-your",
+    "date": "2020-10-01"
+  },
+  {
+    "title": "Create a Scale-Out Hive Cluster With a Distributed, MySQL-Compatible Database",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/create-a-scale-out-hive-cluster-with-a-distributed",
+    "date": "2020-09-25"
+  },
+  {
+    "title": "Why We Chose a Distributed SQL Database to Complement MySQL",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/cluster-diagnostics-troubleshoot-cluster-issues-us-1",
+    "date": "2020-09-10"
+  },
+  {
+    "title": "Building an Automated Testing Framework Based on Chaos Mesh and Argo",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/building-an-automated-testing-framework-based-on-c",
+    "date": "2020-08-31"
+  },
+  {
+    "title": "How TiDB's HTAP Makes Truly Hybrid Workloads Possible",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-tidbs-htap-makes-truly-hybrid-workloads-possib",
+    "date": "2020-07-30"
+  },
+  {
+    "title": "Emerging Startups 2020: Database Technology",
+    "logo": "/images/news/tracxn-logo.png",
+    "link": "https://tracxn.com/d/emerging-startups/database-technology-startups-2020",
+    "date": "2020-07-11"
+  },
+  {
+    "title": "Cluster Diagnostics: Troubleshoot Cluster Issues Using Only SQL Queries",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/cluster-diagnostics-troubleshoot-cluster-issues-us-6",
+    "date": "2020-07-06"
+  },
+  {
+    "title": "PingCAP Announces TiDB Cloud, Bringing Fully-Managed TiDB Service to AWS and GCP",
+    "logo": "/images/news/cision-logo.png",
+    "link": "https://www.prnewswire.com/news-releases/pingcap-announces-tidb-cloud-bringing-fully-managed-tidb-service-to-aws-and-gcp-301082155.html",
+    "date": "2020-06-23"
+  },
+  {
+    "title": "TiDB Dashboard: Easier Troubleshooting for Distributed Databases",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/tidb-dashboard-easier-troubleshooting-for-distribu",
+    "date": "2020-06-11"
+  },
+  {
+    "title": "Large Transactions in TiDB",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/large-transactions-in-tidb",
+    "date": "2020-05-28"
+  },
+  {
+    "title": "Simulating Clock Skew in K8s With Chaos Mesh",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/simulating-clock-skew-in-k8s-without-affecting-oth",
+    "date": "2020-05-12"
+  },
+  {
+    "title": "SQL Plan Management With TiDB: A Review",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/sql-plan-management-never-worry-about-slow-queries",
+    "date": "2020-05-12"
+  },
+  {
+    "title": "How to Back Up and Restore a 10-TB Cluster at 1+ GB/s",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-to-back-up-and-restore-a-10-tb-cluster-at-1-gb",
+    "date": "2020-05-08"
+  },
+  {
+    "title": "Quickly Find Rust Program Bottlenecks Online Using a Go Tool",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/quickly-find-rust-program-bottlenecks-online-using",
+    "date": "2020-04-24"
+  },
+  {
+    "title": "Chaos Mesh — A Solution for System Resiliency on Kubernetes",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/chaos-mesh-a-chaos-engineering-solution-for-system",
+    "date": "2020-04-22"
+  },
+  {
+    "title": "Choosing the Right Database for Your Applications",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/choosing-the-right-database-for-your-applications",
+    "date": "2020-04-08"
+  },
+  {
+    "title": "Run Your First Chaos Experiment in 10 Minutes",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/run-your-first-chaos-experiment-in-10-minutes",
+    "date": "2020-04-02"
+  },
+  {
+    "title": "How We Reduced Multi-Region Read Latency and Network Traffic by 50%",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-we-reduced-multi-region-read-latency-and-netwo",
+    "date": "2020-03-26"
+  },
+  {
+    "title": "Squashed Bugs, Served Hot and Fresh With Failure Rate Heatmaps",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/squashed-bugs-served-hot-and-fresh-with-failure-ra",
+    "date": "2020-01-03"
+  },
+  {
+    "title": "AutoTiKV: TiKV Tuning Made Easy by AI and Machine Learning",
+    "logo": "/images/news/cncf.png",
+    "link": "https://www.cncf.io/blog/2019/12/10/autotikv-tikv-tuning-made-easy-by-ai-and-machine-learning/",
+    "date": "2019-12-10"
+  },
+  {
+    "title": "How We Implement 10x Faster Expression Evaluation With Vectorized Execution",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-we-implement-10x-faster-expression-evaluation",
+    "date": "2019-12-10"
+  },
+  {
+    "title": "Building a Large-Scale Distributed Storage System Based on Raft",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/building-a-large-scale-distributed-storage-system",
+    "date": "2019-12-09"
+  },
+  {
+    "title": "How We Compiled a Golang Database in the Browser Using WebAssembly",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-we-compiled-a-golang-database-in-the-browser-u",
+    "date": "2019-11-27"
+  },
+  {
+    "title": "Case study: TiKV in JD Cloud",
+    "logo": "/images/news/cncf.png",
+    "link": "https://www.cncf.io/blog/2019/11/26/case-study-tikv-in-jd-cloud/",
+    "date": "2019-11-26"
+  },
+  {
+    "title": "Building a Large-scale Distributed Storage System Based on Raft",
+    "logo": "/images/news/cncf.png",
+    "link": "https://www.cncf.io/blog/2019/11/04/building-a-large-scale-distributed-storage-system-based-on-raft/",
+    "date": "2019-11-04"
+  },
+  {
+    "title": "Big Data Case Study: Zhihu's 1.3 Trillion Rows of Data, Milliseconds of Response Time",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/lesson-learned-from-queries-over-13-trillion-rows-1",
+    "date": "2019-09-04"
+  },
+  {
+    "title": "The KOST Stack: An Open Source Cloud Native Hybrid Database Stack",
+    "logo": "/images/news/thenewstack-logo.png",
+    "link": "https://thenewstack.io/the-kost-stack-an-open-source-cloud-native-hybrid-database-stack/",
+    "date": "2019-06-19"
+  },
+  {
+    "title": "TiDB Passes Jepsen Test for Snapshot Isolation and Single-Key Linearizability",
+    "logo": "/images/news/jepsen-logo.png",
+    "link": "https://jepsen.io/analyses/tidb-2.1.7",
+    "date": "2019-06-12"
+  },
+  {
+    "title": "TiDB 3.0 Officially Available for Public Preview",
+    "logo": "/images/news/datanami-logo.png",
+    "link": "https://www.datanami.com/this-just-in/tidb-3-0-officially-available-for-public-preview/",
+    "date": "2019-05-29"
+  },
+  {
+    "title": "How to save time with TiDB",
+    "logo": "/images/news/opensource-logo.png",
+    "link": "https://opensource.com/article/19/3/how-save-time-tidb",
+    "date": "2019-03-22"
+  },
+  {
+    "title": "Meet TiDB: An open source NewSQL database",
+    "logo": "/images/news/opensource-logo.png",
+    "link": "https://opensource.com/article/18/11/key-differences-between-mysql-and-tidb",
+    "date": "2018-11-14"
+  },
+  {
+    "title": "How TiDB combines OLTP and OLAP in a distributed database",
+    "logo": "/images/news/infoworld-logo.png",
+    "link": "https://www.infoworld.com/article/3313327/database/how-tidb-combines-oltp-and-olap-in-a-distributed-database.html",
+    "date": "2018-10-17"
+  },
+  {
+    "title": "The best open source software for data storage and analytics",
+    "logo": "/images/news/infoworld-logo.png",
+    "link": "https://www.infoworld.com/article/3306454/big-data/the-best-open-source-software-for-data-storage-and-analytics.html",
+    "date": "2018-09-26"
+  },
+  {
+    "title": "PingCAP Raises $50 Million Series C",
+    "logo": "/images/news/svdaily-logo.jpg",
+    "link": "http://svdaily.com/pingcap-raises-50-million-series-c/",
+    "date": "2018-09-12"
+  },
+  {
+    "title": "PingCAP Raises $50 Million in Series C Round",
+    "logo": "/images/news/business-insider-logo.png",
+    "link": "https://markets.businessinsider.com/news/stocks/pingcap-raises-50-million-in-series-c-round-1027525459",
+    "date": "2018-09-11"
+  },
+  {
+    "title": "TiDB developer PingCAP wants to expand in North America after raising $50M Series C",
+    "logo": "/images/news/techcrunch-logo.jpg",
+    "link": "https://techcrunch.com/2018/09/11/tidb-developer-pingcap-wants-to-expand-in-north-america-after-raising-50m-series-c/",
+    "date": "2018-09-11"
+  },
+  {
+    "title": "PingCAP Raises $50 Million in Series C Round",
+    "logo": "/images/news/prnewswire-logo.png",
+    "link": "https://www.prnewswire.com/news-releases/pingcap-raises-50-million-in-series-c-round-300709950.html",
+    "date": "2018-09-11"
+  },
+  {
+    "title": "NewSQL database startup PingCAP raises $50M to expand its ecosystem",
+    "logo": "/images/news/silicon-angle-logo.png",
+    "link": "https://siliconangle.com/2018/09/11/newsql-startup-pingcap-raises-50m-expand-tidb-ecosystem/",
+    "date": "2018-09-11"
+  },
+  {
+    "title": "CNCF Accepts TiKV; Kubernetes Development Infrastructure Moving Out of Google Control",
+    "logo": "/images/news/eweek.png",
+    "link": "http://www.eweek.com/cloud/kubernetes-development-infrastructure-moving-out-of-google-control",
+    "date": "2018-08-29"
+  },
+  {
+    "title": "CNCF to Host TiKV in the Sandbox",
+    "logo": "/images/news/cncf.png",
+    "link": "https://www.cncf.io/blog/2018/08/28/cncf-to-host-tikv-in-the-sandbox/",
+    "date": "2018-08-28"
+  },
+  {
+    "name": "InfoWorld",
+    "title": "Introducing the Kubernetes Operator for TiDB",
+    "logo": "/images/news/infoworld-logo.png",
+    "link":
+      "https://www.infoworld.com/article/3297700/kubernetes/introducing-the-kubernetes-operator-for-tidb.html",
+    "date": "2018-08-16"
+  },
+  {
+    "name": "THENEWSTACK",
+    "title":
+      "5 Questions for Evaluating a Distributed Database",
+    "logo": "/images/news/thenewstack-logo.png",
+    "link":
+      "https://thenewstack.io/5-questions-for-evaluating-a-distributed-database/",
+    "date": "2018-08-02"
+  },
+  {
+    "name": "451 Research",
+    "title":
+      "PingCAP eyes US market with database targeting operational and analytical workloads",
+    "logo": "/images/news/451Research-Logo.png",
+    "link":
+      "https://451research.com/report-short?entityId=95082",
+    "date": "2018-06-12"
+  },
+  {
+    "name": "THENEWSTACK",
+    "title":
+      "Chaos Tools and Techniques for Testing the TiDB Distributed NewSQL Database",
+    "logo": "/images/news/thenewstack-logo.png",
+    "link":
+      "https://thenewstack.io/chaos-tools-and-techniques-for-testing-the-tidb-distributed-newsql-database/",
+    "date": "2018-03-29"
+  },
+  {
+    "name": "InfoWorld",
+    "title": "TiDB: Performance-tuning a distributed NewSQL database",
+    "logo": "/images/news/infoworld-logo.png",
+    "link":
+      "https://www.infoworld.com/article/3258810/sql/tidb-performance-tuning-a-distributed-newsql-database.html",
+    "date": "2018-02-28"
+  },
+  {
+    "name": "datanami",
+    "title": "The Hybrid Database Capturing Perishable Insights at Yiguo",
+    "logo": "/images/news/datanami-logo.png",
+    "link":
+      "https://www.datanami.com/2018/02/22/hybrid-database-capturing-perishable-insights-yiguo/",
+    "date": "2018-02-22"
+  },
+  {
+    "name": "women2.0",
+    "title": "How I lost and found a job in tech while pregnant",
+    "logo": "/images/news/women2.0.png",
+    "link":
+      "http://www.women2.com/2018/02/15/how-i-lost-and-found-a-job-in-tech-while-pregnant/",
+    "date": "2018-02-15"
+  },
+  {
+    "name": "DZone",
+    "title": "Tick or Tock? Keeping Time and Order in Distributed Databases",
+    "logo": "/images/news/dzone-logo.png",
+    "link":
+      "https://dzone.com/articles/tick-or-tock-keeping-time-and-order-in-distributed-1",
+    "date": "2018-01-31"
+  },
+  {
+    "name": "THENEWSTACK",
+    "title": "TiDB Brings Distributed Scalability to SQL",
+    "logo": "/images/news/thenewstack-logo.png",
+    "link": "https://thenewstack.io/tidb-brings-distributed-scalability-sql/",
+    "date": "2017-04-26"
+  }
+]
