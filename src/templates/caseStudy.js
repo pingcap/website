@@ -15,7 +15,6 @@ import TOCRenderer from '../components/tocRenderer'
 import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
 import { graphql } from 'gatsby'
-import { replaceSpaceWithDash } from '../lib/string'
 
 const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
   return (
@@ -163,9 +162,7 @@ const CaseStudy = ({ data, pageContext }) => {
                 <div className="under-category">
                   <Link to="/case-studies">Case Studies</Link>
                   <span> > </span>
-                  <Link to={`/case-studies/${replaceSpaceWithDash(category)}`}>
-                    {category}
-                  </Link>
+                  <Link to={`/case-studies/${category}`}>{category}</Link>
                 </div>
                 <BlogHeader
                   frontmatter={frontmatter}
