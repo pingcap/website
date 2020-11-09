@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby'
 import '../styles/pages/security-and-trust-center.sass'
 import Banner from '../components/banner'
 import SEO from '../components/seo'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import GetStartedWithTiDBCloud from '../components/get-started-with-TiDB-cloud'
 
 const SecurityAndTrustCenter = React.memo(({ data }) => {
