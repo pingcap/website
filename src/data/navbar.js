@@ -28,10 +28,6 @@ const navbarItemsEn = {
       name: 'Community',
       href: '/community',
     },
-    {
-      name: 'About',
-      href: '/about',
-    },
   ],
   contactUs: {
     name: 'CONTACT US',
