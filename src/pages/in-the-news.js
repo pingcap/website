@@ -16,8 +16,8 @@ const InTheNews = React.memo(({ data }) => {
     <Layout>
       {/*TODO: SEO required*/}
       <SEO
-        title="News"
-        description="PingCAP is focused on developing distributed NewSQL and is the team building TiDB, an open-source distributed NewSQL database."
+        title="In The News"
+        description="Get the latest information about PingCAP"
       />
       <article className={className}>
         <Banner backgroundImage={banner.publicURL}>PingCAP in the News</Banner>

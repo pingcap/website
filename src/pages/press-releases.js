@@ -9,14 +9,13 @@ import '../styles/pages/press-releases.sass'
 import news from '../../data/news.json'
 
 const PressReleases = React.memo(({ data }) => {
-  // console.log(data)
   const { banner, iconDate } = data
   const className = `PingCAP-PressReleases`
   return (
     <Layout>
       <SEO
-        title="PingCAP - Press Releases"
-        description="PingCAP is focused on developing distributed NewSQL and is the team building TiDB, an open-source distributed NewSQL database."
+        title="Press Releases"
+        description="Get the latest information about PingCAP"
       />
       <article className={className}>
         <Banner backgroundImage={banner.publicURL}>PingCAP in the News</Banner>
