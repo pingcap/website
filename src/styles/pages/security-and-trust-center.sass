@@ -1,0 +1,74 @@
+@import "../common"
+
+.PingCAP-SecurityAndTrustCenter
+  .SecurityAndTrustCenter
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    &Summary
+      max-width: 1120px
+      margin:
+        top: 3rem
+      color: $M4
+      font:
+        size: $P1
+        weight: 400
+    &KeySecurityFeatures
+      width: 100%
+      margin:
+        top: 5rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      &-title
+        color: $M3
+        font:
+          size: $H1
+          weight: 700
+      &-body
+        max-width: 670px
+        margin:
+          top: 22px
+        color: $M4
+        font:
+          size: $P1
+          weight: 400
+      &-list
+        display: flex
+        justify-content: space-around
+        flex-wrap: wrap
+        width: 100%
+        margin:
+          top: 68px
+
+      &Item
+        display: flex
+        flex-direction: column
+        align-items: center
+        max-width: 220px
+        &-icon
+          height: 64px
+        &-title
+          margin:
+            top: 1.5rem
+          font:
+            size: $H3
+            weight: 700
+          color: $M3
+        &-line
+          width: 16px
+          height: .75rem
+          border:
+            bottom: 3px solid $B1
+        &-list
+          margin:
+            top: 1.5rem
+          ul
+            display: flex
+            flex-direction: column
+            align-items: center
+            li
+              margin:
+                bottom: 1.5rem
