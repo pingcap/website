@@ -1,0 +1,132 @@
+@import '../common'
+
+.PingCAP-PressReleases
+  display: flex
+  flex-direction: column
+  justify-content: center
+
+.CatalogueSwitch
+  $padding: 36px
+
+  $color: $M3
+  $color-active: $B1
+  $font-size: $H2
+  $font-weight: 600
+
+  $split-color: #30323E
+  $split-size: 2px
+  $split-padding-size: 24px
+
+  display: flex
+  justify-content: center
+  padding: $padding 0
+  &-item
+    &-link
+      color: $color
+      font:
+        size: $font-size
+        weight: $font-weight
+      &-active
+        color: $color-active
+    padding:
+      right: $split-padding-size
+    margin:
+      right: $split-padding-size
+    border:
+      right: $split-size solid $split-color
+    &:last-child
+      padding:
+        right: 0
+      margin:
+        right: 0
+      border:
+        right: 0
+
+  &-split
+    width: 2px
+    background-color: darkgray
+
+.PressReleases
+  $padding-top: 60px
+  $padding-bottom: 120px
+  $date-margin-bottom: 2rem
+  $img-margin-right: 75px
+  padding:
+    top: $padding-top
+    bottom: $padding-bottom
+  @include mobile
+    background-color: #F7F8F9
+
+  &Item
+    $padding: 1.5rem
+    $logo-width: 150px
+    $logo-height: 100px
+    display: flex
+    align-items: center
+    @include mobile
+      $date-margin-bottom: 1.5rem
+      $margin-bottom: 2rem
+      $padding: 1rem
+      flex-direction: column
+      justify-content: center
+      margin:
+        bottom: $margin-bottom
+      padding: 0 $padding
+      border: 0
+      &-right
+        margin: 0 !important
+        padding: 28px
+        background-color: #fff
+        width: 100%
+        min-height: 100px
+        //display: flex
+        //justify-content: center
+        //align-items: center
+        box-shadow: 0 1px 4px 0 rgba(#000, .08)
+        &-date
+          margin:
+            bottom: $date-margin-bottom
+
+    padding:
+      bottom: $padding
+    margin:
+      bottom: $padding
+    border:
+      bottom: 1px solid $C2
+    &:last-child
+      padding:
+        bottom: 0
+      margin:
+        bottom: 0
+      border:
+        bottom: 0
+
+    &-left
+      margin:
+        right: $img-margin-right
+      img
+        max-width: $logo-width
+        max-height: $logo-height
+        min-width: $logo-width
+    //min-height: $logo-height
+    &-right
+      &-date
+        margin:
+          bottom: $date-margin-bottom
+        display: flex
+        align-items: center
+        span
+          margin-left: 10px
+      &-title
+        a
+          color: $M3
+          font:
+            size: $H2
+            weight: 400
+          &:hover
+            color: $B1
+    &:hover
+      border:
+        bottom:
+          color: $B1
+
