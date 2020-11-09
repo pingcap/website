@@ -42,6 +42,9 @@
         width: 100%
         margin:
           top: 68px
+        @include mobile
+          margin:
+            top: 3rem
 
       &Item
         display: flex
@@ -72,3 +75,9 @@
             li
               margin:
                 bottom: 1.5rem
+              @include mobile
+                margin:
+                  bottom: 12px
+        @include mobile
+          margin:
+            bottom: 60px
