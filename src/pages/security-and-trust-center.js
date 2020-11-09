@@ -1,10 +1,11 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 
 import '../styles/pages/security-and-trust-center.sass'
 import Banner from '../components/banner'
 import SEO from '../components/seo'
 import Layout from '../components/Layout'
+import GetStartedWithTiDBCloud from '../components/get-started-with-TiDB-cloud'
 
 const SecurityAndTrustCenter = React.memo(({ data }) => {
   const {
@@ -13,9 +14,10 @@ const SecurityAndTrustCenter = React.memo(({ data }) => {
     DataEncryptionSVG,
     AuthenticationSVG,
     WorkloadIsolationSVG,
+    AICPA_SOC_PNG,
   } = data
+  console.log(data)
   const className = `SecurityAndTrustCenter`
-  // const className = `SecurityAndTrustCenter`
   return (
     <Layout>
       <SEO
@@ -74,6 +76,8 @@ const SecurityAndTrustCenter = React.memo(({ data }) => {
             data, not protecting it.
           </SecurityAndTrustCenterKeySecurityFeatures>
         </div>
+        <SecurityAndTrustCenterCompliance reportIcon={AICPA_SOC_PNG} />
+        <GetStartedWithTiDBCloud />
       </article>
     </Layout>
   )
@@ -134,6 +138,66 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
   )
 })
 
+const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
+  // const { icon, title, list } = data
+  const className = `SecurityAndTrustCenterCompliance`
+  const classNameTitle = `${className}-title`
+  const classNameSummary = `${className}-summary`
+  const classNameReport = `${className}-report`
+  const classNameReportLeft = `${classNameReport}-left`
+  const classNameReportRight = `${classNameReport}-right`
+  const classNameReportRightHeader = `${classNameReportRight}-header`
+  const classNameReportRightHeaderTitle = `${classNameReportRightHeader}-title`
+  const classNameReportRightHeaderMore = `${classNameReportRightHeader}-more`
+  const classNameReportRightDescription = `${classNameReportRight}-description`
+  const classNameMore = `${className}-more`
+  return (
+    <div className={className}>
+      <div className="container">
+        <div className={classNameTitle}>Compliance</div>
+        <div className={classNameSummary}>
+          We are committed to providing enterprise-grade security and privacy.
+          This is not simply demonstrated in technology. We undergo third-party
+          auditing to ensure our services and operations adhere to the
+          compliance requirements of your organization. TiDB Cloud operates in
+          accordance with the following compliance requirements:
+        </div>
+        <div className={classNameReport}>
+          <div className={classNameReportLeft}>
+            <img src={reportIcon.publicURL} alt="SOC 2 Type 1 Report" />
+          </div>
+          <div className={classNameReportRight}>
+            <div className={classNameReportRightHeader}>
+              <div className={classNameReportRightHeaderTitle}>
+                SOC 2 Type 1 Report
+              </div>
+              <div className={classNameReportRightHeaderMore}>
+                <Link
+                  to={
+                    '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
+                  }
+                >
+                  → Learn More
+                </Link>
+              </div>
+            </div>
+            <div className={classNameReportRightDescription}>
+              The SOC 2 Type I audit is an independent audit designed and
+              conducted by Schellman & Company, LLC based on the security &
+              privacy related control and operations of the TiDB Cloud service
+              offering and the standards formulated by the American Institute of
+              Certified Public Accountants (AICPA).
+            </div>
+          </div>
+        </div>
+        <div className={classNameMore}>
+          More compliance auditing is in progress.
+        </div>
+      </div>
+    </div>
+  )
+})
+
 export const query = graphql`
   query {
     BannerSVG: file(
@@ -158,6 +222,11 @@ export const query = graphql`
     }
     WorkloadIsolationSVG: file(
       relativePath: { eq: "security-and-trust-center/workload-isolation.svg" }
+    ) {
+      publicURL
+    }
+    AICPA_SOC_PNG: file(
+      relativePath: { eq: "security-and-trust-center/AICPA-SOC.png" }
     ) {
       publicURL
     }
