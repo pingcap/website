@@ -34,7 +34,7 @@
   .right-column {
     @include tablet {
       position: sticky;
-      height: calc(100vh - #{$navbar-height} - #{$section-padding-top});
+      height: calc(100vh - #{$height-navbar} - #{$section-padding-top});
       overflow: auto;
       top: $section-padding-top + $right-sidebar-margin-top;
     }
