@@ -7,7 +7,7 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import GetStartedWithTiDBCloud from '../components/get-started-with-TiDB-cloud'
 
-const SecurityAndTrustCenter = React.memo(({ data }) => {
+const Trust = React.memo(({ data }) => {
   const {
     BannerSVG,
     DataAccessControlsSVG,
@@ -233,4 +233,4 @@ export const query = graphql`
   }
 `
 
-export default SecurityAndTrustCenter
+export default Trust
