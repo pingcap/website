@@ -11,7 +11,7 @@ const CatalogueSwitch = React.memo(({ items }) => {
   return (
     <ul className={className}>
       {items.map((v, k) => (
-        <li className={classNameItem}>
+        <li className={classNameItem} key={v.url}>
           <Link
             to={v.url}
             className={classNameItemLink}
