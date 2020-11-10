@@ -1,6 +1,5 @@
 const path = require('path')
 const replaceTitle = require('./utils').replaceTitle
-const langConfig = require('../lang.config.json')
 
 const createPositions = async ({ graphql, createPage, createRedirect }) => {
   const positionTemplate = path.resolve(
