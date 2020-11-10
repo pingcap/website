@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import '../styles/components/catalogueSwitch.sass'
+
 const CatalogueSwitch = React.memo(({ items }) => {
   const className = `CatalogueSwitch`
   const classNameItem = `${className}-item`
