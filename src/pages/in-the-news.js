@@ -69,7 +69,9 @@ const NewsItem = React.memo(({ data, iconDate }) => {
           <span>{data.date}</span>
         </div>
         <div className={classNameTitle}>
-          <a href={data.link}>{data.title}</a>
+          <a href={data.link} target="_blank">
+            {data.title}
+          </a>
         </div>
       </div>
     </li>
