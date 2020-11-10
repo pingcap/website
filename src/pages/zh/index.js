@@ -13,7 +13,7 @@ import { replaceTitle } from '../../lib/string'
 import LinkWithArrow from '../../components/linkWithArrow'
 import StartTiDBRibbon from '../../components/startTiDBRibbon'
 
-import campus2021 from '../../../images/home/banners/zh/campus-2021.jpg'
+import hptc from '../../../images/home/banners/zh/high-performance-tidb-challenge.png'
 import askTug from '../../../images/home/banners/zh/home-asktug-carousel.jpg'
 import university from '../../../images/home/banners/zh/university-carousel-img.png'
 import userMessage from '../../../images/home/banners/zh/user-message-2019-banner.png'
@@ -56,7 +56,7 @@ const caseLogos = [
 ]
 
 const banners = [
-  { img: campus2021, url: '/zh/careers/Campus' },
+  { img: hptc, url: '/community-cn/high-performance-tidb-challenge/' },
   { img: askTug, url: 'https://asktug.com/t/topic/33760' },
   { img: university, url: 'https://university.pingcap.com/' },
   { img: userMessage, url: '/zh/user-message-2019/' },

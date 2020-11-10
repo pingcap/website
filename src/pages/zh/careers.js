@@ -78,14 +78,10 @@ const Careers = ({ data }) => {
 
         <section className="join-us-section">
           <h2 className="title">赶紧加入我们吧</h2>
-          <Button
-            as={Link}
-            to="/zh/careers/join"
-            className="button is-primary is-rounded"
-          >
+          <Link to="/zh/careers/join" className="button is-primary is-rounded">
             立刻申请
             <AroundParticles />
-          </Button>
+          </Link>
         </section>
       </article>
     </Layout>
