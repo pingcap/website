@@ -1,8 +1,8 @@
 import React from 'react'
 
-import '../styles/components/banner.sass'
+import '../styles/components/hero.sass'
 
-const Banner = React.memo(({ backgroundImage, children }) => {
+const Hero = React.memo(({ backgroundImage, children }) => {
   const className = `Banner`
   // const classNameMask = `${className}-mask`
   const classNameTitle = `${className}-title`
@@ -16,4 +16,4 @@ const Banner = React.memo(({ backgroundImage, children }) => {
   )
 })
 
-export default Banner
+export default Hero

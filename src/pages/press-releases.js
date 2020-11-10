@@ -1,5 +1,5 @@
 import React from 'react'
-import Banner from '../components/banner'
+import Hero from '../components/hero'
 import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
@@ -16,7 +16,7 @@ const PressReleases = React.memo(({ data }) => {
         description="Get the latest information about PingCAP"
       />
       <article className={className}>
-        <Banner backgroundImage={banner.publicURL}>PingCAP in the News</Banner>
+        <Hero backgroundImage={banner.publicURL}>PingCAP in the News</Hero>
         <CatalogueSwitch
           items={[
             {
