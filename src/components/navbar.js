@@ -7,6 +7,39 @@ import { Button } from '@seagreenio/react-bulma'
 import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
 import { useIntl } from 'react-intl'
 
+import classNames from 'classnames'
+
+function PromotionBanner({
+  promotionText,
+  closePromotion,
+  crossSVGPublicURL,
+  hornSVGPublicURL,
+}) {
+  const classname = `PromotionBanner`
+  return (
+    <div className={`${classname}`}>
+      <div className="container">
+        <div className={`${classname}-main`}>
+          <div className={`${classname}-main-horn`}>
+            <img src={hornSVGPublicURL} alt="horn" />
+          </div>
+          <div className="text">{promotionText}</div>
+        </div>
+        <div
+          role="button"
+          tabIndex={0}
+          aria-label="close"
+          className={`${classname}-close`}
+          onClick={closePromotion}
+          onKeyDown={closePromotion}
+        >
+          <img src={crossSVGPublicURL} alt="close" />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const Navbar = ({ showBanner }) => {
   const imageData = useStaticQuery(
     graphql`
@@ -15,6 +48,12 @@ const Navbar = ({ showBanner }) => {
           publicURL
         }
         GitHubSVG: file(relativePath: { eq: "github-icon-on-nav.svg" }) {
+          publicURL
+        }
+        CrossSVG: file(relativePath: { eq: "cross.svg" }) {
+          publicURL
+        }
+        HornSVG: file(relativePath: { eq: "horn.svg" }) {
           publicURL
         }
       }
@@ -54,28 +93,19 @@ const Navbar = ({ showBanner }) => {
 
   return (
     <nav
-      className={`navbar is-fixed-top PingCAP-Navbar${
-        showBorder ? ' has-border-and-shadow' : ''
-      }`}
+      className={classNames('navbar PingCAP-Navbar', {
+        'has-border-and-shadow': showBorder,
+      })}
       role="navigation"
     >
-      {promotionText && promotionOpen && (
-        <div className="promotion">
-          <div className="container">
-            <div className="horn" />
-            {promotionText}
-            <div className="blank" />
-            <div
-              role="button"
-              tabIndex={0}
-              aria-label="close"
-              className="close"
-              onClick={closePromotion}
-              onKeyDown={closePromotion}
-            />
-          </div>
-        </div>
-      )}
+      {promotionText &&
+        promotionOpen &&
+        PromotionBanner({
+          promotionText,
+          closePromotion,
+          crossSVGPublicURL: imageData.CrossSVG.publicURL,
+          hornSVGPublicURL: imageData.HornSVG.publicURL,
+        })}
 
       <div className="container">
         <div className="navbar-brand">
@@ -88,7 +118,9 @@ const Navbar = ({ showBanner }) => {
           </Link>
 
           <button
-            className={`navbar-burger${burgerActive ? ' is-active' : ''}`}
+            className={classNames('navbar-burger', {
+              'is-active': burgerActive,
+            })}
             aria-label="menu"
             aria-expanded="false"
             onClick={handleSetBurgerActive}
@@ -107,7 +139,9 @@ const Navbar = ({ showBanner }) => {
             className="github-icon-mobile"
           />
         </div>
-        <div className={`navbar-menu${burgerActive ? ' is-active' : ''}`}>
+        <div
+          className={classNames('navbar-menu', { 'is-active': burgerActive })}
+        >
           <div className="navbar-start">
             {navbarItems.navItems.map((item) => (
               <Fragment key={item.name}>
@@ -115,9 +149,12 @@ const Navbar = ({ showBanner }) => {
                   <div
                     role="button"
                     tabIndex={0}
-                    className={`navbar-item has-dropdown is-hoverable with-main-section ${
-                      burgerActive ? '' : 'hide-burger'
-                    }"`}
+                    className={classNames(
+                      'navbar-item has-dropdown is-hoverable with-main-section',
+                      {
+                        'hide-burger': !burgerActive,
+                      }
+                    )}
                     onClick={toggleDropdown}
                     onKeyDown={toggleDropdown}
                   >

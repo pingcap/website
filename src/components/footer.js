@@ -21,11 +21,6 @@ const Footer = () => {
   )
 
   const handleSpreadItems = (e) => {
-    const screenWidth = window.screen.width
-    if (screenWidth > 768) {
-      return
-    }
-
     const title = e.currentTarget
     const spread = title.children[0]
     spread.classList.toggle('clicked')
