@@ -45,7 +45,7 @@ const CatalogueSwitch = React.memo(({ items }) => {
   return (
     <ul className={className}>
       {items.map((v, k) => (
-        <li className={classNameItem}>
+        <li key={v.url} className={classNameItem}>
           <Link
             to={v.url}
             className={classNameItemLink}
@@ -64,7 +64,7 @@ const News = React.memo(({ iconDate }) => {
   return (
     <section className={`${className} container`}>
       {news.map((v, k) => (
-        <NewsItem data={v} iconDate={iconDate} />
+        <NewsItem key={v.link} data={v} iconDate={iconDate} />
       ))}
     </section>
   )
