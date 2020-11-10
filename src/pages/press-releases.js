@@ -38,7 +38,6 @@ const PressReleases = React.memo(({ data }) => {
 
 const News = React.memo(({ iconDate, blogs }) => {
   const className = `PressReleases`
-  console.log(blogs)
   return (
     <section className={`${className} container`}>
       {blogs.edges.map((v, k) => (
