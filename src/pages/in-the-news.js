@@ -83,7 +83,7 @@ const NewsItem = React.memo(({ data, iconDate }) => {
     <li className={className}>
       <div className={classNameLeft}>
         <div className={classNameLogo}>
-          <img src={data.logo} alt="" />
+          <img src={'https://download.pingcap.com' + data.logo} alt="" />
         </div>
       </div>
       <div className={classNameRight}>
