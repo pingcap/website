@@ -9,12 +9,10 @@ import '../styles/pages/in-the-news.sass'
 import news from '../../data/news.json'
 
 const InTheNews = React.memo(({ data }) => {
-  // console.log(data)
   const { banner, iconDate } = data
   const className = `PingCAP-InTheNews`
   return (
     <Layout>
-      {/*TODO: SEO required*/}
       <SEO
         title="In The News"
         description="Get the latest information about PingCAP"
