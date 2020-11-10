@@ -3,6 +3,7 @@ import Hero from '../components/hero'
 import { graphql, Link } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
+import CatalogueSwitch from '../components/catalogueSwitch'
 
 import '../styles/pages/in-the-news.sass'
 
@@ -34,28 +35,6 @@ const InTheNews = React.memo(({ data }) => {
         <News iconDate={iconDate} />
       </article>
     </Layout>
-  )
-})
-
-const CatalogueSwitch = React.memo(({ items }) => {
-  const className = `CatalogueSwitch`
-  const classNameItem = `${className}-item`
-  const classNameItemLink = `${classNameItem}-link`
-  const classNameItemLinkActive = `${classNameItemLink}-active`
-  return (
-    <ul className={className}>
-      {items.map((v, k) => (
-        <li key={v.url} className={classNameItem}>
-          <Link
-            to={v.url}
-            className={classNameItemLink}
-            activeClassName={classNameItemLinkActive}
-          >
-            {v.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
   )
 })
 
