@@ -5,6 +5,8 @@
 @import '../components/blogTags';
 
 .PingCAP-Blog {
+  $section-padding-top: 1.5rem;
+  $right-sidebar-margin-top: 4rem;
   .section.section-blog {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -22,7 +24,8 @@
     border-radius: 0;
     z-index: 30; // Same as .navbar.is-fixed-top
 
-    &:-webkit-progress-bar {
+    // pseudo class should use :: , not :
+    &::-webkit-progress-bar {
       background: transparent;
     }
   }
@@ -270,9 +273,9 @@
   .right-column {
     @include tablet {
       position: sticky;
-      height: 100vh;
-      overflow: scroll;
-      top: 0.625rem;
+      height: calc(100vh - #{$height-navbar} - #{$section-padding-top});
+      overflow: auto;
+      top: $section-padding-top + $right-sidebar-margin-top;
     }
   }
 
@@ -281,7 +284,7 @@
       display: none;
     }
 
-    margin-top: 4rem;
+    margin-top: $right-sidebar-margin-top;
 
     .toc-content {
       a {
