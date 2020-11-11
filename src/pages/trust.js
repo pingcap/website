@@ -201,7 +201,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
 export const query = graphql`
   query {
     BannerSVG: file(
-      relativePath: { eq: "security-and-trust-center/banner.svg" }
+      relativePath: { eq: "security-and-trust-center/banner.jpg" }
     ) {
       publicURL
     }
@@ -226,7 +226,7 @@ export const query = graphql`
       publicURL
     }
     AICPA_SOC_PNG: file(
-      relativePath: { eq: "security-and-trust-center/AICPA-SOC.png" }
+      relativePath: { eq: "security-and-trust-center/AICPA-SOC.gif" }
     ) {
       publicURL
     }
