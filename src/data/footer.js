@@ -243,7 +243,8 @@ const footerColumnsZh = [
         },
         {
           name: '招贤纳士',
-          link: '/careers',
+          link: 'https://job.pingcap.com/',
+          outbound: true,
         },
         {
           name: '新闻报道',
