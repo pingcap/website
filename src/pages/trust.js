@@ -98,7 +98,7 @@ const SecurityAndTrustCenterKeySecurityFeatures = React.memo(
       <div className={className}>
         <div className={classNameTitle}>{title}</div>
         <div className={classNameBody}>{children}</div>
-        <div className={classNameList}>
+        <div className={`${classNameList} columns`}>
           {list.map((item) => (
             <SecurityAndTrustCenterKeySecurityFeaturesItem data={item} />
           ))}
@@ -117,7 +117,7 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
   const classNameLine = `${className}-line`
   const classNameList = `${className}-list`
   return (
-    <div className={className}>
+    <div className={`${className} column`}>
       <div className={classNameIcon}>
         <img src={icon.publicURL} alt={classNameTitle} />
       </div>
