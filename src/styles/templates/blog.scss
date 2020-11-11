@@ -4,10 +4,9 @@
 @import '../components/blogHeader';
 @import '../components/blogTags';
 
-$navbar-height: 5.25rem; // 84px
-$navbar-height-mobile: 4.25rem; // 68px
-
 .PingCAP-Blog {
+  $section-padding-top: 1.5rem;
+  $right-sidebar-margin-top: 4rem;
   .section.section-blog {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
@@ -15,17 +14,18 @@ $navbar-height-mobile: 4.25rem; // 68px
 
   .blog-progress {
     @include mobile {
-      top: calc(#{$navbar-height-mobile} - 1px);
+      top: calc(#{$height-navbar-mobile} - 1px);
     }
 
     position: fixed;
-    top: calc(#{$navbar-height} - 1px);
+    top: calc(#{$height-navbar} - 1px);
     height: 1px;
     background: transparent;
     border-radius: 0;
     z-index: 30; // Same as .navbar.is-fixed-top
 
-    &:-webkit-progress-bar {
+    // pseudo class should use :: , not :
+    &::-webkit-progress-bar {
       background: transparent;
     }
   }
@@ -59,8 +59,8 @@ $navbar-height-mobile: 4.25rem; // 68px
       &:target:before {
         content: '';
         display: block;
-        height: $navbar-height;
-        margin-top: -$navbar-height;
+        height: $height-navbar;
+        margin-top: -$height-navbar;
       }
     }
 
@@ -273,9 +273,9 @@ $navbar-height-mobile: 4.25rem; // 68px
   .right-column {
     @include tablet {
       position: sticky;
-      height: 100vh;
-      overflow: scroll;
-      top: 0.625rem;
+      height: calc(100vh - #{$height-navbar} - #{$section-padding-top});
+      overflow: auto;
+      top: $section-padding-top + $right-sidebar-margin-top;
     }
   }
 
@@ -284,7 +284,7 @@ $navbar-height-mobile: 4.25rem; // 68px
       display: none;
     }
 
-    margin-top: 4rem;
+    margin-top: $right-sidebar-margin-top;
 
     .toc-content {
       a {

@@ -73,7 +73,8 @@ const About = ({ data }) => {
             </p>
             <Button
               as={Link}
-              to="/zh/careers/join"
+              to="https://job.pingcap.com"
+              target="_blank"
               className="button is-primary is-rounded"
             >
               <span>加入我们</span>
@@ -162,7 +163,8 @@ const About = ({ data }) => {
             <h1 className="title">赶紧加入我们吧</h1>
             <Button
               as={Link}
-              to="/zh/careers/join"
+              href="https://job.pingcap.com"
+              target="_blank"
               className="button is-primary is-rounded"
             >
               <AroundParticles className="around-particles" />

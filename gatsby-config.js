@@ -121,13 +121,6 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'markdown-pages/zh/careers',
-        path: `${__dirname}/markdown-pages/zh/careers`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
         name: 'markdown-pages/terms',
         path: `${__dirname}/markdown-pages/terms`,
       },
@@ -194,16 +187,22 @@ module.exports = {
       },
     },
     `gatsby-plugin-meta-redirect`,
-    ...Object.keys(langConfig.languages).map((lang) => ({
+
+    // stop generating /zh pages from sitemap until Chinese pages go live
+    // ...Object.keys(langConfig.languages).map((lang) => ({
+    //   resolve: `gatsby-plugin-sitemap`,
+    //   options: getSitemapForLanguage(lang),
+    // })),
+    {
       resolve: `gatsby-plugin-sitemap`,
-      options: getSitemapForLanguage(lang),
-    })),
+      options: getSitemapForLanguage('en'),
+    },
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: '/sitemap.xml',
         serialize: () =>
-          Object.keys(langConfig.languages).map((lang) => ({
+          ['en'].map((lang) => ({
             priority: 1,
             url: `https://pingcap.com/sitemap-${lang}.xml`,
           })),

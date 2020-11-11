@@ -8,8 +8,11 @@
 @import '../components/postFromUs';
 
 .PingCAP-Blogs {
+  $section-padding-top: 1.5rem;
+  $right-sidebar-margin-top: 2.25rem;
+
   .section.section-blogs {
-    padding-top: 1.5rem;
+    padding-top: $section-padding-top;
   }
 
   .blog-preview {
@@ -31,9 +34,9 @@
   .right-column {
     @include tablet {
       position: sticky;
-      height: 100vh;
-      overflow: scroll;
-      top: 2.25rem;
+      height: calc(100vh - #{$height-navbar} - #{$section-padding-top});
+      overflow: auto;
+      top: $section-padding-top + $right-sidebar-margin-top;
     }
     .main {
       margin-top: 2.25rem;
