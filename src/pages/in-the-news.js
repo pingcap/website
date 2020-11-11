@@ -80,7 +80,7 @@ const NewsItem = React.memo(({ data, iconDate }) => {
 
 export const query = graphql`
   query {
-    banner: file(relativePath: { eq: "in-the-news/banner.png" }) {
+    banner: file(relativePath: { eq: "in-the-news/banner.jpg" }) {
       publicURL
     }
     iconDate: file(relativePath: { eq: "in-the-news/icon-date.png" }) {
