@@ -1,6 +1,6 @@
 import React from 'react'
 import Hero from '../components/hero'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import CatalogueSwitch from '../components/catalogueSwitch'
@@ -69,7 +69,7 @@ const NewsItem = React.memo(({ data, iconDate }) => {
           <span>{data.date}</span>
         </div>
         <div className={classNameTitle}>
-          <a href={data.link} target="_blank">
+          <a href={data.link} target="_blank" rel="noopener noreferrer">
             {data.title}
           </a>
         </div>
