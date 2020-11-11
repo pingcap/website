@@ -177,9 +177,9 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="video-wrapper">
-                <img src={tidbFeaturesPNG.publicURL} alt="TiDB features" />
                 <video
                   src={tidbFeaturesMP4.publicURL}
+                  poster={tidbFeaturesPNG.publicURL}
                   type="video/mp4"
                   playsInline
                   autoPlay
