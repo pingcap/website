@@ -45,7 +45,7 @@ const Trust = React.memo(({ data }) => {
               {
                 icon: DataAccessControlsSVG,
                 title: 'Data access controls ',
-                list: ['● VPC peering connection', '● IP whitelist'],
+                list: ['● VPC peering connection', '● IP allowlist'],
               },
               {
                 icon: DataEncryptionSVG,
@@ -67,7 +67,7 @@ const Trust = React.memo(({ data }) => {
                 icon: WorkloadIsolationSVG,
                 title: 'Workload Isolation',
                 list:
-                  'Dedicated VPC for each TiDB cluster to guarantee confidentiality and integrity of your data.',
+                  'Dedicated VPC for your TiDB clusters to guarantee data confidentiality and integrity.',
               },
             ]}
           >
