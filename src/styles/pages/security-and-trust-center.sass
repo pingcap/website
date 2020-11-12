@@ -77,12 +77,6 @@ $line-height: 28px
             display: flex
             flex-direction: column
             align-items: center
-            li
-              margin:
-                bottom: 1.5rem
-              @include mobile
-                margin:
-                  bottom: 12px
         @include mobile
           margin:
             bottom: 60px
@@ -118,7 +112,10 @@ $line-height: 28px
         justify-content: center
         flex-wrap: wrap
         background-color: #fff
-        box-shadow: 0 0 8px 0 rgba(#000, .08)
+        transition: all .25s
+        box-shadow: 0 2px 4px 0 rgba(#000, .08)
+        &:hover
+          box-shadow: 0 2px 16px 0 rgba(#000, .08)
         @include mobile
           padding: 1rem
         &-left
@@ -159,6 +156,6 @@ $line-height: 28px
       &-more
         text-align: center
         font:
-          size: $H2
+          size: 1.125rem
           weight: 400
         color: $M4

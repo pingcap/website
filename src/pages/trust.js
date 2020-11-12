@@ -162,34 +162,40 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
           compliance requirements of your organization. TiDB Cloud operates in
           accordance with the following compliance requirements:
         </div>
-        <div className={classNameReport}>
-          <div className={classNameReportLeft}>
-            <img src={reportIcon.publicURL} alt="SOC 2 Type 1 Report" />
-          </div>
-          <div className={classNameReportRight}>
-            <div className={classNameReportRightHeader}>
-              <div className={classNameReportRightHeaderTitle}>
-                SOC 2 Type 1 Report
+        <Link
+          to={
+            '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
+          }
+        >
+          <div className={classNameReport}>
+            <div className={classNameReportLeft}>
+              <img src={reportIcon.publicURL} alt="SOC 2 Type 1 Report" />
+            </div>
+            <div className={classNameReportRight}>
+              <div className={classNameReportRightHeader}>
+                <div className={classNameReportRightHeaderTitle}>
+                  SOC 2 Type 1 Report
+                </div>
+                <div className={classNameReportRightHeaderMore}>
+                  <Link
+                    to={
+                      '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
+                    }
+                  >
+                    → Learn More
+                  </Link>
+                </div>
               </div>
-              <div className={classNameReportRightHeaderMore}>
-                <Link
-                  to={
-                    '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
-                  }
-                >
-                  → Learn More
-                </Link>
+              <div className={classNameReportRightDescription}>
+                The SOC 2 Type I audit is an independent audit designed and
+                conducted by Schellman & Company, LLC based on the security &
+                privacy related control and operations of the TiDB Cloud service
+                offering and the standards formulated by the American Institute
+                of Certified Public Accountants (AICPA).
               </div>
             </div>
-            <div className={classNameReportRightDescription}>
-              The SOC 2 Type I audit is an independent audit designed and
-              conducted by Schellman & Company, LLC based on the security &
-              privacy related control and operations of the TiDB Cloud service
-              offering and the standards formulated by the American Institute of
-              Certified Public Accountants (AICPA).
-            </div>
           </div>
-        </div>
+        </Link>
         <div className={classNameMore}>
           More compliance audits are in progress...
         </div>
