@@ -191,7 +191,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
           </div>
         </div>
         <div className={classNameMore}>
-          More compliance auditing is in progress.
+          More compliance audits are in progress...
         </div>
       </div>
     </div>
