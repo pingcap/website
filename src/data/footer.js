@@ -99,6 +99,10 @@ const footerColumns = [
           link: '/about',
         },
         {
+          name: 'News',
+          link: '/in-the-news',
+        },
+        {
           name: 'Careers',
           link: '/careers',
         },

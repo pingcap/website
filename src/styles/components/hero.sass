@@ -1,0 +1,19 @@
+@import '../common'
+
+.Banner
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 420px
+  background-size: cover
+  //filter: brightness(70%)
+  @include mobile
+    height: 200px
+  &-title
+    color: $M1
+    font:
+      size: $size-2
+      weight: 700
+    @include mobile
+      font:
+        size: $size-3
