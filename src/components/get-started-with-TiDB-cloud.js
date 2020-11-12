@@ -7,26 +7,23 @@ import '../styles/components/get-started-with-TiDB-cloud.sass'
 
 const GetStartedWithTiDBCloud = React.memo(() => {
   const className = `GetStartedWithTiDBCloud`
+  const classNameButton = `${className}-button`
   return (
     <section className={`section ${className}`}>
       <div className="container">
         <h2 className="title is-4">Get Started with TiDB Cloud</h2>
-        <StartTrialButton />
+        <Button
+          as={Link}
+          color="primary"
+          className={classNameButton}
+          rounded
+          to="/products/tidbcloud/trial"
+        >
+          Start Your Free Trial Now
+        </Button>
       </div>
     </section>
   )
 })
-
-const StartTrialButton = () => (
-  <Button
-    as={Link}
-    color="primary"
-    className="start-trial-button"
-    rounded
-    to="/products/tidbcloud/trial"
-  >
-    Start Your Free Trial Now
-  </Button>
-)
 
 export default GetStartedWithTiDBCloud

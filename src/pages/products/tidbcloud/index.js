@@ -14,6 +14,7 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
 import axios from 'axios'
+import GetStartedWithTiDBCloud from '../../../components/get-started-with-TiDB-cloud'
 
 const StartTrialButton = () => (
   <Button
@@ -337,12 +338,7 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-get-started">
-          <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
-            <StartTrialButton />
-          </div>
-        </section>
+        <GetStartedWithTiDBCloud />
       </main>
     </Layout>
   )
