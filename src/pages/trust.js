@@ -37,30 +37,29 @@ const Trust = React.memo(({ data }) => {
             Confidentiality of our customers’ data. We have incorporated
             security into all aspects of our offering (TiDB Cloud) and
             operations.
-          </SecurityAndTrustCenterSummary>
-          {/* be careful: use ● instead of the list-style: disc */}
+          </div>
           <SecurityAndTrustCenterKeySecurityFeatures
             title={'Key Security Features'}
             list={[
               {
                 icon: DataAccessControlsSVG,
                 title: 'Data access controls ',
-                list: ['● VPC peering connection', '● IP allowlist'],
+                list: ['VPC peering connection', 'IP allowlist'],
               },
               {
                 icon: DataEncryptionSVG,
                 title: 'Data Encryption',
                 list: [
-                  '● In-transit encryption (TLS/SSL)',
-                  '● Encryption at rest (AES256) for TiKV, TiFlash, and backup data.',
+                  'In-transit encryption (TLS/SSL)',
+                  'Encryption at rest (AES256) for TiKV, TiFlash, and backup data.',
                 ],
               },
               {
                 icon: AuthenticationSVG,
                 title: 'Authentication',
                 list: [
-                  '● Inter-node identity authentication (mTLS)',
-                  '● Client identity authentication',
+                  'Inter-node identity authentication (mTLS)',
+                  'Client identity authentication',
                 ],
               },
               {
