@@ -16,7 +16,6 @@ const Trust = React.memo(({ data }) => {
     WorkloadIsolationSVG,
     AICPA_SOC_PNG,
   } = data
-  console.log(data)
   const className = `SecurityAndTrustCenter`
   return (
     <Layout>
@@ -29,7 +28,7 @@ const Trust = React.memo(({ data }) => {
           Security and Trust Center
         </Banner>
         <div className={`${className} container`}>
-          <SecurityAndTrustCenterSummary>
+          <div className="SecurityAndTrustCenterSummary">
             At PingCAP we value security and trust more than anything because we
             know our customers entrust us with their most important asset - the
             data itself. We take this responsibility seriously and are always
@@ -82,22 +81,14 @@ const Trust = React.memo(({ data }) => {
   )
 })
 
-const SecurityAndTrustCenterSummary = React.memo(({ children }) => {
-  const className = `SecurityAndTrustCenterSummary`
-  return <div className={className}>{children}</div>
-})
-
 const SecurityAndTrustCenterKeySecurityFeatures = React.memo(
   ({ title, children, list }) => {
     const className = `SecurityAndTrustCenterKeySecurityFeatures`
-    const classNameTitle = `${className}-title`
-    const classNameBody = `${className}-body`
-    const classNameList = `${className}-list`
     return (
       <div className={className}>
-        <div className={classNameTitle}>{title}</div>
-        <div className={classNameBody}>{children}</div>
-        <div className={`${classNameList} columns`}>
+        <div className={`${className}-title`}>{title}</div>
+        <div className={`${className}-body`}>{children}</div>
+        <div className={`${className}-list columns`}>
           {list.map((item) => (
             <SecurityAndTrustCenterKeySecurityFeaturesItem data={item} />
           ))}
@@ -111,18 +102,14 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
   const { icon, title, list } = data
 
   const className = `SecurityAndTrustCenterKeySecurityFeaturesItem`
-  const classNameIcon = `${className}-icon`
-  const classNameTitle = `${className}-title`
-  const classNameLine = `${className}-line`
-  const classNameList = `${className}-list`
   return (
     <div className={`${className} column`}>
-      <div className={classNameIcon}>
-        <img src={icon.publicURL} alt={classNameTitle} />
+      <div className={`${className}-icon`}>
+        <img src={icon.publicURL} alt={title} />
       </div>
-      <div className={classNameTitle}>{title}</div>
-      <div className={classNameLine} />
-      <div className={classNameList}>
+      <div className={`${className}-title`}>{title}</div>
+      <div className={`${className}-line`} />
+      <div className={`${className}-list`}>
         {Array.isArray(list) ? (
           <ul>
             {list.map((item) => (
@@ -138,23 +125,16 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
 })
 
 const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
-  // const { icon, title, list } = data
   const className = `SecurityAndTrustCenterCompliance`
-  const classNameTitle = `${className}-title`
-  const classNameSummary = `${className}-summary`
   const classNameReport = `${className}-report`
   const classNameReportLeft = `${classNameReport}-left`
   const classNameReportRight = `${classNameReport}-right`
   const classNameReportRightHeader = `${classNameReportRight}-header`
-  const classNameReportRightHeaderTitle = `${classNameReportRightHeader}-title`
-  const classNameReportRightHeaderMore = `${classNameReportRightHeader}-more`
-  const classNameReportRightDescription = `${classNameReportRight}-description`
-  const classNameMore = `${className}-more`
   return (
     <div className={className}>
       <div className="container">
-        <div className={classNameTitle}>Compliance</div>
-        <div className={classNameSummary}>
+        <div className={`${className}-title`}>Compliance</div>
+        <div className={`${className}-summary`}>
           We are committed to providing enterprise-grade security and privacy.
           This is not simply demonstrated in technology. We undergo third-party
           auditing to ensure our services and operations adhere to the
@@ -172,10 +152,10 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
             </div>
             <div className={classNameReportRight}>
               <div className={classNameReportRightHeader}>
-                <div className={classNameReportRightHeaderTitle}>
+                <div className={`${classNameReportRightHeader}-title`}>
                   SOC 2 Type 1 Report
                 </div>
-                <div className={classNameReportRightHeaderMore}>
+                <div className={`${classNameReportRightHeader}-more`}>
                   <Link
                     to={
                       '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
@@ -185,7 +165,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
                   </Link>
                 </div>
               </div>
-              <div className={classNameReportRightDescription}>
+              <div className={`${classNameReportRight}-description`}>
                 The SOC 2 Type I audit is an independent audit designed and
                 conducted by Schellman & Company, LLC based on the security &
                 privacy related control and operations of the TiDB Cloud service
@@ -195,7 +175,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
             </div>
           </div>
         </Link>
-        <div className={classNameMore}>
+        <div className={`${className}-more`}>
           More compliance audits are in progress...
         </div>
       </div>
