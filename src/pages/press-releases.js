@@ -52,16 +52,14 @@ const NewsItem = React.memo(({ data, iconDate }) => {
 
   const className = `PressReleasesItem`
   const classNameRight = `${className}-right`
-  const classNameDate = `${classNameRight}-date`
-  const classNameTitle = `${classNameRight}-title`
   return (
     <li className={className}>
       <div className={classNameRight}>
-        <div className={classNameDate}>
+        <div className={`${classNameRight}-date`}>
           <img src={iconDate.publicURL} alt={data.frontmatter.date} />{' '}
           <span>{data.frontmatter.date}</span>
         </div>
-        <div className={classNameTitle}>
+        <div className={`${classNameRight}-title`}>
           <Link to={url}>{data.frontmatter.title}</Link>
         </div>
       </div>
