@@ -160,6 +160,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         animation: show 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 
         video {
+          z-index: -1;
           // https://gist.github.com/ayamflow/b602ab436ac9f05660d9c15190f4fd7b
           mask-image: radial-gradient(white, black);
         }
