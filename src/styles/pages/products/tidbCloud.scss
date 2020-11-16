@@ -106,14 +106,6 @@
     color: $primary;
   }
 
-  .start-trial-button {
-    margin-top: 2.5rem;
-
-    @include mobile {
-      margin-top: 2rem;
-    }
-  }
-
   .hero {
     .hero-body {
       padding: 8rem 1.5rem;

@@ -1,0 +1,162 @@
+@import "../common"
+
+$line-height: 28px
+
+.PingCAP-SecurityAndTrustCenter
+  .SecurityAndTrustCenter
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    text-align: center
+    line-height: $line-height
+    padding: 0 1rem
+    &Summary
+      max-width: 1120px
+      margin:
+        top: 3rem
+      color: $M4
+      font:
+        size: $P1
+        weight: 400
+    &KeySecurityFeatures
+      width: 100%
+      margin:
+        top: 5rem
+        bottom: 5rem
+      display: flex
+      flex-direction: column
+      align-items: center
+      &-title
+        color: $M3
+        font:
+          size: $H1
+          weight: 700
+      &-body
+        max-width: 670px
+        margin:
+          top: 22px
+        color: $M4
+        font:
+          size: $P1
+          weight: 400
+      &-list
+        //display: flex
+        //justify-content: space-around
+        width: 100%
+        margin:
+          top: 68px
+        @include mobile
+          //flex-direction: column
+          margin:
+            top: 3rem
+
+      &Item
+        display: flex
+        flex-direction: column
+        align-items: center
+        //width: 220px
+        &-icon
+          height: 64px
+        &-title
+          margin:
+            top: 1.5rem
+          font:
+            size: $H3
+            weight: 700
+          color: $M3
+        &-line
+          width: 16px
+          height: .75rem
+          border:
+            bottom: 3px solid $B1
+        &-list
+          margin:
+            top: 1.5rem
+          ul
+            display: flex
+            flex-direction: column
+            align-items: center
+            list-style: inside
+        @include mobile
+          margin:
+            bottom: 60px
+
+    &Compliance
+      $width: 896px
+      $icon-size: 200px
+      $icon-size-mobile: 140px
+      $margin-icon-right: 26px
+      padding: 5rem 1rem
+      background-color: #F7F8F9
+      line-height: $line-height
+      .container
+        max-width: 896px
+      &-title
+        text-align: center
+        font:
+          size: $H1
+          weight: 700
+        color: $M3
+      &-summary
+        text-align: center
+        margin:
+          top: 2rem
+        font:
+          size: $P1
+          weight: 400
+        color: $M4
+      &-report
+        padding: 2rem
+        margin: 3rem auto
+        display: flex
+        justify-content: center
+        flex-wrap: wrap
+        background-color: #fff
+        transition: all .25s
+        box-shadow: 0 2px 4px 0 rgba(#000, .08)
+        &:hover
+          box-shadow: 0 2px 16px 0 rgba(#000, .08)
+        @include mobile
+          padding: 1rem
+        &-left
+          //min-width: $icon-size
+          //height: $icon-size
+          img
+            width: $icon-size
+            //height: $icon-size
+            @include mobile
+              width: $icon-size-mobile
+        &-right
+          width: $width - $icon-size - 100px
+          margin:
+            left: $margin-icon-right
+          @include mobile
+            margin: 0
+          &-header
+            display: flex
+            justify-content: space-between
+            align-items: center
+            @include mobile
+              flex-direction: column
+            &-title
+              font:
+                size: $H1
+                weight: 700
+              color: $M3
+            &-more
+              color: $B1
+          &-description
+            margin:
+              top: 1.5rem
+            font:
+              size: $P1
+              weight: 400
+            color: $M4
+
+      &-more
+        text-align: center
+        font:
+          size: 1.125rem
+          weight: 400
+        color: $M4
