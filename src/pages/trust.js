@@ -7,15 +7,10 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import GetStartedWithTiDBCloud from '../components/get-started-with-TiDB-cloud'
 
+import trustData from '../data/trust'
+
 const Trust = React.memo(({ data }) => {
-  const {
-    BannerSVG,
-    DataAccessControlsSVG,
-    DataEncryptionSVG,
-    AuthenticationSVG,
-    WorkloadIsolationSVG,
-    AICPA_SOC_PNG,
-  } = data
+  const { BannerSVG, AICPA_SOC_PNG } = data
   const className = `SecurityAndTrustCenter`
   return (
     <Layout>
@@ -39,35 +34,7 @@ const Trust = React.memo(({ data }) => {
           </div>
           <SecurityAndTrustCenterKeySecurityFeatures
             title={'Key Security Features'}
-            list={[
-              {
-                icon: DataAccessControlsSVG,
-                title: 'Data access controls ',
-                list: ['VPC peering connection', 'IP allowlist'],
-              },
-              {
-                icon: DataEncryptionSVG,
-                title: 'Data Encryption',
-                list: [
-                  'In-transit encryption (TLS/SSL)',
-                  'Encryption at rest (AES256) for TiKV, TiFlash, and backup data.',
-                ],
-              },
-              {
-                icon: AuthenticationSVG,
-                title: 'Authentication',
-                list: [
-                  'Inter-node identity authentication (mTLS)',
-                  'Client identity authentication',
-                ],
-              },
-              {
-                icon: WorkloadIsolationSVG,
-                title: 'Workload Isolation',
-                list:
-                  'Dedicated VPC for your TiDB clusters to guarantee data confidentiality and integrity.',
-              },
-            ]}
+            list={trustData.featuresList}
           >
             TiDB Cloud is designed with strict security measures in all aspects
             that are aligned with the market, so that you can focus on your
@@ -105,7 +72,7 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
   return (
     <div className={`${className} column`}>
       <div className={`${className}-icon`}>
-        <img src={icon.publicURL} alt={title} />
+        <img src={icon} alt={title} />
       </div>
       <div className={`${className}-title`}>{title}</div>
       <div className={`${className}-line`} />
@@ -187,26 +154,6 @@ export const query = graphql`
   query {
     BannerSVG: file(
       relativePath: { eq: "security-and-trust-center/banner.jpg" }
-    ) {
-      publicURL
-    }
-    DataAccessControlsSVG: file(
-      relativePath: { eq: "security-and-trust-center/data-access-controls.svg" }
-    ) {
-      publicURL
-    }
-    DataEncryptionSVG: file(
-      relativePath: { eq: "security-and-trust-center/data-encryption.svg" }
-    ) {
-      publicURL
-    }
-    AuthenticationSVG: file(
-      relativePath: { eq: "security-and-trust-center/authentication.svg" }
-    ) {
-      publicURL
-    }
-    WorkloadIsolationSVG: file(
-      relativePath: { eq: "security-and-trust-center/workload-isolation.svg" }
     ) {
       publicURL
     }
