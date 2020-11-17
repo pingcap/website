@@ -18,7 +18,7 @@ const BlogHeader = ({
     ? frontmatter.customerCategory
     : frontmatter.categories
     ? frontmatter.categories[0]
-    : 'No Category'
+    : ''
 
   return (
     <section className="PingCAP-BlogHeader">

@@ -23,9 +23,7 @@ const Blog = ({ data, pageContext }) => {
   const { mdx } = data
   const { frontmatter, body: html, tableOfContents } = mdx
   const { filePath, hasBlogCategories } = pageContext
-  const category = frontmatter.categories
-    ? frontmatter.categories[0]
-    : 'No Category'
+  const category = frontmatter.categories ? frontmatter.categories[0] : ''
 
   const [showProgress, setShowProgress] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
