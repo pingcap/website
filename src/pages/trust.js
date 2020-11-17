@@ -56,8 +56,11 @@ const SecurityAndTrustCenterKeySecurityFeatures = React.memo(
         <div className={`${className}-title`}>{title}</div>
         <div className={`${className}-body`}>{children}</div>
         <div className={`${className}-list columns`}>
-          {list.map((item) => (
-            <SecurityAndTrustCenterKeySecurityFeaturesItem data={item} />
+          {list.map((item, idx) => (
+            <SecurityAndTrustCenterKeySecurityFeaturesItem
+              key={idx}
+              data={item}
+            />
           ))}
         </div>
       </div>
@@ -80,7 +83,7 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
         {Array.isArray(list) ? (
           <ul>
             {list.map((item) => (
-              <li>{item}</li>
+              <li key={item}>{item}</li>
             ))}
           </ul>
         ) : (
@@ -123,13 +126,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
                   SOC 2 Type 1 Report
                 </div>
                 <div className={`${classNameReportRightHeader}-more`}>
-                  <Link
-                    to={
-                      '/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud'
-                    }
-                  >
-                    → Learn More
-                  </Link>
+                  → Learn More
                 </div>
               </div>
               <div className={`${classNameReportRight}-description`}>
