@@ -220,11 +220,6 @@
     }
 
     .address-col {
-      @include mobile {
-        width: 200px;
-        margin: 0 auto;
-      }
-
       .address {
         text-align: left;
         margin-bottom: 2rem;
