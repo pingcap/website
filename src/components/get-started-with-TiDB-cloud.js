@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/components/get-started-with-TiDB-cloud.sass'
+import '../styles/components/getStartedWithTiDBCloud.sass'
 import StartYourFreeTrialNowButton from '../components/StartYourFreeTrialNowButton'
 
 const GetStartedWithTiDBCloud = React.memo(() => {
