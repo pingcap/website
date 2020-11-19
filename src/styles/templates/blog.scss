@@ -208,10 +208,9 @@
     }
 
     table {
-      display: table;
-      width: unset;
-      margin-left: auto;
-      margin-right: auto;
+      display: block;
+      overflow: auto;
+      width: 100%;
     }
 
     iframe,
