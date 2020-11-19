@@ -32,6 +32,11 @@
           margin-right: 0.5rem;
         }
       }
+      a {
+        color: $M1;
+        text-decoration: underline;
+        text-underline: $M1;
+      }
     }
     &-close {
       user-select: none;
