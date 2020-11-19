@@ -2,7 +2,7 @@
 
 import '../../../styles/pages/products/tidbCloud.scss'
 
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import React, { useEffect, useMemo, useState } from 'react'
 import {
   featuresData,
