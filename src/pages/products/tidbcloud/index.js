@@ -14,8 +14,8 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
 import axios from 'axios'
-import GetStartedWithTiDBCloud from '../../../components/get-started-with-TiDB-cloud'
-import StartYourFreeTrialNowButton from '../../../components/StartYourFreeTrialNowButton'
+import GetStartedWithTiDBCloud from '../../../components/getStartedWithTiDBCloud'
+import StartYourFreeTrialNowButton from '../../../components/startYourFreeTrialNowButton'
 
 const cloudProviders = ['aws', 'googleCloud']
 

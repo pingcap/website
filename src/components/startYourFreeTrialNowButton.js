@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { Button } from '@seagreenio/react-bulma'
 
-import '../styles/components/StartYourFreeTrialNowButton.sass'
+import '../styles/components/startYourFreeTrialNowButton.sass'
 
 const StartYourFreeTrialNowButton = () => {
   const className = `StartYourFreeTrialNowButton`
