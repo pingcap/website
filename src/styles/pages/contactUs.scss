@@ -220,7 +220,10 @@
     }
 
     .address-col {
-      transform: translateX(20%);
+      @include mobile {
+        width: 200px;
+        margin: 0 auto;
+      }
 
       .address {
         text-align: left;
