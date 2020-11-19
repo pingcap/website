@@ -3,7 +3,7 @@ import React from 'react'
 import '../styles/components/getStartedWithTiDBCloud.sass'
 import StartYourFreeTrialNowButton from '../components/StartYourFreeTrialNowButton'
 
-const GetStartedWithTiDBCloud = React.memo(() => {
+const GetStartedWithTiDBCloud = () => {
   const className = `GetStartedWithTiDBCloud`
   return (
     <section className={`section ${className}`}>
@@ -13,6 +13,6 @@ const GetStartedWithTiDBCloud = React.memo(() => {
       </div>
     </section>
   )
-})
+}
 
 export default GetStartedWithTiDBCloud
