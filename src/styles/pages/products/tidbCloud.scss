@@ -148,8 +148,11 @@
           padding: 0;
         }
 
-        .button {
-          margin-bottom: 1rem;
+        .start-trial-button {
+          margin: {
+            top: 2.5rem;
+            bottom: 1rem;
+          }
         }
       }
 

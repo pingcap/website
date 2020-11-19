@@ -15,18 +15,7 @@ import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
 import axios from 'axios'
 import GetStartedWithTiDBCloud from '../../../components/get-started-with-TiDB-cloud'
-
-const StartTrialButton = () => (
-  <Button
-    as={Link}
-    color="primary"
-    className="start-trial-button"
-    rounded
-    to="/products/tidbcloud/trial"
-  >
-    Start Your Free Trial Now
-  </Button>
-)
+import StartYourFreeTrialNowButton from '../../../components/StartYourFreeTrialNowButton'
 
 const cloudProviders = ['aws', 'googleCloud']
 
@@ -230,7 +219,9 @@ const TiDBCloudPage = ({ data }) => {
                   lets you focus on your applications, not the complexities of
                   your database.
                 </p>
-                <StartTrialButton />
+                <div className="start-trial-button">
+                  <StartYourFreeTrialNowButton />
+                </div>
                 <p className="paragraph">
                   Already have an account?{' '}
                   <a
