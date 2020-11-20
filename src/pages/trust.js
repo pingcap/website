@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import '../styles/pages/security-and-trust-center.sass'
+import '../styles/pages/security-and-trust-center.scss'
 import Banner from '../components/banner'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
