@@ -190,7 +190,7 @@ const Blogs = ({
                     {node.frontmatter.image && (
                       <Link
                         to={`${
-                          isBlog ? '/blog/' : '/case-study/'
+                          isBlog ? '/blog/' : '/case-studies/'
                         }${replaceTitle(node.parent.relativePath)}`}
                       >
                         <img
