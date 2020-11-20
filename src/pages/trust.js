@@ -5,7 +5,7 @@ import '../styles/pages/security-and-trust-center.sass'
 import Banner from '../components/banner'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
-import GetStartedWithTiDBCloud from '../components/get-started-with-TiDB-cloud'
+import GetStartedWithTiDBCloud from '../components/getStartedWithTiDBCloud'
 
 import trustData from '../data/trust'
 
