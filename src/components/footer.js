@@ -108,11 +108,6 @@ const Footer = () => {
             </div>
           ))}
           <div className="column with-socials">
-            <img
-              className="footer-logo"
-              src={FooterLogoSVG.publicURL}
-              alt="footer logo"
-            />
             <div className="columns is-multiline socials-desktop">
               <Socials className="column is-4" type="follow" />
             </div>
@@ -120,10 +115,15 @@ const Footer = () => {
         </div>
 
         <div className="annotations annotations-desktop">
+          <Lang align="left" />
           <div className="copyright">
             ©{new Date().getFullYear()} PingCAP. All Rights Reserved.
           </div>
-          <Lang align="right" />
+          <img
+            className="footer-logo"
+            src={FooterLogoSVG.publicURL}
+            alt="footer logo"
+          />
         </div>
 
         <div className="socials-mobile">
