@@ -42,7 +42,7 @@ const Community = ({ data }) => {
               <img src={communityHeroSVG.publicURL} alt="Community Hero" />
               <div className="buttons">
                 <PrimaryButton
-                  as={Link}
+                  as="a"
                   href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
                   target="_blank"
                   className="join-slack is-primary is-rounded"
@@ -50,7 +50,7 @@ const Community = ({ data }) => {
                   JOIN OUR SLACK
                 </PrimaryButton>
                 <PrimaryButton
-                  as={Link}
+                  as="a"
                   href="https://github.com/pingcap/community/tree/master/contributors"
                   target="_blank"
                   className="become-a-contributor is-primary is-rounded"
