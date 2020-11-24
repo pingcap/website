@@ -3,7 +3,6 @@ import Link from './IntlLink'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
 import AddIcon from '@material-ui/icons/Add'
-import { Button } from '@seagreenio/react-bulma'
 import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
 import { useIntl } from 'react-intl'
 
