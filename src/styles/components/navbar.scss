@@ -8,7 +8,8 @@
     flex-direction: row;
     align-items: center;
     height: $height-promotion;
-    background-color: $B3;
+    background-image: url("../../../images/promotion-banner-background-image.svg");
+    background-size: cover;
     color: $M1;
     @include mobile {
       padding: 0 $padding-page-mobile;
