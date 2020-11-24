@@ -12,7 +12,9 @@ const PingCAPCookieConsent = () => {
         buttonText="Accept"
         enableDeclineButton
         declineButtonText="Decline"
+        containerClasses="CookieConsent"
         contentClasses="content"
+        buttonWrapperClasses="button-wrapper"
         cookieName="gatsby-gdpr-google-analytics"
         buttonClasses="accept-button"
         declineButtonClasses="decline-button"
