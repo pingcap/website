@@ -25,8 +25,9 @@ $LH8: 0.5;
 
 $M1: #fff;
 $M2: #F7F8F9;
-$M3: #30323e;
-$M4: #606060;
+$M3: #3E3E3E;
+// set new M3 and new M4 to between old B3 and old M4
+$M4: $M3;
 
 $C1: #e7f0fc;
 $C2: #dbe4f0;
