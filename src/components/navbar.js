@@ -8,6 +8,7 @@ import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
 import { useIntl } from 'react-intl'
 
 import classNames from 'classnames'
+import PrimaryButton from '../components/primaryButton'
 
 function PromotionBanner({
   promotionText,
@@ -213,27 +214,24 @@ const Navbar = ({ showBanner }) => {
           </div>
           <div className="navbar-end">
             <div className="navbar-item with-get-tidb">
-              <Button
+              <PrimaryButton
                 as={Link}
                 to={navbarItems.contactUs.href}
                 className="get-tidb"
-                color="primary"
-                rounded
                 outlined
               >
                 {navbarItems.contactUs.name}
-              </Button>
+              </PrimaryButton>
             </div>
             <div className="navbar-item with-get-tidb">
-              <Button
+              <PrimaryButton
                 as={Link}
                 to={navbarItems.downloadTiDB.href}
                 className="get-tidb"
-                color="primary"
                 rounded
               >
                 {navbarItems.downloadTiDB.name}
-              </Button>
+              </PrimaryButton>
             </div>
           </div>
         </div>
