@@ -4,7 +4,7 @@
   @mixin paragraph {
     font-size: $P1;
     font-weight: 400;
-    color: $M4;
+    color: $M3;
   }
 
   @mixin form-text-fill {
@@ -232,7 +232,7 @@
 
         .addr-detail {
           font-size: $size-7;
-          color: $M4;
+          color: $M3;
         }
       }
     }

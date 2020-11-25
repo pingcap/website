@@ -10,7 +10,7 @@
   @mixin desc-text {
     font-size: $P1;
     font-weight: 400;
-    color: $M4;
+    color: $M3;
   }
 
   @mixin flex-container-gap($direction, $gap) {
@@ -124,7 +124,7 @@
   .intro-text {
     font-size: $P1;
     font-weight: 400;
-    color: $M4;
+    color: $M3;
     margin-bottom: 2rem;
   }
 
