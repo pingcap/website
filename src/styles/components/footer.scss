@@ -117,7 +117,7 @@
     }
 
     position: absolute;
-    top: calc(120px - 0.5rem);
+    top: 1.75rem;
     right: 1.5rem;
     width: 150px;
 
@@ -160,6 +160,12 @@
 
     .lang {
       margin-bottom: 0.5rem;
+
+      .dropdown-trigger {
+        &:focus {
+          outline: 0;
+        }
+      }
     }
   }
 

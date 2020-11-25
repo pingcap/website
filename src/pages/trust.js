@@ -1,8 +1,8 @@
 import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import '../styles/pages/security-and-trust-center.sass'
-import Banner from '../components/banner'
+import '../styles/pages/security-and-trust-center.scss'
+import Hero from '../components/hero'
 import SEO from '../components/seo'
 import Layout from '../components/layout'
 import GetStartedWithTiDBCloud from '../components/getStartedWithTiDBCloud'
@@ -19,9 +19,9 @@ const Trust = React.memo(({ data }) => {
         description="Story about PingCAP, the team behind TiDB"
       />
       <article className="PingCAP-SecurityAndTrustCenter">
-        <Banner backgroundImage={BannerSVG.publicURL}>
+        <Hero backgroundImage={BannerSVG.publicURL}>
           Security and Trust Center
-        </Banner>
+        </Hero>
         <div className={`${className} container`}>
           <div className="SecurityAndTrustCenterSummary">
             At PingCAP we value security and trust more than anything because we

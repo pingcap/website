@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/components/getStartedWithTiDBCloud.sass'
+import '../styles/components/getStartedWithTiDBCloud.scss'
 import StartYourFreeTrialNowButton from '../components/startYourFreeTrialNowButton'
 
 const GetStartedWithTiDBCloud = () => {
