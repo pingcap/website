@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import CatalogueSwitch from '../components/catalogueSwitch'
 
-import '../styles/pages/in-the-news.sass'
+import '../styles/pages/in-the-news.scss'
 
 import news from '../../data/news.json'
 
@@ -53,22 +53,19 @@ const NewsItem = React.memo(({ data, iconDate }) => {
   const className = `NewsItem`
   const classNameLeft = `${className}-left`
   const classNameRight = `${className}-right`
-  const classNameLogo = `${classNameLeft}-logo`
-  const classNameDate = `${classNameRight}-date`
-  const classNameTitle = `${classNameRight}-title`
   return (
     <li className={className}>
       <div className={classNameLeft}>
-        <div className={classNameLogo}>
+        <div className={`${classNameLeft}-logo`}>
           <img src={'https://download.pingcap.com' + data.logo} alt="" />
         </div>
       </div>
       <div className={classNameRight}>
-        <div className={classNameDate}>
+        <div className={`${classNameRight}-date`}>
           <img src={iconDate.publicURL} alt={data.date} />{' '}
           <span>{data.date}</span>
         </div>
-        <div className={classNameTitle}>
+        <div className={`${classNameRight}-title`}>
           <a href={data.link} target="_blank" rel="noopener noreferrer">
             {data.title}
           </a>

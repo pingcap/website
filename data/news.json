@@ -1,5 +1,35 @@
 [
   {
+    "title": "PingCAP, the open-source developer behind TiDB, closes $270 million Series D",
+    "logo": "/images/news/techcrunch-logo.jpg",
+    "link": "https://techcrunch.com/2020/11/16/pingcap-the-open-source-developer-behind-tidb-closes-270-million-series-d/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+techcrunch%2Ffundings-exits+%28TechCrunch+%C2%BB+Fundings+%26+Exits%29",
+    "date": "2020-11-17"
+  },
+  {
+    "title": "PingCAP, the open-source developer behind TiDB, closes $270 million Series D",
+    "logo": "/images/news/yahoo-finance-logo.png",
+    "link": "https://au.finance.yahoo.com/news/pingcap-open-source-developer-behind-063028593.html",
+    "date": "2020-11-17"
+  },
+  {
+    "title": "Open-Source Company PingCAP Announces $270 Million Series D Funding",
+    "logo": "/images/news/ap-news-logo.png",
+    "link": "https://apnews.com/press-release/pr-newswire/technology-business-media-open-source-software-online-media-abcae8c1c8ea6ed7a7f74e81708b573f",
+    "date": "2020-11-17"
+  },
+  {
+    "title": "US-based enterprise software firm PingCAP nets $270m in Series D round",
+    "logo": "/images/news/deal-street-asia-logo.png",
+    "link": "https://www.dealstreetasia.com/stories/pingcap-series-d-215993/?utm_content=buffereb9f6&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer",
+    "date": "2020-11-17"
+  },
+  {
+    "title": "Open-Source Company PingCAP Announces $270 Million Series D Funding",
+    "logo": "/images/news/cision-logo.png",
+    "link": "https://www.prnewswire.com/news-releases/open-source-company-pingcap-announces-270-million-series-d-funding-301174224.html?tc=eml_cleartime",
+    "date": "2020-11-17"
+  },
+  {
     "title": "Metrics Relation Graph Helps DBAs Quickly Locate Performance Problems in TiDB",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/metrics-relation-graph-helps-dbas-quickly-locate-p",

@@ -86,6 +86,10 @@ const footerColumns = [
           link: 'https://pingcap.com/weekly/',
           outbound: true,
         },
+        {
+          name: 'Trust Center',
+          link: '/trust',
+        },
       ],
     },
   ],

@@ -1,4 +1,4 @@
-import { FormattedMessage } from 'react-intl'
+import { useIntl, FormattedMessage } from 'react-intl'
 import React, { useEffect, useRef, useState } from 'react'
 
 import BlogHeader from '../components/blogHeader'
@@ -15,6 +15,7 @@ import TOCRenderer from '../components/tocRenderer'
 import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
 import { graphql } from 'gatsby'
+import { replaceSpaceWithDash } from '../lib/string'
 
 const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
   return (
@@ -29,6 +30,7 @@ const CaseStudy = ({ data, pageContext }) => {
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
   const [isFirstRender, setIsFirstRender] = useState(true)
+  const intl = useIntl()
 
   useEffect(() => {
     setIsFirstRender(false)
@@ -162,7 +164,15 @@ const CaseStudy = ({ data, pageContext }) => {
                 <div className="under-category">
                   <Link to="/case-studies">Case Studies</Link>
                   <span> > </span>
-                  <Link to={`/case-studies/${category}`}>{category}</Link>
+                  <Link
+                    to={`/case-studies/${
+                      intl.locale === 'en'
+                        ? replaceSpaceWithDash(category)
+                        : category
+                    }`}
+                  >
+                    {category}
+                  </Link>
                 </div>
                 <BlogHeader
                   frontmatter={frontmatter}

@@ -2,7 +2,7 @@
 
 import '../../../styles/pages/products/tidbCloud.scss'
 
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import React, { useEffect, useMemo, useState } from 'react'
 import {
   featuresData,
@@ -14,18 +14,8 @@ import { Button } from '@seagreenio/react-bulma'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
 import axios from 'axios'
-
-const StartTrialButton = () => (
-  <Button
-    as={Link}
-    color="primary"
-    className="start-trial-button"
-    rounded
-    to="/products/tidbcloud/trial"
-  >
-    Start Your Free Trial Now
-  </Button>
-)
+import GetStartedWithTiDBCloud from '../../../components/getStartedWithTiDBCloud'
+import StartYourFreeTrialNowButton from '../../../components/startYourFreeTrialNowButton'
 
 const cloudProviders = ['aws', 'googleCloud']
 
@@ -229,7 +219,9 @@ const TiDBCloudPage = ({ data }) => {
                   lets you focus on your applications, not the complexities of
                   your database.
                 </p>
-                <StartTrialButton />
+                <div className="start-trial-button">
+                  <StartYourFreeTrialNowButton />
+                </div>
                 <p className="paragraph">
                   Already have an account?{' '}
                   <a
@@ -337,12 +329,7 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-get-started">
-          <div className="container">
-            <h2 className="title is-4">Get Started with TiDB Cloud</h2>
-            <StartTrialButton />
-          </div>
-        </section>
+        <GetStartedWithTiDBCloud />
       </main>
     </Layout>
   )
