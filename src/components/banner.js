@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/components/banner.sass'
+import '../styles/components/banner.scss'
 
 const Banner = React.memo(({ backgroundImage, children }) => {
   const className = `Banner`

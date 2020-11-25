@@ -5,7 +5,7 @@ import SEO from '../components/seo'
 import Layout from '../components/layout'
 import CatalogueSwitch from '../components/catalogueSwitch'
 
-import '../styles/pages/in-the-news.sass'
+import '../styles/pages/in-the-news.scss'
 
 import news from '../../data/news.json'
 
