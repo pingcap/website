@@ -256,8 +256,7 @@ const footerColumnsZh = [
         },
         {
           name: '新闻报道',
-          link: 'https://pingcap.com/about-cn/news',
-          outbound: true,
+          link: '/news',
         },
         {
           name: '隐私声明',
