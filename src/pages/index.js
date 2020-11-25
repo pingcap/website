@@ -1,6 +1,6 @@
 import '../styles/pages/index.scss'
 
-import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
+import { Box, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
 import React, { useEffect, useRef } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
@@ -14,6 +14,7 @@ import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
 
 import throttle from 'lodash.throttle'
+import PrimaryButton from '../components/primaryButton'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -151,24 +152,17 @@ const IndexPage = ({ data }) => {
                   elastic scale and real-time analytics
                 </h2>
                 <div className="buttons">
-                  <Button
+                  <PrimaryButton
                     as={Link}
                     to="/download"
-                    color="primary"
                     target="_blank"
                     rounded
                   >
                     GET STARTED
-                  </Button>
-                  <Button
-                    as={Link}
-                    color="primary"
-                    to="/contact-us"
-                    rounded
-                    outlined
-                  >
+                  </PrimaryButton>
+                  <PrimaryButton as={Link} to="/contact-us" rounded outlined>
                     ASK AN EXPERT
-                  </Button>
+                  </PrimaryButton>
                 </div>
               </div>
               <div className="video-wrapper">

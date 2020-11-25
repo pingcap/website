@@ -1,6 +1,6 @@
 import React from 'react'
 
-import '../styles/components/hero.sass'
+import '../styles/components/hero.scss'
 
 const Hero = React.memo(({ backgroundImage, children }) => {
   const className = `Banner`
