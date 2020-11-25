@@ -1,0 +1,34 @@
+@import "../common";
+
+$font-color: #fff;
+$font-size: 3rem;
+$font-size-mobile: 2rem;
+$font-weight: 700;
+
+.Banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 420px;
+  background-size: cover;
+
+  //filter: brightness(70%)
+  @include mobile {
+    height: 200px;
+  }
+
+
+  &-title {
+    color: $font-color;
+    font: {
+      size: $font-size;
+      weight: $font-weight;
+    };
+
+    @include mobile {
+      font: {
+        size: $font-size-mobile;
+      };
+    }
+  }
+}
