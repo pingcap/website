@@ -37,7 +37,7 @@ $socials: github twitter linkedin facebook reddit slack youtube yc;
 @mixin has-pingcap-style-input {
   input {
     padding-bottom: calc(0.6rem - 1px);
-    background: $B5;
+    background: $M2;
     color: $B3;
     border-color: $C2;
     box-shadow: none;
@@ -58,7 +58,7 @@ $socials: github twitter linkedin facebook reddit slack youtube yc;
 }
 
 @mixin has-light-background {
-  background: $B5;
+  background: $M2;
 }
 
 @mixin has-pingcap-style-pagination($connect-width) {
