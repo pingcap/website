@@ -1,6 +1,8 @@
+@import "../common";
+
 .PrimaryButton {
   transition: all .25s;
   &:hover {
-    background-color: #2323bf !important;
+    background-color: $button-hover-color !important;
   }
 }
