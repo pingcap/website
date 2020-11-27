@@ -14,8 +14,8 @@ const InTheNews = React.memo(({ data }) => {
   return (
     <Layout>
       <SEO
-        title="In The News"
-        description="Get the latest information about PingCAP"
+        title="新闻报道"
+        description="最新技术观点、产品发展路径、企业动态、媒体对话，展现 TiDB 研发背后的真实思考过程。"
       />
       <article className={className}>
         <Hero backgroundImage={banner.publicURL}>PingCAP 新闻报道</Hero>
