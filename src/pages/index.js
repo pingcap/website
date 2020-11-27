@@ -46,6 +46,7 @@ const IndexPage = ({ data }) => {
     tidbSQLAtScaleSVG,
     tidbFeaturesMP4,
     tidbFeaturesPNG,
+    tidbFeaturesGIF,
     last3Blogs,
   } = data
 
@@ -135,6 +136,9 @@ const IndexPage = ({ data }) => {
 
   const onCardClick = (href) => () => navigate(href)
 
+  const isMiBrowser = () => /MiuiBrowser/gi.test(navigator.userAgent)
+  const isX5Browser = () => /MicroMessenger/i.test(navigator.userAgent)
+
   return (
     <Layout NavbarProps={{ showBanner: true }}>
       <SEO
@@ -171,15 +175,15 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="video-wrapper">
-                <video
-                  src={tidbFeaturesMP4.publicURL}
-                  loop
-                  muted
-                  autoPlay
-                  poster={tidbFeaturesPNG.publicURL}
-                >
-                  <img src={tidbFeaturesPNG.publicURL} alt="" />
-                </video>
+                {isMiBrowser() || isX5Browser() ? (
+                  // if browser is MiBrowser or WeChat X5 Browser, show GIF for resolving z-index error
+                  <img src={tidbFeaturesGIF.publicURL} alt="" />
+                ) : (
+                  <video loop muted autoPlay poster={tidbFeaturesPNG.publicURL}>
+                    <source src={tidbFeaturesMP4.publicURL} type="video/mp4" />
+                    <img src={tidbFeaturesGIF.publicURL} alt="" />
+                  </video>
+                )}
               </div>
             </div>
           </div>
@@ -424,6 +428,9 @@ export const query = graphql`
       publicURL
     }
     tidbFeaturesPNG: file(relativePath: { eq: "home/tidb-features.png" }) {
+      publicURL
+    }
+    tidbFeaturesGIF: file(relativePath: { eq: "home/tidb-features.gif" }) {
       publicURL
     }
     last3Blogs: allMdx(
