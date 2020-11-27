@@ -2,7 +2,7 @@ import '../styles/pages/index.scss'
 
 import { Box, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, navigate, Link } from 'gatsby'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
 import Layout from '../components/layout'
@@ -136,8 +136,17 @@ const IndexPage = ({ data }) => {
 
   const onCardClick = (href) => () => navigate(href)
 
-  const isMiBrowser = () => /MiuiBrowser/gi.test(navigator.userAgent)
-  const isX5Browser = () => /MicroMessenger/i.test(navigator.userAgent)
+  const [browser, setBrowser] = useState({
+    isMiBrowser: false,
+    isX5Browser: false,
+  })
+
+  useEffect(() => {
+    setBrowser({
+      isMiBrowser: /MiuiBrowser/gi.test(window.navigator.userAgent),
+      isX5Browser: /MicroMessenger/i.test(window.navigator.userAgent),
+    })
+  }, [])
 
   return (
     <Layout NavbarProps={{ showBanner: true }}>
@@ -175,7 +184,7 @@ const IndexPage = ({ data }) => {
                 </div>
               </div>
               <div className="video-wrapper">
-                {isMiBrowser() || isX5Browser() ? (
+                {browser.isMiBrowser || browser.isX5Browser ? (
                   // if browser is MiBrowser or WeChat X5 Browser, show GIF for resolving z-index error
                   <img src={tidbFeaturesGIF.publicURL} alt="" />
                 ) : (
