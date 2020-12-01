@@ -23,7 +23,7 @@
 @mixin paragraph {
   font-size: $P1;
   font-weight: 400;
-  color: $M3;
+  color: $F1;
 }
 
 .PingCAP-About {
@@ -32,7 +32,7 @@
   @mixin sub-title {
     font-size: $H1;
     font-weight: 700;
-    color: $M3;
+    color: $F1;
     margin-bottom: 4rem;
     text-align: center;
   }
@@ -150,7 +150,7 @@
         }
         font-size: $H2;
         font-weight: 700;
-        color: $M3;
+        color: $F1;
         margin-bottom: 6rem;
       }
       .button {
@@ -169,7 +169,7 @@
     @include section-title;
     font-size: $H1;
     font-weight: 500;
-    color: $M3;
+    color: $F1;
     margin-bottom: 4rem;
   }
 
@@ -202,7 +202,7 @@
         }
 
         @include subtitle;
-        color: $M3;
+        color: $F1;
       }
 
       .paragraph {
@@ -299,7 +299,7 @@
         }
 
         @include paragraph;
-        color: $M3;
+        color: $F1;
         margin-bottom: 4.5rem;
       }
       .col-container {
@@ -324,7 +324,7 @@
         h3 {
           font-size: $P1;
           font-weight: 400;
-          color: $M3;
+          color: $F1;
           margin: 1rem 0 1.5rem;
         }
 
@@ -337,7 +337,7 @@
           text-align: center;
           font-size: $P1;
           font-weight: 300;
-          color: $M3;
+          color: $F1;
         }
       }
     }
@@ -381,14 +381,14 @@
 
       font-size: $P1;
       font-weight: 400;
-      color: $M3;
+      color: $F1;
     }
 
     .address {
 
       font-size: $P1;
       font-weight: 400;
-      color: $M3;
+      color: $F1;
     }
 
     .office-info {
@@ -423,7 +423,7 @@
         .contact {
           font-size: $P1;
           font-weight: 300;
-          color: $M3;
+          color: $F1;
         }
       }
 

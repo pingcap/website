@@ -26,13 +26,13 @@
   @mixin main-title {
     font-size: $H1;
     font-weight: 700;
-    color: $M3;
+    color: $F1;
   }
 
   @mixin main-title-zh {
     font-size: $H1;
     font-weight: 500;
-    color: $M3;
+    color: $F1;
   }
 
   .top-banner-wrapper {
@@ -153,7 +153,7 @@
           margin-bottom: 1rem;
           font-size: $H2;
           font-weight: 700;
-          color: $M3;
+          color: $F1;
 
           &::after {
             content: '';
@@ -360,7 +360,7 @@
         margin-top: 1.5rem;
         font-size: $P1;
         font-weight: 400;
-        color: $M3;
+        color: $F1;
       }
     }
 
@@ -467,7 +467,7 @@
               margin: 0 $is-1 2rem;
               font-size: 1rem;
               font-weight: 300;
-              color: $M3;
+              color: $F1;
             }
           }
 
@@ -510,7 +510,7 @@
           padding: 0;
           font-weight: 400;
           font-size: $P2;
-          color: $M3;
+          color: $F1;
           overflow: auto;
         }
       }

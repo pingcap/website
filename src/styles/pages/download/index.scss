@@ -4,13 +4,13 @@
   @mixin title {
     font-size: $H1;
     font-weight: 700;
-    color: $M3;
+    color: $F1;
   }
 
   @mixin desc-text {
     font-size: $P1;
     font-weight: 400;
-    color: $M3;
+    color: $F1;
   }
 
   @mixin flex-container-gap($direction, $gap) {
@@ -124,7 +124,7 @@
   .intro-text {
     font-size: $P1;
     font-weight: 400;
-    color: $M3;
+    color: $F1;
     margin-bottom: 2rem;
   }
 
@@ -185,7 +185,7 @@
   .desc-title {
     font-size: $H3;
     font-weight: 700;
-    color: $M3;
+    color: $F1;
   }
 
   .enterprise-desc-title {
@@ -243,7 +243,7 @@
       margin-bottom: 2rem;
       font-size: $P1;
       font-weight: 700;
-      color: $M3;
+      color: $F1;
 
       pre {
         background: #f6f8fa;
@@ -274,7 +274,7 @@
     display: inline;
     font-size: $P1;
     font-weight: 700;
-    color: $M3;
+    color: $F1;
   }
 
   .tidb-cloud-full-edition-text {
