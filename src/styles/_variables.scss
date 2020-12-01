@@ -31,9 +31,12 @@ $W1-EN: 400;
 $W2-EN: 600;
 $W3-EN: 700;
 
-$M1: #fff;
-$M2: #F7F8F9;
-$M3: #3E3E3E;
+$M1: #FFFFFF; // Card Backround
+$M2: #F7F8F9; // Main Background
+$M3: #3E3E3E; // deprecated, replace M3 to F1
+
+$F1: #454A59; // Text - 1 Title，H0，H1，H2
+$F2: #565C6F; // Text - 2 General，P1，P2，H3
 
 $C1: #e7f0fc;
 $C2: #dbe4f0;
@@ -41,17 +44,17 @@ $C3: #b8c4d6;
 $C4: #9fa8b9;
 $C5: #5d6d86;
 
-$B1: #595AE0;
-$B2: #1BBBE0;
-$B3: #172D72;
-$B4: #2D3758;
+$B1: #595AE0; // Theme，Button, highlight, link
+$B2: #27BBE0; // Blue，Minor
+$B3: #4C5470; // Dark 100%，dark bg
+$B4: #2D3758; // Dark 85%， bg
 
-$T1: #a9d359;
-$T2: #35ced5;
-$T3: #E86562;
-$T4: #7d3f98;
-$T5: #f8c200;
-$T6: #f15a24;
+$T1: #A9D359; // tag，Success
+$T2: #E9EAEE; // line，divider, 10 % B3
+$T3: #F9746C; // tag, Warning, Notice, Attention
+$T4: #7D3F98; // tag
+$T5: #F8C200; // tag
+$T6: #F15A24; // tag
 
 $family-sans-serif: 'Titillium Web', 'Helvetica Neue', 'Arial', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Noto Sans SC', 'Noto Sans CJK', 'Noto Sans', -apple-system, sans-serif;
 
