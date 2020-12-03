@@ -45,7 +45,6 @@ const IndexPage = ({ data }) => {
   const {
     tidbSQLAtScaleSVG,
     tidbFeaturesMP4,
-    tidbFeaturesPNG,
     tidbFeaturesGIF,
     last3Blogs,
   } = data
@@ -188,9 +187,9 @@ const IndexPage = ({ data }) => {
                   // if browser is MiBrowser or WeChat X5 Browser, show GIF for resolving z-index error
                   <img src={tidbFeaturesGIF.publicURL} alt="" />
                 ) : (
-                  <video loop muted autoPlay poster={tidbFeaturesPNG.publicURL}>
+                  <video loop muted autoPlay>
                     <source src={tidbFeaturesMP4.publicURL} type="video/mp4" />
-                    <img src={tidbFeaturesGIF.publicURL} alt="" />
+                    <img src={tidbFeaturesGIF.publicURL} alt="TiDB Features" />
                   </video>
                 )}
               </div>
@@ -434,9 +433,6 @@ export const query = graphql`
       publicURL
     }
     tidbFeaturesMP4: file(relativePath: { eq: "home/tidb-features.mp4" }) {
-      publicURL
-    }
-    tidbFeaturesPNG: file(relativePath: { eq: "home/tidb-features.png" }) {
       publicURL
     }
     tidbFeaturesGIF: file(relativePath: { eq: "home/tidb-features.gif" }) {
