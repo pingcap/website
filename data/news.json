@@ -1,5 +1,11 @@
 [
   {
+    "title": "Flink + TiDB: A Scale-Out Real-Time Data Warehouse for Second-Level Analytics",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/flink-tidb-a-scale-out-real-time-data-warehouse-fo",
+    "date": "2020-12-02"
+  },
+  {
     "title": "PingCAP, the open-source developer behind TiDB, closes $270 million Series D",
     "logo": "/images/news/techcrunch-logo.jpg",
     "link": "https://techcrunch.com/2020/11/16/pingcap-the-open-source-developer-behind-tidb-closes-270-million-series-d/?utm_source=feedburner&utm_medium=feed&utm_campaign=Feed%3A+techcrunch%2Ffundings-exits+%28TechCrunch+%C2%BB+Fundings+%26+Exits%29",
