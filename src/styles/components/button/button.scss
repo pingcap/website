@@ -1,0 +1,84 @@
+@import "../../common";
+
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  transition: all .25s;
+  user-select: none;
+
+  &-icon {
+    display: flex;
+    margin-right: 8px;
+  }
+
+  &.small {
+    height: 32px;
+    font-size: $P2;
+    padding: 4px 10px;
+  }
+  &.medium {
+    height: 40px;
+    font-size: $P1;
+    padding: 6px 16px;
+  }
+  &.large {
+    height: 48px;
+    font-size: $H3;
+    padding: 8px 22px;
+  }
+
+  &.primary {
+    color: #FFF;
+    background-color: $B1;
+    border: 1px solid $B1;
+
+    &.disabled {
+      //background-color: mix($B1, rgba($F2, .6), .5);
+      filter: alpha(60%);
+    }
+  }
+
+  &.outline {
+    color: $B1;
+    background-color: #FFF;
+    border: 1px solid $B1;
+
+    &.disabled {
+      border: 1px solid $T2;
+      background-color: rgba($T2, .6);
+      color: rgba($F2, .6);
+      filter: alpha(60%);
+    }
+  }
+
+  &.text {
+    color: $B1;
+    background-color: rgba(#FFF, 0);
+    border: 1px solid rgba(#FFF, 0);
+
+    &.disabled {
+      color: rgba($F2, .6);
+      &:hover {
+        background-color: rgba(#FFF, 0) !important;
+      }
+    }
+
+    &:hover {
+      background-color: rgba($B1, .1);
+    }
+  }
+
+  &:hover {
+    filter: brightness(.9);
+  }
+
+  &.rounded {
+    border-radius: 40px;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
