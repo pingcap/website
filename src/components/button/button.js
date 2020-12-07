@@ -6,6 +6,7 @@ import '../../styles/components/button/button.scss'
 const Button = ({
   as,
   icon,
+  className,
   children,
   size,
   type,
@@ -14,7 +15,7 @@ const Button = ({
   lowerCase,
   ...rest
 }) => {
-  const className = `Button`
+  const classNameButton = `Button`
 
   // if lowerCase === false, convert all text to UpperCase, otherwise use lowerCase
   lowerCase = !!lowerCase
@@ -22,7 +23,7 @@ const Button = ({
 
   const Tag = as
   const props = {
-    className: classNames(className, size, type, {
+    className: classNames(classNameButton, className, size, type, {
       rounded,
       disabled,
     }),
@@ -30,11 +31,11 @@ const Button = ({
   }
 
   const iconNode = icon ? (
-    <div className={`${className}-icon`}>{icon}</div>
+    <div className={`${classNameButton}-icon`}>{icon}</div>
   ) : (
     <></>
   )
-  const textNode = <div className={`${className}-text`}>{children}</div>
+  const textNode = <div className={`${classNameButton}-text`}>{children}</div>
   const childNode = (
     <>
       {iconNode} {textNode}
