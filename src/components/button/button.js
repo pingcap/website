@@ -22,7 +22,9 @@ const Button = ({
 
   // if lowerCase === false, convert all text to UpperCase, otherwise use lowerCase
   lowerCase = !!lowerCase
-  children = lowerCase ? children : children.toUpperCase()
+  if (typeof children === 'string') {
+    children = lowerCase ? children : children.toUpperCase()
+  }
 
   const Tag = as
   const props = {
