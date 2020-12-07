@@ -114,14 +114,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
           }
 
           a {
-            font-size: $size-8;
             letter-spacing: 1px;
-            width: 9.375rem;
-            height: 3rem;
-
-            @include mobile {
-              width: 140px;
-            }
 
             &:first-child {
               margin-right: 2.5rem;

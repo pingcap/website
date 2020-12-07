@@ -14,7 +14,7 @@ import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
 
 import throttle from 'lodash.throttle'
-import PrimaryButton from '../components/primaryButton'
+import Button from '../components/button'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -169,17 +169,23 @@ const IndexPage = ({ data }) => {
                   elastic scale and real-time analytics
                 </h2>
                 <div className="buttons">
-                  <PrimaryButton
+                  <Button
                     as={Link}
                     to="/download"
                     target="_blank"
-                    rounded
+                    size="large"
+                    type="primary"
                   >
                     GET STARTED
-                  </PrimaryButton>
-                  <PrimaryButton as={Link} to="/contact-us" rounded outlined>
+                  </Button>
+                  <Button
+                    as={Link}
+                    to="/contact-us"
+                    size="large"
+                    type="outline"
+                  >
                     ASK AN EXPERT
-                  </PrimaryButton>
+                  </Button>
                 </div>
               </div>
               <div className="video-wrapper">
