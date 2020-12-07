@@ -40,9 +40,9 @@ const Button = ({
   )
   const textNode = <div className={`${classNameButton}-text`}>{children}</div>
   const childNode = (
-    <>
+    <div className={`${classNameButton}-content`}>
       {iconNode} {textNode}
-    </>
+    </div>
   )
 
   return as ? (

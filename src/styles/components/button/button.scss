@@ -1,12 +1,16 @@
 @import "../../common";
 
 .Button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   border-radius: 4px;
   transition: all .25s;
   user-select: none;
+
+  &-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
   &-icon {
     display: flex;
