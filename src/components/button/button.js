@@ -17,6 +17,9 @@ const Button = ({
 }) => {
   const classNameButton = `Button`
 
+  size = size && size.length !== 0 ? size : 'medium'
+  type = type || 'primary'
+
   // if lowerCase === false, convert all text to UpperCase, otherwise use lowerCase
   lowerCase = !!lowerCase
   children = lowerCase ? children : children.toUpperCase()
