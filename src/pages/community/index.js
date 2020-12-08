@@ -6,8 +6,8 @@ import SEO from '../../components/seo'
 import { contributionGrow, communityActivities } from '../../data/community'
 import { graphql, Link } from 'gatsby'
 import EventsCard from '../../components/eventsCard'
-import { Button } from '@seagreenio/react-bulma'
-import PrimaryButton from '../../components/primaryButton'
+// import { Button } from '@seagreenio/react-bulma'
+import Button from '../../components/button'
 
 const Community = ({ data }) => {
   const {
@@ -41,22 +41,23 @@ const Community = ({ data }) => {
               </div>
               <img src={communityHeroSVG.publicURL} alt="Community Hero" />
               <div className="buttons">
-                <PrimaryButton
+                <Button
                   as="a"
                   href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
                   target="_blank"
-                  className="join-slack is-primary is-rounded"
+                  className="join-slack"
                 >
                   JOIN OUR SLACK
-                </PrimaryButton>
-                <PrimaryButton
+                </Button>
+                <Button
                   as="a"
                   href="https://github.com/pingcap/community/tree/master/contributors"
                   target="_blank"
-                  className="become-a-contributor is-primary is-rounded"
+                  className="become-a-contributor"
+                  type="outline"
                 >
                   BECOME A CONTRIBUTOR
-                </PrimaryButton>
+                </Button>
               </div>
             </div>
           </div>
