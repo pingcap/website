@@ -55,6 +55,12 @@
       color: rgba($F2, .6);
       filter: alpha(60%);
     }
+
+    &:hover {
+      color: #FFF;
+      background-color: $B1;
+      border: 1px solid $B1;
+    }
   }
 
   &.text {
