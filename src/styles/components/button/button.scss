@@ -59,8 +59,8 @@
 
     &:hover {
       color: #FFF;
-      background-color: $B1;
       border: 1px solid $B1;
+      background-color: mix($B1, #000, 90%);
     }
   }
 
@@ -82,7 +82,8 @@
   }
 
   &:hover {
-    filter: brightness(.9);
+    //filter: brightness(.9);
+    background-color: mix($B1, #000, 90%);
   }
 
   &.rounded {
