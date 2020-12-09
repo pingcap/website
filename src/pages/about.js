@@ -88,11 +88,7 @@ const About = ({ data }) => {
                 doers;
               </p>
               <p className="last">We want to hear from you!</p>
-              <Button
-                as={Link}
-                to="/careers"
-                className="button is-primary is-rounded"
-              >
+              <Button as={Link} to="/careers" className="button">
                 Join Us
                 <AroundParticles />
               </Button>
