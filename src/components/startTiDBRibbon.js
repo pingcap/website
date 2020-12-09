@@ -20,13 +20,12 @@ const StartTiDBRibbon = () => {
             as={Link}
             to="/contact-us"
             color="primary"
-            rounded
             inverted
             outlined
           >
             <FormattedMessage id="components.StartTiDBRibbon.contactUs" />
           </Button>
-          <Button className="get-tidb" as={Link} to="/download" rounded>
+          <Button className="get-tidb" as={Link} to="/download">
             <FormattedMessage id="components.StartTiDBRibbon.getTiDB" />
           </Button>
         </Buttons>
