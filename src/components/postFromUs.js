@@ -1,7 +1,9 @@
-import { Box, Button, withNormalHelpers } from '@seagreenio/react-bulma'
+import { Box, withNormalHelpers } from '@seagreenio/react-bulma'
 import { graphql, useStaticQuery } from 'gatsby'
 
 import React from 'react'
+
+import Button from '../components/button'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -68,7 +70,7 @@ export const PostFromUsInHome = () => (
         as="a"
         href="https://share.hsforms.com/1e2W03wLJQQKPd1d9rCbj_Q2npzm"
         target="_blank"
-        color="primary"
+        size="large"
       >
         SUBSCRIBE
       </Button>
