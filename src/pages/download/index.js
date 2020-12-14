@@ -263,6 +263,14 @@ const TiUP = () => {
             </CodeSnippet>
           </li>
         </ol>
+        <p className="desc-paragraph">
+        For community support, join the          <a
+            href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=download"
+            className="link-to-full-doc"
+            rel="noopener"
+          >TiDB Community Slack
+          </a>
+        </p>
       </section>
     </>
   )
