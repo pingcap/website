@@ -160,7 +160,6 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#fff',
         display: 'minimal-ui',
-        icon: 'images/pingcap-icon.png', // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-remove-serviceworker`,
