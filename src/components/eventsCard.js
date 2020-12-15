@@ -35,7 +35,7 @@ const EventsCard = (prop) => {
       {cardsList.map((card) => (
         <div className="column is-4" key={card.name}>
           {card.readMoreLink ? (
-            <Link to={card.readMoreLink}>
+            <Link to={card.readMoreLink} type={card.boundType}>
               <Card card={card} />
             </Link>
           ) : (

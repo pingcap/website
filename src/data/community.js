@@ -3,8 +3,8 @@ import Help from '../../images/community/help-buoy.svg'
 import Writer from '../../images/community/writer.svg'
 import Learn from '../../images/community/learn.svg'
 import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
-import MonthlyMeeting from '../../images/events/monthly-meeting.svg'
 import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.png'
+import Hackathon2020 from '../../images/events/tidb-hackathon2020.jpg'
 
 const contributionGrow = [
   {
@@ -47,6 +47,16 @@ const contributionGrow = [
 
 const communityActivities = [
   {
+    thumbnail: Hackathon2020,
+    name: 'TiDB Hackathon 2020',
+    eventType: 'Communtiy Activity',
+    time: 'Dec 15, 2020 - Jan 17, 2021',
+    desc:
+      'The theme of Hackathon this year is [∞], by which we expect participants to innovate, to challenge, and to unlock the infinite power of TiDB.',
+    readMoreLink: 'https://pingcap.com/community/events/hackathon2020',
+    boundType: 'outBoundLink',
+  },
+  {
     thumbnail: HPTCThumbNail,
     name: 'High Performance TiDB Challenge',
     eventType: 'Communtiy Activity',
@@ -54,7 +64,7 @@ const communityActivities = [
     desc:
       'High Performance TiDB Challenge is a mentoring program which focuses on workload optimization to bring TiDB performance to a higher level!',
     readMoreLink: '/community/events/high-performance-tidb-challenge',
-    outboundLink: false,
+    boundType: '',
   },
   {
     thumbnail: UsabilityThumbNail,
@@ -65,18 +75,7 @@ const communityActivities = [
       'Season 2 of the TiDB Challenge Program focuses on improving the usability of TiDB and its related projects.',
     readMoreLink:
       'https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md',
-    outboundLink: true,
-  },
-  {
-    thumbnail: MonthlyMeeting,
-    name: 'TiKV Monthly Updates',
-    eventType: 'Virtual',
-    time: 'Monthly on the fourth Thursday',
-    desc:
-      'Monthly community meeting by video conference to discuss the status of TiKV and demo the new features. Anyone is welcome to join.',
-    readMoreLink:
-      'https://docs.google.com/document/d/1CWUAkBrcm9KPclAu8fWHZzByZ0yhsQdRggnEdqtRMQ8/edit#',
-    outboundLink: true,
+    boundType: 'outBoundLink',
   },
 ]
 
