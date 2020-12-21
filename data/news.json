@@ -1,5 +1,17 @@
 [
   {
+    "title": "Why We Switched from bcc-tools to libbpf-tools for Linux BPF Performance Analysis",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/why-we-switched-from-bcc-tools-to-libbpf-tools-for",
+    "date": "2020-12-19"
+  },  
+  {
+    "title": "How to Run TiDB on AWS with Better Performance and Lower Cost",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/best-practices-for-tidb-on-aws-cloud",
+    "date": "2020-12-18"
+  },  
+  {
     "title": "Flink + TiDB: A Scale-Out Real-Time Data Warehouse for Second-Level Analytics",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/flink-tidb-a-scale-out-real-time-data-warehouse-fo",
