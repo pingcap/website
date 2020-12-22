@@ -92,15 +92,7 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         },
         { link },
       ].concat(link)}
-    >
-      <script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="//js.hs-scripts.com/4466002.js"
-      />
-    </Helmet>
+    ></Helmet>
   )
 }
 
