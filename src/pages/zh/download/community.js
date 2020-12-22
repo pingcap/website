@@ -9,6 +9,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
+import PkgVersion from '../../../../data/tidbDownloadPkg.json'
 
 import '../../../styles/pages/zh/download/community.scss'
 
@@ -21,16 +22,6 @@ const Community = ({ data }) => {
   const [termsChecked, setTermsChecked] = useState(false)
   const [downloadURL, setDownloadURL] = useState('')
   const [wrongMsg, setWrongMsg] = useState([])
-  const versions = [
-    'v4.0.0',
-    'v4.0.1',
-    'v4.0.2',
-    'v4.0.3',
-    'v4.0.4',
-    'v4.0.5',
-    'v4.0.6',
-    'v4.0.7',
-  ]
   const pkgs = ['tidb-community-server', 'tidb-community-toolkit']
 
   const validateForm = useCallback(() => {
@@ -132,7 +123,7 @@ const Community = ({ data }) => {
                   label="选择 TiDB 版本"
                   classes={{ select: 'download-select' }}
                 >
-                  {versions.map((v) => (
+                  {PkgVersion.versions.map((v) => (
                     <MenuItem key={v} value={v}>
                       {v}
                     </MenuItem>

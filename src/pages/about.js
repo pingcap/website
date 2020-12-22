@@ -50,7 +50,7 @@ const About = ({ data }) => {
                 https://github.com/pingcap/tidb
               </a>
               ). TiDB’s sister project, TiKV, is a cloud-native distributed
-              Key-Value store. It is now a CNCF incubating project .
+              Key-Value store. It is now a CNCF Graduated project.
             </p>
             <Button
               as={Link}
