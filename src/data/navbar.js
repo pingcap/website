@@ -87,14 +87,13 @@ const navbarItemsZh = {
 // const promotionText = null
 const promotionText = (
   <>
-    Join the TiDB Community Slack channel{' '}
+    Announcement:{' '}
     <Link
-      to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+      to="https://support.pingcap.com/hc/en-us/articles/360061072733-SLA-Change-for-the-TiDB-Cloud-Public-Preview"
       type="outBoundLink"
     >
-      &nbsp;HERE&nbsp;
-    </Link>{' '}
-    to interact with the community!
+      SLA Change for the TiDB Cloud Public Preview
+    </Link>
   </>
 )
 
