@@ -196,7 +196,7 @@ const TiDBCloudPage = ({ data }) => {
   const { TiDBCloudLogoPNG } = data
 
   return (
-    <Layout>
+    <Layout NavbarProps={{ showBanner: true }}>
       <SEO
         title="TiDB Cloud "
         description="Fully Managed TiDB service. TiDB Cloud lets you focus on your applications, not the complexities of your database."
@@ -239,8 +239,8 @@ const TiDBCloudPage = ({ data }) => {
                   id="video"
                   title="TiDB Cloud in 3-min"
                   src="https://www.youtube.com/embed/x9YQ-9APYC0"
-                  frameborder="0"
-                  allowfullscreen="allowfullscreen"
+                  frameBorder="0"
+                  allowFullScreen="allowfullscreen"
                   mozallowfullscreen="mozallowfullscreen"
                   msallowfullscreen="msallowfullscreen"
                   oallowfullscreen="oallowfullscreen"

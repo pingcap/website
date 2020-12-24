@@ -7,8 +7,8 @@ const EmbedYouTube = ({ videoTitle, videoSrcURL }) => (
     <iframe
       title={videoTitle}
       src={videoSrcURL}
-      frameborder="0"
-      allowfullscreen="allowfullscreen"
+      frameBorder="0"
+      allowFullScreen="allowfullscreen"
       mozallowfullscreen="mozallowfullscreen"
       msallowfullscreen="msallowfullscreen"
       oallowfullscreen="oallowfullscreen"

@@ -3,8 +3,9 @@ import Link from './IntlLink'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
 
 import AddIcon from '@material-ui/icons/Add'
-import { navbarItemsEn, navbarItemsZh, promotionText } from '../data/navbar'
+import { navbarItemsEn, navbarItemsZh, homepagePromotionText, cloudPromotionText } from '../data/navbar'
 import { useIntl } from 'react-intl'
+import { useLocation } from '@reach/router'
 
 import classNames from 'classnames'
 import PrimaryButton from '../components/primaryButton'
@@ -90,6 +91,8 @@ const Navbar = ({ showBanner }) => {
 
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false), [])
+  const location = useLocation()
+  const promotionText = location.pathname === '/' ? homepagePromotionText: cloudPromotionText
 
   return (
     <nav

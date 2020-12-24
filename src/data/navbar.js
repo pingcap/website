@@ -85,7 +85,20 @@ const navbarItemsZh = {
 
 // to hide promotion, uncomment:
 // const promotionText = null
-const promotionText = (
+const homepagePromotionText = (
+  <>
+    Join the TiDB Community Slack channel{' '}
+    <Link
+      to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+      type="outBoundLink"
+    >
+      &nbsp;HERE&nbsp;
+    </Link>{' '}
+    to interact with the community!
+  </>
+)
+
+const cloudPromotionText = (
   <>
     Announcement:{' '}
     <Link
@@ -97,4 +110,4 @@ const promotionText = (
   </>
 )
 
-export { navbarItemsEn, navbarItemsZh, promotionText }
+export { navbarItemsEn, navbarItemsZh, homepagePromotionText, cloudPromotionText }
