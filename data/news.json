@@ -1,10 +1,16 @@
 [
   {
+    "title": "Embracing NewSQL: Why We Chose TiDB Over MongoDB and MySQL",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/embracing-newsql-why-we-chose-tidb-over-mongodb-an",
+    "date": "2020-12-24"
+  },
+  {
     "title": "Why We Switched from bcc-tools to libbpf-tools for Linux BPF Performance Analysis",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/why-we-switched-from-bcc-tools-to-libbpf-tools-for",
     "date": "2020-12-19"
-  },  
+  },
   {
     "title": "How to Run TiDB on AWS with Better Performance and Lower Cost",
     "logo": "/images/news/dzone-logo.png",
