@@ -21,6 +21,8 @@ const createBlogs = async ({ graphql, createPage, createRedirect }) => {
               frontmatter {
                 title
                 aliases
+                redirectCategory
+                redirectTag
               }
               parent {
                 ... on File {
@@ -56,6 +58,30 @@ const createBlogs = async ({ graphql, createPage, createRedirect }) => {
             createRedirect({
               fromPath: `${alias}`,
               toPath: _path,
+              isPermanent: true,
+            })
+          })
+        }
+
+        if (node.frontmatter.redirectCategory) {
+          const redirectCategoryArr = node.frontmatter.redirectCategory
+
+          redirectCategoryArr.forEach((category) => {
+            createRedirect({
+              fromPath: `/blog/category/${category}`,
+              toPath: '/blog',
+              isPermanent: true,
+            })
+          })
+        }
+
+        if (node.frontmatter.redirectTag) {
+          const redirectTagArr = node.frontmatter.redirectTag
+
+          redirectTagArr.forEach((tag) => {
+            createRedirect({
+              fromPath: `/blog/tag/${tag}`,
+              toPath: '/blog',
               isPermanent: true,
             })
           })
