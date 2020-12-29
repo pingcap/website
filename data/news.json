@@ -1,5 +1,11 @@
 [
   {
+    "title": "TiDB on KubeSphere: Using Cloud-Native Distributed Database on Kubernetes Platform Tailored for Hybrid Cloud",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/tidb-on-kubesphere-using-cloud-native-distributed",
+    "date": "2020-12-29"
+  },
+  {
     "title": "Embracing NewSQL: Why We Chose TiDB Over MongoDB and MySQL",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/embracing-newsql-why-we-chose-tidb-over-mongodb-an",
