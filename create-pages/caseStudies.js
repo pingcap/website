@@ -134,7 +134,7 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
 
     if (node.frontmatter.redirectTag) {
       const redirectTagArr = node.frontmatter.redirectTag
-      console.log('redirect tag', redirectTagArr)
+
       redirectTagArr.forEach((tag) => {
         createRedirect({
           fromPath: `/case-studies/category/tags/${tag}`,
