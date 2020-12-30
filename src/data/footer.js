@@ -44,16 +44,16 @@ const footerColumns = [
           link: '/blog/category/Engineering',
         },
         {
-          name: 'HTAP',
-          link: '/blog/category/HTAP',
+          name: 'Product',
+          link: '/blog/category/Product',
         },
         {
-          name: 'MySQL Scalability',
-          link: '/blog/category/MySQL-Scalability',
+          name: 'Community',
+          link: '/blog/category/Community',
         },
         {
-          name: 'Open Source',
-          link: '/blog/category/Open-Source-Community',
+          name: 'Company',
+          link: '/blog/category/Company',
         },
       ],
     },

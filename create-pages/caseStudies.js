@@ -20,6 +20,7 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
             frontmatter {
               title
               customerCategory
+              redirectTag
               aliases
             }
             parent {
@@ -126,6 +127,18 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
         createRedirect({
           fromPath: `${alias}`,
           toPath: _path,
+          isPermanent: true,
+        })
+      })
+    }
+
+    if (node.frontmatter.redirectTag) {
+      const redirectTagArr = node.frontmatter.redirectTag
+
+      redirectTagArr.forEach((tag) => {
+        createRedirect({
+          fromPath: `/case-studies/category/tags/${tag}`,
+          toPath: '/case-studies',
           isPermanent: true,
         })
       })
