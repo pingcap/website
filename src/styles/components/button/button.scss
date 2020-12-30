@@ -1,10 +1,18 @@
-@import "../../common";
+@import "src/styles/common";
 
 .Button {
   display: inline-block;
-  border-radius: 4px;
+  border-radius: 6px;
   transition: all .25s;
   user-select: none;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+    text-decoration: {
+      line: underline;
+    };
+  }
 
   &-content {
     display: flex;
@@ -21,17 +29,17 @@
   &.small {
     height: 32px;
     font-size: $P2;
-    padding: 4px 10px;
+    padding: 0 10px;
   }
   &.medium {
     height: 40px;
     font-size: $P1;
-    padding: 6px 16px;
+    padding: 0 16px;
   }
   &.large {
     height: 48px;
     font-size: $H3;
-    padding: 8px 22px;
+    padding: 0 22px;
   }
 
   &.primary {
@@ -49,6 +57,25 @@
     color: $B1;
     background-color: #FFF;
     border: 1px solid $B1;
+
+    &.disabled {
+      border: 1px solid $T2;
+      background-color: rgba($T2, .6);
+      color: rgba($F2, .6);
+      filter: alpha(60%);
+    }
+
+    &:hover {
+      color: #FFF;
+      border: 1px solid $B1;
+      background-color: mix($B1, #000, 90%);
+    }
+  }
+
+  &.ghost {
+    color: $M1;
+    background-color: rgba(#FFF, 0);
+    border: 1px solid $M1;
 
     &.disabled {
       border: 1px solid $T2;
@@ -92,5 +119,9 @@
 
   &.disabled {
     cursor: not-allowed;
+  }
+
+  &.block {
+    width: 100%;
   }
 }

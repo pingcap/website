@@ -13,6 +13,7 @@ const Button = ({
   rounded,
   disabled,
   lowerCase,
+  block,
   ...rest
 }) => {
   const classNameButton = `Button`
@@ -26,11 +27,19 @@ const Button = ({
     children = lowerCase ? children : children.toUpperCase()
   }
 
-  const Tag = as
+  const TagName = as ?? 'button'
+
+  // href is outbound link
+  if (rest.href) {
+    rest.target = '_blank'
+    rest.rel = 'noopener noreferrer'
+  }
+
   const props = {
     className: classNames(classNameButton, className, size, type, {
       rounded,
       disabled,
+      block,
     }),
     ...rest,
   }
@@ -47,11 +56,7 @@ const Button = ({
     </div>
   )
 
-  return as ? (
-    <Tag {...props}>{childNode}</Tag>
-  ) : (
-    <button {...props}>{childNode}</button>
-  )
+  return <TagName {...props}>{childNode}</TagName>
 }
 
 export default Button
