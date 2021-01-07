@@ -107,6 +107,14 @@
       font-style: italic;
       text-align: center;
     }
+    
+    .center-bold-underline {
+      margin: 1rem 0;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: underline;
+    }
 
     .gatsby-highlight {
       background: #f6f8fa;
