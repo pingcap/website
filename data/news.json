@@ -1,5 +1,11 @@
 [
   {
+    "title": "Why We Disable Linux's THP Feature for Databases",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/why-we-disable-linuxs-thp-feature-for-databases",
+    "date": "2021-01-08"
+  },
+  {
     "title": "TiDB on KubeSphere: Release a Cloud-Native Distributed Database to the KubeSphere App Store",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/tidb-on-kubesphere",
