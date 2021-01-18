@@ -336,7 +336,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
 
     .column {
       display: flex;
-      padding: 0 2.5rem;
+      padding: 0 1rem;
 
       @include mobile {
         width: calc(85vw - 1.7rem);
@@ -569,7 +569,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
 
     .column {
       display: flex;
-      padding: 0 2.5rem;
+      padding: 0 1rem;
 
       @include mobile {
         width: calc(85vw - 1.7rem);
@@ -622,8 +622,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
       }
 
       .paragraph {
-        padding: unset;
         @include P1;
+        height: 3.5 * 24px;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        //padding-bottom: 1rem;
 
         &.zh {
           font-weight: 300;
@@ -659,7 +665,7 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
     @include columns-10;
 
     .column {
-      padding: 0 2.5rem;
+      padding: 0 1rem;
 
       @include mobile {
         width: calc(85vw - 1.7rem);

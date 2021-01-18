@@ -133,8 +133,6 @@ const IndexPage = ({ data }) => {
     })
   }
 
-  const onCardClick = (href) => () => navigate(href)
-
   const [browser, setBrowser] = useState({
     isMiBrowser: false,
     isX5Browser: false,
@@ -304,16 +302,9 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
                 <div key={frontmatter.title} className="column">
-                  <div
-                    role="button"
-                    tabIndex={0}
+                  <Link
                     className="card"
-                    onClick={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
-                    )}
-                    onKeyDown={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
-                    )}
+                    to={`/blog/${replaceTitle(parent.relativePath)}`}
                   >
                     <div className="card-image">
                       <figure className="image">
@@ -334,7 +325,7 @@ const IndexPage = ({ data }) => {
                       </div>
                       <div className="paragraph">{frontmatter.summary}</div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>
