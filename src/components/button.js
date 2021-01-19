@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import '../../styles/components/button/button.scss'
+import '../styles/components/button.scss'
 
 const Button = ({
   as,
