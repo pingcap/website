@@ -1,7 +1,7 @@
 import '../styles/pages/index.scss'
 
 import { Box, withNormalHelpers } from '@seagreenio/react-bulma'
-import { graphql, navigate, Link } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import React, { useEffect, useRef, useState } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
