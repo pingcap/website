@@ -109,8 +109,15 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         .buttons {
           @include mobile {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             margin-bottom: 2.5rem;
+            a {
+              margin-right: 0 !important;
+              &:not(:last-child) {
+                margin-bottom: 2rem;
+              }
+            }
           }
 
           a {
