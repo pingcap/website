@@ -44,15 +44,10 @@ const Button = ({
     ...rest,
   }
 
-  const iconNode = icon ? (
-    <div className={`${classNameButton}-icon`}>{icon}</div>
-  ) : (
-    <></>
-  )
-  const textNode = <div className={`${classNameButton}-text`}>{children}</div>
   const childNode = (
     <div className={`${classNameButton}-content`}>
-      {iconNode} {textNode}
+      {icon && <div className={`${classNameButton}-icon`}>{icon}</div>}
+      <div className={`${classNameButton}-text`}>{children}</div>
     </div>
   )
 
