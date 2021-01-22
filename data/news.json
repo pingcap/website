@@ -1,5 +1,11 @@
 [
   {
+    "title": "Batch Processing Massive Data Quicker With TiSpark",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/batch-processing-massive-data-much-quicker-with-ti",
+    "date": "2021-01-22"
+  },
+  {
     "title": "Tips and Tricks for Writing Linux BPF Applications With libbpf",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/tips-and-tricks-for-writing-linux-bpf-applications",
