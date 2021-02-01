@@ -1,5 +1,17 @@
 [
   {
+    "title": "GitHub Discussions: Bringing the Open-Source Community Closer Together",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/github-discussions-bringing-the-open-source-commun",
+    "date": "2021-01-30"
+  },
+  {
+    "title": "How to Simulate I/O Faults at Runtime",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-to-simulate-io-faults-at-runtime",
+    "date": "2021-01-29"
+  },
+  {
     "title": "How to Trace Linux System Calls in Production (Without Breaking Performance)",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/how-to-trace-linux-system-calls-in-production-with",
