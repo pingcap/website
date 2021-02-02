@@ -12,3 +12,8 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up building
+        run: |
+          echo "${{ github.event.client_payload.repo }}"
+          echo "${{ github.event.client_payload.ref }}"
+          echo "${{ github.event.client_payload.sha }}"
+          echo "${{ github.event.client_payload.download_type }}"
