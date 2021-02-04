@@ -1,8 +1,8 @@
 import '../styles/pages/index.scss'
 
 import { Box, withNormalHelpers } from '@seagreenio/react-bulma'
-import { graphql, navigate, Link } from 'gatsby'
-import React, { useEffect, useRef } from 'react'
+import { graphql, Link } from 'gatsby'
+import React, { useEffect, useRef, useState } from 'react'
 import { benefitsData, celebrateYourGrowthData, logos } from '../data'
 
 import Layout from '../components/layout'
@@ -14,7 +14,7 @@ import LinkWithArrow from '../components/linkWithArrow'
 import StartTiDBRibbon from '../components/startTiDBRibbon'
 
 import throttle from 'lodash.throttle'
-import PrimaryButton from '../components/primaryButton'
+import Button from '../components/button'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -42,7 +42,12 @@ const caseLogos = [
 ]
 
 const IndexPage = ({ data }) => {
-  const { tidbSQLAtScaleSVG, tidbFeaturesGIF, last3Blogs } = data
+  const {
+    tidbSQLAtScaleSVG,
+    tidbFeaturesMP4,
+    tidbFeaturesGIF,
+    last3Blogs,
+  } = data
 
   const titlesRef = useRef()
   const benefitsRef = useRef()
@@ -128,7 +133,17 @@ const IndexPage = ({ data }) => {
     })
   }
 
-  const onCardClick = (href) => () => navigate(href)
+  const [browser, setBrowser] = useState({
+    isMiBrowser: false,
+    isX5Browser: false,
+  })
+
+  useEffect(() => {
+    setBrowser({
+      isMiBrowser: /MiuiBrowser/gi.test(window.navigator.userAgent),
+      isX5Browser: /MicroMessenger/i.test(window.navigator.userAgent),
+    })
+  }, [])
 
   return (
     <Layout NavbarProps={{ showBanner: true }}>
@@ -152,21 +167,35 @@ const IndexPage = ({ data }) => {
                   elastic scale and real-time analytics
                 </h2>
                 <div className="buttons">
-                  <PrimaryButton
+                  <Button
                     as={Link}
                     to="/download"
                     target="_blank"
-                    rounded
+                    size="large"
+                    type="primary"
                   >
                     GET STARTED
-                  </PrimaryButton>
-                  <PrimaryButton as={Link} to="/contact-us" rounded outlined>
+                  </Button>
+                  <Button
+                    as={Link}
+                    to="/contact-us"
+                    size="large"
+                    type="outline"
+                  >
                     ASK AN EXPERT
-                  </PrimaryButton>
+                  </Button>
                 </div>
               </div>
               <div className="video-wrapper">
-                <img src={tidbFeaturesGIF.publicURL} alt="TiDB-Feature" />
+                {browser.isMiBrowser || browser.isX5Browser ? (
+                  // if browser is MiBrowser or WeChat X5 Browser, show GIF for resolving z-index error
+                  <img src={tidbFeaturesGIF.publicURL} alt="" />
+                ) : (
+                  <video loop muted autoPlay>
+                    <source src={tidbFeaturesMP4.publicURL} type="video/mp4" />
+                    <img src={tidbFeaturesGIF.publicURL} alt="TiDB Features" />
+                  </video>
+                )}
               </div>
             </div>
           </div>
@@ -273,16 +302,9 @@ const IndexPage = ({ data }) => {
             <div className="columns is-variable is-6">
               {last3Blogs.edges.map(({ node: { frontmatter, parent } }) => (
                 <div key={frontmatter.title} className="column">
-                  <div
-                    role="button"
-                    tabIndex={0}
+                  <Link
                     className="card"
-                    onClick={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
-                    )}
-                    onKeyDown={onCardClick(
-                      `/blog/${replaceTitle(parent.relativePath)}`
-                    )}
+                    to={`/blog/${replaceTitle(parent.relativePath)}`}
                   >
                     <div className="card-image">
                       <figure className="image">
@@ -303,7 +325,7 @@ const IndexPage = ({ data }) => {
                       </div>
                       <div className="paragraph">{frontmatter.summary}</div>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               ))}
             </div>
@@ -405,6 +427,9 @@ export const query = graphql`
     tidbSQLAtScaleSVG: file(
       relativePath: { eq: "home/tidb-sql-at-scale.svg" }
     ) {
+      publicURL
+    }
+    tidbFeaturesMP4: file(relativePath: { eq: "home/tidb-features.mp4" }) {
       publicURL
     }
     tidbFeaturesGIF: file(relativePath: { eq: "home/tidb-features.gif" }) {

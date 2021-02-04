@@ -51,7 +51,7 @@
 }
 
 .title {
-  color: $M3;
+  color: $F1;
 
   &.has-pingcap-style-underline {
     .underline {
@@ -88,7 +88,7 @@
   text-align: center;
   font-size: $size-6;
   font-weight: 400;
-  color: $M4;
+  color: $F1;
 }
 
 // .column-or-card-title {
@@ -96,7 +96,7 @@
 //   text-align: center;
 //   font-size: $size-4;
 //   font-weight: 700;
-//   color: $M3;
+//   color: $F1;
 // }
 
 .column-title {
@@ -112,7 +112,7 @@
   margin-bottom: 2rem;
   text-align: center;
   font-weight: 700;
-  color: $M3;
+  color: $F1;
 
   &.zh {
     font-weight: 400;
@@ -129,7 +129,7 @@
   line-height: $LH4;
   font-weight: 400;
   font-size: $size-7;
-  color: $M4;
+  color: $F1;
 
   a {
     color: $B1;
@@ -195,7 +195,7 @@
 .p-in-section {
   font-size: $size-7;
   font-weight: 400;
-  color: $M4 !important;
+  color: $F1 !important;
 }
 
 .section {

@@ -6,6 +6,7 @@ import SEO from '../components/seo'
 import Positions from '../components/positions'
 import { graphql, Link } from 'gatsby'
 import { workEnv } from '../data/career-work-env'
+import Button from '../components/button'
 
 const Careers = ({ data }) => {
   const { careerHeroSVG } = data
@@ -29,14 +30,13 @@ const Careers = ({ data }) => {
                 can’t do it without curious, self-driven, and capable
                 people...like you!
               </div>
-              <Link
-                // can't go to the anchor if using prop of 'to'
-                // to="/careers#see-more-positions"
+              <Button
+                as={Link}
                 href="/careers#see-more-positions"
-                className="button is-primary is-rounded"
+                className="see-open-positions-btn"
               >
                 See Open Positions
-              </Link>
+              </Button>
             </div>
           </div>
         </section>

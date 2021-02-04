@@ -23,10 +23,19 @@ $LH6: 1.25;
 $LH7: 1;
 $LH8: 0.5;
 
-$M1: #fff;
-$M2: #fafafa;
-$M3: #30323e;
-$M4: #606060;
+$W1-ZH: 400;
+$W2-ZH: 500;
+$W3-ZH: 700;
+
+$W1-EN: 500;
+$W2-EN: 600;
+$W3-EN: 700;
+
+$M1: #FFFFFF; // Card Backround
+$M2: #F7F8F9; // Main Background
+
+$F1: #2C2C2C; // Text - 1 Title，H0，H1，H2
+$F2: #505050; // Text - 2 General，P1，P2，H3
 
 $C1: #e7f0fc;
 $C2: #dbe4f0;
@@ -34,22 +43,22 @@ $C3: #b8c4d6;
 $C4: #9fa8b9;
 $C5: #5d6d86;
 
-$B1: #2e2fff;
-$B2: #10a6fa;
-$B3: #172d72;
-$B4: #6c7496;
-$B5: #f7f8f9;
+$B1: #3D3FEA; // Theme，Button, highlight, link
+$B2: #27BBE0; // Blue，Minor
+$B3: #4C5470; // Dark 100%，dark bg
+$B4: #2D3758; // Dark 85%， bg
 
-$T1: #a9d359;
-$T2: #35ced5;
-$T3: #ff4f5e;
-$T4: #7d3f98;
-$T5: #f8c200;
-$T6: #f15a24;
+$T1: #A9D359; // tag，Success
+$T2: #E9EAEE; // line，divider, 10 % B3
+$T3: #F9746C; // tag, Warning, Notice, Attention
+$T4: #7D3F98; // tag
+$T5: #F8C200; // tag
+$T6: #F15A24; // tag
 
 $family-sans-serif: 'Titillium Web', 'Helvetica Neue', 'Arial', 'Source Han Sans SC', 'Source Han Sans CN', 'Source Han Sans', 'Noto Sans SC', 'Noto Sans CJK', 'Noto Sans', -apple-system, sans-serif;
 
 $primary: $B1;
+$button-hover-color: #5051C9;
 
 // widescreen false
 $widescreen-enabled: false;

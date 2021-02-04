@@ -6,8 +6,8 @@ import SEO from '../../components/seo'
 import { Link } from 'gatsby'
 import { logos } from '../../data/download-tidb'
 import Prism from 'prismjs'
-import { Button } from '@seagreenio/react-bulma'
 import WithCopy from '../../components/shortcodes/withCopy'
+import Button from '../../components/button'
 
 const useMenu = (menuItems, defaultKey) => {
   const [selectedKey, setSelectedKey] = useState(defaultKey)
@@ -194,7 +194,7 @@ const EnterpriseSubscription = () => {
           Stable releases with up-to-date security enhancements
         </li>
       </ul>
-      <Button as={Link} to="/download/enterprise" className="button is-primary">
+      <Button as={Link} to="/download/enterprise">
         Subscribe Now
       </Button>
     </section>
@@ -219,7 +219,7 @@ const TiDBCloud = () => {
       <Button
         as={Link}
         to="/products/tidbcloud/trial"
-        className="button is-primary tidb-cloud-trial-btn"
+        className="tidb-cloud-trial-btn"
       >
         Apply For Free Trial
       </Button>

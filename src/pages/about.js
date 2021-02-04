@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import AroundParticles from '../components/particles'
 import { graphql, Link } from 'gatsby'
-import { Button } from '@seagreenio/react-bulma'
+import Button from '../components/button'
 
 const About = ({ data }) => {
   const { aboutHeroSVG, timeLineSVG, mobileTimeLineSVG } = data
@@ -52,11 +52,7 @@ const About = ({ data }) => {
               ). TiDB’s sister project, TiKV, is a cloud-native distributed
               Key-Value store. It is now a CNCF Graduated project.
             </p>
-            <Button
-              as={Link}
-              to="/contact-us"
-              className="button is-primary is-rounded"
-            >
+            <Button as={Link} to="/contact-us" className={'contact-us-btn'}>
               CONTACT US
             </Button>
           </div>
@@ -92,11 +88,7 @@ const About = ({ data }) => {
                 doers;
               </p>
               <p className="last">We want to hear from you!</p>
-              <Button
-                as={Link}
-                to="/careers"
-                className="button is-primary is-rounded"
-              >
+              <Button as={Link} to="/careers" className="button">
                 Join Us
                 <AroundParticles />
               </Button>

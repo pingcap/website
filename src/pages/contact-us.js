@@ -5,7 +5,7 @@ import Layout from '../components/layout'
 import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
-import { Button } from '@seagreenio/react-bulma'
+import Button from '../components/button'
 
 const ContactUs = () => {
   return (
@@ -27,8 +27,7 @@ const ContactUs = () => {
                 as="a"
                 href="https://support.pingcap.com/"
                 target="_blank"
-                className="is-primary"
-                rounded
+                type="primary"
               >
                 ENTERPRISE SUPPORT
               </Button>

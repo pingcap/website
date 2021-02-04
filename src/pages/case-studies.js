@@ -188,7 +188,7 @@ const Dropdown = ({ className, items, selectedItem }) => {
   const blurHandler = () => setDropped(false)
   const dropdownClass =
     (dropped ? 'dropdown is-active' : 'dropdown') + ` ${className}`
-  const arrowIconClass = dropped ? 'down-arrow' : 'up-arrow'
+  const arrowIconClass = dropped ? 'up-arrow' : 'down-arrow'
   return (
     <div
       role="button"

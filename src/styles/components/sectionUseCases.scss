@@ -14,27 +14,14 @@
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
-        box-shadow: 0 0.2em 1em #bababa;
         transition: 0.5s;
-
-        &:hover {
-          box-shadow: 0 0.2em 1.5em #b5b5b5;
-        }
       }
 
       .oltp {
-        @include mobile {
-          background-image: url(../../../images/home/use-cases/oltp-mobile.svg);
-        }
-
         background-image: url(../../../images/home/use-cases/oltp-desktop.svg);
       }
 
       .htap {
-        @include mobile {
-          background-image: url(../../../images/home/use-cases/htap-mobile.svg);
-        }
-
         background-image: url(../../../images/home/use-cases/htap-desktop.svg);
       }
 

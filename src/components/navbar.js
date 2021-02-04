@@ -8,7 +8,7 @@ import { useIntl } from 'react-intl'
 import { useLocation } from '@reach/router'
 
 import classNames from 'classnames'
-import PrimaryButton from '../components/primaryButton'
+import Button from '../components/button'
 
 function PromotionBanner({
   promotionText,
@@ -216,24 +216,26 @@ const Navbar = ({ showBanner }) => {
           </div>
           <div className="navbar-end">
             <div className="navbar-item with-get-tidb">
-              <PrimaryButton
+              <Button
                 as={Link}
                 to={navbarItems.contactUs.href}
                 className="get-tidb"
-                outlined
+                size="medium"
+                type="primary"
               >
                 {navbarItems.contactUs.name}
-              </PrimaryButton>
+              </Button>
             </div>
             <div className="navbar-item with-get-tidb">
-              <PrimaryButton
+              <Button
                 as={Link}
                 to={navbarItems.downloadTiDB.href}
                 className="get-tidb"
-                rounded
+                size="medium"
+                type="outline"
               >
                 {navbarItems.downloadTiDB.name}
-              </PrimaryButton>
+              </Button>
             </div>
           </div>
         </div>

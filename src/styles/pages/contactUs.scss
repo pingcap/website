@@ -4,11 +4,11 @@
   @mixin paragraph {
     font-size: $P1;
     font-weight: 400;
-    color: $M4;
+    color: $F1;
   }
 
   @mixin form-text-fill {
-    background: $B5;
+    background: $M2;
     border: 1px solid $C2;
   }
 
@@ -227,12 +227,12 @@
         .addr-title {
           font-size: $size-5;
           font-weight: bold;
-          color: $M3;
+          color: $F1;
         }
 
         .addr-detail {
           font-size: $size-7;
-          color: $M4;
+          color: $F1;
         }
       }
     }
@@ -271,7 +271,7 @@
       .addr-tel-title {
         font-size: $H3;
         font-weight: 400;
-        color: $M3;
+        color: $F1;
         margin-bottom: 1.5rem;
       }
 
@@ -283,7 +283,7 @@
 
         font-size: $H3;
         font-weight: 300;
-        color: $M3;
+        color: $F1;
         margin-bottom: 3rem;
       }
     }
@@ -312,7 +312,7 @@
     
     .submit-text--title {
       font-size: $H1;
-      color: $M3;
+      color: $F1;
       font-weight: 500;
     }
   }

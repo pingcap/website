@@ -93,7 +93,7 @@
 .desc {
   margin-top: 0.5rem;
   line-height: $LH4;
-  color: $M4;
+  color: $F1;
 }
 
 .PingCAP-TiDBCloud {
@@ -141,7 +141,7 @@
         .title {
           font-size: $H1;
           font-weight: 700;
-          color: $M3;
+          color: $F1;
         }
 
         .paragraph {
@@ -227,7 +227,7 @@
           .title {
             font-size: $P1;
             font-weight: 700;
-            color: $M3;
+            color: $F1;
 
             @include mobile {
               margin-bottom: 1.5rem;
