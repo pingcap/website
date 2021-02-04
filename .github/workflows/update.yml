@@ -25,17 +25,17 @@ jobs:
       - name: Turnstyle
         uses: softprops/turnstyle@v1
 
-      # - name: Set known_hosts
-      #   id: know-hosts
-      #   run: |
-      #     echo "::set-output name=BJ1::$(ssh-keyscan -H ${{ secrets.BJ_1_HOST }})"
+      - name: Set known_hosts
+        id: know-hosts
+        run: |
+          echo "::set-output name=BJ1::$(ssh-keyscan -H ${{ secrets.BJ_1_HOST }})"
 
-      # - name: Install SSH Key
-      #   uses: shimataro/ssh-key-action@v2
-      #   with:
-      #     key: ${{ secrets.SSH_KEY }}
-      #     known_hosts: |
-      #       ${{ steps.know-hosts.outputs.BJ1 }}
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: |
+            ${{ steps.know-hosts.outputs.BJ1 }}
 
       - name: Get yarn cache directory path
         id: yarn-cache-dir-path
@@ -79,7 +79,7 @@ jobs:
       - name: Build website
         run: GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --write-to-file
 
-      # - name: Deploy to BJ1
-      #   run: |
-      #     rsync -avz --delete -e 'ssh -p ${{ secrets.BJ_1_PROXY_PORT }} -o StrictHostKeyChecking=no' public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ_PROXY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+      - name: Deploy to BJ1
+        run: |
+          rsync -avz --delete -e public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ1 }}:${{ secrets.DEPLOY_PATH }}"
 
