@@ -11,9 +11,15 @@ import aws from '../../images/home/logos/aws.svg'
 import googleCloudPlatform from '../../images/home/logos/google-cloud-platform.png'
 import tidbCloud from '../../images/home/logos/tidb-cloud.svg'
 
+import React from 'react'
+
 const celebrateYourGrowthData = [
   {
-    name: 'Open-source under Apache 2, No Lock-in',
+    name: (
+      <>
+        Open-source under Apache 2, <br /> No Lock-in
+      </>
+    ),
     desc:
       'Supported by a wealth of open-source data migration tools in the ecosystem, TiDB gives you the freedom to choose your own vendor and avoid lock-in.',
     placeholder: c1SVG,
