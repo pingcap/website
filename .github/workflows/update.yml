@@ -81,5 +81,5 @@ jobs:
 
       - name: Deploy to BJ1
         run: |
-          rsync -avz --delete -e public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ1 }}:${{ secrets.DEPLOY_PATH }}"
+          rsync -avz --delete public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ_1_HOST }}:${{ secrets.DEPLOY_PATH }}"
 
