@@ -4,6 +4,14 @@
 
 $socials: github twitter linkedin facebook reddit slack youtube yc;
 
+@mixin shadow {
+  transition: .25s all;
+  box-shadow: $shadow;
+  &:hover {
+    box-shadow: $shadow-hover;
+  }
+}
+
 @mixin VHCenter {
   display: flex;
   justify-content: center;
