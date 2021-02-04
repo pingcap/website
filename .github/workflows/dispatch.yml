@@ -23,6 +23,6 @@ jobs:
       uses: peter-evans/repository-dispatch@v1.1.1
       with:
           token: ${{ secrets.GH_TOKEN }}
-          repository: YiniXu9506/website/
+          repository: pingcap/website/
           event-type: ${{ steps.extract_info.outputs.repo }}/${{ steps.extract_info.outputs.branch }}-${{ steps.extract_info.outputs.sha }}
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repo": "${{ github.repository }}"}'
