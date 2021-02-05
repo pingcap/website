@@ -1,0 +1,91 @@
+# This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
+# For more information see: https://help.github.com/actions/language-and-framework-guides/publishing-nodejs-packages
+
+name: Incremental Building Triggered By Push Events
+on: repository_dispatch
+
+jobs:
+  build:
+    name: Retrieve markdown files and deploy the website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      # make sure there is only one workflow running
+      - name: Turnstyle
+        uses: softprops/turnstyle@v1
+
+      - name: Set known_hosts
+        id: know-hosts
+        run: |
+          echo "::set-output name=BJ_PROXY::$(ssh-keyscan -H ${{ secrets.BJ_PROXY_HOST }})"
+          echo "::set-output name=LA1::$(ssh-keyscan -H ${{ secrets.LA_1_HOST }})"
+          echo "::set-output name=LA2::$(ssh-keyscan -H ${{ secrets.LA_2_HOST }})"
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          known_hosts: |
+            ${{ steps.know-hosts.outputs.BJ_PROXY }}
+            ${{ steps.know-hosts.outputs.LA1 }}
+            ${{ steps.know-hosts.outputs.LA2 }}
+
+      - name: Get yarn cache directory path
+        id: yarn-cache-dir-path
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - name: Restore yarn cache
+        uses: actions/cache@v2
+        id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
+        with:
+          path: ${{ steps.yarn-cache-dir-path.outputs.dir }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ hashFiles('yarn.lock') }}
+            ${{ runner.os }}-yarn-
+
+      - name: Install deps
+        run: yarn
+
+      - name: Download blogs
+        run: |
+          GITHUB_AUTHORIZATION_TOKEN=${{ secrets.GH_TOKEN }} yarn download:blogs:prod
+
+      - name: Restore gatsby cache
+        uses: actions/cache@v2
+        id: gatsby-cache
+        with:
+          path: ./.cache
+          key: ${{ runner.os }}-v1-gatsby-cache-${{ github.event.client_payload.sha }}
+          restore-keys: |
+            ${{ runner.os }}-v1-gatsby-cache-
+
+      - name: Restore gatsby build
+        uses: actions/cache@v2
+        id: gatsby-build
+        with:
+          path: ./public
+          key: ${{ runner.os }}-v1-gatsby-build-${{ github.event.client_payload.sha }}
+          restore-keys: |
+            ${{ runner.os }}-v1-gatsby-build-
+
+      - name: Build website
+        run: GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --write-to-file
+
+      - name: Deploy to LA1
+        run: |
+          rsync -avz --delete public/ "${{ secrets.SSH_USER }}@${{ secrets.LA_1_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      - name: Deploy to LA2
+        run: |
+          rsync -avz --delete public/ "${{ secrets.SSH_USER }}@${{ secrets.LA_2_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      - name: Deploy to BJ1
+        run: |
+          rsync -avz --delete -e 'ssh -p ${{ secrets.BJ_1_PROXY_PORT }} -o StrictHostKeyChecking=no' public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ_PROXY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
+      - name: Deploy to BJ2
+        run: |
+          rsync -avz --delete -e 'ssh -p ${{ secrets.BJ_2_PROXY_PORT }} -o StrictHostKeyChecking=no' public/ "${{ secrets.SSH_USER }}@${{ secrets.BJ_PROXY_HOST }}:${{ secrets.DEPLOY_PATH }}"
+
