@@ -52,6 +52,7 @@ export const query = graphql`
     ) {
       group(field: frontmatter___categories) {
         category: fieldValue
+        totalCount: totalCount
       }
     }
     tags: allMdx(
@@ -62,6 +63,7 @@ export const query = graphql`
     ) {
       group(field: frontmatter___tags) {
         tag: fieldValue
+        totalCount: totalCount
       }
     }
   }

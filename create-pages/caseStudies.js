@@ -68,12 +68,15 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
         ) {
           industries: group(field: frontmatter___customerCategory) {
             industry: fieldValue
+            totalCount: totalCount
           }
           companies: group(field: frontmatter___customer) {
             company: fieldValue
+            totalCount: totalCount
           }
           tags: group(field: frontmatter___tags) {
             tag: fieldValue
+            totalCount: totalCount
           }
       }
       categoriesZH: allMdx(
@@ -84,25 +87,38 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
         ) {
           industries: group(field: frontmatter___customerCategory) {
             industry: fieldValue
+            totalCount: totalCount
           }
           companies: group(field: frontmatter___customer) {
             company: fieldValue
+            totalCount: totalCount
           }
           tags: group(field: frontmatter___tags) {
             tag: fieldValue
+            totalCount: totalCount
           }
       }
     }
   `)
 
-  const industries = data.categories.industries.map((node) => node['industry'])
-  const companies = data.categories.companies.map((node) => node['company'])
-  const tags = data.categories.tags.map((node) => node['tag'])
-  const industriesZH = data.categoriesZH.industries.map(
-    (node) => node['industry']
-  )
-  const companiesZH = data.categoriesZH.companies.map((node) => node['company'])
-  const tagsZH = data.categoriesZH.tags.map((node) => node['tag'])
+  const industries = data.categories.industries
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['industry'])
+  const companies = data.categories.companies
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['company'])
+  const tags = data.categories.tags
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['tag'])
+  const industriesZH = data.categoriesZH.industries
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['industry'])
+  const companiesZH = data.categoriesZH.companies
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['company'])
+  const tagsZH = data.categoriesZH.tags
+    .sort((a, b) => b['totalCount'] - a['totalCount'])
+    .map((node) => node['tag'])
 
   data.caseStudies.edges.forEach(({ node }) => {
     const _path = `case-studies/${replaceTitle(node.parent.relativePath)}`
