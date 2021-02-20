@@ -53,15 +53,33 @@ const Blogs = ({
   } = pageContext
 
   const categories = data.categories
-    ? [...data.categories.group.map((i) => i.category)]
+    ? [
+        ...data.categories.group
+          .sort((a, b) => b.totalCount - a.totalCount)
+          .map((i) => i.category),
+      ]
     : null
   const industries = data.industries
-    ? [...data.industries.group.map((i) => i.industry)]
+    ? [
+        ...data.industries.group
+          .sort((a, b) => b.totalCount - a.totalCount)
+          .map((i) => i.industry),
+      ]
     : null
   const companies = data.companies
-    ? [...data.companies.group.map((i) => i.company)]
+    ? [
+        ...data.companies.group
+          .sort((a, b) => b.totalCount - a.totalCount)
+          .map((i) => i.company),
+      ]
     : null
-  const tags = data.tags ? [...data.tags.group.map((i) => i.tag)] : null
+  const tags = data.tags
+    ? [
+        ...data.tags.group
+          .sort((a, b) => b.totalCount - a.totalCount)
+          .map((i) => i.tag),
+      ]
+    : null
 
   if (isFirstRender) {
     categories && categories.unshift('All')

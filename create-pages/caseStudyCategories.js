@@ -95,6 +95,7 @@ const createCaseStudyCategories = async ({ graphql, createPage }) => {
               limit: casesPerPage,
               skip: i * casesPerPage,
               numPages,
+              totalCount,
               currentPage: i + 1,
               language: lang,
               ...langConfig.languages[lang],

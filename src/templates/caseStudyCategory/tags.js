@@ -54,6 +54,7 @@ export const query = graphql`
     ) {
       group(field: frontmatter___customerCategory) {
         industry: fieldValue
+        totalCount: totalCount
       }
     }
     companies: allMdx(
@@ -64,6 +65,7 @@ export const query = graphql`
     ) {
       group(field: frontmatter___customer) {
         company: fieldValue
+        totalCount: totalCount
       }
     }
     tags: allMdx(
@@ -74,6 +76,7 @@ export const query = graphql`
     ) {
       group(field: frontmatter___tags) {
         tag: fieldValue
+        totalCount: totalCount
       }
     }
   }
