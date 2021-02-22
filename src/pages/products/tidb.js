@@ -235,7 +235,7 @@ const TiDB = ({ data }) => {
                     </td>
                     <td>
                       <ul>
-                        <li> Hight availability and auto-failover</li>
+                        <li> High availability and auto-failover</li>
                         <li>No more manual sharding</li>
                         <li>
                           Minimize data movement and simplify software stack
