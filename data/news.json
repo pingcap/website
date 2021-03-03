@@ -1,5 +1,11 @@
 [
   {
+    "title": "Linux Kernel vs. Memory Fragmentation (Part 1)",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/linux-kernel-vs-memory-fragmentation-part-i",
+    "date": "2021-03-01"
+  },
+  {
     "title": "Why We Chose a Scale-Out Database as a MySQL Alternative",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/top-car-trading-platform-chooses-scale-out-database-as-mysql-alternative",
