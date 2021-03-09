@@ -92,13 +92,9 @@ const HourlyNodeUsageInfo = () => {
         <>
           <td>{names[name]}</td>
           <td>{value(instance.cpu)} vCPU</td>
-          <td>{value(instance.memory_gi)} GiB</td>
+          {/* <td>{value(instance.memory_gi)} GiB</td> */}
           <td>
-            {name === 'tidb'
-              ? '-'
-              : `${value(instance.disks[0].disk_gi)} GiB ${
-                  instance.disks[0].disk_type
-                }`}
+            {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GiB`}
           </td>
           <td>$ {value(availablePrice[name])} /hr</td>
           <td>$ {precision(availablePrice[name] * 24 * 30)} /month</td>
@@ -133,7 +129,7 @@ const HourlyNodeUsageInfo = () => {
               <th>Tier</th>
               <th>Node</th>
               <th>CPU</th>
-              <th>Memory</th>
+              {/* <th>Memory</th> */}
               <th>Storage</th>
               <th>Hourly Usage Per Node</th>
               <th>Monthly Usage Per Node</th>
