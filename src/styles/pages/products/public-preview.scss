@@ -1,0 +1,23 @@
+@import '../../common';
+
+.Public-Preview-Terms {
+ .terms-conditions {
+     width: 80%;
+     margin: 4rem auto;
+
+     h1 {
+         text-align: center;
+         font-size: $H1;
+         font-weight: $W1-EN;
+     }
+
+     p {
+         padding: 1.5rem 0 0;
+     }
+
+     .start-trial-button {
+         margin-top: 4rem;
+         text-align: center;
+     }
+ }
+}

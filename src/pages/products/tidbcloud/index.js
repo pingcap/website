@@ -3,190 +3,16 @@
 import '../../../styles/pages/products/tidbCloud.scss'
 
 import { graphql } from 'gatsby'
-import React, { useEffect, useMemo, useState } from 'react'
-import {
-  featuresData,
-  logos,
-  reasonsData,
-} from '../../../data/products/tidbcloud'
+import Link from '../../../components/IntlLink'
+import LinkWithArrow from '../../../components/linkWithArrow'
+import React from 'react'
+import { featuresData, reasonsData } from '../../../data/products/tidbcloud'
 
-import { Button } from '@seagreenio/react-bulma'
+import Button from '../../../components/button'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
-import axios from 'axios'
 import GetStartedWithTiDBCloud from '../../../components/getStartedWithTiDBCloud'
 import StartYourFreeTrialNowButton from '../../../components/startYourFreeTrialNowButton'
-
-const cloudProviders = ['aws', 'googleCloud']
-
-const precision = (num, precision = 12) => {
-  if (num === null || num === undefined) return '-'
-  return +parseFloat(num.toPrecision(precision))
-}
-
-const http = axios.create({
-  baseURL: 'https://download.pingcap.com/data/tidbcloud',
-})
-
-const HourlyNodeUsageInfo = () => {
-  const [cloud, setCould] = useState('aws')
-  const [region, setRegion] = useState('')
-  const [profiles, setProfiles] = useState({
-    aws: null,
-    googleCloud: null,
-  })
-
-  useEffect(() => {
-    async function fetchProfiles() {
-      try {
-        const aws = (await http.get('/aws_profiles.json')).data
-        const googleCloud = (await http.get('/gcp_profiles.json')).data
-        setProfiles({ aws, googleCloud })
-        setRegion(aws.regions && aws.regions[0] ? aws.regions[0].name : '')
-      } catch (error) {
-        console.log('Something wrong:' + error)
-        return
-      }
-    }
-
-    fetchProfiles()
-  }, [])
-
-  const handleCloudClick = (cloud) => () => {
-    setCould(cloud)
-    setRegion(
-      profiles[cloud].regions && profiles[cloud].regions[0]
-        ? profiles[cloud].regions[0].name
-        : ''
-    )
-  }
-
-  const handleRegionChange = (event) => {
-    setRegion(event.target.value)
-  }
-
-  const profile = useMemo(() => profiles[cloud], [profiles, cloud])
-
-  const ProfileTable = () => {
-    const instances = profile.instances || []
-    const availableProfiles = instances.filter((p) =>
-      p.available_regions.map((r) => r.region_name).includes(region)
-    )
-
-    const value = (v) => (v !== null && v !== undefined ? v : '-')
-
-    const TierTableRow = ({ tier, isStriped }) => {
-      if (!tier) return null
-
-      const { profile_name, available_regions, tidb, tikv, tiflash } = tier
-      const availablePrice = available_regions.filter(
-        (p) => p.region_name === region
-      )[0].price
-      const names = {
-        tidb: 'TiDB',
-        tikv: 'TiKV',
-        tiflash: 'TiFlash',
-      }
-
-      const TierCells = ({ name, instance }) => (
-        <>
-          <td>{names[name]}</td>
-          <td>{value(instance.cpu)} vCPU</td>
-          {/* <td>{value(instance.memory_gi)} GiB</td> */}
-          <td>
-            {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GiB`}
-          </td>
-          <td>$ {value(availablePrice[name])} /hr</td>
-          <td>$ {precision(availablePrice[name] * 24 * 30)} /month</td>
-        </>
-      )
-
-      return (
-        <>
-          <tr className={`${isStriped ? 'has-light-background' : ''}`}>
-            <td rowSpan={`${tiflash ? '3' : '2'}`} className="tier-td">
-              {profile_name}
-            </td>
-            <TierCells name="tikv" instance={tikv} />
-          </tr>
-          <tr className={`${isStriped ? 'has-light-background' : ''}`}>
-            <TierCells name="tidb" instance={tidb} />
-          </tr>
-          {tiflash && (
-            <tr className={`${isStriped ? 'has-light-background' : ''}`}>
-              <TierCells name="tiflash" instance={tiflash} />
-            </tr>
-          )}
-        </>
-      )
-    }
-
-    return (
-      <div className="table-container">
-        <table className="table is-bordered comparison-table is-fullwidth">
-          <thead>
-            <tr>
-              <th>Tier</th>
-              <th>Node</th>
-              <th>CPU</th>
-              {/* <th>Memory</th> */}
-              <th>Storage</th>
-              <th>Hourly Usage Per Node</th>
-              <th>Monthly Usage Per Node</th>
-            </tr>
-          </thead>
-          <tbody>
-            {availableProfiles.map((p, index) => (
-              <TierTableRow
-                key={p.profile_name}
-                tier={p}
-                isStriped={index % 2}
-              />
-            ))}
-          </tbody>
-        </table>
-      </div>
-    )
-  }
-
-  return (
-    <div className="tidb-cloud-hourly-usage">
-      <div className="cloud-providers">
-        {cloudProviders.map((c) => (
-          <Button
-            key={c}
-            className="cloud-provider-button"
-            active={cloud === c}
-            onClick={handleCloudClick(c)}
-          >
-            <img
-              className="logo"
-              src={logos[c]}
-              alt={`${c.toUpperCase()} Logo`}
-            />
-          </Button>
-        ))}
-      </div>
-
-      <div className="regions">
-        <span className="label">Select Region</span>
-        <div className="select">
-          {profile && profile.regions && (
-            <select value={region} onChange={handleRegionChange}>
-              {profile.regions.map((r) => (
-                <option key={r.name} value={r.name}>
-                  {r.display_name}
-                </option>
-              ))}
-            </select>
-          )}
-        </div>
-      </div>
-
-      {profile && region && <ProfileTable />}
-    </div>
-  )
-}
 
 const TiDBCloudPage = ({ data }) => {
   const { TiDBCloudLogoPNG } = data
@@ -211,14 +37,18 @@ const TiDBCloudPage = ({ data }) => {
                 </h1>
                 <h2 className="title is-4">Fully-managed TiDB Service</h2>
                 <p className="paragraph">
-                  Bring everything great about TiDB to the cloud. TiDB Cloud
-                  lets you focus on your applications, not the complexities of
-                  your database.
+                  Get the massive scale and resiliency of TiDB databases in a
+                  fully managed service. TiDB Cloud is now in Public Preview and
+                  open to all developers.{' '}
+                  <Link to="/products/tidbcloud/public-preview-terms">
+                    Special terms and conditions will apply
+                  </Link>
+                  .
                 </p>
                 <div className="start-trial-button">
-                  <StartYourFreeTrialNowButton />
+                  <StartYourFreeTrialNowButton btnText="START FOR FREE" />
                 </div>
-                <p className="paragraph">
+                <p className="paragraph sign-in">
                   Already have an account?{' '}
                   <a
                     className="link-with-underline"
@@ -299,28 +129,206 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-pricing has-light-background">
+        <section className="section section-pricing">
           <div className="container">
             <h2 className="title section-title">Pricing</h2>
             <div className="field">
               <p className="paragraph">
-                TiDB Cloud provides different cluster tiers. Detailed pricing
-                for TiDB/TiKV/TiFlash instances in different tiers are as
-                follows:
+                TiDB Cloud provides different clusters d grow your business and
+                stop worrying about database infrastructure.
               </p>
-              <HourlyNodeUsageInfo />
-              <p className="paragraph">
-                Data backup and data transfer need to be charged separately. See{' '}
-                <a
-                  className="link-with-underline"
-                  href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-billing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Billing
-                </a>{' '}
-                for more details.
-              </p>
+              <Button
+                as={Link}
+                to="/products/tidbcloud/pricing/"
+                className="primary"
+              >
+                Learn More
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* <section className="section section-faq has-light-background">
+          <div className="container">
+            <h2 className="title section-title">FAQ</h2>
+            <div className="faqs">
+              <input type="radio" name="accordion" id="q1" />
+              <section className="faq">
+                <label className="question" htmlFor="q1">
+                  1. What is TiDB Cloud? <span></span>
+                </label>
+                <label className="answer-close" htmlFor="acc-close"></label>
+                <div className="answer">
+                  <p>
+                    TiDB Cloud makes deploying, managing and maintaining your
+                    TiDB clusters even simpler with a fully managed cloud
+                    instance that you control through an intuitive dashboard.
+                    You’ll be able to easily deploy on Amazon Web Services or
+                    Google Cloud to quickly build mission critical applications.
+                  </p>
+                  <p>
+                    TiDB Cloud allows developers and DBAs with little or no
+                    training to handle once-complex tasks such as infrastructure
+                    management and cluster deployment. And by scaling TiDB
+                    clusters in or out with a simple click of a button, you’ll
+                    no longer waste costly resources because you’ll be able to
+                    provision your databases for exactly how much and how long
+                    you need them.
+                  </p>
+                </div>
+              </section>
+              <input type="radio" name="accordion" id="q2" />
+              <section className="faq">
+                <label className="question" htmlFor="q2">
+                  2. How is TiDB different from other relational databases like
+                  MySQL? <span></span>
+                </label>
+                <label className="answer-close" htmlFor="acc-close"></label>
+                <div className="answer content">
+                  <p>
+                    TiDB is a next-generation, distributed relational database.
+                    TiDB can scale both processing and storage capacity simply
+                    by adding new nodes. This makes infrastructure capacity
+                    scaling easier and more flexible compared to traditional
+                    relational databases that only scale vertically.
+                  </p>
+                  <div>TiDB’s advantages over MySQL:</div>
+                  <ul>
+                    <li>
+                      TiDB has a distributed architecture with flexible and
+                      elastic scalability. It automatically takes care of
+                      dynamic distribution, allowing you to easily scale your
+                      TiDB cluster horizontally with just a few clicks.
+                    </li>
+                    <li>
+                      TiDB supports high availability with automatic failover,
+                      ensuring business continuity with auto-backups regardless
+                      of disk or machine failures.
+                    </li>
+                    <li>
+                      TiDB is a Hybrid Transactional/Analytical Processing
+                      (HTAP) database that handles both OLTP and OLAP workloads
+                      within one database.
+                    </li>
+                  </ul>
+                  <p>
+                    TiDB supports MySQL protocol and dialect. You can replace
+                    MySQL with TiDB to power your applications{' '}
+                    <span className="underline">without changing any code</span>
+                    .
+                  </p>
+                </div>
+              </section>
+              <input type="radio" name="accordion" id="q3" />
+              <section className="faq">
+                <label className="question" htmlFor="q3">
+                  3. What is the relationship between TiDB and TiDB Cloud?{' '}
+                  <span></span>
+                </label>
+                <label className="answer-close" htmlFor="acc-close"></label>
+                <div className="answer">
+                  TiDB Cloud is a fully managed cloud service
+                  (database-as-a-service) of TiDB. It has an easy-to-use
+                  web-based management portal to let you manage TiDB clusters
+                  for mission-critical production environments.
+                </div>
+              </section>
+
+              <input type="radio" name="accordion" id="acc-close" />
+            </div>
+            <p className="view-more">
+              <LinkWithArrow
+                to="/products/tidbcloud/faq"
+                linkText="View More"
+                outboundLink={false}
+              />
+            </p>
+          </div>
+        </section> */}
+
+        <section className="section section-faq has-light-background">
+          <div className="container">
+            <div className="faqs">
+              <div className="tab">
+                <input type="checkbox" id="chck1" />
+                <label className="tab-label" for="chck1">
+                  1. What is TiDB Cloud? <span></span>
+                </label>
+                <div className="tab-content">
+                  <p>
+                    TiDB Cloud makes deploying, managing and maintaining your
+                    TiDB clusters even simpler with a fully managed cloud
+                    instance that you control through an intuitive dashboard.
+                    You’ll be able to easily deploy on Amazon Web Services or
+                    Google Cloud to quickly build mission critical applications.
+                  </p>
+                  <p>
+                    TiDB Cloud allows developers and DBAs with little or no
+                    training to handle once-complex tasks such as infrastructure
+                    management and cluster deployment. And by scaling TiDB
+                    clusters in or out with a simple click of a button, you’ll
+                    no longer waste costly resources because you’ll be able to
+                    provision your databases for exactly how much and how long
+                    you need them.
+                  </p>
+                </div>
+              </div>
+              <div className="tab">
+                <input type="checkbox" id="chck2" />
+                <label className="tab-label" for="chck2">
+                  2. How is TiDB different from other relational databases like
+                  MySQL?<span></span>
+                </label>
+                <div className="tab-content content">
+                  <p>
+                    TiDB is a next-generation, distributed relational database.
+                    TiDB can scale both processing and storage capacity simply
+                    by adding new nodes. This makes infrastructure capacity
+                    scaling easier and more flexible compared to traditional
+                    relational databases that only scale vertically.
+                  </p>
+                  <div>TiDB’s advantages over MySQL:</div>
+                  <ul>
+                    <li>
+                      TiDB has a distributed architecture with flexible and
+                      elastic scalability. It automatically takes care of
+                      dynamic distribution, allowing you to easily scale your
+                      TiDB cluster horizontally with just a few clicks.
+                    </li>
+                    <li>
+                      TiDB supports high availability with automatic failover,
+                      ensuring business continuity with auto-backups regardless
+                      of disk or machine failures.
+                    </li>
+                    <li>
+                      TiDB is a Hybrid Transactional/Analytical Processing
+                      (HTAP) database that handles both OLTP and OLAP workloads
+                      within one database.
+                    </li>
+                  </ul>
+                  <p>
+                    TiDB supports MySQL protocol and dialect. You can replace
+                    MySQL with TiDB to power your applications{' '}
+                    <span className="underline">without changing any code</span>
+                    .
+                  </p>
+                </div>
+              </div>
+              <div className="tab">
+                <input type="checkbox" id="chck3" />
+                <label className="tab-label" for="chck3">
+                  3. What is the relationship between TiDB and TiDB Cloud?
+                  <span></span>
+                </label>
+                <div className="tab-content">
+                  <p>
+                    TiDB Cloud is a fully managed cloud service
+                    (database-as-a-service) of TiDB. It has an easy-to-use
+                    web-based management portal to let you manage TiDB clusters
+                    for mission-critical production environments.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

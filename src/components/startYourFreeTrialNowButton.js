@@ -3,10 +3,10 @@ import { Link } from 'gatsby'
 
 import Button from './button'
 
-const StartYourFreeTrialNowButton = () => {
+const StartYourFreeTrialNowButton = ({ btnText }) => {
   return (
-    <Button as={Link} to="/products/tidbcloud/trial">
-      Start Free Trial
+    <Button as={Link} target="_blank" to="https://tidbcloud.com/signup">
+      {btnText}
     </Button>
   )
 }

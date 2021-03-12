@@ -1,0 +1,31 @@
+@import '../../common';
+
+.PingCAP-TiDBCloud-FAQ {
+    .faq {
+        margin: 1rem 0;
+    }
+
+    .question {
+        font-size: $H3;
+        font-weight: $W2-EN;
+    }
+
+    .answer {
+        font-size: $P1;
+        padding: 1rem;
+
+        p {
+            padding: 1rem 0 0;
+        }
+
+        span {
+            &.underline {
+                text-decoration: underline;
+            }
+        }
+
+        a {
+            color: $B1;
+        }
+    }
+}
