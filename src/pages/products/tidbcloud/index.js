@@ -1,4 +1,5 @@
 /* eslint-disable jsx-a11y/no-onchange */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 
 import '../../../styles/pages/products/tidbCloud.scss'
 

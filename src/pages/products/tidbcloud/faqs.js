@@ -1,9 +1,8 @@
-/* eslint-disable jsx-a11y/no-onchange */
-
 import '../../../styles/pages/products/faq.scss'
 import React from 'react'
 
 import Layout from '../../../components/layout'
+import Link from '../../../components/IntlLink'
 import SEO from '../../../components/seo'
 import CloudProviders from '../../../../images/products/tidbcloud/cloud-provider-region.png'
 import OLAPWorklaod from '../../../../images/products/tidbcloud/oltp-olap-workload.png'
@@ -149,6 +148,7 @@ const FAQ = () => {
                   <a
                     href="https://docs.pingcap.com/tidbcloud/beta/release-notes/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     release note
                   </a>{' '}
@@ -181,6 +181,7 @@ const FAQ = () => {
                     <a
                       href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-intro"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       TiDB Cloud Introduction
                     </a>
@@ -189,6 +190,7 @@ const FAQ = () => {
                     <a
                       href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-quickstart#overview"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Get Started
                     </a>
@@ -197,6 +199,7 @@ const FAQ = () => {
                     <a
                       href="https://docs.pingcap.com/tidbcloud/beta/create-tidb-cluster"
                       target="_blank"
+                      rel="noreferrer"
                     >
                       Create a TiDB Cluster
                     </a>
@@ -213,16 +216,28 @@ const FAQ = () => {
                 <p>
                   TiDB is trusted by 1500+ global enterprises across industries
                   such as financial services, gaming, and e-commerce. Our{' '}
-                  <a href="https://pingcap.com/case-studies/" target="_blank">
+                  <a
+                    href="https://pingcap.com/case-studies/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     customers
                   </a>{' '}
                   include Square (US), Paypay (Japan), Colopl (Japan), and China
                   UnionPay (China). Please refer to TiDB’s{' '}
-                  <a href="https://pingcap.com/case-studies/" target="_blank">
+                  <a
+                    href="https://pingcap.com/case-studies/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     case studies
                   </a>{' '}
                   or{' '}
-                  <a href="https://pingcap.com/contact-us/" target="_blank">
+                  <a
+                    href="https://pingcap.com/contact-us/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     contact us
                   </a>{' '}
                   for further details.
@@ -263,7 +278,7 @@ const FAQ = () => {
                   also enabled by default for all your persisted data and
                   backups.
                 </p>
-                <img src={CloudProviders} />
+                <img src={CloudProviders} alt="tidb cloud providers"/>
                 <p>
                   As a Software as a Service (SaaS) provider, we take data
                   security seriously. We've established strict information
@@ -290,8 +305,8 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                13. There are different components in my TiDB Cluster. What
-                are PD, TiDB, TiKV, and TiFlash nodes for?
+                13. There are different components in my TiDB Cluster. What are
+                PD, TiDB, TiKV, and TiFlash nodes for?
               </h2>
               <div className="answer">
                 <p>
@@ -324,7 +339,7 @@ const FAQ = () => {
                   horizontally scalable, and increasing TiFlash nodes will
                   increase OLAP storage and compute capacity.
                 </p>
-                <img src={OLAPWorklaod} />
+                <img src={OLAPWorklaod} alt="tidb olap oltp workload" />
               </div>
             </div>
             <div className="faq">
@@ -377,10 +392,10 @@ const FAQ = () => {
                 </p>
                 <p>
                   For further HTAP scenarios, please refer to{' '}
-                  <a href="https://pingcap.com/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform#applying-tidb-in-htap-scenarios">
+                  <Link to="/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform#applying-tidb-in-htap-scenarios">
                     How We Build an HTAP Database That Simplifies Your Data
                     Platform.
-                  </a>
+                  </Link>
                 </p>
               </div>
             </div>

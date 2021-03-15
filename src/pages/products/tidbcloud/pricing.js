@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-onchange */
 import '../../../styles/pages/products/pricing.scss'
 
 import React, { useEffect, useMemo, useState } from 'react'
