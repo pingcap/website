@@ -290,7 +290,7 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                ## 13. There are different components in my TiDB Cluster. What
+                13. There are different components in my TiDB Cluster. What
                 are PD, TiDB, TiKV, and TiFlash nodes for?
               </h2>
               <div className="answer">
@@ -379,7 +379,7 @@ const FAQ = () => {
                   For further HTAP scenarios, please refer to{' '}
                   <a href="https://pingcap.com/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform#applying-tidb-in-htap-scenarios">
                     How We Build an HTAP Database That Simplifies Your Data
-                    Platform
+                    Platform.
                   </a>
                 </p>
               </div>

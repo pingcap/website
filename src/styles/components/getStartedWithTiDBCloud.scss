@@ -7,6 +7,7 @@
   padding: 5.5rem 1.5rem;
 
   @include mobile {
+    padding: 1.5rem;
     background: url(../../../images/products/tidbcloud/get-tidb-cloud-ribbon-mobile.svg)
     center no-repeat;
 

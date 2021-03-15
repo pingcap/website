@@ -1,8 +1,12 @@
 @import '../../common';
 
 .PingCAP-TiDBCloud-FAQ {
+    .title {
+        letter-spacing: 6px;
+    }
+
     .faq {
-        margin: 1rem 0;
+        margin: 1rem 0 2rem;
     }
 
     .question {
@@ -12,7 +16,8 @@
 
     .answer {
         font-size: $P1;
-        padding: 1rem;
+        padding: 0 1rem 2rem;
+        border-bottom: 1px solid $T2;
 
         p {
             padding: 1rem 0 0;

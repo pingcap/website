@@ -148,106 +148,9 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        {/* <section className="section section-faq has-light-background">
-          <div className="container">
-            <h2 className="title section-title">FAQ</h2>
-            <div className="faqs">
-              <input type="radio" name="accordion" id="q1" />
-              <section className="faq">
-                <label className="question" htmlFor="q1">
-                  1. What is TiDB Cloud? <span></span>
-                </label>
-                <label className="answer-close" htmlFor="acc-close"></label>
-                <div className="answer">
-                  <p>
-                    TiDB Cloud makes deploying, managing and maintaining your
-                    TiDB clusters even simpler with a fully managed cloud
-                    instance that you control through an intuitive dashboard.
-                    You’ll be able to easily deploy on Amazon Web Services or
-                    Google Cloud to quickly build mission critical applications.
-                  </p>
-                  <p>
-                    TiDB Cloud allows developers and DBAs with little or no
-                    training to handle once-complex tasks such as infrastructure
-                    management and cluster deployment. And by scaling TiDB
-                    clusters in or out with a simple click of a button, you’ll
-                    no longer waste costly resources because you’ll be able to
-                    provision your databases for exactly how much and how long
-                    you need them.
-                  </p>
-                </div>
-              </section>
-              <input type="radio" name="accordion" id="q2" />
-              <section className="faq">
-                <label className="question" htmlFor="q2">
-                  2. How is TiDB different from other relational databases like
-                  MySQL? <span></span>
-                </label>
-                <label className="answer-close" htmlFor="acc-close"></label>
-                <div className="answer content">
-                  <p>
-                    TiDB is a next-generation, distributed relational database.
-                    TiDB can scale both processing and storage capacity simply
-                    by adding new nodes. This makes infrastructure capacity
-                    scaling easier and more flexible compared to traditional
-                    relational databases that only scale vertically.
-                  </p>
-                  <div>TiDB’s advantages over MySQL:</div>
-                  <ul>
-                    <li>
-                      TiDB has a distributed architecture with flexible and
-                      elastic scalability. It automatically takes care of
-                      dynamic distribution, allowing you to easily scale your
-                      TiDB cluster horizontally with just a few clicks.
-                    </li>
-                    <li>
-                      TiDB supports high availability with automatic failover,
-                      ensuring business continuity with auto-backups regardless
-                      of disk or machine failures.
-                    </li>
-                    <li>
-                      TiDB is a Hybrid Transactional/Analytical Processing
-                      (HTAP) database that handles both OLTP and OLAP workloads
-                      within one database.
-                    </li>
-                  </ul>
-                  <p>
-                    TiDB supports MySQL protocol and dialect. You can replace
-                    MySQL with TiDB to power your applications{' '}
-                    <span className="underline">without changing any code</span>
-                    .
-                  </p>
-                </div>
-              </section>
-              <input type="radio" name="accordion" id="q3" />
-              <section className="faq">
-                <label className="question" htmlFor="q3">
-                  3. What is the relationship between TiDB and TiDB Cloud?{' '}
-                  <span></span>
-                </label>
-                <label className="answer-close" htmlFor="acc-close"></label>
-                <div className="answer">
-                  TiDB Cloud is a fully managed cloud service
-                  (database-as-a-service) of TiDB. It has an easy-to-use
-                  web-based management portal to let you manage TiDB clusters
-                  for mission-critical production environments.
-                </div>
-              </section>
-
-              <input type="radio" name="accordion" id="acc-close" />
-            </div>
-            <p className="view-more">
-              <LinkWithArrow
-                to="/products/tidbcloud/faq"
-                linkText="View More"
-                outboundLink={false}
-              />
-            </p>
-          </div>
-        </section> */}
-
         <section className="section section-faq has-light-background">
           <div className="container">
+            <h2 className="title section-title">FAQ</h2>
             <div className="faqs">
               <div className="tab">
                 <input type="checkbox" id="chck1" />
@@ -329,6 +232,13 @@ const TiDBCloudPage = ({ data }) => {
                   </p>
                 </div>
               </div>
+            </div>
+            <div className="has-text-centered">
+              <LinkWithArrow
+                to="/products/tidbcloud/faqs"
+                linkText="VIEW MORE"
+                outboundLink={false}
+              />
             </div>
           </div>
         </section>

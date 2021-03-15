@@ -327,40 +327,41 @@
   }
 
   .section-faq {
-    $midnight: #2c3e50;
-    $clouds: #ecf0f1;
+    .title {
+      letter-spacing: 5px;
+    }
     input {
       position: absolute;
       opacity: 0;
       z-index: -1;
     }
     .faqs {
-      width: 80%;
-      margin: 0 auto;
-      overflow: hidden;
       flex-flow: row wrap;
+      margin: 4rem auto;
+      overflow: hidden;
+      width: 80%;
     }
     .tab {
+      overflow: hidden;
       width: 100%;
       color: $F2;
-      overflow: hidden;
       white-space: normal;
 
       &-label {
         position: relative;
+        justify-content: space-between;
         display: flex;
         font-size: $P1;
-        justify-content: space-between;
         padding: 1em;
         cursor: pointer;
 
         span {
           position: absolute;
           right: 0;
-          border: 1px solid $F2;
           height: 20px;
           width: 20px;
           bottom: 20px;
+          border: 1px solid $F2;
           border-radius: 50%;
 
           &::after {
@@ -368,8 +369,8 @@
             display: block;
             position: absolute;
             left: 50%;
-            transform: translate(-45%, 45%);
             bottom: 50%;
+            transform: translate(-45%, 45%);
           }
         }
 
@@ -406,11 +407,7 @@
         justify-content: flex-end;
         padding: 1em;
         font-size: 0.75em;
-        background: $midnight;
         cursor: pointer;
-        &:hover {
-          background: darken($midnight, 10%);
-        }
       }
     }
 
@@ -423,7 +420,7 @@
         }
       }
       ~ .tab-content {
-        max-height: 100vh;
+        max-height: 200vh;
         padding: 1em;
       }
     }
