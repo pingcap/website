@@ -101,14 +101,19 @@
 
           thead {
             th {
+              text-align: center;
               background-color: $B4;
               color: $M1;
             }
           }
 
-          .tier-td {
-            font-weight: 600;
-            text-transform: capitalize;
+          tbody {
+            text-align: center;
+
+            .tier-td {
+              font-weight: 600;
+              text-transform: capitalize;
+            }
           }
         }
       }

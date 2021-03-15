@@ -414,9 +414,18 @@
     // :checked
     input:checked {
       + .tab-label {
-        span::after {
-          content: '-';
+        color: $B1;
 
+        span {
+          border: 1px solid $B1;
+
+          &::after {
+            content: '-';
+          }
+        }
+
+        &::before {
+          border-bottom: 1px dashed $B1;
         }
       }
       ~ .tab-content {
