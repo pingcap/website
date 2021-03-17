@@ -31,6 +31,10 @@
           width: 35%;
           padding: 1.5rem 1rem;
 
+          &.is-active {
+            border-color: $primary;
+          }
+
           &:first-child {
             @include mobile {
               margin-right: 3rem;
@@ -97,6 +101,7 @@
             border-color: $T2;
             vertical-align: middle;
             border-collapse: collapse;
+            text-align: center;
           }
 
           thead {

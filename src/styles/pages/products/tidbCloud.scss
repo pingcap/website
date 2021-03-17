@@ -400,7 +400,7 @@
         max-height: 0;
         font-size: $P1;
         padding: 0 1em;
-        transition: all 0.35s;
+        transition: all 0.3s ease-in-out;
       }
       &-close {
         display: flex;
