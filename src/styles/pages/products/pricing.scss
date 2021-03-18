@@ -29,7 +29,6 @@
         .cloud-provider-button {
           @include has-pingcap-style-border;
           width: 35%;
-          padding: 1.5rem 1rem;
 
           &.is-active {
             border-color: $primary;
@@ -43,8 +42,10 @@
           }
 
           img {
-            width: 4rem;
-            height: auto;
+            display: block;
+            width: auto;
+            height: 2rem;
+            margin: auto;
           }
         }
       }
