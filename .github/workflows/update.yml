@@ -57,18 +57,18 @@ jobs:
         id: gatsby-cache
         with:
           path: ./.cache
-          key: ${{ runner.os }}-v3-gatsby-cache-${{ github.event.client_payload.sha }}
+          key: ${{ runner.os }}-v4-gatsby-cache-${{ github.event.client_payload.sha }}
           restore-keys: |
-            ${{ runner.os }}-v3-gatsby-cache-
+            ${{ runner.os }}-v4-gatsby-cache-
 
       - name: Restore gatsby build
         uses: actions/cache@v2
         id: gatsby-build
         with:
           path: ./public
-          key: ${{ runner.os }}-v3-gatsby-build-${{ github.event.client_payload.sha }}
+          key: ${{ runner.os }}-v4-gatsby-build-${{ github.event.client_payload.sha }}
           restore-keys: |
-            ${{ runner.os }}-v3-gatsby-build-
+            ${{ runner.os }}-v4-gatsby-build-
 
       - name: Build website
         run: GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true yarn build --write-to-file
