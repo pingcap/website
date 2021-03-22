@@ -168,11 +168,13 @@ const TiDBCloudPage = ({ data }) => {
             <div className="faq-list content">
               {faqData.map((item, idx) => (
                 <div className="faq" key={idx}>
+                  {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
                   <div
                     className={`question ${
                       idx === activeItem ? 'checked' : ''
                     }`}
                     onClick={() => btnClick(idx)}
+                    onKeyDown={() => btnClick(idx)}
                   >
                     {item.q}
                     <span></span>
