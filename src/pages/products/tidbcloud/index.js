@@ -6,8 +6,12 @@ import '../../../styles/pages/products/tidbCloud.scss'
 import { graphql } from 'gatsby'
 import Link from '../../../components/IntlLink'
 import LinkWithArrow from '../../../components/linkWithArrow'
-import React from 'react'
-import { featuresData, reasonsData } from '../../../data/products/tidbcloud'
+import React, { useState } from 'react'
+import {
+  featuresData,
+  reasonsData,
+  faqData,
+} from '../../../data/products/tidbcloud'
 
 import Button from '../../../components/button'
 import Layout from '../../../components/layout'
@@ -17,6 +21,15 @@ import StartYourFreeTrialNowButton from '../../../components/startYourFreeTrialN
 
 const TiDBCloudPage = ({ data }) => {
   const { TiDBCloudLogoPNG } = data
+  const [activeItem, setActiveItem] = useState(0)
+
+  const btnClick = (idx) => {
+    if (idx === activeItem) {
+      setActiveItem(-1)
+    } else {
+      setActiveItem(idx)
+    }
+  }
 
   return (
     <Layout NavbarProps={{ showBanner: true }}>
@@ -149,97 +162,31 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        <section className="section section-faq has-light-background">
+        <section className="section section-faq">
           <div className="container">
             <h2 className="title section-title">FAQ</h2>
-            <div className="faqs">
-              <div className="tab">
-                <input type="checkbox" id="chck1" />
-                <label className="tab-label" for="chck1">
-                  1. What is TiDB Cloud? <span></span>
-                </label>
-                <div className="tab-content">
-                  <p>
-                    TiDB Cloud makes deploying, managing and maintaining your
-                    TiDB clusters even simpler with a fully managed cloud
-                    instance that you control through an intuitive dashboard.
-                    You’ll be able to easily deploy on Amazon Web Services or
-                    Google Cloud to quickly build mission critical applications.
-                  </p>
-                  <p>
-                    TiDB Cloud allows developers and DBAs with little or no
-                    training to handle once-complex tasks such as infrastructure
-                    management and cluster deployment. And by scaling TiDB
-                    clusters in or out with a simple click of a button, you’ll
-                    no longer waste costly resources because you’ll be able to
-                    provision your databases for exactly how much and how long
-                    you need them.
-                  </p>
+            <div className="faq-list content">
+              {faqData.map((item, idx) => (
+                <div className="faq" key={idx}>
+                  <div
+                    className={`question ${
+                      idx === activeItem ? 'checked' : ''
+                    }`}
+                    onClick={() => btnClick(idx)}
+                  >
+                    {item.q}
+                    <span></span>
+                  </div>
+                  <div
+                    className={`answer ${
+                      idx === activeItem ? 'show-answer' : ''
+                    }`}
+                    dangerouslySetInnerHTML={{
+                      __html: item.a,
+                    }}
+                  ></div>
                 </div>
-              </div>
-              <div className="tab">
-                <input type="checkbox" id="chck2" />
-                <label className="tab-label" for="chck2">
-                  2. How is TiDB different from other relational databases like
-                  MySQL?<span></span>
-                </label>
-                <div className="tab-content content">
-                  <p>
-                    TiDB is a next-generation, distributed relational database.
-                    TiDB can scale both processing and storage capacity simply
-                    by adding new nodes. This makes infrastructure capacity
-                    scaling easier and more flexible compared to traditional
-                    relational databases that only scale vertically.
-                  </p>
-                  <div>TiDB’s advantages over MySQL:</div>
-                  <ul>
-                    <li>
-                      TiDB has a distributed architecture with flexible and
-                      elastic scalability. It automatically takes care of
-                      dynamic distribution, allowing you to easily scale your
-                      TiDB cluster horizontally with just a few clicks.
-                    </li>
-                    <li>
-                      TiDB supports high availability with automatic failover,
-                      ensuring business continuity with auto-backups regardless
-                      of disk or machine failures.
-                    </li>
-                    <li>
-                      TiDB is a Hybrid Transactional/Analytical Processing
-                      (HTAP) database that handles both OLTP and OLAP workloads
-                      within one database.
-                    </li>
-                  </ul>
-                  <p>
-                    TiDB supports MySQL protocol and dialect. You can replace
-                    MySQL with TiDB to power your applications{' '}
-                    <span className="underline">without changing any code</span>
-                    .
-                  </p>
-                </div>
-              </div>
-              <div className="tab">
-                <input type="checkbox" id="chck3" />
-                <label className="tab-label" for="chck3">
-                  3. What is the relationship between TiDB and TiDB Cloud?
-                  <span></span>
-                </label>
-                <div className="tab-content">
-                  <p>
-                    TiDB Cloud is a fully managed cloud service
-                    (database-as-a-service) of TiDB. It has an easy-to-use
-                    web-based management portal to let you manage TiDB clusters
-                    for mission-critical production environments.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="has-text-centered">
-              <LinkWithArrow
-                to="/products/tidbcloud/faqs"
-                linkText="VIEW MORE"
-                outboundLink={false}
-              />
+              ))}
             </div>
           </div>
         </section>
