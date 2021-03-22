@@ -7,6 +7,7 @@ import { logos } from '../../../data/products/tidbcloud'
 import { Button } from '@seagreenio/react-bulma'
 import Layout from '../../../components/layout'
 import SEO from '../../../components/seo'
+import IntlLink from '../../../components/IntlLink'
 import axios from 'axios'
 import StartYourFreeTrialNowButton from '../../../components/startYourFreeTrialNowButton'
 
@@ -181,6 +182,11 @@ const HourlyNodeUsageInfo = () => {
                 </select>
               )}
             </div>
+            <p className="desc">
+              If you don't see the region you are looking for,{' '}
+              <IntlLink to="/contact-us">contact us</IntlLink> to require a new
+              region.
+            </p>
           </div>
         </div>
       </div>

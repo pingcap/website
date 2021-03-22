@@ -211,7 +211,7 @@
           width: 100%;
         }
 
-        width: 25%;
+        width: 30%;
         padding: 0 1rem;
         text-align: center;
 
@@ -327,32 +327,18 @@
   }
 
   .section-faq {
-    .title {
-      letter-spacing: 5px;
-    }
-    input {
-      position: absolute;
-      opacity: 0;
-      z-index: -1;
-    }
-    .faqs {
-      flex-flow: row wrap;
-      margin: 4rem auto;
-      overflow: hidden;
+    .faq-list {
       width: 80%;
-    }
-    .tab {
-      overflow: hidden;
-      width: 100%;
-      color: $F2;
-      white-space: normal;
+      margin: 4rem auto;
 
-      &-label {
+      .question {
         position: relative;
-        justify-content: space-between;
         display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 10px;
+        color: $F2;
         font-size: $P1;
-        padding: 1em;
         cursor: pointer;
 
         span {
@@ -360,7 +346,6 @@
           right: 0;
           height: 20px;
           width: 20px;
-          bottom: 20px;
           border: 1px solid $F2;
           border-radius: 50%;
 
@@ -390,47 +375,42 @@
           content: '';
           display: block;
           position: absolute;
-          bottom: 0.5rem;
+          bottom: 0;
           left: 0;
           width: 100%;
           border-bottom: 1px dashed $F2;
         }
-      }
-      &-content {
-        max-height: 0;
-        font-size: $P1;
-        padding: 0 1em;
-        transition: all 0.3s ease-in-out;
-      }
-      &-close {
-        display: flex;
-        justify-content: flex-end;
-        padding: 1em;
-        font-size: 0.75em;
-        cursor: pointer;
-      }
-    }
 
-    // :checked
-    input:checked {
-      + .tab-label {
-        color: $B1;
+        &.checked {
+          color: $B1;
 
-        span {
-          border: 1px solid $B1;
+          span {
+            border: 1px solid $B1;
 
-          &::after {
-            content: '-';
+            &::after {
+              content: '-';
+            }
+          }
+
+          &::before {
+            border-bottom: 1px dashed $B1;
           }
         }
-
-        &::before {
-          border-bottom: 1px dashed $B1;
-        }
       }
-      ~ .tab-content {
-        max-height: 200vh;
-        padding: 1em;
+
+      .answer {
+        padding: 0.5rem 1rem 0 1rem;
+        height: 0;
+        overflow: hidden;
+        transition-timing-function: ease-out;
+        transition: all 1s;
+
+        &.show-answer {
+          padding: 1rem;
+          height: auto;
+          transition-timing-function: ease-in;
+          transition: all 1s;
+        }
       }
     }
   }
