@@ -8,7 +8,7 @@
     flex-direction: row;
     align-items: center;
     height: $height-promotion;
-    background-image: url("../../../images/promotion-banner-background-image.svg");
+    background-image: url('../../../images/promotion-banner-background-image.svg');
     background-size: cover;
     color: $M1;
     @include mobile {
@@ -36,7 +36,7 @@
       a {
         color: $M1;
         text-decoration: underline;
-        text-underline: $M1;
+        text-decoration-color: $M1;
       }
     }
     &-close {
@@ -44,7 +44,7 @@
       cursor: pointer;
     }
   }
-  
+
   & > .container {
     @include mobile {
       height: $height-navbar-mobile;
@@ -60,31 +60,33 @@
 
   .has-dropdown {
     align-items: center;
+    outline: none;
 
     .dropdown-title {
-      svg {
-        display: none;
+      img {
+        padding-bottom: 3px;
+        padding-left: 8px;
         transition: transform 0.25s;
-        fill: $B1;
-        
+
         @include mobile {
           display: unset;
         }
       }
-
-      &.toggle-drop {
-        svg {
-          transform: rotate(45deg);
-        }
-      }
-
-      @include mobile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-      }
     }
+
+    @include mobile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    // &:hover {
+    //   img {
+    //     transform-origin: 12px 2px;
+    //     transform: rotate(180deg);
+    //   }
+    // }
 
     > .navbar-dropdown {
       background-color: $M2;
@@ -229,7 +231,7 @@
       height: 3rem;
     }
 
-    width: 8rem;
+    width: 9rem;
     font-size: $size-7;
   }
 

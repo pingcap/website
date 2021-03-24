@@ -81,7 +81,7 @@
     .paragraph {
       @include paragraph;
     }
-    .paragraph:nth-child(3) {
+    .paragraph:nth-child(7) {
       @include mobile {
         padding-bottom: 0;
         margin-bottom: 3rem;

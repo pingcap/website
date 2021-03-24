@@ -32,35 +32,35 @@
             "financial": "Financial Services"
         },
         "StartTiDBRibbon": {
-            "ready": "Ready to get started with TiDB?",
-            "contactUs": "CONTACT US",
+            "ready": "TiDBを試してみませんか？",
+            "contactUs": "お問い合わせ",
             "getTiDB": "GET TiDB"
         },
         "useCases": {
-            "title": "Use Cases",
+            "title": "ユースケース",
             "oltp": {
                 "title": "OLTP",
-                "subTitle": "Horizontally-scalable Relational Database",
+                "subTitle": "水平方向にスケーリングするリレーショナルデータベース",
                 "detail": {
-                    "desc": "Scalable online transactional processing",
-                    "list1": "400+ TB of transactional production data in a single TiDB cluster",
-                    "list2": "Trillions of rows in a single distributed table"
+                    "desc": "スケーラブルなオンライントランザクション処理",
+                    "list1": "1つのTiDBクラスター内で400TB以上のトランザクション本番データ",
+                    "list2": "1つの分散テーブル内で数兆行のテーブル"
                 }
             },
             "htap": {
                 "title": "HTAP",
-                "subTitle": "Real-time Analytics",
+                "subTitle": "リアルタイム分析",
                 "detail": {
                     "desc": "Hybrid Transactional and Analytical Processing",
-                    "list1": "Millisecond response times over trillions of rows",
-                    "list2": "No wall between transactional data and analytical reporting"
+                    "list1": "数兆行を超えるテーブルをミリ秒の応答時間",
+                    "list2": "トランザクションデータと分析レポートとの間にあるETLツールのボトルネックを解消"
                 }
             }
         },
         "postForm": {
-            "title": "Subscribe To Our Newsletter",
-            "subTitle": "Features, releases, showcases, meetups, talks...",
-            "btnText": "SUBSCRIBE"
+            "title": "ニュースレターを購読する",
+            "subTitle": "機能、リリース、ショーケース、交流会、トークなど",
+            "btnText": "申し込む"
         }
     },
     "templates": {

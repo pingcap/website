@@ -12,6 +12,12 @@
             "blogsPath": "/markdown-pages/blogs/",
             "policyTermsPath": "/markdown-pages/terms/",
             "hasBlogCategories": true
+        },
+        "jp": {
+            "langName": "Japanese",
+            "blogsPath": "/markdown-pages/blogs/",
+            "policyTermsPath": "/markdown-pages/terms/",
+            "hasBlogCategories": true
         }
     }
 }
