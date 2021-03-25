@@ -20,7 +20,7 @@ const precision = (num, precision = 12) => {
 
 const http = axios.create({
   baseURL:
-    'https://us-west-2.louis.shared.aws.tidbcloud.com/external-api/v1/cluster_profiles',
+    'https://us-west-2.staging.shared.aws.tidbcloud.com/external-api/v1/cluster_profiles',
 })
 
 const HourlyNodeUsageInfo = () => {
@@ -67,7 +67,6 @@ const HourlyNodeUsageInfo = () => {
     const availableProfiles = instances.filter((p) =>
       p.available_regions.map((r) => r.region_name).includes(region)
     )
-    console.log('availableProfiles', availableProfiles)
 
     const value = (v) => (v !== null && v !== undefined ? v : '-')
 

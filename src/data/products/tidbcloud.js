@@ -81,7 +81,7 @@ const featuresData = [
   {
     name: 'Open Source Community',
     desc:
-      'DB, the engine behind TiDB Cloud, has been open source since day one with a growing community of 400+ contributors',
+      'TiDB, the engine behind TiDB Cloud, has been open source since day one with a growing community of 400+ contributors',
     placeholder: f5SVG,
   },
 ]
