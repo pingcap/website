@@ -33,6 +33,14 @@
       font-weight: 500;
       margin-bottom: 2rem !important;
     }
+
+    &-en {
+      text-align: left;
+
+      .subtitle-under-main-title {
+        margin: 0;
+      }
+    }
   }
   .subtitle-under-main-title {
     max-width: 1000px;
@@ -48,13 +56,18 @@
       font-size: $H3;
       font-weight: 400;
     }
+
+    &-en {
+      padding-bottom: 3rem;
+      font-size: $size-5;
+      color: $M1;
+    }
   }
 
   .hero {
     background: url(../../../images/contact-us/contact-us-hero.svg) center
       no-repeat;
-    background-color: $B3;
-    background-size: contain;
+    background-size: cover;
   }
 
   .form-section {
@@ -190,7 +203,6 @@
           .label-star {
             color: red;
           }
-
         }
 
         .form-text--error {
@@ -235,6 +247,61 @@
           color: $F1;
         }
       }
+    }
+  }
+
+  .address-section {
+    padding: 3rem 1.5rem 9rem;
+
+    .section-title {
+      padding-bottom: 3rem;
+      font-size: $size-4;
+      color: $F1;
+    }
+
+    .is-desktop {
+      flex-flow: row wrap;
+    }
+
+    .details {
+      display: flex;
+      flex-flow: row wrap;
+      position: relative;
+      align-items: flex-start;
+      margin: 0 auto;
+      width: 50%;
+
+      @include mobile {
+        width: auto;
+
+        img {
+          width: 20% !important;
+        }
+
+        .addr {
+          width: 75%;
+        }
+      }
+
+      img {
+        width: 80px;
+        height: auto;
+      }
+
+      .addr {
+        padding-left: 1.5rem;
+
+        p {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+
+
+    .location {
+      font-weight: $W3-EN;
+      font-size: $H3;
+      color: $F1;
     }
   }
 
@@ -309,7 +376,7 @@
       height: 100%;
       margin-right: 1rem;
     }
-    
+
     .submit-text--title {
       font-size: $H1;
       color: $F1;
@@ -322,5 +389,4 @@
     text-align: center;
     margin-bottom: 8rem;
   }
-
 }

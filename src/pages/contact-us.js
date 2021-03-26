@@ -6,6 +6,10 @@ import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
 import Button from '../components/button'
+import CNLogo from '../../images/contact-us/cn.svg'
+import SGLogo from '../../images/contact-us/sg.svg'
+import USLogo from '../../images/contact-us/us.svg'
+import JPLogo from '../../images/contact-us/jp.svg'
 
 const ContactUs = () => {
   return (
@@ -17,11 +21,14 @@ const ContactUs = () => {
       <article className="PingCAP-Contact-Us">
         <section className="hero is-medium">
           <div className="hero-body">
-            <div className="container has-text-centered">
-              <h1 className="title section-title">Contact PingCAP</h1>
-              <div className="subtitle-under-main-title">
+            <div className="container">
+              <h1 className="title section-title section-title-en">
+                Contact PingCAP
+              </h1>
+              <div className="subtitle-under-main-title-en">
                 Thanks for your interest in TiDB. Please take a minute to fill
-                out the form below and we will get back to you shortly.
+                out the form below and
+                <br /> we will get back to you shortly.
               </div>
               <Button
                 as="a"
@@ -45,32 +52,49 @@ const ContactUs = () => {
           </div>
         </section>
 
-        <section className="section map-section">
+        <section className="section address-section has-light-background">
           <div className="container">
-            <div className="columns">
-              <div className="column is-3 address-col">
-                <div className="address">
-                  <div className="addr-title">Office Address</div>
-                  <p className="addr-detail">2955 Campus Drive #110,</p>
-                  <p className="addr-detail">San Mateo, CA 94403</p>
-                </div>
-                <div className="address">
-                  <div className="addr-title">Phone</div>
-                  <p className="addr-detail">650 - 733 - 3859</p>
+            <h2 className="title section-title">Office Locations</h2>
+            <div className="columns is-desktop">
+              <div className="column details is-6">
+                <img src={CNLogo} alt="country logo" />
+                <div className="addr">
+                  <p className="location">Beijing, China</p>
+                  <p>
+                    北京市海淀区西小口路 66 号东升科技园 C-1 楼
+                    <br /> +86-010-53326356
+                  </p>
                 </div>
               </div>
-              <div className="column is-8">
-                <div className="mapouter">
-                  <div className="gmap_canvas">
-                    <iframe
-                      title="NA office map"
-                      width="100%"
-                      height="400px"
-                      id="gmap_canvas"
-                      src="https://maps.google.com/maps?q=2955%20Campus%20Drive%20%23110%2C%20San%20Mateo%2C%20CA%2094403&t=&z=13&ie=UTF8&iwloc=&output=embed"
-                      scrolling="no"
-                    ></iframe>
-                  </div>
+              <div className="column details is-6">
+                <img src={USLogo} alt="country logo" />
+                <div className="addr">
+                  <p className="location">California, USA</p>
+                  <p>
+                    2955 Campus Drive #110,
+                    <br /> San Mateo, CA 94403
+                    <br /> Office: 650 - 733 - 3859（Mon - Fri）
+                  </p>
+                </div>
+              </div>
+              <div className="column details is-6">
+                <img src={SGLogo} alt="country logo" />
+                <div className="addr">
+                  <p className="location">Singapore</p>
+                  <p>
+                    80 Raffles Place, #25-01 UOB Plaza 1,
+                    <br /> Singapore, 048624
+                  </p>
+                </div>
+              </div>
+              <div className="column details is-6">
+                <img src={JPLogo} alt="country logo" />
+                <div className="addr">
+                  <p className="location">Tokyo, Japan</p>
+                  <p>
+                    100-0005 東京都千代田区丸の内
+                    <br /> 1-6-5 丸の内北口ビルディング 9F
+                  </p>
                 </div>
               </div>
             </div>
