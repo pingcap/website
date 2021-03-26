@@ -53,7 +53,7 @@ const ContactUs = () => {
 
         <section className="section address-section has-light-background">
           <div className="container">
-            <h2 className="title section-title">Offline Locations</h2>
+            <h2 className="title section-title">Office Locations</h2>
             <div className="columns">
               <div className="column details">
                 <img src={USLogo} alt="country logo" />
@@ -72,7 +72,7 @@ const ContactUs = () => {
                   <p className="location">Singapore</p>
                   <p>
                     80 Raffles Place, #25-01 UOB Plaza 1,
-                    <br /> Singapore 048624
+                    <br /> Singapore, 048624
                   </p>
                 </div>
               </div>
