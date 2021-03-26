@@ -6,6 +6,7 @@ import HubspotForm from 'react-hubspot-form'
 import SEO from '../components/seo'
 import Loading from '../components/loading'
 import Button from '../components/button'
+import CNLogo from '../../images/contact-us/cn.svg'
 import SGLogo from '../../images/contact-us/sg.svg'
 import USLogo from '../../images/contact-us/us.svg'
 import JPLogo from '../../images/contact-us/jp.svg'
@@ -54,8 +55,18 @@ const ContactUs = () => {
         <section className="section address-section has-light-background">
           <div className="container">
             <h2 className="title section-title">Office Locations</h2>
-            <div className="columns">
-              <div className="column details">
+            <div className="columns is-desktop">
+              <div className="column details is-6">
+                <img src={CNLogo} alt="country logo" />
+                <div className="addr">
+                  <p className="location">Beijing, China</p>
+                  <p>
+                    北京市海淀区西小口路 66 号东升科技园 C-1 楼
+                    <br /> +86-010-53326356
+                  </p>
+                </div>
+              </div>
+              <div className="column details is-6">
                 <img src={USLogo} alt="country logo" />
                 <div className="addr">
                   <p className="location">California, USA</p>
@@ -66,7 +77,7 @@ const ContactUs = () => {
                   </p>
                 </div>
               </div>
-              <div className="column details">
+              <div className="column details is-6">
                 <img src={SGLogo} alt="country logo" />
                 <div className="addr">
                   <p className="location">Singapore</p>
@@ -76,7 +87,7 @@ const ContactUs = () => {
                   </p>
                 </div>
               </div>
-              <div className="column details">
+              <div className="column details is-6">
                 <img src={JPLogo} alt="country logo" />
                 <div className="addr">
                   <p className="location">Tokyo, Japan</p>
