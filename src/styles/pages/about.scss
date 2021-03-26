@@ -43,7 +43,6 @@
     }
 
     background-color: #172d72;
-    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
@@ -78,10 +77,19 @@
     .title {
       @include sub-title;
     }
+
+    table {
+      margin-bottom: 4rem;
+
+      td:nth-child(1) {
+        font-weight: $W3-EN;
+      }
+    }
+
     .paragraph {
       @include paragraph;
     }
-    .paragraph:nth-child(7) {
+    .paragraph:nth-child(8) {
       @include mobile {
         padding-bottom: 0;
         margin-bottom: 3rem;
@@ -93,6 +101,12 @@
         margin-bottom: 3rem;
       }
       margin-bottom: 6rem;
+    }
+
+    &-jp {
+      .paragraph {
+        text-align: left;
+      }
     }
   }
 

@@ -288,9 +288,9 @@ const IndexPage = ({ data }) => {
         <section className="section section-architecture">
           <div className="container">
             <div ref={architectureRef} className="images has-light-background">
-              <div className="left" />
+              <div className="left left-jp" />
               <div className="center" />
-              <div className="right" />
+              <div className="right right-jp" />
             </div>
           </div>
         </section>

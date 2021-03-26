@@ -24,9 +24,38 @@ const About = ({ data }) => {
           </div>
         </section>
 
-        <section className="section intro-section container">
+        <section className="section intro-section container intro-section-jp">
           <div className="container">
-            <h1 className="title">PingCAPについて</h1>
+            <h1 className="title">会社概要</h1>
+            <table className="table is-bordered is-fullwidth">
+              <tbody>
+                <tr>
+                  <td>会社概要</td>
+                  <td>PingCAP株式会社</td>
+                </tr>
+                <tr>
+                  <td>設立</td>
+                  <td>2021年3月15日</td>
+                </tr>
+                <tr>
+                  <td>社長執行役員CEO</td>
+                  <td>Jason YU（余梦杰）</td>
+                </tr>
+                <tr>
+                  <td>事業内容</td>
+                  <td>
+                    企業のICT基盤となるソフトウェア、クラウドサービスの研究、開発、輸出入、販売ならびに各種支援サービスのご提供
+                  </td>
+                </tr>
+                <tr>
+                  <td>所在地</td>
+                  <td>
+                    100-0005 東京都千代田区丸の内 1-6-5 丸の内北口ビルディング
+                    9F
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <p className="paragraph">
               PingCAPは2015年に3人のインフラストラクチャエンジニアによってスタートしました。
               3人はインターネット企業のデータベース管理者として、データベースの管理・スケーリング・運用・保守の業務に莫大な手間と時間に日々頭を抱えておりました。
@@ -55,7 +84,7 @@ const About = ({ data }) => {
               TiDBの関連プロジェクトTiKVは、クラウドネイティブの分散型Key-Valueストアです。現在CNCFの卒業プロジェクトになります
             </p>
             <Button as={Link} to="/contact-us" className={'contact-us-btn'}>
-              CONTACT US
+              お問い合わせ
             </Button>
           </div>
         </section>
@@ -109,7 +138,7 @@ export const query = graphql`
     aboutHeroSVG: file(relativePath: { eq: "about/about-hero.svg" }) {
       publicURL
     }
-    timeLineSVG: file(relativePath: { eq: "about/timeline.svg" }) {
+    timeLineSVG: file(relativePath: { eq: "about/timeline-jp.svg" }) {
       publicURL
     }
     mobileTimeLineSVG: file(relativePath: { eq: "about/mobile-timeline.svg" }) {
