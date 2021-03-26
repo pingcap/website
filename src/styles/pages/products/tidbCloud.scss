@@ -409,13 +409,13 @@
         height: 0;
         overflow: hidden;
         transition-timing-function: ease-out;
-        transition: all 1s;
+        transition: all 0.5s;
 
         &.show-answer {
           padding: 1rem;
           height: auto;
           transition-timing-function: ease-in;
-          transition: all 1s;
+          transition: all 0.5s;
         }
       }
     }
