@@ -45,6 +45,45 @@ const contributionGrow = [
   },
 ]
 
+const contributionGrowJP = [
+  {
+    icon: Help,
+    title: 'お互いに助けあう',
+    collapseList: [
+      'コミュニティに参加する <a href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap" target="_blank">Slack</a>',
+      '質疑応答 <a href="https://stackoverflow.com/questions/tagged/tidb" target="_blank">Stack overflow</a>',
+    ],
+  },
+  {
+    icon: Heart,
+    title: 'コントリビュート方法',
+    collapseList: [
+      'SIGに参加する <a href="https://github.com/pingcap/community/tree/master/special-interest-groups" target="_blank">Special Interest Group</a> (SIG)',
+      'TiDBのドキュメントを改善する <a href="https://github.com/pingcap/docs" target="_blank">docs</a>',
+      'バグを修正する <a href="https://github.com/pingcap/tidb/issues?q=is%3Aissue+is%3Aopen+label%3Atype%2Fbug" target="_blank">bug</a>',
+      '新機能を提案する <a href="https://github.com/pingcap/tidb/tree/master/docs/design" target="_blank">feature</a>',
+    ],
+  },
+  {
+    icon: Writer,
+    title: 'フィードバック',
+    collapseList: [
+      '問題を報告する <a href="https://github.com/pingcap/tidb/issues" target="_blank">issue</a>',
+      'pull requestを確認する <a href="https://github.com/pingcap/tidb/pulls" target="_blank">pull request</a>',
+      'ブログを投稿する <a href="https://github.com/pingcap/blog" target="_blank">blog post</a>',
+    ],
+  },
+  {
+    icon: Learn,
+    title: '学びと成長',
+    collapseList: [
+      'Talent planに参加する <a href="https://github.com/pingcap/talent-plan" target="_blank">Talent Plan</a>',
+      'ガイド付きパスに沿って成長する <a href="https://github.com/pingcap/community/tree/master/architecture" target="_blank">path</a>',
+      'イベントでTiDBについて話す',
+    ],
+  },
+]
+
 const communityActivities = [
   {
     thumbnail: Hackathon2020,
@@ -79,4 +118,4 @@ const communityActivities = [
   },
 ]
 
-export { contributionGrow, communityActivities }
+export { contributionGrow, contributionGrowJP, communityActivities }

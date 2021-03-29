@@ -49,8 +49,6 @@ const IndexPage = ({ data }) => {
     last3Blogs,
   } = data
 
-  console.log('last3Blogs', last3Blogs)
-
   const titlesRef = useRef()
   const benefitsRef = useRef()
   const architectureRef = useRef()
@@ -170,7 +168,7 @@ const IndexPage = ({ data }) => {
                 <div className="buttons">
                   <Button
                     as={Link}
-                    to="/download"
+                    to="/jp/download"
                     target="_blank"
                     size="large"
                     type="primary"
@@ -179,7 +177,7 @@ const IndexPage = ({ data }) => {
                   </Button>
                   <Button
                     as={Link}
-                    to="/contact-us"
+                    to="/jp/contact-us"
                     size="large"
                     type="outline"
                   >
@@ -404,7 +402,7 @@ const IndexPage = ({ data }) => {
                     Database as a Service
                   </h3>
                   <div className="strikethrough-primary" />
-                  <Link to="/products/tidbcloud/trial">
+                  <Link to="/jp/products/tidbcloud/trial">
                     <Box className="logo tidb-cloud">
                       <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                     </Box>

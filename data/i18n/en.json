@@ -36,6 +36,9 @@
             "contactUs": "CONTACT US",
             "getTiDB": "GET TiDB"
         },
+        "StartYourFreeTrialNow": {
+            "button": "Start Free Trial"
+        },
         "useCases": {
             "title": "Use Cases",
             "oltp": {

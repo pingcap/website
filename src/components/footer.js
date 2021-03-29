@@ -7,7 +7,7 @@ import Socials from './socials'
 import footerColumnsMap from '../data/footer'
 import BoundLink from './boundLink'
 import langConfig from '../../lang.config.json'
-import { useIntl, FormattedMessage } from 'react-intl'
+import { useIntl } from 'react-intl'
 
 const Footer = () => {
   const { FooterLogoSVG } = useStaticQuery(

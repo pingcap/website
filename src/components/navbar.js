@@ -82,8 +82,6 @@ const Navbar = ({ showBanner }) => {
       navbarItems = navbarItemsEn
   }
 
-  console.log('navbar', navbarItems)
-
   const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
   const handleSetBurgerActive = () => setBurgerActive(!burgerActive)
@@ -133,7 +131,10 @@ const Navbar = ({ showBanner }) => {
 
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item with-brand" to="/">
+          <Link
+            className="navbar-item with-brand"
+            to={intl.locale === 'jp' ? '/jp' : '/'}
+          >
             <img
               className="navbar-brand"
               src={imageData.BrandSVG.publicURL}

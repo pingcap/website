@@ -36,6 +36,9 @@
             "contactUs": "お問い合わせ",
             "getTiDB": "GET TiDB"
         },
+        "StartYourFreeTrialNow": {
+            "button": "無料トライアルを開始"
+        },
         "useCases": {
             "title": "ユースケース",
             "oltp": {

@@ -43,7 +43,7 @@ const navbarItemsJP = {
   navItems: [
     {
       name: '会社概要',
-      href: '/jp/case-studies',
+      href: '/jp/about',
     },
     {
       name: '製品',
@@ -70,6 +70,10 @@ const navbarItemsJP = {
     {
       name: 'ブログ',
       href: '/blog/',
+    },
+    {
+      name: 'パートナ',
+      href: '/jp/partners',
     },
     {
       name: 'コミュニティ',
