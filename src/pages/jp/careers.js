@@ -33,7 +33,7 @@ const Careers = ({ data }) => {
               </div>
               <Button
                 as={Link}
-                href="/careers#see-more-positions"
+                href="/jp/careers#see-more-positions"
                 className="see-open-positions-btn"
               >
                 オープンポジションを見る

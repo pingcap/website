@@ -3,7 +3,7 @@ import '../../styles/pages/community/index.scss'
 import React from 'react'
 import Layout from '../../components/layout'
 import SEO from '../../components/seo'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import Button from '../../components/button'
 
 const Community = ({ data }) => {
@@ -25,12 +25,7 @@ const Community = ({ data }) => {
               </div>
               <img src={communityHeroSVG.publicURL} alt="Community Hero" />
               <div className="buttons">
-                <Button
-                  as="a"
-                  href="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
-                  target="_blank"
-                  className="join-slack"
-                >
+                <Button as={Link} to="/jp/contact-us/" className="join-slack">
                   お問い合わせ
                 </Button>
               </div>

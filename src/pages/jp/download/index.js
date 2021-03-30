@@ -288,21 +288,20 @@ const Kubernetes = () => {
     <>
       <section className="desc-section">
         <div className="desc-title-wrapper">
-          <h1 className="desc-title">Deploy TiDB on Kubernetes</h1>
+          <h1 className="desc-title">KubernetesにTiDBをデプロイする</h1>
           <a
             href="https://docs.pingcap.com/tidb-in-kubernetes/stable/configure-a-tidb-cluster"
             className="link-to-full-doc"
             rel="noopener"
           >
-            See Full Doc
+            フルドキュメントの参照
           </a>
         </div>
         <p className="desc-paragraph">
-          TiDB can be easily deployed in a Kubernetes environment using TiDB
-          Operator. These commands will install the TiDB Operator CRDs into an
-          existing Kubernetes cluster and deploy a basic TiDB cluster. Refer to
-          the TiDB Operator documentation for more information about how to
-          customize a deployment.
+          TiDBはTiDB
+          Operatorを使用してKubernetes環境に、簡単にデプロイすることができます。これらのコマンドはTiDB
+          OperatorCRDを既存のKubernetesクラスターにインストールし、基本的なTiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
+          Operator のドキュメントを参照してください。
         </p>
         <ol>
           <li>
@@ -337,21 +336,20 @@ const AWS = () => {
     <>
       <section className="desc-section">
         <div className="desc-title-wrapper">
-          <h1 className="desc-title">Deploy TiDB on AWS EKS</h1>
+          <h1 className="desc-title">AWS EKSにTiDBをデプロイする</h1>
           <a
             href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-aws-eks"
             className="link-to-full-doc"
             rel="noopener"
           >
-            See Full Doc
+            フルドキュメントの参照
           </a>
         </div>
         <p className="desc-paragraph">
-          TiDB can be easily deployed to AWS EKS using TiDB Operator and
-          included Terraform scripts to manage EKS infrastructure. These
-          commands will create a basic EKS cluster, install TiDB Operator, and
-          deploy a basic TiDB cluster. Consult the TiDB Operator documentation
-          for more information about how to customize your deployment.
+          TiDBはTiDB OperatorとTerraformスクリプトを使用してAWS
+          EKSに簡単にデプロイすることができ、EKSインフラストラクチャを管理できます。これらのコマンドは基本的なEKSクラスターを作成し、TiDB
+          Operatorをインストールして、TiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
+          Operatorのドキュメントを参照してください。
         </p>
         <ol>
           <li>
@@ -395,21 +393,20 @@ const GoogleCloud = () => {
     <>
       <section className="desc-section">
         <div className="desc-title-wrapper">
-          <h1 className="desc-title">Deploy TiDB on GCP GKE</h1>
+          <h1 className="desc-title">GCP GKEにTiDBをデプロイする</h1>
           <a
             href="https://docs.pingcap.com/tidb-in-kubernetes/stable/deploy-on-gcp-gke"
             className="link-to-full-doc"
             rel="noopener"
           >
-            See Full Doc
+            フルドキュメントの参照
           </a>
         </div>
         <p className="desc-paragraph">
-          TiDB can be easily deployed to GCP GKE using TiDB Operator and
-          included Terraform scripts to manage GKE infrastructure. These
-          commands will create a basic GKE cluster, install TiDB Operator, and
-          deploy a basic TiDB cluster. Consult the TiDB Operator documentation
-          for more information about how to customize your deployment.
+          TiDBはTiDB
+          OperatorとGKEインフラストラクチャを管理するためのTerraformスクリプトを使用して、GCP
+          GKEに簡単にデプロイできます。これらのコマンドは、基本的なGKEクラスターを作成し、TiDBオペレーターをインストールして、TiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
+          Operatorのドキュメントを参照してください。
         </p>
         <ol>
           <li>
