@@ -83,7 +83,7 @@ const About = ({ data }) => {
             <p className="paragraph">
               TiDBの関連プロジェクトTiKVは、クラウドネイティブの分散型Key-Valueストアです。現在CNCFの卒業プロジェクトになります
             </p>
-            <Button as={Link} to="/contact-us" className={'contact-us-btn'}>
+            <Button as={Link} to="/jp/contact-us" className={'contact-us-btn'}>
               お問い合わせ
             </Button>
           </div>
@@ -121,7 +121,7 @@ const About = ({ data }) => {
                 自発的で好奇心旺盛な方、PingCAPや業界を盛り上げていきたい方、ぜひ私たちグローバルチームと一緒に仕事をしましょう！
               </p>
               <p className="last">私たちにあなたのことを聞かせてください！</p>
-              <Button as={Link} to="/careers" className="button">
+              <Button as={Link} to="/jp/careers" className="button">
                 参加する
                 <AroundParticles />
               </Button>

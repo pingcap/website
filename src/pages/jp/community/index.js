@@ -9,8 +9,7 @@ import {
 } from '../../../data/community'
 import { graphql, Link } from 'gatsby'
 import EventsCard from '../../../components/eventsCard'
-// import { Button } from '@seagreenio/react-bulma'
-import Button from '../../../components/button'
+import { Button } from '@seagreenio/react-bulma'
 
 const Community = ({ data }) => {
   const {
