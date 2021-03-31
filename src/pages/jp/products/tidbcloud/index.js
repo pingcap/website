@@ -307,17 +307,16 @@ const TiDBCloudPage = ({ data }) => {
               </p>
               <HourlyNodeUsageInfo />
               <p className="paragraph">
-                データのバックアップと転送は別課金する必要があります。
-                詳細については、請求を{' '}
+                データのバックアップと転送は別
                 <a
                   className="link-with-underline"
                   href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-billing"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  参照
-                </a>{' '}
-                してください。
+                  課金
+                </a>
+                する必要があります。 詳細については、請求を 参照 してください。
               </p>
             </div>
           </div>

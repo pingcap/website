@@ -97,7 +97,11 @@ const About = ({ data }) => {
                 media="(max-width: 768px)"
                 srcSet={mobileTimeLineSVG.publicURL}
               ></source>
-              <img src={timeLineSVG.publicURL} alt="time line" />
+              <img
+                className="img-jp"
+                src={timeLineSVG.publicURL}
+                alt="time line"
+              />
             </picture>
           </div>
         </section>
@@ -141,7 +145,9 @@ export const query = graphql`
     timeLineSVG: file(relativePath: { eq: "about/timeline-jp.svg" }) {
       publicURL
     }
-    mobileTimeLineSVG: file(relativePath: { eq: "about/mobile-timeline.svg" }) {
+    mobileTimeLineSVG: file(
+      relativePath: { eq: "about/mobile-timeline-jp.svg" }
+    ) {
       publicURL
     }
   }

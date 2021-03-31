@@ -72,7 +72,7 @@ const navbarItemsJP = {
       href: '/blog/',
     },
     {
-      name: 'パートナ',
+      name: 'パートナー',
       href: '/jp/partners',
     },
     {
