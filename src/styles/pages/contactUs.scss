@@ -251,7 +251,7 @@
   }
 
   .address-section {
-    padding: 3rem 0 9rem;
+    padding: 3rem 1.5rem 9rem;
 
     .section-title {
       padding-bottom: 3rem;
@@ -259,19 +259,36 @@
       color: $F1;
     }
 
+    .is-desktop {
+      flex-flow: row wrap;
+    }
+
     .details {
       display: flex;
       flex-flow: row wrap;
       position: relative;
       align-items: flex-start;
+      margin: 0 auto;
+      width: 50%;
+
+      @include mobile {
+        width: auto;
+
+        img {
+          width: 20% !important;
+        }
+
+        .addr {
+          width: 75%;
+        }
+      }
 
       img {
-        width: 20%;
+        width: 80px;
         height: auto;
       }
 
       .addr {
-        width: 75%;
         padding-left: 1.5rem;
 
         p {
