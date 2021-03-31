@@ -144,6 +144,7 @@ const Blog = ({ data, pageContext }) => {
                   frontmatter={frontmatter}
                   filePath={filePath}
                   hasBlogCategories={hasBlogCategories}
+                  isBodyH1Title={true}
                 />
                 <div className="markdown-body blog-content">
                   <MDXProvider components={Shortcodes}>
