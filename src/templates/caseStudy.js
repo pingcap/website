@@ -178,6 +178,7 @@ const CaseStudy = ({ data, pageContext }) => {
                   frontmatter={frontmatter}
                   filePath={filePath}
                   isCaseStudy
+                  isBodyH1Title={true}
                 />
                 <div className="markdown-body blog-content">
                   <MDXProvider>

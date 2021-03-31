@@ -12,6 +12,7 @@ const BlogHeader = ({
   withIcon = true,
   isCaseStudy = false,
   hasBlogCategories = true,
+  isBodyH1Title = false,
 }) => {
   const { title, date, author, customer } = frontmatter
   const category = isCaseStudy
@@ -33,7 +34,13 @@ const BlogHeader = ({
           </Link>
         </h2>
       ) : (
-        <h2 className="title is-4 is-spaced blog-title">{title}</h2>
+        <h2
+          className={`title is-4 is-spaced blog-title ${
+            isBodyH1Title ? 'blog-title-in-body-content' : ''
+          }`}
+        >
+          {title}
+        </h2>
       )}
       <div className="subtitle is-7 is-spaced blog-subtitle">
         <span>
