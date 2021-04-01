@@ -2,7 +2,7 @@ const path = require('path')
 const { langPrefixes, replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
-const createPositions = async ({ graphql, createPage }) => {
+const createPolicyTerms = async ({ graphql, createPage }) => {
   const policyTermsTemplate = path.resolve(
     `${__dirname}/../src/templates/policyTerms.js`
   )
@@ -47,4 +47,4 @@ const createPositions = async ({ graphql, createPage }) => {
   }
 }
 
-module.exports = createPositions
+module.exports = createPolicyTerms
