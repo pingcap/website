@@ -5,6 +5,8 @@
 @import '../components/blogTags';
 
 .PingCAP-Blog {
+  min-height: 50vh;
+
   $section-padding-top: 1.5rem;
   $right-sidebar-margin-top: 4rem;
   .section.section-blog {
