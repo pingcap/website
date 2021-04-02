@@ -46,6 +46,16 @@ const navbarItemsJP = {
       href: '/jp/about',
     },
     {
+      name: 'TiDB',
+      href: '/jp/products/tidb',
+      hideOnPC: true,
+    },
+    {
+      name: 'TiDB Cloud',
+      href: '/jp/products/tidbcloud',
+      hideOnPC: true,
+    },
+    {
       name: '製品',
       dropdown: [
         {
@@ -66,10 +76,6 @@ const navbarItemsJP = {
       name: 'ドキュメント',
       href: 'https://docs.pingcap.com/tidb/stable',
       outbound: true,
-    },
-    {
-      name: 'ブログ',
-      href: '/blog/',
     },
     {
       name: 'パートナー',

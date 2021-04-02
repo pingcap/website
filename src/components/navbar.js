@@ -206,7 +206,9 @@ const Navbar = ({ showBanner }) => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="navbar-item with-main-section"
+                        className={`navbar-item with-main-section ${
+                          item.hideOnPC ? 'hideOnPC' : ''
+                        }`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -216,7 +218,9 @@ const Navbar = ({ showBanner }) => {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="navbar-item with-main-section"
+                        className={`navbar-item with-main-section ${
+                          item.hideOnPC ? 'hideOnPC' : ''
+                        }`}
                         onTouchStart={() => {}}
                       >
                         {item.name}

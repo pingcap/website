@@ -39,7 +39,7 @@ const About = ({ data }) => {
                 </tr>
                 <tr>
                   <td>社長執行役員CEO</td>
-                  <td>Jason YU（余梦杰）</td>
+                  <td>Jason YU</td>
                 </tr>
                 <tr>
                   <td>事業内容</td>
@@ -70,18 +70,18 @@ const About = ({ data }) => {
               メインに開発したプロジェクトTiDBとは、MySQLと互換性のあるクラウドネイティブの分散SQLレイヤーであり、世界で最も人気のあるオープンソースデータベースプロジェクトの1つです。
             </p>
             <p className="paragraph">
-              （詳細はこちらでご確認下さい：
+              （詳細は
               <a
                 href="https://github.com/pingcap/tidb"
                 target="_blank"
                 rel="noreferrer"
               >
-                https://github.com/pingcap/tidb
+                こちら
               </a>
-              ).
+              でご確認下さい。)
             </p>
             <p className="paragraph">
-              TiDBの関連プロジェクトTiKVは、クラウドネイティブの分散型Key-Valueストアです。現在CNCFの卒業プロジェクトになります
+              TiDBの関連プロジェクトTiKVは、クラウドネイティブの分散型Key-Valueストアです。現在CNCFの卒業プロジェクトになります。
             </p>
             <Button as={Link} to="/jp/contact-us" className={'contact-us-btn'}>
               お問い合わせ
@@ -118,7 +118,7 @@ const About = ({ data }) => {
                 オープンソース、オープンコラボレーション、オープンコミュニケーションは私たちが最も大切にしていることです。
               </p>
               <p className="paragraph">
-                毎朝目を覚ますと、困難で大きなを課題を解決する為に立ち向かいたくなります。
+                毎朝目を覚ますと、困難で大きな課題を解決する為に立ち向かいたくなります。
                 （それをたのしんでください！）
               </p>
               <p className="paragraph">

@@ -192,13 +192,14 @@ const Community = ({ data }) => {
                   TiDB行動規範は、コミュニティ内のすべてのやり取りをガイドするために実施されます。
                   イベント、Slack、GitHub、または別の通信メカニズムで何らかの形の違反に気付いた場合は、プロジェクト管理委員会（PMC）（
                   <a href="mailto:pmc@tidb.io">pmc@tidb.io</a>
-                  ）に連絡してください
+                  ）に連絡してください。
                 </p>
                 <p className="paragraph">
+                  の
                   <a href="https://github.com/pingcap/tidb/blob/master/CODE_OF_CONDUCT.md">
-                    こちら
+                    行動規範
                   </a>
-                  の行動規範をお読みください。
+                  をお読みください。
                 </p>
               </div>
             </div>

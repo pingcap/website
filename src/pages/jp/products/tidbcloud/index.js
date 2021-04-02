@@ -169,7 +169,7 @@ const HourlyNodeUsageInfo = () => {
       </div>
 
       <div className="regions">
-        <span className="label">Select Region</span>
+        <span className="label">地域を選択</span>
         <div className="select">
           {profile && profile.regions && (
             <select value={region} onChange={handleRegionChange}>

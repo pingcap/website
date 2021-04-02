@@ -252,7 +252,7 @@ const TiUP = () => {
           下記のコマンドは、TiUPの"playground"
           コンポーネントを使用して単純なローカルクラスターをデプロイします。
         </p>
-        <p lassName="desc-paragraph">
+        <p className="desc-paragraph">
           TiUPを使用して複数のホストにクラスターを展開する方法の詳細については、TiUPのドキュメントを参照してください。
         </p>
         <ol>
@@ -300,7 +300,8 @@ const Kubernetes = () => {
         <p className="desc-paragraph">
           TiDBはTiDB
           Operatorを使用してKubernetes環境に、簡単にデプロイすることができます。これらのコマンドはTiDB
-          OperatorCRDを既存のKubernetesクラスターにインストールし、基本的なTiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
+          Operator
+          CRDを既存のKubernetesクラスターにインストールし、基本的なTiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
           Operator のドキュメントを参照してください。
         </p>
         <ol>
@@ -346,7 +347,7 @@ const AWS = () => {
           </a>
         </div>
         <p className="desc-paragraph">
-          TiDBはTiDB OperatorとTerraformスクリプトを使用してAWS
+          TiDBはTiDB Operatorを使用してAWS
           EKSに簡単にデプロイすることができ、EKSインフラストラクチャを管理できます。これらのコマンドは基本的なEKSクラスターを作成し、TiDB
           Operatorをインストールして、TiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
           Operatorのドキュメントを参照してください。
@@ -403,9 +404,9 @@ const GoogleCloud = () => {
           </a>
         </div>
         <p className="desc-paragraph">
-          TiDBはTiDB
-          OperatorとGKEインフラストラクチャを管理するためのTerraformスクリプトを使用して、GCP
-          GKEに簡単にデプロイできます。これらのコマンドは、基本的なGKEクラスターを作成し、TiDBオペレーターをインストールして、TiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
+          TiDBはTiDB Operatorを使用して、GCP
+          GKEに簡単にデプロイできます。これらのコマンドは、基本的なGKEクラスターを作成し、TiDB
+          Operatorをインストールして、TiDBクラスターをデプロイします。デプロイメントをカスタマイズする方法の詳細については、TiDB
           Operatorのドキュメントを参照してください。
         </p>
         <ol>

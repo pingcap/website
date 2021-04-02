@@ -74,8 +74,8 @@
       }
     }
 
-    @include mobile {
-      display: flex;
+    @include touch {
+      display: none;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
@@ -139,12 +139,26 @@
   }
 
   .navbar-item {
+    &.hideOnPC {
+      display: none;
+
+      @include touch {
+        display: block;
+      }
+    }
+
     &.with-brand {
       padding-left: 1.5rem;
     }
 
     &.with-main-section {
       @include has-item-active(1.5rem);
+      @include touch {
+        &:hover::after {
+          display: none;
+        }
+      }
+
       @include mobile {
         margin: 0 1.5rem;
         padding: 1rem 0;
@@ -160,7 +174,7 @@
 
         &:hover {
           &:after {
-            content: none;
+            content: one;
           }
         }
       }
@@ -231,7 +245,7 @@
       height: 3rem;
     }
 
-    width: 9rem;
+    // width: 9rem;
     font-size: $size-7;
   }
 

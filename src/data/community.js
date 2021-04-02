@@ -69,7 +69,7 @@ const contributionGrowJP = [
     title: 'フィードバック',
     collapseList: [
       '問題を報告する <a href="https://github.com/pingcap/tidb/issues" target="_blank">issue</a>',
-      'pull requestを確認する <a href="https://github.com/pingcap/tidb/pulls" target="_blank">pull request</a>',
+      'pull requestをレビューする <a href="https://github.com/pingcap/tidb/pulls" target="_blank">pull request</a>',
       'ブログを投稿する <a href="https://github.com/pingcap/blog" target="_blank">blog post</a>',
     ],
   },

@@ -27,7 +27,7 @@ const Careers = ({ data }) => {
               <div className="subtitle-under-main-title">
                 <p>
                   私達のミッションは開発者が開発者の為に次世代データベースを作り続ける事です。
-                  それを実現させるには、好奇心が強く、使命感があり、アクティブで有能な人々を必要としております。。
+                  それを実現させるには、好奇心が強く、使命感があり、アクティブで有能な人々を必要としております。
                 </p>
                 <p>今このウェブサイトを見ているあなたのように！</p>
               </div>
@@ -46,7 +46,7 @@ const Careers = ({ data }) => {
           <div className="container">
             <h2 className="title section-title">PingCAPで働く</h2>
             <div className="subtitle-under-main-title">
-              PingCAPでは、好奇心が強く、使命感があり、アクティブで有能な人々と働くことが出来ます。インスピレーションと生産性は別だと考えており、私たちは快適で自由な作業環境を提供するために最善を尽くしています。
+              PingCAPでは、好奇心が強く、使命感があり、アクティブで有能な人々と働くことが出来ます。インスピレーションと生産性の向上のみならず、私たちは快適で自由な職場環境を提供するために最善を尽くしています。
             </div>
           </div>
           <div className="columns is-multiline">
