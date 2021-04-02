@@ -5,7 +5,7 @@ summary: Learn about the Privacy Policy of PingCAP Sites and Products.
 
 # Update history of PingCAP Privacy Policy
 
-- Privacy Policy updated on Apirl 1, 2021
+- Privacy Policy updated on Apirl 2, 2021
 
   This update includes:
 
@@ -14,4 +14,4 @@ summary: Learn about the Privacy Policy of PingCAP Sites and Products.
   3. Added a new section of California Privacy Rights; and
   4. Retitled it as Privacy Policy.
 
-- [Privacy Statement updated on June 1, 2020](/privacy-policy/archive/20200601-20210331)
+- [Privacy Statement updated on June 1, 2020](/privacy-policy/archive/20200601-20210401)
