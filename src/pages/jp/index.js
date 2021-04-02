@@ -181,7 +181,7 @@ const IndexPage = ({ data }) => {
                     size="large"
                     type="outline"
                   >
-                    問い合わせ
+                    お問い合わせ
                   </Button>
                 </div>
               </div>

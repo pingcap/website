@@ -63,7 +63,7 @@
         "postForm": {
             "title": "ニュースレターを購読する",
             "subTitle": "機能、リリース、ショーケース、交流会、トークなど",
-            "btnText": "申し込む"
+            "btnText": "Eメールの登録"
         }
     },
     "templates": {
