@@ -84,6 +84,7 @@ const ContactUs = () => {
                   <p>
                     80 Raffles Place, #25-01 UOB Plaza 1,
                     <br /> Singapore, 048624
+                    <br /> +65 3129 2258
                   </p>
                 </div>
               </div>
