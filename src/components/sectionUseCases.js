@@ -2,11 +2,11 @@ import '../styles/components/sectionUseCases.scss'
 
 import React from 'react'
 import { Box } from '@seagreenio/react-bulma'
-// import LinkWithArrow from '../components/linkWithArrow'
+import { FormattedMessage } from 'react-intl'
 
-const SectionUseCase = prop => {
+const SectionUseCase = (prop) => {
   const hasLightBg = prop.hasLightBg
-  
+
   return (
     <section
       className={`PingCAP-Use-Cases section section-use-cases${
@@ -14,49 +14,55 @@ const SectionUseCase = prop => {
       }`}
     >
       <div className="container">
-        <h2 className="title section-title mb-4">Use Cases</h2>
+        <h2 className="title section-title mb-4">
+          <FormattedMessage id="components.useCases.title" />
+        </h2>
         <div className="columns is-multiline oltp-and-htap">
           <div className="column is-full-mobile">
             <Box className="oltp">
               <div className="inner">
-                <h3 className="title is-3 is-spaced">OLTP</h3>
-                <h4 className="title is-4">Horizontally-scalable Relational Database</h4>
+                <h3 className="title is-3 is-spaced">
+                  <FormattedMessage id="components.useCases.oltp.title" />
+                </h3>
+                <h4 className="title is-4">
+                  <FormattedMessage id="components.useCases.oltp.subTitle" />
+                </h4>
                 <div className="strikethrough-white" />
                 <div className="subtitle is-5">
-                  Scalable online transactional processing
+                  <FormattedMessage id="components.useCases.oltp.detail.desc" />
                 </div>
                 <ul>
-                  <li>400+ TB of transactional production data in a single TiDB cluster</li>
-                  <li>Trillions of rows in a single distributed table</li>
+                  <li>
+                    <FormattedMessage id="components.useCases.oltp.detail.list1" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.useCases.oltp.detail.list2" />
+                  </li>
                 </ul>
-                {/* <LinkWithArrow
-                  to="/"
-                  linkText="See how modern applications scale"
-                  outboundLink={false}
-                /> */}
               </div>
             </Box>
           </div>
           <div className="column is-full-mobile">
             <Box className="htap">
               <div className="inner">
-                <h3 className="title is-3 is-spaced">HTAP</h3>
-                <h4 className="title is-4">Real-time Analytics</h4>
+                <h3 className="title is-3 is-spaced">
+                  <FormattedMessage id="components.useCases.htap.title" />
+                </h3>
+                <h4 className="title is-4">
+                  <FormattedMessage id="components.useCases.htap.subTitle" />
+                </h4>
                 <div className="strikethrough-white" />
                 <div className="subtitle is-5">
-                  Hybrid Transactional and Analytical Processing
+                  <FormattedMessage id="components.useCases.htap.detail.desc" />
                 </div>
                 <ul>
-                  <li>Millisecond response times over trillions of rows</li>
                   <li>
-                    No wall between transactional data and analytical reporting
+                    <FormattedMessage id="components.useCases.htap.detail.list1" />
+                  </li>
+                  <li>
+                    <FormattedMessage id="components.useCases.htap.detail.list2" />
                   </li>
                 </ul>
-                {/* <LinkWithArrow
-                  to="/"
-                  linkText="See how modern business makes decisions"
-                  outboundLink={false}
-                /> */}
               </div>
             </Box>
           </div>

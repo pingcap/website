@@ -267,9 +267,139 @@ const footerColumnsZh = [
   ],
 ]
 
+const footerColumnsJP = [
+  [
+    {
+      name: '製品',
+      items: [
+        {
+          name: 'TiDB',
+          link: '/jp/products/tidb',
+        },
+        {
+          name: 'TiDB Cloud',
+          link: '/jp/products/tidbcloud',
+        },
+      ],
+    },
+    {
+      name: 'エコシステム',
+      items: [
+        {
+          name: 'TiKV',
+          link: 'https://github.com/tikv/tikv',
+          outbound: true,
+        },
+        {
+          name: 'TiSpark',
+          link: 'https://github.com/pingcap/tispark',
+          outbound: true,
+        },
+        {
+          name: 'Chaos Mesh®',
+          link: 'https://github.com/pingcap/chaos-mesh',
+          outbound: true,
+        },
+      ],
+    },
+  ],
+
+  [
+    {
+      name: 'ブログ',
+      items: [
+        {
+          name: 'エンジニアリング',
+          link: '/blog/category/Engineering',
+        },
+        {
+          name: '製品',
+          link: '/blog/category/Product',
+        },
+        {
+          name: 'コミュニティ',
+          link: '/blog/category/Community',
+        },
+        {
+          name: '会社',
+          link: '/blog/category/Company',
+        },
+      ],
+    },
+  ],
+
+  [
+    {
+      name: 'リソース',
+      items: [
+        {
+          name: 'ケーススタディ',
+          link: '/case-studies',
+        },
+        {
+          name: 'コミュニティ',
+          link: '/jp/community',
+        },
+        {
+          name: 'ドキュメント',
+          link: 'https://docs.pingcap.com/tidb/v4.0',
+          outbound: true,
+        },
+        {
+          name: 'GitHub',
+          link: 'https://github.com/pingcap',
+          outbound: true,
+        },
+        {
+          name: '毎月のアップデート',
+          link: 'https://pingcap.com/weekly/',
+          outbound: true,
+        },
+        {
+          name: 'トラストセンター',
+          link: '/trust',
+        },
+      ],
+    },
+  ],
+
+  [
+    {
+      name: '会社',
+      items: [
+        {
+          name: 'PingCAPについて',
+          link: '/jp/about',
+        },
+        {
+          name: 'ニュース',
+          link: '/jp/in-the-news',
+        },
+        {
+          name: 'キャリア',
+          link: '/jp/careers',
+        },
+        {
+          name: '問い合わせ',
+          link: '/jp/contact-us',
+        },
+        {
+          name: 'Cookie Policy',
+          link: '/cookie-policy',
+        },
+        {
+          name: 'Privacy Policy',
+          link: '/privacy-policy',
+        },
+      ],
+    },
+  ],
+]
+
 const footerColumnsMap = {
   zh: footerColumnsZh,
   en: footerColumns,
+  jp: footerColumnsJP,
 }
 
 export { footerColumns, footerColumnsZh }

@@ -39,6 +39,63 @@ const navbarItemsEn = {
   },
 }
 
+const navbarItemsJP = {
+  navItems: [
+    {
+      name: '会社概要',
+      href: '/jp/about',
+    },
+    {
+      name: 'TiDB',
+      href: '/jp/products/tidb',
+      hideOnPC: true,
+    },
+    {
+      name: 'TiDB Cloud',
+      href: '/jp/products/tidbcloud',
+      hideOnPC: true,
+    },
+    {
+      name: '製品',
+      dropdown: [
+        {
+          name: 'TiDB',
+          href: '/jp/products/tidb',
+        },
+        {
+          name: 'TiDB Cloud',
+          href: '/jp/products/tidbcloud',
+        },
+      ],
+    },
+    {
+      name: '導入実績',
+      href: '/case-studies',
+    },
+    {
+      name: 'ドキュメント',
+      href: 'https://docs.pingcap.com/tidb/stable',
+      outbound: true,
+    },
+    {
+      name: 'パートナー',
+      href: '/jp/partners',
+    },
+    {
+      name: 'コミュニティ',
+      href: '/jp/community',
+    },
+  ],
+  contactUs: {
+    name: 'お問い合わせ',
+    href: '/jp/contact-us',
+  },
+  downloadTiDB: {
+    name: 'GET TiDB',
+    href: '/jp/download',
+  },
+}
+
 const navbarItemsZh = {
   navItems: [
     {
@@ -110,4 +167,10 @@ const cloudPromotionText = (
   </>
 )
 
-export { navbarItemsEn, navbarItemsZh, homepagePromotionText, cloudPromotionText }
+export {
+  navbarItemsEn,
+  navbarItemsZh,
+  navbarItemsJP,
+  homepagePromotionText,
+  cloudPromotionText,
+}

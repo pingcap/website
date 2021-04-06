@@ -50,8 +50,9 @@
         }
 
         ul {
-          list-style: inside;
+          list-style: inherit;
           margin-bottom: 1.5rem;
+          margin-left: 1.5rem;
           font-size: $size-6;
 
           li {

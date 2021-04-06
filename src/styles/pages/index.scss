@@ -523,6 +523,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
           background-image: url(../../../images/home/architecture/left-mobile.svg);
         }
 
+        &-jp {
+          @include mobile {
+            // background-image: url(../../../images/home/architecture/left-mobile-jp.svg);
+          }
+
+          background-image: url(../../../images/home/architecture/left-desktop-jp.svg);
+        }
+
         background-image: url(../../../images/home/architecture/left-desktop.svg);
       }
 
@@ -539,6 +547,14 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
       .right {
         @include mobile {
           background-image: url(../../../images/home/architecture/right-mobile.svg);
+        }
+
+        &-jp {
+          @include mobile {
+            // background-image: url(../../../images/home/architecture/left-mobile-jp.svg);
+          }
+
+          background-image: url(../../../images/home/architecture/right-desktop-jp.svg);
         }
 
         background-image: url(../../../images/home/architecture/right-desktop.svg);

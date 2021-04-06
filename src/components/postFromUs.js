@@ -4,6 +4,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 import Button from '../components/button'
+import { FormattedMessage } from 'react-intl'
 
 const NormalBox = withNormalHelpers(Box)
 
@@ -58,9 +59,11 @@ export const PostFromUsInHome = () => (
       <Img />
     </div>
     <div className="titles">
-      <h2 className="title is-4 is-spaced">Subscribe To Our Newsletter</h2>
+      <h2 className="title is-4 is-spaced">
+        <FormattedMessage id="components.postForm.title" />
+      </h2>
       <div className="subtitle is-7">
-        Features, releases, showcases, meetups, talks...
+        <FormattedMessage id="components.postForm.subTitle" />
       </div>
     </div>
     <div className="poster-wrapper poster-wrapper-desktop">
@@ -72,7 +75,7 @@ export const PostFromUsInHome = () => (
         target="_blank"
         size="large"
       >
-        SUBSCRIBE
+        <FormattedMessage id="components.postForm.btnText" />
       </Button>
     </div>
   </NormalBox>

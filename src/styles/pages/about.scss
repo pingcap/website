@@ -43,7 +43,6 @@
     }
 
     background-color: #172d72;
-    margin-bottom: 6rem;
 
     .hero-body {
       padding: 4rem 1rem;
@@ -78,10 +77,19 @@
     .title {
       @include sub-title;
     }
+
+    table {
+      margin-bottom: 4rem;
+
+      td:nth-child(1) {
+        font-weight: $W3-EN;
+      }
+    }
+
     .paragraph {
       @include paragraph;
     }
-    .paragraph:nth-child(3) {
+    .paragraph:nth-child(8) {
       @include mobile {
         padding-bottom: 0;
         margin-bottom: 3rem;
@@ -93,6 +101,12 @@
         margin-bottom: 3rem;
       }
       margin-bottom: 6rem;
+    }
+
+    &-jp {
+      .paragraph {
+        text-align: left;
+      }
     }
   }
 
@@ -106,6 +120,13 @@
     .title {
       @include sub-title;
     }
+
+    .img-jp {
+      @include mobile {
+        width: 80%;
+      }
+    }
+
     img {
       @include mobile {
         width: 60%;
@@ -267,8 +288,7 @@
   }
 
   .working-env-section {
-
-    @include mobile{
+    @include mobile {
       margin-top: -3rem;
     }
 
@@ -283,7 +303,6 @@
       max-width: column-to-width(10);
 
       .title {
-
         @include mobile {
           margin-bottom: 1.5rem;
         }
@@ -292,7 +311,6 @@
       }
 
       .paragraph {
-
         @include mobile {
           padding: 0;
           margin-bottom: 2rem;
@@ -303,7 +321,6 @@
         margin-bottom: 4.5rem;
       }
       .col-container {
-
         @include mobile {
           grid-template-columns: 1fr;
           row-gap: 2rem;
@@ -344,7 +361,6 @@
   }
 
   .contact-us-section {
-
     @include mobile {
       @include has-light-background;
     }
@@ -358,7 +374,6 @@
     }
 
     .title {
-
       @include mobile {
         margin-bottom: 2rem;
       }
@@ -373,7 +388,6 @@
 
     .address-title,
     .contact-title {
-
       @include mobile {
         display: block;
         margin-bottom: 1.75rem;
@@ -385,14 +399,12 @@
     }
 
     .address {
-
       font-size: $P1;
       font-weight: 400;
       color: $F1;
     }
 
     .office-info {
-
       @include mobile {
         margin-bottom: 1.75rem;
       }
@@ -401,7 +413,6 @@
     }
 
     .contact-info-container {
-
       @include mobile {
         display: flex;
         flex-direction: column;
@@ -410,7 +421,6 @@
       }
 
       .contact-info {
-
         @include mobile {
           display: flex;
           flex-direction: column;
@@ -436,13 +446,12 @@
   }
 
   .join-section {
-
     position: relative;
     text-align: center;
 
     @include mobile {
-       background: url('../../../images/about/map.svg') center no-repeat;
-       background-size: contain;
+      background: url('../../../images/about/map.svg') center no-repeat;
+      background-size: contain;
     }
 
     @include tablet {
@@ -451,7 +460,6 @@
     }
 
     .title {
-
       @include mobile {
         margin-bottom: 2rem;
       }
@@ -463,7 +471,6 @@
     .button {
       width: 10rem;
     }
-
   }
 
   .scroll-top-button {
