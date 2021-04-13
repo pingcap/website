@@ -5,6 +5,8 @@
 @import '../components/blogTags';
 
 .PingCAP-Blog {
+  min-height: 50vh;
+
   $section-padding-top: 1.5rem;
   $right-sidebar-margin-top: 4rem;
   .section.section-blog {
@@ -65,19 +67,19 @@
     }
 
     h1 {
-      font-size: $size-4;
+      font-size: $H0;
     }
 
     h2 {
-      font-size: $size-5;
+      font-size: $H1;
     }
 
     h3 {
-      font-size: $size-6;
+      font-size: $H2;
     }
 
     h4 {
-      font-size: $size-7;
+      font-size: $H3;
     }
 
     a {
@@ -107,7 +109,7 @@
       font-style: italic;
       text-align: center;
     }
-    
+
     .center-bold-underline {
       margin: 1rem 0;
       font-size: 1rem;

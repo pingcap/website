@@ -1,5 +1,9 @@
 .PingCAP-BlogHeader {
   .blog-title {
+    &-in-body-content {
+      font-size: $H0;
+    }
+
     @include mobile {
       font-size: $size-5;
     }

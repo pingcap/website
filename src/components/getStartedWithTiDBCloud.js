@@ -9,16 +9,13 @@ const GetStartedWithTiDBCloud = () => {
     <section className={`section ${className}`}>
       <div className="container columns">
         <div className="text column">
-          <p className="main-desc">
-            Are you ready to start your free trial?
+          <p className="main-desc">Are you ready to start your free trial?</p>
+          <p className="desc">
+            Choose from the free and discounted public preview options
           </p>
-          <p className="desc">Choose from the free and discounted public preview options</p>
         </div>
 
-        <StartYourFreeTrialNowButton
-          btnText="START FOR FREE"
-          className="column"
-        />
+        <StartYourFreeTrialNowButton className="column" />
       </div>
     </section>
   )

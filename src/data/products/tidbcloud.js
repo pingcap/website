@@ -51,6 +51,46 @@ const reasonsData = [
   },
 ]
 
+const reasonsDataJP = [
+  {
+    name: 'ハイブリッドトランザクション/分析処理（HTAP）',
+    desc:
+      '大規模でミッションクリティカルなOLTPおよびリアルタイム分析（HTAP）ワークロードをサポートします。',
+    placeholder: r1SVG,
+  },
+  {
+    name: 'マルチクラウドのサポート',
+    desc:
+      'クラウドベンダーのロックインなしで柔軟性を維持します。現在AWSとGCPで利用可能であり、さらに多くのプラットフォームで開発中です。',
+    placeholder: r2SVG,
+  },
+  {
+    name: '生産性の向上',
+    desc:
+      '数回クリックするだけで、TiDB Cloudを簡単に導入、運用、監視できる為、生産性が大幅に向上します。',
+    placeholder: r3SVG,
+  },
+  {
+    name: 'エンタープライズグレードのセキュリティ',
+    desc:
+      '稼働中と静止中の両方の暗号化をサポートして、専用のネットワークとマシンでデータを保護します。',
+    placeholder: r4SVG,
+  },
+  {
+    name: '高い柔軟性',
+    desc:
+      'データは複数のアベイラビリティーゾーンに複製され、サービスが常に稼働するように毎日バックアップされます。',
+    placeholder: r5SVG,
+  },
+  {
+    name: 'エキスパートサポート',
+    desc:
+      '私たちは多くのTiDBユーザーをサポートしており、同じエクスペリエンスをTiDB Cloudユーザーに提供しています。',
+
+    placeholder: r6SVG,
+  },
+]
+
 const featuresData = [
   {
     name: 'Hybrid Transactional and Analytical Processing (HTAP)',
@@ -83,6 +123,35 @@ const featuresData = [
     desc:
       'TiDB, the engine behind TiDB Cloud, has been open source since day one with a growing community of 400+ contributors',
     placeholder: f5SVG,
+  },
+]
+
+const featuresDataJP = [
+  {
+    name: 'フルマネージド',
+    desc:
+      'TiDB CloudはPingCAPによってフルマネージドされている為、サーバーのプロビジョニング、スケーリング、フェイルオーバーなどについての心配は必要ございません。市場投入までの時間を短縮し、コストを削減して、アプリケーションに集中する事が出来ます。',
+    placeholder: f1SVG,
+  },
+  {
+    name: '柔軟性のあるスケーリング',
+    desc:
+      'ビジネスの成長に合わせて、数回クリックするだけでノードを追加・スケールアウトできます。 TiDBにデータ分散のバランスを自動的に任せましょう。',
+    placeholder: f2SVG,
+    reverse: true,
+  },
+  {
+    name: '常に最新バージョン',
+    desc:
+      'アップデートはHotFixとして提供され、必要に応じて適用されます。常に最新の機能とセキュリティアップデートを行っているため、安心して使用することが出来ます。',
+    placeholder: f3SVG,
+  },
+  {
+    name: '優れたGUIとモニタリング',
+    desc:
+      'オンラインの視覚的診断ツールは、ホットデータのステータスを表示し、ストレージとパフォーマンスの分析を行い、SQLの問題を特定します。',
+    placeholder: f4SVG,
+    reverse: true,
   },
 ]
 
@@ -129,4 +198,12 @@ const faqData = [
 
 const logos = { aws, googleCloud }
 
-export { reasonsData, featuresData, servicesData, logos, faqData }
+export {
+  reasonsData,
+  reasonsDataJP,
+  featuresData,
+  featuresDataJP,
+  servicesData,
+  logos,
+  faqData,
+}

@@ -1,9 +1,15 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import Link from './IntlLink'
 import React, { useEffect, useState, Fragment, useCallback } from 'react'
+import ArrowDown from '../../images/case-studies/arrow-down.svg'
 
-import AddIcon from '@material-ui/icons/Add'
-import { navbarItemsEn, navbarItemsZh, homepagePromotionText, cloudPromotionText } from '../data/navbar'
+import {
+  navbarItemsEn,
+  navbarItemsZh,
+  navbarItemsJP,
+  homepagePromotionText,
+  cloudPromotionText,
+} from '../data/navbar'
 import { useIntl } from 'react-intl'
 import { useLocation } from '@reach/router'
 
@@ -62,7 +68,19 @@ const Navbar = ({ showBanner }) => {
   )
 
   const intl = useIntl()
-  const navbarItems = intl.locale === 'zh' ? navbarItemsZh : navbarItemsEn
+  // const navbarItems = intl.locale === 'zh' ? navbarItemsZh : navbarItemsEn
+  let navbarItems = {}
+
+  switch (intl.locale) {
+    case 'zh':
+      navbarItems = navbarItemsZh
+      break
+    case 'jp':
+      navbarItems = navbarItemsJP
+      break
+    default:
+      navbarItems = navbarItemsEn
+  }
 
   const [showBorder, setShowBorder] = useState(false)
   const [burgerActive, setBurgerActive] = useState(false)
@@ -92,7 +110,8 @@ const Navbar = ({ showBanner }) => {
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false), [])
   const location = useLocation()
-  const promotionText = location.pathname === '/' ? homepagePromotionText: cloudPromotionText
+  const promotionText =
+    location.pathname === '/' ? homepagePromotionText : cloudPromotionText
 
   return (
     <nav
@@ -112,7 +131,10 @@ const Navbar = ({ showBanner }) => {
 
       <div className="container">
         <div className="navbar-brand">
-          <Link className="navbar-item with-brand" to="/">
+          <Link
+            className="navbar-item with-brand"
+            to={intl.locale === 'jp' ? '/jp' : '/'}
+          >
             <img
               className="navbar-brand"
               src={imageData.BrandSVG.publicURL}
@@ -163,7 +185,7 @@ const Navbar = ({ showBanner }) => {
                   >
                     <div className="dropdown-title">
                       {item.name}
-                      <AddIcon />
+                      <img src={ArrowDown} alt="arrow-icon" />
                     </div>
                     <div className="navbar-dropdown">
                       {item.dropdown.map((navItem) => (
@@ -184,7 +206,9 @@ const Navbar = ({ showBanner }) => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="navbar-item with-main-section"
+                        className={`navbar-item with-main-section ${
+                          item.hideOnPC ? 'hideOnPC' : ''
+                        }`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -194,7 +218,9 @@ const Navbar = ({ showBanner }) => {
                       <Link
                         key={item.name}
                         to={item.href}
-                        className="navbar-item with-main-section"
+                        className={`navbar-item with-main-section ${
+                          item.hideOnPC ? 'hideOnPC' : ''
+                        }`}
                         onTouchStart={() => {}}
                       >
                         {item.name}

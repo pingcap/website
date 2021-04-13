@@ -60,7 +60,7 @@ const TiDBCloudPage = ({ data }) => {
                   .
                 </p>
                 <div className="start-trial-button">
-                  <StartYourFreeTrialNowButton btnText="START FOR FREE" />
+                  <StartYourFreeTrialNowButton />
                 </div>
                 <p className="paragraph sign-in">
                   Already have an account?{' '}

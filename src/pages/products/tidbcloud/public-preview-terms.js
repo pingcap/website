@@ -44,7 +44,7 @@ const PublicPreview = () => {
               </li>
             </ul>
             <div className="start-trial-button">
-              <StartYourFreeTrialNowButton btnText="START FOR FREE" />
+              <StartYourFreeTrialNowButton />
             </div>
           </section>
         </div>

@@ -213,7 +213,7 @@ const Pricing = () => {
               </p>
               <HourlyNodeUsageInfo />
               <div className="start-trial-button">
-                <StartYourFreeTrialNowButton btnText="START FOR FREE" />
+                <StartYourFreeTrialNowButton />
               </div>
             </div>
           </div>

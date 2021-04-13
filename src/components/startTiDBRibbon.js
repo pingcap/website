@@ -3,9 +3,12 @@ import '../styles/components/startTiDBRibbon.scss'
 import React from 'react'
 import { Button, Buttons } from '@seagreenio/react-bulma'
 import Link from './IntlLink'
-import { FormattedMessage } from 'react-intl'
+import { FormattedMessage, useIntl } from 'react-intl'
 
 const StartTiDBRibbon = () => {
+  const intl = useIntl()
+  const lang = intl.locale === 'en' ? '' : intl.locale + '/'
+
   return (
     <section className="PingCAP-Start-TiDB-ribbon section section-get-started">
       <div className="container">
@@ -18,14 +21,14 @@ const StartTiDBRibbon = () => {
           <Button
             className="contact-us"
             as={Link}
-            to="/contact-us"
+            to={`/${lang}contact-us`}
             color="primary"
             inverted
             outlined
           >
             <FormattedMessage id="components.StartTiDBRibbon.contactUs" />
           </Button>
-          <Button className="get-tidb" as={Link} to="/download">
+          <Button className="get-tidb" as={Link} to={`/${lang}download`}>
             <FormattedMessage id="components.StartTiDBRibbon.getTiDB" />
           </Button>
         </Buttons>

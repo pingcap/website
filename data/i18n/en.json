@@ -35,13 +35,42 @@
             "ready": "Ready to get started with TiDB?",
             "contactUs": "CONTACT US",
             "getTiDB": "GET TiDB"
+        },
+        "StartYourFreeTrialNow": {
+            "button": "START FOR FREE"
+        },
+        "useCases": {
+            "title": "Use Cases",
+            "oltp": {
+                "title": "OLTP",
+                "subTitle": "Horizontally-scalable Relational Database",
+                "detail": {
+                    "desc": "Scalable online transactional processing",
+                    "list1": "400+ TB of transactional production data in a single TiDB cluster",
+                    "list2": "Trillions of rows in a single distributed table"
+                }
+            },
+            "htap": {
+                "title": "HTAP",
+                "subTitle": "Real-time Analytics",
+                "detail": {
+                    "desc": "Hybrid Transactional and Analytical Processing",
+                    "list1": "Millisecond response times over trillions of rows",
+                    "list2": "No wall between transactional data and analytical reporting"
+                }
+            }
+        },
+        "postForm": {
+            "title": "Subscribe To Our Newsletter",
+            "subTitle": "Features, releases, showcases, meetups, talks...",
+            "btnText": "SUBSCRIBE"
         }
     },
     "templates": {
-    "blog": {
-      "getStartedTitle": "Ready to get started with TiDB?",
-      "getStartedText": "GET TiDB",
-      "contactUsText": "CONTACT US"
+        "blog": {
+            "getStartedTitle": "Ready to get started with TiDB?",
+            "getStartedText": "GET TiDB",
+            "contactUsText": "CONTACT US"
+        }
     }
-  }
 }

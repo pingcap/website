@@ -1,0 +1,76 @@
+{
+    "components": {
+        "navbar": {
+            "product": "Product",
+            "caseStudies": "Case Studies",
+            "docs": "Docs",
+            "blog": "Blog",
+            "community": "Community",
+            "contactUs": "Contact Us"
+        },
+        "footer": {
+            "openSourceEco": "Open Source Ecosystem",
+            "tidb": "TiDB",
+            "tikv": "TiKV",
+            "tispark": "TiSpark",
+            "chaosMesh": "Chaos Mesh®",
+            "resources": "Resources",
+            "quickStart": "Quick Start",
+            "documentation": "Documentation",
+            "blog": "Blog",
+            "community": "Community",
+            "github": "Github",
+            "company": "Company",
+            "about": "About",
+            "contactUs": "Contact Us",
+            "careers": "Careers",
+            "cookiePolicy": "Cookie Policy",
+            "privacyPolicy": "Privacy Policy",
+            "useCases": "Use Cases",
+            "internet": "Internet",
+            "gaming": "Gaming",
+            "financial": "Financial Services"
+        },
+        "StartTiDBRibbon": {
+            "ready": "TiDBを試してみませんか？",
+            "contactUs": "お問い合わせ",
+            "getTiDB": "GET TiDB"
+        },
+        "StartYourFreeTrialNow": {
+            "button": "無料トライアルを開始"
+        },
+        "useCases": {
+            "title": "ユースケース",
+            "oltp": {
+                "title": "OLTP",
+                "subTitle": "水平方向にスケーリングするリレーショナルデータベース",
+                "detail": {
+                    "desc": "スケーラブルなオンライントランザクション処理",
+                    "list1": "1つのTiDBクラスター内で400TB以上のトランザクション本番データ",
+                    "list2": "1つの分散テーブル内で数兆行のデータ"
+                }
+            },
+            "htap": {
+                "title": "HTAP",
+                "subTitle": "リアルタイム分析",
+                "detail": {
+                    "desc": "Hybrid Transactional and Analytical Processing",
+                    "list1": "数兆行を超えるテーブルをミリ秒の応答時間",
+                    "list2": "トランザクションデータと分析レポートとの間にあるETLツールのボトルネックを解消"
+                }
+            }
+        },
+        "postForm": {
+            "title": "ニュースレターを購読する",
+            "subTitle": "機能、リリース、ショーケース、交流会、トークなど",
+            "btnText": "Eメールの登録"
+        }
+    },
+    "templates": {
+        "blog": {
+            "getStartedTitle": "Ready to get started with TiDB?",
+            "getStartedText": "GET TiDB",
+            "contactUsText": "CONTACT US"
+        }
+    }
+}

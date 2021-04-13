@@ -75,6 +75,64 @@ const benefitsData = [
   },
 ]
 
+const celebrateYourGrowthDataJP = [
+  {
+    name: <>オープンソース（Apache 2）ベンダーロックインなし</>,
+    desc:
+      'TiDBは、エコシステム内に豊富なオープンソースデータ移行ツールをサポートしており、お客様の選ぶ自由な選択肢によってベンダーロックインをが回避できます。',
+    placeholder: c1SVG,
+  },
+  {
+    name: 'スケールアウトリレーショナルデータベース',
+    desc:
+      'TiDBは大規模なSQLを提供する為に開発されたデータベースです。 大規模なSQL環境が抱えて、アプリケーションのメンテナンスや従来のリレーショナルデータベースのスケーリングの問題を解消します。',
+    placeholder: c2SVG,
+  },
+  {
+    name: 'リアルタイム分析',
+    desc:
+      'HTAPデータベースプラットフォームとして、ライブトランザクションデータのリアルタイムな状況確認と企業の意思決定を同時に可能にし、ITでのボトルネックを排除してビジネスの成功へと導きます。',
+    placeholder: c3SVG,
+  },
+]
+
+const benefitsDataJP = [
+  {
+    name: '大規模なSQL',
+    desc:
+      'TiDBはACIDに準拠しており、高い信頼性があります。 お客様が使い慣れたSQLの構文とエコシステムツールを備えたスケールアウトMySQLデータベースとして使用できます。',
+    link: 'お客様事例を見る',
+    href: '/case-studies',
+    placeholder: b1SVG,
+    reverse: true,
+  },
+  {
+    name: '高い柔軟性とスケーラビリティ',
+    desc:
+      'TiDBはデータを自動的にシャーディングするため、手動で行う必要はございません。新しいノードを追加するだけで、ビジネスの成長に合わせて水平方向かつ柔軟に拡張することが出来ます。',
+    link: 'データがどのように配布されるかを確認する',
+    href: '/blog/2017-07-11-tidbinternal1',
+    placeholder: b2SVG,
+  },
+  {
+    name: 'シンプルさと安全性',
+    desc:
+      'TiDBはETLプロセスを簡素化し、エラーから自動的に回復します。お客様はデータベースインフラストラクチャを心配する時間が減り、ビジネスへ注力する事が出来ます。',
+    link: 'お客様事例を見る',
+    href: '/case-studies',
+    placeholder: b3SVG,
+    reverse: true,
+  },
+  {
+    name: 'タイムリーなデータで優れたインサイト',
+    desc:
+      'TiDBはリアルタイム分析をサポートしています。 OLTPとOLAPの間にある壁を打ち破ることで迅速にビジネスの意思決定が可能になります。',
+    link: 'お客様事例を見る',
+    href: '/case-studies',
+    placeholder: b4SVG,
+  },
+]
+
 const logos = {
   kubernetes,
   tiup,
@@ -83,4 +141,10 @@ const logos = {
   tidbCloud,
 }
 
-export { celebrateYourGrowthData, benefitsData, logos }
+export {
+  celebrateYourGrowthData,
+  benefitsData,
+  logos,
+  celebrateYourGrowthDataJP,
+  benefitsDataJP,
+}
