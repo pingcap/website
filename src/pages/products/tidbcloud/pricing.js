@@ -20,7 +20,7 @@ const precision = (num, precision = 12) => {
 
 const http = axios.create({
   baseURL:
-    'https://us-west-2.staging.shared.aws.tidbcloud.com/external-api/v1/cluster_profiles',
+    'https://us-west-2.prod.aws.tidbcloud.com/external-api/v1/cluster_profiles',
 })
 
 const HourlyNodeUsageInfo = () => {
@@ -91,7 +91,9 @@ const HourlyNodeUsageInfo = () => {
             {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GiB`}
           </td>
           <td>$ {value(availablePrice[name])} /hr</td>
+          <td>$ {precision(availablePrice[name] * 0.7)} /hr</td>
           <td>$ {precision(availablePrice[name] * 24 * 30)} /month</td>
+          <td>$ {precision(availablePrice[name] * 24 * 30 * 0.7)} /month</td>
         </>
       )
 
@@ -125,7 +127,9 @@ const HourlyNodeUsageInfo = () => {
               <th>CPU</th>
               <th>Storage</th>
               <th>Hourly Usage Per Node</th>
+              <th>Discounted Hourly Usage Per Node</th>
               <th>Monthly Usage Per Node</th>
+              <th>Discounted Monthly Usage Per Node</th>
             </tr>
           </thead>
           <tbody>
