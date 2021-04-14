@@ -24,18 +24,19 @@ const FAQ = () => {
                 <p>
                   TiDB Cloud makes deploying, managing and maintaining your TiDB
                   clusters even simpler with a fully managed cloud instance that
-                  you control through an intuitive dashboard. You’ll be able to
+                  you control through an intuitive console. You’ll be able to
                   easily deploy on Amazon Web Services or Google Cloud to
                   quickly build mission critical applications.
                 </p>
                 <p>
                   TiDB Cloud allows developers and DBAs with little or no
                   training to handle once-complex tasks such as infrastructure
-                  management and cluster deployment. And by scaling TiDB
-                  clusters in or out with a simple click of a button, you’ll no
-                  longer waste costly resources because you’ll be able to
-                  provision your databases for exactly how much and how long you
-                  need them.
+                  management and cluster deployment with ease, to focus on your
+                  applications, not the complexities of your database. And by
+                  scaling TiDB clusters in or out with a simple click of a
+                  button, you’ll no longer waste costly resources because you’ll
+                  be able to provision your databases for exactly how much and
+                  how long you need them.
                 </p>
               </div>
             </div>
@@ -53,7 +54,7 @@ const FAQ = () => {
                   databases that only scale vertically.
                 </p>
                 <p className>TiDB’s advantages over MySQL:</p>
-                <ul className="">
+                <ul>
                   <li>
                     TiDB has a distributed architecture with flexible and
                     elastic scalability. It automatically takes care of dynamic
@@ -74,7 +75,10 @@ const FAQ = () => {
                 <p>
                   TiDB supports the MySQL protocol and dialect. You can replace
                   MySQL with TiDB to power your applications{' '}
-                  <span className="underline">without changing any code</span>.
+                  <span className="underline">
+                    without changing any code in most cases
+                  </span>
+                  .
                 </p>
               </div>
             </div>
@@ -98,37 +102,88 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                4. How does TiDB Cloud support strong consistency?
+                4. How is TiDB Cloud compatible with MySQL?
               </h2>
               <div className="answer">
                 <p>
-                  The TiDB database uses the Raft consensus algorithm to ensure
-                  data consistency.
+                  Currently, TiDB supports the majority of MySQL 5.7 syntax, but
+                  does not support trigger, stored procedures, user-defined
+                  functions, and foreign keys. For more details, see{' '}
+                  <a
+                    href="https://docs.pingcap.com/tidb/v3.0/mysql-compatibility"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Compatibility with MySQL
+                  </a>
+                  .
                 </p>
                 <p>
-                  TiKV (the transactional storage of TiDB) uses Raft to perform
-                  data replication, and each Raft Group consists of three
-                  replicas stored on different nodes by default. When you need
-                  to write some data, TiKV sends the request to the Raft Leader.
-                  The Leader copies the entry to other Followers through the
-                  Raft algorithm. After the Follower receives the entry, it will
-                  also perform an Append operation, and in the meantime inform
-                  the Leader that the Append operation is successful. When the
-                  Leader finds that the entry has been appended by the majority
-                  of nodes, it considers that the entry is Committed.
+                  If you use the MySQL 8.0 client and it fails to connect to
+                  TiDB, try to add the <code>default-auth</code> and{' '}
+                  <code>default-character-set</code> options:
                 </p>
+                <code>
+                  mysql -h 127.0.0.1 -u root -P 4000
+                  --default-auth=mysql_native_password
+                  --default-character-set=utf8
+                </code>
+                <div className="gatsby-highlight">
+                  <pre className="language-bash shell-regular">
+                    <code className="language-bash">
+                      mysql -h 127.0.0.1 -u root -P 4000
+                      --default-auth=mysql_native_password
+                      --default-character-set=utf8
+                    </code>
+                  </pre>
+                </div>
                 <p>
-                  Since one Raft Group only processes a limited amount of data,
-                  we split the data into multiple Raft Groups, each of which
-                  corresponds to a Region. Splitting is done by slicing within a
-                  data range. With multiple Raft groups, TiDB guarantees strong
-                  consistency among multiple regions.
+                  This problem occurs because MySQL 8.0 changes the default
+                  authentication plugin in MySQL 5.7. To solve this problem, you
+                  need to add the options above to specify using the old
+                  encryption method.
                 </p>
               </div>
             </div>
             <div className="faq">
               <h2 className="question">
-                5. Where can I run TiDB Cloud? (vendor lock-in)
+                5. What programming language can I use to work with TiDB Cloud?
+              </h2>
+              <div className="answer">
+                <p>Any language supported by the MySQL client or driver.</p>
+              </div>
+            </div>
+            <div className="faq">
+              <h2 className="question">
+                6. How does TiDB Cloud support strong consistency?
+              </h2>
+              <div className="answer">
+                <p>
+                  TiDB implements Snapshot Isolation consistency, which it
+                  advertises as REPEATABLE-READ for compatibility with MySQL.
+                  Data is redundantly copied between TiKV nodes using the{' '}
+                  <a
+                    href="https://raft.github.io/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Raft consensus algorithm
+                  </a>{' '}
+                  to ensure recoverability should a node failure occur.
+                </p>
+                <p>
+                  At the bottom layer, TiKV uses a model of replication log +
+                  State Machine to replicate data. For the write requests, the
+                  data is written to a Leader and the Leader then replicates the
+                  command to its Followers in the form of log. When the majority
+                  of nodes in the cluster receive this log, this log is
+                  committed and can be applied into the State Machine.
+                </p>
+              </div>
+            </div>
+            <div className="faq">
+              <h2 className="question">
+                7. Where can I run TiDB Cloud? (vendor lock-in)
               </h2>
               <div className="answer">
                 <p>
@@ -139,41 +194,28 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                6. What versions of TiDB are supported on TiDB Cloud?
+                8. What versions of TiDB are supported on TiDB Cloud?
               </h2>
               <div className="answer">
                 <p>
-                  TiDB Cloud always has the latest version of TiDB applied
-                  automatically or at your own schedule. Please refer to our{' '}
+                  For the currently supported TiDB version, see{' '}
                   <a
-                    href="https://docs.pingcap.com/tidbcloud/beta/release-notes/"
-                    target="_blank"
+                    href="https://docs.pingcap.com/tidbcloud/beta/release-notes"
                     rel="noreferrer"
+                    target="_blank"
                   >
-                    release note
-                  </a>{' '}
-                  for more information about the latest version of TiDB we
-                  support.
+                    TiDB Cloud Release Notes
+                  </a>
+                  .
                 </p>
               </div>
             </div>
             <div className="faq">
-              <h2 className="question">
-                7. What language is TiDB/TiKV written in?
-              </h2>
-              <div className="answer">
-                <p>
-                  TiKV (transactional storage) is written in Rust. TiDB (compute
-                  node) and PD (placement driver) are written in Go.
-                </p>
-              </div>
-            </div>
-            <div className="faq">
-              <h2 className="question">8. How can I learn about TiDB Cloud?</h2>
+              <h2 className="question">9. How can I learn about TiDB Cloud?</h2>
               <div className="answer content">
                 <p>
-                  The best way to learn about TiDB is to follow our step-by-step
-                  tutorial. Please check out the following topics to get
+                  The best way to learn about TiDB Cloud is to follow our
+                  step-by-step tutorial. Check out the following topics to get
                   started:
                 </p>
                 <ul>
@@ -210,23 +252,16 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                9. What companies are using TiDB/TiDB Cloud in production?
+                10. What companies are using TiDB/TiDB Cloud in production?
               </h2>
               <div className="answer">
                 <p>
                   TiDB is trusted by 1500+ global enterprises across industries
-                  such as financial services, gaming, and e-commerce. Our{' '}
+                  such as financial services, gaming, and e-commerce. Our users
+                  include Square (US), PayPay (Japan), Shopee (Singapore), and
+                  China UnionPay (China). See TiDB’s
                   <a
-                    href="https://pingcap.com/case-studies/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    customers
-                  </a>{' '}
-                  include Square (US), Paypay (Japan), Colopl (Japan), and China
-                  UnionPay (China). Please refer to TiDB’s{' '}
-                  <a
-                    href="https://pingcap.com/case-studies/"
+                    href="https://pingcap.com/case-studies"
                     target="_blank"
                     rel="noreferrer"
                   >
@@ -246,22 +281,22 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                10. How does TiDB Cloud ensure high availability?
+                11. How does TiDB Cloud ensure high availability?
               </h2>
               <div className="answer">
                 <p>
                   TiDB uses the Raft consensus algorithm to ensure that data is
                   highly available and safely replicated throughout storage in
-                  Raft groups. Data is redundantly copied between TiKV nodes and
-                  placed in different AZs to protect against machine or data
-                  center failure. Our system will automatically fail over,
-                  ensuring that your applications continue to work seamlessly.
+                  Raft Groups. Data is redundantly copied between TiKV nodes and
+                  placed in different Availability Zones to protect against
+                  machine or data center failure. With automatic failover, TiDB
+                  Cloud ensures that your service is always on.
                 </p>
               </div>
             </div>
             <div className="faq">
               <h2 className="question">
-                11. How does TiDB Cloud secure my data?
+                12. How does TiDB Cloud secure my data?
               </h2>
               <div className="answer">
                 <p>
@@ -278,20 +313,26 @@ const FAQ = () => {
                   also enabled by default for all your persisted data and
                   backups.
                 </p>
-                <img src={CloudProviders} alt="tidb cloud providers"/>
+                <img src={CloudProviders} alt="tidb cloud providers" />
                 <p>
                   As a Software as a Service (SaaS) provider, we take data
                   security seriously. We've established strict information
-                  security policies and procedures required by the Service
-                  Organization Control (SOC) 2 Type 1 compliance. This ensures
-                  that our customers' data is secure, available, and
-                  confidential.
+                  security policies and procedures required by the{' '}
+                  <a
+                    href="https://pingcap.com/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    Service Organization Control (SOC) 2 Type 1 compliance
+                  </a>
+                  . This ensures that our customers' data is secure, available,
+                  and confidential.
                 </p>
               </div>
             </div>
             <div className="faq">
               <h2 className="question">
-                12. What kind of support is available for customers?
+                13. What kind of support is available for customers?
               </h2>
               <div className="answer">
                 <p>
@@ -305,22 +346,22 @@ const FAQ = () => {
             </div>
             <div className="faq">
               <h2 className="question">
-                13. There are different components in my TiDB Cluster. What are
+                14. There are different components in my TiDB Cluster. What are
                 PD, TiDB, TiKV, and TiFlash nodes for?
               </h2>
               <div className="answer">
                 <p>
-                  Placement Driver (PD) is "the brain" of the entire TiDB
+                  The Placement Driver (PD) is "the brain" of the entire TiDB
                   cluster as it stores the metadata of the cluster. It sends
                   data scheduling commands to specific TiKV nodes according to
                   the data distribution state reported by TiKV nodes in real
                   time.
                 </p>
                 <p>
-                  TiDB is the SQL compute layer that aggregate data from queries
-                  returned from TiKV or TiFlash stores. TiDB is horizontally
-                  scalable, and increasing the number of TiDB nodes will
-                  increase the number of concurrent queries the cluster can
+                  TiDB is the SQL computing layer that aggregates data from
+                  queries returned from TiKV or TiFlash stores. TiDB is
+                  horizontally scalable, and increasing the number of TiDB nodes
+                  will increase the number of concurrent queries the cluster can
                   handle.
                 </p>
                 <p>
@@ -328,47 +369,47 @@ const FAQ = () => {
                   the data in TiKV is automatically maintained in multiple
                   replicas (three replicas by default), so TiKV has native high
                   availability and supports automatic failover. TiKV is
-                  horizontally scalable, increasing the number of transactional
-                  stores will increase OLTP throughput.
+                  horizontally scalable, and increasing the number of
+                  transactional stores will increase OLTP throughput.
                 </p>
                 <p>
-                  TiFlash is the analytical storage that synchronizes data from
-                  Transactional Store (TiKV) in real-time and supports real-time
-                  analytics workloads. Unlike TiKV nodes, TiFlash stores data in
-                  columns to accelerate analytical processing. TiFlash is also
-                  horizontally scalable, and increasing TiFlash nodes will
-                  increase OLAP storage and compute capacity.
+                  TiFlash is the analytical storage that replicates data from
+                  the transactional store (TiKV) in real time and supports
+                  real-time analytics workloads. Unlike TiKV, TiFlash stores
+                  data in columns to accelerate analytical processing. TiFlash
+                  is also horizontally scalable, and increasing TiFlash nodes
+                  will increase OLAP storage and computing capacity.
                 </p>
                 <img src={OLAPWorklaod} alt="tidb olap oltp workload" />
               </div>
             </div>
             <div className="faq">
               <h2 className="question">
-                14. How does TiDB synchronize data between the TiKV nodes?
+                15. How does TiDB replicate data between the TiKV nodes?
               </h2>
               <div className="answer">
                 <p>
                   TiKV divides the whole key-value space into key ranges, and
-                  each key range is treated as a “region”. In TiKV, data is
-                  distributed among all nodes in the cluster and use regions as
-                  the basic unit (PD is responsible for spreading regions as
+                  each key range is treated as a “Region”. In TiKV, data is
+                  distributed among all nodes in the cluster and uses Region as
+                  the basic unit (PD is responsible for spreading Regions as
                   evenly as possible across all nodes in the cluster).
                 </p>
                 <p>
                   TiDB uses the Raft consensus algorithm to replicate data by
-                  regions. Multiple replicas of a Region are stored in different
-                  nodes to form a Raft Group.
+                  Regions. Multiple replicas of a Region stored in different
+                  nodes form a Raft Group.
                 </p>
                 <p>
-                  When there are data changes, each data change will be recorded
-                  in a Raft log. Through Raft log replication, data is safely
-                  and reliably replicated to multiple nodes of the Raft group.
+                  Each data change will be recorded as a Raft log. Through Raft
+                  log replication, data is safely and reliably replicated to
+                  multiple nodes of the Raft Group.
                 </p>
               </div>
             </div>
             <div className="faq">
               <h2 className="question">
-                15. How do I make use of TiDB Cloud’s HTAP capabilities?
+                16. How do I make use of TiDB Cloud’s HTAP capabilities?
               </h2>
               <div className="answer">
                 <p>
@@ -391,8 +432,8 @@ const FAQ = () => {
                   intelligence, and real-time reporting.
                 </p>
                 <p>
-                  For further HTAP scenarios, please refer to{' '}
-                  <Link to="/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform#applying-tidb-in-htap-scenarios">
+                  For further HTAP scenarios, refer to{' '}
+                  <Link to="/blog/how-we-build-an-htap-database-that-simplifies-your-data-platform">
                     How We Build an HTAP Database That Simplifies Your Data
                     Platform.
                   </Link>

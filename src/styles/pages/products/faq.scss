@@ -1,36 +1,47 @@
 @import '../../common';
 
 .PingCAP-TiDBCloud-FAQ {
-    .title {
-        letter-spacing: 6px;
+  .title {
+    letter-spacing: 6px;
+  }
+
+  .faq {
+    margin: 1rem 0 2rem;
+  }
+
+  .question {
+    font-size: $H3;
+    font-weight: $W2-EN;
+  }
+
+  .answer {
+    font-size: $P1;
+    padding: 0 1rem 2rem;
+    border-bottom: 1px solid $T2;
+
+    p {
+      padding: 1rem 0 0;
     }
 
-    .faq {
-        margin: 1rem 0 2rem;
+    span {
+      &.underline {
+        text-decoration: underline;
+      }
     }
 
-    .question {
-        font-size: $H3;
-        font-weight: $W2-EN;
+    a {
+      color: $B1;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
+  }
 
-    .answer {
-        font-size: $P1;
-        padding: 0 1rem 2rem;
-        border-bottom: 1px solid $T2;
-
-        p {
-            padding: 1rem 0 0;
-        }
-
-        span {
-            &.underline {
-                text-decoration: underline;
-            }
-        }
-
-        a {
-            color: $B1;
-        }
+  .gatsby-highlight {
+    margin-top: 2rem;
+    pre[class*='language-'] {
+      background: #f6f8fa;
     }
+  }
 }
