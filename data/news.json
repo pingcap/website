@@ -1,5 +1,15 @@
 [
   {
+    "title": "Five Principles That Guide TiDB and PingCAP (Part II)",
+    "logo": "images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/five-principles-that-guide-tidb-and-pingcap-part-i-1",
+    "date": "2021-04-14"
+  {
+    "title": "Five Principles That Guide TiDB and PingCAP (Part I)",
+    "logo": "images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/five-principles-that-guide-tidb-and-pingcap-part-i",
+    "date": "2021-04-14"
+  {
     "title": "Mentorship Spotlight: How I added coprocessor ENUM/SET support to TiKV in an LFX Mentorship Program",
     "logo": "/images/news/cncf.png",
     "link": "https://www.cncf.io/blog/2021/04/08/mentorship-spotlight-how-i-added-coprocessor-enum-set-support-to-tikv-in-an-lfx-mentorship-program/",
