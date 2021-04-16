@@ -64,6 +64,7 @@ const HourlyNodeUsageInfo = () => {
 
   const ProfileTable = () => {
     const instances = profile.instances || []
+    const discount = profile.global_discount || 0.7
     const availableProfiles = instances.filter((p) =>
       p.available_regions.map((r) => r.region_name).includes(region)
     )
@@ -93,7 +94,9 @@ const HourlyNodeUsageInfo = () => {
           <td>$ {value(availablePrice[name])} /hr</td>
           <td>$ {precision(availablePrice[name] * 0.7)} /hr</td>
           <td>$ {precision(availablePrice[name] * 24 * 30)} /month</td>
-          <td>$ {precision(availablePrice[name] * 24 * 30 * 0.7)} /month</td>
+          <td>
+            $ {precision(availablePrice[name] * 24 * 30 * discount)} /month
+          </td>
         </>
       )
 
