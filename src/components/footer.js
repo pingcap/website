@@ -53,7 +53,7 @@ const Footer = () => {
         </div>
         <div className="dropdown-menu">
           <div className="dropdown-content">
-            {Object.keys(langConfig.languages).map((lang) => (
+            {Object.keys(langConfig.languagesSimple).map((lang) => (
               <a
                 key={lang}
                 className="dropdown-item"
@@ -65,7 +65,7 @@ const Footer = () => {
                     : `/${lang}`
                 }
               >
-                {langConfig.languages[lang].langName}
+                {langConfig.languagesSimple[lang].langName}
               </a>
             ))}
           </div>
