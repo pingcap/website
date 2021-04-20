@@ -1,0 +1,77 @@
+@import '../common';
+
+.PingCAP-TiDB-Legal-Notices {
+  .section-title {
+    margin: 5rem 0;
+
+    @include mobile {
+      text-align: center !important;
+    }
+  }
+
+  .hero {
+    img {
+      height: 200px;
+    }
+  }
+
+  .legal-list {
+    .columns {
+      flex-flow: row wrap;
+      justify-content: center;
+      margin-bottom: 8rem;
+      width: 100%;
+
+      .column {
+        padding: 1rem 2rem;
+      }
+
+      .card {
+        padding: 0 3rem;
+        .legal-title {
+          position: relative;
+          margin-top: 2.5rem;
+          font-size: $H1;
+
+          a {
+            color: $F1;
+            &:hover {
+              color: $B1;
+            }
+          }
+        }
+
+        .lt {
+          max-width: 80%;
+        }
+
+        .read-more {
+          position: absolute;
+          top: 0.5rem;
+          right: 0;
+          font-size: $P1;
+
+          &.pc {
+            @include touch {
+              display: none;
+            }
+          }
+
+          &.mobile {
+            position: relative;
+            display: none;
+            top: -1rem;
+
+            @include touch {
+              display: block;
+            }
+          }
+        }
+
+        .legal-desc {
+          margin: 2.5rem 0;
+        }
+      }
+    }
+  }
+}

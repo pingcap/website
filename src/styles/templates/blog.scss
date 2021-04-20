@@ -50,6 +50,35 @@
     color: $F1;
     line-height: 1.75;
 
+    &.legal-content {
+      ul {
+        margin-bottom: none;
+        list-style: none;
+      }
+
+      div.customize-indentation,
+      ul.customize-indentation {
+        > ul > li,
+        > ul > li > p {
+          margin: 0;
+          display: flex;
+
+          span {
+            padding-left: 0.5rem;
+          }
+        }
+      }
+
+      .annex-center {
+        margin-top: 3rem;
+        text-align: center;
+
+        p:first-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
     h1,
     h2,
     h3,

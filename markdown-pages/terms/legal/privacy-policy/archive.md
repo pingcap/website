@@ -1,6 +1,7 @@
 ---
 title: Privacy Policy Update
 summary: Learn about the Privacy Policy of PingCAP Sites and Products.
+aliases: ['/privacy-policy/archive/']
 ---
 
 # Update history of PingCAP Privacy Policy
@@ -14,4 +15,4 @@ summary: Learn about the Privacy Policy of PingCAP Sites and Products.
   3. Added a new section of California Privacy Rights; and
   4. Retitled it as Privacy Policy.
 
-- [Privacy Statement updated on June 1, 2020](/privacy-policy/archive/20200601-20210401)
+- [Privacy Statement updated on June 1, 2020](/legal/privacy-policy/archive/20200601-20210401)

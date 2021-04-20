@@ -7,7 +7,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx'
 
 const PrivacyPolicy = ({ data }) => {
   const { mdx } = data
-  const { frontmatter, body: html } = mdx
+  const { frontmatter, parent, body: html } = mdx
+  const isLegalMdx = parent.relativePath.startsWith('legal/')
 
   return (
     <Layout>
@@ -25,7 +26,11 @@ const PrivacyPolicy = ({ data }) => {
       <article className="PingCAP-Blog">
         <section className="section section-position">
           <div className="container">
-            <div className="markdown-body blog-content position-content">
+            <div
+              className={`markdown-body blog-content position-content${
+                isLegalMdx ? ' legal-content' : ''
+              }`}
+            >
               <MDXProvider>
                 <MDXRenderer>{html}</MDXRenderer>
               </MDXProvider>
@@ -44,6 +49,11 @@ export const query = graphql`
       frontmatter {
         title
         summary
+      }
+      parent {
+        ... on File {
+          relativePath
+        }
       }
     }
   }
