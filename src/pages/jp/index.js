@@ -424,7 +424,7 @@ const IndexPage = ({ data }) => {
 }
 
 export const query = graphql`
-  query($blogsPath: String) {
+  query {
     tidbSQLAtScaleSVG: file(
       relativePath: { eq: "home/tidb-sql-at-scale.svg" }
     ) {
@@ -438,7 +438,7 @@ export const query = graphql`
     }
     last3Blogs: allMdx(
       filter: {
-        fileAbsolutePath: { regex: $blogsPath }
+        fileAbsolutePath: { regex: "/markdown-pages/blogs/" }
         frontmatter: { customer: { eq: null } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
