@@ -3,11 +3,12 @@ const langConfig = require('./lang.config.json')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
 const getSitemapForLanguage = (lang) => {
-  const langPrefix = lang === 'en' ? '' : '/zh'
+  const langPrefix = lang === 'en' ? '' : `/${lang}`
   const _ouput = `/sitemap-${lang}.xml`
   const _exclude =
     lang === 'en' ? [`${langPrefix}/404`, '/careers/*'] : [`${langPrefix}/404`]
-  const filterRegex = lang === 'en' ? '/^((?!/zh/).)*$/' : '/^/zh//'
+  const filterRegex =
+    lang === 'en' ? '/^((?!/zh/)(?!/jp/).)*$/' : `/^/${lang}//`
 
   const _query = `{
     site {
@@ -191,10 +192,14 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`,
+      options: getSitemapForLanguage('jp'),
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
       options: {
         output: '/sitemap.xml',
         serialize: () =>
-          ['en'].map((lang) => ({
+          ['en', 'jp'].map((lang) => ({
             priority: 1,
             url: `https://pingcap.com/sitemap-${lang}.xml`,
           })),
