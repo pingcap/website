@@ -36,9 +36,9 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 - 1.11. <span>**"Service Data"** means query logs and any data (other than Your Content) relating to your use of the TiDB Cloud Services or the operation, maintenance or support thereof.</span>
 
-- 1.12. <span>**"Service Level Agreement"** or **"SLA"** means PingCAP's current service level offerings for the TiDB Cloud Services. The current SLA is located at https://docs.pingcap.com/tidbcloud/beta/service-level-agreement. The SLA may be updated by PingCAP from time to time.</span>
+- 1.12. <span>**"Service Level Agreement"** or **"SLA"** means PingCAP's current service level offerings for the TiDB Cloud Services. The current SLA is located at [here](https://docs.pingcap.com/tidbcloud/beta/service-level-agreement). The SLA may be updated by PingCAP from time to time.</span>
 
-- 1.13. <span>**"Site"** means our official website for the TiDB Cloud Services. The current website is located at https://pingcap.com/products/tidbcloud.</span>
+- 1.13. <span>**"Site"** means our official website for the TiDB Cloud Services. The current website is [here](/products/tidbcloud).</span>
 
 - 1.14. <span>**"Suggestions"** means all suggested improvements, enhancement requests, ideas for new functionality or customizations, recommendations, corrections or other feedback that you provide to PingCAP relating to the TiDB Cloud Services.</span>
 

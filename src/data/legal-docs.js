@@ -17,9 +17,9 @@ const LegalDocs = [
     link: '/legal/data-processing-agreement-for-tidb-cloud-services/',
   },
   {
-    title: 'Annex 1: European Standard Contractual Clauses (processors)',
+    title: 'European Standard Contractual Clauses (processors)',
     desc:
-      'This Annex 1 applies if you use our TiDB Cloud Services to process Eurpoean personal data.',
+      'These clauses apply if you use our TiDB Cloud Service to process European personal data.',
     link: '/legal/european-standard-contractual-clauses/',
   },
   {
@@ -30,12 +30,12 @@ const LegalDocs = [
   },
   {
     title: 'Sub-processors and Affiliates for TiDB Cloud Services',
-    desc: 'This document lists our sub-processors and affiliates',
+    desc: 'This document lists our sub-processors and affiliates.',
     link: '/legal/sub-processors-and-affiliates-for-tidb-cloud-services/',
   },
   {
     title: 'PingCAP Cookie Policy',
-    desc: 'This policy describes how PingCAP handles Cookies',
+    desc: 'This policy describes how PingCAP handles Cookies.',
     link: '/legal/cookie-policy/',
   },
 ]
