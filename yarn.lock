@@ -13082,12 +13082,13 @@ rc@^1.2.7, rc@^1.2.8:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-react-cookie-consent@^5.1.1:
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-5.1.1.tgz#9e5e674ed74546576950df5e825f075db35b34a3"
-  integrity sha512-sv1yJv3Vvn0TgxtZfkcBW2mU6DYCxIvNDsYJZsJHE9GSOsUAWMeDsIZQcoECTburoBL0ho2SpSEaTOKPKqFHjg==
+react-cookie-consent@6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-6.2.3.tgz#fdfbea5ea07ac484c46046418514865c33319015"
+  integrity sha512-PCagmezwHF0oEqORcY6jWlbwUeu1u1zFFi3gc9TL7H4bTk4qR2uLFBKKVVN5gfScTLwdoJtH8sMbgj/cOmUn0A==
   dependencies:
     js-cookie "^2.2.1"
+    prop-types "^15.7.2"
 
 react-dev-utils@^4.2.3:
   version "4.2.3"

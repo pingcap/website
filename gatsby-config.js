@@ -53,23 +53,13 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-99991864-8',
-        head: true,
-        anonymize: true,
-        respectDNT: true,
-        pageTransitionDelay: 0,
-        cookieDomain: 'pingcap.com',
-      },
-    },
-    {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
           trackingId: 'UA-99991864-8',
           cookieName: 'gatsby-gdpr-google-analytics',
           anonymize: true,
+          allowAdFeatures: false,
         },
         environments: ['production', 'development'],
       },
