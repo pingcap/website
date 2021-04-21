@@ -1,6 +1,6 @@
 const langConfig = require('../lang.config.json')
 const defaultLang = langConfig.defaultLang
-const langMapKeys = Object.keys(langConfig.languages)
+const langMapKeys = Object.keys(langConfig.languagesSimple)
 const dev404Page = '/dev-404-page'
 
 const createIntlPages = ({ page, actions }) => {

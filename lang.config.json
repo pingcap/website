@@ -12,12 +12,17 @@
             "blogsPath": "/markdown-pages/blogs/",
             "policyTermsPath": "/markdown-pages/terms/",
             "hasBlogCategories": true
+        }
+    },
+    "languagesSimple": {
+        "en": {
+            "langName": "English"
+        },
+        "zh": {
+            "langName": "中文"
         },
         "jp": {
-            "langName": "Japanese",
-            "blogsPath": "/markdown-pages/blogs/",
-            "policyTermsPath": "/markdown-pages/terms/",
-            "hasBlogCategories": true
+            "langName": "Japanese"
         }
     }
 }
