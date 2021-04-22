@@ -1,6 +1,10 @@
 @import '../common';
 
 .PingCAP-TiDB-Legal-Notices {
+  .hero-body {
+    padding: 5rem 1.5rem !important;
+  }
+
   .section-title {
     margin: 5rem 0;
 
@@ -11,7 +15,7 @@
 
   .hero {
     img {
-      height: 200px;
+      height: 150px;
     }
   }
 
