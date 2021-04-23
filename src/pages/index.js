@@ -24,7 +24,6 @@ const caseLogos = [
   'tencent',
   'bigo',
   'blued',
-  'paypay',
   'shopee',
   'bookmyshow',
   'bank-of-beijing',

@@ -19,7 +19,6 @@ import Button from '../../components/button'
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
-  'paypay',
   'unext',
   'square',
   'lenovo',
