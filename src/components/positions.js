@@ -5,7 +5,7 @@ import Loading from '../components/loading'
 import Link from './IntlLink'
 import axios from 'axios'
 
-const Positions = () => {
+const Positions = ({ locale }) => {
   const [positions, setPositions] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -14,7 +14,29 @@ const Positions = () => {
       const positionRes = (
         await axios.get('https://api.lever.co/v0/postings/pingcap?mode=json')
       ).data
-      setPositions(positionRes)
+
+      let _position = []
+
+      // sort position by location
+      if (locale === 'jp') {
+        let _TokyoPosition = []
+        let _NonTokyoPosition = []
+
+        positionRes.forEach((p) => {
+          console.log('p.categories.location', p.categories.location)
+          if (p.categories.location === 'Tokyo') {
+            _TokyoPosition.push(p)
+          } else {
+            _NonTokyoPosition.push(p)
+          }
+        })
+
+        _position = _TokyoPosition.concat(_NonTokyoPosition)
+      } else {
+        _position = positionRes
+      }
+
+      setPositions(_position)
       setLoading(false)
     } catch (e) {
       console.log('Failed to fetch positions')
@@ -24,6 +46,7 @@ const Positions = () => {
 
   useEffect(() => {
     fetchPositions()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

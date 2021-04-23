@@ -65,7 +65,7 @@ const Careers = ({ data }) => {
         >
           <div className="container">
             <h2 className="title section-title">Open Positions</h2>
-            <Positions />
+            <Positions locale="jp" />
           </div>
         </section>
       </article>
