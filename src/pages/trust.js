@@ -15,8 +15,8 @@ const Trust = React.memo(({ data }) => {
   return (
     <Layout>
       <SEO
-        title="About PingCAP"
-        description="Story about PingCAP, the team behind TiDB"
+        title="Security and Compliance"
+        description="TiDB is a distributed SQL database platform that features horizontal scalability, strong consistency, and high availability."
       />
       <article className="PingCAP-SecurityAndTrustCenter">
         <Hero backgroundImage={BannerSVG.publicURL}>
