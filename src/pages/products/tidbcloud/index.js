@@ -148,8 +148,7 @@ const TiDBCloudPage = ({ data }) => {
             <h2 className="title section-title">Pricing</h2>
             <div className="field">
               <p className="paragraph">
-                TiDB Cloud provides different clusters d grow your business and
-                stop worrying about database infrastructure.
+                Get started with options that fit your needs.
               </p>
               <Button
                 as={Link}
