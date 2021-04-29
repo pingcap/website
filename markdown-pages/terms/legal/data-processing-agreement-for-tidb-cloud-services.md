@@ -139,11 +139,11 @@ You shall ensure that you have, and will maintain in place, all consents, regist
 
 ## 6. Sub-Processing
 
-You provide a general authorization for PingCAP to appoint [sub-Processors](/legal/sub-processors-and-affiliates-for-tidb-cloud-services) to assist it with the provision of the Services provided that PingCAP:
+You shall provide a general authorization for PingCAP to appoint [sub-Processors](/legal/sub-processors-and-affiliates-for-tidb-cloud-services) to assist it with the provision of the Services, provided that PingCAP:
 
 <div class="customize-indentation">
 
-- 6.1 <span>shall ensure that the terms on which it appoints such sub-Processors comply with applicable Data Protection Laws and are consistent with the obligations imposed on PingCAP in this <ins>DPA</ins>; and</span>
+- 6.1 <span>ensures that the terms on which it appoints such sub-Processors comply with applicable Data Protection Laws and are consistent with the obligations imposed on PingCAP in this <ins>DPA</ins>; and</span>
 
 - 6.2 <span>give you reasonable prior notice to the email account registered by you in TiDB Cloud by directing you to the updated list of sub-Processors available on PingCAP's website of any intended changes concerning the addition or the replacement of any such sub-Processors. If within ten (10) days of receipt of such notice, you notify PingCAP in writing of any objections (on reasonable grounds associated with data protection considerations) to the proposed appointment, (a) PingCAP shall use reasonable efforts to make available a commercially reasonable change in the provision of the TiDB Cloud Services which avoids the use of that proposed sub-Processor, and (b) where no commercially reasonable change is available, either party may by written notice to the other party with immediate effect terminate the CSA to the extent that it relates to the affected TiDB Cloud Services. In the absence of any written notification from you in relation to the proposed appointment, such appointment would be deemed agreed by you;</span>
 
