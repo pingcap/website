@@ -1,4 +1,22 @@
 [
+ {
+    "title": "Using TiDB in Mission Critical Scenarios of the Financial Industry (Part I)",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/using-tidb-in-mission-critical-scenarios-of-the-fi",
+    "date": "2021-05-06"
+  }, 
+  {
+    "title": "Achieve Better Price to Performance for TiDB on Amazon EKS with Graviton2 Processors",
+    "logo": "/images/news/aws-logo.png",
+    "link": "https://aws.amazon.com/blogs/startups/achieve-better-price-to-performance-for-tidb-graviton2-processors/",
+    "date": "2021-05-05"
+  }, 
+  {
+    "title": "Choosing a MySQL Alternative to Scale Out Databases on K8s",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/choosing-a-mysql-alternative-over-vitess-and-crdb",
+    "date": "2021-05-01"
+  }, 
   {
     "title": "TiDB Operator Source Code Reading (Part 1): Overview",
     "logo": "/images/news/dzone-logo.png",
