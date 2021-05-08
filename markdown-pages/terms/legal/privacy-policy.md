@@ -1,10 +1,12 @@
 ---
 title: Privacy Policy 2021
 summary: Learn about the Privacy Statement to be applied when you use PingCAP Sites and our Products.
+aliases: ['/privacy-policy', '/products/tidbcloud/privacy-policy']
 ---
+
 # Privacy Policy
 
-**Last Updated on Apirl 2, 2021** ([archived versions](/privacy-policy/archive/))
+**Last Updated on Apirl 2, 2021** ([archived versions](/legal/privacy-policy/archive/))
 
 PingCAP (US), Inc. and its affiliates (hereinafter referred to as "PingCAP", "we," "our," or "us") understand that privacy is important to visitors to our websites (our "Sites") and users of our products and services (including without limitation TiDB and TiDB Cloud; hereinafter referred as our "Products"). This Privacy Policy explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Policy.
 
@@ -94,7 +96,7 @@ The cookies we use include:
 - Marketing cookies
 - Third-party cookies from Google Analytics, Mixpanel and Algolia
 
-For detailed information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third parties, please see our [Cookie Policy](/cookie-policy).
+For detailed information about online interest-based advertising, our use of cookies and other similar tracking technologies, and how to opt-out of having your information used for these purposes by many of these third parties, please see our [Cookie Policy](/legal/cookie-policy).
 
 ## OUR USE OF PERSONAL INFORMATION
 

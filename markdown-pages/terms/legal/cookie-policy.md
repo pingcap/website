@@ -1,6 +1,7 @@
 ---
 title: Cookie Policy
 summary: Learn about the Cookie Policy on PingCAP sites.
+aliases: ['/cookie-policy']
 ---
 
 # Cookie Policy on PingCAP.com
@@ -47,7 +48,7 @@ In some special cases, we also use cookies provided by trusted third parties. Th
 
 ## Disabling Cookies
 
-You may refuse to accept cookies from this site at any time by adjusting the cookie setting on your browser. Further information about the procedure to follow in order to disable cookies can be found on your Internet browser provider's website. You may wish to refer to http://www.allaboutcookies.org/manage-cookies/index.html for information on commonly used browsers. 
+You may refuse to accept cookies from this site at any time by adjusting the cookie setting on your browser. Further information about the procedure to follow in order to disable cookies can be found on your Internet browser provider's website. You may wish to refer to http://www.allaboutcookies.org/manage-cookies/index.html for information on commonly used browsers.
 
 ## CHANGES TO THIS DOCUMENT
 
@@ -55,7 +56,7 @@ PingCAP may modify or update this COOKIE POLICY from time to time to reflect the
 
 ## More Information
 
-You can find out more about cookies at [www.allaboutcookies.org]. To learn about how your privacy is protected on our website, see [Privacy Policy](https://pingcap.com/privacy-policy).
+You can find out more about cookies at [www.allaboutcookies.org]. To learn about how your privacy is protected on our website, see [Privacy Policy](/legal/privacy-policy).
 
 If you are looking for more information then you can contact us through one of our preferred contact methods:
 

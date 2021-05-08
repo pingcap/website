@@ -38,7 +38,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createCaseStudyCategories({ graphql, createPage }),
     createCaseStudyPagination({ graphql, createPage }),
     createPositions({ graphql, createPage, createRedirect }),
-    createPolicyTerms({ graphql, createPage }),
+    createPolicyTerms({ graphql, createPage, createRedirect }),
   ])
 }
 

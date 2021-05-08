@@ -2,7 +2,7 @@ const path = require('path')
 const { langPrefixes, replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
-const createPolicyTerms = async ({ graphql, createPage }) => {
+const createPolicyTerms = async ({ graphql, createPage, createRedirect }) => {
   const policyTermsTemplate = path.resolve(
     `${__dirname}/../src/templates/policyTerms.js`
   )
@@ -20,6 +20,7 @@ const createPolicyTerms = async ({ graphql, createPage }) => {
             node {
               frontmatter {
                 title
+                aliases
               }
               parent {
                 ... on File {
@@ -34,8 +35,11 @@ const createPolicyTerms = async ({ graphql, createPage }) => {
     `)
 
     result.data.blogs.edges.forEach(({ node }) => {
+      const _path = `/${langPrefixes(lang)}${replaceTitle(
+        node.parent.relativePath
+      )}`
       createPage({
-        path: `/${langPrefixes(lang)}${replaceTitle(node.parent.relativePath)}`,
+        path: _path,
         component: policyTermsTemplate,
         context: {
           title: node.frontmatter.title,
@@ -43,6 +47,19 @@ const createPolicyTerms = async ({ graphql, createPage }) => {
           ...langConfig.languages[lang],
         },
       })
+
+      // create redirect
+      if (node.frontmatter.aliases) {
+        const aliasesArr = node.frontmatter.aliases
+
+        aliasesArr.forEach((alias) => {
+          createRedirect({
+            fromPath: `${alias}`,
+            toPath: _path,
+            isPermanent: true,
+          })
+        })
+      }
     })
   }
 }

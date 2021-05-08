@@ -111,16 +111,12 @@ const footerColumns = [
           link: '/careers',
         },
         {
+          name: 'Legal',
+          link: '/legal',
+        },
+        {
           name: 'Contact Us',
           link: '/contact-us',
-        },
-        {
-          name: 'Cookie Policy',
-          link: '/cookie-policy',
-        },
-        {
-          name: 'Privacy Policy',
-          link: '/privacy-policy',
         },
       ],
     },
@@ -380,16 +376,12 @@ const footerColumnsJP = [
           link: '/jp/careers',
         },
         {
+          name: 'Legal',
+          link: '/legal',
+        },
+        {
           name: '問い合わせ',
           link: '/jp/contact-us',
-        },
-        {
-          name: 'Cookie Policy',
-          link: '/cookie-policy',
-        },
-        {
-          name: 'Privacy Policy',
-          link: '/privacy-policy',
         },
       ],
     },
