@@ -7,9 +7,15 @@ const GetStartedWithTiDBCloud = () => {
   const className = `GetStartedWithTiDBCloud`
   return (
     <section className={`section ${className}`}>
-      <div className="container">
-        <h2 className="title is-4">Get Started with TiDB Cloud</h2>
-        <StartYourFreeTrialNowButton />
+      <div className="container columns">
+        <div className="text column">
+          <p className="main-desc">Are you ready to start your free trial?</p>
+          <p className="desc">
+            Choose from the free and discounted public preview options
+          </p>
+        </div>
+
+        <StartYourFreeTrialNowButton className="column" />
       </div>
     </section>
   )

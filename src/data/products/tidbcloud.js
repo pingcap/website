@@ -1,51 +1,52 @@
-import aws from '../../../images/products/tidbcloud/aws.svg'
-import f1SVG from '../../../images/products/tidbcloud/full-managed.svg'
-import f2SVG from '../../../images/products/tidbcloud/elastic-scaling.svg'
-import f3SVG from '../../../images/products/tidbcloud/always-up-to-date.svg'
-import f4SVG from '../../../images/products/tidbcloud/visual-diagnostics-and-monitoring.svg'
-import googleCloud from '../../../images/products/tidbcloud/google-cloud.png'
-import r1SVG from '../../../images/products/tidbcloud/operational-analytics.svg'
-import r2SVG from '../../../images/products/tidbcloud/multi-cloud-support.svg'
-import r3SVG from '../../../images/products/tidbcloud/productivity-booster.svg'
-import r4SVG from '../../../images/products/tidbcloud/enterprise-grade-security.svg'
-import r5SVG from '../../../images/products/tidbcloud/highly-resilient.svg'
-import r6SVG from '../../../images/products/tidbcloud/expert-support.svg'
+import aws from '../../../images/products/tidbcloud/aws.png'
+import f1SVG from '../../../images/products/tidbcloud/htap.svg'
+import f2SVG from '../../../images/products/tidbcloud/visual-diagnostics-and-monitoring.svg'
+import f3SVG from '../../../images/products/tidbcloud/enterprise-grade-security.svg'
+import f4SVG from '../../../images/products/tidbcloud/mysql-compatible.svg'
+import f5SVG from '../../../images/products/tidbcloud/open-souce-community.svg'
+import googleCloud from '../../../images/products/tidbcloud/google-cloud.svg'
+import r1SVG from '../../../images/products/tidbcloud/more-control-over-scaling.svg'
+import r2SVG from '../../../images/products/tidbcloud/high-availability-reliability.svg'
+import r3SVG from '../../../images/products/tidbcloud/scalable-multi-master.svg'
+import r4SVG from '../../../images/products/tidbcloud/high-concurrency.svg'
+import r5SVG from '../../../images/products/tidbcloud/transactional-analytical-workloads.svg'
+import r6SVG from '../../../images/products/tidbcloud/real-time-operational-analytics.svg'
 
 const reasonsData = [
   {
-    name: 'Hybrid Transactional/Analytical Processing (HTAP)',
+    name: 'More Control Over Scaling',
     desc:
-      'Support massive-scale, mission-critical OLTP and real-time analytics workloads right out of the box.',
+      'Scale the performance or storage separately to best suit your business needs',
     placeholder: r1SVG,
   },
   {
-    name: 'Multi-Cloud Support',
+    name: 'High Availability and Reliability',
     desc:
-      'Stay flexible with no cloud vendor lock-in. Currently available on AWS and GCP, with more platforms in the works.',
+      'Ensure business continuity for your mission critical applications with our ACID-compliant cluster deployment',
     placeholder: r2SVG,
   },
   {
-    name: 'Productivity Booster',
+    name: 'Scalable Multi-Master',
     desc:
-      'Boost your productivity with easy deployment, operation, and monitoring on TiDB Cloud in just a few clicks.',
+      'No more bottlenecks - scale without restrictions with TiDB’s read and write capability on every node',
     placeholder: r3SVG,
   },
   {
-    name: 'Enterprise Grade Security',
+    name: 'High Concurrency',
     desc:
-      'Secure your data in dedicated networks and machines, with support for encryption both in-flight and at-rest.',
+      'Have thousands of users query your data at the same time without losing performance',
     placeholder: r4SVG,
   },
   {
-    name: 'Highly Resilient',
+    name: 'Transactional and Analytical Workloads in a Single Cloud Database',
     desc:
-      'Data is replicated across multiple availability zones and backed up daily to ensure your service is always on.',
+      'Eliminate complex data migration between transactional and analytical workloads by storing your data in a single database',
     placeholder: r5SVG,
   },
   {
-    name: 'Expert Support',
+    name: 'Real Time Operational Analytics',
     desc:
-      'We support hundreds of TiDB users, and we bring that same experience to our TiDB Cloud users.',
+      'Run real-time analytical queries with our hybrid transactional-analytical processing (HTAP) capabilities',
     placeholder: r6SVG,
   },
 ]
@@ -85,36 +86,43 @@ const reasonsDataJP = [
     name: 'エキスパートサポート',
     desc:
       '私たちは多くのTiDBユーザーをサポートしており、同じエクスペリエンスをTiDB Cloudユーザーに提供しています。',
+
     placeholder: r6SVG,
   },
 ]
 
 const featuresData = [
   {
-    name: 'Fully Managed',
+    name: 'Hybrid Transactional and Analytical Processing (HTAP)',
     desc:
-      'TiDB Cloud is fully managed by PingCAP so you don’t need to worry about server provisioning, scaling, failover, etc. Just focus on your applications with faster time-to-market and lower cost.',
+      'Run both transactional and analytical workloads in the same cluster, reducing cost and complexity',
     placeholder: f1SVG,
-  },
-  {
-    name: 'Elastic Scaling',
-    desc:
-      'As your business grows, simply scale out by adding more nodes in just a few clicks. Let TiDB automatically balance data distribution for you.',
-    placeholder: f2SVG,
-    reverse: true,
-  },
-  {
-    name: 'Always Up-to-date',
-    desc:
-      'Updates are provided as hot fixes and are applied as needed. Rest assured that you’ll always have the latest features and security updates.',
-    placeholder: f3SVG,
   },
   {
     name: 'Visual Diagnostics and Monitoring',
     desc:
-      'Online visual diagnostics tools display hot data status, analyze your storage and performance, and locate SQL problems.',
+      'Troubleshoot your database and SQL queries with built-in diagnostics tools',
+    placeholder: f2SVG,
+    reverse: true,
+  },
+  {
+    name: 'Enterprise Grade Security',
+    desc:
+      'Secure your data in dedicated networks and machines, with support for encryption both in-flight and at-rest',
+    placeholder: f3SVG,
+  },
+  {
+    name: 'MySQL Compatible',
+    desc:
+      'Increase productivity and shorten time-to-market for your applications without the need to rewrite your SQL code',
     placeholder: f4SVG,
     reverse: true,
+  },
+  {
+    name: 'Open Source Community',
+    desc:
+      'TiDB, the engine behind TiDB Cloud, has been open source since day one with a growing community of 400+ contributors',
+    placeholder: f5SVG,
   },
 ]
 
@@ -170,6 +178,24 @@ const servicesData = [
   },
 ]
 
+const faqData = [
+  {
+    q: '1. What is TiDB Cloud?',
+    a:
+      '<p>TiDB Cloud makes deploying, managing and maintaining your TiDB clusters even simpler with a fully managed cloud instance that you control through an intuitive console. You’ll be able to easily deploy on Amazon Web Services or Google Cloud to quickly build mission critical applications. </p> <p>TiDB Cloud allows developers and DBAs with little or no training to handle once-complex tasks such as infrastructure management and cluster deployment with ease, to focus on your applications, not the complexities of your database. And by scaling TiDB clusters in or out with a simple click of a button, you’ll no longer waste costly resources because you’ll be able to provision your databases for exactly how much and how long you need them. </p>',
+  },
+  {
+    q: '2. How is TiDB different from other relational databases like MySQL?',
+    a:
+      '<p> TiDB is a next-generation, distributed relational database. TiDB can scale both computing and storage capacity simply by adding new nodes. This makes infrastructure capacity scaling easier and more flexible compared to traditional relational databases that only scale vertically.</p> <div>TiDB’s advantages over MySQL:</div><ul><li>TiDB has a distributed architecture with flexible and elastic scalability. It automatically takes care of dynamic distribution, allowing you to easily scale your TiDB cluster horizontally with just a few clicks. </li><li>TiDB supports high availability with automatic failover, ensuring business continuity with auto-backups regardless of disk or machine failures. </li> <li> TiDB is a Hybrid Transactional/Analytical Processing (HTAP) database that handles both OLTP and OLAP workloads within one database. </li></ul><p>TiDB supports the MySQL protocol and dialect. You can replace MySQL with TiDB to power your applications <span class="underline">without changing any code in most cases</span> .</p>',
+  },
+  {
+    q: '3. What is the relationship between TiDB and TiDB Cloud? ',
+    a:
+      '<p>TiDB is an open-source database and is the best option for organizations who want to run TiDB on-premises or in their own data centers.</p><p>TiDB Cloud is a fully managed cloud service (Database-as-a-Service) of TiDB. It has an easy-to-use web-based management console to let you manage TiDB clusters for mission-critical production environments. </p>',
+  },
+]
+
 const logos = { aws, googleCloud }
 
 export {
@@ -179,4 +205,5 @@ export {
   featuresDataJP,
   servicesData,
   logos,
+  faqData,
 }

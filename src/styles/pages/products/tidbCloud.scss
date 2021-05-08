@@ -145,7 +145,12 @@
         }
 
         .paragraph {
+          font-size: $H3;
           padding: 0;
+
+          &.sign-in {
+            font-size: $P1;
+          }
         }
 
         .start-trial-button {
@@ -167,7 +172,7 @@
         width: 48%;
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
         border-radius: 6px;
-        
+
         iframe {
           width: 100%;
           height: 400px;
@@ -194,6 +199,7 @@
     .reasons {
       @include mobile {
         flex-direction: column;
+        align-items: center;
       }
 
       display: flex;
@@ -206,7 +212,8 @@
           width: 100%;
         }
 
-        width: 32%;
+        width: 30%;
+        max-width: 22rem;
         padding: 0 1rem;
         text-align: center;
 
@@ -225,7 +232,7 @@
           }
 
           .title {
-            font-size: $P1;
+            font-size: $H3;
             font-weight: 700;
             color: $F1;
 
@@ -235,6 +242,8 @@
           }
 
           .paragraph {
+            font-size: $P1;
+            color: $F2;
             padding-top: 0;
             padding-bottom: 0.75rem;
           }
@@ -285,108 +294,135 @@
           }
         }
 
+        .title {
+          font-size: $H2;
+        }
+
         .has-text-left {
           @include mobile {
             text-align: center !important;
           }
+        }
+
+        .paragraph {
+          font-size: $H3;
         }
       }
     }
   }
 
   .section-pricing {
+    padding: 3rem 1.5rem 6rem;
+
     .field {
-      margin-top: 3rem;
-    }
+      text-align: center;
 
-    .tidb-cloud-hourly-usage {
-      margin: 2rem 0;
-      color: $B4;
-
-      & > div {
-        margin-bottom: 2rem;
-      }
-
-      .cloud-providers {
-        display: flex;
-
-        .cloud-provider-button {
-          @include has-pingcap-style-border;
-          width: 9rem;
-          height: 5rem;
-
-          &:first-child {
-            @include mobile {
-              margin-right: 3rem;
-            }
-            margin-right: 6rem;
-          }
-
-          &.button:active,
-          &.button.is-active {
-            border-color: $primary;
-          }
-
-          .logo {
-            display: block;
-            width: auto;
-            height: 4rem;
-            margin: auto;
-          }
-        }
-      }
-
-      .regions {
-        display: flex;
-        align-items: center;
-
-        .label {
-          display: inline-block;
-          width: 9rem;
-          margin: 0;
-          padding-bottom: 0;
-          font-size: $size-7;
-          font-weight: 400;
-        }
-
-        .select {
-          select {
-            @include has-pingcap-style-border;
-            width: 100%;
-            color: $B4;
-          }
-        }
-      }
-
-      .table-container {
-        .table {
-          font-size: $size-7;
-          color: $B4;
-
-          td,
-          th {
-            border-color: $C2;
-            vertical-align: middle;
-          }
-
-          thead {
-            th {
-              background-color: $C4;
-              color: $M1;
-            }
-          }
-
-          .tier-td {
-            font-weight: 600;
-            text-transform: capitalize;
-          }
-        }
+      p {
+        padding-bottom: 3rem;
+        font-size: $H3;
       }
     }
   }
 
   .section-get-started {
     text-align: center;
+  }
+
+  .section-faq {
+    .faq-list {
+      @include mobile {
+        width: 100%;
+      }
+
+      width: 80%;
+      margin: 4rem auto;
+
+      .question {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 10px;
+        color: $F2;
+        font-size: $P1;
+        cursor: pointer;
+
+        span {
+          position: absolute;
+          right: 0;
+          height: 20px;
+          width: 20px;
+          border: 1px solid $F2;
+          border-radius: 50%;
+
+          &::after {
+            content: '+';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: 50%;
+            transform: translate(-45%, 45%);
+          }
+        }
+
+        &:hover {
+          color: $B1;
+
+          span {
+            border: 1px solid $B1;
+          }
+
+          &::before {
+            border-bottom: 1px dashed $B1;
+          }
+        }
+
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          border-bottom: 1px dashed $F2;
+        }
+
+        &.checked {
+          color: $B1;
+
+          span {
+            border: 1px solid $B1;
+
+            &::after {
+              content: '-';
+            }
+          }
+
+          &::before {
+            border-bottom: 1px dashed $B1;
+          }
+        }
+      }
+
+      .answer {
+        padding: 0.5rem 1rem 0 1rem;
+        height: 0;
+        overflow: hidden;
+        transition-timing-function: ease-out;
+        transition: all 0.5s;
+
+        &.show-answer {
+          padding: 1rem;
+          height: auto;
+          transition-timing-function: ease-in;
+          transition: all 0.5s;
+        }
+
+        .underline {
+          text-decoration: underline;
+        }
+      }
+    }
   }
 }
 
