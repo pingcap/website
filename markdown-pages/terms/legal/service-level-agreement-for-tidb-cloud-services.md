@@ -5,7 +5,7 @@ summary: The service level agreement applies to your use of TiDB Cloud Services.
 
 # Service Level Agreement for TiDB Cloud Services
 
-**Last updated on Apirl 20, 2021**
+**Last updated on May 8, 2021**
 
 This Service Level Agreement (SLA) applies only to TiDB Cloud Services production clusters.
 

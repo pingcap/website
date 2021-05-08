@@ -5,7 +5,7 @@ summary: This agreement sets out data protection requirements with respect to ou
 
 # Data Processing Agreement ("DPA") for TiDB Cloud Services
 
-**Last updated on Apirl 20, 2021**
+**Last updated on May 8, 2021**
 
 ## 1. Definitions
 
@@ -61,9 +61,9 @@ You shall ensure that you have, and will maintain in place, all consents, regist
 
 - 4.5. <span>Without undue delay after becoming aware of a Personal Data Breach affecting the CSA Personal Data, PingCAP will notify you in accordance with the level of detail for you to fulfil any reporting or other requirements imposed on you under Data Protection Laws;</span>
 
-- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in <ins>Section 4(d)(ii)</ins> as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
+- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in <ins>Section 4.5(d)(ii)</ins> as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
 
-- 4.7. <span>Without prejudice to its obligations under <ins>Section 4(e)</ins>, PingCAP will provide reasonable assistance, information and cooperation to you in responding to any request from a Data Subject and to ensure compliance with your obligations under Data Protection Laws with respect to:</span>
+- 4.7. <span>Without prejudice to its obligations under <ins>Section 4.4.2</ins>, PingCAP will provide reasonable assistance, information and cooperation to you in responding to any request from a Data Subject and to ensure compliance with your obligations under Data Protection Laws with respect to:</span>
 
 <ul class="customize-indentation">
 
@@ -85,11 +85,11 @@ You shall ensure that you have, and will maintain in place, all consents, regist
 
 - 4.9.1. <span>inform the Recipient, in writing, of what CSA Personal Data is to be retained; and</span>
 
-- 4.9.2. <span>the reason it must be retained under such applicable law, and</span>
+- 4.9.2. <span>inform the Recipient of the reason it must be retained under such applicable law, and</span>
 
 </ul>
 
-- 4.10. <span>PingCAP will notify you as soon as is reasonably practicable if PingCAP receives any complaint, notice or communication (whether from a Supervisory Authority or Data Subject or otherwise) which relates directly or indirectly to the Processing of CSA Personal Data, or the exercise of any rights of the Data Subject in respect of CSA Personal Data).</span>
+- 4.10. <span>PingCAP will notify you as soon as is reasonably practicable if PingCAP receives any complaint, notice or communication (whether from a Supervisory Authority or Data Subject or otherwise) which relates directly or indirectly to the Processing of CSA Personal Data, or the exercise of any rights of the Data Subject in respect of CSA Personal Data.</span>
 
 </div>
 
@@ -145,7 +145,7 @@ You shall provide a general authorization for PingCAP to appoint [sub-Processors
 
 - 6.1 <span>ensures that the terms on which it appoints such sub-Processors comply with applicable Data Protection Laws and are consistent with the obligations imposed on PingCAP in this <ins>DPA</ins>; and</span>
 
-- 6.2 <span>give you reasonable prior notice to the email account registered by you in TiDB Cloud by directing you to the updated list of sub-Processors available on PingCAP's website of any intended changes concerning the addition or the replacement of any such sub-Processors. If within ten (10) days of receipt of such notice, you notify PingCAP in writing of any objections (on reasonable grounds associated with data protection considerations) to the proposed appointment, (a) PingCAP shall use reasonable efforts to make available a commercially reasonable change in the provision of the TiDB Cloud Services which avoids the use of that proposed sub-Processor, and (b) where no commercially reasonable change is available, either party may by written notice to the other party with immediate effect terminate the CSA to the extent that it relates to the affected TiDB Cloud Services. In the absence of any written notification from you in relation to the proposed appointment, such appointment would be deemed agreed by you;</span>
+- 6.2 <span>gives you reasonable prior notice to the email account registered by you in TiDB Cloud by directing you to the updated list of sub-Processors available on PingCAP's website of any intended changes concerning the addition or the replacement of any such sub-Processors. If within ten (10) days of receipt of such notice, you notify PingCAP in writing of any objections (on reasonable grounds associated with data protection considerations) to the proposed appointment, (a) PingCAP shall use reasonable efforts to make available a commercially reasonable change in the provision of the TiDB Cloud Services which avoids the use of that proposed sub-Processor, and (b) where no commercially reasonable change is available, either party may by written notice to the other party with immediate effect terminate the CSA to the extent that it relates to the affected TiDB Cloud Services. In the absence of any written notification from you in relation to the proposed appointment, such appointment would be deemed agreed by you.</span>
 
 </div>
 

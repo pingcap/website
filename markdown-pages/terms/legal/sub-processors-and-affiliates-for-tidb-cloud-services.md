@@ -5,7 +5,7 @@ summary: This document lists our sub-processors and affiliates.
 
 # Sub-Processors and Affiliates for TiDB Cloud Services
 
-**Last updated on Apirl 20, 2021**
+**Last updated on May 8, 2021**
 
 To provide you with TiDB Cloud Services, we may engage the Sub-Processors and Affiliates listed below to process your CSA Personal Data.
 
