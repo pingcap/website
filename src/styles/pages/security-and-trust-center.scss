@@ -230,6 +230,10 @@ $line-height: 28px;
               weight: 400;
             };
             color: $F1;
+
+            a:hover {
+              color: $B1;
+            }
           }
         }
       }
