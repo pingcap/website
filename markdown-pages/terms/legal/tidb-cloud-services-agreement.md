@@ -52,7 +52,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 </div>
 
-## 2. egistration and Your Account
+## 2. Registration and Your Account
 
 <div class="customize-indentation">
 
