@@ -118,7 +118,7 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
           <div className={classNameReportRight}>
             <div className={classNameReportRightHeader}>
               <div className={`${classNameReportRightHeader}-title`}>
-                SOC 2 Type 1 Report
+                SOC 2 Type II Report
               </div>
               <Link
                 to={
@@ -136,11 +136,9 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
               Institute of Certified Public Accountants (AICPA) for the
               appropriateness of controls related to the security, availability,
               and confidentiality of the TiDB Cloud service offering.{' '}
-              <Link to="/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud">
-                PingCAP completed the SOC 2 Type I examination in July, 2020,
-                see more in the announcement
-              </Link>
-              .
+              PingCAP completed the SOC 2 Type I examination in July, 2020,
+              see more in the <Link to="/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud">announcement
+              </Link>.
             </div>
           </div>
         </div>
