@@ -312,17 +312,96 @@
   }
 
   .section-pricing {
-    padding: 3rem 1.5rem 6rem;
-
     .field {
-      text-align: center;
+      margin-top: 3rem;
+    }
 
-      p {
-        padding-bottom: 3rem;
-        font-size: $H3;
+    .tidb-cloud-hourly-usage {
+      margin: 2rem 0;
+      color: $B4;
+
+      & > div {
+        margin-bottom: 2rem;
+      }
+
+      .cloud-providers {
+        display: flex;
+
+        .cloud-provider-button {
+          @include has-pingcap-style-border;
+          width: 9rem;
+          height: 5rem;
+
+          &:first-child {
+            @include mobile {
+              margin-right: 3rem;
+            }
+            margin-right: 6rem;
+          }
+
+          &.button:active,
+          &.button.is-active {
+            border-color: $primary;
+          }
+
+          .logo {
+            display: block;
+            width: auto;
+            height: 4rem;
+            margin: auto;
+          }
+        }
+      }
+
+      .regions {
+        display: flex;
+        align-items: center;
+
+        .label {
+          display: inline-block;
+          width: 9rem;
+          margin: 0;
+          padding-bottom: 0;
+          font-size: $size-7;
+          font-weight: 400;
+        }
+
+        .select {
+          select {
+            @include has-pingcap-style-border;
+            width: 100%;
+            color: $B4;
+          }
+        }
+      }
+
+      .table-container {
+        .table {
+          font-size: $size-7;
+          color: $B4;
+
+          td,
+          th {
+            border-color: $C2;
+            vertical-align: middle;
+          }
+
+          thead {
+            th {
+              background-color: $C4;
+              color: $M1;
+            }
+          }
+
+          .tier-td {
+            font-weight: 600;
+            text-transform: capitalize;
+          }
+        }
       }
     }
   }
+
 
   .section-get-started {
     text-align: center;

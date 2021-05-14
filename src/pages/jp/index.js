@@ -401,7 +401,7 @@ const IndexPage = ({ data }) => {
                     Database as a Service
                   </h3>
                   <div className="strikethrough-primary" />
-                  <Link to="/jp/products/tidbcloud/trial">
+                  <Link to="https://tidbcloud.com/signup" target="_blank">
                     <Box className="logo tidb-cloud">
                       <img src={logos.tidbCloud} alt="TiDB Cloud logo" />
                     </Box>
