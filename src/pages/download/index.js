@@ -8,6 +8,7 @@ import { logos } from '../../data/download-tidb'
 import Prism from 'prismjs'
 import WithCopy from '../../components/shortcodes/withCopy'
 import Button from '../../components/button'
+import StartYourFreeTrialNowButton from '../../components/startYourFreeTrialNowButton'
 
 const useMenu = (menuItems, defaultKey) => {
   const [selectedKey, setSelectedKey] = useState(defaultKey)
@@ -205,27 +206,59 @@ const TiDBCloud = () => {
   return (
     <section className="tidb-cloud-section">
       <p className="tidb-desc">
-        Fully-managed Database-as-a-Service (DBaaS) that brings everything great
-        about TiDB to your cloud, and lets you focus on your applications, not
-        the complexities of your database. Available on AWS and GCP.
+        <Link to="/products/tidbcloud" className="link-to-full-doc">
+          TiDB Cloud
+        </Link>{' '}
+        makes deploying, managing and maintaining your TiDB clusters even
+        simpler with a fully managed cloud instance that you control through an
+        intuitive dashboard. You’ll be able to deploy on Amazon Web Services or
+        Google Cloud to quickly build mission critical applications.
       </p>
       <ul>
-        <li className="desc-li-text">Easy deployment</li>
-        <li className="desc-li-text">Always up-to-date</li>
-        <li className="desc-li-text">Higly secure</li>
-        <li className="desc-li-text">Visual diagnosis and monitoring</li>
-        <li className="desc-li-text">Scheduled backup</li>
+        <li>
+          <h3 className="step-title">More Control Over Scaling</h3>
+          <p className="desc-li-text">
+            Scale your performance and storage nodes separately to best suit
+            your business needs
+          </p>
+        </li>
+        <li>
+          <h3 className="step-title">High Availability and Reliability</h3>
+          <p className="desc-li-text">
+            Ensure business continuity for your mission critical applications
+            with our ACID-compliant cluster deployment
+          </p>
+        </li>
+        <li>
+          <h3 className="step-title">Scalable Multi-Master</h3>
+          <p className="desc-li-text">
+            No more bottlenecks - scale without restrictions with read and write
+            capability on every node
+          </p>
+        </li>
+        <li>
+          <h3 className="step-title">High Concurrency</h3>
+          <p className="desc-li-text">
+            Have thousands of users query your data at the same time without
+            sacrificing performance
+          </p>
+        </li>
+        <li>
+          <h3 className="step-title">Simplified Database Architecture</h3>
+          <p className="desc-li-text">
+            Eliminate multiple databases and complex data migrations by storing
+            your transactional and analytical workloads in a single database
+          </p>
+        </li>
+        <li>
+          <h3 className="step-title">Real Time Operational Analytics</h3>
+          <p className="desc-li-text">
+            Run real-time analytical queries with our hybrid
+            transactional-analytical processing (HTAP) capabilities
+          </p>
+        </li>
       </ul>
-      <Button
-        as={Link}
-        to="/products/tidbcloud/trial"
-        className="tidb-cloud-trial-btn"
-      >
-        Apply For Free Trial
-      </Button>
-      <p className="tidb-cloud-full-edition-text">
-        with $4500 worth of credits and full power of TiDB Cloud
-      </p>
+      <StartYourFreeTrialNowButton />
     </section>
   )
 }

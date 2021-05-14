@@ -219,14 +219,12 @@ const TiDBCloud = () => {
       </ul>
       <Button
         as={Link}
-        to="/products/tidbcloud/trial"
+        to="https://tidbcloud.com/signup"
+        target="_blank"
         className="tidb-cloud-trial-btn"
       >
         無料トライアルを申し込む
       </Button>
-      <p className="tidb-cloud-full-edition-text">
-        4500ドル相当のクレジットとTiDBクラウドの力を！
-      </p>
     </section>
   )
 }
