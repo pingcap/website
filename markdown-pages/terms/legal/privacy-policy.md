@@ -6,7 +6,7 @@ aliases: ['/privacy-policy', '/products/tidbcloud/privacy-policy']
 
 # Privacy Policy
 
-**Last Updated on Apirl 2, 2021** ([archived versions](/legal/privacy-policy/archive/))
+**Last Updated on April 2, 2021** ([archived versions](/legal/privacy-policy/archive/))
 
 PingCAP (US), Inc. and its affiliates (hereinafter referred to as "PingCAP", "we," "our," or "us") understand that privacy is important to visitors to our websites (our "Sites") and users of our products and services (including without limitation TiDB and TiDB Cloud; hereinafter referred as our "Products"). This Privacy Policy explains how we collect, use, and share your personal information when you use the Sites and Products that link to this Privacy Policy.
 

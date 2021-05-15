@@ -6,7 +6,7 @@ aliases: ['/privacy-policy/archive/']
 
 # Update history of PingCAP Privacy Policy
 
-- Privacy Policy updated on Apirl 2, 2021
+- Privacy Policy updated on April 2, 2021
 
   This update includes:
 
