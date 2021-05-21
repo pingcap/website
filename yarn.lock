@@ -1359,6 +1359,13 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.0.0":
+  version "7.14.0"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.14.0.tgz#46794bc20b612c5f75e62dd071e24dfd95f1cbe6"
+  integrity sha512-JELkvo/DlpNdJ7dlyw/eY7E0suy5i5GQH+Vlxaq1nsNJ+H7f4Vtv3jMeCEgRhZZQFXTjldYfQgv2qmM6M1v5wA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.10.0":
   version "7.10.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.5.tgz#303d8bd440ecd5a491eae6117fd3367698674c5c"
@@ -7219,6 +7226,13 @@ gatsby-plugin-google-analytics@^2.3.4:
   dependencies:
     "@babel/runtime" "^7.10.2"
     minimatch "3.0.4"
+
+gatsby-plugin-linkedin-insight@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-linkedin-insight/-/gatsby-plugin-linkedin-insight-1.0.1.tgz#93531b7f19675c83115eca05c5cfc49d880288f3"
+  integrity sha512-CjY1yUT0pv7ueD539SbdpQI2PIdrrpX7W+mfk9JnKYoURcBFP044GFaryuIgHqNTsi4X7CwO0YkF41i1j7SAqg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
 
 gatsby-plugin-manifest@^2.2.48:
   version "2.3.6"
