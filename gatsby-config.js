@@ -254,6 +254,13 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-linkedin-insight`,
+      options: {
+        partnerId: `3203676`,
+        includeInDevelopment: false,
+      },
+    },
   ],
   proxy: [
     {
