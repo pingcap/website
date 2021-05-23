@@ -6,7 +6,7 @@
             "docs": "Docs",
             "blog": "Blog",
             "community": "Community",
-            "contactUs": "Contact Us"
+            "contactUs": "Request Demo"
         },
         "footer": {
             "openSourceEco": "Open Source Ecosystem",
@@ -33,7 +33,7 @@
         },
         "StartTiDBRibbon": {
             "ready": "Ready to get started with TiDB?",
-            "contactUs": "CONTACT US",
+            "contactUs": "Request Demo",
             "getTiDB": "GET TiDB"
         },
         "StartYourFreeTrialNow": {
