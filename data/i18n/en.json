@@ -70,7 +70,7 @@
         "blog": {
             "getStartedTitle": "Ready to get started with TiDB?",
             "getStartedText": "GET TiDB",
-            "contactUsText": "CONTACT US"
+            "contactUsText": "Request Demo"
         }
     }
 }
