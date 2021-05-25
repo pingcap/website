@@ -33,7 +33,7 @@
         },
         "StartTiDBRibbon": {
             "ready": "Ready to get started with TiDB?",
-            "contactUs": "Request Demo",
+            "contactUs": "REQUEST DEMO",
             "getTiDB": "GET TiDB"
         },
         "StartYourFreeTrialNow": {
@@ -70,7 +70,7 @@
         "blog": {
             "getStartedTitle": "Ready to get started with TiDB?",
             "getStartedText": "GET TiDB",
-            "contactUsText": "Request Demo"
+            "contactUsText": "REQUEST DEMO"
         }
     }
 }

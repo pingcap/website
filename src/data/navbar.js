@@ -30,7 +30,7 @@ const navbarItemsEn = {
     },
   ],
   contactUs: {
-    name: 'CONTACT US',
+    name: 'REQUEST DEMO',
     href: '/contact-us',
   },
   downloadTiDB: {
