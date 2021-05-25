@@ -92,7 +92,9 @@ function SEO({ lang, title, description, meta, image: metaImage, link }) {
         },
         { link },
       ].concat(link)}
-    ></Helmet>
+    >
+      <script src="https://fastbase.com/fscript.js" id="4ypDgQ8vjX" async />
+    </Helmet>
   )
 }
 
