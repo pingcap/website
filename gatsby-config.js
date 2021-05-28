@@ -61,6 +61,12 @@ module.exports = {
           anonymize: true,
           allowAdFeatures: false,
         },
+        googleTagManager: {
+          trackingId: 'GTM-52K4D8X',
+          cookieName: 'gatsby-gdpr-google-tagmanager',
+          dataLayerName: 'dataLayer',
+          routeChangeEvent: 'gtm.js',
+        },
         environments: ['production', 'development'],
       },
     },
