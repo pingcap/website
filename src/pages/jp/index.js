@@ -19,11 +19,13 @@ import Button from '../../components/button'
 const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
-  'unext',
   'square',
+  'unext',
+  'colopl-ja',
   'lenovo',
   'tencent',
   'bigo',
+  'colopl-ja',
   'blued',
   'shopee',
   'bookmyshow',
