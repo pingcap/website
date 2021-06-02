@@ -23,6 +23,7 @@ const caseLogos = [
   'lenovo',
   'tencent',
   'bigo',
+  'colopl',
   'blued',
   'shopee',
   'bookmyshow',

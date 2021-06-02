@@ -4,6 +4,8 @@ const homeLogos = [
   'tencent',
   'bigo',
   'blued',
+  'colopl',
+  'colopl-ja',
   'paypay',
   'shopee',
   'bookmyshow',
