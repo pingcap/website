@@ -6,6 +6,7 @@ const homeLogos = [
   'blued',
   'colopl',
   'colopl-ja',
+  'netstars',
   'paypay',
   'shopee',
   'bookmyshow',
