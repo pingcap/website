@@ -92,7 +92,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
   - j. <span>remove or destroy any TiDB/PingCAP proprietary markings or proprietary legends placed upon or contained within the TiDB Cloud Services; or</span>
 
-  - k. <span>ttempt to do any of the foregoing prohibited activities.</span>
+  - k. <span>attempt to do any of the foregoing prohibited activities.</span>
 
 </ul>
 
@@ -160,7 +160,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 - 5.6. <span>The following Sections will survive the termination or expiration of this CSA: Sections 4.1 to 4.4, Sections 6.4 to 6.6, Sections 8 to 11, Section 14, and Section 15.6.</span>
 
-- 5.7. <span>Notwithstanding the forgoing, we will terminate this CSA without notification when your free trial and/or PoC expires or once your promotional credits are exhausted, whichever comes first. Once the CSA is terminated:</span>
+- 5.7. <span>Notwithstanding the foregoing, we will terminate this CSA without notification when your free trial and/or PoC expires or once your promotional credits are exhausted, whichever comes first. Once the CSA is terminated:</span>
 
 <ul class="customize-indentation">
 
