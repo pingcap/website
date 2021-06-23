@@ -2,7 +2,7 @@ name: Upload media files to Qiniu and Aws when they change
 on:
   push:
     branches:
-      - yini/addNewsLogoFolder
+      - master
     paths:
       - media/**
 jobs:
