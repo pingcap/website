@@ -1,5 +1,11 @@
 [
   {
+    "title": "PingCAP introduces public preview of TiDB Cloud",
+    "logo": "/images/news/cloud7-logo.png",
+    "link": "https://cloud7.news/cloud/pingcap-introduces-public-preview-of-tidb-cloud/",
+    "date": "2021-06-12"
+  },
+  {
     "title": "TiKV + SPDK: Pushing the limits of storage performance",
     "logo": "/images/news/cncf.png",
     "link": "https://www.cncf.io/blog/2021/06/10/tikv-spdk-pushing-the-limits-of-storage-performance/",
