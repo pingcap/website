@@ -4,7 +4,7 @@ on:
     branches:
       - yini/addNewsLogoFolder
     paths:
-      - images/in-the-news/logos/**
+      - media/**
 jobs:
   run:
     name: Upload media files
@@ -35,4 +35,4 @@ jobs:
           printf "%s\n" ${{ secrets.AWS_ACCESS_KEY }} ${{ secrets.AWS_SECRET_KEY }} ${{ secrets.AWS_REGION }} "json" | aws configure
 
       - name: Upload
-        run: cloud-assets-utils verify-and-sync -qiniu true -qiniu-bucket ${{ secrets.QINIU_BUCKET_NAME }} -aws true -aws-bucket ${{ secrets.AWS_BUCKET_NAME }} images/in-the-news/logos -replace-first-path-to images/news -cdn-refresh https://download.pingcap.com/
+        run: cloud-assets-utils verify-and-sync -qiniu true -qiniu-bucket ${{ secrets.QINIU_BUCKET_NAME }} -aws true -aws-bucket ${{ secrets.AWS_BUCKET_NAME }} media -replace-first-path-to images/news -cdn-refresh https://download.pingcap.com/
