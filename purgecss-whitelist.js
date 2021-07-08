@@ -16,6 +16,7 @@ const homeLogos = [
   'netease-games',
   'jd-cloud',
   'mi',
+  'sakura',
   'webank',
   'zalopay',
   'unext',
