@@ -9,6 +9,7 @@ import {
   navbarItemsJP,
   homepagePromotionText,
   cloudPromotionText,
+  JapaneseHomepagePromotionText,
 } from '../data/navbar'
 import { useIntl } from 'react-intl'
 import { useLocation } from '@reach/router'
@@ -110,8 +111,14 @@ const Navbar = ({ showBanner }) => {
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false), [])
   const location = useLocation()
-  const promotionText =
-    location.pathname === '/' ? homepagePromotionText : cloudPromotionText
+  let promotionText = ""
+  if (location.pathname === '/') {
+    promotionText = homepagePromotionText
+  } else if (location.pathname === '/jp/') {
+    promotionText = JapaneseHomepagePromotionText
+  } else{
+    promotionText = cloudPromotionText
+  }
 
   return (
     <nav

@@ -167,10 +167,22 @@ const cloudPromotionText = (
   </>
 )
 
+const JapaneseHomepagePromotionText = (
+    <>
+      <Link
+          to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+          type="outBoundLink"
+      >
+        &nbsp;ここ&nbsp;
+      </Link>{' '}をクリックしてTiDB Communityに参加しましょう。(tidb-japan Channelで日本語で対応できます！)
+    </>
+)
+
 export {
   navbarItemsEn,
   navbarItemsZh,
   navbarItemsJP,
   homepagePromotionText,
   cloudPromotionText,
+  JapaneseHomepagePromotionText,
 }
