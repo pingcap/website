@@ -111,13 +111,14 @@ const Navbar = ({ showBanner }) => {
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false), [])
   const location = useLocation()
-  const promotionText = ""
-  if (location.pathname === '/')
-    let promotionText = homepagePromotionText
-  else if (location.pathname === '/jp/')
-    let promotionText = JapaneseHomepagePromotionText
-  else
-    let promotionText = cloudPromotionText
+  let promotionText = ""
+  if (location.pathname === '/') {
+    promotionText = homepagePromotionText
+  } else if (location.pathname === '/jp/') {
+    promotionText = JapaneseHomepagePromotionText
+  } else{
+    promotionText = cloudPromotionText
+  }
 
   return (
     <nav
