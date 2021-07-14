@@ -142,6 +142,35 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
             </div>
           </div>
         </div>
+        <div className={classNameReport}>
+          <div className={classNameReportLeft}>
+            <img src={reportIcon.publicURL} alt="ISO-27001" />
+          </div>
+          <div className={classNameReportRight}>
+            <div className={classNameReportRightHeader}>
+              <div className={`${classNameReportRightHeader}-title`}>
+              ISO/IEC 27001:2013
+              </div>
+              <Link
+                to={
+                  '/blog/announcing-iso-27001-certification-for-tidb-cloud'
+                }
+              >
+                <div className={`${classNameReportRightHeader}-more`}>
+                  → Learn More
+                </div>
+              </Link>
+            </div>
+            <div className={`${classNameReportRight}-description`}>
+            ISO/IEC 27001:2013 is a globally recognized standard that sets out 
+            the policies and requirements for establishing, implementing, maintaining, 
+            and continually improving an information security management system (ISMS).
+
+            PingCAP has achieved ISO/IEC 27001:2013 for TiDB Cloud, certified by British Standards
+            Institution (BSI), an ANAB-accredited certification body.
+            </div>
+          </div>
+        </div>
         <div className={`${className}-more`}>
           More compliance audits are in progress...
         </div>
