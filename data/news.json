@@ -1,5 +1,11 @@
 [
   {
+    "title": "Using a GPU Boosts TiDB Analytics Performance from 10 to 150",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/using-a-gpu-boosts-tidb-analytics-performance-by-1",
+    "date": "2021-07-14"
+  }, 
+  {
     "title": "TiFS, a TiKV-based partition tolerant, strictly consistent file system",
     "logo": "/images/news/cncf-logo.png",
     "link": "https://www.cncf.io/blog/2021/06/28/tifs-a-tikv-based-partition-tolerant-strictly-consistent-file-system/",
