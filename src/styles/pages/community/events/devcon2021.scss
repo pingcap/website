@@ -1,0 +1,672 @@
+
+$theme-green: #3DB76A;
+$btn-bg: $theme-green;
+$btn-hover-bg: #329F5A;
+$theme-blue: #051853;
+$link-blue: #3D3FEA;
+$F1: #2c2c2c;
+$M1: #FFF;
+$M2: #F7F8F9;
+$T2: #E9EAEE;
+
+$imageBaseUrl: '../../../../../images/community/events/devcon2021/';
+
+$H1: 28px;
+$H3: 20px;
+$H4: 18px;
+$P1: 16px;
+$P2: 14px;
+$LH: 1.75;
+
+.devcon2021 {
+    position: relative;
+
+    .devcon2021-container {
+        max-width: 1048px;
+        padding: 0 1rem;
+        margin: 0 auto;
+    }
+
+    .has-grey-bg {
+        background-color: $M2
+    }
+
+    .section-title {
+        padding: 6rem 0 2rem;
+        text-align: center;
+        font-size: $H1;
+        color: $F1;
+        font-weight: 500;
+
+        @media only screen and (max-width: 768px) {
+            font-size: $H3;
+        }
+    }
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    .signup-btn {
+        position: relative;
+        margin: 2rem auto;
+        padding: 0.5rem 1.5rem;
+        width: max-content;
+        background-color: $btn-bg;
+        color: $M1;
+        border: none;
+        font-size: $P1;
+        border-radius: 30px;
+
+        &:hover {
+            background-color: $btn-hover-bg;
+        }
+    }
+
+    .devcon2021-hero {
+        position: relative;
+        padding: 8rem 0 6rem;
+        background-color: $theme-blue;
+        text-align: center;
+
+        @media only screen and (max-width: 768px) {
+            padding: 5rem 1rem 2rem;
+        }
+
+        .hero-pc {
+            display: flex;
+            flex-flow: row wrap;
+            text-align: left;
+
+            .devcon2021-column {
+                display: flex;
+                flex-direction: column;
+                &:nth-child(1) {
+                    width: 60%;
+                }
+
+                &:nth-child(2) {
+                    width: 40%;
+                }
+
+                .logo {
+                    width: 30%;
+                }
+
+                .slogan {
+                    margin: 3rem 0 1rem;
+                    width: 70%;
+                }
+
+                p {
+                    font-size: $P1;
+                    color: $M1
+                }
+
+                .signup-btn {
+                    margin: 1rem 0 2rem;
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .hero-mobile {
+            display: none;
+
+            p {
+                padding-bottom: 2rem;
+                color: $M2
+            }
+
+            img {
+                margin: 1rem 0;
+
+                &:nth-child(1) {
+                    width: 70%;
+                }
+
+                &:nth-child(2) {
+                    width: 85%;
+                    margin-bottom: 0;
+                }
+
+                &.logo {
+                    width: 55%;
+                }
+            }
+
+            @media only screen and (max-width: 768px) {
+                display: block;
+            }
+        }
+
+        .bg-el-1,
+        .bg-el-2,
+        .bg-el-3,
+        .bg-el-4 {
+            position: absolute;
+            opacity: 0.7;
+
+            @media only screen and (max-width: 768px) {
+                display: none;
+            }
+        }
+
+        .bg-el-1,
+        .bg-el-4 {
+            position: absolute;
+            height: 70px;
+            width: 70px;
+            left: 3rem;
+            top: 5rem;
+            transform: rotate(-45deg);
+            background: url($imageBaseUrl + 'bg-el-2.svg') no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .bg-el-2 {
+            height: 150px;
+            width: 150px;
+            left: -75px;
+            bottom: 5rem;
+            background: url($imageBaseUrl + 'bg-el-3.svg') no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .bg-el-3 {
+            height: 150px;
+            width: 150px;
+            right: -75px;
+            top: 5rem;
+            transform: rotate(90deg);
+            background: url($imageBaseUrl + 'bg-el-1.svg') no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+
+        .bg-el-4 {
+            bottom: 2rem;
+            top: auto;
+            right: 5rem;
+            left: auto;
+        }
+    }
+
+    .devcon2021-intro {
+        position: relative;
+        right: 0;
+        font-size: $P1;
+        color: $F1;
+        line-height: $LH;
+
+        .intro {
+            position: relative;
+            padding: 3rem 0 3rem 30%;
+
+            img {
+                position: absolute;
+
+                &.img1 {
+                    bottom: -2rem;
+                    left: 0;
+                    height: 90%;
+                }
+
+                &.img2 {
+                    right: 0;
+                    bottom: -3rem;
+                    height: 40%;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            .intro {
+                padding: 3rem 0;
+                font-size: $P2;
+
+                img.img1 {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .devcon2021-schedule {
+        .dates {
+            display: flex;
+            flex-flow: row wrap;
+            background-color: $theme-green;
+
+            .date {
+                position: relative;
+                padding: 11px 1rem;
+                width: max-content;
+                color: $M1;
+                font-weight: bold;
+                font-size: $P1;
+                letter-spacing: 1px;
+
+                &.is-active {
+                    background-color: $theme-blue;
+
+                    &::after {
+                        display: block;
+                    }
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                @media only screen and (max-width: 768px) {
+                    padding: 11px 0.5rem;
+                    font-size: $P2;
+                    width: 50%;
+                }
+            }
+        }
+
+        .venues {
+            background-color: $M2;
+            margin: 1rem 0 2rem;
+            color: $F1;
+
+            .day1,
+            .day2 {
+                padding: 1rem;
+
+                .venue {
+                    width: max-content;
+                    display: flex;
+                    align-items: center;
+                    padding: 0.5rem 2rem;
+                    justify-content: start;
+                    cursor: pointer;
+
+                    img {
+                        width: 30px;
+                    }
+
+                    p:hover {
+                        color: $theme-green;
+
+                        &::after {
+                            display: block;
+                        }
+                    }
+                }
+
+                p {
+                    font-size: $P1;
+                    padding-left: 0.5rem;
+                    font-weight: 500;
+                    position: relative;
+                }
+
+                .venue-detail {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: start;
+                    align-items: flex-start;
+
+                    .time {
+                        min-width: 135px;
+                        font-size: $P1;
+                        text-align: left;
+                        padding: 14px 0;
+
+                        @media only screen and (max-width: 768px) {
+                            width: 100%;
+                        }
+                    }
+                }
+
+                .venue-detail-en {
+                    margin-bottom: 2rem;
+                }
+
+                @media only screen and (max-width: 414px) {
+                    .venue {
+
+                        p,
+                        .time {
+                            font-size: $P1 * 0.75;
+                        }
+                    }
+                }
+            }
+
+            .day2 {
+                .venue {
+                    justify-content: start;
+                }
+            }
+
+            .hide-schedule {
+                display: none !important;
+            }
+        }
+
+        .content {
+            margin: 3rem 0;
+            text-align: center;
+
+            .day1 {
+                font-size: $P1;
+                color: $F1;
+
+                &.hide-schedule {
+                    display: none;
+                }
+            }
+        }
+
+        .schedule {
+            text-align: left;
+            margin-bottom: 2rem;
+            padding-top: 100px;
+            margin-top: -100px;
+            color: $F1;
+
+            .forum {
+                position: relative;
+                background-color: $M2;
+                padding: 1.5rem 2rem;
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    border-top: 4px solid $theme-green;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                }
+
+                .forum-title {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .venue-title {
+                        position: relative;
+                        font-size: $P1;
+                    }
+
+                    img {
+                        width: 50px;
+                    }
+                }
+
+                .venue-desc {
+                    font-size: $P1;
+                    padding-top: 1rem;
+                    line-height: $LH;
+
+                    @media only screen and (max-width: 768px) {
+                        font-size: $P2;
+                    }
+                }
+            }
+
+            .schedule-table {
+                .selected-bg {
+                    background-color: $M2;
+                    color: $theme-green;
+                    border-bottom: none;
+                }
+            }
+
+            table {
+                font-size: $P1;
+                margin-top: 1rem;
+                width: 100%;
+                border-collapse: collapse;
+                color: $F1;
+                opacity: 0.75;
+
+                .head {
+                    background-color: $M2;
+                    font-weight: bold;
+                    border-bottom: none;
+                }
+
+                tr {
+                    border-bottom: 1px solid $T2;
+                }
+
+                th,
+                td {
+                    padding: 12px 10px 12px 2rem;
+                    border: none;
+
+                    @media only screen and (max-width: 768px) {
+                        padding: 12px 10px;
+                    }
+                }
+
+                td:nth-child(1) {
+                    width: 25%;
+                }
+
+                td:nth-child(2) {
+                    width: 40%;
+                }
+
+                td:nth-child(3) {
+                    width: 25%;
+                }
+
+                td:nth-child(4) {
+                    width: 10%;
+                    text-align: right;
+                }
+
+                .collapsable {
+                    cursor: pointer;
+
+                    &:hover {
+                        td {
+                            color: $theme-green;
+                        }
+                    }
+
+                    .add-icon {
+                        font-weight: bold;
+                        color: $theme-green;
+                    }
+                }
+
+                .detail-block {
+                    display: none;
+                    background-color: $M2;
+
+                    .pagraphList {
+                        padding-bottom: 1rem;
+                    }
+                }
+
+                @media only screen and (max-width: 414px) {
+                    font-size: $P1 * 0.75;
+
+                    td:nth-child(1) {
+                        width: 12rem;
+                    }
+
+                    td:nth-child(2) {
+                        width: 20rem;
+                    }
+
+                    td:nth-child(3) {
+                        width: 6rem;
+                    }
+
+                    .speaker {
+                        display: none;
+                    }
+                }
+            }
+
+            &.hide-schedule {
+                display: none;
+            }
+        }
+    }
+
+    .devcon2021-speakers {
+        background-color: $M2;
+        text-align: center;
+
+        .tutor-list {
+            max-width: 930px;
+            color: white;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            margin: 0 auto;
+            padding: 2rem 0 4rem;
+
+            .tutor {
+                position: relative;
+                width: 235px;
+                height: 300px;
+                margin: 15px 0;
+                text-align: center;
+                line-height: 1.7;
+                color: $F1;
+
+                .tutor-avatar {
+                    width: 140px;
+                    height: 140px;
+                    margin: 0 auto;
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        border-radius: 50%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                    }
+                }
+
+                .name {
+                    font-size: $H4;
+                    margin-top: 1rem;
+                    font-weight: 600;
+                }
+
+                .title {
+                    font-size: $P1;
+                    padding: 0.5rem 1rem;
+                    font-weight: normal;
+                    line-height: 1.7;
+                }
+
+                @media only screen and (max-width: 414px) {
+                    width: 150px;
+                    height: 200px;
+
+                    .tutor-avatar {
+                        width: 80px;
+                        height: 80px;
+                    }
+
+                    .title {
+                        font-size: $P1 * 0.75;
+                    }
+                }
+            }
+        }
+
+        .more-tutor {
+            padding-bottom: 3rem;
+            font-size: $P1;
+            color: $F1;
+        }
+    }
+
+    .devcon2021-signup {
+        position: relative;
+        width: 100%;
+        background: url($imageBaseUrl + "ribbon-bg.svg") no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        .btn-wrap {
+            padding-bottom: 2rem;
+        }
+
+        .sign-up {
+            position: relative;
+
+            p {
+                padding: 3rem 0 0;
+                text-align: center;
+                color: $M1;
+            }
+
+            .button {
+                font-size: $P1;
+                padding: 0.5rem 1.5rem;
+            }
+
+            .bg {
+                position: absolute;
+                height: 100%;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+
+            .devcon2021-el1 {
+                position: absolute;
+                left: 10%;
+                top: 30%;
+                transform: rotate(-45deg);
+                height: 100px;
+
+            }
+
+            .devcon2021-el2 {
+                position: absolute;
+                right: 10%;
+                bottom: -20%;
+                height: 100px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            background: url($imageBaseUrl + "ribbon-bg-mobile.svg") no-repeat;
+            background-size: cover;
+            background-position: center;
+
+            .btn-wrap {
+                padding: 2rem 0 1rem;
+            }
+
+            .sign-up {
+                p {
+                    padding-top: 0;
+                }
+
+                .el2,
+                .el1 {
+                    height: 50px;
+                }
+
+                .el1 {
+                    top: 60%;
+                }
+            }
+        }
+    }
+}
