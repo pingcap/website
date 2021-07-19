@@ -73,3 +73,6 @@ markdown-pages/blogs/*
 markdown-pages/zh/blogs/*
 !markdown-pages/blogs/.gitkeep
 !markdown-pages/zh/blogs/.gitkeep
+
+
+.DS_Store
