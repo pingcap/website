@@ -131,8 +131,8 @@ const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
               </Link>
             </div>
             <div className={`${classNameReportRight}-description`}>
-              The SOC 2 Type II audit is an independent, third party audit
-              performed based on relevant guidelines developed by the American
+              The SOC 2 Type II audit is performed by Schellman & Company, LLC,
+              based on relevant guidelines developed by the American
               Institute of Certified Public Accountants (AICPA) for the
               appropriateness of controls related to the security, availability,
               and confidentiality of the TiDB Cloud service offering.{' '}
