@@ -288,7 +288,7 @@ $LH: 1.75;
                     display: flex;
                     align-items: center;
                     padding: 0.5rem 2rem;
-                    justify-content: start;
+                    justify-content: flex-start;
                     cursor: pointer;
 
                     img {
@@ -314,7 +314,7 @@ $LH: 1.75;
                 .venue-detail {
                     display: flex;
                     flex-flow: row wrap;
-                    justify-content: start;
+                    justify-content: flex-start;
                     align-items: flex-start;
 
                     .time {
@@ -346,7 +346,7 @@ $LH: 1.75;
 
             .day2 {
                 .venue {
-                    justify-content: start;
+                    justify-content: flex-start;
                 }
             }
 

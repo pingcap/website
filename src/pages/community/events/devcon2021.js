@@ -150,7 +150,7 @@ const DevCon2021 = ({ data }) => {
             <div className="bg-el-4"></div>
             <div className="hero-pc">
               <div className="devcon2021-column">
-                <img className="logo" src={logo.publicURL} />
+                <img className="logo" src={logo.publicURL} alt="" />
                 <img className="slogan" alt="" src={slogan.publicURL} />
                 <a
                   href=" https://share.hsforms.com/1PDj1YcTaQjG4XUZeBxqDWg2npzm"
@@ -185,7 +185,7 @@ const DevCon2021 = ({ data }) => {
         <section className="devcon2021-intro has-grey-bg">
           <div className="devcon2021-container">
             <div className="intro">
-              <img className="img1" src={bgEl3.publicURL} />
+              <img className="img1" src={bgEl3.publicURL} alt="" />
               <p>
                 "PingCAP DevCon" is an annual top-level data technology event
                 held by PingCAP. The conference has been held for three
@@ -198,7 +198,7 @@ const DevCon2021 = ({ data }) => {
                 innovation of user scenarios, and show the diversified data
                 technology ecology.
               </p>
-              <img className="img2" src={bgEl1.publicURL} />
+              <img className="img2" src={bgEl1.publicURL} alt="" />
             </div>
           </div>
         </section>
