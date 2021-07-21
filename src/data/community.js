@@ -1,10 +1,10 @@
-import Heart from '../../images/community/heart.svg'
-import Help from '../../images/community/help-buoy.svg'
-import Writer from '../../images/community/writer.svg'
-import Learn from '../../images/community/learn.svg'
-import UsabilityThumbNail from '../../images/events/usability-challenge.svg'
-import HPTCThumbNail from '../../images/events/high-performance-tidb-challenge.png'
-import Hackathon2020 from '../../images/events/tidb-hackathon2020.jpg'
+import Heart from '@images/community/heart.svg'
+import Help from '@images/community/help-buoy.svg'
+import Writer from '@images/community/writer.svg'
+import Learn from '@images/community/learn.svg'
+import HPTCThumbNail from '@images/events/high-performance-tidb-challenge.png'
+import Hackathon2020 from '@images/events/tidb-hackathon2020.jpg'
+import DevCon2021 from '@images/events/devcon2021.png'
 
 const contributionGrow = [
   {
@@ -86,6 +86,16 @@ const contributionGrowJP = [
 
 const communityActivities = [
   {
+    thumbnail: DevCon2021,
+    name: 'TiDB DevCon 2021',
+    eventType: 'Communtiy Activity',
+    time: 'Jul 23, 2021 - Jul 24, 2021',
+    desc:
+      'PingCAP DevCon is the virtual flagship conference for TiDB, the open-source distributed SQL database and the vibrant open source eco-system behind it.',
+    readMoreLink: '/community/events/devcon2021',
+    boundType: 'outBoundLink',
+  },
+  {
     thumbnail: Hackathon2020,
     name: 'TiDB Hackathon 2020',
     eventType: 'Communtiy Activity',
@@ -104,17 +114,6 @@ const communityActivities = [
       'High Performance TiDB Challenge is a mentoring program which focuses on workload optimization to bring TiDB performance to a higher level!',
     readMoreLink: '/community/events/high-performance-tidb-challenge',
     boundType: '',
-  },
-  {
-    thumbnail: UsabilityThumbNail,
-    name: 'TiDB Usability Challenge',
-    eventType: 'Communtiy Activity',
-    time: 'March 02 - May 30, 2020 (Ended)',
-    desc:
-      'Season 2 of the TiDB Challenge Program focuses on improving the usability of TiDB and its related projects.',
-    readMoreLink:
-      'https://github.com/pingcap/community/blob/master/challenge-programs/challenge-program-season-2.md',
-    boundType: 'outBoundLink',
   },
 ]
 
