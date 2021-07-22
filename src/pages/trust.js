@@ -10,7 +10,7 @@ import GetStartedWithTiDBCloud from '../components/getStartedWithTiDBCloud'
 import trustData from '../data/trust'
 
 const Trust = React.memo(({ data }) => {
-  const { BannerSVG, AICPA_SOC_PNG } = data
+  const { BannerSVG, AICPA_SOC_PNG, ISO_PNG } = data
   const className = `SecurityAndTrustCenter`
   return (
     <Layout>
@@ -41,7 +41,10 @@ const Trust = React.memo(({ data }) => {
             data, not protecting it.
           </SecurityAndTrustCenterKeySecurityFeatures>
         </div>
-        <SecurityAndTrustCenterCompliance reportIcon={AICPA_SOC_PNG} />
+        <SecurityAndTrustCenterCompliance
+          reportIcon={AICPA_SOC_PNG}
+          ISOIcon={ISO_PNG}
+        />
         <GetStartedWithTiDBCloud />
       </article>
     </Layout>
@@ -94,90 +97,94 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
   )
 })
 
-const SecurityAndTrustCenterCompliance = React.memo(({ reportIcon }) => {
-  const className = `SecurityAndTrustCenterCompliance`
-  const classNameReport = `${className}-report`
-  const classNameReportLeft = `${classNameReport}-left`
-  const classNameReportRight = `${classNameReport}-right`
-  const classNameReportRightHeader = `${classNameReportRight}-header`
-  return (
-    <div className={className}>
-      <div className="container">
-        <div className={`${className}-title`}>Compliance</div>
-        <div className={`${className}-summary`}>
-          We are committed to providing enterprise-grade security and privacy.
-          This is not simply demonstrated in technology. We undergo third-party
-          auditing to ensure our services and operations adhere to the
-          compliance requirements of your organization. TiDB Cloud operates in
-          accordance with the following compliance requirements:
-        </div>
-        <div className={classNameReport}>
-          <div className={classNameReportLeft}>
-            <img src={reportIcon.publicURL} alt="SOC 2 Type 1 Report" />
+const SecurityAndTrustCenterCompliance = React.memo(
+  ({ reportIcon, ISOIcon }) => {
+    const className = `SecurityAndTrustCenterCompliance`
+    const classNameReport = `${className}-report`
+    const classNameReportLeft = `${classNameReport}-left`
+    const classNameReportRight = `${classNameReport}-right`
+    const classNameReportRightHeader = `${classNameReportRight}-header`
+    return (
+      <div className={className}>
+        <div className="container">
+          <div className={`${className}-title`}>Compliance</div>
+          <div className={`${className}-summary`}>
+            We are committed to providing enterprise-grade security and privacy.
+            This is not simply demonstrated in technology. We undergo
+            third-party auditing to ensure our services and operations adhere to
+            the compliance requirements of your organization. TiDB Cloud
+            operates in accordance with the following compliance requirements:
           </div>
-          <div className={classNameReportRight}>
-            <div className={classNameReportRightHeader}>
-              <div className={`${classNameReportRightHeader}-title`}>
-                SOC 2 Type II Report
-              </div>
-              <Link
-                to={
-                  '/blog/pingcap-successfully-completes-soc2-type2-examination-for-tidb-cloud'
-                }
-              >
-                <div className={`${classNameReportRightHeader}-more`}>
-                  → Learn More
+          <div className={classNameReport}>
+            <div className={classNameReportLeft}>
+              <img src={reportIcon.publicURL} alt="SOC 2 Type 1 Report" />
+            </div>
+            <div className={classNameReportRight}>
+              <div className={classNameReportRightHeader}>
+                <div className={`${classNameReportRightHeader}-title`}>
+                  SOC 2 Type II Report
                 </div>
-              </Link>
-            </div>
-            <div className={`${classNameReportRight}-description`}>
-              The SOC 2 Type II audit is performed by Schellman & Company, LLC,
-              based on relevant guidelines developed by the American
-              Institute of Certified Public Accountants (AICPA) for the
-              appropriateness of controls related to the security, availability,
-              and confidentiality of the TiDB Cloud service offering.{' '}
-              PingCAP completed the SOC 2 Type I examination in July, 2020,
-              see more in the <Link to="/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud">announcement
-              </Link>.
-            </div>
-          </div>
-        </div>
-        <div className={classNameReport}>
-          <div className={classNameReportLeft}>
-            <img src={reportIcon.publicURL} alt="ISO-27001" />
-          </div>
-          <div className={classNameReportRight}>
-            <div className={classNameReportRightHeader}>
-              <div className={`${classNameReportRightHeader}-title`}>
-              ISO/IEC 27001:2013
+                <Link
+                  to={
+                    '/blog/pingcap-successfully-completes-soc2-type2-examination-for-tidb-cloud'
+                  }
+                >
+                  <div className={`${classNameReportRightHeader}-more`}>
+                    → Learn More
+                  </div>
+                </Link>
               </div>
-              <Link
-                to={
-                  '/blog/announcing-iso-27001-certification-for-tidb-cloud'
-                }
-              >
-                <div className={`${classNameReportRightHeader}-more`}>
-                  → Learn More
-                </div>
-              </Link>
-            </div>
-            <div className={`${classNameReportRight}-description`}>
-            ISO/IEC 27001:2013 is a globally recognized standard that sets out 
-            the policies and requirements for establishing, implementing, maintaining, 
-            and continually improving an information security management system (ISMS).
-
-            PingCAP has achieved ISO/IEC 27001:2013 for TiDB Cloud, certified by British Standards
-            Institution (BSI), an ANAB-accredited certification body.
+              <div className={`${classNameReportRight}-description`}>
+                The SOC 2 Type II audit is performed by Schellman & Company,
+                LLC, based on relevant guidelines developed by the American
+                Institute of Certified Public Accountants (AICPA) for the
+                appropriateness of controls related to the security,
+                availability, and confidentiality of the TiDB Cloud service
+                offering. PingCAP completed the SOC 2 Type I examination in
+                July, 2020, see more in the{' '}
+                <Link to="/blog/pingcap-successfully-completes-soc-2-type-1-examination-for-tidb-cloud">
+                  announcement
+                </Link>
+                .
+              </div>
             </div>
           </div>
-        </div>
-        <div className={`${className}-more`}>
-          More compliance audits are in progress...
+          <div className={classNameReport}>
+            <div className={classNameReportLeft}>
+              <img src={ISOIcon.publicURL} alt="ISO-27001" />
+            </div>
+            <div className={classNameReportRight}>
+              <div className={classNameReportRightHeader}>
+                <div className={`${classNameReportRightHeader}-title`}>
+                  ISO/IEC 27001:2013
+                </div>
+                <Link
+                  to={'/blog/announcing-iso-27001-certification-for-tidb-cloud'}
+                >
+                  <div className={`${classNameReportRightHeader}-more`}>
+                    → Learn More
+                  </div>
+                </Link>
+              </div>
+              <div className={`${classNameReportRight}-description`}>
+                ISO/IEC 27001:2013 is a globally recognized standard that sets
+                out the policies and requirements for establishing,
+                implementing, maintaining, and continually improving an
+                information security management system (ISMS). PingCAP has
+                achieved ISO/IEC 27001:2013 for TiDB Cloud, certified by British
+                Standards Institution (BSI), an ANAB-accredited certification
+                body.
+              </div>
+            </div>
+          </div>
+          <div className={`${className}-more`}>
+            More compliance audits are in progress...
+          </div>
         </div>
       </div>
-    </div>
-  )
-})
+    )
+  }
+)
 
 export const query = graphql`
   query {
@@ -188,6 +195,11 @@ export const query = graphql`
     }
     AICPA_SOC_PNG: file(
       relativePath: { eq: "security-and-trust-center/AICPA-SOC.gif" }
+    ) {
+      publicURL
+    }
+    ISO_PNG: file(
+      relativePath: { eq: "security-and-trust-center/iso-27001.png" }
     ) {
       publicURL
     }
