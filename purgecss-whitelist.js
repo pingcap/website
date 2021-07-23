@@ -14,7 +14,7 @@ const homeLogos = [
   'hulu',
   'qiy',
   'netease-games',
-  'streak',
+  'sj-distributor',
   'mi',
   'sakura',
   'webank',
