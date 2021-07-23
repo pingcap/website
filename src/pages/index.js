@@ -31,7 +31,7 @@ const caseLogos = [
   'hulu',
   'qiy',
   'netease-games',
-  'jd-cloud',
+  'sj-distributor',
   'mi',
   'webank',
   'zalopay',
