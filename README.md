@@ -44,7 +44,14 @@ All done.~
 Into project, run:
 
 ```sh
-yarn && yarn start
+# install dependencies
+yarn
+
+# You'll need to download blog markdowns before start to dev
+GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:prod
+
+# start gatsby
+yarn start
 ```
 
 if your want to development the server side:
@@ -83,7 +90,7 @@ Then you can read it by using `dotenv!("GITHUB_AUTHORIZATION_TOKEN")`.
 For frontend developing, some scripts will also need this env variable, for example:
 
 ```sh
-GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:dev
+GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:prod
 ```
 
 ## Style guides

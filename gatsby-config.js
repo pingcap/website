@@ -1,4 +1,5 @@
 const purgecssWhitelist = require('./purgecss-whitelist')
+const path = require('path')
 const langConfig = require('./lang.config.json')
 const { createProxyMiddleware } = require('http-proxy-middleware')
 
@@ -265,6 +266,17 @@ module.exports = {
       options: {
         partnerId: `3203676`,
         includeInDevelopment: false,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          '@images': path.resolve(__dirname, 'images'),
+          '@components': path.resolve(__dirname, 'src/components'),
+          '@styles': path.resolve(__dirname, 'src/styles'),
+        },
+        extensions: ['js'],
       },
     },
   ],
