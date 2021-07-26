@@ -38,50 +38,9 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
           }
         }
       }
-      caseStudiesZH: allMdx(
-        filter: {
-          fileAbsolutePath: { regex: "${langConfig.languages.zh.blogsPath}" }
-          frontmatter: { category: { eq: "case" } }
-        }
-        limit: 1000
-      ) {
-        edges {
-          node {
-            frontmatter {
-              title
-              customerCategory
-              aliases
-            }
-            parent {
-              ... on File {
-                relativePath
-              }
-            }
-          }
-        }
-      }
       categories: allMdx(
           filter: {
             fileAbsolutePath: { regex: "${langConfig.languages.en.blogsPath}"}
-            frontmatter: { customer: { ne: null } }
-          }
-        ) {
-          industries: group(field: frontmatter___customerCategory) {
-            industry: fieldValue
-            totalCount: totalCount
-          }
-          companies: group(field: frontmatter___customer) {
-            company: fieldValue
-            totalCount: totalCount
-          }
-          tags: group(field: frontmatter___tags) {
-            tag: fieldValue
-            totalCount: totalCount
-          }
-      }
-      categoriesZH: allMdx(
-          filter: {
-            fileAbsolutePath: { regex: "${langConfig.languages.zh.blogsPath}"}
             frontmatter: { customer: { ne: null } }
           }
         ) {
@@ -108,15 +67,6 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
     .sort((a, b) => b['totalCount'] - a['totalCount'])
     .map((node) => node['company'])
   const tags = data.categories.tags
-    .sort((a, b) => b['totalCount'] - a['totalCount'])
-    .map((node) => node['tag'])
-  const industriesZH = data.categoriesZH.industries
-    .sort((a, b) => b['totalCount'] - a['totalCount'])
-    .map((node) => node['industry'])
-  const companiesZH = data.categoriesZH.companies
-    .sort((a, b) => b['totalCount'] - a['totalCount'])
-    .map((node) => node['company'])
-  const tagsZH = data.categoriesZH.tags
     .sort((a, b) => b['totalCount'] - a['totalCount'])
     .map((node) => node['tag'])
 
@@ -161,35 +111,6 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
     }
   })
 
-  data.caseStudiesZH.edges.forEach(({ node }) => {
-    const _path = `zh/case-studies/${replaceTitle(node.parent.relativePath)}`
-    createPage({
-      path: _path,
-      component: caseStudyTemplate,
-      context: {
-        title: node.frontmatter.title,
-        industries: industriesZH,
-        companies: companiesZH,
-        tags: tagsZH,
-        language: 'zh',
-        ...langConfig.languages['zh'],
-      },
-    })
-
-    // create redirect
-    if (node.frontmatter.aliases) {
-      const aliasesArr = node.frontmatter.aliases
-
-      aliasesArr.forEach((alias) => {
-        createRedirect({
-          fromPath: `${alias}`,
-          toPath: _path,
-          isPermanent: true,
-        })
-      })
-    }
-  })
-
   const categoriesOfStudies = [
     ...new Set(
       data.caseStudies.edges
@@ -210,29 +131,6 @@ const createCaseStudies = async ({ graphql, createPage, createRedirect }) => {
       context: {
         language: 'en',
         ...langConfig.languages['en'],
-      },
-    })
-  })
-
-  const categoriesOfStudiesZH = [
-    ...new Set([
-      '全部行业',
-      ...data.caseStudiesZH.edges.map(
-        ({ node }) => node.frontmatter.customerCategory || '全部行业'
-      ),
-    ]),
-  ]
-
-  categoriesOfStudiesZH.forEach((c) => {
-    const pagePath = `zh/case-studies/${c.split(' ').join('-')}`
-
-    createPage({
-      path: pagePath,
-      matchPath: pagePath,
-      component: path.resolve(`${__dirname}/../src/pages/zh/case-studies.js`),
-      context: {
-        language: 'zh',
-        ...langConfig.languages['zh'],
       },
     })
   })

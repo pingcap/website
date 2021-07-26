@@ -96,50 +96,6 @@ const navbarItemsJP = {
   },
 }
 
-const navbarItemsZh = {
-  navItems: [
-    {
-      name: '文档',
-      href: 'https://docs.pingcap.com/zh/tidb/stable',
-      outbound: true,
-    },
-    {
-      name: '案例',
-      href: '/case-studies',
-    },
-    {
-      name: '社区',
-      href: '/community',
-    },
-    {
-      name: '博客',
-      href: '/blog',
-    },
-    {
-      name: '问答',
-      href: 'https://asktug.com',
-      outbound: true,
-    },
-    {
-      name: 'University',
-      href: 'https://university.pingcap.com',
-      outbound: true,
-    },
-    {
-      name: '关于',
-      href: '/about',
-    },
-  ],
-  contactUs: {
-    name: '联系我们',
-    href: '/contact-us',
-  },
-  downloadTiDB: {
-    name: '下载试用',
-    href: '/download',
-  },
-}
-
 // to hide promotion, uncomment:
 // const promotionText = null
 const homepagePromotionText = (
@@ -168,19 +124,20 @@ const cloudPromotionText = (
 )
 
 const JapaneseHomepagePromotionText = (
-    <>
-      <Link
-          to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
-          type="outBoundLink"
-      >
-        &nbsp;ここ&nbsp;
-      </Link>{' '}をクリックしてTiDB Communityに参加しましょう。(tidb-japan Channelで日本語で対応できます！)
-    </>
+  <>
+    <Link
+      to="https://slack.tidb.io/invite?team=tidb-community&channel=everyone&ref=pingcap"
+      type="outBoundLink"
+    >
+      &nbsp;ここ&nbsp;
+    </Link>{' '}
+    をクリックしてTiDB Communityに参加しましょう。(tidb-japan
+    Channelで日本語で対応できます！)
+  </>
 )
 
 export {
   navbarItemsEn,
-  navbarItemsZh,
   navbarItemsJP,
   homepagePromotionText,
   cloudPromotionText,

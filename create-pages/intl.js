@@ -23,24 +23,6 @@ const createIntlPages = ({ page, actions }) => {
       ...langConfig.languages[pageLang || defaultLang],
     },
   })
-
-  // if (pageLang) {
-  //   return
-  // }
-
-  // langMapKeys
-  //   .filter((lang) => lang !== defaultLang)
-  //   .forEach((lang) =>
-  //     createPage({
-  //       ...page,
-  //       path: `/${lang}${pagePath}`,
-  //       context: {
-  //         ...page.context,
-  //         language: lang,
-  //         ...langConfig.languages[lang],
-  //       },
-  //     })
-  //   )
 }
 
 module.exports = createIntlPages

@@ -123,22 +123,11 @@ const Blog = ({ data, pageContext }) => {
             <div className="columns">
               <div className="column is-7">
                 <div className="under-category">
-                  {intl.locale === 'zh' ? (
-                    <>
-                      <span> &lt; </span>
-                      <Link to="/blog">博客</Link>
-                    </>
-                  ) : (
-                    <>
-                      <Link to="/blog">Blog</Link>
-                      <span> &gt; </span>
-                      <Link
-                        to={`/blog/category/${replaceSpaceWithDash(category)}`}
-                      >
-                        {category}
-                      </Link>
-                    </>
-                  )}
+                  <Link to="/blog">Blog</Link>
+                  <span> &gt; </span>
+                  <Link to={`/blog/category/${replaceSpaceWithDash(category)}`}>
+                    {category}
+                  </Link>
                 </div>
                 <BlogHeader
                   frontmatter={frontmatter}

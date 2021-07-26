@@ -19,13 +19,9 @@
   @include strikethrough($primary);
 }
 
-$logos: square lenovo tencent bigo blued paypay shopee bookmyshow bank-of-beijing netstars colopl-ja colopl
-  hulu qiy netease-games sj-distributor mi sakura webank zalopay unext wuba zhihu meituan;
-
-$logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
-  tencent meituan xiaomi netease-games iqiyi wuba zhihu china-mobile
-  china-telecom china-unicom people oppo yumchina zto-express paypay zalopay
-  shopee bookmyshow hulu u-next dailymotion;
+$logos: square lenovo tencent bigo blued paypay shopee bookmyshow
+  bank-of-beijing netstars colopl-ja colopl hulu qiy netease-games
+  sj-distributor mi sakura webank zalopay unext wuba zhihu meituan;
 
 .box.outer {
   @extend .has-light-background;
@@ -239,15 +235,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
     }
   }
 
-  @each $logo in $logos-zh {
-    .#{$logo}-logo-zh {
-      background: url(../../../images/home/logos/zh/#{$logo}.png)
-        center
-        no-repeat;
-      background-size: contain;
-    }
-  }
-
   .section-case-studies {
     padding: 4rem 1.5rem 5rem;
 
@@ -309,15 +296,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         }
       }
     }
-
-    &.zh {
-      .logos {
-        > * {
-          height: 56px;
-          flex-basis: 14.2%;
-        }
-      }
-    }
   }
 
   .section-celebrate-your-growth {
@@ -363,15 +341,8 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         background-color: $M1;
       }
 
-      .title.zh {
-        font-weight: 400;
-      }
-
       .desc {
         @include P1;
-        .zh {
-          font-weight: 300;
-        }
 
         font-size: $size-8;
         line-height: 2;
@@ -559,19 +530,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
 
         background-image: url(../../../images/home/architecture/right-desktop.svg);
       }
-
-      .center-zh {
-        @include mobile {
-          width: 450px;
-          height: 180px;
-          margin: 0;
-        }
-
-        width: 1344px;
-        height: 534px;
-        margin: 0 2rem;
-        background-image: url(../../../images/home/architecture/zh/architecture.svg);
-      }
     }
   }
 
@@ -629,19 +587,11 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         @include P1;
         font-weight: 600;
         margin-bottom: 1rem;
-
-        &.zh {
-          font-weight: 400;
-        }
       }
 
       .subtitle {
         @include P1;
         margin-bottom: 1rem;
-
-        &.zh {
-          font-weight: 300;
-        }
       }
 
       .paragraph {
@@ -652,11 +602,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
         -webkit-line-clamp: 3;
         text-overflow: ellipsis;
         overflow: hidden;
-        //padding-bottom: 1rem;
-
-        &.zh {
-          font-weight: 300;
-        }
       }
     }
 
@@ -761,30 +706,6 @@ $logos-zh: bank-of-china pingan guangda bank-of-beijing webank lufax ke-finance
 
       &.outer {
         padding-bottom: 2.5rem;
-      }
-    }
-
-    &.zh {
-      .box {
-        &.logo {
-          &.tidb-cloud {
-            img {
-              height: 6rem;
-            }
-          }
-        }
-      }
-
-      .column:nth-child(3) {
-        a.button {
-          pointer-events: none;
-          background-color: #9fa8b9;
-        }
-      }
-
-      .button {
-        font-size: $size-7;
-        height: 3rem;
       }
     }
   }

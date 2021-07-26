@@ -5,7 +5,6 @@ import ArrowDown from '../../images/case-studies/arrow-down.svg'
 
 import {
   navbarItemsEn,
-  navbarItemsZh,
   navbarItemsJP,
   homepagePromotionText,
   cloudPromotionText,
@@ -69,13 +68,9 @@ const Navbar = ({ showBanner }) => {
   )
 
   const intl = useIntl()
-  // const navbarItems = intl.locale === 'zh' ? navbarItemsZh : navbarItemsEn
   let navbarItems = {}
 
   switch (intl.locale) {
-    case 'zh':
-      navbarItems = navbarItemsZh
-      break
     case 'jp':
       navbarItems = navbarItemsJP
       break
@@ -111,12 +106,12 @@ const Navbar = ({ showBanner }) => {
   const [promotionOpen, setPromotionOpen] = useState(showBanner)
   const closePromotion = useCallback(() => setPromotionOpen(false), [])
   const location = useLocation()
-  let promotionText = ""
+  let promotionText = ''
   if (location.pathname === '/') {
     promotionText = homepagePromotionText
   } else if (location.pathname === '/jp/') {
     promotionText = JapaneseHomepagePromotionText
-  } else{
+  } else {
     promotionText = cloudPromotionText
   }
 

@@ -72,7 +72,3 @@ async function downloadBlogs(
 }
 
 downloadBlogs('/repos/pingcap/blog/contents', 'blogs', 'en', ['README.md'])
-downloadBlogs('/repos/pingcap/blog-cn/contents', 'zh/blogs', 'zh', [
-  'README.md',
-  'TOC-User-Case.md',
-])
