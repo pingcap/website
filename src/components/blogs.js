@@ -2,7 +2,6 @@ import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
 import React, { useState, useEffect, useRef } from 'react'
-import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
 // import BlogSearch from './blogSearch'
@@ -176,8 +175,6 @@ const Blogs = ({
   )
 
   const cateMenuCfgMergedWithBaseRef = useRef(cateMenuCfgMergedWithBase)
-
-  const { locale } = useIntl()
 
   return (
     <Layout>

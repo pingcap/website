@@ -12,7 +12,7 @@ import SEO from '../components/seo'
 import Socials from '../components/socials'
 import intersection from 'lodash.intersection'
 import replaceInternalHref from '../lib/replaceInternalHref'
-import { useIntl, FormattedMessage } from 'react-intl'
+import { FormattedMessage } from 'react-intl'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import TOCRenderer from '../components/tocRenderer'
@@ -29,8 +29,6 @@ const Blog = ({ data, pageContext }) => {
   const [readingProgress, setReadingProgress] = useState(0)
   const [fixedSocials, setFixedSocials] = useState(true)
   const [relatedBlogsRef, setRelatedBlogsRef] = useState(null)
-
-  const intl = useIntl()
 
   useEffect(() => {
     const footer = document.querySelector('.footer.PingCAP-Footer')
