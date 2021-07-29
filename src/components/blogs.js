@@ -2,7 +2,6 @@ import '../styles/templates/blogs.scss'
 
 import Link from './IntlLink'
 import React, { useState, useEffect, useRef } from 'react'
-import { useIntl } from 'react-intl'
 
 import BlogHeader from './blogHeader'
 // import BlogSearch from './blogSearch'
@@ -10,7 +9,6 @@ import BlogTags from './blogTags'
 import Layout from './layout'
 import Pagination from './pagination'
 import PostFromUs from './postFromUs'
-import PostFromUsZH from './zh/postFromUs'
 import SEO from './seo'
 import Socials from './socials'
 import { MenuGenerator } from './menu'
@@ -178,8 +176,6 @@ const Blogs = ({
 
   const cateMenuCfgMergedWithBaseRef = useRef(cateMenuCfgMergedWithBase)
 
-  const { locale } = useIntl()
-
   return (
     <Layout>
       <SEO
@@ -231,7 +227,7 @@ const Blogs = ({
               <div className="column is-4 is-offset-1 right-column">
                 <div className="main">
                   {/* <BlogSearch className="search-desktop" /> */}
-                  {locale === 'zh' ? <PostFromUsZH /> : <PostFromUs />}
+                  <PostFromUs />
                   <div className="follow-us">
                     <h3 className="title is-6">Follow to Join Us!</h3>
                     <div className="socials">

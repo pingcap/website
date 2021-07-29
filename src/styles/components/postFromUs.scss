@@ -44,26 +44,12 @@
     }
   }
 
-  .poster-wrapper-zh {
-    position: relative;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    width: 58%;
-
-    @include mobile {
-      width: 100%;
-      justify-content: center;
-    }
-  }
-
   .field {
     input {
       width: 300px;
       border: none;
     }
-    
+
     button {
       width: 125px;
     }
@@ -124,23 +110,6 @@
 
     @include mobile {
       display: unset;
-    }
-  }
-}
-
-.PingCAP-PostFromUs.PingCAP-PostFromUs-Block-ZH {
-  background-color: $M2;
-
-  .field { 
-    input {
-      font-size: $size-7;
-      width: 180px;
-      border: 1px solid $B1;
-    }
-    
-    button {
-      font-size: $size-7;
-      width: 80px;
     }
   }
 }

@@ -1,8 +1,6 @@
 const replaceStream = require('replacestream')
 
 const BLOG_IMAGE_CDN_BASE_URL = 'https://download.pingcap.com/images/blog/'
-const BLOG_IMAGE_CDN_BASE_URL_CN =
-  'https://download.pingcap.com/images/blog-cn/'
 
 exports.createReplaceBlogImagePathStream = function (locale) {
   return replaceStream(
@@ -10,7 +8,6 @@ exports.createReplaceBlogImagePathStream = function (locale) {
     '(' +
       {
         en: BLOG_IMAGE_CDN_BASE_URL,
-        zh: BLOG_IMAGE_CDN_BASE_URL_CN,
       }[locale]
   )
 }

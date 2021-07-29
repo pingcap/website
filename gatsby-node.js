@@ -16,7 +16,6 @@ const createCaseStudyPagination = require('./create-pages/allCaseStudies')
 const createPositions = require('./create-pages/position')
 const createPolicyTerms = require('./create-pages/policyTerms')
 const createIntlPages = require('./create-pages/intl')
-const createBlogCNPages = require('./create-pages/blogCNPages')
 
 exports.createPages = async ({ actions, graphql }) => {
   const { createPage, createRedirect } = actions
@@ -58,5 +57,4 @@ exports.onCreateNode = ({ actions, node, getNode }) => {
 
 exports.onCreatePage = ({ page, actions }) => {
   createIntlPages({ page, actions })
-  createBlogCNPages({ page, actions })
 }

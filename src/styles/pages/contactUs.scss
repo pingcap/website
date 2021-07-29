@@ -22,18 +22,6 @@
     font-size: $size-1;
     color: $M1;
 
-    &-zh {
-      @include mobile {
-        font-size: $H1;
-        font-weight: 500;
-        margin-bottom: 0 !important;
-      }
-
-      font-size: $H0;
-      font-weight: 500;
-      margin-bottom: 2rem !important;
-    }
-
     &-en {
       text-align: left;
 
@@ -47,15 +35,6 @@
     margin: 0 auto;
     font-size: $size-5;
     color: $M1;
-
-    &-zh {
-      @include mobile {
-        display: none;
-      }
-
-      font-size: $H3;
-      font-weight: 400;
-    }
 
     &-en {
       padding-bottom: 3rem;
@@ -74,144 +53,6 @@
     max-width: 800px;
     text-align: center;
     margin: 2rem auto;
-
-    &-zh {
-      @include mobile {
-        padding-bottom: 2rem;
-      }
-
-      .form-container {
-        @include mobile {
-          width: 100%;
-          flex-direction: column;
-          align-items: center;
-        }
-
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        width: 50%;
-        margin: 0 auto;
-
-        .form-item--text {
-          @include mobile {
-            width: 75%;
-            margin-bottom: 4rem;
-          }
-
-          display: inline-flex;
-          flex-direction: column;
-          align-items: flex-start;
-          width: 41.66%;
-          margin-bottom: 2.5rem;
-          position: relative;
-
-          input {
-            width: 100%;
-            height: 2.5rem;
-            @include form-text-fill;
-          }
-
-          input:focus {
-            outline: none;
-            border: 1px solid $B1;
-          }
-
-          .form-text--error {
-            @include form-error-position;
-          }
-        }
-
-        .form-item--textarea {
-          position: relative;
-          margin-bottom: 2.5rem;
-
-          @include mobile {
-            width: 75%;
-            margin-bottom: 4rem;
-          }
-
-          textarea {
-            width: 100%;
-            height: 6rem;
-            @include form-text-fill;
-            resize: none;
-          }
-
-          textarea:focus {
-            outline: none;
-            border: 1px solid $B1;
-          }
-
-          .form-text--error {
-            @include form-error-position;
-          }
-        }
-
-        .form-item--checkbox-radio {
-          @include mobile {
-            width: 75%;
-            margin-bottom: 0;
-          }
-
-          display: inline-flex;
-          flex-direction: row-reverse;
-          align-items: center;
-          position: relative;
-
-          .form-label {
-            margin-bottom: 0;
-          }
-
-          input {
-            margin-right: 2rem;
-          }
-
-          .form-text--error {
-            @include form-error-position;
-          }
-        }
-
-        .form-item--error {
-          input {
-            border: 1px solid #fd746c;
-          }
-        }
-
-        .submit-btn {
-          width: 33.3%;
-          height: 3rem;
-          margin: 4rem auto 0;
-          background: rgba(46, 47, 255, 1);
-          box-shadow: 0px 3px 6px rgba(46, 47, 255, 0.2);
-          opacity: 1;
-          border-radius: 4px;
-          outline: none;
-          border: none;
-          color: #fff;
-          cursor: pointer;
-
-          &:hover {
-            background-color: #1516ff;
-          }
-        }
-
-        .form-label {
-          @include paragraph;
-          margin-bottom: 0.75rem;
-
-          .label-star {
-            color: red;
-          }
-        }
-
-        .form-text--error {
-          @include paragraph;
-          font-size: $P2;
-          color: #fd746c;
-        }
-      }
-    }
   }
 
   .map-section {
@@ -302,67 +143,6 @@
       font-weight: $W3-EN;
       font-size: $H3;
       color: $F1;
-    }
-  }
-
-  .map-section-zh {
-    @include mobile {
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-
-    .addr-container {
-      @include mobile {
-        flex-direction: column-reverse;
-        width: 100%;
-      }
-
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 83.3%;
-      margin: 0 auto;
-    }
-
-    .addr-text {
-      @include mobile {
-        width: 50%;
-        align-items: center;
-      }
-
-      width: 20%;
-      display: flex;
-      flex-direction: column;
-
-      .addr-company-title,
-      .addr-tel-title {
-        font-size: $H3;
-        font-weight: 400;
-        color: $F1;
-        margin-bottom: 1.5rem;
-      }
-
-      .addr-company-desc,
-      .addr-tel-desc {
-        @include mobile {
-          margin-bottom: 2rem;
-        }
-
-        font-size: $H3;
-        font-weight: 300;
-        color: $F1;
-        margin-bottom: 3rem;
-      }
-    }
-
-    .addr-map {
-      @include mobile {
-        width: 100vw;
-        height: 50vw;
-        margin-bottom: 2rem;
-      }
-      height: 25rem;
-      width: 70%;
     }
   }
 

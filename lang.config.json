@@ -1,12 +1,6 @@
 {
     "defaultLang": "en",
     "languages": {
-        "zh": {
-            "langName": "中文",
-            "blogsPath": "/markdown-pages/zh/blogs/",
-            "policyTermsPath": "/markdown-pages/zh/terms/",
-            "hasBlogCategories": false
-        },
         "en": {
             "langName": "English",
             "blogsPath": "/markdown-pages/blogs/",

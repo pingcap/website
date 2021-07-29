@@ -1,5 +1,3 @@
-import { useIntl } from 'react-intl'
-
 const categoryMenuItemForBlogAndCase = (
   key,
   className,
@@ -7,11 +5,6 @@ const categoryMenuItemForBlogAndCase = (
   articleType
 ) => {
   const menuItemConstructor = ((key, className, children) => (props) => {
-    const intl = useIntl()
-    const isZH = intl.locale === 'zh'
-    if (isZH) {
-      props.pathPrefix = '/zh' + props.pathPrefix
-    }
     return {
       key,
       className,

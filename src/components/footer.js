@@ -57,13 +57,7 @@ const Footer = () => {
               <a
                 key={lang}
                 className="dropdown-item"
-                href={
-                  lang === langConfig.defaultLang
-                    ? intl.locale === 'zh'
-                      ? 'https://en.pingcap.com'
-                      : '/'
-                    : `/${lang}`
-                }
+                href={lang === langConfig.defaultLang ? '/' : `/${lang}`}
               >
                 {langConfig.languagesSimple[lang].langName}
               </a>
