@@ -174,6 +174,7 @@ module.exports = {
           `src/styles/`,
           'prismjs/',
           'node_modules/swiper/css/swiper.min.css',
+          'katex/dist/katex.min.css',
         ],
       },
     },
