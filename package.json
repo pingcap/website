@@ -54,7 +54,7 @@
     "rehype-katex": "^5.0.0",
     "remark": "10.0.0",
     "remark-math": "3.0.1",
-    "swiper": "5.4.5"
+    "swiper": "6.5.1"
   },
   "devDependencies": {
     "babel-plugin-prismjs": "^2.0.1",
