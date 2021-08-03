@@ -9,6 +9,8 @@
 import './src/styles/global.scss'
 import 'prismjs/themes/prism-solarizedlight.css'
 
+import "katex/dist/katex.min.css"
+
 export { wrapPageElement } from './create-pages/wrapPage'
 
 export const onRouteUpdate = ({ location }) => {

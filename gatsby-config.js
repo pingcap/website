@@ -119,6 +119,8 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         extensions: ['.mdx', '.md'],
+        remarkPlugins: [require(`remark-math`)],
+        rehypePlugins: [require(`rehype-katex`)],
         gatsbyRemarkPlugins: [
           `gatsby-remark-autolink-headers`,
           {
@@ -172,6 +174,7 @@ module.exports = {
           `src/styles/`,
           'prismjs/',
           'node_modules/swiper/css/swiper.min.css',
+          'katex/dist/katex.min.css',
         ],
       },
     },
