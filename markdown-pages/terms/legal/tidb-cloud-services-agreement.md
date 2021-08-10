@@ -6,7 +6,7 @@ aliases: ['/products/tidbcloud/terms-of-service']
 
 # TiDB Cloud Services Agreement
 
-**Last updated on Auguest 8, 2021** ([archived versions](/legal/tidb-cloud-services-agreement/archive))
+**Last updated on Auguest 11, 2021** ([archived versions](/legal/tidb-cloud-services-agreement/archive))
 
 This TiDB Cloud Services Agreement (this "CSA") is an agreement between the applicable PingCAP Contracting Entity (as defined below) ("PingCAP", "we", "us", or "our") and you or the entity you represent ("you" or "your"), which contains the terms and conditions that govern your access to and use of the TiDB Cloud Services (as defined below). This CSA takes effect when you check a box confirming that you agree with the terms of this CSA and click an "I Accept" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.
 
