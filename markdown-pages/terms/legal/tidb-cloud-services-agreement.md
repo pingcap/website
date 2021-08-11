@@ -8,7 +8,7 @@ aliases: ['/products/tidbcloud/terms-of-service']
 
 **Last updated on Auguest 11, 2021** ([archived versions](/legal/tidb-cloud-services-agreement/archive))
 
-This TiDB Cloud Services Agreement (this "CSA") is an agreement between the applicable PingCAP Contracting Entity (as defined below) ("PingCAP", "we", "us", or "our") and you or the entity you represent ("you" or "your"), which contains the terms and conditions that govern your access to and use of the TiDB Cloud Services (as defined below). This CSA takes effect when you check a box confirming that you agree with the terms of this CSA and click an "I Accept" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.
+This TiDB Cloud Services Agreement (this "CSA") is an agreement between the applicable PingCAP Contracting Entity (as defined below) ("PingCAP", "we", "us", or "our") and you or the entity you represent ("you" or "your"), which contains the terms and conditions that govern your access to and use of the TiDB Cloud Services (as defined below). This CSA takes effect when you check a box confirming that you agree with the terms of this CSA and click an "I agree to the TiDB Cloud Services Agreement" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.
 
 ## 1. Definitions
 
@@ -30,7 +30,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 - 1.8. <span>**"Law"** means any statute, law or ordinance in any jurisdiction, or any rule or regulation of any governmental body.</span>
 
-- 1.9. <span>**"PingCAP Contracting Entity"** means: (a) if you or the entity that you represent is located in North or South America, PingCAP (US), Inc.;(b) if you or the entity that you represent is located in Japan, PingCAP Kabushiki-Kaisha; and (c) if you or the entity that you represent is not located in any of the foregoing places, PingCAP Pte. Ltd. Note that we do not provide cloud services in China excluding the Hong Kong Special Administrative Region, Macau Special Administrative Region, and Taiwan.</span>
+- 1.9. <span>**"PingCAP Contracting Entity"** means: (a) if you or the entity that you represent is located in North or South America, PingCAP (US), Inc.;(b) if you or the entity that you represent is located in Japan, PingCAP Kabushiki-Kaisha; and (c) if you or the entity that you represent is not located in any of the foregoing places, PingCAP Pte. Ltd. Note that we do not provide cloud services in the People’s Republic of China (excluding the Hong Kong Special Administrative Region, Macau Special Administrative Region, and Taiwan).</span>
 
 - 1.10. <span>**"Service Data"** means query logs and any data (other than Your Content) relating to your use of the TiDB Cloud Services or the operation, maintenance or support thereof.</span>
 
@@ -214,7 +214,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 - 8.3. <span>**Indemnity Procedures**. In the event of any potential indemnity obligation under this Section 8, the indemnified party will: (a) promptly notify the indemnifying party in writing of the third-party claim in accordance with Section 15.5; (b) provide the indemnifying party with sole control and authority over the investigation, defense and settlement (if applicable) of such claim at the indemnifying party's sole cost and expense; and (c) upon request of the indemnifying party, and at the indemnifying party's expense, provide all cooperation reasonably requested by the indemnifying party. Failure by the indemnified party to notify the indemnifying party of a claim under this Section 8 shall not relieve the indemnifying party of its obligations under this Section 8 except to the extent that the indemnifying party was actually prejudiced by such delay or failure to provide notice in accordance with this Section 8.3. The indemnifying party may not settle any claim that would bind the indemnified party to any obligation (other than payment covered by the indemnifying party or ceasing to use infringing materials) or require any admission of fault by the indemnified party, without the indemnified party's prior written consent, which consent is not to be unreasonably withheld, conditioned or delayed. Any indemnification obligation under this Section 8 will not apply if the indemnified party settles or makes any admission with respect to a claim without the indemnifying party's prior written consent.</span>
 
-- 8.4. <span>This Section 8 states the indemnifying party's sole liability to, and the indemnified party's exclusive remedy against, the other party for any type of claim described in this Section 8.</span>
+- 8.4. <span>This Section 8 states the indemnifying party's sole liability to, and the indemnified party's exclusive remedy against, the other party for any type of claim or demands arising out of, or in any way related to, this CSA.</span>
 
 </div>
 
