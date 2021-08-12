@@ -24,7 +24,7 @@ This TiDB Cloud Services Agreement (this "CSA") is an agreement between the appl
 
 - 1.5. <span>**"DPA"** means the Data Processing Agreement for TiDB Cloud Services, a current version of which is available [here](/legal/data-processing-agreement-for-tidb-cloud-services).</span>
 
-- 1.6. <span>**"Effective Date"** is the date when you check a box confirming that you agree with the terms of this CSA and click an "I Accept" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.</span>
+- 1.6. <span>**"Effective Date"** is the date when you check a box confirming that you agree with the terms of this CSA and click an "I agree to the TiDB Cloud Services Agreement" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.</span>
 
 - 1.7. <span>**"IP Rights"** means all intellectual property rights throughout the world, including patents, copyrights, trademarks, trade secrets, database rights and any other rights in data or data compilations.</span>
 
