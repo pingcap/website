@@ -73,7 +73,7 @@ const ContactUs = () => {
                   <p>
                     2955 Campus Drive #110,
                     <br /> San Mateo, CA 94403
-                    <br /> Office: 650 - 733 - 3859（Mon - Fri）
+                    <br /> Office: +1(650) - 382 - 9973（Mon - Fri）
                   </p>
                 </div>
               </div>
