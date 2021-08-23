@@ -13,7 +13,7 @@
   },
   {
     "title": "TiFS, a TiKV-based partition tolerant, strictly consistent file system",
-    "logo": "/images/news/cncf-logo.png",
+    "logo": "/images/news/cncf.png",
     "link": "https://www.cncf.io/blog/2021/06/28/tifs-a-tikv-based-partition-tolerant-strictly-consistent-file-system/",
     "date": "2021-06-28"
   },
