@@ -13,6 +13,7 @@ const homeLogos = [
   'bank-of-beijing',
   'hulu',
   'qiy',
+  'jd-cloud',
   'netease-games',
   'sj-distributor',
   'mi',
