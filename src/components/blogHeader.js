@@ -43,10 +43,12 @@ const BlogHeader = ({
         </h2>
       )}
       <div className="subtitle is-7 is-spaced blog-subtitle">
-        <span>
-          {withIcon && <DateRangeIcon />}
-          {date}
-        </span>
+        {date && (
+          <span>
+            {withIcon && <DateRangeIcon />}
+            {date}
+          </span>
+        )}
         <span>
           {withIcon && <CreateIcon />}
           {isCaseStudy ? customer : (author && author.join(', ')) || 'PingCAP'}
