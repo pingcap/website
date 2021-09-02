@@ -20,6 +20,7 @@ const NormalBox = withNormalHelpers(Box)
 
 const caseLogos = [
   'square',
+  'streak',
   'lenovo',
   'tencent',
   'bigo',
@@ -38,7 +39,6 @@ const caseLogos = [
   'unext',
   'wuba',
   'zhihu',
-  'meituan',
 ]
 
 const IndexPage = ({ data }) => {
