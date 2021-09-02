@@ -1,5 +1,6 @@
 const homeLogos = [
   'square',
+  'streak',
   'lenovo',
   'tencent',
   'bigo',
@@ -23,7 +24,6 @@ const homeLogos = [
   'unext',
   'wuba',
   'zhihu',
-  'meituan',
 ].map((logo) => logo + '-logo')
 
 module.exports = [...homeLogos]
