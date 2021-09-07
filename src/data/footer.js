@@ -82,11 +82,6 @@ const footerColumns = [
           outbound: true,
         },
         {
-          name: 'TiDB Monthly',
-          link: 'https://pingcap.com/weekly/',
-          outbound: true,
-        },
-        {
           name: 'Trust Center',
           link: '/trust',
         },
