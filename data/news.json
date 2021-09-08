@@ -1,5 +1,11 @@
 [
   {
+    "title": "Managing Your Data Lifecycle With Time to Live Tables",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/managing-your-data-lifecycle-with-time-to-live-tables",
+    "date": "2021-09-04"
+  },
+  {
     "title": "TiKV + SPDK: Pushing the Limits of Storage Performance",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/tikv-spdk-pushing-the-limits-of-storage-performanc",
