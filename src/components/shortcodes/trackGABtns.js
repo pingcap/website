@@ -5,47 +5,52 @@ import { Button } from '@seagreenio/react-bulma'
 import Link from '../IntlLink'
 import '../../styles/components/trackGABtns.scss'
 
-const TrackGABtns = ({ blogName }) => {
-  const trackViews = (blog, btnType) => {
+const TrackGABtns = ({ btnHrefs, btnLabels, btnTypes, btnTexts }) => {
+  const btnHrefsArr = btnHrefs.split(',')
+  const btnLabelsArr = btnLabels.split(',')
+  const btnTypesArr = btnTypes.split(',')
+  const btnTextsArr = btnTexts.split(',')
+  const trackViews = (btnLabel, btnType) => {
     trackCustomEvent({
       category: btnType,
       action: 'click',
-      label: blog,
+      label: btnLabel,
     })
   }
 
   return (
     <div className="PingCAP-TrackGABtns">
       <div className="trackable-btns">
-        <Button
-          as={Link}
-          to="/download"
-          color="primary"
-          outlined
-          rounded
-          onClick={trackViews(`${blogName}`, 'download-tidb-btn-middle')}
-        >
-          Download TiDB
-        </Button>
-
-        <Button
-          as="a"
-          href="https://share.hsforms.com/1e2W03wLJQQKPd1d9rCbj_Q2npzm"
-          target="_blank"
-          color="primary"
-          outlined
-          rounded
-          onClick={trackViews(`${blogName}`, 'subscribe-blog-btn-middle')}
-        >
-          Subscribe to Blog
-        </Button>
+        {btnHrefsArr &&
+          btnHrefsArr.map(
+            (btn, idx) =>
+              btn && (
+                <Button
+                  key={idx}
+                  as={Link}
+                  to={btnHrefsArr[idx]}
+                  color="primary"
+                  outlined
+                  rounded
+                  onClick={trackViews(
+                    `${btnLabelsArr[idx]}`,
+                    `${btnTypesArr[idx]}`
+                  )}
+                >
+                  {btnTextsArr[idx]}
+                </Button>
+              )
+          )}
       </div>
     </div>
   )
 }
 
 TrackGABtns.propTypes = {
-  blogName: PropTypes.node.isRequired,
+  btnHrefs: PropTypes.node.isRequired,
+  btnLabels: PropTypes.node.isRequired,
+  btnTypes: PropTypes.node.isRequired,
+  btnTexts: PropTypes.node.isRequired,
 }
 
 export default TrackGABtns

@@ -20,11 +20,21 @@ exports.createReplaceCopyableStream = function () {
 
 exports.createReplaceTrackGABtns = function () {
   return replaceStream(
-    /<a href="\/download"(.+)<\/button><\/a>/gs,
+    /<div class="trackable-btns">(.+?)<\/div>/gs,
     (trackCode, middle) => {
-      const regx = /(?<=onclick="trackViews\(').*?(?=\', 'download-tidb-btn-middle')/gs
-      const blogName = trackCode.match(regx)
-      return `<TrackGABtns blogName="${blogName}" />`
+      const regx = /<a href="(.+?)" onclick="trackViews\('(.+?)', '(.*?)'\)"><button>(.+?)<\/button><\/a>/gs
+      const btns = [...middle.matchAll(regx)]
+      let btnHrefs = ''
+      let btnLabels = ''
+      let btnTypes = ''
+      let btnTexts = ''
+      btns.forEach((btn) => {
+        btnHrefs = btnHrefs + btn[1] + ','
+        btnLabels = btnLabels + btn[2] + ','
+        btnTypes = btnTypes + btn[3] + ','
+        btnTexts = btnTexts + btn[4] + ','
+      })
+      return `<TrackGABtns btnHrefs="${btnHrefs}" btnLabels="${btnLabels}" btnTypes="${btnTypes}" btnTexts="${btnTexts}" />`
     }
   )
 }
