@@ -23,9 +23,9 @@ We use cookies provided by trusted third parties for a variety of reasons detail
 
 - This Site uses Stripe cookies for the purpose of user authentication, fraud detection, fraud prevention and payment processing. For more information on Stripe cookies, see the [Stripe](https://stripe.com/) page.
 
-  - This Site uses Auth0 cookies for the purpose of user authentication. For more information on Auth0 cookies, please see the [Auth0](https://auth0.com/) page.
+- This Site uses Auth0 cookies for the purpose of user authentication. For more information on Auth0 cookies, please see the [Auth0](https://auth0.com/) page.
 
-  - This Site uses LinkedIn cookies for the purpose of building a profile of your interests and notifying you of relevant posts on LinkedIn. For more information on LinkedIn cookies, please see the [LinkedIn](https://www.linkedin.com/legal/l/cookie-table) page.
+- This Site uses LinkedIn cookies for the purpose of building a profile of your interests and notifying you of relevant posts on LinkedIn. For more information on LinkedIn cookies, please see the [LinkedIn](https://www.linkedin.com/legal/l/cookie-table) page.
 
 **Google Analytics**
 
@@ -57,11 +57,24 @@ We use cookies provided by trusted third parties for a variety of reasons detail
 
 **Mixpanel**
 
-| Cookie           | Purpose                                                        | Lifespan   |
-| :--------------- | :------------------------------------------------------------- | :--------- |
-| mp\_\*\_mixpanel | Used to analyze users’ actions (such as browsing and clicking) | 1 years    |
-| \_stripe_sid     | Used to authenticate for credit card payment                   | 30 minutes |
-| \_stripe_mid     | Used to authenticate for credit card payment                   | 1 year     |
+| Cookie           | Purpose                                                        | Lifespan |
+| :--------------- | :------------------------------------------------------------- | :------- |
+| mp\_\*\_mixpanel | Used to analyze users’ actions (such as browsing and clicking) | 1 years  |
+
+**Stripe**
+
+| Cookie       | Purpose                                      | Lifespan   |
+| :----------- | :------------------------------------------- | :--------- |
+| \_stripe_sid | Used to authenticate for credit card payment | 30 minutes |
+| \_stripe_mid | Used to authenticate for credit card payment | 1 year     |
+
+**Auth0**
+
+| Cookie               | Purpose                          | Lifespan |
+| :------------------- | :------------------------------- | :------- |
+| auth0; auth0_compact | Used to process user login       | 3 days   |
+| did; did_compat      | Used to identify a user’s device | 360 days |
+| \_cfdid              | Used to identify users           | 24 days  |
 
 **LinkedIn**
 
