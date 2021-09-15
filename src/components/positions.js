@@ -23,7 +23,6 @@ const Positions = ({ locale }) => {
         let _NonTokyoPosition = []
 
         positionRes.forEach((p) => {
-          console.log('p.categories.location', p.categories.location)
           if (p.categories.location === 'Tokyo') {
             _TokyoPosition.push(p)
           } else {
