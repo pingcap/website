@@ -5,7 +5,7 @@ summary: Learn about the Cookie Policy on PingCAP sites.
 
 # Cookie Policy
 
-**Lasted Update on September 15, 2021** ([archived versions](/legal/cookie-policy/archive/))
+**Lasted Update on September 16, 2021** ([archived versions](/legal/cookie-policy/archive/))
 
 Our Sites and related online services use cookies and similar technologies to enable certain functionality and help collect information about your visit. This page describes our use of cookies, and the choices you have in relation to cookies.
 
