@@ -15,6 +15,7 @@ import TOCRenderer from '../components/tocRenderer'
 import { categoryMenuItemForBlogAndCase } from '../lib/menuCfgGenerator'
 import { getBaseSchemaProxyHandler } from '../lib/proxy'
 import { graphql } from 'gatsby'
+import * as Shortcodes from '../components/shortcodes'
 import { replaceSpaceWithDash } from '../lib/string'
 
 const CategoryMenu = React.memo(({ isDesktop = true, menuConfig }) => {
@@ -181,7 +182,7 @@ const CaseStudy = ({ data, pageContext }) => {
                   isBodyH1Title={true}
                 />
                 <div className="markdown-body blog-content">
-                  <MDXProvider>
+                  <MDXProvider components={Shortcodes}>
                     <MDXRenderer>{html}</MDXRenderer>
                   </MDXProvider>
                 </div>
