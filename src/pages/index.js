@@ -34,10 +34,10 @@ const caseLogos = [
   'netease-games',
   'sj-distributor',
   'mi',
-  'opera',
+  'webank',
   'zalopay',
   'unext',
-  'wuba',
+  'opera',
   'zhihu',
 ]
 

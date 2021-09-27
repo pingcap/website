@@ -19,10 +19,10 @@ const homeLogos = [
   'sj-distributor',
   'mi',
   'sakura',
-  'opera',
+  'webank',
   'zalopay',
   'unext',
-  'wuba',
+  'opera',
   'zhihu',
 ].map((logo) => logo + '-logo')
 
