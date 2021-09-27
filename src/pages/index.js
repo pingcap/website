@@ -37,7 +37,7 @@ const caseLogos = [
   'webank',
   'zalopay',
   'unext',
-  'wuba',
+  'opera',
   'zhihu',
 ]
 

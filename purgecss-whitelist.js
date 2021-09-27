@@ -22,7 +22,7 @@ const homeLogos = [
   'webank',
   'zalopay',
   'unext',
-  'wuba',
+  'opera',
   'zhihu',
 ].map((logo) => logo + '-logo')
 
