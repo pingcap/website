@@ -34,7 +34,7 @@ const caseLogos = [
   'netease-games',
   'sj-distributor',
   'mi',
-  'webank',
+  'opera',
   'zalopay',
   'unext',
   'wuba',

@@ -19,7 +19,7 @@ const homeLogos = [
   'sj-distributor',
   'mi',
   'sakura',
-  'webank',
+  'opera',
   'zalopay',
   'unext',
   'wuba',
