@@ -270,6 +270,14 @@ module.exports = {
         includeInDevelopment: false,
       },
     },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: false,
+        id: 2621469,
+        sv: 6,
+      },
+    },
   ],
   proxy: [
     {
