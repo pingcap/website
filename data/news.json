@@ -1,5 +1,23 @@
 [
   {
+    "title": "How to Deploy TiDB on Google Cloud Platform—Part 2",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-to-deploy-tidb-on-google-cloud-platformpart-2",
+    "date": "2021-09-26"
+  },  
+  {
+    "title": "How to Deploy TiDB on Google Cloud Platform—Part 1",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-to-deploy-tidb-on-google-cloud-platformpart-1",
+    "date": "2021-09-25"
+  },
+  {
+    "title": "How to Run Chaos Experiments on Your Physical Machine",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-to-run-chaos-experiments-on-your-physical-mach",
+    "date": "2021-09-20"
+  },
+  {
     "title": "Managing Your Data Lifecycle With Time to Live Tables",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/managing-your-data-lifecycle-with-time-to-live-tables",
