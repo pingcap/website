@@ -4,12 +4,18 @@
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/how-to-deploy-tidb-on-google-cloud-platformpart-2",
     "date": "2021-09-26"
-  },  
+  },
   {
     "title": "How to Deploy TiDB on Google Cloud Platform—Part 1",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/how-to-deploy-tidb-on-google-cloud-platformpart-1",
     "date": "2021-09-25"
+  },
+  {
+    "title": "How WebAssembly Powers Database: Build a UDF Engine with Wasm",
+    "logo": "/images/news/vmblog-logo.png",
+    "link": "https://vmblog.com/archive/2021/09/20/how-webassembly-powers-database-build-a-udf-engine-with-wasm.aspx",
+    "date": "2021-09-20"
   },
   {
     "title": "How to Run Chaos Experiments on Your Physical Machine",
