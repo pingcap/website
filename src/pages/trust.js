@@ -44,6 +44,7 @@ const Trust = React.memo(({ data }) => {
         <SecurityAndTrustCenterCompliance
           reportIcon={AICPA_SOC_PNG}
           ISOIcon={ISO_PNG}
+          GDPRIcon={GDPR_PNG}
         />
         <GetStartedWithTiDBCloud />
       </article>
@@ -179,7 +180,7 @@ const SecurityAndTrustCenterCompliance = React.memo(
           </div>
           <div className={classNameReport}>
             <div className={classNameReportLeft}>
-              <img src={ISOIcon.publicURL} alt="gdpr" />
+              <img src={GDPRIcon.publicURL} alt="gdpr" />
             </div>
             <div className={classNameReportRight}>
               <div className={classNameReportRightHeader}>
