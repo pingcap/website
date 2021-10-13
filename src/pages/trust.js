@@ -10,7 +10,7 @@ import GetStartedWithTiDBCloud from '../components/getStartedWithTiDBCloud'
 import trustData from '../data/trust'
 
 const Trust = React.memo(({ data }) => {
-  const { BannerSVG, AICPA_SOC_PNG, ISO_PNG } = data
+  const { BannerSVG, AICPA_SOC_PNG, ISO_PNG, GDPR_PNG} = data
   const className = `SecurityAndTrustCenter`
   return (
     <Layout>
