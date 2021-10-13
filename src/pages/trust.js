@@ -177,33 +177,6 @@ const SecurityAndTrustCenterCompliance = React.memo(
               </div>
             </div>
           </div>
-          <div className={classNameReport}>
-            <div className={classNameReportLeft}>
-              <img src={ISOIcon.publicURL} alt="gdpr" />
-            </div>
-            <div className={classNameReportRight}>
-              <div className={classNameReportRightHeader}>
-                <div className={`${classNameReportRightHeader}-title`}>
-                  GDPR
-                </div>
-                <Link
-                  to={'/blog/pingcaps-tidb-cloud-attains-gdpr-certification'}
-                >
-                  <div className={`${classNameReportRightHeader}-more`}>
-                    → Learn More
-                  </div>
-                </Link>
-              </div>
-              <div className={`${classNameReportRight}-description`}>
-              The General Data Protection Regulation (GDPR) is a regulation
-              that requires businesses to protect the personal data and privacy
-              of EU citizens for transactions that occur within EU member states.
-              GDPR applies to all companies processing and holding the personal data of
-              data subjects located in the European Union, regardless of the company’s location.
-              PingCAP received the ePrivacyseal for GDPR compliance from ePrivacy GmbH.
-              </div>
-            </div>
-          </div>
           <div className={`${className}-more`}>
             More compliance audits are in progress...
           </div>
@@ -227,11 +200,6 @@ export const query = graphql`
     }
     ISO_PNG: file(
       relativePath: { eq: "security-and-trust-center/iso-27001.png" }
-    ) {
-      publicURL
-    }
-    GDPR_PNG: file(
-      relativePath: { eq: "security-and-trust-center/gdpr.png" }
     ) {
       publicURL
     }
