@@ -32,6 +32,7 @@ exports.createPages = async ({ actions, graphql }) => {
     fromPath: '/products/tidbcloud/trial/',
     toPath: '/products/tidbcloud',
     redirectInBrowser: true,
+    isPermanent: true,
   })
 
   await Promise.all([
