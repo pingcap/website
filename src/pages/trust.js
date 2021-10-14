@@ -10,7 +10,7 @@ import GetStartedWithTiDBCloud from '../components/getStartedWithTiDBCloud'
 import trustData from '../data/trust'
 
 const Trust = React.memo(({ data }) => {
-  const { BannerSVG, AICPA_SOC_PNG, ISO_PNG } = data
+  const { BannerSVG, AICPA_SOC_PNG, ISO_PNG, GDPR_PNG} = data
   const className = `SecurityAndTrustCenter`
   return (
     <Layout>
@@ -44,6 +44,7 @@ const Trust = React.memo(({ data }) => {
         <SecurityAndTrustCenterCompliance
           reportIcon={AICPA_SOC_PNG}
           ISOIcon={ISO_PNG}
+          GDPRIcon={GDPR_PNG}
         />
         <GetStartedWithTiDBCloud />
       </article>
@@ -98,7 +99,7 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
 })
 
 const SecurityAndTrustCenterCompliance = React.memo(
-  ({ reportIcon, ISOIcon }) => {
+  ({ reportIcon, ISOIcon, GDPRIcon}) => {
     const className = `SecurityAndTrustCenterCompliance`
     const classNameReport = `${className}-report`
     const classNameReportLeft = `${classNameReport}-left`
@@ -177,6 +178,34 @@ const SecurityAndTrustCenterCompliance = React.memo(
               </div>
             </div>
           </div>
+          <div className={classNameReport}>
+            <div className={classNameReportLeft}>
+              <img src={GDPRIcon.publicURL} alt="gdpr" />
+            </div>
+            <div className={classNameReportRight}>
+              <div className={classNameReportRightHeader}>
+                <div className={`${classNameReportRightHeader}-title`}>
+                  GDPR
+                </div>
+                <Link
+                  to={'/blog/pingcaps-tidb-cloud-attains-gdpr-certification'}
+                >
+                  <div className={`${classNameReportRightHeader}-more`}>
+                    → Learn More
+                  </div>
+                </Link>
+              </div>
+              <div className={`${classNameReportRight}-description`}>
+              The General Data Protection Regulation (GDPR) is a regulation
+              that requires businesses to protect the personal data and privacy
+              of EU citizens for transactions that occur within EU member states.
+              GDPR applies to all companies processing and holding the personal data of
+              data subjects located in the European Union, regardless of the company’s location.
+              PingCAP has achieved the GDPR compliance for TiDB Cloud, certified by 
+              ePrivacy GmbH.
+              </div>
+            </div>
+          </div>
           <div className={`${className}-more`}>
             More compliance audits are in progress...
           </div>
@@ -200,6 +229,11 @@ export const query = graphql`
     }
     ISO_PNG: file(
       relativePath: { eq: "security-and-trust-center/iso-27001.png" }
+    ) {
+      publicURL
+    }
+    GDPR_PNG: file(
+      relativePath: { eq: "security-and-trust-center/gdpr.png" }
     ) {
       publicURL
     }
