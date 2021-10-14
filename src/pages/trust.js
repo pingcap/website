@@ -99,7 +99,7 @@ const SecurityAndTrustCenterKeySecurityFeaturesItem = React.memo(({ data }) => {
 })
 
 const SecurityAndTrustCenterCompliance = React.memo(
-  ({ reportIcon, ISOIcon }) => {
+  ({ reportIcon, ISOIcon, GDPRIcon}) => {
     const className = `SecurityAndTrustCenterCompliance`
     const classNameReport = `${className}-report`
     const classNameReportLeft = `${classNameReport}-left`
