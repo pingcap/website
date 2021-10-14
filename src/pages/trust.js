@@ -201,7 +201,8 @@ const SecurityAndTrustCenterCompliance = React.memo(
               of EU citizens for transactions that occur within EU member states.
               GDPR applies to all companies processing and holding the personal data of
               data subjects located in the European Union, regardless of the company’s location.
-              PingCAP received the ePrivacyseal for GDPR compliance from ePrivacy GmbH.
+              PingCAP has achieved the GDPR compliance for TiDB Cloud, certified by 
+              ePrivacy GmbH.
               </div>
             </div>
           </div>
