@@ -83,7 +83,7 @@ Then you can read it by using `dotenv!("GITHUB_AUTHORIZATION_TOKEN")`.
 For frontend developing, some scripts will also need this env variable, for example:
 
 ```sh
-GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:dev
+GITHUB_AUTHORIZATION_TOKEN=token yarn download:blogs:prod
 ```
 
 ## Style guides
