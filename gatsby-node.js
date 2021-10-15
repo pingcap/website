@@ -30,7 +30,7 @@ exports.createPages = async ({ actions, graphql }) => {
 
   createRedirect({
     fromPath: '/products/tidbcloud/trial/',
-    toPath: '/products/tidbcloud',
+    toPath: 'https://tidbcloud.com/signup',
     redirectInBrowser: true,
     isPermanent: true,
   })
