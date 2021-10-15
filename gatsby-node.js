@@ -28,6 +28,13 @@ exports.createPages = async ({ actions, graphql }) => {
     isPermanent: true,
   })
 
+  createRedirect({
+    fromPath: '/products/tidbcloud/trial/',
+    toPath: 'https://tidbcloud.com/signup',
+    redirectInBrowser: true,
+    isPermanent: true,
+  })
+
   await Promise.all([
     createBlogs({ graphql, createPage, createRedirect }),
     createBlogPagination({ graphql, createPage }),
