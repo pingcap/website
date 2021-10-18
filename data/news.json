@@ -1,5 +1,17 @@
 [
   {
+    "title": "How We Trace a KV Database With Less Than 5% Performance Impact",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/how-we-trace-a-kv-database-with-less-than-5-perfor",
+    "date": "2021-10-04"
+  },
+  {
+    "title": "TiDE: Developing a Distributed Database in a Breeze",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/tide-developing-a-distributed-database-in-a-breeze",
+    "date": "2021-10-01"
+  },
+  {
     "title": "How to Deploy TiDB on Google Cloud Platform—Part 2",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/how-to-deploy-tidb-on-google-cloud-platformpart-2",
