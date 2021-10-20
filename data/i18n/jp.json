@@ -64,6 +64,31 @@
             "title": "ニュースレターを購読する",
             "subTitle": "機能、リリース、ショーケース、交流会、トークなど",
             "btnText": "Eメールの登録"
+        },
+        "PricingSection": {
+            "title": "Pricing",
+            "needs": "Get started with options that fit your needs.",
+            "learnMore": "Learn More"
+        },
+        "Pricing": {
+            "title": "Public Preview Pricing",
+            "choose":  "Choose from the special public preview options",
+            "ProfileTable": {
+                "hour": "hr",
+                "month": "month",
+                "tier": "Tier",
+                "node": "Node",
+                "cpu": "CPU",
+                "storage": "Storage",
+                "hourlyUsagePerNode": "Hourly Usage Per Node",
+                "discountedUsagePerNode": "Discounted Hourly Usage Per Node",
+                "monthlyUsagePerNode": "Monthly Usage Per Node",
+                "discountedMonthlyUsagePerNode": "Discounted Monthly Usage Per Node",
+                "chooseProvider": "1. Choose Your Provider",
+                "selectRegion": "2. Select Region",
+                "desc": "If you don't see the region you are looking for, {contact} to require a new region",
+                "contactUs": "contact us"
+            }
         }
     },
     "templates": {
