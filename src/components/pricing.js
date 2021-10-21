@@ -179,6 +179,23 @@ const HourlyNodeUsageInfo = () => {
             ))}
           </tbody>
         </table>
+        <p className="paragraph">
+          <FormattedMessage
+            id="components.Pricing.ProfileTable.billing"
+            values={{
+              billing: (
+                <a
+                  className="link-with-underline"
+                  href="https://docs.pingcap.com/tidbcloud/beta/tidb-cloud-billing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <ProfileIntl id="billingLink" />
+                </a>
+              ),
+            }}
+          />
+        </p>
       </div>
     )
   }
