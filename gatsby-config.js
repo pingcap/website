@@ -115,6 +115,13 @@ module.exports = {
         path: `${__dirname}/markdown-pages/careers`,
       },
     },
+    ...Object.keys(langConfig.languages).map((lang) => ({
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: langConfig.languages[lang].partnerPath,
+        path: `${__dirname}/${langConfig.languages[lang].partnerPath}`,
+      },
+    })),
     {
       resolve: `gatsby-plugin-mdx`,
       options: {

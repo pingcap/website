@@ -15,6 +15,7 @@ const createCaseStudyCategories = require('./create-pages/caseStudyCategories')
 const createCaseStudyPagination = require('./create-pages/allCaseStudies')
 const createPositions = require('./create-pages/position')
 const createPolicyTerms = require('./create-pages/policyTerms')
+const createPartner = require('./create-pages/partner')
 const createIntlPages = require('./create-pages/intl')
 
 exports.createPages = async ({ actions, graphql }) => {
@@ -44,6 +45,7 @@ exports.createPages = async ({ actions, graphql }) => {
     createCaseStudyCategories({ graphql, createPage }),
     createCaseStudyPagination({ graphql, createPage }),
     createPositions({ graphql, createPage, createRedirect }),
+    createPartner({ graphql, createPage }),
     createPolicyTerms({ graphql, createPage, createRedirect }),
   ])
 }
