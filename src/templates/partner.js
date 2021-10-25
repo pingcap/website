@@ -14,7 +14,7 @@ const Partner = ({ data }) => {
     <Layout>
       <SEO
         title={frontmatter.title}
-        description={frontmatter.title}
+        description={frontmatter.summary}
         link={[
           {
             rel: 'stylesheet',
