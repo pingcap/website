@@ -4,6 +4,7 @@ import SEO from '../components/seo'
 import { graphql } from 'gatsby'
 import { MDXProvider } from '@mdx-js/react'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
+import '../styles/pages/contactUs.scss'
 
 const Partner = ({ data }) => {
   const { mdx } = data
@@ -22,7 +23,16 @@ const Partner = ({ data }) => {
           },
         ]}
       />
-      <article className="PingCAP-Blog">
+      <article className="PingCAP-Contact-Us PingCAP-Blog">
+        <section className="hero is-medium">
+          <div className="hero-body">
+            <div className="container">
+              <div className="title section-title section-title-en">
+                PingCAP - AWS ISV Partner
+              </div>
+            </div>
+          </div>
+        </section>
         <section className="section section-position">
           <div className="container">
             <div className={`markdown-body blog-content position-content`}>

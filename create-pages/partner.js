@@ -1,5 +1,5 @@
 const path = require('path')
-const { langPrefixes, replaceTitle } = require('./utils')
+const { replaceTitle } = require('./utils')
 const langConfig = require('../lang.config.json')
 
 const createPartner = async ({ graphql, createPage }) => {
@@ -20,7 +20,6 @@ const createPartner = async ({ graphql, createPage }) => {
             node {
               frontmatter {
                 title
-                aliases
               }
               parent {
                 ... on File {
@@ -35,9 +34,7 @@ const createPartner = async ({ graphql, createPage }) => {
     `)
 
     result.data.blogs.edges.forEach(({ node }) => {
-      const _path = `/${langPrefixes(lang)}${replaceTitle(
-        node.parent.relativePath
-      )}`
+      const _path = `/partner/${replaceTitle(node.parent.relativePath)}`
 
       console.log('_path', _path)
       createPage({
