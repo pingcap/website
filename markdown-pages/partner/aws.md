@@ -2,9 +2,13 @@
 title: PingCAP - AWS IVS Partner
 ---
 
-# PingCAP - AWS IVS Partner
+PingCAP is an enterprise-grade software service provider committed to delivering an open-source, cloud-native, one-stop database for growth oriented clients. PingCAP is a certified [AWS Independent Software Vendor (ISV) partner](https://aws.amazon.com/partners/isv/).
 
-![partner badge](https://download.pingcap.com/images/partner/partner_aws.png)
+<div class="columns">
+ <div class="column is-6 is-offset-one-quarter">
+<img src="https://download.pingcap.com/images/partner/partner_aws.png" alt="partner badge" />
+</div>
+</div>
 
 [TiDB](https://github.com/pingcap/tidb) is an open-source distributed SQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. Designed for the cloud, TiDB provides flexible scalability, reliability, and security on the cloud platform. Cloud service users can easily implement remote disaster recovery over TiDB, further improving business continuity and availability.
 
@@ -39,7 +43,7 @@ In the anti-fraud data analytics scenario, the traditional data warehouse in T+1
 
 ### The TiDB HTAP solution
 
-To try and solve the challenges mentioned above, Xiaohongshu introduced the[ TiDB HTAP](https://docs.pingcap.com/tidb/v3.0/key-features#minimize-etl-with-htap)solution into their application architecture.
+To try and solve the challenges mentioned above, Xiaohongshu introduced the [TiDB HTAP](https://docs.pingcap.com/tidb/v3.0/key-features#minimize-etl-with-htap) solution into their application architecture.
 
 ![TiDB HTAP with Xiaohongshu](https://download.pingcap.com/images/partner/xiaohongshu_aws.png)
 

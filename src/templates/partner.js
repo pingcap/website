@@ -27,7 +27,7 @@ const Partner = ({ data }) => {
         <section className="hero is-medium">
           <div className="hero-body">
             <div className="container">
-              <div className="title section-title section-title-en">
+              <div className="title section-title section-title-en partner-hero-title">
                 PingCAP - AWS ISV Partner
               </div>
             </div>
