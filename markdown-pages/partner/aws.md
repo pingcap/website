@@ -6,7 +6,7 @@ summary: An open-source, cloud-native, distributed SQL database for elastic scal
 PingCAP is an enterprise-grade software service provider committed to delivering an open-source, cloud-native, one-stop database for growth oriented clients. PingCAP is a certified [AWS Independent Software Vendor (ISV) partner](https://aws.amazon.com/partners/isv/).
 
 <div class="columns">
- <div class="column is-6 is-offset-one-quarter">
+ <div class="column is-4 is-offset-4">
 <img src="https://download.pingcap.com/images/partner/partner_aws.png" alt="partner badge" />
 </div>
 </div>
