@@ -13,6 +13,8 @@ PingCAP is an enterprise-grade software service provider committed to delivering
 
 [TiDB](https://github.com/pingcap/tidb) is an open-source distributed SQL database that supports Hybrid Transactional and Analytical Processing (HTAP) workloads. Designed for the cloud, TiDB provides flexible scalability, reliability, and security on the cloud platform. Cloud service users can easily implement remote disaster recovery over TiDB, further improving business continuity and availability.
 
+![TiDB Cloud](https://download.pingcap.com/images/partner/tidb.png)
+
 [TiDB Cloud](https://pingcap.com/products/tidbcloud), the fully-managed database service for TiDB, is also available on AWS.
 
 ![TiDB Cloud](https://download.pingcap.com/images/partner/tidbcloud_aws.png)
@@ -21,7 +23,7 @@ PingCAP is an enterprise-grade software service provider committed to delivering
 
 With more and more TiDB users building their technology stacks on the cloud, the combined solution of TiDB + AWS allows cloud service users to easily implement remote disaster recovery on TiDB, further improving business continuity and availability.
 
-TiDB's cloud-native design and AWS's professional cloud services are well integrated to enable users to automate scaling on the cloud. With the close collaborations of both parties, TiDB can reach more customers more quickly, while continuing to hone its products to meet customers' needs for digital transformation.
+TiDB's cloud-native design combined with AWS's professional cloud services enables users to automate scaling on the cloud. With the close collaborations of both parties, TiDB can reach more customers more quickly, while continuing to hone its products to meet customers' needs for digital transformation.
 
 Currently, TiDB supports more than 60 types of Amazon EC2 instances on AWS, with 7*24 enterprise-grade support that includes:
 
@@ -29,6 +31,11 @@ Currently, TiDB supports more than 60 types of Amazon EC2 instances on AWS, with
 * Media download of products, product upgrade packages, hotfixes, and patches
 * Product security-related alarms and notifications
 * Dedicated emergency response support channel for P1 grade faults
+
+In addition to the products and services, the ecosystems of TiDB and AWS are also well integrated to maximize the value of data. 
+
+![TiDB-AWS Ecosystem](https://download.pingcap.com/images/partner/tidb_aws_eco.png)
+
 
 ## Success story with TiDB + AWS from Xiaohongshu
 
