@@ -1,5 +1,29 @@
 [
   {
+    "title": "KubeCon 2021 Q&A: PingCAP Recaps the Event and Explores Its Hybrid Transactional and Analytical Processing (HTAP) Database",
+    "logo": "/images/news/vmblog-logo.png",
+    "link": "https://vmblog.com/archive/2021/10/28/kubecon-2021-q-a-pingcap-recaps-the-event-and-explores-its-hybrid-transactional-and-analytical-processing-htap-database.aspx#.YXtrV9ZBz0r",
+    "date": "2021-10-28"
+  },
+  {
+    "title": "Building a Real-Time Data Warehouse With TiDB and Pravega",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/building-a-real-time-data-warehouse-with-tidb-and",
+    "date": "2021-10-20"
+  },
+  {
+    "title": "Dive Deep Into TiKV Transactions: The Life Story of a TiKV Prewrite Request",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/dive-deep-into-tikv-transactions-the-life-story-of",
+    "date": "2021-10-19"
+  },
+  {
+    "title": "TiDB Operator Source Code Reading (Part 3) - The Component Control Loop",
+    "logo": "/images/news/dzone-logo.png",
+    "link": "https://dzone.com/articles/tidb-operator-source-code-reading-iii-the-componen",
+    "date": "2021-10-14"
+  },
+  {
     "title": "How We Trace a KV Database With Less Than 5% Performance Impact",
     "logo": "/images/news/dzone-logo.png",
     "link": "https://dzone.com/articles/how-we-trace-a-kv-database-with-less-than-5-perfor",
