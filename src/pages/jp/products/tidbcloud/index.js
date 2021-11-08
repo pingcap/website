@@ -16,7 +16,7 @@ import SEO from '../../../../components/seo'
 import axios from 'axios'
 import GetStartedWithTiDBCloud from '../../../../components/getStartedWithTiDBCloud'
 import StartYourFreeTrialNowButton from '../../../../components/startYourFreeTrialNowButton'
-import { PricingSection } from '../../../../components/pricing'
+// import { PricingSection } from '../../../../components/pricing'
 
 const cloudProviders = ['aws', 'googleCloud']
 
@@ -298,7 +298,7 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
-        <PricingSection />
+        {/* <PricingSection /> */}
 
         <section className="section section-pricing has-light-background">
           <div className="container">

@@ -103,7 +103,7 @@ const HourlyNodeUsageInfo = () => {
       })
 
     if (freeTier) {
-      availableProfiles.unshfit(freeTier)
+      availableProfiles.unshift(freeTier)
     }
 
     const value = (v) => (v !== null && v !== undefined ? v : '-')
@@ -127,11 +127,21 @@ const HourlyNodeUsageInfo = () => {
           <td>
             {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GB`}
           </td>
-          <td>{formatPrice(value(availablePrice[name]))}</td>
-          <td>{formatPrice(precision(availablePrice[name] * 24 * 30))}</td>
-          <td>{formatPrice(precision(availablePrice[name] * 0.7))}</td>
+          <td>{formatPrice(value(availablePrice[name]), profile_name)}</td>
           <td>
-            {formatPrice(precision(availablePrice[name] * 24 * 30 * discount))}
+            {formatPrice(
+              precision(availablePrice[name] * 24 * 30),
+              profile_name
+            )}
+          </td>
+          <td>
+            {formatPrice(precision(availablePrice[name] * 0.7), profile_name)}
+          </td>
+          <td>
+            {formatPrice(
+              precision(availablePrice[name] * 24 * 30 * discount),
+              profile_name
+            )}
           </td>
           <td>
             {`${value(instance.cpu)} ${
