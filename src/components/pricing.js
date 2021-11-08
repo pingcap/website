@@ -144,9 +144,9 @@ const HourlyNodeUsageInfo = () => {
             )}
           </td>
           <td>
-            {`${value(instance.cpu)} ${
-              isFreeTrial(profile_name) ? 'vCPU shared' : 'vCPU'
-            }`}
+            {isFreeTrial(profile_name)
+              ? 'Shared'
+              : value(instance.cpu) + ' vCPU'}
           </td>
         </>
       )
