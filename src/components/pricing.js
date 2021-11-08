@@ -4,7 +4,7 @@ import '../styles/pages/products/pricing.scss'
 import React, { useEffect, useMemo, useState } from 'react'
 import axios from 'axios'
 import { Button } from '@seagreenio/react-bulma'
-import { FormattedMessage, useIntl } from 'react-intl'
+import { FormattedMessage, useIntl, FormattedNumber } from 'react-intl'
 import { Link } from 'gatsby'
 
 import Layout from './layout'
@@ -71,17 +71,42 @@ const HourlyNodeUsageInfo = () => {
     <FormattedMessage id={`components.Pricing.ProfileTable.${id}`} />
   )
 
+  const isFreeTrial = (name) => {
+    return name === 's1.dev'
+  }
+
+  const formatPrice = (price, name) => {
+    if (isFreeTrial(name)) {
+      return 'Free'
+    }
+    if (typeof price === 'number') {
+      // eslint-disable-next-line react/style-prop-object
+      return <FormattedNumber value={price} style="currency" currency="USD" />
+    }
+    return price
+  }
+
   const ProfileTable = () => {
     const instances = profile.instances || []
     const discount = profile.global_discount || 0.7
-    const availableProfiles = instances.filter((p) =>
-      p.available_regions.map((r) => r.region_name).includes(region)
-    )
+    let freeTier = null
+    const availableProfiles = instances
+      .filter((p) =>
+        p.available_regions.map((r) => r.region_name).includes(region)
+      )
+      .filter((p) => {
+        if (isFreeTrial(p.profile_name)) {
+          freeTier = p
+          return false
+        }
+        return true
+      })
+
+    if (freeTier) {
+      availableProfiles.unshfit(freeTier)
+    }
 
     const value = (v) => (v !== null && v !== undefined ? v : '-')
-
-    const Hour = () => <ProfileIntl id="hour" />
-    const Month = () => <ProfileIntl id="month" />
 
     const TierTableRow = ({ tier, isStriped }) => {
       if (!tier) return null
@@ -99,21 +124,19 @@ const HourlyNodeUsageInfo = () => {
       const TierCells = ({ name, instance }) => (
         <>
           <td>{names[name]}</td>
-          <td>{value(instance.cpu)} vCPU</td>
           <td>
-            {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GiB`}
+            {name === 'tidb' ? '-' : `${value(instance.disks[0].disk_gi)} GB`}
+          </td>
+          <td>{formatPrice(value(availablePrice[name]))}</td>
+          <td>{formatPrice(precision(availablePrice[name] * 24 * 30))}</td>
+          <td>{formatPrice(precision(availablePrice[name] * 0.7))}</td>
+          <td>
+            {formatPrice(precision(availablePrice[name] * 24 * 30 * discount))}
           </td>
           <td>
-            $ {value(availablePrice[name])} /<Hour />
-          </td>
-          <td>
-            $ {precision(availablePrice[name] * 0.7)} /<Hour />
-          </td>
-          <td>
-            $ {precision(availablePrice[name] * 24 * 30)} /<Month />
-          </td>
-          <td>
-            $ {precision(availablePrice[name] * 24 * 30 * discount)} /<Month />
+            {`${value(instance.cpu)} ${
+              isFreeTrial(profile_name) ? 'vCPU shared' : 'vCPU'
+            }`}
           </td>
         </>
       )
@@ -122,7 +145,7 @@ const HourlyNodeUsageInfo = () => {
         <>
           <tr className={`${isStriped ? 'has-light-background' : ''}`}>
             <td rowSpan={`${tiflash ? '3' : '2'}`} className="tier-td">
-              {profile_name}
+              {isFreeTrial(profile_name) ? 'Developer Tier' : profile_name}
             </td>
             <TierCells name="tikv" instance={tikv} />
           </tr>
@@ -150,22 +173,22 @@ const HourlyNodeUsageInfo = () => {
                 <ProfileIntl id="node" />
               </th>
               <th>
-                <ProfileIntl id="cpu" />
-              </th>
-              <th>
                 <ProfileIntl id="storage" />
               </th>
               <th>
                 <ProfileIntl id="hourlyUsagePerNode" />
               </th>
               <th>
-                <ProfileIntl id="discountedUsagePerNode" />
-              </th>
-              <th>
                 <ProfileIntl id="monthlyUsagePerNode" />
               </th>
               <th>
+                <ProfileIntl id="discountedUsagePerNode" />
+              </th>
+              <th>
                 <ProfileIntl id="discountedMonthlyUsagePerNode" />
+              </th>
+              <th>
+                <ProfileIntl id="cpu" />
               </th>
             </tr>
           </thead>
