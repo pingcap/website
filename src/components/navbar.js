@@ -7,7 +7,6 @@ import {
   navbarItemsEn,
   navbarItemsJP,
   homepagePromotionText,
-  cloudPromotionText,
   JapaneseHomepagePromotionText,
 } from '../data/navbar'
 import { useIntl } from 'react-intl'
@@ -111,8 +110,6 @@ const Navbar = ({ showBanner }) => {
     promotionText = homepagePromotionText
   } else if (location.pathname === '/jp/') {
     promotionText = JapaneseHomepagePromotionText
-  } else {
-    promotionText = cloudPromotionText
   }
 
   return (
