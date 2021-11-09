@@ -252,6 +252,52 @@
     }
   }
 
+  .section-dev-tier {
+
+    @include tablet {
+      padding-top: 6rem;
+    }
+
+    .section-title {
+      margin-bottom: 4rem !important;
+
+      @include mobile {
+        margin-bottom: 3rem !important;
+      }
+    }
+
+    .dev-tier {
+      p, span {
+        color: $F1;
+        font-size: $H3;
+        line-height: $LH4;
+      }
+
+      .items {
+        margin-top: 2.5rem;
+        margin-bottom: 2.5rem;
+        margin-left: 2rem;
+        li {
+          display: flex;
+          align-items: center;
+        }
+        .dot {
+          display: inline-block;
+          width: $size-7;
+          height: $size-7;
+          border-radius: 50%;
+          background-color: $B1;
+          margin-right: 0.7rem;
+        }
+      }
+
+      .learn-more {
+        text-align: center;
+      }
+    }
+
+  }
+
   .section-features {
     @include tablet {
       padding-top: 6rem;
