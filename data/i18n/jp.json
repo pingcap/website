@@ -66,29 +66,30 @@
             "btnText": "Eメールの登録"
         },
         "PricingSection": {
-            "title": "Pricing",
-            "needs": "Get started with options that fit your needs.",
-            "learnMore": "Learn More"
+            "title": "価格",
+            "needs": "お客様のニーズに合ったオプションで始めましょう。",
+            "learnMore": "更に詳しい情報"
         },
         "Pricing": {
-            "title": "Public Preview Pricing",
-            "choose":  "Choose from the special public preview options",
+            "title": "パブリックプレビュー価格",
+            "choose":  "パブリック・プレビュー・オプションからご選択ください",
             "ProfileTable": {
-                "hour": "hr",
-                "month": "month",
+                "free": "無料",
+                "hour": "時間",
+                "month": "月",
                 "tier": "Tier",
-                "node": "Node",
+                "node": "ノード",
                 "cpu": "CPU",
                 "storage": "Storage",
-                "hourlyUsagePerNode": "Hourly Usage Per Node",
-                "discountedUsagePerNode": "Discounted Hourly Usage Per Node",
-                "monthlyUsagePerNode": "Monthly Usage Per Node",
-                "discountedMonthlyUsagePerNode": "Discounted Monthly Usage Per Node",
-                "chooseProvider": "1. Choose Your Provider",
-                "selectRegion": "2. Select Region",
-                "desc": "If you don't see the region you are looking for, {contact} to require a new region",
-                "contactUs": "contact us",
-                "billing": "データのバックアップと転送は別{billing}する必要があります。 詳細については、請求を 参照 してください。",
+                "hourlyUsagePerNode": "時間単価/1ノード",
+                "discountedUsagePerNode": "パブリックプレビュー: 時間単価/1ノード",
+                "monthlyUsagePerNode": "月単価/1ノード",
+                "discountedMonthlyUsagePerNode": "パブリックプレビュー: 月単価/1ノード",
+                "chooseProvider": "1. プロバイダをご選択ください",
+                "selectRegion": "2. 地域をご選択ください",
+                "desc": "お探しの地域が見つからない場合は、{contact}で新しい地域の追加をご連絡ください",
+                "contactUs": "お問い合わせ",
+                "billing": "データのバックアップと転送は別途請求する必要があります。詳しくは{billing}をご覧ください。",
                 "billingLink": "課金"
             }
         }

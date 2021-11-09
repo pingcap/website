@@ -13,6 +13,7 @@ import IntlLink from './IntlLink'
 import CButton from './button'
 import StartYourFreeTrialNowButton from './startYourFreeTrialNowButton'
 import { logos } from '../data/products/tidbcloud'
+import Loading from './loading'
 
 const cloudProviders = ['aws', 'googleCloud']
 
@@ -33,6 +34,7 @@ const HourlyNodeUsageInfo = () => {
     aws: null,
     googleCloud: null,
   })
+  const [loading, setLoading] = useState(true)
 
   const intl = useIntl()
 
@@ -43,8 +45,10 @@ const HourlyNodeUsageInfo = () => {
         const googleCloud = (await http.get('/gcp/profiles')).data
         setProfiles({ aws, googleCloud })
         setRegion(aws.regions && aws.regions[0] ? aws.regions[0].name : '')
+        setLoading(false)
       } catch (error) {
         console.log('Something wrong:' + error)
+        setLoading(false)
         return
       }
     }
@@ -77,7 +81,7 @@ const HourlyNodeUsageInfo = () => {
 
   const formatPrice = (price, name) => {
     if (isFreeTrial(name)) {
-      return 'Free'
+      return <ProfileIntl id="free" />
     }
     if (typeof price === 'number') {
       // eslint-disable-next-line react/style-prop-object
@@ -233,6 +237,10 @@ const HourlyNodeUsageInfo = () => {
     )
   }
 
+  if (loading) {
+    return <Loading />
+  }
+
   return (
     <div className="tidb-cloud-hourly-usage">
       <div className="columns">
@@ -301,9 +309,9 @@ const HourlyNodeUsageInfo = () => {
   )
 }
 
-const Pricing = () => {
+const Pricing = ({ showBanner = true }) => {
   return (
-    <Layout NavbarProps={{ showBanner: true }}>
+    <Layout NavbarProps={{ showBanner }}>
       <SEO title="TiDB Cloud Pricing" description="" />
       <main className="PingCAP-TiDBCloud-Pricing">
         <section className="section section-pricing has-light-background">
