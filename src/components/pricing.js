@@ -105,6 +105,9 @@ const HourlyNodeUsageInfo = () => {
         }
         return true
       })
+      .sort((prev, next) => {
+        return prev.profile_name < next.profile_name ? 1 : -1
+      })
 
     if (freeTier) {
       availableProfiles.unshift(freeTier)
