@@ -74,6 +74,7 @@
             "title": "Public Preview Pricing",
             "choose":  "Choose from the special public preview options",
             "ProfileTable": {
+                "free": "Free",
                 "hour": "hr",
                 "month": "month",
                 "tier": "Tier",
