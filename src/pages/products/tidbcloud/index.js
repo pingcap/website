@@ -91,6 +91,48 @@ const TiDBCloudPage = ({ data }) => {
           </div>
         </section>
 
+        <section className="section section-dev-tier">
+          <div className="container">
+            <h2 className="title section-title">
+              Introducing the TiDB Cloud Developer Tier
+            </h2>
+            <div className="dev-tier">
+              <p>
+                The Developer Tier offers a one-year free subscription to TiDB
+                Cloud. Build and test applications without having to worry about
+                any of the behind-the-scenes database management!
+              </p>
+              <ul className="items">
+                <li>
+                  <i className="dot"></i>
+                  <span>1 year free trial</span>
+                </li>
+                <li>
+                  <i className="dot"></i>
+                  <span>10 GB of OLTP storage</span>
+                </li>
+                <li>
+                  <i className="dot"></i>
+                  <span>10 GB of OLAP storage</span>
+                </li>
+                <li>
+                  <i className="dot"></i>
+                  <span>Unlimited number of users</span>
+                </li>
+              </ul>
+              <div className="learn-more">
+                <Button
+                  as={Link}
+                  to="https://en.pingcap.com/blog/tidb-cloud-introduces-developer-tier"
+                  className="primary"
+                >
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="section section-why-tidb-cloud has-light-background">
           <div className="container">
             <h2 className="title section-title">Why TiDB Cloud</h2>
