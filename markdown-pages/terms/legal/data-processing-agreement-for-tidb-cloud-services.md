@@ -3,11 +3,13 @@ title: Data Processing Agreement for TiDB Cloud Services
 summary: This agreement sets out data protection requirements with respect to our processing of Your Content that is collected or stored for the purpose of providing TiDB Cloud Services.
 ---
 
-# Data Processing Agreement ("DPA") for TiDB Cloud Services
+# Data Processing Agreement for TiDB Cloud Services
 
-**Last updated on May 8, 2021**
+**Last updated on November 15, 2021** ([archived versions](/legal/data-processing-agreement-for-tidb-cloud-services/archive/))
 
 ## 1. Definitions
+
+**This Data** Processing Agreement for TiDB Cloud Services (**"DPA"**) forms an integral part of the TiDB Cloud Services Agreement ("CSA"). This DPA sets out data protection requirements regarding the Processing of CSA Personal Data for the purpose of providing TiDB Cloud Services. All capitalized terms not defined in this DPA shall have the meaning set forth in the CSA.
 
 <div class="customize-indentation">
 
@@ -15,11 +17,9 @@ summary: This agreement sets out data protection requirements with respect to ou
 
 - 1.2. <span>**"Data Protection Laws"** means, in respect of a party, all data protection and privacy laws applicable to that party in exercising its rights or fulfilling its obligations under this Agreement or the Purchase Agreement, including the General Data Protection Regulation 2016/679 ("GDPR"), and the UK GDPR;</span>
 
-- 1.3. <span>**"European Standard Contractual Clauses"** means the Standard Contractual Clauses for Processors as approved by the European Commission in the form as set out in [Annex 1](/legal/european-standard-contractual-clauses).</span>
+- 1.3. <span>**"<ins>Controller</ins>,"** **"<ins>Data Subject</ins>,"** **"<ins>Personal Data</ins>,"** **"<ins>Process/Processing/Processed</ins>,"** **"<ins>Processor</ins>,"** **"<ins>Personal Data Breach</ins>"** and **"<ins>Supervisory Authority</ins>"** shall have the same meaning given to them or correlative terms under applicable Data Protection Laws; and</span>
 
-- 1.4. <span>**"<ins>Controller</ins>,"** **"<ins>Data Subject</ins>,"** **"<ins>Personal Data</ins>,"** **"<ins>Process/Processing/Processed</ins>,"** **"<ins>Processor</ins>,"** **"<ins>Personal Data Breach</ins>"** and **"<ins>Supervisory Authority</ins>"** shall have the same meaning given to them or correlative terms under applicable Data Protection Laws; and</span>
-
-- 1.5. <span>Any other terms within this <ins>DPA</ins> with the initial letter capitalized shall have the same meaning as given to such terms in the CSA unless and to the extent that any such term is expressly defined in this <ins>DPA</ins>.</span>
+- 1.4. <span>Any other terms within this <ins>DPA</ins> with the initial letter capitalized shall have the same meaning as given to such terms in the CSA unless and to the extent that any such term is expressly defined in this <ins>DPA</ins>.</span>
 
 </div>
 
@@ -61,7 +61,7 @@ You shall ensure that you have, and will maintain in place, all consents, regist
 
 - 4.5. <span>Without undue delay after becoming aware of a Personal Data Breach affecting the CSA Personal Data, PingCAP will notify you in accordance with the level of detail for you to fulfil any reporting or other requirements imposed on you under Data Protection Laws;</span>
 
-- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in <ins>Section 4.5(d)(ii)</ins> as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
+- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in <ins>Section 4.5</ins> as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
 
 - 4.7. <span>Without prejudice to its obligations under <ins>Section 4.4.2</ins>, PingCAP will provide reasonable assistance, information and cooperation to you in responding to any request from a Data Subject and to ensure compliance with your obligations under Data Protection Laws with respect to:</span>
 
@@ -101,7 +101,7 @@ You shall ensure that you have, and will maintain in place, all consents, regist
   PingCAP has agreed to provide the TiDB Cloud Services under the CSA, possibly involving the Processing of the CSA Personal Data.</span>
 
 - 5.2. <span>**Duration**<br />
-  Notwithstanding expiry or termination of the CSA, this DPA and European Standard Contractual Clauses (if applicable) will remain in effect until deletion of all CSA Personal Data as described hereinunder.</span>
+  Notwithstanding expiry or termination of the CSA, this DPA and Standard Contractual Clauses (if applicable) set forth in the Schedule will remain in effect until deletion of all CSA Personal Data as described hereinunder.</span>
 
 - 5.3. <span>**Nature and purpose of the Processing**<br />
   The nature and purpose of the Processing are to provide the TiDB Cloud Services.</span>
@@ -149,22 +149,123 @@ You shall provide a general authorization for PingCAP to appoint [sub-Processors
 
 </div>
 
-For the avoidance of doubt, Section 6.1 constitutes your general consent for PingCAP’s engagement of onward sub-Processors under the European Standard Contractual Clauses.
+For the avoidance of doubt, Section 6.1 constitutes your general consent for PingCAP’s engagement of onward sub-Processors under the Standard Contractual Clauses set forth in the Schedule.
 
 ## 7. Data Transfer
 
-For any transfer by you of CSA Personal Data from the United Kingdom, Switzerland and/or the European Economic Area (collectively, "Restricted Counties") to PingCAP in a country which does not ensure an adequate level of protection (within the meaning of and to the extent governed by the Data Protection Laws of the Restricted Countries) as required to perform the TiDB Cloud Services, such transfer shall be governed by the European Standard Contractual Clauses. PingCAP agrees to abide by, and Process CSA Personal Data from the Restricted Counties in compliance with the [European Standard Contractual Clauses](/legal/european-standard-contractual-clauses) which are incorporated into this DPA in Annex 1, and for these purposes PingCAP shall be the "data importer" and you are the "data exporter" under the European Standard Contractual Clauses (notwithstanding that you may be an entity located outside of the Restricted Countries).
+For any transfer by you of CSA Personal Data from the United Kingdom, Switzerland and/or the European Economic Area (collectively, "Restricted Counties") to PingCAP in a country which does not ensure an adequate level of protection (within the meaning of and to the extent governed by the Data Protection Laws of the Restricted Countries) as required to perform the TiDB Cloud Services, such transfer shall be governed by the Standard Contractual Clauses set forth in the Schedule. PingCAP agrees to abide by, and Process CSA Personal Data from the Restricted Counties in compliance with the Standard Contractual Clauses set forth in the Schedule which are incorporated into this DPA, and for these purposes PingCAP shall be the "data importer" and you are the "data exporter" under the Standard Contractual Clauses set forth in the Schedule (notwithstanding that you may be an entity located outside of the Restricted Countries).
 
 ## 8. Your Audit Rights
 
-No more than on one (1) occasion in any calendar year, on prior written reasonable notice, PingCAP shall make available to you all necessary information to demonstrate PingCAP’s compliance with its obligations under this DPA, and allow for audits, including inspections, by you (or another auditor mandated by you, provided that such auditor enters into a non-disclosure agreement with PingCAP on terms acceptable to PingCAP) for this purpose, provided that any such audit takes place during normal business hours and does not result in interference with (a) PingCAP’s operations and services, and (b) with the confidentiality or security of the data of PingCAP’s other customers. For the avoidance of doubt, the exercise of audit rights under the European Standard Contractual Clauses shall be as described in this Section 8.
+No more than on one (1) occasion in any calendar year, on prior written reasonable notice, PingCAP shall make available to you all necessary information to demonstrate PingCAP’s compliance with its obligations under this DPA, and allow for audits, including inspections, by you (or another auditor mandated by you, provided that such auditor enters into a non-disclosure agreement with PingCAP on terms acceptable to PingCAP) for this purpose, provided that any such audit takes place during normal business hours and does not result in interference with (a) PingCAP’s operations and services, and (b) with the confidentiality or security of the data of PingCAP’s other customers. For the avoidance of doubt, the exercise of audit rights under the Standard Contractual Clauses set forth in the Schedule shall be as described in this Section 8.
 
 <div class="annex-center">
 
-**Annex 1**
-
-**European Standard Contractual Clauses (processors)**
+**Schedule Standard Contractual Clauses**
 
 </div>
 
-If applicable according to Section 7 of this DPA, please click [here](/legal/european-standard-contractual-clauses) for the European Standard Contractual Clauses which shall be included in this DPA by reference.
+## 1. Definitions
+
+<div class="customize-indentation">
+
+- 1.1. <span>**"Standard Contractual Clauses"** means, as the circumstances may require, either one of the following:</span>
+
+<ul class="customize-indentation">
+
+- a. <span>EU Standard Contractual Clauses; or</span>
+
+- b. <span>UK Standard Contractual Clauses.</span>
+
+</ul>
+
+- 1.2. <span>**"EU Standard Contractual Clauses"** means the standard contractual clauses for the transfer of personal data to third countries approved pursuant to the Commission Implementing Decision (EU) 2021/914 of 4 June 2021 available at [here](https://eur-lex.europa.eu/eli/dec_impl/2021/914/oj).</span>
+
+- 1.3. <span>**"UK Standard Contractual Clauses"** means the standard contractual clauses for the transfer of personal data to processors established in third countries approved pursuant to the Commission Decision 2010/87/EU of 5 February 2010 available at [here](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32010D0087).</span>
+
+</div>
+
+## 2. **EU Standard Contractual Clauses**. For transfer of CSA Personal Data out of the European Economic Area or Switzerland subject to Section 7 of the DPA, the EU Standard Contractual Clauses are incorporated into this DPA by reference in the following manner
+
+<div class="customize-indentation">
+
+- 2.1. <span>**Module Two** (Controller to Processor) shall apply to the extent you are a Controller and Module Three (Processor to Processor) shall apply to the extent you are a Processor;</span>
+
+- 2.2. <span>The optional Clause 7 is excluded;</span>
+
+- 2.3. <span>For the Clause 9(a), Option 2 (General Written Authorisation) is selected, and the time period for prior notice of sub-Processor changes is set forth in Section 6.2 of the DPA;</span>
+
+- 2.4. <span>For the Clause 11(a), the option paragraph is excluded;</span>
+
+- 2.5. <span>For the Clause 17, Option 1 is selected, and the EU Standard Contractual Clauses shall be governed by the law of Netherlands;</span>
+
+- 2.6. <span>For the Clause 18, the dispute shall be resolved before the courts of Netherlands;</span>
+
+- 2.7. <span>For Part A of Annex I, the following shall apply:</span>
+
+<ul class="customize-indentation">
+
+- 2.7.1. <span>**Data exporter**: The entity identified as "you" in the CSA;<br />
+                **Contact information**: the email address associated with your current account;<br />
+                **Role**: As outlined in Section 2 of the DPA; and<br />
+                **Signature & Date**: The date when you check a box confirming that you agree with the terms of the CSA and click an "I agree to the TiDB Cloud Services Agreement" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.</span>
+
+- 2.7.2. <span>**Data importer**: PingCAP (as defined in the CSA); <br />**Contact information**: legal@pingcap.com;<br />**Role**: As outlined in Section 2 of the DPA; and<br />**Signature & Date**: The date when you check a box confirming that you agree with the terms of the CSA and click an "I agree to the TiDB Cloud Services Agreement" or similar button or, if earlier, when you create any TiDB Cloud Services cluster.</span>
+
+</ul>
+
+- 2.8. <span>For Part B of Annex I, the description of the transfer is as described in Section 5 of the DPA (Details of Processing);</span>
+
+- 2.9. <span>For Part C of Annex I, the competent supervisory authority/ies shall be determined according to the GDPR and Clause 13 of the EU Standard Contractual Clauses;</span>
+
+- 2.10. <span>For Annex II, Section 4.4 of the DPA states the technical and organizational security measures implemented by the data importer; and</span>
+
+- 2.11. <span>For Annex III, the Controller has authorised the use of the sub-Processor(s) listed at [here](https://pingcap.com/legal/sub-processors-and-affiliates-for-tidb-cloud-services). </span>
+
+</div>
+
+## 3. **UK Standard Contractual Clauses**. For transfer of CSA Personal Data out of the United Kingdom subject to Section 7 of the DPA, the UK Standard Contractual Clauses are incorporated into this DPA with the following appendixes
+
+<div class="customize-indentation">
+
+- 3.1. <span>**Appendix 1** to the UK Standard Contractual Clauses. <br />**Data exporter**: The data exporter is the entity identified as "you" in the CSA and the DPA in place between data exporter and data importer and to which the UK Standard Contractual Clauses are appended. <br />**Data importer**: The data importer is PingCAP (as defined in the CSA), to the extent based in a country which does not ensure an adequate level of protection (within the meaning of and to the extent governed by Data Protection Laws). <br />**Data subjects**: The personal data transferred concern the categories of data subjects stated in Section 5.5 of the DPA. <br />**Categories of data**: The personal data transferred concern the categories of data stated in Section 5.4 of the DPA. <br />**Special categories of data** (if applicable): The personal data transferred concern the special categories of data stated in Section 5.4.5 of the DPA. <br />**Processing operations**: The personal data transferred will be subject to the basic processing activities stated in Sections 3 to 5 of the DPA.</span>
+
+- 3.2. <span>Appendix 2 to the UK Standard Contractual Clauses <br />Description of the technical and organizational security measures implemented by the data importer in accordance with Clauses 4(d) and 5(c) are stated in Section 4.4 of the DPA.</span>
+
+- 3.3. <span>Appendix 3 to the UK Standard Contractual Clauses</span>
+
+<ul class="customize-indentation">
+
+- 3.3.1. <span>The data importer undertakes to adopt supplementary measures to protect the personal data received under the EU standard contractual clauses from the data exporter (“SCC Personal Data”) in accordance with the requirements of the EU General Data Protection Regulation 2016/679, including by implementing appropriate technical and organizational safeguards, such as encryption or similar technologies, access controls or other compensating controls, to protect SCC Personal Data against any interference that goes beyond what is necessary in a democratic society to safeguard national security, defense and public security.</span>
+
+- 3.3.2. <span>In the event that the data importer receives a legally binding request for access to the SCC Personal Data by a public authority, it will promptly notify the data exporter of such request to enable the data exporter to intervene and seek relief from such disclosure, unless the data importer is otherwise prohibited from providing such notice, such as a prohibition under criminal law to preserve the confidentiality of a law enforcement investigation. If the data importer is so prohibited:</span>
+
+<ul class="customize-indentation">
+
+- 3.3.2.1. <span>It will use its best efforts to obtain the right to waive this prohibition in order to communicate as much information as it can and as soon as possible and be able to demonstrate that it did so.</span>
+
+- 3.3.2.2. <span>In the event that, despite having used its reasonable best efforts, the data importer is not permitted to notify the data exporter, it will make available on an annual basis general information on the requests it received to the data exporter and/or the competent supervisory authority of the data exporter.</span>
+
+- 3.3.2.3. <span>Oppose any such request for access and contest its legal validity to the extent legally permitted under applicable law.</span>
+
+</ul>
+
+- 3.3.3. <span>In the event of any request for access to the SCC Personal Data by a public authority, the data importer will not make any disclosures of the SCC Personal Data to any public authority that are determined to be massive, disproportionate and indiscriminate in a manner that it would go beyond what is necessary in a democratic society.</span>
+
+- 3.3.4. <span>In the event of any conflict between the provisions of this Appendix 3 and the UK Standard Contractual Clauses, the UK Standard Contractual Clauses shall prevail.</span>
+
+</ul>
+
+</div>
+
+## 4. **Mutual Understanding regarding Standard Contractual Clauses**. Both you and PingCAP agree each of the following forms an integral part of the Standard Contractual Clauses and set out the mutual understanding of their respective obligations under the Standard Contractual Clauses
+
+<div class="customize-indentation">
+
+- 4.1. <span>**For Clause 8.9 of the EU Standard Contractual Clauses and Clause 5(f) of the UK Standard Contractual Clauses**, you acknowledge and agree to exercise your audit right under the respective clause according to Section 8 of the DPA;</span>
+
+- 4.2. <span>For Clause 9(c) of the EU Standard Contractual Clauses and Clause 5(j) of the UK Standard Contractual Clauses, you acknowledge and agree that PingCAP may be restricted from providing sub-processor agreement(s) due to confidentiality obligation; and</span>
+
+- 4.3. <span>For Clause 12 of the EU Standard Contractual Clauses and Clause 6 of the UK Standard Contractual Clauses, you acknowledge and agree that any liability and claims arising from the Standard Contractual Clauses shall be to the limitation set forth in Section 10 of the CSA.</span>
+
+</div>
