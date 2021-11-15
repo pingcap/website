@@ -9,7 +9,7 @@ summary: This agreement sets out data protection requirements with respect to ou
 
 ## 1. Definitions
 
-**This Data** Processing Agreement for TiDB Cloud Services (**"DPA"**) forms an integral part of the TiDB Cloud Services Agreement ("CSA"). This DPA sets out data protection requirements regarding the Processing of CSA Personal Data for the purpose of providing TiDB Cloud Services. All capitalized terms not defined in this DPA shall have the meaning set forth in the CSA.
+This Data Processing Agreement for TiDB Cloud Services ("DPA") forms an integral part of the TiDB Cloud Services Agreement ("CSA"). This DPA sets out data protection requirements regarding the Processing of CSA Personal Data for the purpose of providing TiDB Cloud Services. All capitalized terms not defined in this DPA shall have the meaning set forth in the CSA.
 
 <div class="customize-indentation">
 
@@ -17,9 +17,9 @@ summary: This agreement sets out data protection requirements with respect to ou
 
 - 1.2. <span>**"Data Protection Laws"** means, in respect of a party, all data protection and privacy laws applicable to that party in exercising its rights or fulfilling its obligations under this Agreement or the Purchase Agreement, including the General Data Protection Regulation 2016/679 ("GDPR"), and the UK GDPR;</span>
 
-- 1.3. <span>**"<ins>Controller</ins>,"** **"<ins>Data Subject</ins>,"** **"<ins>Personal Data</ins>,"** **"<ins>Process/Processing/Processed</ins>,"** **"<ins>Processor</ins>,"** **"<ins>Personal Data Breach</ins>"** and **"<ins>Supervisory Authority</ins>"** shall have the same meaning given to them or correlative terms under applicable Data Protection Laws; and</span>
+- 1.3. <span>**"Controller,"** **"Data Subject,"** **"Personal Data,"** **"Process/Processing/Processed,"** **"Processor,"** **"Personal Data Breach"** and **"Supervisory Authority"** shall have the same meaning given to them or correlative terms under applicable Data Protection Laws; and</span>
 
-- 1.4. <span>Any other terms within this <ins>DPA</ins> with the initial letter capitalized shall have the same meaning as given to such terms in the CSA unless and to the extent that any such term is expressly defined in this <ins>DPA</ins>.</span>
+Any other terms within this DPA with the initial letter capitalized shall have the same meaning as given to such terms in the CSA unless and to the extent that any such term is expressly defined in this DPA.
 
 </div>
 
@@ -61,9 +61,9 @@ You shall ensure that you have, and will maintain in place, all consents, regist
 
 - 4.5. <span>Without undue delay after becoming aware of a Personal Data Breach affecting the CSA Personal Data, PingCAP will notify you in accordance with the level of detail for you to fulfil any reporting or other requirements imposed on you under Data Protection Laws;</span>
 
-- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in <ins>Section 4.5</ins> as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
+- 4.6. <span>Where and in so far as it is not possible to provide all of the information set out in Section 4.5 as part of the initial notification of the Personal Data Breach, PingCAP will provide this information in phases as soon as the same is reasonably available;</span>
 
-- 4.7. <span>Without prejudice to its obligations under <ins>Section 4.4.2</ins>, PingCAP will provide reasonable assistance, information and cooperation to you in responding to any request from a Data Subject and to ensure compliance with your obligations under Data Protection Laws with respect to:</span>
+- 4.7. <span>Without prejudice to its obligations under Section 4.4.2, PingCAP will provide reasonable assistance, information and cooperation to you in responding to any request from a Data Subject and to ensure compliance with your obligations under Data Protection Laws with respect to:</span>
 
 <ul class="customize-indentation">
 
@@ -143,7 +143,7 @@ You shall provide a general authorization for PingCAP to appoint [sub-Processors
 
 <div class="customize-indentation">
 
-- 6.1 <span>ensures that the terms on which it appoints such sub-Processors comply with applicable Data Protection Laws and are consistent with the obligations imposed on PingCAP in this <ins>DPA</ins>; and</span>
+- 6.1 <span>ensures that the terms on which it appoints such sub-Processors comply with applicable Data Protection Laws and are consistent with the obligations imposed on PingCAP in this DPA; and</span>
 
 - 6.2 <span>gives you reasonable prior notice to the email account registered by you in TiDB Cloud by directing you to the updated list of sub-Processors available on PingCAP's website of any intended changes concerning the addition or the replacement of any such sub-Processors. If within ten (10) days of receipt of such notice, you notify PingCAP in writing of any objections (on reasonable grounds associated with data protection considerations) to the proposed appointment, (a) PingCAP shall use reasonable efforts to make available a commercially reasonable change in the provision of the TiDB Cloud Services which avoids the use of that proposed sub-Processor, and (b) where no commercially reasonable change is available, either party may by written notice to the other party with immediate effect terminate the CSA to the extent that it relates to the affected TiDB Cloud Services. In the absence of any written notification from you in relation to the proposed appointment, such appointment would be deemed agreed by you.</span>
 
@@ -161,7 +161,9 @@ No more than on one (1) occasion in any calendar year, on prior written reasonab
 
 <div class="annex-center">
 
-**Schedule Standard Contractual Clauses**
+**Schedule**
+
+**Standard Contractual Clauses**
 
 </div>
 
