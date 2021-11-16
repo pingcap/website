@@ -5,7 +5,7 @@ summary: This agreement sets out data protection requirements with respect to ou
 
 # Data Processing Agreement for TiDB Cloud Services
 
-**Last updated on November 15, 2021** ([archived versions](/legal/data-processing-agreement-for-tidb-cloud-services/archive/))
+**Last updated on November 16, 2021** ([archived versions](/legal/data-processing-agreement-for-tidb-cloud-services/archive/))
 
 This Data Processing Agreement for TiDB Cloud Services ("DPA") forms an integral part of the TiDB Cloud Services Agreement ("CSA"). This DPA sets out data protection requirements regarding the Processing of CSA Personal Data for the purpose of providing TiDB Cloud Services. All capitalized terms not defined in this DPA shall have the meaning set forth in the CSA.
 
