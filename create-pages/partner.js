@@ -36,7 +36,6 @@ const createPartner = async ({ graphql, createPage }) => {
     result.data.blogs.edges.forEach(({ node }) => {
       const _path = `/partner/${replaceTitle(node.parent.relativePath)}`
 
-      console.log('_path', _path)
       createPage({
         path: _path,
         component: partnerTemplate,

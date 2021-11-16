@@ -17,12 +17,6 @@ const LegalDocs = [
     link: '/legal/data-processing-agreement-for-tidb-cloud-services/',
   },
   {
-    title: 'European Standard Contractual Clauses (processors)',
-    desc:
-      'These clauses apply if you use our TiDB Cloud Service to process European personal data.',
-    link: '/legal/european-standard-contractual-clauses/',
-  },
-  {
     title: 'Service Level Agreement for TiDB Cloud Services',
     desc:
       'The service level agreement applies to your use of TiDB Cloud Services.',
