@@ -19,7 +19,6 @@ const contributionGrow = [
     icon: Heart,
     title: 'Contribute the Way You Like',
     collapseList: [
-      'Join a <a href="https://github.com/pingcap/community/tree/master/special-interest-groups" target="_blank">Special Interest Group</a> (SIG)',
       'Improve TiDB <a href="https://github.com/pingcap/docs" target="_blank">docs</a>',
       'Fix a <a href="https://github.com/pingcap/tidb/issues?q=is%3Aissue+is%3Aopen+label%3Atype%2Fbug" target="_blank">bug</a>',
       'Propose a <a href="https://github.com/pingcap/tidb/tree/master/docs/design" target="_blank">feature</a>',
@@ -39,7 +38,7 @@ const contributionGrow = [
     title: 'Learn and Grow',
     collapseList: [
       'Join the <a href="https://github.com/pingcap/talent-plan" target="_blank">Talent Plan</a>',
-      'Grow along a guided <a href="https://github.com/pingcap/community/tree/master/architecture" target="_blank">path</a>',
+      'Grow in a community team <a href="https://github.com/pingcap/community/tree/master/teams" target="_blank">path</a>',
       'Speak about TiDB in an event',
     ],
   },
