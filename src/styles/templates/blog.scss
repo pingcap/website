@@ -124,8 +124,8 @@
       }
     }
 
-    ul {
-      list-style: inherit;
+    ul, ol {
+      list-style: revert;
     }
 
     // .trackable-btns {
