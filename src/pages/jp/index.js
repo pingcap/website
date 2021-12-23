@@ -36,9 +36,9 @@ const caseLogos = [
   'mi',
   'webank',
   'zalopay',
-  'wuba',
+  'streak',
   'zhihu',
-  'meituan',
+  'opera',
 ]
 
 const IndexPage = ({ data }) => {
